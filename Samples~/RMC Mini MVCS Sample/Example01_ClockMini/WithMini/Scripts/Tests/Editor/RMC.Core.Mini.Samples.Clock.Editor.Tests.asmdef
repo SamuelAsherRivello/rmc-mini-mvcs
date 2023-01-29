@@ -1,0 +1,20 @@
+{
+    "name": "RMC.Core.Mini.Samples.Clock.Editor.Tests",
+    "rootNamespace": "",
+    "references": [
+        "GUID:4245cf09d0036f34e8bb2477b3fed3c2",
+        "GUID:d6ed7e4e1d9a3364cbee9f46f5358dd5",
+        "GUID:3b44bd3738de72448af0b39a74c7322d"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

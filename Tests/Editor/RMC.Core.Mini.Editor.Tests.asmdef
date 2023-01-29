@@ -1,0 +1,18 @@
+{
+    "name": "RMC.Core.Mini.Editor.Tests",
+    "rootNamespace": "",
+    "references": [
+        "GUID:4245cf09d0036f34e8bb2477b3fed3c2"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
