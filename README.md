@@ -3,7 +3,54 @@
 ![Tests](https://github.com/SamuelAsherRivello/rmc-mini-mvcs/workflows/Tests/badge.svg)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-# RMC
+# MVC Architecture For Unity - Udemy Course
+
+Welcome to MVC Architecture For Unity!
+
+This is the official repo for the online course.
+
+The course gives you the training to create and maintain Unity projects which are faster to develop and easier to maintain.
+
+COURSE TRAILER VIDEO:
+
+<a href="https://bit.ly/mvc-architecture-for-unity-trailer"><img src="https://img.youtube.com/vi/ulclbvLL9A4/hqdefault.jpg" width = "350"></a>
+
+
+COURSE LINK:
+
+- https://bit.ly/mvc-architecture-for-unity-on-udemy
+
+
+FEATURES:
+
+- Rockstar content - Everything you DO need. Just the most relevant, powerful info!
+- Punk-rock editing - Nothing you DON'T need. No "ums", no waiting, no fluff!
+
+
+TAKEAWAY:
+
+- After this course you will be confident to design and develop new projects with Unity and MVC
+
+
+INCLUDED SECTIONS:
+
+- Course Introduction - Set the vision and goals for the course
+- Unity Overview - Review the popularity and power of Unity as a game engine
+- Software Design - Gain insight on the design principles of master software developers
+- Mini MVCS - Dive deep into this light, powerful architectural framework
+- Sample Projects - Together we'll review 4 complete Unity projects
+- Course Conclusion - Review the highlights, celebrate success, and set clear next steps
+- EXTRA Content - With the foundation of MVC architecture, we'll add the power of Unit Testing and TDD
+
+
+WHY WAIT?
+
+- Avoid the common pitfalls with creating, maintaining, and scaling Unity projects
+- You can't afford NOT to use Unit Testing and Test-Driven development on your projects
+- Let's do this!
+
+
+# RMC Frameworks
 
 Rivello Multimedia Consulting has multiple frameworks for MVC in Unity.
 
@@ -13,76 +60,16 @@ Rivello Multimedia Consulting has multiple frameworks for MVC in Unity.
 | uMVCS           | ✔️                      | ✔️ (Light)         | [rmc-umvcs](https://github.com/SamuelAsherRivello/rmc-umvcs/)   | 2018       | 2023       |
 | Mini MVCS       | ❌                       | ✔️ (Even Lighter!)  | See Below    | 2023   | 2023   |
 
-# Mini MVCS 
-
-The Mini MVCS library for Unity is a custom framework embracing the [MVCS architecture](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller).
-
-MVCS is one of many solutions for organizing a Unity projec efficiently. It may or may not be the best solution for you.
-
-## Mini MVCS Is Light
-
-The Mini MVCS library is a **non-MonoBehaviour** solution for MVCS architecture within Unity. It has no dependencies on Unity libraries nor 3rd party libraries.
-
-## Mini Is Free
-
-The Mini MVCS library for Unity Development is free. Created by Rivello Multimedia Consulting.
-
-## Mini Is Simple & Proven
-
-<img width="200" src="./Documentation~/simplicity-chart.jpg"/>
 
 
-## Mini is Flexible
+# RMC Mini MVCS
 
-It has few classes and a flexible pattern. Following the conventions of MVCS requires discipline as the system is purposefully light and flexible. For example the a model instance **can** access another model instance, but it is recommended not to do so.
+Mini MVCS is a custom Unity library framework embracing the [MVCS architecture](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller).
 
-## Mini Best Practices
+- One of many solutions for organizing a Unity project efficiently. It may or may not be the best solution for you.
+- Features few classes and a flexible pattern. Following the conventions of MVCS requires discipline as the system is purposefully light and flexible. For example the a model instance can access another model instance, but it is recommended not to do so.
+- A library has no requirement on **non-MonoBehaviour**. Using MonoBehaviours is optional.
 
-### Communication
-
-Mini is flexible and does not prevent actor-actor communication. However, best practices are to limit communication.
-
-**Communication Channels**
-
-* Methods - The caller scope has a reference to the called scope and "calls a method" in the typical sense. This is the most coupled communication channel
-* Events - [Observer pattern](https://www.dofactory.com/net/observer-design-pattern) where the reciever **has** a reference to the sender
-* Commands - [Observer pattern](https://www.dofactory.com/net/observer-design-pattern) where the reciever **has no** reference to the sender. This is the least coupled communication channel
-
-**Communication Suggestions**
-
-| --              | To Model     | To View                 | To Controller | To Service     |
-|-----------------|--------------|-------------------------|---------------|----------------|
-| From Model      | ❌           | ❌                     | ✔️(Events)    | ❌           |
-| From View       | ❌           | ❌                     | ✔️(Events)    | ❌           |
-| From Controller | ✔️(Methods)  | ✔️(Methods/Commands)  | ✔️(Commands)  | ✔️(Methods)  |
-| From Service    | ❌           | ❌                    | ✔️(Events)    | ❌           |
-
-**Communication Diagram**
-
-<img width="700" src="./Documentation~/mvcs_diagram.png"/>
-
-
-## Mini Appropriateness
-
-MVCS is one of many solutions for organizing a Unity projec efficiently. It may or may not be the best solution for you.
-
-
-| MVCS Pros                         | MVCS Cons     |
-|-----------------------------------|---------------|
-| Code is highly maintainable       | Code is highly repetitive                                   | 
-| Code is highly extensible         | Project navigation requires more time                       | 
-| Faster to update an existing project    | Slower To start a new project                         | 
-| Adding a new feature is prescriptive          | Adding a new feature may require more classes     | 
-| Faster learning curve to onboard veterans     | Slower learning curve to onboard newbies          | 
-| Suggested for projects of medium/large scope  | Not Suggested for projects of small scope         | 
-| Model is highly testable (TDD)                |                                                  | 
-| Coding invites less debate                   | Coding requires more discipline                  | 
-
-**Appropriateness For Games**
-
-For projects where runtime optimization is essential, coding directly (without MVCS), may yield better performance.
-
-However, that is likely a subsection of a game. The rest of the game may still benefit from MVCS. There is indeed flexibility for such a hybrid solution.
 
 
 # Table Of Contents
