@@ -1,8 +1,3 @@
-[![npm package](https://img.shields.io/npm/v/com.rmc.rmc-mini-mvcs)](https://www.npmjs.com/package/com.rmc.rmc-mini-mvcs)
-[![openupm](https://img.shields.io/npm/v/com.rmc.rmc-mini-mvcs?label=openupm&registry_uri=https://package.openupm.com)](https://openupm.com/packages/com.rmc.rmc-mini-mvcs/)
-![Tests](https://github.com/SamuelAsherRivello/rmc-mini-mvcs/workflows/Tests/badge.svg)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-
 # MVC Architecture For Unity - Udemy Course
 
 Welcome to MVC Architecture For Unity!
@@ -13,12 +8,12 @@ The course gives you the training to create and maintain Unity projects which ar
 
 COURSE TRAILER VIDEO:
 
-<a href="https://bit.ly/mvc-architecture-for-unity-trailer"><img src="https://img.youtube.com/vi/ulclbvLL9A4/hqdefault.jpg" width = "350"></a>
+<a target="_blank" href="https://bit.ly/mvc-architecture-for-unity-trailer"><img src="https://img.youtube.com/vi/ulclbvLL9A4/hqdefault.jpg" width = "350"></a>
 
 
 COURSE LINK:
 
-- https://bit.ly/mvc-architecture-for-unity-on-udemy
+- <a target="_blank" href="https://bit.ly/mvc-architecture-for-unity-on-udemy">https://bit.ly/mvc-architecture-for-unity-on-udemy</a>
 
 
 FEATURES:
