@@ -974,17 +974,6 @@ Transform:
   m_Father: {fileID: 1710864715}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1092885054 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2233381469286822555, guid: 85387cc62543f664194fc43264bcb903, type: 3}
-  m_PrefabInstance: {fileID: 2233381470379174053}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 506166d851f866547998b41e09616920, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1176943356
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1256,7 +1245,7 @@ GameObject:
   - component: {fileID: 1441739895}
   - component: {fileID: 1441739894}
   m_Layer: 0
-  m_Name: RollABallMiniMvcs
+  m_Name: RollABallMiniExample
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1276,7 +1265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inputView: {fileID: 1271553944}
   _playerView: {fileID: 7703439}
-  _uiView: {fileID: 1092885054}
+  _uiView: {fileID: 2233381470379174054}
 --- !u!4 &1441739895
 Transform:
   m_ObjectHideFlags: 0
@@ -2084,6 +2073,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85387cc62543f664194fc43264bcb903, type: 3}
+--- !u!114 &2233381470379174054 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -4010617145512335376, guid: 85387cc62543f664194fc43264bcb903, type: 3}
+  m_PrefabInstance: {fileID: 2233381470379174053}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 506166d851f866547998b41e09616920, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8079388550664697037
 PrefabInstance:
   m_ObjectHideFlags: 0
