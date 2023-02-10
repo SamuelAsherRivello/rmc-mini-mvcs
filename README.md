@@ -1,4 +1,27 @@
-# MVC Architecture For Unity - Udemy Course
+# RMC Frameworks
+
+Rivello Multimedia Consulting has multiple frameworks for MVC in Unity.
+
+
+| --              | Requires MonoBehaviour?  | Lightweight?       | More Info    | Created    | Updated    |
+|-----------------|--------------------------|--------------------|--------------|------------|------------|
+| uMVCS           | ✔️                      | ✔️ (Light)         | [rmc-umvcs](https://github.com/SamuelAsherRivello/rmc-umvcs/)   | 2018       | 2023       |
+| Mini MVCS       | ❌                       | ✔️ (Even Lighter!)  | See Below    | 2023   | 2023   |
+
+
+
+# RMC Mini MVCS
+
+Mini MVCS is a custom Unity library framework embracing the [MVCS architecture](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller).
+
+- One of many solutions for organizing a Unity project efficiently. It may or may not be the best solution for you.
+- Features few classes and a flexible pattern. Following the conventions of MVCS requires discipline as the system is purposefully light and flexible. For example the a model instance can access another model instance, but it is recommended not to do so.
+- A library has no requirement on **non-MonoBehaviour**. Using MonoBehaviours is optional.
+
+
+
+
+## MVC Architecture For Unity - Udemy Course
 
 Welcome to MVC Architecture For Unity!
 
@@ -43,28 +66,6 @@ WHY WAIT?
 - Avoid the common pitfalls with creating, maintaining, and scaling Unity projects
 - You can't afford NOT to use Unit Testing and Test-Driven development on your projects
 - Let's do this!
-
-
-# RMC Frameworks
-
-Rivello Multimedia Consulting has multiple frameworks for MVC in Unity.
-
-
-| --              | Requires MonoBehaviour?  | Lightweight?       | More Info    | Created    | Updated    |
-|-----------------|--------------------------|--------------------|--------------|------------|------------|
-| uMVCS           | ✔️                      | ✔️ (Light)         | [rmc-umvcs](https://github.com/SamuelAsherRivello/rmc-umvcs/)   | 2018       | 2023       |
-| Mini MVCS       | ❌                       | ✔️ (Even Lighter!)  | See Below    | 2023   | 2023   |
-
-
-
-# RMC Mini MVCS
-
-Mini MVCS is a custom Unity library framework embracing the [MVCS architecture](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller).
-
-- One of many solutions for organizing a Unity project efficiently. It may or may not be the best solution for you.
-- Features few classes and a flexible pattern. Following the conventions of MVCS requires discipline as the system is purposefully light and flexible. For example the a model instance can access another model instance, but it is recommended not to do so.
-- A library has no requirement on **non-MonoBehaviour**. Using MonoBehaviours is optional.
-
 
 
 # Table Of Contents
