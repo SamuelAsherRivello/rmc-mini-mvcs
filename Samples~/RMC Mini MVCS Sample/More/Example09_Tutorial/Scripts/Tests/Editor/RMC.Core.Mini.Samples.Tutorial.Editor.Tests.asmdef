@@ -2,7 +2,7 @@
     "name": "RMC.Core.Mini.Samples.Tutorial.Editor.Tests",
     "rootNamespace": "",
     "references": [
-        "GUID:3c6593c28c2372441b571cb6cf7abfb4"
+        "GUID:3a8268190f9a6de42a50d37b69601624"
     ],
     "includePlatforms": [
         "Editor"

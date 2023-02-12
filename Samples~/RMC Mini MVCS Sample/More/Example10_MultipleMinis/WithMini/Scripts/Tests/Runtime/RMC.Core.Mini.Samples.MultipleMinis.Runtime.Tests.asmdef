@@ -1,10 +1,11 @@
 {
-    "name": "RMC.Core.Mini.Samples.Tutorial.Runtime.Tests",
+    "name": "RMC.Core.Mini.Samples.MultipleMinis.Runtime.Tests",
     "rootNamespace": "",
     "references": [
         "GUID:27619889b8ba8c24980f49ee34dbb44a",
         "GUID:0acc523941302664db1f4e527237feb3",
-        "GUID:3a8268190f9a6de42a50d37b69601624"
+        "GUID:4245cf09d0036f34e8bb2477b3fed3c2",
+        "GUID:35f261089a2efb44e981edcc3e3d86d9"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
@@ -13,7 +14,7 @@
     "precompiledReferences": [
         "nunit.framework.dll"
     ],
-    "autoReferenced": true,
+    "autoReferenced": false,
     "defineConstraints": [
         "UNITY_INCLUDE_TESTS"
     ],
