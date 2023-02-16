@@ -29,9 +29,9 @@
   },
   "samples": [
     {
-      "displayName": "RMC Mini MVCS Sample",
-      "description": "Demonstrates the RMC Mini MVCS",
-      "path": "Samples~/RMC Mini MVCS Sample"
+      "displayName": "RMC Mini MVCS Examples",
+      "description": "RMC Mini MVCS Examples for education and inspiration of proper usage.",
+      "path": "Samples~/RMC Mini MVCS Examples"
     }
   ]
 }
