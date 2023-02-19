@@ -14,6 +14,9 @@
     "architecture",
     "utility"
   ],
+  "dependencies": {
+    "com.unity.learn.iet-framework": "3.1.3"
+  },
   "homepage": "https://github.com/rmc/rmc-mini-mvcs.git",
   "bugs": {
     "url": "https://github.com/rmc/rmc-mini-mvcs/issues"

@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89305aa391d1c5141bbe1628d930a2c5, type: 3}
+  m_Name: Mini MVCS - Tutorial Container
+  m_EditorClassIdentifier: 
+  Modified:
+    m_PersistentCalls:
+      m_Calls: []
+  ParentContainer: {fileID: 0}
+  OrderInView: 0
+  BackgroundImage: {fileID: 2800000, guid: c1cb91c6b816ceb4d97f498dcb391edb, type: 3}
+  Title:
+    m_Untranslated: 'Mini MVCS '
+  Subtitle:
+    m_Untranslated: Architecture For Unity
+  Description:
+    m_Untranslated: 
+  ProjectLayout: {fileID: 102900000, guid: 1f0cb128b44a6dd4faddac4aed629f79, type: 3}
+  Sections:
+  - OrderInView: 0
+    Heading:
+      m_Untranslated: 01 - ClockMini
+    Text:
+      m_Untranslated: <i>Beginner</i><BR><BR>Demonstrates M,C,S with <b>no View</b>
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: d423b599c7ce1c5409fd825340fed53b, type: 3}
+    Tutorial: {fileID: 11400000, guid: 4ad82803fdce985489a4e51d85f229e8, type: 2}
+  - OrderInView: 1
+    Heading:
+      m_Untranslated: 02 - LoginMini
+    Text:
+      m_Untranslated: <i>Intermediate</i><BR><BR>Demonstrates <b>one each</b> of
+        M,V,C,S
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: aabbec2f71f5106428a2e67f834015ad, type: 3}
+    Tutorial: {fileID: 11400000, guid: 85e8caf3fbfb8f14895aab5ba7f13593, type: 2}
+  - OrderInView: 2
+    Heading:
+      m_Untranslated: 03 - RollABallMini
+    Text:
+      m_Untranslated: <i>Advanced</i><BR><BR>Demonstrates <b>multiple each</b> of
+        M,V,C,S
+    Metadata: 
+    Url: 
+    Image: {fileID: 2800000, guid: adee30143552eed4191a9290004dbca9, type: 3}
+    Tutorial: {fileID: 11400000, guid: f7fc6a615fbb9f144880da4efd0598c6, type: 2}
+  - OrderInView: 3
+    Heading:
+      m_Untranslated: MVC Architecture For Unity
+    Text:
+      m_Untranslated: Official Udemy Course
+    Metadata: 
+    Url: https://bit.ly/mvc-architecture-for-unity-on-udemy
+    Image: {fileID: 2800000, guid: caa22bb026fa84979ba1be2779739367, type: 3}
+    Tutorial: {fileID: 0}
+  - OrderInView: 4
+    Heading:
+      m_Untranslated: RMC Mini MVCS
+    Text:
+      m_Untranslated: Official GitHub Repository
+    Metadata: 
+    Url: https://github.com/SamuelAsherRivello/rmc-mini-mvcs/
+    Image: {fileID: 2800000, guid: caa22bb026fa84979ba1be2779739367, type: 3}
+    Tutorial: {fileID: 0}
