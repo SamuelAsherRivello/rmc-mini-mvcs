@@ -1,7 +1,7 @@
 {
   "name": "com.rmc.rmc-mini-mvcs",
   "displayName": "RMC Mini MVCS",
-  "version": "1.0.2",
+  "version": "1.2.5",
   "unity": "2021.3",
   "description": "Mini MVCS (Model View Controller Service) library for Unity Development by Rivello Multimedia Consulting",
   "keywords": [
@@ -34,7 +34,7 @@
     {
       "displayName": "RMC Mini MVCS Examples",
       "description": "RMC Mini MVCS Examples for education and inspiration of proper usage.",
-      "path": "Samples~/RMC Mini MVCS Examples"
+      "path": "RMC Mini MVCS/Samples~/RMC Mini MVCS Examples"
     }
   ]
 }
