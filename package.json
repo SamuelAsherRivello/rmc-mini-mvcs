@@ -17,13 +17,13 @@
   "dependencies": {
     "com.unity.learn.iet-framework": "3.1.3"
   },
-  "homepage": "https://github.com/rmc/rmc-mini-mvcs.git",
+  "homepage": "https://github.com/SamuelAsherRivello/rmc-mini-mvcs.git",
   "bugs": {
-    "url": "https://github.com/rmc/rmc-mini-mvcs/issues"
+    "url": "https://github.com/SamuelAsherRivello/rmc-mini-mvcs/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/rmc/rmc-mini-mvcs.git"
+    "url": "git+ssh://git@github.com/SamuelAsherRivello/rmc-mini-mvcs.git"
   },
   "license": "MIT",
   "author": "RMC (github.com/SamuelAsherRivello)",
