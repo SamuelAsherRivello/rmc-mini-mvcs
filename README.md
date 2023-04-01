@@ -19,7 +19,7 @@ Mini MVCS is a custom Unity library framework embracing the [MVCS architecture](
 
 - One of many solutions for organizing a Unity project efficiently. It may or may not be the best solution for you.
 - Features few classes and a flexible pattern. Following the conventions of MVCS requires discipline as the system is purposefully light and flexible. For example the a model instance can access another model instance, but it is recommended not to do so.
-- The ibrary has no requirement on **MonoBehaviour**. Using MonoBehaviours is optional.
+- The library has no requirement on **MonoBehaviour**. Using MonoBehaviours is optional.
 
 Enjoy!
 
