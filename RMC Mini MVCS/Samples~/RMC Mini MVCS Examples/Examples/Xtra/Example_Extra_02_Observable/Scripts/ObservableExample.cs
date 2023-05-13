@@ -14,6 +14,7 @@ namespace RMC.IntroToUnity.Examples
         {
             Status.OnValueChanged.AddListener(Status_OnValueChanged);
 
+            Debug.Log($"This Scene has no UI. It has only console logging.");
             Status.Value = "Hello World!";
         }
 

@@ -16,7 +16,7 @@ namespace RMC.IntroToUnity.Samples.Tutorial
     /// a user tutorial experience 'on top' of a system
     /// without the system knowing.
     /// </summary>
-    public class TutorialExample: MonoBehaviour
+    public class TutorialMiniExample: MonoBehaviour
     {
 
         //Mini does NOT require any MonoBehaviours ...
