@@ -1,6 +1,0 @@
-Source Url: 
-* https://assetstore.unity.com/packages/2d/characters/2000-faces-139263
-
-Changelog: 
-* (Maybe) remove some unneeded files
-* Moved to \Assets\...\3rdParty
