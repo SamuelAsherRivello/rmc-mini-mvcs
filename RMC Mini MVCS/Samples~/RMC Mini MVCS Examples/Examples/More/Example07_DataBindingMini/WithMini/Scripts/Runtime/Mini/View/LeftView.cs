@@ -44,14 +44,11 @@ namespace RMC.Core.Architectures.Mini.Samples.DataBindingMini.WithMini.Mini.View
                 
                 // Binding - If Model Changes...
                 dataBindingMiniModel.Message.OnValueChanged.AddListener(
-                    Message_OnValueChanged);
+                    Message_OnValueChanged, true);
                 
                 // Binding - If View Changes...
                 _inputField.onValueChanged.AddListener(
                     InputField_OnValueChanged);
-                
-                // Binding - Refresh
-                dataBindingMiniModel.Message.OnValueChangedRefresh();
             }
         }
 
