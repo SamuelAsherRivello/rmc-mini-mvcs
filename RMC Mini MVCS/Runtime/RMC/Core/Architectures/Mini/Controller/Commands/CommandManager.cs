@@ -21,8 +21,6 @@ namespace RMC.Core.Architectures.Mini.Controller.Commands
 	public class CommandManager : ICommandManager
 	{
 		//  Properties ------------------------------------
-		public int InvokeDelegateLookupCount { get { return _invokeCommandDelegatesLookup.Count; } }
-		public int UndoDelegateLookupCount { get { return _undoCommandDelegatesLookup.Count; } }
 		
 		//  Fields ----------------------------------------
 		private IContext _context;
