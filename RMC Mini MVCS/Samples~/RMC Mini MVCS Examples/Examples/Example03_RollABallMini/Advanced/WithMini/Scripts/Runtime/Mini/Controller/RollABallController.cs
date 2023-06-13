@@ -101,31 +101,33 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Controller
 
 
         //  Event Handlers --------------------------------
-        private void UIView_OnRestart(DialogView dialogViewPrefab)
+        private void UIView_OnRestart()
         {
             //Pause
             _model.IsGamePaused.Value = true;
             
             // Show Prompt
-            DialogView dialogView = GameObject.Instantiate(dialogViewPrefab);
-            dialogView.Initialize(Context);
+            _uiView.DialogView.IsVisible = true;
             
-            dialogView.OnCancel.AddListener(() =>
+            _uiView.DialogView.OnCancel.AddListener(() =>
             {
-                GameObject.Destroy(dialogView.gameObject);
+                _uiView.DialogView.IsVisible = false;
                 
-                //Unpause
+                // Unpause
                 _model.IsGamePaused.Value = false;
                 
             });
             
-            dialogView.OnConfirm.AddListener(() =>
+            _uiView.DialogView.OnConfirm.AddListener(() =>
             {
-                GameObject.Destroy(dialogView.gameObject);
-                SceneManager.LoadScene("RollABallWithMiniExample");
-                
-                //Unpause
+                _uiView.DialogView.IsVisible = false;
+          
+                // Unpause
                 _model.IsGamePaused.Value = false;
+                
+                // Reload
+                SceneManager.LoadScene("RollABallWithMiniExample");
+
             });
         }
         

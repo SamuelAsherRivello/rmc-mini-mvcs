@@ -3,42 +3,76 @@ using RMC.Core.Architectures.Mini.Context;
 using RMC.Core.Architectures.Mini.View;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.View
 {
     //  Namespace Properties ------------------------------
-    public class ConfirmUnityEvent : UnityEvent {}
-    public class CancelUnityEvent : UnityEvent {}
     
     //  Class Attributes ----------------------------------
 
     /// <summary>
     /// The View handles user interface and user input
     /// </summary>
-    public class DialogView: MonoBehaviour, IView
+    public class DialogView: IView
     {
         //  Events ----------------------------------------
         [HideInInspector] 
-        public readonly CancelUnityEvent OnCancel = new CancelUnityEvent();
+        public readonly UnityEvent OnCancel = new UnityEvent();
         
         [HideInInspector] 
-        public readonly ConfirmUnityEvent OnConfirm = new ConfirmUnityEvent();
+        public readonly UnityEvent OnConfirm = new UnityEvent();
     
         //  Properties ------------------------------------
         public bool IsInitialized { get { return _isInitialized;} }
         public IContext Context { get { return _context;} }
+        public Label BodyLabel { get { return _bodyLabel;} }
+        public Button CancelButton { get { return _cancelButton;} }
+        public Button ConfirmButton { get { return _confirmButton;} }
+        
+        public bool IsVisible
+        {
+            get
+            {
+                return _dialogView.style.visibility.value == Visibility.Visible;
+            }
+            set
+            {
+                if (value)
+                {
+                    _dialogView.style.visibility = Visibility.Visible;
+                }
+                else
+                {
+                    _dialogView.style.visibility = Visibility.Hidden;
+                }
+             
+            }
+        }
         
         //  Fields ----------------------------------------
         private bool _isInitialized = false;
         private IContext _context;
         
-        [SerializeField] private Text _bodyText;
-        [SerializeField] private Button _cancelButton;
-        [SerializeField] private Button _confirmButton;
+        // Passed in
+        private VisualElement _dialogView;
+        
+        // Queried
+        private Label _bodyLabel;
+        private Button _cancelButton;
+        private Button _confirmButton;
         
         
         //  Initialization  -------------------------------
+        public DialogView(VisualElement dialogView)
+        {
+            _dialogView = dialogView;
+            _bodyLabel = dialogView.Q<Label>("BodyLabel");
+            _cancelButton = dialogView.Q<Button>("CancelButton");
+            _confirmButton = dialogView.Q<Button>("ConfirmButton");
+        }
+        
+        
         public void Initialize(IContext context)
         {
             if (!IsInitialized)
@@ -46,9 +80,8 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.View
                 _isInitialized = true;
                 _context = context;
                 
-                //
-                _cancelButton.onClick.AddListener(CancelButton_OnClicked);
-                _confirmButton.onClick.AddListener(ConfirmButton_OnClicked);
+                _cancelButton.clicked += CancelButton_OnClicked;
+                _confirmButton.clicked += ConfirmButton_OnClicked;
             }
         }
 
@@ -78,7 +111,5 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.View
         {
            OnConfirm.Invoke();
         }
-        
-
     }
 }
