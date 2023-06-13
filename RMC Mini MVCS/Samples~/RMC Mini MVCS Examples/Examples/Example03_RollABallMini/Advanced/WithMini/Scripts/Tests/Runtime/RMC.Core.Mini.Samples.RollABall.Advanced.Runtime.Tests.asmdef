@@ -1,5 +1,5 @@
 {
-    "name": "RMC.Core.Mini.Samples.RollABall.Simple.Runtime.Tests",
+    "name": "RMC.Core.Mini.Samples.RollABall.Advanced.Runtime.Tests",
     "rootNamespace": "",
     "references": [
         "GUID:27619889b8ba8c24980f49ee34dbb44a",
