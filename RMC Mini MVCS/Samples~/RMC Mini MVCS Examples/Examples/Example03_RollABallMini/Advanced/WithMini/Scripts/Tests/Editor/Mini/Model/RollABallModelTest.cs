@@ -58,11 +58,13 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Model
                 _prefabManagerForTesting.LoadAndInstantiate<InputView>("Prefabs/InputView");
             PlayerView playerView = 
                 _prefabManagerForTesting.LoadAndInstantiate<PlayerView>("Prefabs/PlayerView");
+            PickupsView pickupsView = 
+                _prefabManagerForTesting.LoadAndInstantiate<PickupsView>("Prefabs/PickupsView");
             UIView uiView = 
                 _prefabManagerForTesting.LoadAndInstantiate<UIView>("Prefabs/UIView");
             
             RollABallMini rollABallMini = 
-                MockRollABallMini.CreateRollABallMini(inputView, playerView, uiView);
+                MockRollABallMini.CreateRollABallMini(inputView, playerView, pickupsView, uiView);
          
             // Act
             rollABallMini.Initialize();
@@ -79,17 +81,19 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Model
                 _prefabManagerForTesting.LoadAndInstantiate<InputView>("Prefabs/InputView");
             PlayerView playerView = 
                 _prefabManagerForTesting.LoadAndInstantiate<PlayerView>("Prefabs/PlayerView");
+            PickupsView pickupsView = 
+                _prefabManagerForTesting.LoadAndInstantiate<PickupsView>("Prefabs/PickupsView");
             UIView uiView = 
                 _prefabManagerForTesting.LoadAndInstantiate<UIView>("Prefabs/UIView");
             
             RollABallMini rollABallMini = 
-                MockRollABallMini.CreateRollABallMini(inputView, playerView, uiView);
+                MockRollABallMini.CreateRollABallMini(inputView, playerView, pickupsView, uiView);
          
             // Act
             rollABallMini.Initialize();
             GameObject go = new GameObject();
-            PickupComponent pickupComponent = go.AddComponent<PickupComponent>();
-            rollABallMini.RollABallController.PlayerView_OnPickup(pickupComponent);
+            Pickup pickup = go.AddComponent<Pickup>();
+            rollABallMini.RollABallController.PlayerView_OnPickup(pickup);
             
             // Assert
             Assert.That(rollABallMini.RollABallModel.Score.Value, Is.EqualTo(1));
@@ -105,11 +109,13 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Model
                 _prefabManagerForTesting.LoadAndInstantiate<InputView>("Prefabs/InputView");
             PlayerView playerView = 
                 _prefabManagerForTesting.LoadAndInstantiate<PlayerView>("Prefabs/PlayerView");
+            PickupsView pickupsView = 
+                _prefabManagerForTesting.LoadAndInstantiate<PickupsView>("Prefabs/PickupsView");
             UIView uiView = 
                 _prefabManagerForTesting.LoadAndInstantiate<UIView>("Prefabs/UIView");
             
             RollABallMini rollABallMini = 
-                MockRollABallMini.CreateRollABallMini(inputView, playerView, uiView);
+                MockRollABallMini.CreateRollABallMini(inputView, playerView, pickupsView, uiView);
          
             // Act
             rollABallMini.Initialize();
@@ -126,19 +132,21 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Model
                 _prefabManagerForTesting.LoadAndInstantiate<InputView>("Prefabs/InputView");
             PlayerView playerView = 
                 _prefabManagerForTesting.LoadAndInstantiate<PlayerView>("Prefabs/PlayerView");
+            PickupsView pickupsView = 
+                _prefabManagerForTesting.LoadAndInstantiate<PickupsView>("Prefabs/PickupsView");
             UIView uiView = 
                 _prefabManagerForTesting.LoadAndInstantiate<UIView>("Prefabs/UIView");
             
             RollABallMini rollABallMini = 
-                MockRollABallMini.CreateRollABallMini(inputView, playerView, uiView);
+                MockRollABallMini.CreateRollABallMini(inputView, playerView, pickupsView, uiView);
          
             // Act
             rollABallMini.Initialize();
             GameObject go = new GameObject();
-            PickupComponent pickupComponent = go.AddComponent<PickupComponent>();
-            rollABallMini.RollABallController.PlayerView_OnPickup(pickupComponent);
-            rollABallMini.RollABallController.PlayerView_OnPickup(pickupComponent);
-            rollABallMini.RollABallController.PlayerView_OnPickup(pickupComponent);
+            Pickup pickup = go.AddComponent<Pickup>();
+            rollABallMini.RollABallController.PlayerView_OnPickup(pickup);
+            rollABallMini.RollABallController.PlayerView_OnPickup(pickup);
+            rollABallMini.RollABallController.PlayerView_OnPickup(pickup);
             
             // Assert
             Assert.That(rollABallMini.RollABallModel.IsGameOver.Value, Is.True);

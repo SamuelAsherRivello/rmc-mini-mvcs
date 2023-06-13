@@ -27,6 +27,10 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini
         private PlayerView _playerView;
 
         [SerializeField] 
+        private PickupsView _pickupsView;
+
+        
+        [SerializeField] 
         private UIView _uiView;
 
         
@@ -34,7 +38,7 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini
         protected void Start()
         {
             RollABallMini rollABallMini = 
-                new RollABallMini(_inputView, _playerView, _uiView);
+                new RollABallMini(_inputView, _playerView, _pickupsView, _uiView);
             
             rollABallMini.Initialize();
         }

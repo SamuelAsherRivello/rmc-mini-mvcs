@@ -44,6 +44,7 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini
         //View
         private InputView _inputView;
         private PlayerView _playerView;
+        private PickupsView _pickupsView;
         private UIView _uiView;
         
         //Controller
@@ -55,10 +56,14 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini
 
 
         //  Initialization  -------------------------------
-        public RollABallMini(InputView inputView, PlayerView playerView, UIView uiView)
+        public RollABallMini(InputView inputView, 
+            PlayerView playerView, 
+            PickupsView pickupsView, 
+            UIView uiView)
         {
             _inputView = inputView;
             _playerView = playerView;
+            _pickupsView = pickupsView;
             _uiView = uiView;
         }
         
@@ -84,6 +89,7 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini
                     _rollABallModel, 
                     _inputView, 
                     _playerView, 
+                    _pickupsView,
                     _uiView, 
                     _rollABallService);
             
@@ -93,6 +99,7 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini
                 //View
                 _inputView.Initialize(_context);
                 _playerView.Initialize(_context);
+                _pickupsView.Initialize(_context);
                 _uiView.Initialize(_context);
                 
                 //Service

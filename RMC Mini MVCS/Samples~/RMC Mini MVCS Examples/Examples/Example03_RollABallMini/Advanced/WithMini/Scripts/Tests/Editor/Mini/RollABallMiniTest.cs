@@ -34,6 +34,8 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini
                 _prefabManagerForTesting.LoadAndInstantiate<InputView>("Prefabs/InputView");
             PlayerView playerView = 
                 _prefabManagerForTesting.LoadAndInstantiate<PlayerView>("Prefabs/PlayerView");
+            PickupsView pickupsView = 
+                _prefabManagerForTesting.LoadAndInstantiate<PickupsView>("Prefabs/PickupsView");
             UIView uiView = 
                 _prefabManagerForTesting.LoadAndInstantiate<UIView>("Prefabs/UIView");
             
@@ -42,7 +44,7 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini
             {
                 // Assert
                 RollABallMini rollABallMini = 
-                    MockRollABallMini.CreateRollABallMini(inputView, playerView, uiView);
+                    MockRollABallMini.CreateRollABallMini(inputView, playerView, pickupsView, uiView);
             });
         }
     }

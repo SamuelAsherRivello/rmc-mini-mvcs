@@ -40,12 +40,16 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Controller
                 _prefabManagerForTesting.LoadAndInstantiate<PlayerView>("Prefabs/PlayerView");
             Assert.NotNull(playerView);
             
+            PickupsView pickupsView = 
+                _prefabManagerForTesting.LoadAndInstantiate<PickupsView>("Prefabs/PickupsView");
+            Assert.NotNull(playerView);
+            
             UIView uiView = 
                 _prefabManagerForTesting.LoadAndInstantiate<UIView>("Prefabs/UIView");
             Assert.NotNull(uiView);
             
             RollABallMini rollABallMini = 
-                MockRollABallMini.CreateRollABallMini(inputView, playerView, uiView);
+                MockRollABallMini.CreateRollABallMini(inputView, playerView, pickupsView, uiView);
          
             rollABallMini.Initialize();
             int score = 0;

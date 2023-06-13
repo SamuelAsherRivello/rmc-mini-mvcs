@@ -70,8 +70,8 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.View
             
             // Act
             playerView.Initialize(context);
-            PickupComponent pickupComponent = 
-                _prefabManagerForTesting.LoadAndInstantiate<PickupComponent>("Prefabs/PickupComponent");
+            Pickup pickup = 
+                _prefabManagerForTesting.LoadAndInstantiate<Pickup>("Prefabs/Pickup");
             
             // Await
             yield return _prefabManagerForTesting.WaitForUnityLifeCycle();

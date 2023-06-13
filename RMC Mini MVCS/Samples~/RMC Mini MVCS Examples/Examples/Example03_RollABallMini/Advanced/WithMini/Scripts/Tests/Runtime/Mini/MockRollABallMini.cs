@@ -8,11 +8,13 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini
     /// </summary>
     public class MockRollABallMini
     {
-        public static RollABallMini CreateRollABallMini(InputView inputView, PlayerView playerView,
+        public static RollABallMini CreateRollABallMini(InputView inputView, 
+            PlayerView playerView,
+            PickupsView pickupsView,
             UIView uiView)
         {
                 
-            RollABallMini rollABallMini = new RollABallMini(inputView, playerView, uiView);
+            RollABallMini rollABallMini = new RollABallMini(inputView, playerView, pickupsView, uiView);
             return rollABallMini;
         }
     }

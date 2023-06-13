@@ -40,6 +40,7 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Controller
         //View
         private PlayerView _playerView;
         private UIView _uiView;
+        private PickupsView _pickupsView;
         private InputView _inputView;
         
         //Controller
@@ -53,12 +54,14 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Controller
             RollABallModel model, 
             InputView inputView, 
             PlayerView playerView, 
+            PickupsView pickupsView, 
             UIView uiView, 
             RollABallService service)
         {
             _model = model;
             _inputView = inputView;
             _playerView = playerView;
+            _pickupsView = pickupsView;
             _uiView = uiView;
             _service = service;
         }
@@ -74,6 +77,8 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Controller
                 _model.Score.OnValueChanged.AddListener(Model_Score_OnValueChanged);
                 _model.ScoreMax.OnValueChanged.AddListener(Model_ScoreMax_OnValueChanged);
                 _model.StatusText.OnValueChanged.AddListener(Model_StatusText_OnValueChanged);
+                _model.IsGameOver.OnValueChanged.AddListener(Model_IsGameOver_OnValueChanged);
+                _model.IsGamePaused.OnValueChanged.AddListener(Model_IsGamePaused_OnValueChanged);
                 _model.StatusText.Value = "Loading...";
                 
                 //View
@@ -88,6 +93,8 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Controller
         }
 
 
+
+
         public void RequireIsInitialized()
         {
             if (!_isInitialized)
@@ -98,7 +105,12 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Controller
         
         
         //  Methods ---------------------------------------
-
+        private void CheckIfRunning()
+        {
+            bool isRunning = !_model.IsGameOver.Value && !_model.IsGamePaused.Value;
+            _playerView.CanMove = isRunning;
+            _pickupsView.CanMove = isRunning;
+        }
 
         //  Event Handlers --------------------------------
         private void UIView_OnRestart()
@@ -153,7 +165,7 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Controller
             Context.CommandManager.InvokeCommand(new InputCommand(input));
         }
         
-        public void PlayerView_OnPickup(PickupComponent pickupComponent)
+        public void PlayerView_OnPickup(Pickup pickup)
         {
             RequireIsInitialized();
 
@@ -162,7 +174,7 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Controller
                 return;
             }
             
-            pickupComponent.gameObject.SetActive (false);
+            pickup.gameObject.SetActive (false);
             
             Context.CommandManager.InvokeCommand(
                 new PlayAudioClipCommand("AudioClips/Bounce01"));
@@ -197,5 +209,17 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Controller
             Context.CommandManager.InvokeCommand(
                 new StatusChangedCommand(currentValue));
         }
+        
+        private void Model_IsGamePaused_OnValueChanged(bool previousValue, bool currentValue)
+        {
+            CheckIfRunning();
+        }
+
+        private void Model_IsGameOver_OnValueChanged(bool previousValue, bool currentValue)
+        {
+            CheckIfRunning();
+        }
+
+
     }
 }
