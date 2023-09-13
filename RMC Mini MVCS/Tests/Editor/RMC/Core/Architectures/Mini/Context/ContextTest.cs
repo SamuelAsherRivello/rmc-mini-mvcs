@@ -1,5 +1,5 @@
 using NUnit.Framework;
-using RMC.Core.Architectures.Mini.Context.Experimental;
+using RMC.Core.Experimental;
 
 namespace RMC.Core.Architectures.Mini.Context
 {
