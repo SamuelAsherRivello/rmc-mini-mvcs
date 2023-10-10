@@ -33,11 +33,14 @@ namespace RMC.Core.Architectures.Mini.Context
 			//But *DO* allow 2+ subclasses of T 
 			//And *DO* allow 2+ sibling subclasses of T
 			if (HasItem<IItem>(true) 
-			    && GetItem<IItem>(true).GetType() == item.GetType())
+			    && GetItem<IItem>(true)?.GetType() == item.GetType())
 			{
 				// Allow MAX 0 or 1 instance of T
 				throw new Exception("AddItem() failed. Item already added. Call HasItem<T>() first.");
 			}
+
+			Debug.Log($"1 GetItem<IItem>(true).GetType(): " + GetItem<IItem>(true)?.GetType());
+			Debug.Log("2 item.GetType(): " + item.GetType());
 
 			_items.Add(item);
 			OnAddItemCompleted.Invoke(item);
@@ -56,13 +59,25 @@ namespace RMC.Core.Architectures.Mini.Context
 			if (isStrict)
 			{
 				instance = _items.OfType<SubType>().ToList().FirstOrDefault<SubType>();
-				if (typeof(SubType).IsInterface)
+				
+				//Found something?
+				if (instance != null)
 				{
-					//Here we do NOT match if they are NOT the same type
-					//regardless if they share an interface
-					if (!(instance?.GetType() is SubType))
+					//are both things an interface?
+					if (instance.GetType().IsInterface && typeof(SubType).IsInterface)
 					{
-						instance = default(SubType);
+						Debug.Log("Yes interface");
+						//Here we do NOT match if they are NOT the same type
+						//regardless if they share an interface
+						if (!(instance?.GetType() is SubType))
+						{
+							Debug.Log("clear it!!!");
+							instance = default(SubType);
+						}
+					}
+					else
+					{
+						Debug.Log("NOT not interface");
 					}
 				}
 			}

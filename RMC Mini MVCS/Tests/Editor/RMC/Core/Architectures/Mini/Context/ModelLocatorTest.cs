@@ -165,24 +165,6 @@ namespace RMC.Core.Architectures.Mini.Context
                 modelLocator.AddItem(testModel01a);
             }, "I want this to throw an exception. It does not properly do that yet.");
         }
-
-
-        [Test]
-        public void AddItem_ThrowsNoException_WhenAddItemSameTwiceSameClass()
-        {
-            // Arrange
-            ModelLocator modelLocator = new ModelLocator();
-            TestModel01 testModel01a = new TestModel01();
-            TestModel01 testModel01b = new TestModel01();
-            modelLocator.AddItem(testModel01a);
-  
-            // Assert
-            Assert.DoesNotThrow(() =>
-            {
-                // Act
-                modelLocator.AddItem(testModel01b);
-            });
-        }
         
         [Test]
         public void AddItem_ThrowsNoException_WhenAddItemSameTwiceSameParentClass()

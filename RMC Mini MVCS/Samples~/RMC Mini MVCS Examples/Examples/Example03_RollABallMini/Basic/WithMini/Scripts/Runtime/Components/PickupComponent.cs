@@ -1,5 +1,5 @@
-﻿using RMC.Core.Architectures.Mini.Context.Experimental;
-using RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Model;
+﻿using RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Model;
+using RMC.Core.Experimental;
 using UnityEngine;
 
 namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Components
