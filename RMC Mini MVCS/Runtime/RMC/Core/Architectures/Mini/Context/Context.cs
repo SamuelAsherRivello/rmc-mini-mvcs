@@ -34,24 +34,27 @@ namespace RMC.Core.Architectures.Mini.Context
 
 		
 		//  Initialization  -------------------------------
-		public Context() : base()
+		public Context(string contextKey = "") : base()
 		{
-			// Experimental: This allows any scope, including
-			// non-mini classes, to access any IContext
-			// instance through ContextLocator
-			_contextKey = typeof(IContext).FullName + "_" + Guid.NewGuid();
-			if (!ContextLocator.Instance.HasItem<IContext>(_contextKey))
+			// ContextLocator is Experimental: This allows any scope, including
+			// non-mini classes, to access any Context via ContextLocator.Instance.GetItem<T>();
+			_contextKey = contextKey;
+			if (ContextLocator.Instance.HasItem<Context>(_contextKey))
+			{
+				throw new Exception($"Context with key '{_contextKey}' already exists. Must pass in unique contextKey.");
+			}
+			else
 			{
 				ContextLocator.Instance.AddItem(this, _contextKey);
 			}
+
 		}
 		
 		public override void Dispose()
 		{
-			if (ContextLocator.Instance.HasItem<IContext>(_contextKey))
+			if (ContextLocator.Instance.HasItem<Context>(_contextKey))
 			{
-				ContextLocator.Instance.RemoveItem<IContext>(_contextKey);
-				Debug.Log("Removed : " + _contextKey);
+				ContextLocator.Instance.RemoveItem<Context>(_contextKey);
 			}
 		}
 		   

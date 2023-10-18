@@ -2,6 +2,7 @@ using NUnit.Framework;
 using RMC.Core.Architectures.Mini.Context;
 using RMC.Core.Architectures.Mini.Controller.Commands;
 using RMC.Core.Architectures.Mini.Model;
+using RMC.Core.Experimental;
 
 namespace RMC.Core.Architectures.Mini.Controller
 {
@@ -101,6 +102,15 @@ namespace RMC.Core.Architectures.Mini.Controller
                 Commands.Add(new IncrementCounterExecutableCommand());
                 Commands.Add(new IncrementCounterExecutableCommand());
                 Commands.Add(new IncrementCounterExecutableCommand());
+            }
+        }
+        
+        [TearDown]
+        public void TearDown()
+        {
+            if (ContextLocator.Instance.HasItem<Context.Context>())
+            {
+                ContextLocator.Instance.RemoveItem<Context.Context>();
             }
         }
         

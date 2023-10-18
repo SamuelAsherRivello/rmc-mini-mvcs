@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using UnityEditor;
 using UnityEngine;
 
 namespace RMC.Core.Testing
@@ -17,10 +19,36 @@ namespace RMC.Core.Testing
         {
             Vector3 position = Vector3.zero;
             GameObject prefab = Resources.Load<GameObject>(path);
+
+           
+            if (prefab == null)
+            {
+                throw new Exception($"LoadAndInstantiate() failed. " +
+                                    $"Cannot find prefab at path {path}.");
+            }
+            
             GameObject prefabInstance = GameObject.Instantiate<GameObject>(prefab, position, Quaternion.identity);
             
+            if (prefabInstance == null)
+            {
+                throw new Exception($"LoadAndInstantiate() failed. " +
+                                    $"Cannot find prefabInstance at path {path}.");
+            }
+            
             _gameObjects.Add(prefabInstance);
-            return prefabInstance.GetComponent<T>();
+            
+            T instance = prefabInstance.GetComponent<T>();
+            
+            if (instance == null)
+            {
+#if UNITY_EDITOR
+                path = AssetDatabase.GetAssetPath(prefab); //fuller path
+#endif
+                throw new Exception($"LoadAndInstantiate() failed. " +
+                                    $"Cannot find instance of type {(typeof(T).Name)} at path {path}.");
+            }
+
+            return instance;
         }
         
         /// <summary>
@@ -42,7 +70,7 @@ namespace RMC.Core.Testing
             yield return new WaitForEndOfFrame();
             
             // 5. Wait EXTRA - sometimes this is needed and sometimes not. Not sure why.
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 12; i++)
             {
                 yield return new WaitForEndOfFrame(); //Keep 
             }

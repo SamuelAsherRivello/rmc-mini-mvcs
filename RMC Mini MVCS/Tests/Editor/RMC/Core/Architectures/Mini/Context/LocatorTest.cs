@@ -1,5 +1,6 @@
 using System;
 using NUnit.Framework;
+using UnityEngine;
 
 
 namespace RMC.Core.Architectures.Mini.Context
@@ -27,17 +28,6 @@ namespace RMC.Core.Architectures.Mini.Context
         /// </summary>
         public class Sample01 : ISample
         {
-            public bool IsInitialized { get; }
-            public IContext Context { get; }
-            public void Initialize(IContext context)
-            {
-                throw new System.NotImplementedException();
-            }
-
-            public void RequireIsInitialized()
-            {
-                throw new System.NotImplementedException();
-            }
         }
         
         /// <summary>
@@ -64,7 +54,58 @@ namespace RMC.Core.Architectures.Mini.Context
         public class Sample03 : Sample01
         {
         }
+
+        [Test]
+        public void GetLowestType_ReturnsSample01_WhenSample01()
+        {
+            // Arrange
+            Sample01 sample01 = new Sample01();
+            
+            // Act
+            var found = Locator.GetLowestType(sample01.GetType());
+
+            // Assert
+            Assert.That(found, Is.SameAs(typeof(Sample01)));
+        }
         
+        [Test]
+        public void GetLowestType_ReturnsSample02_WhenSample02()
+        {
+            // Arrange
+            Sample02 sample02 = new Sample02();
+            
+            // Act
+            var found = Locator.GetLowestType(sample02.GetType());
+
+            // Assert
+            Assert.That(found, Is.SameAs(typeof(Sample02)));
+        }
+        
+        [Test]
+        public void GetLowestType_ReturnsSample03_WhenSample03()
+        {
+            // Arrange
+            Sample03 sample03 = new Sample03();
+            
+            // Act
+            var found = Locator.GetLowestType(sample03.GetType());
+
+            // Assert
+            Assert.That(found, Is.SameAs(typeof(Sample03)));
+        }
+        
+        [Test]
+        public void GetLowestType_ReturnsSample03_WhenSample03_CastAsInterface()
+        {
+            // Arrange
+            ISample sample03 = new Sample03();
+            
+            // Act
+            var found = Locator.GetLowestType(sample03.GetType());
+
+            // Assert
+            Assert.That(found, Is.SameAs(typeof(Sample03)));
+        }
         
         [Test]
         public void AddItem_ThrowsException_WhenAddItemSameTwiceSameObject()
@@ -339,7 +380,7 @@ namespace RMC.Core.Architectures.Mini.Context
         }
         
         [Test]
-        public void GetItem_ResultIsNotNull_WhenAddItemSameClassIsStrict()
+        public void GetItem01_ResultIsNotNull_WhenAddItemSample01()
         {
             // Arrange
             SampleLocator sampleLocator = new SampleLocator();
@@ -354,7 +395,7 @@ namespace RMC.Core.Architectures.Mini.Context
         }
         
         [Test]
-        public void GetItem01_Result03IsNotNull_WhenAddItemSameParentClassIsNotStrict()
+        public void GetItem01_ResultIsNull_WhenAddItemSample03()
         {
             // Arrange
             SampleLocator sampleLocator = new SampleLocator();
@@ -365,7 +406,7 @@ namespace RMC.Core.Architectures.Mini.Context
             Sample01 found = sampleLocator.GetItem<Sample01>();
 
             // Assert
-            Assert.That(found, Is.Not.Null);
+            Assert.That(found, Is.Null);
         }
         
         [Test]

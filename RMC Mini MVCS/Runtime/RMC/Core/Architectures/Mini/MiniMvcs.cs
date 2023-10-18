@@ -72,7 +72,6 @@ namespace RMC.Core.Architectures.Mini
         {
             _isInitialized = false;
             _context.Dispose();
-            Debug.Log("Dispose MiniMvcs");
             
         }
 

@@ -1,5 +1,7 @@
+using System;
 using NUnit.Framework;
 using RMC.Core.Experimental;
+using UnityEngine;
 
 namespace RMC.Core.Architectures.Mini.Context
 {
@@ -27,7 +29,22 @@ namespace RMC.Core.Architectures.Mini.Context
         
         
         [Test]
-        public void Context_ThrowsNoExceptions_WhenCreatedTwice()
+        public void Context_ThrowsException_WhenCreatedTwice_WithoutUniqueContextKey()
+        {
+            // Arrange
+            
+            // Assert
+
+            Assert.Throws<Exception>(() =>
+            {
+                // Act
+                Context context1 = new Context(); //has singleton inside
+                Context context2 = new Context();
+            });
+        }
+        
+        [Test]
+        public void Context_ThrowsNoException_WhenCreatedTwice_WithUniqueContextKey()
         {
             // Arrange
             
@@ -35,7 +52,7 @@ namespace RMC.Core.Architectures.Mini.Context
             Assert.DoesNotThrow(() =>
             {
                 Context context1 = new Context(); //has singleton inside
-                Context context2 = new Context();
+                Context context2 = new Context("uniqueKey");
             });
 
             // Assert
@@ -46,7 +63,7 @@ namespace RMC.Core.Architectures.Mini.Context
         {
             // Arrange
             bool isCalled = false;
-            ContextLocator.Instance.OnAddItemCompleted.AddListener(addedContext =>
+            ContextLocator.Instance.OnItemAdded.AddListener(addedContext =>
             {
                 isCalled = true;
             });
@@ -63,7 +80,7 @@ namespace RMC.Core.Architectures.Mini.Context
         {
             // Arrange
             bool isCalled = false;
-            ContextLocator.Instance.OnAddItemCompleted.AddListener(addedContext =>
+            ContextLocator.Instance.OnItemAdded.AddListener(addedContext =>
             {
                 isCalled = true;
             });
@@ -81,7 +98,7 @@ namespace RMC.Core.Architectures.Mini.Context
             // Arrange
             
             // Act
-            bool hasItem = ContextLocator.Instance.HasItem<IContext>();
+            bool hasItem = ContextLocator.Instance.HasItem<Context>();
 
             // Assert
             Assert.That(hasItem, Is.False);
@@ -91,11 +108,13 @@ namespace RMC.Core.Architectures.Mini.Context
         public void HasItem_IsTrue_WhenAdded()
         {
             // Arrange
-            Context context = new Context(); //calls addItem
+            Context context = new Context(); //calls contextLocator.AddItem
             
             // Act
-            bool hasItem = ContextLocator.Instance.HasItem<IContext>();
-
+            Debug.Log("-------------1");
+            bool hasItem = ContextLocator.Instance.HasItem<Context>();
+            Debug.Log("-------------2");
+            
             // Assert
             Assert.That(hasItem, Is.True);
         }

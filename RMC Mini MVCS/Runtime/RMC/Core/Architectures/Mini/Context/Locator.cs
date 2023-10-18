@@ -1,101 +1,108 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
+using System.Linq;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace RMC.Core.Architectures.Mini.Context
 {
-	/// <summary>
-	/// The Locator manages the storage, lookup,
-	/// and retrieval of <see cref="IItem"/> objects
-	/// of arbitrary type. 
-	/// </summary>
-
-	public class Locator<TBase>
-	{
-		public class AddItemCompletedUnityEvent : UnityEvent<TBase> {}
-
-		//  Events ----------------------------------------
-		public readonly AddItemCompletedUnityEvent OnAddItemCompleted = new AddItemCompletedUnityEvent();
-		
-		//  Properties ------------------------------------
+    public class Locator
+    {
+        public static Type GetLowestType(Type type)
+        {
+            return GetTypeHierarchy(type).LastOrDefault();
+        }
         
-		
-		//  Fields ----------------------------------------
-		private Dictionary<Type, Dictionary<string, TBase>> _services = new Dictionary<Type, Dictionary<string, TBase>>();
+        private static Type[] GetTypeHierarchy(Type type)
+        {
+            var hierarchy = new System.Collections.Generic.List<Type>();
 
-		
-		//  Initialization  -------------------------------
-		
-		
-		//  Methods ---------------------------------------
-	
-		
-		// Add a service of type TItem
-		public void AddItem<TItem>(TItem service, string key = "") where TItem : TBase
-		{
-			var type = typeof(TItem);
-			if (!_services.ContainsKey(type))
-			{
-				_services[type] = new Dictionary<string, TBase>();
-			}
+            while (type != null)
+            {
+                hierarchy.Insert(0, type);  // Insert at the beginning to maintain order
+                type = type.BaseType;
+            }
 
-			if (!_services[type].ContainsKey(key))
-			{
-				_services[type][key] = service;
-			}
-			else
-			{
-				throw new Exception($"Service of type {type.Name} with key '{key}' already exists.");
-			}
-		}
+            return hierarchy.ToArray();
+        }
+    }
 
-		// Remove a service of type TItem
-		public void RemoveItem<TItem>(string key = "") where TItem : TBase
-		{
-			var type = typeof(TItem);
-			if (_services.ContainsKey(type) && _services[type].ContainsKey(key))
-			{
-				_services[type].Remove(key);
-			}
-			else
-			{
-				throw new Exception($"Service of type {type.Name} with key '{key}' not found.");
-			}
-		}
+    public class Locator<TBase> : Locator
+    {
+        public class LocatorItemUnityEvent : UnityEvent<TBase> {}
+        public readonly LocatorItemUnityEvent OnItemAdded = new LocatorItemUnityEvent();
 
-		// Get a service of the specified type and key
-		public TItem GetItem<TItem>(string key = "") where TItem : TBase
-		{
-			var type = typeof(TItem);
-			if (_services.ContainsKey(type) && _services[type].ContainsKey(key))
-			{
-				return (TItem)_services[type][key];
-			}
-			else
-			{
-				return default(TItem);
-			}
-		}
+        private Dictionary<Type, Dictionary<string, TBase>> _items = new Dictionary<Type, Dictionary<string, TBase>>();
 
-		public bool HasItem<TItem>(string key = "") where TItem : TBase
-		{
-			try
-			{
-				return GetItem<TItem>(key) != null;
-			}
-			catch
-			{
-				return false;
-			}
-		}
+        // AddItem method to add items based on their actual type
+        public void AddItem(TBase item, string key = "")
+        {
+            Type type = GetLowestType(item.GetType());
+            if (!_items.ContainsKey(type))
+            {
+                _items[type] = new Dictionary<string, TBase>();
+            }
 
-		// Reset or clear all services
-		public void Reset()
-		{
-			_services.Clear();
-		}
-		
-		//  Event Handlers --------------------------------
-	}
+            if (!_items[type].ContainsKey(key))
+            {
+                _items[type][key] = item;
+                OnItemAdded.Invoke(item);
+            }
+            else
+            {
+                throw new Exception($"Item of type {type.Name} with key '{key}' already exists.");
+            }
+        }
+
+        // GetItem method to retrieve items based on their type
+        public TItem GetItem<TItem>(string key = "") where TItem : TBase
+        {
+            Type type = GetLowestType(typeof(TItem));
+
+            if (type.IsInterface)
+            {
+                throw new Exception ($"Cannot get item of type {type.Name}. " +
+                                     $"Interfaces are not allowed for this particular method.");
+            }
+            
+            if (_items.ContainsKey(type) && _items[type].ContainsKey(key))
+            {
+                return (TItem)_items[type][key];
+            }
+            return default(TItem);
+        }
+
+        // HasItem method to check if an item exists based on its type
+        public bool HasItem<TItem>(string key = "") where TItem : TBase
+        {
+            return GetItem<TItem>(key) != null;
+        }
+
+        // RemoveItem method to remove items based on their type
+        public void RemoveItem<TItem>(string key = "") where TItem : TBase
+        {
+            Type type = GetLowestType(typeof(TItem));
+
+            if (type.IsInterface)
+            {
+                throw new Exception ($"Cannot get item of type {type.Name}. " +
+                                     $"Interfaces are not allowed for this particular method.");
+            }
+            
+            if (_items.ContainsKey(type) && _items[type].ContainsKey(key))
+            {
+                _items[type].Remove(key);
+            }
+            else
+            {
+                throw new Exception($"Item of type {type.Name} with key '{key}' does not exist.");
+            }
+        }
+
+        // Reset method to clear all items
+        public void Reset()
+        {
+            _items.Clear();
+        }
+    }
 }

@@ -1,5 +1,6 @@
 using System;
 using RMC.Core.Architectures.Mini.Context;
+using UnityEngine;
 
 namespace RMC.Core.Architectures.Mini.Model
 {
