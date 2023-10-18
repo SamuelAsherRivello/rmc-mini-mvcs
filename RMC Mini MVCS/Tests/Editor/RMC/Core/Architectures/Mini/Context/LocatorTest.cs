@@ -67,102 +67,6 @@ namespace RMC.Core.Architectures.Mini.Context
         
         
         [Test]
-        public void HasItem_IsTrue_WhenAddItem()
-        {
-            // Arrange
-            SampleLocator sampleLocator = new SampleLocator();
-            Sample01 sample01 = new Sample01();
-            
-            // Act
-            bool hasItem = sampleLocator.HasItem<Sample01>();
-
-            // Assert
-            Assert.That(hasItem, Is.False);
-        }
-        
-        [Test]
-        public void HasItem_IsFalse_WhenNoAddItem()
-        {
-            // Arrange
-            SampleLocator sampleLocator = new SampleLocator();
-            
-            // Act
-            bool hasItem = sampleLocator.HasItem<Sample01>();
-
-            // Assert
-            Assert.That(hasItem, Is.False);
-        }
-        
-        [Test]
-        public void GetItem01_ResultIs01_WhenGetItem01_Sibling()
-        {
-            // Arrange
-            SampleLocator sampleLocator = new SampleLocator();
-            Sample01 sample01 = new Sample01();
-            Sample02 sample02 = new Sample02();
-            sampleLocator.AddItem(sample01);
-            sampleLocator.AddItem(sample02);
-            
-            // Act
-            Sample01 found = sampleLocator.GetItem<Sample01>();
-
-            // Assert
-            Assert.That(found, Is.SameAs(sample01));
-        }
-        
-        [Test]
-        public void GetItem02_ResultIs02_WhenGetItem02_Sibling()
-        {
-            // Arrange
-            SampleLocator sampleLocator = new SampleLocator();
-            Sample01 sample01 = new Sample01();
-            Sample02 sample02 = new Sample02();
-            sampleLocator.AddItem(sample01);
-            sampleLocator.AddItem(sample02);
-            
-            // Act
-            Sample02 found = sampleLocator.GetItem<Sample02>();
-
-            // Assert
-            Assert.That(found, Is.SameAs(sample02));
-        }
-        
-        [Test]
-        public void GetItem01_ResultIs01_WhenGetItem01_Child()
-        {
-            // Arrange
-            SampleLocator sampleLocator = new SampleLocator();
-            Sample01 sample01 = new Sample01();
-            Sample03 sample03 = new Sample03();
-            sampleLocator.AddItem(sample01);
-            sampleLocator.AddItem(sample03);
- 
-            // Act
-            Sample01 found = sampleLocator.GetItem<Sample01>();
-
-            // Assert
-            Assert.That(found, Is.SameAs(sample01));
-        }
-        
-        [Test]
-        public void GetItem03_ResultIs03_WhenGetItem03_Child()
-        {
-            // Arrange
-            SampleLocator sampleLocator = new SampleLocator();
-            Sample01 sample01 = new Sample01();
-            Sample03 sample03 = new Sample03();
-            sampleLocator.AddItem(sample01);
-            sampleLocator.AddItem(sample03);
-            
-            // Act
-            Sample03 found = sampleLocator.GetItem<Sample03>();
-
-            // Assert
-            Assert.That(found, Is.SameAs(sample03));
-        }
-        
-        
-        [Test]
         public void AddItem_ThrowsException_WhenAddItemSameTwiceSameObject()
         {
             // Arrange
@@ -175,6 +79,22 @@ namespace RMC.Core.Architectures.Mini.Context
             {
                 // Act
                 sampleLocator.AddItem(sample01A);
+            });
+        }
+        
+        [Test]
+        public void AddItem_ThrowsNoException_WhenAddItemSameTwiceSameObjectWithName()
+        {
+            // Arrange
+            SampleLocator sampleLocator = new SampleLocator();
+            Sample01 sample01A = new Sample01();
+            sampleLocator.AddItem(sample01A, "first");
+                       
+            // Assert
+            Assert.DoesNotThrow(() =>
+            {
+                // Act
+                sampleLocator.AddItem(sample01A, "second");
             });
         }
         
@@ -213,12 +133,218 @@ namespace RMC.Core.Architectures.Mini.Context
         }
         
         [Test]
-        public void GetItem_ResultIsNotNull_WhenAddItemSameObject()
+        public void HasItem_IsFalse_WhenNotAddItem()
+        {
+            // Arrange
+            SampleLocator sampleLocator = new SampleLocator();
+            Sample01 sample01 = new Sample01();
+            
+            // Act
+            bool hasItem = sampleLocator.HasItem<Sample01>();
+
+            // Assert
+            Assert.That(hasItem, Is.False);
+        }
+        
+        [Test]
+        public void HasItem_IsFalse_WhenNotAddItemWithName()
+        {
+            // Arrange
+            SampleLocator sampleLocator = new SampleLocator();
+            Sample01 sample01 = new Sample01();
+            
+            // Act
+            bool hasItem = sampleLocator.HasItem<Sample01>("01");
+
+            // Assert
+            Assert.That(hasItem, Is.False);
+        }
+        
+        [Test]
+        public void HasItem_IsTrue_WhenAddItem()
+        {
+            // Arrange
+            SampleLocator sampleLocator = new SampleLocator();
+            sampleLocator.AddItem(new Sample01());
+            
+            // Act
+            bool hasItem = sampleLocator.HasItem<Sample01>();
+
+            // Assert
+            Assert.That(hasItem, Is.True);
+        }
+        
+        [Test]
+        public void HasItem_IsTrue_WhenAddItemWithName()
+        {
+            // Arrange
+            SampleLocator sampleLocator = new SampleLocator();
+            sampleLocator.AddItem(new Sample01(), "01");
+            
+            // Act
+            bool hasItem = sampleLocator.HasItem<Sample01>("01");
+
+            // Assert
+            Assert.That(hasItem, Is.True);
+        }
+        
+        [Test]
+        public void HasItem_ResultIsFalse_WhenAddItemSameObjectWithWrongName()
         {
             // Arrange
             SampleLocator sampleLocator = new SampleLocator();
             Sample01 sample01A = new Sample01();
-            sampleLocator.AddItem(sample01A);
+            sampleLocator.AddItem(sample01A, "01");
+  
+            // Act
+            bool hasItem = sampleLocator.HasItem<Sample01>("02");
+
+            // Assert
+            Assert.That(hasItem, Is.False);
+        }
+        
+        [Test]
+        public void GetItem01_ResultIs01_WhenGetItem01_Sibling()
+        {
+            // Arrange
+            SampleLocator sampleLocator = new SampleLocator();
+            Sample01 sample01 = new Sample01();
+            Sample02 sample02 = new Sample02();
+            sampleLocator.AddItem(sample01);
+            sampleLocator.AddItem(sample02);
+            
+            // Act
+            Sample01 found = sampleLocator.GetItem<Sample01>();
+
+            // Assert
+            Assert.That(found, Is.SameAs(sample01));
+        }
+        
+        [Test]
+        public void GetItem01_ResultIs01_WhenGetItem01_SiblingWithName()
+        {
+            // Arrange
+            SampleLocator sampleLocator = new SampleLocator();
+            Sample01 sample01 = new Sample01();
+            Sample02 sample02 = new Sample02();
+            sampleLocator.AddItem(sample01, "01");
+            sampleLocator.AddItem(sample02, "02");
+            
+            // Act
+            Sample01 found = sampleLocator.GetItem<Sample01>("01");
+
+            // Assert
+            Assert.That(found, Is.SameAs(sample01));
+        }
+        
+        [Test]
+        public void GetItem02_ResultIs02_WhenGetItem02_Sibling()
+        {
+            // Arrange
+            SampleLocator sampleLocator = new SampleLocator();
+            Sample01 sample01 = new Sample01();
+            Sample02 sample02 = new Sample02();
+            sampleLocator.AddItem(sample01);
+            sampleLocator.AddItem(sample02);
+            
+            // Act
+            Sample02 found = sampleLocator.GetItem<Sample02>();
+
+            // Assert
+            Assert.That(found, Is.SameAs(sample02));
+        }
+        
+        [Test]
+        public void GetItem02_ResultIs02_WhenGetItem02_SiblingWithName()
+        {
+            // Arrange
+            SampleLocator sampleLocator = new SampleLocator();
+            Sample01 sample01 = new Sample01();
+            Sample02 sample02 = new Sample02();
+            sampleLocator.AddItem(sample01, "01");
+            sampleLocator.AddItem(sample02, "02");
+            
+            // Act
+            Sample02 found = sampleLocator.GetItem<Sample02>("02");
+
+            // Assert
+            Assert.That(found, Is.SameAs(sample02));
+        }
+        
+        [Test]
+        public void GetItem01_ResultIs01_WhenGetItem01_Child()
+        {
+            // Arrange
+            SampleLocator sampleLocator = new SampleLocator();
+            Sample01 sample01 = new Sample01();
+            Sample03 sample03 = new Sample03();
+            sampleLocator.AddItem(sample01);
+            sampleLocator.AddItem(sample03);
+ 
+            // Act
+            Sample01 found = sampleLocator.GetItem<Sample01>();
+
+            // Assert
+            Assert.That(found, Is.SameAs(sample01));
+        }
+        
+        [Test]
+        public void GetItem01_ResultIs01_WhenGetItem01_ChildWithName()
+        {
+            // Arrange
+            SampleLocator sampleLocator = new SampleLocator();
+            Sample01 sample01 = new Sample01();
+            Sample03 sample03 = new Sample03();
+            sampleLocator.AddItem(sample01, "01");
+            sampleLocator.AddItem(sample03, "03");
+ 
+            // Act
+            Sample01 found = sampleLocator.GetItem<Sample01>("01");
+
+            // Assert
+            Assert.That(found, Is.SameAs(sample01));
+        }
+        
+        [Test]
+        public void GetItem03_ResultIs03_WhenGetItem03_Child()
+        {
+            // Arrange
+            SampleLocator sampleLocator = new SampleLocator();
+            Sample01 sample01 = new Sample01();
+            Sample03 sample03 = new Sample03();
+            sampleLocator.AddItem(sample01);
+            sampleLocator.AddItem(sample03);
+            
+            // Act
+            Sample03 found = sampleLocator.GetItem<Sample03>();
+
+            // Assert
+            Assert.That(found, Is.SameAs(sample03));
+        }
+        
+        
+        [Test]
+        public void GetItem_ResultIsNull_WhenAddItemSameObjectWithWrongName()
+        {
+            // Arrange
+            SampleLocator sampleLocator = new SampleLocator();
+            Sample01 sample01A = new Sample01();
+            sampleLocator.AddItem(sample01A, "01");
+  
+            // Act
+            Sample01 found = sampleLocator.GetItem<Sample01>("02");
+
+            // Assert
+            Assert.That(found, Is.Null);
+        }
+        
+        [Test]
+        public void GetItem_ResultIsNotNull_WhenAddItemSameClassIsStrict()
+        {
+            // Arrange
+            SampleLocator sampleLocator = new SampleLocator();
+            Sample01 sample01 = new Sample01();
+            sampleLocator.AddItem(sample01);
   
             // Act
             Sample01 found = sampleLocator.GetItem<Sample01>();
@@ -228,48 +354,15 @@ namespace RMC.Core.Architectures.Mini.Context
         }
         
         [Test]
-        public void GetItem_ResultIsNotNull_WhenAddItemSameClassNotStrict()
-        {
-            // Arrange
-            const bool isStrict = false;
-            SampleLocator sampleLocator = new SampleLocator();
-            Sample01 sample01 = new Sample01();
-            sampleLocator.AddItem(sample01);
-  
-            // Act
-            Sample01 found = sampleLocator.GetItem<Sample01>(isStrict);
-
-            // Assert
-            Assert.That(found, Is.Not.Null);
-        }
-        
-        [Test]
-        public void GetItem_ResultIsNotNull_WhenAddItemSameClassIsStrict()
-        {
-            // Arrange
-            const bool isStrict = true;
-            SampleLocator sampleLocator = new SampleLocator();
-            Sample01 sample01 = new Sample01();
-            sampleLocator.AddItem(sample01);
-  
-            // Act
-            Sample01 found = sampleLocator.GetItem<Sample01>(isStrict);
-
-            // Assert
-            Assert.That(found, Is.Not.Null);
-        }
-        
-        [Test]
         public void GetItem01_Result03IsNotNull_WhenAddItemSameParentClassIsNotStrict()
         {
             // Arrange
-            const bool isStrict = false;
             SampleLocator sampleLocator = new SampleLocator();
             Sample01 sample01 = new Sample03();
             sampleLocator.AddItem(sample01);
   
             // Act
-            Sample01 found = sampleLocator.GetItem<Sample01>(isStrict);
+            Sample01 found = sampleLocator.GetItem<Sample01>();
 
             // Assert
             Assert.That(found, Is.Not.Null);
@@ -279,13 +372,12 @@ namespace RMC.Core.Architectures.Mini.Context
         public void GetItem03_Result01IsNull_WhenAddItemSameParentClassIsNotStrict()
         {
             // Arrange
-            const bool isStrict = false;
             SampleLocator sampleLocator = new SampleLocator();
             Sample01 sample01 = new Sample01();
             sampleLocator.AddItem(sample01);
   
             // Act
-            Sample01 found = sampleLocator.GetItem<Sample03>(isStrict);
+            Sample01 found = sampleLocator.GetItem<Sample03>();
 
             // Assert
             Assert.That(found, Is.Null);
@@ -296,13 +388,12 @@ namespace RMC.Core.Architectures.Mini.Context
         public void GetItem03_Result01IsNull_WhenAddItemSameParentClassIsStrict()
         {
             // Arrange
-            const bool isStrict = true;
             SampleLocator sampleLocator = new SampleLocator();
             Sample01 sample01 = new Sample01();
             sampleLocator.AddItem(sample01);
   
             // Act
-            Sample01 found = sampleLocator.GetItem<Sample03>(isStrict);
+            Sample01 found = sampleLocator.GetItem<Sample03>();
 
             // Assert
             Assert.That(found, Is.Null);
@@ -344,13 +435,12 @@ namespace RMC.Core.Architectures.Mini.Context
         {
             // Arrange
             SampleLocator sampleLocator = new SampleLocator();
-            Sample01 sample01 = new Sample01();
 
             // Assert
             Assert.Throws<Exception>(() =>
             {
                 // Act
-                sampleLocator.RemoveItem<Sample01>(sample01);
+                sampleLocator.RemoveItem<Sample01>();
             });
         }
 

@@ -1,134 +1,99 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
+using System.ComponentModel;
 using UnityEngine.Events;
 
 namespace RMC.Core.Architectures.Mini.Context
 {
-
 	/// <summary>
 	/// The Locator manages the storage, lookup,
 	/// and retrieval of <see cref="IItem"/> objects
 	/// of arbitrary type. 
 	/// </summary>
-	public class Locator<IItem>
+
+	public class Locator<TBase>
 	{
-		public class AddItemCompletedUnityEvent : UnityEvent<IItem> {}
+		public class AddItemCompletedUnityEvent : UnityEvent<TBase> {}
 
 		//  Events ----------------------------------------
 		public readonly AddItemCompletedUnityEvent OnAddItemCompleted = new AddItemCompletedUnityEvent();
 		
 		//  Properties ------------------------------------
         
+		
 		//  Fields ----------------------------------------
-		private List<IItem> _items = new List<IItem>();
-        
+		private Dictionary<Type, Dictionary<string, TBase>> _services = new Dictionary<Type, Dictionary<string, TBase>>();
+
+		
 		//  Initialization  -------------------------------
 		
+		
 		//  Methods ---------------------------------------
-		public void AddItem (IItem item)
+	
+		
+		// Add a service of type TItem
+		public void AddItem<TItem>(TItem service, string name = "") where TItem : TBase
 		{
-			//Strict means *ONLY* allow 1 instance of T
-			//But *DO* allow 2+ subclasses of T 
-			//And *DO* allow 2+ sibling subclasses of T
-			if (HasItem<IItem>(true) 
-			    && GetItem<IItem>(true)?.GetType() == item.GetType())
+			var type = typeof(TItem);
+			if (!_services.ContainsKey(type))
 			{
-				// Allow MAX 0 or 1 instance of T
-				throw new Exception("AddItem() failed. Item already added. Call HasItem<T>() first.");
+				_services[type] = new Dictionary<string, TBase>();
 			}
 
-			_items.Add(item);
-			OnAddItemCompleted.Invoke(item);
-		}
-		
-		public bool HasItem<SubType>(bool isStrict = false) where SubType :IItem 
-		{
-			return GetItem<SubType>(isStrict) != null;
-		}
-		
-		
-		public SubType GetItem<SubType>(bool isStrict = false) where SubType :IItem
-		{
-			SubType instance;
-
-			if (isStrict)
+			if (!_services[type].ContainsKey(name))
 			{
-				instance = _items.OfType<SubType>().ToList().FirstOrDefault<SubType>();
-				
-				//Found something?
-				if (instance != null)
-				{
-					//TODO: Why do I treat interfaces uniquely here? I forget. - srivello
-					//are both things an interface?
-					if (instance.GetType().IsInterface && typeof(SubType).IsInterface)
-					{
-						//Here we do NOT match if they are NOT the same type
-						//regardless if they share an interface
-						if (!(instance?.GetType() is SubType))
-						{
-							instance = default(SubType);
-						}
-					}
-				}
+				_services[type][name] = service;
 			}
 			else
 			{
-				instance = _items.OfType<SubType>().ToList().FirstOrDefault<SubType>();
+				throw new Exception($"Service of type {type.Name} with name '{name}' already exists.");
 			}
-		
-			return instance;
-		}
-		
-		
-		public IItem GetItem(Type type)
-		{
-			return _items.FirstOrDefault(item => item.GetType() == type);
 		}
 
-		public void RemoveItem(IItem item)
+		// Remove a service of type TItem
+		public void RemoveItem<TItem>(string name = "") where TItem : TBase
 		{
-			//Strict means *ONLY* allow 1 instance of T
-			//But *DO* allow 2+ subclasses of T 
-			//And *DO* allow 2+ sibling subclasses of T
-			if (HasItem<IItem>(true) 
-			    && GetItem<IItem>(true).GetType() == item.GetType())
+			var type = typeof(TItem);
+			if (_services.ContainsKey(type) && _services[type].ContainsKey(name))
 			{
-				// Allow MAX 0 or 1 instance of T
-				throw new Exception("RemoveItem() failed. Must call HasItem<T>() first.");
+				_services[type].Remove(name);
 			}
-			
-			_items.Remove(item);
+			else
+			{
+				throw new Exception($"Service of type {type.Name} with name '{name}' not found.");
+			}
 		}
-		
-		public void RemoveItem<SubType>(IItem item) where SubType : IItem 
+
+		// Get a service of the specified type and name
+		public TItem GetItem<TItem>(string name = "") where TItem : TBase
 		{
-			//Strict means *ONLY* allow 1 instance of T
-			//But *DO* allow 2+ subclasses of T 
-			//And *DO* allow 2+ sibling subclasses of T
-			if (!(HasItem<SubType>(true) 
-			    && GetItem<SubType>(true).GetType() == item.GetType()))
+			var type = typeof(TItem);
+			if (_services.ContainsKey(type) && _services[type].ContainsKey(name))
 			{
-				// Allow MAX 0 or 1 instance of T
-				throw new Exception("RemoveItem() failed. Must call HasItem<T>() first.");
+				return (TItem)_services[type][name];
 			}
-			
-			_items.Remove(item);
+			else
+			{
+				return default(TItem);
+			}
 		}
-		
-		public void RemoveItem<SubType>() where SubType : IItem 
+
+		public bool HasItem<TItem>(string name = "") where TItem : TBase
 		{
-			//Strict means *ONLY* allow 1 instance of T
-			//But *DO* allow 2+ subclasses of T 
-			//And *DO* allow 2+ sibling subclasses of T
-			if (!HasItem<SubType>(true))
+			try
 			{
-				// Allow MAX 0 or 1 instance of T
-				throw new Exception("RemoveItem() failed. Must call HasItem<T>() first.");
+				return GetItem<TItem>(name) != null;
 			}
-			
-			_items.Remove(GetItem<SubType>(true));
+			catch
+			{
+				return false;
+			}
+		}
+
+		// Reset or clear all services
+		public void Reset()
+		{
+			_services.Clear();
 		}
 		
 		//  Event Handlers --------------------------------
