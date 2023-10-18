@@ -4,6 +4,7 @@ using RMC.Core.Architectures.Mini.Controller;
 using RMC.Core.Architectures.Mini.Model;
 using RMC.Core.Architectures.Mini.Service;
 using RMC.Core.Architectures.Mini.View;
+using UnityEngine;
 
 namespace RMC.Core.Architectures.Mini
 {
@@ -22,7 +23,7 @@ namespace RMC.Core.Architectures.Mini
         TModel,
         TView,
         TController,
-        TService> : IMiniMvcs
+        TService> : IMiniMvcs, IDisposable
     
         where TContext : IContext 
         where TModel : IModel 
@@ -67,10 +68,18 @@ namespace RMC.Core.Architectures.Mini
             }
         }
 
+        public virtual void Dispose()
+        {
+            _isInitialized = false;
+            _context.Dispose();
+            Debug.Log("Dispose MiniMvcs");
+            
+        }
 
         //  Methods ---------------------------------------
 
 
         //  Event Handlers --------------------------------
+  
     }
 }

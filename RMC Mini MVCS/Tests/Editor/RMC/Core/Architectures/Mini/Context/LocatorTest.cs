@@ -83,7 +83,7 @@ namespace RMC.Core.Architectures.Mini.Context
         }
         
         [Test]
-        public void AddItem_ThrowsNoException_WhenAddItemSameTwiceSameObjectWithName()
+        public void AddItem_ThrowsNoException_WhenAddItemSameTwiceSameObjectWithKey()
         {
             // Arrange
             SampleLocator sampleLocator = new SampleLocator();
@@ -147,7 +147,7 @@ namespace RMC.Core.Architectures.Mini.Context
         }
         
         [Test]
-        public void HasItem_IsFalse_WhenNotAddItemWithName()
+        public void HasItem_IsFalse_WhenNotAddItemWithKey()
         {
             // Arrange
             SampleLocator sampleLocator = new SampleLocator();
@@ -175,7 +175,7 @@ namespace RMC.Core.Architectures.Mini.Context
         }
         
         [Test]
-        public void HasItem_IsTrue_WhenAddItemWithName()
+        public void HasItem_IsTrue_WhenAddItemWithKey()
         {
             // Arrange
             SampleLocator sampleLocator = new SampleLocator();
@@ -189,7 +189,7 @@ namespace RMC.Core.Architectures.Mini.Context
         }
         
         [Test]
-        public void HasItem_ResultIsFalse_WhenAddItemSameObjectWithWrongName()
+        public void HasItem_ResultIsFalse_WhenAddItemSameObjectWithWrongKey()
         {
             // Arrange
             SampleLocator sampleLocator = new SampleLocator();
@@ -221,7 +221,7 @@ namespace RMC.Core.Architectures.Mini.Context
         }
         
         [Test]
-        public void GetItem01_ResultIs01_WhenGetItem01_SiblingWithName()
+        public void GetItem01_ResultIs01_WhenGetItem01_SiblingWithKey()
         {
             // Arrange
             SampleLocator sampleLocator = new SampleLocator();
@@ -255,7 +255,7 @@ namespace RMC.Core.Architectures.Mini.Context
         }
         
         [Test]
-        public void GetItem02_ResultIs02_WhenGetItem02_SiblingWithName()
+        public void GetItem02_ResultIs02_WhenGetItem02_SiblingWithKey()
         {
             // Arrange
             SampleLocator sampleLocator = new SampleLocator();
@@ -289,7 +289,7 @@ namespace RMC.Core.Architectures.Mini.Context
         }
         
         [Test]
-        public void GetItem01_ResultIs01_WhenGetItem01_ChildWithName()
+        public void GetItem01_ResultIs01_WhenGetItem01_ChildWithKey()
         {
             // Arrange
             SampleLocator sampleLocator = new SampleLocator();
@@ -324,7 +324,7 @@ namespace RMC.Core.Architectures.Mini.Context
         
         
         [Test]
-        public void GetItem_ResultIsNull_WhenAddItemSameObjectWithWrongName()
+        public void GetItem_ResultIsNull_WhenAddItemSameObjectWithWrongKey()
         {
             // Arrange
             SampleLocator sampleLocator = new SampleLocator();

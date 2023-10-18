@@ -32,7 +32,7 @@ namespace RMC.Core.Architectures.Mini.Context
 	
 		
 		// Add a service of type TItem
-		public void AddItem<TItem>(TItem service, string name = "") where TItem : TBase
+		public void AddItem<TItem>(TItem service, string key = "") where TItem : TBase
 		{
 			var type = typeof(TItem);
 			if (!_services.ContainsKey(type))
@@ -40,37 +40,37 @@ namespace RMC.Core.Architectures.Mini.Context
 				_services[type] = new Dictionary<string, TBase>();
 			}
 
-			if (!_services[type].ContainsKey(name))
+			if (!_services[type].ContainsKey(key))
 			{
-				_services[type][name] = service;
+				_services[type][key] = service;
 			}
 			else
 			{
-				throw new Exception($"Service of type {type.Name} with name '{name}' already exists.");
+				throw new Exception($"Service of type {type.Name} with key '{key}' already exists.");
 			}
 		}
 
 		// Remove a service of type TItem
-		public void RemoveItem<TItem>(string name = "") where TItem : TBase
+		public void RemoveItem<TItem>(string key = "") where TItem : TBase
 		{
 			var type = typeof(TItem);
-			if (_services.ContainsKey(type) && _services[type].ContainsKey(name))
+			if (_services.ContainsKey(type) && _services[type].ContainsKey(key))
 			{
-				_services[type].Remove(name);
+				_services[type].Remove(key);
 			}
 			else
 			{
-				throw new Exception($"Service of type {type.Name} with name '{name}' not found.");
+				throw new Exception($"Service of type {type.Name} with key '{key}' not found.");
 			}
 		}
 
-		// Get a service of the specified type and name
-		public TItem GetItem<TItem>(string name = "") where TItem : TBase
+		// Get a service of the specified type and key
+		public TItem GetItem<TItem>(string key = "") where TItem : TBase
 		{
 			var type = typeof(TItem);
-			if (_services.ContainsKey(type) && _services[type].ContainsKey(name))
+			if (_services.ContainsKey(type) && _services[type].ContainsKey(key))
 			{
-				return (TItem)_services[type][name];
+				return (TItem)_services[type][key];
 			}
 			else
 			{
@@ -78,11 +78,11 @@ namespace RMC.Core.Architectures.Mini.Context
 			}
 		}
 
-		public bool HasItem<TItem>(string name = "") where TItem : TBase
+		public bool HasItem<TItem>(string key = "") where TItem : TBase
 		{
 			try
 			{
-				return GetItem<TItem>(name) != null;
+				return GetItem<TItem>(key) != null;
 			}
 			catch
 			{

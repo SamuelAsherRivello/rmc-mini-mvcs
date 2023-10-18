@@ -24,7 +24,13 @@ namespace RMC.Core.Architectures.Mini.Context
 			_commandManager = new CommandManager(this);
 		}
 		   
-
+		public virtual void Dispose()
+		{
+			// Must override
+			throw new System.NotImplementedException();
+		}
+		
 		//  Methods ---------------------------------------
+
 	}
 }

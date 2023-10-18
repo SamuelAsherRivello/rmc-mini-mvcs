@@ -1,5 +1,7 @@
-﻿using RMC.Core.Experimental;
+﻿using System;
+using RMC.Core.Experimental;
 using RMC.Core.Architectures.Mini.Controller.Commands;
+using UnityEngine;
 
 namespace RMC.Core.Architectures.Mini.Context
 {
@@ -26,7 +28,7 @@ namespace RMC.Core.Architectures.Mini.Context
 	public class Context : BaseContext
 	{
 		//  Properties ------------------------------------
-        
+		protected readonly string _contextKey = "";
 		
 		//  Fields ----------------------------------------
 
@@ -37,13 +39,23 @@ namespace RMC.Core.Architectures.Mini.Context
 			// Experimental: This allows any scope, including
 			// non-mini classes, to access any IContext
 			// instance through ContextLocator
-			if (!ContextLocator.Instance.HasItem<IContext>())
+			_contextKey = typeof(IContext).FullName + "_" + Guid.NewGuid();
+			if (!ContextLocator.Instance.HasItem<IContext>(_contextKey))
 			{
-				ContextLocator.Instance.AddItem(this);
+				ContextLocator.Instance.AddItem(this, _contextKey);
 			}
 		}
 		
+		public override void Dispose()
+		{
+			if (ContextLocator.Instance.HasItem<IContext>(_contextKey))
+			{
+				ContextLocator.Instance.RemoveItem<IContext>(_contextKey);
+				Debug.Log("Removed : " + _contextKey);
+			}
+		}
 		   
 		//  Methods ---------------------------------------
+
 	}
 }
