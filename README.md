@@ -144,8 +144,7 @@ Or to edit the `Packages/manifest.json` directly with your favorite text editor,
 ```json
 {
   "dependencies": {
-      "com.rmc.rmc-mini-mvcs": "https://github.com/SamuelAsherRivello/rmc-mini-mvcs.git",
-      "com.unity.learn.iet-framework": "3.1.3"
+      "com.rmc.rmc-mini-mvcs": "https://github.com/SamuelAsherRivello/rmc-mini-mvcs.git"
   }
 }
 ```
