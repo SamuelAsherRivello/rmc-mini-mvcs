@@ -1,0 +1,19 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Packages/com.unity.learn.iet-framework/Editor/UI/Styles_Light.uss?fileID=7433441132597879392&amp;guid=f024b7035a09345e5848e3de8f1b5dcb&amp;type=3#Styles_Light" />
+    <ui:VisualElement name="TutorialCategoryUI" class="container--card">
+        <ui:VisualElement name="TutorialImage" class="containercard">
+            <ui:VisualElement name="ContentContainer" class="container--tutorialcontainer">
+                <ui:VisualElement name="TextContainer">
+                    <ui:VisualElement class="image--base" />
+                    <ui:Label name="lblName" class="label--header label--header-large" />
+                    <ui:Label name="lblDescription" class="label--header-subtitle" />
+                </ui:VisualElement>
+                <ui:VisualElement name="HorizontalFlexibleSpace" class="flexiblespace" />
+                <ui:VisualElement name="ForwardArrowContainer" class="label--header-subtitle">
+                    <ui:VisualElement name="FlexibleSpace" class="flexiblespace" />
+                    <ui:VisualElement name="EnterTutorials" class="image--forward" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <Style src="project://database/Packages/com.unity.learn.iet-framework/Editor/UI/Styles_Light.uss?fileID=7433441132597879392&amp;guid=f024b7035a09345e5848e3de8f1b5dcb&amp;type=3#Styles_Light" />
+    <ui:VisualElement>
+        <ui:VisualElement name="imgTitleHeader" class="container--header-large">
+            <ui:VisualElement name="FlexibleSpace" class="flexiblespace" />
+            <ui:Label text="In-Editor Tutorials" name="lblTitle" class="label--header label--header-large" />
+            <ui:Label name="lblSubtitle" class="label--header-subtitle" />
+            <ui:Button display-tooltip-when-elided="true" enable-rich-text="false" name="btnExitCategory" class="image--back" style="display: flex; overflow: visible; background-color: rgba(0, 0, 0, 0);" />
+        </ui:VisualElement>
+        <ui:ScrollView name="lstTutorials" class="scrollview--tutorial-list" />
+    </ui:VisualElement>
+</ui:UXML>

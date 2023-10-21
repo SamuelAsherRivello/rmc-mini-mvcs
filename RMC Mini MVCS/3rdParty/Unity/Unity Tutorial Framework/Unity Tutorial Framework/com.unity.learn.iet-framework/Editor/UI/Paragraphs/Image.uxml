@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    
+    <ui:VisualElement name="TutorialMediaContainer" class="container--tutorial-media">
+        <ui:VisualElement name="TutorialMedia" class="tutorial-media" />
+    </ui:VisualElement>
+</ui:UXML>

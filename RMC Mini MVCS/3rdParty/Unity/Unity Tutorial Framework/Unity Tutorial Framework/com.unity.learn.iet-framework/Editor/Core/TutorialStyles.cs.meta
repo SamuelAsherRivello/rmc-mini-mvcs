@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e21b03979a94bea489bae0f266610595
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - LightThemeStyleSheet: {fileID: 7433441132597879392, guid: f024b7035a09345e5848e3de8f1b5dcb,
+      type: 3}
+  - DarkThemeStyleSheet: {fileID: 7433441132597879392, guid: 1cc9851f62063cd4ba510d60b2c81bbe,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

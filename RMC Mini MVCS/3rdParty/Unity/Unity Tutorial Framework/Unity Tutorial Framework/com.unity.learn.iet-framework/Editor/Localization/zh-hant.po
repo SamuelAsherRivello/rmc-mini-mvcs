@@ -1,0 +1,237 @@
+
+msgid ""
+msgstr ""
+"Project-Id-Version: IET_3_0_GYM@0.1 \n"
+"Report-Msgid-Bugs-To: \n"
+"Language-Team: #devs-localization\n"
+"POT-Creation-Date: 2020-05-15 21:02+03:00\n"
+"PO-Revision-Date: 2022-06-16 11:44+02:00\n"
+"Language: zh-hant\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: com.unity.learn.iet-framework.authoring\n"
+
+msgid "WindowTitle"
+msgstr "教學"
+
+# TODO: translate
+msgid "TOCLabelTitle"
+msgstr "Tutorials and documentation"
+
+# TODO: translate
+msgid "TOCLabelSubtitle"
+msgstr "Learning material of this project and its packages"
+
+msgid "TOCLabelCompleted"
+msgstr "已完成"
+
+# TODO: translate
+msgid "TOCButtonBackTooltip"
+msgstr "Back to the previous view"
+
+# TODO: translate
+msgid "TutorialButtonPrevious"
+msgstr "Previous"
+
+msgid "LanguageDialogTitle"
+msgstr "檢測到編輯器語言更改"
+
+msgid "LanguageDialogMessage"
+msgstr "建議重新啓動編輯器，讓語言更改全部生效。"
+
+msgid "LanguageDialogButtonOk"
+msgstr "重啓"
+
+msgid "LanguageDialogButtonCancel"
+msgstr "不重啟繼續"
+
+msgid "WindowClosedDialogTitle"
+msgstr "關閉教學"
+
+msgid "WindowClosedDialogMessage"
+msgstr "稍後您可以通過選擇上方選單裡的{0}找到教學。"
+
+msgid "WindowClosedDialogButtonOk"
+msgstr "確定"
+
+# TODO: translate
+msgid "TutorialPageLabelEventStateWarning"
+msgstr "One or more callbacks of this event are not using 'Editor and Runtime' mode.If you want to be able to execute them in Edit mode as well (that is, when running tutorials out of Play mode), be sure to choose 'Editor and Runtime' mode."
+
+msgid "LocalizableStringIconTooltip"
+msgstr "本地化字串"
+
+# TODO: translate
+msgid "GuiControlSelectorButtonPickElement"
+msgstr "Pick Visual Element"
+
+# TODO: translate
+msgid "GuiControlSelectorButtonPickElementTooltip"
+msgstr "Pick the wanted visual element by clicking it. Press Esc key to cancel picking."
+
+msgid "TutorialSectionTooltip"
+msgstr "教學:"
+
+# TODO: translate
+msgid "TutorialLabelParseError"
+msgstr "PARSE ERROR"
+
+# TODO: translate
+msgid "TutorialLabelParseErrorTooltip"
+msgstr "Click here to see more information in the console."
+
+msgid "SettingsCategory"
+msgstr "編輯器內教學"
+
+# TODO: translate
+msgid "SettingsShowTutorialsWindowClosedDialog"
+msgstr "Show tutorials closed dialog"
+
+# TODO: translate
+msgid "SettingsDisplayWelcomeDialogOnStartup"
+msgstr "Display welcome dialog on startup"
+
+# TODO: translate
+msgid "SettingsShowSimplifiedTypeNames"
+msgstr "Show simplified type names"
+
+# TODO: translate
+msgid "SettingsShowSimplifiedTypeNamesTooltip"
+msgstr "Show simplified names instead of fully qualified names for SerializedTypes shown in the Inspector"
+
+# TODO: translate
+msgid "SettingsUseDefaultEditors"
+msgstr "Use default editors for editing tutorial assets"
+
+# TODO: translate
+msgid "SettingsUseDefaultEditorsTooltip"
+msgstr "View the tutorial asset contents using default editor views instead of custom editors"
+
+msgid "SettingsMaskingEnabled"
+msgstr "啓用教學模式(遮罩與凸顯功能)"
+
+# TODO: translate
+msgid "SettingsMaskingEnabledTooltip"
+msgstr "Master control for Masking and Highlighting"
+
+# TODO: translate
+msgid "SettingsHelpboxRestoreDefaultAssetsWarning"
+msgstr "TutorialProjectSettings.RestoreDefaultAssetsOnTutorialReload is enabled and Tutorial Authoring Tools are not present: the project's content might be overwritten."
+
+# TODO: translate
+msgid "TutorialWelcomePageButtonShowDialog"
+msgstr "Show Welcome Dialog"
+
+msgid "ButtonRunStartupCode"
+msgstr "執行啓動碼"
+
+# TODO: translate
+msgid "TutorialPageCustomCallbacks"
+msgstr "Custom Callbacks"
+
+# TODO: translate
+msgid "TutorialPageCustomCallbacksTooltip"
+msgstr "You can only assign public, non-static methods here. It is recommended that you define a ScriptableObject class that exposes all the methods you'd like to call, create an instance of that and assign it to these events in order to access the callbacks."
+
+# TODO: translate
+msgid "MissingPropertyPathWarning"
+msgstr "Unable to locate property path {0} on this object. Automatic masking updates will not work."
+
+# TODO: translate
+msgid "TutorialPageMissingMaskingSettingsWarning"
+msgstr "Unable to locate property path {0}.Array.data[0].{1} on this object. Automatic masking updates will not work."
+
+# TODO: translate
+msgid "TutorialPageLabelHeaderMediaType"
+msgstr "Header Media Type"
+
+# TODO: translate
+msgid "TutorialPagePropertyMedia"
+msgstr "Media"
+
+# TODO: translate
+msgid "TutorialPageLabelTitle"
+msgstr "Title"
+
+# TODO: translate
+msgid "TutorialPageLabelNarrativeDescription"
+msgstr "Narrative Description"
+
+# TODO: translate
+msgid "TutorialPageLabelInstructionTitle"
+msgstr "Instruction Title"
+
+# TODO: translate
+msgid "TutorialPageLabelInstructionDescription"
+msgstr "Instruction Description"
+
+# TODO: translate
+msgid "TutorialPageLabelCompletionCriteria"
+msgstr "Completion Criteria"
+
+# TODO: translate
+msgid "TutorialPagePropertyCompletionType"
+msgstr "Completion Type"
+
+# TODO: translate
+msgid "TutorialPagePropertyCriteria"
+msgstr "Criteria"
+
+# TODO: translate
+msgid "TutorialPagePropertyNextTutorial"
+msgstr "Next Tutorial"
+
+# TODO: translate
+msgid "TutorialPagePropertyNextTutorialButton"
+msgstr "Next Tutorial button text"
+
+# TODO: translate
+msgid "TutorialPageButtonCreateCallbackHandler"
+msgstr "Create Callback Handler"
+
+# TODO: translate
+msgid "TutorialPagePropertyEnableMasking"
+msgstr "Enable Masking"
+
+# TODO: translate
+msgid "TutorialPageDialogCallbackFolderTitle"
+msgstr "Choose an Editor Folder for the Callback Handler Files"
+
+# TODO: translate
+msgid "TutorialLabelAutoCompletion"
+msgstr "Auto Completion"
+
+# TODO: translate
+msgid "TutorialButtonStartAutoCompletion"
+msgstr "Start Auto Completion"
+
+# TODO: translate
+msgid "TutorialButtonStopAutoCompletion"
+msgstr "Stop Auto Completion"
+
+msgid "IconPreviewMaskingTooltip"
+msgstr "預覽遮罩顯示"
+
+# TODO: translate
+msgid "AuthoringButtonSelectCategory"
+msgstr "Select Category"
+
+msgid "AuthoringButtonSelectTutorial"
+msgstr "選擇教學"
+
+msgid "AuthoringButtonSelectPage"
+msgstr "選擇頁面"
+
+msgid "AuthoringButtonSkipToEnd"
+msgstr "轉到最後"
+
+# TODO: translate
+msgid "AuthoringButtonAutocompletePage"
+msgstr "Autocomplete page"
+
+# TODO: translate
+msgid "TutorialModalWindowIconPreviewMasking"
+msgstr "Preview Masking"
+

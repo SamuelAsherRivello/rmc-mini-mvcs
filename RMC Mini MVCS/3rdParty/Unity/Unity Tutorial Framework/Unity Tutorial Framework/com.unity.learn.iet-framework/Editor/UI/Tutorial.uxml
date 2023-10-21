@@ -1,0 +1,26 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    
+    <ui:VisualElement name="TutorialPageContainer" class="container">
+        <ui:VisualElement name="Header" class="container--header">
+            <ui:VisualElement name="HeaderLabels" class="container--header-labels">
+                <ui:Label name="lblTutorialName" text="Tutorial name" class="label--header" />
+                <ui:VisualElement name="FlexibleSpace" class="flexiblespace" />
+                <ui:Label text="1/99" name="lblStepCount" class="label--step-count" />
+                <ui:VisualElement name="btnQuit" class="image--close" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="TutorialContainer" class="container--tutorial">
+            <ui:ScrollView class="scrollview--tutorial">
+                <ui:Label name="lblPageTitle" text="Page Title" class="label--tutorial-title" />
+            </ui:ScrollView>
+        </ui:VisualElement>
+        <ui:VisualElement name="TutorialActions" class="container--tutorial-actions">
+            <ui:Button text="Previous" name="btnPrevious" class="button--tutorial-action">
+                <ui:VisualElement name="PreviousButtonBase" class="button-background--tutorial-action" />
+            </ui:Button>
+            <ui:Button text="Next" name="btnNext" class="button--tutorial-action">
+                <ui:VisualElement name="NextButtonBase" class="button-background--tutorial-action" />
+            </ui:Button>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

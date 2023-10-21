@@ -1,0 +1,18 @@
+apiRules:
+  - exclude:
+      uidRegex: SerializableCallback
+      type: Namespace
+  - exclude:
+      uidRegex: Tests$
+      type: Namespace
+  # This is an example dummy asset, not real API
+  - exclude:
+      uidRegex: TutorialCallbacks
+      type: class
+# Docs team seems to filter these and maybe even all attributes out on their own  so let's make our filtering match that
+# TODO get the exact rules from the Docs team
+attributeRules:
+  - exclude:
+      uidRegex: Tooltip
+  - exclude:
+      uidRegex: Header

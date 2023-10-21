@@ -1,0 +1,22 @@
+{
+    "name": "Unity.Tutorials.Core.Editor",
+    "rootNamespace": "",
+    "references": [
+        "Unity.InternalAPIEditorBridge.007",
+        "Unity.InternalAPIEngineBridge.007",
+        "Unity.Tutorials.Core",
+        "Unity.EditorCoroutines.Editor",
+        "Unity.Settings.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

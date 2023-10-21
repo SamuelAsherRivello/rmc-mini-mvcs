@@ -1,0 +1,27 @@
+{
+    "name": "Unity.Tutorials.Core.Editor.Tests",
+    "references": [
+        "Unity.Tutorials.Core.Editor",
+        "Unity.InternalAPIEditorBridge.007",
+        "Unity.Tutorials.Core",
+        "Unity.Tutorials.Core.Tests",
+        "UnityEngine.TestRunner",
+        "UnityEditor.TestRunner",
+        "Unity.Settings.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
