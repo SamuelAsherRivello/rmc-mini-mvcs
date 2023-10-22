@@ -39,11 +39,6 @@ namespace RMC.Core.Architectures.Mini.Context
 			// ContextLocator is Experimental: This allows any scope, including
 			// non-mini classes, to access any Context via ContextLocator.Instance.GetItem<T>();
 			_contextKey = contextKey;
-			if (_contextKey == "")
-			{
-				//Experimental
-				_contextKey = Guid.NewGuid().ToString();
-			}
 			if (ContextLocator.Instance.HasItem<Context>(_contextKey))
 			{
 				throw new Exception($"Context with key '{_contextKey}' already exists. Must pass in unique contextKey.");

@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using RMC.Core.Architectures.Mini.TestMiniWithoutBase;
+using UnityEngine;
 
 namespace RMC.Core.Architectures.Mini
 {
