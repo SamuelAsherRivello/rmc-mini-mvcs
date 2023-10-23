@@ -8,6 +8,7 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+#if ENABLE_INPUT_SYSTEM
 
 using System;
 using System.Collections;
@@ -209,3 +210,4 @@ public partial class @RollABallInputActions: IInputActionCollection2, IDisposabl
         void OnMovement(InputAction.CallbackContext context);
     }
 }
+#endif //ENABLE_INPUT_SYSTEM

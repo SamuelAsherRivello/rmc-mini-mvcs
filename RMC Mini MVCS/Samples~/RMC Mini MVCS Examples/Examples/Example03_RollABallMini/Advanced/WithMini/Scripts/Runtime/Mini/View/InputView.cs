@@ -4,7 +4,10 @@ using RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Model;
 using RMC.Core.Architectures.Mini.View;
 using UnityEngine;
 using UnityEngine.Events;
+
+#if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
+#endif //ENABLE_INPUT_SYSTEM
 
 namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.View
 {
@@ -30,7 +33,10 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.View
         private bool _isInitialized = false;
         private IContext _context;
 
+#if ENABLE_INPUT_SYSTEM
         private RollABallInputActions _rollABallInputActions;
+#endif //ENABLE_INPUT_SYSTEM
+
         private float _playerMovementSpeed = 0;
 
         //  Initialization  -------------------------------
@@ -41,8 +47,11 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.View
                 _isInitialized = true;
                 _context = context;
 
+#if ENABLE_INPUT_SYSTEM
                 _rollABallInputActions = new RollABallInputActions();
                 _rollABallInputActions.Enable();
+#endif //ENABLE_INPUT_SYSTEM
+
                 
                 //Model
                 RollABallModel rollABallModel = Context.ModelLocator.GetItem<RollABallModel>();
@@ -63,12 +72,18 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.View
         //  Unity Methods ---------------------------------
         private void OnEnable()
         {
-            _rollABallInputActions?.Enable();
+#if ENABLE_INPUT_SYSTEM
+         _rollABallInputActions?.Enable();
+#endif //ENABLE_INPUT_SYSTEM
+      
         }
 
         private void OnDisable()
         {
+#if ENABLE_INPUT_SYSTEM
             _rollABallInputActions?.Disable();
+#endif //ENABLE_INPUT_SYSTEM
+
         }
 
         protected void Update()
@@ -81,7 +96,12 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.View
             //Input
             // You can indeed connect to input-specific events from _rollABallInputActions
             // However, we want to 'always' be moving (with friction) and using Update() is best
-            Vector2 movementAxis = _rollABallInputActions.Player.Movement.ReadValue<Vector2>();
+            Vector2 movementAxis = new Vector2();
+            
+#if ENABLE_INPUT_SYSTEM
+    movementAxis = _rollABallInputActions.Player.Movement.ReadValue<Vector2>();
+#endif //ENABLE_INPUT_SYSTEM
+            
             float moveHorizontal = movementAxis.x * Time.deltaTime * _playerMovementSpeed;
             float moveVertical = movementAxis.y * Time.deltaTime * _playerMovementSpeed;
             Vector3 movement = new Vector3 (moveHorizontal, 0.0f, moveVertical);
