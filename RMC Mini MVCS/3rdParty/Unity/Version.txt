@@ -1,9 +1,0 @@
-Source: 
-* https://docs.unity3d.com/Packages/com.unity.learn.iet-framework@3.1/manual/index.html
-
-Change Log:
-* An NPM package cannot depend on an external Unity package. So this dependency is instead embedded.
-
-Instructions: 
-* Avoid REDUNDANTLY depending on this external Unity package from your project.
-* The repo owner may periodically manually update embedded dependency to capture changes in the external Unity package.

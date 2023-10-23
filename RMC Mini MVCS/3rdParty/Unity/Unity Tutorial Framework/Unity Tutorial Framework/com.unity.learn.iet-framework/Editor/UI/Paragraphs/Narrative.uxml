@@ -1,4 +1,0 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    
-    <ui:VisualElement name="TutorialStepBox1" class="label--tutorial-step-description" />
-</ui:UXML>
