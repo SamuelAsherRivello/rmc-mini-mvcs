@@ -105,7 +105,7 @@ You can either use the Unity Package Manager Window (UPM) or directly edit the m
 
 **UPM**
 
-To use the [Package Manager Window](https://docs.unity3d.com/Manual/upm-ui.html), first add a [Scoped Registry](https://docs.unity3d.com/2023.1/Documentation/Manual/upm-scoped.html), then click on the interface menu ( `Status Bar → (+) Icon → Add Package By Name ... → com.com.rmc.rmc-mini-mvcs` ).
+To use the [Package Manager Window](https://docs.unity3d.com/Manual/upm-ui.html), first add a [Scoped Registry](https://docs.unity3d.com/2023.1/Documentation/Manual/upm-scoped.html), then click on the interface menu ( `Status Bar → (+) Icon → Add Package By Name ...` ). Then enter the value from the snippet just below.
 
 **Manifest File**
 
@@ -136,7 +136,7 @@ You can either use the Unity Package Manager (UPM) Window or directly edit the m
 
 **UPM**
 
-To use the [Package Manager Window](https://docs.unity3d.com/Manual/upm-ui.html) click on the interface menu ( `Status Bar → (+) Icon → Add Package From Git Url ...` ).
+To use the [Package Manager Window](https://docs.unity3d.com/Manual/upm-ui.html) click on the interface menu ( `Status Bar → (+) Icon → Add Package From Git Url ...` ).  Then enter the value from the snippet just below.
 
 **Manifest File**
 
