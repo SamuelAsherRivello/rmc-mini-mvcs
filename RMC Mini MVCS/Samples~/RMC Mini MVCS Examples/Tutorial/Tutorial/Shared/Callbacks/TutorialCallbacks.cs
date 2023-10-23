@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿#if UNITY_PACKAGE_MANAGER_CHECKER_COMPLETE
+using UnityEngine;
 using UnityEditor;
 using Unity.Tutorials.Core.Editor;
 
@@ -38,3 +39,4 @@ public class TutorialCallbacks : ScriptableObject
         TutorialWindow.Instance.Focus();
     }
 }
+#endif
