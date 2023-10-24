@@ -28,6 +28,7 @@ namespace RMC.Core.Architectures.Mini.Samples.Calculator
         //  Unity Methods   -------------------------------
         protected void Start ()
         {
+            
             CalculatorMini calculatorMini = new CalculatorMini(_calculatorView);
             calculatorMini.Initialize();
         }

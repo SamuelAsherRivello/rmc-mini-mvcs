@@ -64,7 +64,7 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.View
         
         
         //  Initialization  -------------------------------
-        public DialogView(VisualElement dialogView)
+        public void SetDialogView (VisualElement dialogView)
         {
             _dialogView = dialogView;
             _bodyLabel = dialogView.Q<Label>("BodyLabel");

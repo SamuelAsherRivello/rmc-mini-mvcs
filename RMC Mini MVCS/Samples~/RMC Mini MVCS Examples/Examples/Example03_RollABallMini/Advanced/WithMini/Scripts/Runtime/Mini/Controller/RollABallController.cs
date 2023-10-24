@@ -138,7 +138,7 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Controller
                 _model.IsGamePaused.Value = false;
                 
                 // Reload
-                SceneManager.LoadScene("RollABallWithMiniExample");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
             });
         }

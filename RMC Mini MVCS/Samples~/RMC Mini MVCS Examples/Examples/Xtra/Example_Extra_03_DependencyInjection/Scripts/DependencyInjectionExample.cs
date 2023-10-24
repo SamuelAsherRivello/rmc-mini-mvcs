@@ -20,6 +20,8 @@ namespace RMC.IntroToUnity.Examples
         
         protected void Awake () 
         {
+            Debug.Log($"This Scene has no UI. It has only console logging.");
+            
             // Call at any time before Inject()
             DependencyInjectorSystem.Instance.Bind<SampleService1>(new SampleService1());
             DependencyInjectorSystem.Instance.Bind<SampleService2>(new SampleService2());

@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UIElements;
 
+// ReSharper disable once Unity.IncorrectMonoBehaviourInstantiation
 namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.View
 {
     //  Namespace Properties ------------------------------
@@ -67,7 +68,9 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.View
                 // * Create a wrapper class of type VisualElement
                 // * Create no wrapper and 'speak to the uxml' directly from UIView
                 // * Others options too
-                _dialogView = new DialogView(_uiDocument.rootVisualElement.Q<VisualElement>("DialogView"));
+
+                _dialogView = new DialogView();
+                _dialogView.SetDialogView(_uiDocument.rootVisualElement.Q<VisualElement>("DialogView"));
                 _dialogView.Initialize(Context);
                 // ///////////////////////////////////////////////////
                 

@@ -122,7 +122,9 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Controller
             dialogView.OnConfirm.AddListener(() =>
             {
                 GameObject.Destroy(dialogView.gameObject);
-                SceneManager.LoadScene("RollABallWithMiniExample");
+                
+                // Reload
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                 
                 //Unpause
                 _model.IsGamePaused.Value = false;

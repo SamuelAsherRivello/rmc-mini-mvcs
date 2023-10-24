@@ -21,6 +21,9 @@ namespace RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini
         //  Unity Methods  --------------------------------
         protected void Start()
         {
+            
+            Debug.Log($"This Scene has no UI. It has only console logging.");
+            
             ClockMini clockMini = new ClockMini();
             clockMini.Initialize();
         }

@@ -36,6 +36,8 @@ namespace RMC.Core.Architectures.Mini.Samples.Clock.WithoutMini.Mini
         //  Methods ---------------------------------------
         private async Task LoadAsync()
         {
+            Debug.Log($"This Scene has no UI. It has only console logging.");
+            
             TextAsset textAsset = Resources.Load<TextAsset>("Texts/ClockWithoutMiniText"); //txt file
 
             //Add cosmetic delay to simulate latency

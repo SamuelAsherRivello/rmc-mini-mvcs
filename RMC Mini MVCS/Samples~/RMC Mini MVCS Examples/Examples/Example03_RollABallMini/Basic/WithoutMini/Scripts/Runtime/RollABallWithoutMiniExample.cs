@@ -111,8 +111,9 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithoutMini
                 _isGamePaused = false;
                 GameObject.Destroy(dialog.gameObject);
                 
-                //Reload game
-                SceneManager.LoadScene("RollABallWithoutMiniExample");
+                // Reload
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
             });
         }
         
