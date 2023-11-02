@@ -1,0 +1,454 @@
+WEBVTT
+
+00:00.170 --> 00:00.500
+All right.
+
+00:00.500 --> 00:03.080
+Here, let's take a look at the bouncy ball demo.
+
+00:03.110 --> 00:05.900
+I'm a little bit in front of the word demo, but there it is.
+
+00:05.900 --> 00:09.580
+So this is part of the mini mvc's course.
+
+00:09.590 --> 00:14.330
+This is a unity architecture course that's available for purchase.
+
+00:14.330 --> 00:19.970
+And all the code we're showing here, including the full code for the course, is freely available on
+
+00:19.970 --> 00:20.510
+GitHub.
+
+00:20.510 --> 00:21.950
+So you can take a look at that.
+
+00:21.950 --> 00:30.620
+The link below this course is about you doing architecture Inside Unity, the Model view and controller
+
+00:30.620 --> 00:31.160
+in it.
+
+00:31.160 --> 00:36.560
+We'll cover the course introduction, we'll talk about unity, we'll look at software design.
+
+00:36.560 --> 00:42.740
+Let's take a look at the next slide to go even deeper in software design, we look at design principles.
+
+00:42.740 --> 00:44.780
+We look at design patterns.
+
+00:44.780 --> 00:46.160
+What are those things?
+
+00:46.160 --> 00:49.310
+We look at ways to diagram our designs.
+
+00:49.310 --> 00:56.090
+With UML, we look at all the different architectural options for unity, and then we land on mini MVCs,
+
+00:56.120 --> 01:01.170
+which is a custom free architecture as the leading solution.
+
+01:01.850 --> 01:05.150
+Then there's four different sample projects included in the course.
+
+01:05.150 --> 01:07.790
+But today we're going over even more demos.
+
+01:07.790 --> 01:09.920
+Besides those, I think I've added ten more.
+
+01:09.950 --> 01:13.040
+So we're going to go over the bouncy ball demo here.
+
+01:13.040 --> 01:14.450
+So let's take a look at that.
+
+01:14.870 --> 01:17.240
+So here I am in the sample project.
+
+01:17.240 --> 01:23.540
+If you've gotten the sample project here, the mini MVCs, and followed the instructions from the Git
+
+01:23.540 --> 01:28.430
+repo, then come into the samples here and just import those samples.
+
+01:28.430 --> 01:30.350
+Now I've already done that for us here.
+
+01:30.380 --> 01:37.640
+We can see the samples and we can see here in the more folder there is the bouncy ball mini.
+
+01:37.640 --> 01:39.380
+So let's look at those.
+
+01:40.520 --> 01:41.810
+And here is the demo.
+
+01:41.810 --> 01:44.120
+So let's just run the demo just to start.
+
+01:46.100 --> 01:47.690
+It's a little bit of audio playing.
+
+01:47.690 --> 01:49.160
+I'm not sure if you can hear that.
+
+01:49.950 --> 01:59.220
+But all it's doing is using unity physics to bounce a ball on a surface and then it updates the UI.
+
+01:59.250 --> 02:02.060
+Now, there's no interactivity in this demo.
+
+02:02.070 --> 02:04.500
+Actually, I think I can hit spacebar if I remember.
+
+02:05.320 --> 02:05.530
+Now.
+
+02:06.610 --> 02:08.410
+Now there's no interactivity.
+
+02:08.980 --> 02:14.140
+So all it does here is run on its own and use some physics.
+
+02:14.140 --> 02:18.400
+So you could take a look at how that physics interacts and you can see that the UI is getting updated
+
+02:18.400 --> 02:18.690
+there.
+
+02:18.700 --> 02:20.530
+So let's take a look at how this is structured.
+
+02:22.980 --> 02:28.410
+So here in the scene, we've got a world game object that just hides the camera and light, which are
+
+02:28.410 --> 02:29.490
+not too interesting.
+
+02:29.520 --> 02:36.630
+Then we have the bouncy ball view, which has all the graphics that we see there and also the UI.
+
+02:36.660 --> 02:38.760
+So let's just look at the UI elements.
+
+02:38.790 --> 02:42.090
+It's got the title and status there.
+
+02:42.090 --> 02:47.550
+So this is the view contains everything we see visually and The View also plays the audio.
+
+02:47.580 --> 02:52.770
+Now I'm not sure in the recording if you could hear the audio, but it's just going bounce, bounce,
+
+02:52.770 --> 02:54.760
+bounce and playing a little noise there.
+
+02:54.780 --> 02:56.760
+So that's it for there.
+
+02:57.420 --> 03:00.540
+Now let's take a look at the example itself.
+
+03:00.540 --> 03:04.050
+So this is a monobehaviour called the bouncy ball mini example.
+
+03:04.050 --> 03:09.810
+And all I do is drag in the view as the only reference that it needs to take here.
+
+03:09.810 --> 03:12.540
+And then this is off and ready to go.
+
+03:12.540 --> 03:14.190
+So let's look at the source code here.
+
+03:16.110 --> 03:17.810
+Zoom out a little bit here.
+
+03:17.820 --> 03:19.950
+So here's the example.
+
+03:20.040 --> 03:23.970
+The example is going to take the view in as a serialized field.
+
+03:24.150 --> 03:27.840
+Then it is going to just start in the start here.
+
+03:27.840 --> 03:31.920
+It's going to create a new bouncing bouncy ball mini and pass in the view.
+
+03:31.920 --> 03:37.290
+So Mini here in this terminology is the wrapper for the entire app.
+
+03:37.290 --> 03:41.940
+So any time you see Mini in the source code, it's meant to be the most parent structure.
+
+03:41.940 --> 03:45.420
+And inside of it, it has several elements, including The View.
+
+03:45.870 --> 03:47.460
+Let's take a look at that next.
+
+03:50.920 --> 03:54.250
+So opening up The view.
+
+03:56.600 --> 03:58.280
+The view is going to extend.
+
+03:58.310 --> 03:58.860
+I'm sorry.
+
+03:58.880 --> 04:00.890
+I'm opening up the Mini to start with.
+
+04:01.370 --> 04:04.580
+So in the Mini I take the view element.
+
+04:04.610 --> 04:07.040
+It also has an audio controller there.
+
+04:07.040 --> 04:11.180
+And here's what we do inside the mini initialize.
+
+04:11.210 --> 04:19.700
+We're going to create a context, a model controller service, and it's going to wire them all together
+
+04:19.700 --> 04:21.400
+here in this one line.
+
+04:21.410 --> 04:28.040
+So any time you see the controller getting initialized in the mini world, the controller is the most,
+
+04:28.430 --> 04:32.750
+let's say, most knowledgeable concern in the whole system.
+
+04:32.750 --> 04:36.020
+So the mini itself has four parts inside.
+
+04:36.020 --> 04:40.670
+One of those parts is the controller, and the controller is the most knowledgeable part.
+
+04:40.670 --> 04:46.550
+So it takes in a reference to the other three concerns and it's what will say, Hey, data model, what's
+
+04:46.550 --> 04:47.450
+your value?
+
+04:47.480 --> 04:50.060
+Hey view, did anybody interact with you?
+
+04:50.090 --> 04:52.430
+Hey service, can you load something for me?
+
+04:52.430 --> 04:54.830
+It's the controller that's going to glue all that together.
+
+04:55.520 --> 04:57.780
+So let's look at the model quickly.
+
+04:58.170 --> 05:04.650
+The model is going to hold values for how many times have we counted up and what is the maximum?
+
+05:04.650 --> 05:07.560
+So it's going to say one of three, two of three.
+
+05:07.560 --> 05:12.510
+And then when it reaches three of three, it's going to reset itself one of three, two of three.
+
+05:12.510 --> 05:14.580
+So that's how those two values work there.
+
+05:14.610 --> 05:17.460
+Here, notice that they're both set to zero.
+
+05:17.460 --> 05:21.360
+So we'll take a look at what sets the max to three in a moment.
+
+05:22.020 --> 05:23.700
+Now let's look at the service.
+
+05:23.700 --> 05:27.960
+So the service layer is what is meant to call any external data.
+
+05:27.960 --> 05:34.620
+If your game does not need any external data from the beginning or ever, you can omit this step.
+
+05:34.620 --> 05:36.150
+You don't need to have a service.
+
+05:36.150 --> 05:43.080
+But typically today's games call back end services, local files that are external to the game itself,
+
+05:43.080 --> 05:49.140
+like we see here, and this service concept is a great one for that.
+
+05:49.140 --> 05:56.850
+So here all it's going to do is it's going to load a local text file and then parse that value into
+
+05:56.850 --> 05:58.830
+the bounce bounce count.
+
+05:58.860 --> 06:01.530
+Max So let's look at this text file.
+
+06:01.710 --> 06:04.200
+It's here in resources texts.
+
+06:04.380 --> 06:07.440
+If I open it up, it starts with the value three.
+
+06:07.440 --> 06:11.280
+So it seems a little silly here that you would have a value.
+
+06:11.310 --> 06:14.010
+Why not just hard code three in C sharp?
+
+06:14.040 --> 06:17.580
+This is just an arbitrary demo to show.
+
+06:17.580 --> 06:21.330
+Let's put some data outside the app and go load it.
+
+06:21.330 --> 06:24.830
+I could have also loaded this from the back end, for example.
+
+06:24.840 --> 06:26.190
+So that's it for the service.
+
+06:26.220 --> 06:29.700
+It's just going to go load that value three and pass it back to the controller.
+
+06:30.430 --> 06:31.780
+Now let's look at the controller.
+
+06:31.810 --> 06:36.010
+This is the last thing that we need to look at in the controller here.
+
+06:36.740 --> 06:40.820
+We inherit from base controller, as the comment says here.
+
+06:41.060 --> 06:44.570
+By the way, always base is optional to extend.
+
+06:44.570 --> 06:48.950
+It's just going to give you some free functionality, but you can begin to see through these examples
+
+06:48.950 --> 06:53.590
+how few lines of code there are to get this architecture set up.
+
+06:53.600 --> 06:59.210
+Well, I say that also someone looking at this example could say, Hey, I could bounce a ball with
+
+06:59.210 --> 07:02.690
+one monobehaviour why do I need these other classes?
+
+07:02.690 --> 07:08.060
+But again, the example here is you were learning fundamentals in a very simple use case.
+
+07:08.060 --> 07:14.540
+Now imagine growing your project up to the size of Fortnite managing multiplayer metagame.
+
+07:14.540 --> 07:18.380
+Each of the players, all of the things you can do with your player.
+
+07:18.380 --> 07:23.270
+We would have thousands of classes and tens of thousands of lines of code.
+
+07:23.300 --> 07:29.930
+Having this best practices divided into model view controller and service really pays dividends on your
+
+07:29.930 --> 07:30.800
+projects.
+
+07:30.800 --> 07:32.510
+That's why we're starting so simple.
+
+07:32.510 --> 07:38.060
+So it's a common concern when people are getting into learning architectures, it feels like, Hey,
+
+07:38.060 --> 07:42.310
+that's a lot of classes or a lot of lines of code to get simple things done.
+
+07:42.320 --> 07:48.350
+It's true, but you're paying in some investment time now to learn these fundamentals.
+
+07:48.350 --> 07:55.610
+So as your project scale your set right, it's a wonderful thing that three months into a solo project
+
+07:55.610 --> 08:02.000
+or two weeks into a five person project, there is not a question of where the next feature should go
+
+08:02.000 --> 08:07.850
+because you guys are all working together on the same architectural pattern and you know, hey, a button
+
+08:07.850 --> 08:12.530
+click well, that's going to start in The view and that's going to then go to the controller and then
+
+08:12.530 --> 08:13.400
+go to the model.
+
+08:13.430 --> 08:14.810
+You're speaking the same language.
+
+08:14.810 --> 08:21.560
+So the Udemy course talks about the benefits and the cost benefit analysis of bringing on new tech like
+
+08:21.560 --> 08:23.120
+this many MVCs.
+
+08:23.120 --> 08:24.800
+So back to the controller here.
+
+08:24.800 --> 08:29.120
+What we do is we initialize the view with some text fields.
+
+08:29.120 --> 08:31.820
+We go listen to that service here.
+
+08:32.680 --> 08:36.430
+And then whenever the service loads, we take that value.
+
+08:36.460 --> 08:39.670
+We loaded from the text field and we pass it to the model.
+
+08:39.790 --> 08:42.520
+Then we listen to the view and we say, Hey, view.
+
+08:42.520 --> 08:49.630
+Any time the physics detects the ball has bounced, then let's capture that here and we'll update that
+
+08:49.630 --> 08:53.490
+listening anytime that the bounce count has changed here.
+
+08:53.500 --> 08:55.630
+So there's a little bit more to look at here.
+
+08:55.630 --> 08:56.610
+You can dig in.
+
+08:56.620 --> 09:02.170
+We also have a little bit of the command pattern which we'll look at in a future example.
+
+09:02.170 --> 09:04.060
+So let's run the demo one more time.
+
+09:08.740 --> 09:11.680
+Yeah, I can see that the mic is picking up the bouncing.
+
+09:13.350 --> 09:14.130
+So it just goes.
+
+09:14.130 --> 09:14.820
+One, two, three.
+
+09:14.820 --> 09:15.510
+One, two, three.
+
+09:15.510 --> 09:16.290
+One, two, three.
+
+09:16.740 --> 09:18.420
+That's it for the count up demo.
