@@ -1,361 +1,361 @@
 WEBVTT
 
 00:00.510 --> 00:03.090
-The MVC architecture overview here.
+La visión general de la arquitectura MVC aquí.
 
 00:03.090 --> 00:08.430
-Continuing with just the course overview, let's look at what we'll learn from the MVC fundamentals
+Continuando con la visión general del curso, vamos a ver lo que vamos a aprender de los fundamentos de MVC
 
 00:08.430 --> 00:09.120
-themselves.
+mismos.
 
 00:09.120 --> 00:14.130
-When we talk about architecture and software design, there are so many different terms.
+Cuando hablamos de arquitectura y diseño de software, hay muchos términos diferentes.
 
 00:14.130 --> 00:20.100
-Some of these terms you may be familiar with already and may have a firm grasp of which of the ones
+Puede que ya estés familiarizado con algunos de estos términos y que tengas una idea clara de cuáles son
 
 00:20.100 --> 00:22.080
-that you see here are new to you.
+que veas aquí son nuevos para ti.
 
 00:22.110 --> 00:25.740
-Or maybe you have some idea, but not a full definition.
+O quizá tengas alguna idea, pero no una definición completa.
 
 00:25.740 --> 00:31.260
-You will see terms like these used throughout the course, and when I introduce a new term, I will
+Verás términos como éstos a lo largo del curso, y cuando introduzca un nuevo término, lo haré
 
 00:31.260 --> 00:33.660
-explain what it is and give it the context.
+explicaré qué es y le daré el contexto.
 
 00:34.080 --> 00:37.740
-By the end of this course, you'll have a firmer grasp on the vocabulary.
+Al final de este curso, tendrás un dominio más firme del vocabulario.
 
 00:37.770 --> 00:41.440
-Imagine a ladder of your own professional growth through your career.
+Imagina una escalera de tu propio crecimiento profesional a lo largo de tu carrera.
 
 00:41.520 --> 00:47.670
-Some of these principles come earlier in your development and would be required in junior and intermediate
+Algunos de estos principios aparecen antes en tu desarrollo y serían necesarios en los niveles junior e intermedio.
 
 00:47.670 --> 00:48.510
-job positions.
+puestos de trabajo.
 
 00:48.510 --> 00:52.830
-Understanding classes and object oriented programming are fundamental.
+Entender las clases y la programación orientada a objetos es fundamental.
 
 00:52.830 --> 00:59.940
-Over time, expert developers work on design patterns, abstracting concepts, making their code more
+Con el tiempo, los desarrolladores expertos trabajan en patrones de diseño, abstrayendo conceptos, haciendo su código más
 
 00:59.940 --> 01:04.980
-modular and reusable, as well as learning, testing and architectures.
+modular y reutilizable, así como en el aprendizaje, las pruebas y las arquitecturas.
 
 01:04.980 --> 01:10.620
-This course focuses on architecture, and we will also hit on a lot of these different concepts, including
+Este curso se centra en la arquitectura, y también vamos a golpear en un montón de estos conceptos diferentes, incluyendo
 
 01:10.620 --> 01:12.900
-testing the progression through a game.
+probar la progresión a través de un juego.
 
 01:12.900 --> 01:19.950
-Developers career can have many different job titles depending on the company country culture that you're
+La carrera de desarrollador puede tener muchos títulos de trabajo diferentes dependiendo de la cultura del país de la compañía en la que estés.
 
 01:19.950 --> 01:20.670
-working in.
+trabajes.
 
 01:20.700 --> 01:22.440
-That growth could be quite different.
+Ese crecimiento puede ser muy diferente.
 
 01:22.440 --> 01:27.780
-But here is a loose example of some of the different jobs that you can progress on through a long career
+Pero aquí tienes un ejemplo de algunos de los diferentes trabajos en los que puedes progresar a lo largo de tu carrera profesional
 
 01:27.780 --> 01:28.710
-in game development.
+en el desarrollo de juegos.
 
 01:28.710 --> 01:34.590
-While having experience in architectural concepts is always important in software development and game
+Aunque tener experiencia en conceptos arquitectónicos siempre es importante en el desarrollo de software y juegos
 
 01:34.590 --> 01:41.640
-development, it is especially crucial in the mid game of moving towards senior development positions.
+desarrollo, es especialmente crucial en el juego medio de avanzar hacia posiciones de desarrollo de alto nivel.
 
 01:41.640 --> 01:47.520
-You can even see on this specific chart there's dedicated software architect positions as well as a
+Incluso se puede ver en este gráfico específico que hay puestos de arquitecto de software dedicados, así como un
 
 01:47.520 --> 01:49.440
-place to bring your expertise.
+lugar para aportar tu experiencia.
 
 01:49.440 --> 01:56.190
-Ultimately, a software's architecture is the fundamental organization of all of its parts.
+En última instancia, la arquitectura de un software es la organización fundamental de todas sus partes.
 
 01:56.190 --> 02:02.610
-It's built on a set of design principles and design patterns, both of which we'll discuss in the course.
+Está construida sobre un conjunto de principios de diseño y patrones de diseño, los cuales discutiremos en el curso.
 
 02:02.610 --> 02:09.060
-Some of the benefits of consciously applying an architecture to your application or game is that it's
+Algunos de los beneficios de aplicar conscientemente una arquitectura a tu aplicación o juego es que es
 
 02:09.060 --> 02:10.890
-based on proven concepts.
+basada en conceptos probados.
 
 02:10.890 --> 02:14.910
-It'll be in confidence, performance and scalability to your projects.
+Será en la confianza, el rendimiento y la escalabilidad a sus proyectos.
 
 02:14.910 --> 02:21.120
-Architectures are typically language agnostic, meaning the principles sit higher and more theoretical
+Las arquitecturas son típicamente agnósticas al lenguaje, lo que significa que los principios se sitúan más arriba y son más teóricos
 
 02:21.120 --> 02:26.670
-and could be applied to various different programming languages and programming platforms like the Unity
+y pueden aplicarse a diferentes lenguajes de programación y plataformas de programación como Unity
 
 02:26.670 --> 02:27.300
-Game Engine.
+motor de juegos.
 
 02:27.300 --> 02:33.060
-Now, while there is a learning curve, teams that embrace architecture will find development to move
+Ahora bien, aunque existe una curva de aprendizaje, los equipos que adopten la arquitectura verán que el desarrollo se mueve
 
 02:33.060 --> 02:37.860
-faster and especially maintenance on projects will be much faster as well.
+más rápido y sobre todo el mantenimiento de los proyectos será mucho más rápido también.
 
 02:37.860 --> 02:40.740
-In the course we'll touch on different types of architecture.
+En el curso tocaremos diferentes tipos de arquitectura.
 
 02:40.740 --> 02:43.740
-There's first the no architecture approach.
+Primero está el enfoque sin arquitectura.
 
 02:43.740 --> 02:49.860
-This is especially what beginners use in projects or even veterans use in prototypes of projects.
+Esto es especialmente lo que los principiantes utilizan en proyectos o incluso los veteranos utilizan en prototipos de proyectos.
 
 02:49.860 --> 02:56.580
-Here, for the sake of speed and flexibility, teams may choose no particular framework and move forward.
+Aquí, en aras de la velocidad y la flexibilidad, los equipos pueden no elegir ningún marco en particular y seguir adelante.
 
 02:56.790 --> 03:01.860
-Often in these examples you get yourself into trouble where scalability and adding features at the end
+A menudo en estos ejemplos te metes en problemas donde la escalabilidad y la adición de características al final
 
 03:01.860 --> 03:02.940
-becomes very difficult.
+se hace muy difícil.
 
 03:02.940 --> 03:08.580
-Veteran teams may choose custom architectures, taking the different principles and patterns that we'll
+Los equipos veteranos pueden elegir arquitecturas personalizadas, tomando los diferentes principios y patrones que vamos a
 
 03:08.580 --> 03:11.460
-talk about in this course and applying them themselves.
+hablaremos en este curso y aplicarlos ellos mismos.
 
 03:11.460 --> 03:14.340
-There are advantages to that, particularly customization.
+Eso tiene sus ventajas, sobre todo la personalización.
 
 03:14.340 --> 03:19.800
-There are established architectures, blueprints that we can pull off of the shelf and bring into our
+Hay arquitecturas establecidas, planos que podemos sacar de la estantería y llevar a nuestros
 
 03:19.800 --> 03:20.640
-project.
+proyecto.
 
 03:20.640 --> 03:24.840
-These include MVC, Nvme and MVP.
+Estos incluyen MVC, Nvme y MVP.
 
 03:24.870 --> 03:30.810
-This course will be focusing on the MVC or model view controller pattern, so why not proceed in our
+Este curso se centrará en el MVC o modelo vista controlador patrón, así que ¿por qué no proceder en nuestro
 
 03:30.810 --> 03:34.950
-projects with the no architecture approach doing what feels right in the moment?
+proyectos con el enfoque de no arquitectura haciendo lo que se siente bien en el momento?
 
 03:34.950 --> 03:40.800
-Well, while it may be faster initially and a bit freeing and flexible in how you approach it, you'll
+Bueno, si bien puede ser más rápido inicialmente y un poco más libre y flexible en la forma de abordarlo, lo harás
 
 03:40.800 --> 03:45.780
-find there'll be more debate about how and where to add each features, whether you're a single person
+encontrarás que habrá más debate sobre cómo y dónde añadir cada característica, si eres una sola persona
 
 03:45.780 --> 03:47.610
-team or on a larger team.
+o en un equipo más grande.
 
 03:47.610 --> 03:50.400
-Each developer may approach and solve this differently.
+Cada desarrollador puede enfocar y resolver esto de forma diferente.
 
 03:50.400 --> 03:56.190
-That inconsistency will make your code more difficult to read your project, more difficult to maintain.
+Esa inconsistencia hará que tu código sea más difícil de leer tu proyecto, más difícil de mantener.
 
 03:56.190 --> 04:01.170
-And when you on board or off board talent to your project, it can be challenging bringing new people
+Y cuando incorporas o desincorporas talento a tu proyecto, puede ser un reto traer gente nueva
 
 04:01.170 --> 04:01.470
-on.
+en.
 
 04:01.470 --> 04:06.750
-There's more training to be done and when someone departs your team, there's more information custom
+Hay más formación que hacer y cuando alguien abandona tu equipo, hay más información personalizada.
 
 04:06.750 --> 04:10.080
-to their particular solutions you need to get before they depart.
+a sus soluciones particulares que necesitas obtener antes de que se vayan.
 
 04:10.080 --> 04:15.300
-To many developers, the no architecture approach may feel like the best solution, but undoubtedly
+Para muchos desarrolladores, el enfoque sin arquitectura puede parecer la mejor solución, pero sin duda
 
 04:15.300 --> 04:17.300
-bugs and complexity will come along.
+los errores y la complejidad aparecerán.
 
 04:17.310 --> 04:20.400
-I'm reminded of this quote and I'll paraphrase it.
+Me acuerdo de esta cita y la parafrasearé.
 
 04:20.730 --> 04:26.280
-Every decision that we make while working on our software projects is an investment, and each investment
+Cada decisión que tomamos mientras trabajamos en nuestros proyectos de software es una inversión, y cada inversión
 
 04:26.280 --> 04:27.420
-comes with a cost.
+tiene un coste.
 
 04:27.420 --> 04:33.180
-There is indeed a learning curve here, but we approach that investment, trusting that it will carry
+Efectivamente, hay una curva de aprendizaje, pero afrontamos esa inversión confiando en que nos llevará
 
 04:33.180 --> 04:34.560
-benefits along the way.
+beneficios a lo largo del camino.
 
 04:34.560 --> 04:40.230
-That's how I suggest we look at architectures with a cost as well as long term benefits.
+Así es como sugiero que veamos las arquitecturas con un coste, así como los beneficios a largo plazo.
 
 04:40.230 --> 04:46.350
-Many times us as developers feel like the software development and game development process is all about
+Muchas veces nosotros como desarrolladores sentimos que el desarrollo de software y el proceso de desarrollo de juegos se trata de
 
 04:46.350 --> 04:48.660
-adding new features and functionality.
+añadir nuevas características y funcionalidades.
 
 04:48.660 --> 04:51.170
-However, that's not necessarily the case.
+Sin embargo, no es necesariamente así.
 
 04:51.180 --> 04:57.960
-Research shows that generally only about 20% of our production effort is adding new features and functionality
+Los estudios demuestran que, por lo general, sólo el 20% de nuestro esfuerzo de producción consiste en añadir nuevas características y funcionalidades.
 
 04:57.960 --> 04:59.820
-we spend the gross majority of.
+gastamos la mayor parte.
 
 05:00.000 --> 05:06.090
-Our time and energy, maintaining those features, updating different tools and frameworks we use,
+nuestro tiempo y energía, manteniendo esas características, actualizando las diferentes herramientas y marcos que utilizamos,
 
 05:06.390 --> 05:12.660
-addressing user feedback, even reducing areas of scope as well as of course addressing bugs.
+los comentarios de los usuarios, incluso reduciendo áreas de alcance y, por supuesto, solucionando errores.
 
 05:12.660 --> 05:19.560
-Creating maintainable code pays dividends, establishing a structure and architecture from the beginning
+Crear código mantenible da sus frutos, estableciendo una estructura y arquitectura desde el principio
 
 05:19.680 --> 05:26.640
-with a consistent, bespoke way to add our new functionality will help greatly during this 80% of the
+con una forma coherente y a medida para añadir nuestra nueva funcionalidad ayudará en gran medida durante este 80% de la
 
 05:26.640 --> 05:27.750
-software's life.
+del software.
 
 05:27.750 --> 05:31.800
-When we are maintaining fixing bugs and addressing feedback.
+Cuando estemos realizando el mantenimiento, corrigiendo errores y respondiendo a los comentarios.
 
 05:31.800 --> 05:33.630
-Let's just take bugs for an example.
+Tomemos los errores como ejemplo.
 
 05:33.630 --> 05:39.060
-The same bug encountered earlier in development is much, much cheaper to solve.
+El mismo error encontrado antes en el desarrollo es mucho, mucho más barato de resolver.
 
 05:39.060 --> 05:41.850
-It requires less developer time and less testing upon it.
+Requiere menos tiempo del desarrollador y menos pruebas sobre el mismo.
 
 05:41.850 --> 05:47.700
-It's a best practice to catch these bugs early and often, as well as fixing bugs before we add new
+Es una buena práctica detectar estos bugs pronto y a menudo, así como corregirlos antes de añadir otros nuevos.
 
 05:47.700 --> 05:48.360
-features.
+características.
 
 05:48.360 --> 05:53.640
-In addition to creating maintainable code to help us accomplish these goals, we can also increase the
+Además de crear código mantenible que nos ayude a lograr estos objetivos, también podemos aumentar la
 
 05:53.640 --> 05:55.260
-amount of automation and testing.
+la cantidad de automatización y pruebas.
 
 05:55.260 --> 05:56.190
-Along with the project.
+junto con el proyecto.
 
 05:56.190 --> 06:00.030
-We'll see how architectures enable us to do testing more easily.
+Veremos cómo las arquitecturas nos permiten hacer pruebas más fácilmente.
 
 06:00.030 --> 06:06.990
-Increased automation and testing brings confidence, robustness and stability to our projects as well.
+El aumento de la automatización y las pruebas también aporta confianza, robustez y estabilidad a nuestros proyectos.
 
 06:06.990 --> 06:12.810
-So how exactly does a framework like the model view controller architecture help us with testing?
+Entonces, ¿cómo exactamente un marco como la arquitectura modelo vista controlador nos ayuda con las pruebas?
 
 06:12.810 --> 06:19.380
-Well, at its core, using a framework like MVC will invite us to separate the different areas of concern
+Bueno, en esencia, el uso de un marco como MVC nos invita a separar las diferentes áreas de interés
 
 06:19.390 --> 06:27.150
-from our projects, having these aspects be separate, decoupled in how they communicate, and also
+de nuestros proyectos, teniendo estos aspectos separados, desacoplados en la forma en que se comunican, y también
 
 06:27.150 --> 06:30.440
-inviting smaller responsibilities within each class.
+invitando a responsabilidades más pequeñas dentro de cada clase.
 
 06:30.450 --> 06:36.000
-All of those qualities make for more testable code within testing, especially when we employ something
+Todas esas cualidades hacen que el código sea más comprobable dentro de las pruebas, especialmente cuando empleamos algo
 
 06:36.000 --> 06:39.030
-called test driven development, which we'll cover in the course.
+llamado desarrollo dirigido por pruebas, que cubriremos en el curso.
 
 06:39.030 --> 06:42.870
-The testing itself will fold into how we make our solutions work.
+Las pruebas se integrarán en la forma en que hacemos funcionar nuestras soluciones.
 
 06:42.870 --> 06:49.560
-We'll see that thinking about testing upfront helps us create projects with more simple solutions.
+Veremos que pensar en las pruebas por adelantado nos ayuda a crear proyectos con soluciones más sencillas.
 
 06:49.560 --> 06:53.370
-We can certainly create an NVQ project without adding testing.
+Ciertamente podemos crear un proyecto NVQ sin añadir pruebas.
 
 06:53.520 --> 06:58.890
-And for those of you who've done testing, you know that MVC architecture is not required.
+Y para aquellos de ustedes que han hecho pruebas, saben que la arquitectura MVC no es necesaria.
 
 06:58.890 --> 07:01.350
-So why do we talk about them coming together?
+Entonces, ¿por qué hablamos de que se unan?
 
 07:01.350 --> 07:05.430
-Because combining these two concepts is incredibly powerful together.
+Porque la combinación de estos dos conceptos es increíblemente poderosa.
 
 07:05.430 --> 07:10.920
-In this course, we'll see how using an established architecture like MVC will bring many benefits to
+En este curso, veremos cómo el uso de una arquitectura establecida como MVC traerá muchos beneficios para
 
 07:10.920 --> 07:12.510
-our Unity project development.
+el desarrollo de nuestros proyectos Unity.
 
 07:12.510 --> 07:17.910
-Overall, I'm incredibly excited to get these concepts and practices in the hands of more devs.
+En general, estoy muy emocionado de conseguir estos conceptos y prácticas en las manos de más desarrolladores.
 
 07:17.910 --> 07:23.370
-The Unity development audience spans an incredible amount of different types of developers.
+La audiencia de desarrollo de Unity abarca una increíble cantidad de diferentes tipos de desarrolladores.
 
 07:23.370 --> 07:28.800
-We have hobbyists creating projects for fun and professional developers of all different skill levels
+Tenemos aficionados que crean proyectos por diversión y desarrolladores profesionales de todos los niveles de habilidad.
 
 07:28.800 --> 07:29.820
-using unity.
+usando unity.
 
 07:30.120 --> 07:34.910
-Unity is very flexible and that's one of the very cool benefits about using it.
+Unity es muy flexible y esa es una de las grandes ventajas de usarlo.
 
 07:34.920 --> 07:39.060
-However, at times that flexibility can allow us to create bad solutions.
+Sin embargo, a veces esa flexibilidad puede permitirnos crear malas soluciones.
 
 07:39.060 --> 07:44.850
-Applying the best practices that we'll cover here will really help you think new ways about approaching
+Aplicar las mejores prácticas que cubriremos aquí realmente te ayudará a pensar nuevas formas de abordar
 
 07:44.850 --> 07:45.750
-your projects.
+tus proyectos.
 
 07:45.750 --> 07:51.990
-I'm confident that the topics we talk about here will help every one of you in your project development.
+Estoy seguro de que los temas que trataremos aquí os ayudarán a todos en el desarrollo de vuestros proyectos.
 
 07:51.990 --> 07:56.760
-In summary, this course will focus on the MVC architecture for Unity.
+En resumen, este curso se centrará en la arquitectura MVC para Unity.
 
 07:56.790 --> 07:59.220
-We covered the course contents.
+Cubrimos los contenidos del curso.
 
 07:59.490 --> 08:05.460
-We've seen a little bit about how architecture can help us create better projects, and I've also hinted
+Hemos visto un poco acerca de cómo la arquitectura puede ayudarnos a crear mejores proyectos, y también he insinuado
 
 08:05.460 --> 08:11.130
-that the powerful combination of testing and architecture coming together can produce exciting results.
+que la poderosa combinación de las pruebas y la arquitectura pueden producir resultados interesantes.
 
 08:11.130 --> 08:15.750
-In this next section, we'll discuss more about Unity as a platform.
+En la siguiente sección, hablaremos más sobre Unity como plataforma.
 
 08:16.260 --> 08:22.260
-We'll do a quick recap about why you would choose Unity, what are the different features and services,
+Haremos una rápida recapitulación sobre por qué elegir Unity, cuáles son las diferentes características y servicios,
 
 08:22.260 --> 08:25.200
-and an overview briefly of its major parts.
+y un breve resumen de sus partes principales.
 
 08:25.380 --> 08:26.130
-Thanks.
+Gracias.

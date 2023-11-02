@@ -1,256 +1,256 @@
 WEBVTT
 
 00:00.330 --> 00:03.630
-The mini MDC's architecture for Unity.
+La arquitectura del mini MDC para Unity.
 
 00:03.630 --> 00:08.820
-After years of Unity experience, I created the mini MVCs architecture.
+Después de años de experiencia en Unity, he creado la arquitectura de mini MVCs.
 
 00:08.820 --> 00:12.740
-Throughout the course, I may refer to it as mini or mini MVCs.
+A lo largo del curso, me referiré a ella como mini o mini MVCs.
 
 00:12.750 --> 00:17.580
-When I created it, I applied the learnings I had from past architectural frameworks.
+Cuando lo creé, apliqué los aprendizajes que tenía de anteriores marcos arquitectónicos.
 
 00:17.580 --> 00:23.910
-These learnings include using generics, having strong typing, using the command pattern and the observer
+Estos aprendizajes incluyen el uso de genéricos, con fuerte tipado, utilizando el patrón de comandos y el observador
 
 00:23.910 --> 00:26.550
-pattern for a two tiered communication system.
+para un sistema de comunicación de dos niveles.
 
 00:26.550 --> 00:32.670
-As with other MVC based architectures, we have benefits including it is a proven solution.
+Al igual que con otras arquitecturas basadas en MVC, tenemos beneficios incluyendo que es una solución probada.
 
 00:32.670 --> 00:34.080
-It's language agnostic.
+Es agnóstica al lenguaje.
 
 00:34.080 --> 00:39.300
-You can find materials on this type of approach in many different languages and platforms.
+Puedes encontrar materiales sobre este tipo de enfoque en muchos idiomas y plataformas diferentes.
 
 00:39.300 --> 00:45.300
-Using MINI provides a more testable environment which allows for faster development and more straightforward
+El uso de MINI proporciona un entorno más comprobable que permite un desarrollo más rápido y más directo.
 
 00:45.300 --> 00:46.650
-maintenance of your projects.
+mantenimiento de tus proyectos.
 
 00:46.650 --> 00:49.080
-Some features include This is lightweight.
+Algunas características incluyen Esto es ligero.
 
 00:49.080 --> 00:53.310
-Part of why it's called MINI is that there's very few classes and concepts involved.
+Parte de por qué se llama MINI es que hay muy pocas clases y conceptos involucrados.
 
 00:53.310 --> 00:56.820
-Also, it is specifically non money behavior.
+Además, se trata específicamente de comportamiento no monetario.
 
 00:56.820 --> 00:58.560
-Money behaviors are optional here.
+Los comportamientos monetarios son opcionales aquí.
 
 00:58.560 --> 01:04.140
-The core concerns extend an interface and there are no amount of behaviors required.
+Las preocupaciones centrales extienden una interfaz y no hay cantidad de comportamientos requeridos.
 
 01:04.530 --> 01:09.180
-Behaviors become optional and you can use them for all four of the concerns.
+Los comportamientos se vuelven opcionales y puedes usarlos para las cuatro preocupaciones.
 
 01:09.180 --> 01:13.590
-None of the concerns or whichever combination works best for your project.
+Ninguna de las preocupaciones o cualquier combinación que funcione mejor para tu proyecto.
 
 01:13.590 --> 01:17.280
-This demonstrates another feature that this is an opinionated framework.
+Esto demuestra otra característica que este es un marco de trabajo de opinión.
 
 01:17.280 --> 01:22.770
-There is a suggested path, but it's also quite flexible based on the needs of your project.
+Hay una ruta sugerida, pero también es bastante flexible en función de las necesidades de tu proyecto.
 
 01:22.770 --> 01:26.370
-You can massage this system and get the best results for your use case.
+Puedes masajear este sistema y obtener los mejores resultados para tu caso de uso.
 
 01:26.370 --> 01:32.670
-This framework is great for production use cases in your project and moreover, it's ideal for educational
+Este marco es ideal para los casos de uso de producción en su proyecto y, además, es ideal para la educación
 
 01:32.670 --> 01:33.360
-uses.
+educativos.
 
 01:33.360 --> 01:37.650
-That's why in this course I focus on it to teach the concepts of MVC.
+Por eso en este curso me centro en él para enseñar los conceptos de MVC.
 
 01:37.650 --> 01:42.300
-Let's take a look at this high level UML diagram showing the classes involved.
+Echemos un vistazo a este diagrama UML de alto nivel que muestra las clases involucradas.
 
 01:42.300 --> 01:47.520
-Here we see the familiar major concerns of model, view, controller and service.
+Aquí vemos las preocupaciones principales familiares de modelo, vista, controlador y servicio.
 
 01:47.550 --> 01:51.090
-Notice we have no direct dependencies on the unity engine.
+Observa que no tenemos dependencias directas del motor unity.
 
 01:51.090 --> 01:53.220
-No more mono behavior is required.
+Ya no es necesario el comportamiento mono.
 
 01:53.220 --> 01:55.530
-There's flexibility to how you implement it.
+Hay flexibilidad en cómo implementarlo.
 
 01:55.530 --> 02:01.740
-But here in this example from my code, I'm subclasses, the Mini and VCs project to get started.
+Pero aquí en este ejemplo de mi código, estoy subclases, el Mini y VCs proyecto para empezar.
 
 02:01.740 --> 02:07.110
-So when looking at this framework or any other unity specific framework, some of the considerations
+Así que cuando se mira en este marco o cualquier otro marco específico de la unidad, algunas de las consideraciones
 
 02:07.110 --> 02:08.610
-you can ask yourselves are here.
+que podéis preguntaros están aquí.
 
 02:08.610 --> 02:12.030
-Does it have any unity specific features in this case?
+¿Tiene alguna característica específica de unity en este caso?
 
 02:12.030 --> 02:12.450
 No.
 
 02:12.450 --> 02:16.560
-I chose not to depend and require mono behavior.
+He elegido no depender y requerir el comportamiento de unity.
 
 02:16.560 --> 02:19.470
-For example, you can certainly add that yourself.
+Por ejemplo, puedes añadirlo tú mismo.
 
 02:19.470 --> 02:25.110
-The system is flexible to use things like mono behavior and script able object, but they're not required
+El sistema es flexible para usar cosas como mono behavior y script able object, pero no son necesarios.
 
 02:25.110 --> 02:26.340
-parts of the core framework.
+partes del núcleo del framework.
 
 02:26.340 --> 02:28.170
-This was a desire to keep things light.
+Esto fue un deseo de mantener las cosas ligeras.
 
 02:28.170 --> 02:30.150
-So what's the role of mono behaviors?
+¿Cuál es el papel de los comportamientos mono?
 
 02:30.150 --> 02:31.230
-Well, they're optional.
+Bueno, son opcionales.
 
 02:31.230 --> 02:33.030
-For each of your four concerns.
+Para cada una de tus cuatro preocupaciones.
 
 02:33.030 --> 02:35.250
-You can extend mono behavior or not.
+Puedes extender el comportamiento mono o no.
 
 02:35.250 --> 02:39.390
-So how does it handle the concerns, the conventions in the communication?
+Entonces, ¿cómo maneja las preocupaciones, las convenciones en la comunicación?
 
 02:39.390 --> 02:43.560
-Well, imagine within your project you could have one or more minis by default.
+Bien, imagina que dentro de tu proyecto puedes tener uno o más minis por defecto.
 
 02:43.560 --> 02:48.180
-I would assume you'd add one to the project, but you could split it up into more and have them communicate
+Supondría que añadirías una al proyecto, pero podrías dividirlo en más y hacer que se comunicaran
 
 02:48.180 --> 02:50.280
-together for a more modular approach.
+juntos para un enfoque más modular.
 
 02:50.280 --> 02:54.240
-You can have zero or more of each of the major concerns.
+Puedes tener cero o más de cada una de las preocupaciones principales.
 
 02:54.240 --> 03:00.390
-I'd imagine at a minimum you'd have one mini and one controller, but then you could have multiple other
+Imagino que como mínimo tendrás un mini y un controlador, pero luego puedes tener varios más.
 
 03:00.390 --> 03:05.730
-controllers, multiple views if you like, multiple models and multiple services.
+controladores, multiples vistas si quieres, multiples modelos y multiples servicios.
 
 03:05.730 --> 03:07.560
-So it scales for your needs.
+Así que se adapta a tus necesidades.
 
 03:07.560 --> 03:10.470
-It's designed in such a way that the conventions you follow.
+Está diseñado de tal forma que las convenciones que sigas.
 
 03:10.470 --> 03:16.860
-The suggestions are much more important than any sort of configuration or requirement.
+Las sugerencias son mucho más importantes que cualquier tipo de configuración o requisito.
 
 03:16.860 --> 03:22.500
-This allows for flexibility, but I still encourage you to be vigilant with separating your concerns
+Esto permite flexibilidad, pero aún así os animo a que estéis atentos a separar vuestras preocupaciones
 
 03:22.500 --> 03:27.360
-and watching how you communicate between those concerns that will give you a more scalable project.
+y ver cómo se comunican entre las preocupaciones que le dará un proyecto más escalable.
 
 03:27.360 --> 03:31.650
-And speaking of communication, the system supports two tiers of communication.
+Y hablando de comunicación, el sistema soporta dos niveles de comunicación.
 
 03:31.650 --> 03:34.830
-It has both events as well as commands.
+Tiene tanto eventos como comandos.
 
 03:34.830 --> 03:39.370
-Having both of these available as options is incredibly powerful as we'll see.
+Disponer de ambas opciones es increíblemente potente, como veremos.
 
 03:39.390 --> 03:42.900
-And finally, what's the balance of rigidity versus flexibility?
+Y por último, ¿cuál es el equilibrio entre rigidez y flexibilidad?
 
 03:42.900 --> 03:48.900
-Well, a core philosophy behind this framework is that it is as flexible and lightweight as possible.
+Bueno, una de las principales filosofías de este marco es que sea lo más flexible y ligero posible.
 
 03:48.900 --> 03:54.210
-But to maintain a lot of the benefits we get from using an architecture, there are some rules that
+Pero para mantener muchos de los beneficios que obtenemos de la utilización de una arquitectura, hay algunas reglas que
 
 03:54.210 --> 03:58.800
-are suggested and however you apply them, I suggest to apply them consistently.
+se sugieren y como sea que las apliques, te sugiero que las apliques consistentemente.
 
 03:58.800 --> 04:05.520
-So for the purposes of this course and our discussion on will elect Mini and VCs as our chosen unity
+Así que para los propósitos de este curso y nuestra discusión elegiremos Mini y VC como nuestra unidad elegida
 
 04:05.520 --> 04:10.590
-framework to move forward, and a key component to how this information is being delivered in the course
+marco para seguir adelante, y un componente clave de cómo esta información se está entregando en el curso
 
 04:10.590 --> 04:16.440
-is regardless of which MVC framework you choose or if you choose to create your own framework.
+independientemente del framework MVC que elijas o si decides crear tu propio framework.
 
 04:16.440 --> 04:23.190
-The design principles, the design patterns, using the diagramming we talked about, and the experience
+Los principios de diseño, los patrones de diseño, el uso de los diagramas de los que hablamos, y la experiencia
 
 04:23.190 --> 04:28.380
-we'll see as we get deeper into this, you can bring all of these learnings to any architecture you
+que veremos cuando profundicemos en esto, puedes llevar todos estos aprendizajes a cualquier arquitectura que tu
 
 04:28.380 --> 04:28.890
-choose.
+elijas.
 
 04:28.890 --> 04:30.240
-So let's get started.
+Así que empecemos.
 
 04:30.240 --> 04:34.560
-I'll give some context for how and why I chose the mini MVCs for this course.
+Voy a dar un poco de contexto de cómo y por qué elegí los mini MVC para este curso.
 
 04:34.560 --> 04:39.780
-After spending years learning and applying architectures to different projects and wanting to teach
+Después de pasar años aprendiendo y aplicando arquitecturas a diferentes proyectos y queriendo enseñar
 
 04:39.780 --> 04:44.340
-more about those concepts, I realized it's a big subject and there's a lot to learn.
+más sobre esos conceptos, me di cuenta de que es un gran tema y hay mucho que aprender.
 
 04:44.340 --> 04:51.390
-I suggest the very best way to learn is to actually use these concepts in your projects, Create sample
+Sugiero que la mejor manera de aprender es utilizar realmente estos conceptos en sus proyectos, Crear ejemplo
 
 04:51.390 --> 04:55.260
-projects from scratch, bring these concepts into your existing projects.
+proyectos desde cero, trae estos conceptos a tus proyectos existentes.
 
 04:55.260 --> 04:59.760
-Only then will you really get the feel and learn the benefits of these solutions.
+Sólo entonces conseguirás realmente sentir y aprender los beneficios de estas soluciones.
 
 05:00.060 --> 05:05.400
-I looked at all the choices that are out there from a unity perspective on the best architectures.
+Analicé todas las opciones que existen desde la perspectiva de la unidad sobre las mejores arquitecturas.
 
 05:05.400 --> 05:10.200
-There's a lot of great choices out there, but they're often complex learning the idiosyncrasies of
+Hay un montón de grandes opciones por ahí, pero a menudo son complejas aprender la idiosincrasia de
 
 05:10.200 --> 05:10.950
-each framework.
+cada marco.
 
 05:10.950 --> 05:16.410
-So I created the mini MVCs as an easy onboarding to the concepts of MVCs.
+Así que creé los mini MVC como una forma fácil de iniciarse en los conceptos de MVC.
 
 05:16.440 --> 05:20.790
-It is indeed production ready, but it's really designed for educational purposes.
+De hecho, está listo para la producción, pero en realidad está diseñado para fines educativos.
 
 05:20.790 --> 05:26.340
-So enjoy as we go deeper into it, we look at samples based on it and you follow the assignments using
+Así que disfruta a medida que profundizamos en él, vemos muestras basadas en él y sigues las asignaciones usando
 
 05:26.340 --> 05:27.000
-the framework.
+el marco.
 
 05:27.000 --> 05:32.310
-It's my hope that at the end of the course, whether it's this particular solution or another architecture,
+Es mi esperanza que al final del curso, ya sea esta solución en particular u otra arquitectura,
 
 05:32.310 --> 05:37.230
-that you see the benefits of using an architecture and you have the skills to apply them.
+que veas los beneficios de usar una arquitectura y tengas las habilidades para aplicarlos.
 
 05:37.620 --> 05:38.460
-Thanks.
+Gracias.

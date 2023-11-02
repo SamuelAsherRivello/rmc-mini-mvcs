@@ -1,493 +1,493 @@
 WEBVTT
 
 00:00.880 --> 00:01.390
-All right.
+De acuerdo.
 
 00:01.390 --> 00:02.830
-So welcome back.
+Bienvenido de nuevo.
 
 00:04.350 --> 00:04.860
-Here.
+Aquí.
 
 00:04.860 --> 00:13.140
-We're going to take a look at a demo of using mini MVCs, which is an architecture for unity and using
+Vamos a echar un vistazo a una demostración de la utilización de mini MVC, que es una arquitectura para la unidad y el uso de
 
 00:13.140 --> 00:15.540
-it along with UI toolkit.
+junto con UI toolkit.
 
 00:18.380 --> 00:24.890
-So this is part of a course that's available for pay MVC architecture for unity.
+Así que esto es parte de un curso que está disponible para la arquitectura MVC de pago para la unidad.
 
 00:24.920 --> 00:28.170
-It covers model view controller and the link is below.
+Cubre modelo vista controlador y el enlace está abajo.
 
 00:28.190 --> 00:30.410
-You can find out more about the course.
+Puedes encontrar más información sobre el curso.
 
 00:30.440 --> 00:31.820
-See if it's for you.
+Comprueba si es para ti.
 
 00:31.850 --> 00:33.860
-Watch the trailer for it as well.
+Mira también el trailer.
 
 00:33.890 --> 00:39.080
-Here we're going to be talking about more content that's added on top of the experience.
+Aquí vamos a hablar de más contenidos que se añaden a la experiencia.
 
 00:39.080 --> 00:45.020
-So in the core course we cover Unity software design, all different aspects.
+Así que en el curso básico cubrimos el diseño de software Unity, todos los diferentes aspectos.
 
 00:45.020 --> 00:51.170
-Mini MVC for Unity, which is one particular framework that I recommend and all the different sample
+Mini MVC para Unity, que es un framework en particular que recomiendo y todos los diferentes ejemplos.
 
 00:51.170 --> 00:52.550
-projects along with it.
+proyectos junto con él.
 
 00:53.030 --> 00:57.590
-What I've done, what I've done here is added even more demos.
+Lo que he hecho, lo que he hecho aquí es añadir aún más demos.
 
 00:57.590 --> 01:03.680
-The course recently reached 6 or 7000 students, which I'm super excited about, so I've added lots
+El curso ha alcanzado recientemente los 6 o 7000 alumnos, lo que me hace mucha ilusión, así que he añadido muchas
 
 01:03.680 --> 01:05.360
-of new content on top of it.
+de nuevos contenidos.
 
 01:05.360 --> 01:09.940
-And what we've got here is one demo about using UI toolkit.
+Y lo que tenemos aquí es una demo sobre el uso de UI toolkit.
 
 01:09.950 --> 01:17.210
-So UI toolkit, if you don't know it is the newest, it is now in Unity 2022 and beyond.
+Así que UI toolkit, si no lo sabes es lo más nuevo, ahora está en Unity 2022 y más allá.
 
 01:17.240 --> 01:22.830
-The default UI that comes in not in a package but built in.
+La UI por defecto que no viene en un paquete sino incorporada.
 
 01:22.830 --> 01:25.140
-And it's not the most popular yet.
+Y aún no es la más popular.
 
 01:25.170 --> 01:27.690
-Unity UI continues to be pretty popular.
+Unity UI sigue siendo bastante popular.
 
 01:27.690 --> 01:34.770
-It's been around for 5 or 6 years, but UI Toolkit is an incredibly powerful new system for doing all
+Ha existido durante 5 o 6 años, pero UI Toolkit es un nuevo sistema increíblemente potente para hacer todo
 
 01:34.770 --> 01:35.550
-your UI.
+tu interfaz de usuario.
 
 01:35.580 --> 01:42.930
-So we're just going to take a look at an example here of using UI toolkit in the mini MVC project.
+Así que vamos a echar un vistazo a un ejemplo de uso de UI Toolkit en el mini proyecto MVC.
 
 01:44.870 --> 01:46.370
-So let's take a look here.
+Así que vamos a echar un vistazo aquí.
 
 01:46.370 --> 01:55.040
-Here we are inside the project, and this is the mini MVCs free repo that is available on Git.
+Aquí estamos dentro del proyecto, y este es el repo libre de mini MVCs que está disponible en Git.
 
 01:55.070 --> 01:58.190
-There's a link in the chat link below that you can take a look at.
+Hay un enlace en el chat de abajo al que puedes echar un vistazo.
 
 01:58.190 --> 02:03.820
-And in it you can click the samples and import the samples here and follow along.
+Y en él puedes hacer clic en las muestras e importar las muestras aquí y seguir a lo largo.
 
 02:03.830 --> 02:07.250
-Now, that's already been done here for the sake of this demo.
+Ahora, que ya se ha hecho aquí por el bien de esta demo.
 
 02:07.250 --> 02:12.650
-And we can see here in the more folder, we've got all sorts of different stuff and the very last,
+Y podemos ver aquí en la carpeta más, tenemos todo tipo de cosas diferentes y la última,
 
 02:12.650 --> 02:20.990
-the 10th one that we're going to have covered in the series is the Mini Mini Incorporated with UI toolkit.
+el décimo que vamos a cubrir en la serie es el Mini Mini Incorporated con UI toolkit.
 
 02:21.900 --> 02:25.800
-So here I've got let's look at all the different stuff we've got.
+Así que aquí tengo vamos a ver todas las cosas diferentes que tenemos.
 
 02:25.830 --> 02:29.010
-We've got a resources folder that's got some stuff inside of it.
+Tenemos una carpeta de recursos que tiene algunas cosas dentro.
 
 02:29.040 --> 02:32.900
-We've got the scene, which I'll run in a moment and then we've got the source code.
+Tenemos la escena, que ejecutaré en un momento y luego tenemos el código fuente.
 
 02:32.910 --> 02:35.640
-Notice the source code in best practices.
+Fíjate en el código fuente en las mejores prácticas.
 
 02:35.640 --> 02:42.090
-For many, it is divided into controller model service and view.
+Para muchos, se divide en controlador modelo servicio y vista.
 
 02:42.450 --> 02:45.120
-So let's go ahead and run the Mini.
+Así que vamos a seguir adelante y ejecutar el Mini.
 
 02:47.420 --> 02:51.860
-Load that up and let's take a look at playing this example.
+Carguémoslo y echemos un vistazo a este ejemplo.
 
 02:52.310 --> 02:55.100
-So here we have UI.
+Aquí tenemos la interfaz de usuario.
 
 02:55.130 --> 03:01.610
-If you're not familiar with UI toolkit, you may think, Oh, this is created in the normal use unity
+Si no estás familiarizado con UI toolkit, puedes pensar, Oh, esto se crea en la unidad de uso normal
 
 03:01.640 --> 03:04.090
-UI, but let's take a look at how it's structured.
+UI, pero echemos un vistazo a cómo está estructurado.
 
 03:04.100 --> 03:10.580
-So each of these elements here is a button and notice that they have a consistent mouse over.
+Así que cada uno de estos elementos aquí es un botón y observe que tienen un mouse over consistente.
 
 03:12.200 --> 03:12.920
-Really nice.
+Muy bonito.
 
 03:12.920 --> 03:16.160
-And I'll click a hare button and it changes his hair.
+Y voy a hacer clic en un botón de liebre y le cambia el pelo.
 
 03:18.560 --> 03:19.820
-Click the face button.
+Pulso el botón de la cara.
 
 03:21.890 --> 03:23.540
-The shirt button.
+El botón de la camisa.
 
 03:24.080 --> 03:26.450
-It's just stepping through some different graphics.
+Pasa por diferentes gráficos.
 
 03:27.770 --> 03:29.590
-The body itself can change.
+El propio cuerpo puede cambiar.
 
 03:29.600 --> 03:31.310
-You can randomize.
+Se puede aleatorizar.
 
 03:32.130 --> 03:33.900
-And you can reset to the original.
+Y puede volver al original.
 
 03:34.500 --> 03:41.160
-Now, the entire UI here is created in UI toolkit, so we'll take a moment and look at that and then
+Ahora, toda la interfaz de usuario aquí se crea en el kit de herramientas de interfaz de usuario, así que vamos a tomar un momento y ver que y luego
 
 03:41.160 --> 03:45.060
-we'll jump in and we'll focus on the the mini experience.
+nos centraremos en la mini experiencia.
 
 03:46.710 --> 03:48.810
-So let's look at the scene structure here.
+Veamos la estructura de la escena.
 
 03:49.110 --> 03:52.470
-So here in the world, let me close this up.
+Así que aquí en el mundo, déjame cerrar esto.
 
 03:56.820 --> 03:57.150
-Yeah.
+Sí.
 
 03:57.480 --> 04:01.860
-So here in the world, we just have the main camera and the light.
+Así que aquí en el mundo, sólo tenemos la cámara principal y la luz.
 
 04:01.890 --> 04:03.210
-Nothing too exciting there.
+Nada demasiado emocionante aquí.
 
 04:03.210 --> 04:05.700
-So I just put them in that empty world object.
+Así que los pongo en ese objeto mundo vacío.
 
 04:05.730 --> 04:09.390
-Then we have the view here, which is the UI toolkit view.
+Luego tenemos la vista aquí, que es la vista del kit de herramientas de interfaz de usuario.
 
 04:09.420 --> 04:10.740
-We'll look at that in a moment.
+Lo veremos en un momento.
 
 04:10.740 --> 04:14.220
-And then we have the example for the Mini itself.
+Y luego tenemos el ejemplo para el propio Mini.
 
 04:14.220 --> 04:17.670
-So there's two parts to showing this demo here in this video.
+Así que hay dos partes para mostrar esta demostración aquí en este video.
 
 04:17.700 --> 04:21.060
-There's the UI toolkit part and then the mini part.
+Está la parte del kit de herramientas de interfaz de usuario y luego la parte mini.
 
 04:21.090 --> 04:28.500
-Now actually, if you're familiar with Mini, there's really nothing new happening here as far as how
+Ahora bien, en realidad, si estás familiarizado con Mini, no hay nada nuevo aquí en cuanto a cómo
 
 04:28.500 --> 04:29.430
-that structures work.
+funcionan las estructuras.
 
 04:29.430 --> 04:30.900
-So we will take a dip in there.
+Así que nos daremos un chapuzón.
 
 04:30.900 --> 04:36.300
-But the interesting thing here that's kind of new for a lot of unity users is just how the UI is set
+Pero lo interesante aquí, que es algo nuevo para muchos usuarios de Unity, es cómo está configurada la interfaz de usuario.
 
 04:36.300 --> 04:36.750
-up.
+para arriba.
 
 04:36.780 --> 04:46.320
-So what I do here is I have a UI document which is right here and UI document is a core unity class.
+Así que lo que hago aquí es que tengo un documento de interfaz de usuario que está aquí y el documento de interfaz de usuario es una clase principal de unity.
 
 04:47.580 --> 04:49.140
-Let me pop myself over here for a second.
+Permíteme acercarme aquí un segundo.
 
 04:49.170 --> 04:56.380
-The unity UI is a core class part of UI toolkit and it takes a visual tree asset.
+La unity UI es una clase central que forma parte del kit de herramientas UI y toma un activo visual en forma de árbol.
 
 04:56.500 --> 04:58.930
-So if we look at our project here.
+Así que si nos fijamos en nuestro proyecto aquí.
 
 05:02.550 --> 05:05.340
-I'm already lost where I click that.
+Ya me he perdido donde pincho eso.
 
 05:05.340 --> 05:08.790
 Click, click.
 
 05:09.720 --> 05:10.290
-Here we go.
+Allá vamos.
 
 05:10.500 --> 05:18.250
-So in this UI toolkit mini demo, there is a UI toolkit folder and it has some settings in it.
+Así que en esta mini demo del kit de herramientas de interfaz de usuario, hay una carpeta del kit de herramientas de interfaz de usuario y tiene algunos ajustes en ella.
 
 05:18.270 --> 05:22.470
-It has the cascading style sheets which are called us.
+Tiene las hojas de estilo en cascada que se llaman us.
 
 05:22.500 --> 05:25.080
-It has the UI toolkit layout.
+Tiene el diseño del UI toolkit.
 
 05:25.110 --> 05:28.260
-Now it's the layout that determines what's on the screen.
+Ahora es el diseño el que determina lo que hay en la pantalla.
 
 05:28.290 --> 05:34.410
-Now I have other videos linked below and you can take a look at how UI toolkit works, how and why it's
+Ahora tengo otros vídeos enlazados más abajo y puedes echar un vistazo a cómo funciona UI toolkit, cómo y por qué es
 
 05:34.410 --> 05:39.870
-super cool, how it's based on web standards like CSS, HTML and JavaScript.
+super cool, cómo se basa en estándares web como CSS, HTML y JavaScript.
 
 05:39.870 --> 05:42.690
-But let's just open this up so you can take a quick look.
+Pero vamos a abrir esto para que puedas echar un vistazo rápido.
 
 05:43.540 --> 05:44.920
-Make it full screen here.
+Hazlo a pantalla completa aquí.
 
 05:44.920 --> 05:46.320
-I'll click this.
+Haré clic aquí.
 
 05:46.330 --> 05:47.140
-There we go.
+Allá vamos.
 
 05:47.740 --> 05:51.580
-So we can see here we see which side is better for me to be on.
+Aquí podemos ver en qué lado me conviene estar.
 
 05:51.580 --> 05:58.030
-I'll pop back over here so you can see here it looks kind of like the whole unity editor here and what
+Voy a volver aquí para que pueda ver aquí se parece a todo el editor de la unidad aquí y lo que
 
 05:58.030 --> 05:58.600
-we're looking at.
+estamos viendo.
 
 05:58.600 --> 06:05.080
-But this is actually one layout window inside Unity because the UI toolkit system and its UI builder
+Pero esto es en realidad una ventana de diseño dentro de Unity porque el sistema de herramientas de interfaz de usuario y su constructor de interfaz de usuario
 
 06:05.080 --> 06:07.980
-window here has lots of information.
+tiene mucha información.
 
 06:07.990 --> 06:11.440
-We've got all the different styles represented on the left.
+Tenemos todos los diferentes estilos representados a la izquierda.
 
 06:11.470 --> 06:16.780
-We've got a hierarchy of the structure here that is just the hierarchy of the view.
+Tenemos una jerarquía de la estructura aquí que es sólo la jerarquía de la vista.
 
 06:16.810 --> 06:19.390
-You can see we can click across all the different items.
+Puedes ver que podemos hacer clic en los diferentes elementos.
 
 06:20.430 --> 06:20.970
-Member.
+Miembro.
 
 06:20.970 --> 06:25.600
-If I click preview here, I can see the different mouse over states.
+Si hago clic en la vista previa aquí, puedo ver los diferentes estados del ratón.
 
 06:25.620 --> 06:30.380
-Let's just take a quick peek at one of the benefits of using us.
+Echemos un vistazo rápido a una de las ventajas de utilizarnos.
 
 06:30.420 --> 06:37.380
-If I wanted to change this from getting bigger and turning blue as we mouse over, what if we wanted
+Si quisiera cambiar esto de hacerse más grande y volverse azul cuando pasamos el ratón por encima, ¿qué pasaría si quisiéramos
 
 06:37.380 --> 06:39.210
-it to go smaller and green?
+que se haga más pequeño y verde?
 
 06:39.300 --> 06:44.010
-Just for an arbitrary example, I've got a style here for when the button hovers.
+Sólo para un ejemplo arbitrario, tengo un estilo aquí para cuando el botón se desplaza.
 
 06:47.270 --> 06:53.600
-And if I go down here to color, I'll change it green.
+Y si bajo aquí al color, lo cambiaré a verde.
 
 06:53.840 --> 06:59.540
-And then I go down to the transform and I'll change it to 0.98 and 0.98.
+Y luego bajo a la transformación y la cambio a 0.98 y 0.98.
 
 06:59.540 --> 07:02.560
-So now I'm going green and smaller.
+Así que ahora voy verde y más pequeño.
 
 07:02.570 --> 07:05.270
-Now let's do the preview again and mouse over.
+Ahora vamos a hacer la vista previa de nuevo y pasar el ratón por encima.
 
 07:05.270 --> 07:10.190
-Now look, all of those consistently change their over states.
+Ahora mira, todos esos cambian consistentemente sus estados over.
 
 07:10.220 --> 07:16.850
-Now doing the same thing in the traditional unity UI system is very possible, but it has never been
+Ahora hacer lo mismo en el sistema tradicional de unity UI es muy posible, pero nunca ha sido
 
 07:16.850 --> 07:24.320
-more easy to have templated effects that go over the pseudo states of mouse hover.
+más fácil tener efectos de plantillas que van sobre los pseudo estados del mouse hover.
 
 07:24.320 --> 07:24.860
-Selected.
+Seleccionado.
 
 07:24.860 --> 07:25.610
-ET cetera.
+Etcétera.
 
 07:25.640 --> 07:26.180
-Built in.
+Incorporado.
 
 07:26.180 --> 07:27.380
-Very, very nice.
+Muy, muy bonito.
 
 07:27.380 --> 07:32.930
-So the point there is that that system is super cool, but we're not going to go into depth with that.
+Así que la cuestión es que ese sistema es super guay, pero no vamos a entrar en profundidad con eso.
 
 07:32.930 --> 07:36.350
-Let's now take a look at we pop back over here.
+Ahora echemos un vistazo a lo que tenemos aquí.
 
 07:39.200 --> 07:41.510
-Pop back over here.
+Vuelve aquí.
 
 07:43.230 --> 07:48.810
-We'll take just a minute here and go through how the Mini is set up.
+Nos tomaremos un minuto para ver cómo está configurado el Mini.
 
 07:49.020 --> 07:54.390
-So in that scene, we create some of the mini concerns.
+Así que en esa escena, creamos algunas de las preocupaciones del Mini.
 
 07:54.390 --> 07:58.530
-We create the context, the model, the service and the controller.
+Creamos el contexto, el modelo, el servicio y el controlador.
 
 07:58.560 --> 08:03.990
-Now, as we've seen in a lot of other demos in the course and you can watch different videos on YouTube
+Ahora, como hemos visto en muchas otras demos en el curso y puedes ver diferentes videos en YouTube
 
 08:03.990 --> 08:08.820
-about this that I've covered, the controller is really the glue that brings it all together.
+sobre esto que he cubierto, el controlador es realmente el pegamento que une todo.
 
 08:08.820 --> 08:10.620
-So let's take a look at how that works.
+Veamos cómo funciona.
 
 08:11.750 --> 08:20.720
-So here what we do is we initialize and we say, Hey, model, maintain an int that represents the index
+Así que aquí lo que hacemos es inicializar y decimos, Hey, modelo, mantener un int que representa el índice de
 
 08:20.720 --> 08:26.720
-of which hair we've got on and it'll be zero one, two, three, four, depending on the hair for the
+de que el pelo que tenemos en y será cero uno, dos, tres, cuatro, dependiendo del pelo para el
 
 08:26.720 --> 08:29.180
-face, for the shirt, for the body.
+para la cara, para la camisa, para el cuerpo.
 
 08:29.180 --> 08:32.960
-So all of those different elements are stored in the model and we listen to them here.
+Así que todos esos elementos diferentes se almacenan en el modelo y los escuchamos aquí.
 
 08:32.960 --> 08:40.880
-And any time the model says, Oh, the user has advanced which body to to use, we just grab the next
+Y cada vez que el modelo dice, Oh, el usuario ha avanzado que el cuerpo a utilizar, que acaba de agarrar el siguiente
 
 08:40.880 --> 08:43.160
-reference to a sprite and we use that there.
+referencia a un sprite y lo usamos.
 
 08:43.670 --> 08:48.080
-Then down here, any time the view changes.
+Luego aquí abajo, cada vez que la vista cambie.
 
 08:48.080 --> 08:52.040
-So if we click the hair button, then we're going to handle that.
+Así que si hacemos clic en el botón de pelo, entonces vamos a manejar eso.
 
 08:52.040 --> 08:53.470
-The hair button has been clicked.
+El botón del pelo ha sido pulsado.
 
 08:53.480 --> 08:56.990
-Anytime the face button gets clicked, we'll handle that stuff here.
+Cada vez que el botón de la cara sea pulsado, manejaremos eso aquí.
 
 08:56.990 --> 09:03.530
-So we're handling changing things, affecting the rendering of the view and also listening back then
+Así que estamos manejando el cambio de las cosas, afectando a la representación de la vista y también escuchando entonces
 
 09:03.530 --> 09:04.490
-down here.
+aquí abajo.
 
 09:04.490 --> 09:06.470
-Let's just see what happens.
+Veamos qué pasa.
 
 09:06.470 --> 09:16.920
-Anytime we click any of the buttons here, we go down here and we change the different value that is
+Cada vez que hacemos clic en cualquiera de los botones de aquí, vamos aquí abajo y cambiamos el valor diferente que es
 
 09:16.920 --> 09:18.960
-stored inside the data model.
+almacenado dentro del modelo de datos.
 
 09:18.960 --> 09:24.390
-So if you click next hair, please, then it updates that inside the model.
+Así que si hace clic en el siguiente pelo, por favor, entonces se actualiza que dentro del modelo.
 
 09:24.940 --> 09:25.450
-All right.
+De acuerdo.
 
 09:25.450 --> 09:26.210
-So that's it.
+Eso es todo.
 
 09:26.260 --> 09:31.390
-There's one thing that I did want to look at here, which if I go back here and I see that when I create
+Hay una cosa que quería mirar aquí, que si vuelvo aquí y veo que cuando creo
 
 09:31.390 --> 09:32.890
-The view.
+La vista.
 
 09:34.280 --> 09:36.290
-Uh, don't create it here.
+Uh, no la crees aquí.
 
 09:36.290 --> 09:37.450
-Actually, yeah.
+En realidad, sí.
 
 09:37.730 --> 09:38.480
-I took a you.
+Tomé un tú.
 
 09:40.970 --> 09:48.320
-So here we have a public property for each of the buttons in that UI.
+Así que aquí tenemos una propiedad pública para cada uno de los botones en esa interfaz de usuario.
 
 09:48.350 --> 09:54.520
-Now, typically you would have these be serialized fields for each button in Unity UI.
+Ahora, típicamente tendrías estos campos serializados para cada botón en Unity UI.
 
 09:54.530 --> 09:59.270
-But we're going to do something uniquely different here because we're using UI toolkit.
+Pero vamos a hacer algo diferente aquí porque estamos utilizando el kit de herramientas de interfaz de usuario.
 
 09:59.420 --> 10:08.390
-UI Toolkit has a query language where you can type Q and get any named element, and if you want it
+UI Toolkit tiene un lenguaje de consulta donde se puede escribir Q y obtener cualquier elemento con nombre, y si lo desea
 
 10:08.390 --> 10:13.790
-strongly typed, you can do Q button and then give it the name you want.
+fuertemente escrito, puedes hacer Q botón y luego darle el nombre que quieras.
 
 10:13.820 --> 10:19.270
-So you can see here in that syntax that I'm able to get at the Hare button.
+Así que usted puede ver aquí en que la sintaxis que soy capaz de llegar a la Hare botón.
 
 10:19.280 --> 10:23.720
-Now let's just look double check where that's named, that's named in the layout itself.
+Ahora vamos a comprobar donde se nombra, que se nombra en el propio diseño.
 
 10:23.720 --> 10:26.150
-So when I brought up that big window and showed.
+Así que cuando me trajo esa gran ventana y mostró.
 
 10:27.080 --> 10:29.150
-How everything is designed there.
+cómo está diseñado todo allí.
 
 10:29.180 --> 10:34.160
-Then they you give them your own custom name and here I use it.
+Entonces les das tu propio nombre personalizado y aquí lo uso.
 
 10:34.190 --> 10:38.540
-Now sometimes you'll see them named like hair button like that.
+Ahora a veces los verás nombrados como botón de pelo así.
 
 10:38.540 --> 10:42.890
-Borrowing from kind of a web world web standards way.
+Tomando prestado de una especie de manera de estándares web del mundo web.
 
 10:42.890 --> 10:51.860
-But I continue to use the unity naming that I like like that so that's really the only other thing I
+Pero sigo utilizando la unidad de nomenclatura que me gusta así que eso es realmente la única otra cosa que yo
 
 10:51.860 --> 10:52.580
-want to show.
+quiero mostrar.
 
 10:52.610 --> 10:53.780
-Let's run the scene again.
+Vamos a ejecutar la escena de nuevo.
 
 10:54.950 --> 10:55.590
-There we go.
+Allá vamos.
 
 10:55.610 --> 11:04.460
-So I click here, I click face neck shirt, put body, click the reset button, and everything works
+Así que hago clic aquí, hago clic en cara cuello camisa, pongo cuerpo, hago clic en el botón de reinicio, y todo funciona
 
 11:04.460 --> 11:04.950
-there.
+ahí.
 
 11:05.000 --> 11:08.900
-So it looked a little bit jittery there, but I think it's working really great.
+Así que parecía un poco nervioso allí, pero creo que está funcionando muy bien.
 
 11:08.900 --> 11:11.720
-So thanks very much for watching this video.
+Muchas gracias por ver este vídeo.
 
 11:11.720 --> 11:12.680
-And that's it.
+Y eso es todo.

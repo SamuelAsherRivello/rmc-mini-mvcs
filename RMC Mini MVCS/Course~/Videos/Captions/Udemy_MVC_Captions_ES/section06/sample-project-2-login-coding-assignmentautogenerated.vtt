@@ -1,433 +1,433 @@
 WEBVTT
 
 00:00.180 --> 00:04.080
-So I'm going to do live coding here to take on one of the coding challenges.
+Así que voy a hacer codificación en vivo aquí para asumir uno de los retos de codificación.
 
 00:04.080 --> 00:11.250
-This one's going to be to add a clear button to the UI so it's not to log in and it's not to log out,
+Esto va a ser para añadir un botón claro a la interfaz de usuario por lo que no es para iniciar sesión y no es para cerrar la sesión,
 
 00:11.250 --> 00:14.510
-but it's just to clear the username and password fields.
+pero es sólo para borrar los campos de nombre de usuario y contraseña.
 
 00:14.520 --> 00:19.440
-Now, it's a bit of a contrived example here because our logout button does something similar, but
+Ahora, es un poco de un ejemplo artificial aquí porque nuestro botón de cierre de sesión hace algo similar, pero
 
 00:19.440 --> 00:26.220
-I want to show an example of how we can add something new to The View and have that properly propagate
+Quiero mostrar un ejemplo de cómo podemos añadir algo nuevo a La Vista y que se propague correctamente
 
 00:26.220 --> 00:27.330
-through the concerns.
+a través de las preocupaciones.
 
 00:27.330 --> 00:30.270
-So let's start with the view itself and add our new button.
+Así que vamos a empezar con la propia vista y añadir nuestro nuevo botón.
 
 00:30.270 --> 00:37.650
-So I go into this game object here, which is a prefab and I'm going to add one new button and I will
+Así que voy a este objeto de juego aquí, que es un prefabricado y voy a añadir un nuevo botón y voy a
 
 00:37.650 --> 00:39.450
-call it the clear button.
+llamarlo el botón de borrar.
 
 00:40.650 --> 00:42.300
-I'll give it a name.
+Le daré un nombre.
 
 00:44.190 --> 00:52.350
-I will also give it the proper text to say clear, and then I come back here to the log in view and
+También le daré el texto adecuado para decir claro, y luego vuelvo aquí a la vista de inicio de sesión y
 
 00:52.350 --> 00:56.190
-that's where the login button and log out button are declared.
+que es donde el botón de inicio de sesión y el botón de cierre de sesión se declaran.
 
 00:56.190 --> 00:59.490
-So I open up that class.
+Así que abro esa clase.
 
 01:00.820 --> 01:06.730
-And I will try and keep the order right so that this button sits in the middle visually.
+Y voy a tratar de mantener el orden correcto para que este botón se encuentra en el centro visualmente.
 
 01:07.360 --> 01:11.770
-So I will go ahead and do that there and put it between those other two.
+Así que voy a seguir adelante y hacer eso allí y lo puso entre los otros dos.
 
 01:12.280 --> 01:16.930
-I tap back here letting unity recompile.
+Vuelvo a pulsar aquí dejando que unity recompile.
 
 01:18.540 --> 01:24.810
-And now from the UI here I need to declare the clear button is now wired up properly.
+Y ahora desde la interfaz de usuario aquí tengo que declarar que el botón de borrar está ahora conectado correctamente.
 
 01:24.810 --> 01:27.000
-So now the view knows about this.
+Así que ahora la vista sabe de esto.
 
 01:27.000 --> 01:28.140
-I'll run the scene.
+Ejecutaré la escena.
 
 01:29.440 --> 01:31.690
-First of all, notice it does not gray out yet.
+Primero de todo, observa que no está en gris todavía.
 
 01:31.690 --> 01:36.910
-I haven't, of course, done any coding, but I can click the clear button here so it clicks, but obviously
+Yo, por supuesto, no he hecho ningún código, pero puedo hacer clic en el botón de borrar aquí para que haga clic, pero obviamente
 
 01:36.910 --> 01:38.080
-no consequence yet.
+ninguna consecuencia todavía.
 
 01:39.160 --> 01:41.770
-The next thing I'd want to do with that is just kind of follow.
+Lo siguiente que quiero hacer con esto es seguirlo.
 
 01:41.770 --> 01:43.390
-Well, how does the log in button work?
+Bueno, ¿cómo funciona el botón de inicio de sesión?
 
 01:43.390 --> 01:44.790
-Well, here it is here.
+Bueno, aquí está.
 
 01:44.800 --> 01:53.740
-So I'm just going to copy and paste and we'll do clear button and then I'll mimic the structure that's
+Así que voy a copiar y pegar y vamos a hacer botón de borrar y luego voy a imitar la estructura que es
 
 01:53.740 --> 01:54.440
-there.
+ahí.
 
 01:54.460 --> 01:56.470
-Clear button gets clicked.
+Se pulsa el botón Borrar.
 
 01:56.980 --> 02:01.060
-That method doesn't exist yet, so I'll just come down here.
+Ese método aún no existe, así que bajaré aquí.
 
 02:04.960 --> 02:05.770
-Here we go.
+Allá vamos.
 
 02:06.370 --> 02:10.990
-So we can see that inside the login button we have a custom log in event.
+Así que podemos ver que dentro del botón de inicio de sesión tenemos un evento de inicio de sesión personalizado.
 
 02:10.990 --> 02:13.980
-So in the clear button, we want to have a custom clear event.
+Así que en el botón de borrar, queremos tener un evento personalizado de borrar.
 
 02:13.990 --> 02:16.150
-So let's go ahead and clear that here.
+Así que vamos a borrarlo aquí.
 
 02:18.390 --> 02:20.130
-We'll call it the on clear.
+Lo llamaremos on clear.
 
 02:25.750 --> 02:26.170
-Here we go.
+Allá vamos.
 
 02:27.580 --> 02:34.420
-And I'm going to make that not take any parameters.
+Y voy a hacer que no tome ningún parámetro.
 
 02:34.420 --> 02:36.460
-So I actually have to adjust.
+Así que en realidad tengo que ajustar.
 
 02:37.520 --> 02:38.420
-And.
+Y
 
 02:39.680 --> 02:41.990
-Because I don't need any parameters.
+Porque no necesito ningún parámetro.
 
 02:44.520 --> 02:47.550
-And as a best practice, I'll just give it its own event there.
+Y como mejor práctica, le daré su propio evento ahí.
 
 02:54.680 --> 02:56.420
-Okay, so now we've captured the button.
+Ok, ahora hemos capturado el botón.
 
 02:56.420 --> 03:00.100
-Click from the UI here in The View and we've dispatched out clear.
+Click desde la UI aquí en The View y hemos despachado clear.
 
 03:00.110 --> 03:04.280
-I'll mimic how I would work in a production project, especially if I'm adding functionality that's
+Imitaré como trabajaría en un proyecto de producción, especialmente si estoy añadiendo funcionalidad que es
 
 03:04.280 --> 03:05.890
-very similar to something else.
+muy similar a otra cosa.
 
 03:05.900 --> 03:10.670
-Notice I just looked at how the log in button worked and I copy and paste it.
+Fíjate que acabo de mirar como funcionaba el botón de inicio de sesión y lo copio y pego.
 
 03:10.700 --> 03:12.560
-We're going to follow that same pattern here.
+Vamos a seguir el mismo patrón aquí.
 
 03:13.970 --> 03:16.070
-I'm going to find usages of this.
+Voy a buscar usos de esto.
 
 03:25.510 --> 03:32.530
-I'm just using the code editor's view references or view usages and being able to see, well, where
+Sólo estoy usando las referencias de la vista del editor de código o ver los usos y ser capaz de ver, bueno, donde
 
 03:32.530 --> 03:34.240
-does that login event get used?
+se utiliza ese evento de inicio de sesión?
 
 03:34.240 --> 03:36.310
-What gets used inside the controller here?
+¿Qué se usa aquí dentro del controlador?
 
 03:36.310 --> 03:38.800
-So I'm just going to mimic that flow as well.
+Así que voy a imitar ese flujo también.
 
 03:41.310 --> 03:43.890
-And we'll add a new method here.
+Y vamos a añadir un nuevo método aquí.
 
 03:44.850 --> 03:46.830
-So here's the controller.
+Así que aquí está el controlador.
 
 03:59.780 --> 04:04.880
-And in this specific case, I want to translate this view event into a command.
+Y en este caso específico, quiero traducir este evento de vista en un comando.
 
 04:05.300 --> 04:09.820
-So I'm going to look I'm just going to go to the source of where the submitted command is.
+Así que voy a mirar voy a ir a la fuente de donde el comando presentado es.
 
 04:09.830 --> 04:11.420
-Look in my project here.
+Mira en mi proyecto aquí.
 
 04:12.390 --> 04:17.130
-Actually don't need any arguments because if you think about clearing out, I don't have to say which
+En realidad no necesito argumentos porque si piensas en borrar, no tengo que decir que
 
 04:17.160 --> 04:18.560
-fields were cleared out.
+campos fueron eliminados.
 
 04:18.570 --> 04:24.000
-I can just kind of understand that any time the clear button is clicked, don't pass any details along,
+Puedo entender que cada vez que se pulsa el botón de borrar, no se pasa ningún detalle,
 
 04:24.000 --> 04:26.820
-just globally clear out what needs to be cleared out.
+sólo borrar globalmente lo que necesita ser borrado.
 
 04:26.820 --> 04:32.490
-So I'm going to take no parameters here and I will make the clear command.
+Así que voy a tomar ningún parámetro aquí y voy a hacer el comando claro.
 
 04:56.690 --> 05:01.200
-So here the controller is now listening to that event and sending out a new command.
+Así que aquí el controlador está ahora escuchando ese evento y enviando un nuevo comando.
 
 05:01.220 --> 05:05.260
-So if we were to run the scene right now, everything would compile, right?
+Si ejecutáramos la escena ahora mismo, todo se compilaría, ¿verdad?
 
 05:05.270 --> 05:07.130
-We'd be capturing the click.
+Estaríamos capturando el click.
 
 05:07.130 --> 05:11.750
-The click is getting propagated out here to controller, as you'd expect, and then it's sending out
+El clic se está propagando aquí al controlador, como era de esperar, y luego está enviando
 
 05:11.750 --> 05:14.440
-a command, but nobody is listening to the command.
+un comando, pero nadie está escuchando el comando.
 
 05:14.450 --> 05:17.270
-So if you think about it, who should be listening?
+Así que si lo piensas, ¿quién debería estar escuchando?
 
 05:17.270 --> 05:19.730
-Who would actually handle the consequence of this?
+¿Quién se encargaría de las consecuencias?
 
 05:20.390 --> 05:21.440
-Well, it's the view, right?
+Bueno, es la vista, ¿no?
 
 05:21.440 --> 05:23.570
-So let's go ahead and take a look at the view.
+Así que vamos a seguir adelante y echar un vistazo a la vista.
 
 05:35.470 --> 05:38.500
-So back here In The View, we'll subscribe to that new event.
+Así que aquí en la vista, vamos a suscribirnos a ese nuevo evento.
 
 06:12.280 --> 06:14.380
-Okay, We've wired up the clear command correctly.
+Ok, hemos cableado el comando clear correctamente.
 
 06:14.380 --> 06:16.470
-Now, let's actually think what should happen.
+Ahora, pensemos realmente lo que debería pasar.
 
 06:16.480 --> 06:19.300
-Well, it's something like what happens when we log out.
+Bueno, es algo parecido a lo que pasa cuando cerramos la sesión.
 
 06:19.300 --> 06:20.770
-So let's look at the log out.
+Así que echemos un vistazo al cierre de sesión.
 
 06:24.240 --> 06:27.220
-So logout, which I copied from here as a starter.
+Así logout, que he copiado de aquí como un motor de arranque.
 
 06:27.240 --> 06:32.280
-What it does is it just goes through and it properly sets all these fields here.
+Lo que hace es que sólo va a través y establece adecuadamente todos estos campos aquí.
 
 06:34.400 --> 06:38.810
-So we really want something that mimics exactly what logout does.
+Así que queremos algo que imite exactamente lo que hace el cierre de sesión.
 
 06:38.810 --> 06:43.400
-But for the sake of having something new, let's copy these here.
+Pero por el bien de tener algo nuevo, vamos a copiar esto aquí.
 
 06:45.230 --> 06:46.550
-You know, just replace them.
+Ya sabes, sólo reemplázalos.
 
 06:46.760 --> 06:48.290
-I know we already have them there.
+Sé que ya los tenemos ahí.
 
 06:48.290 --> 06:59.150
-And I will update this to say log in cleared and for the status text, I'll just say enter username
+Y voy a actualizar esto para decir log in cleared y para el texto de estado, sólo diré enter username
 
 06:59.150 --> 07:02.900
-and password, but I won't put the hint just to have something different here.
+y contraseña, pero no voy a poner la pista sólo para tener algo diferente aquí.
 
 07:05.170 --> 07:05.740
-Right.
+Correcto.
 
 07:05.770 --> 07:12.190
-Now, one other thing is that each time that I'm toggling the log in button and log out button, I should
+Ahora, otra cosa es que cada vez que estoy alternando el botón de inicio de sesión y el botón de cierre de sesión, debería
 
 07:12.190 --> 07:15.150
-also think about the clear button now.
+pensar también en el botón de borrar.
 
 07:15.160 --> 07:19.840
-So let's just go up to the top and I'll scroll through and anywhere I see the interactive will used
+Así que vamos a ir a la parte superior y voy a desplazarse a través y en cualquier lugar que veo el interactivo se utiliza
 
 07:20.170 --> 07:22.810
-update that for the clear button.
+actualizar que para el botón de borrar.
 
 07:34.850 --> 07:37.340
-So here we have the log in button.
+Así que aquí tenemos el botón de inicio de sesión.
 
 07:37.580 --> 07:39.410
-When we log out.
+Cuando cerramos sesión.
 
 07:43.710 --> 07:49.830
-The clear button should not be enabled because when you freshly log out, everything's already cleared.
+El botón de borrar no debería estar habilitado porque cuando acabas de cerrar la sesión, ya se ha borrado todo.
 
 07:49.830 --> 07:51.060
-You shouldn't be able to click it.
+No deberías poder pulsarlo.
 
 07:53.770 --> 07:59.080
-Then when you actually hit the clear button again, you should not be able to click clear a second time
+Entonces, cuando vuelvas a pulsar el botón de borrar, no deberías poder pulsarlo una segunda vez.
 
 07:59.080 --> 08:00.910
-because the fields are already clear.
+porque los campos ya están limpios.
 
 08:04.130 --> 08:06.560
-Each time you click, log in.
+Cada vez que haga clic, inicie sesión.
 
 08:08.350 --> 08:10.630
-I'd argue you should be able to.
+Debería poder hacerlo.
 
 08:12.760 --> 08:14.020
-It clear there?
+¿Está claro?
 
 08:16.030 --> 08:18.190
-We don't really have a full login state here.
+Realmente no tenemos un estado de inicio de sesión completo aquí.
 
 08:18.190 --> 08:20.770
-So some of this is just for demo sake.
+Así que algo de esto es sólo para la demostración.
 
 08:22.440 --> 08:25.350
-And then each time you log out.
+Y luego cada vez que cierras sesión.
 
 08:26.560 --> 08:29.740
-Basically we want log out and clear to behave similarly.
+Básicamente queremos que log out y clear se comporten de manera similar.
 
 08:29.740 --> 08:31.450
-So log out and clear.
+Así que log out y clear.
 
 08:33.040 --> 08:34.240
-Yeah, I guess that's right.
+Sí, supongo que es correcto.
 
 08:34.480 --> 08:36.580
-Let's take a look and see how we are so far.
+Echemos un vistazo y veamos cómo estamos hasta ahora.
 
 08:38.050 --> 08:40.750
-Mic so clear button is properly grayed out.
+El botón de borrado del micrófono está correctamente en gris.
 
 08:43.190 --> 08:48.440
-Now, once I start typing here, I would like the clear button to become enabled.
+Ahora, una vez que empiece a escribir aquí, me gustaría que el botón de borrar se activara.
 
 08:48.440 --> 08:49.460
-So let's look at that.
+Veámoslo.
 
 09:23.670 --> 09:28.440
-So I've updated here any time that those UI fields are being typed into.
+Así que he actualizado aquí cada vez que los campos de la interfaz de usuario se están escribiendo en.
 
 09:28.440 --> 09:35.820
-I already had a unity event calling this method here, so I only allow login to be submitted if both
+Ya tenía un evento unity llamando a este método aquí, así que sólo permito que se envíe el login si ambos
 
 09:35.820 --> 09:37.920
-of the fields have something in them.
+de los campos tienen algo en ellos.
 
 09:38.040 --> 09:42.930
-So here I want to say if either of the fields have something in them, then you would be able to hit
+Así que aquí quiero decir que si cualquiera de los campos tienen algo en ellos, entonces usted sería capaz de golpear
 
 09:42.930 --> 09:43.770
-the clear button.
+el botón de borrar.
 
 09:43.890 --> 09:50.130
-This is an implementation level detail, but it's nice to be able to show the types of thoughts and
+Este es un detalle a nivel de implementación, pero es bueno ser capaz de mostrar los tipos de pensamientos y
 
 09:50.130 --> 09:53.490
-decisions you would go through as you add a new piece of UI.
+decisiones por las que pasarías al añadir una nueva pieza de interfaz de usuario.
 
 09:56.140 --> 09:58.480
-So here we are running the demo again.
+Así que aquí estamos ejecutando la demo de nuevo.
 
 09:59.940 --> 10:04.170
-Notice as I type anything here, the clear button becomes enabled.
+Observa que cuando escribo algo aquí, el botón de borrar se activa.
 
 10:04.350 --> 10:07.560
-If I remove from the field, it becomes disabled.
+Si elimino del campo, se desactiva.
 
 10:08.190 --> 10:11.010
-If I type in a little bit of the password.
+Si escribo un poco la contraseña.
 
 10:11.800 --> 10:15.400
-And if I undo it, it becomes so we have it working properly.
+Y si lo deshago, se convierte para que lo tengamos funcionando correctamente.
 
 10:15.670 --> 10:17.740
-Now, let's say I had both fields there.
+Ahora, digamos que tengo los dos campos ahí.
 
 10:17.740 --> 10:23.290
-I could log in or I could click clear and it works properly again.
+Podría iniciar sesión o podría hacer clic en borrar y volvería a funcionar correctamente.
 
 10:23.290 --> 10:24.640
-I'll type that again.
+Lo escribiré de nuevo.
 
 10:25.120 --> 10:31.870
-Again, here we could log in or we could hit clear, and that's working properly now for us.
+De nuevo, aquí podríamos iniciar sesión o podríamos pulsar borrar, y eso funciona correctamente ahora para nosotros.
 
 10:31.870 --> 10:33.820
-So I didn't give it a robust test.
+Así que no lo he probado a fondo.
 
 10:33.820 --> 10:35.890
-I didn't make sure all the corner cases are there.
+No me aseguré de que todos los casos de esquina estuvieran ahí.
 
 10:35.890 --> 10:43.240
-But here I wanted to demonstrate what it would be like to add a new UI element and then be able to propagate
+Pero aquí quería demostrar lo que sería añadir un nuevo elemento de interfaz de usuario y luego ser capaz de propagar
 
 10:43.240 --> 10:43.720
-through that.
+a través de eso.
 
 10:43.720 --> 10:51.670
-All the concerns and here the concerns were putting the UI into the unity scene, then bringing it into
+Todas las preocupaciones y aquí las preocupaciones estaban poniendo la interfaz de usuario en la escena de la unidad, a continuación, llevarlo a
 
 10:51.670 --> 10:58.360
-the View class itself, then listening to The View and passing that along to the controller and then
+la propia clase View, a continuación, escuchar a la vista y pasar a lo largo del controlador y luego
 
 10:58.360 --> 11:00.670
-having the controller send the appropriate commands.
+que el controlador envíe los comandos apropiados.
 
 11:00.670 --> 11:02.500
-So we were able to do all of that.
+Así que fuimos capaces de hacer todo eso.
 
 11:02.500 --> 11:07.990
-Now I was explaining it as I'd go, but let's say this takes a few minutes.
+Ahora lo estaba explicando sobre la marcha, pero digamos que esto lleva unos minutos.
 
 11:08.200 --> 11:15.040
-An alternative approach would be simply the View listens to a unity event and updates itself with no
+Un enfoque alternativo sería simplemente la Vista escucha a un evento de unidad y se actualiza sin
 
 11:15.040 --> 11:18.250
-controller involved and with no commands involved.
+controlador involucrado y sin comandos involucrados.
 
 11:18.370 --> 11:20.560
-And that's not a bad place to start.
+Y ese no es un mal punto de partida.
 
 11:20.560 --> 11:24.790
-But now none of the other concerns can capture that moment in time.
+Pero ahora ninguna de las otras preocupaciones puede capturar ese momento en el tiempo.
 
 11:24.790 --> 11:30.160
-What's nice about the flow that we've done here, this kind of full blown orchestration, is that any
+Lo que es bueno sobre el flujo que hemos hecho aquí, este tipo de orquestación completa, es que cualquier
 
 11:30.160 --> 11:31.960
-concern would be able to listen to?
+podría escucharlo?
 
 11:31.990 --> 11:34.210
-Did the clear button just get clicked?
+¿Acaban de pulsar el botón de borrar?
 
 11:34.210 --> 11:38.200
-Sometimes you need that kind of messaging and sometimes you don't.
+A veces necesitas ese tipo de mensajes y a veces no.
 
 11:38.200 --> 11:44.860
-So it's up to you as you're navigating the waters here, learning MVC for you to decide between how
+Así que depende de ti mientras navegas por las aguas aquí, aprendiendo MVC para que decidas entre cómo
 
 11:44.860 --> 11:49.450
-robust you want to set up the communication and propagation through the concerns.
+robusto que desea configurar la comunicación y la propagación a través de las preocupaciones.
 
 11:49.450 --> 11:53.310
-So that's it for adding this coding assignment here into the sample.
+Así que eso es todo para añadir esta asignación de codificación aquí en la muestra.
 
 11:53.320 --> 11:54.130
-Thanks.
+Gracias.

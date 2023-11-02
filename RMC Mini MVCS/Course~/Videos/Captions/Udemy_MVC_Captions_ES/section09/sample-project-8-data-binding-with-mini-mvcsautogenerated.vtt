@@ -1,508 +1,508 @@
 WEBVTT
 
 00:00.200 --> 00:00.620
-All right.
+De acuerdo.
 
 00:00.650 --> 00:06.410
-Next, let's take a look at data binding inside Unity with a custom architecture.
+A continuación, vamos a echar un vistazo a la vinculación de datos dentro de Unity con una arquitectura personalizada.
 
 00:09.280 --> 00:13.990
-So this is the data binding demo off to the side.
+Así que esta es la demo de vinculación de datos a un lado.
 
 00:14.590 --> 00:22.750
-So in the data binding demo, we're going to see how in a project that has MVC as added, how would
+Así que en la demostración de vinculación de datos, vamos a ver cómo en un proyecto que tiene MVC como añadido, ¿cómo se
 
 00:22.750 --> 00:24.280
-you have data binding?
+usted tiene la vinculación de datos?
 
 00:24.280 --> 00:33.700
-Now, data binding is meant to have an easy reusable pattern to sync values across different domains.
+Ahora, la vinculación de datos está destinada a tener un patrón fácil de reutilizar para sincronizar valores a través de diferentes dominios.
 
 00:33.700 --> 00:41.560
-So if you have two classes and they both have a message text value and you want if one of them changes
+Así que si tienes dos clases y ambas tienen un valor de texto de mensaje y quieres que si uno de ellos cambia
 
 00:41.560 --> 00:46.720
-the value for the other concern to hear it, and if the first one hears it, then it changes it, then
+el valor para que la otra lo escuche, y si la primera lo escucha, entonces lo cambia, entonces
 
 00:46.720 --> 00:47.650
-the second one hears it.
+la segunda lo oye.
 
 00:47.650 --> 00:49.210
-So having two way binding.
+Así que teniendo dos vías de enlace.
 
 00:49.210 --> 00:50.800
-So let's take a look at an example.
+Veamos un ejemplo.
 
 00:50.800 --> 00:52.780
-You can imagine how useful that would be.
+Puedes imaginar lo útil que sería.
 
 00:53.470 --> 00:59.830
-Now this demo is part of the MVC architecture for Unity course, which you can find the link for below.
+Ahora bien, esta demostración es parte de la arquitectura MVC para Unity curso, que se puede encontrar el enlace de abajo.
 
 00:59.830 --> 01:07.000
-It is a paid course and it's on discount now because we're celebrating having over 6000 students already.
+Es un curso de pago y está en descuento ahora porque estamos celebrando tener más de 6000 estudiantes ya.
 
 01:07.420 --> 01:10.790
-Hopefully by the time you watch this, you'll see even more students there.
+Esperemos que cuando veas esto, veas aún más estudiantes allí.
 
 01:13.270 --> 01:20.200
-The course itself covers all sorts of different topics unity, software, design, mini nvqs as well.
+El curso en sí cubre todo tipo de temas diferentes unidad, software, diseño, mini nvqs también.
 
 01:20.200 --> 01:27.220
-And in the extra content we've added ten more demos on top of what was already there.
+Y en el contenido extra hemos añadido diez demos más a lo que ya había.
 
 01:27.220 --> 01:28.660
-And we're going to go over one here.
+Y vamos a repasar una aquí.
 
 01:29.080 --> 01:31.260
-We're going to look at the data binding here.
+Vamos a ver el enlace de datos aquí.
 
 01:31.270 --> 01:35.830
-So let's go ahead and take a look at the data binding by jumping into unity.
+Así que vamos a seguir adelante y echar un vistazo a la vinculación de datos saltando en la unidad.
 
 01:36.370 --> 01:38.800
-So here inside Unity is the project.
+Así que aquí dentro de Unity está el proyecto.
 
 01:38.800 --> 01:44.980
-If you follow from the git, the free git link that has the whole source code, you can bring in the
+Si usted sigue desde el git, el enlace git libre que tiene todo el código fuente, puede traer en el
 
 01:44.980 --> 01:50.190
-package with the instructions there and then you'll just go to samples and click import.
+paquete con las instrucciones allí y luego sólo tienes que ir a las muestras y haga clic en importar.
 
 01:50.300 --> 01:53.140
-I've already done that here for the sake of this course.
+Ya he hecho eso aquí por el bien de este curso.
 
 01:54.340 --> 01:58.760
-Let's go to the more folder and look at the data binding example.
+Vayamos a la carpeta more y veamos el ejemplo de vinculación de datos.
 
 01:58.780 --> 02:03.070
-So let's take a moment and look at the data, the structure of the folders here.
+Así que tomemos un momento y miremos los datos, la estructura de las carpetas aquí.
 
 02:03.070 --> 02:10.330
-So inside data binding, I have a folder for with Mini because some of the earlier demos I have a version
+Así que dentro de la vinculación de datos, tengo una carpeta para con Mini porque algunas de las demos anteriores tengo una versión
 
 02:10.330 --> 02:11.380
-without mini.
+sin mini.
 
 02:11.410 --> 02:17.360
-If you want to see a traditional approach in unity and then with Mini this one I only have it done with
+Si quieres ver una aproximación tradicional en unity y luego con Mini esta solo la tengo hecha con
 
 02:17.360 --> 02:19.100
-Mini, which is what we're looking at here.
+Mini, que es lo que estamos viendo aquí.
 
 02:19.220 --> 02:26.690
-Then in the resources folder, I've got a couple prefabs here for the two different views that are going
+Luego, en la carpeta de recursos, tengo un par de prefabricados aquí para las dos vistas diferentes que van a ir
 
 02:26.690 --> 02:27.770
-to be in the app.
+en la aplicación.
 
 02:28.670 --> 02:32.230
-I've got the scene, which I'll run in a second and then I've got the source code.
+Tengo la escena, que ejecutaré en un segundo y luego tengo el código fuente.
 
 02:32.240 --> 02:40.580
-Now, as is common with these demos and best practices for many MVCs, whenever you run one demo in
+Ahora, como es común con estas demos y las mejores prácticas para muchos MVCs, cada vez que se ejecuta una demo en
 
 02:41.120 --> 02:46.600
-Unity, you want to structure it so the the source files for controller model view and service.
+Unity, querrás estructurarla de forma que los archivos fuente para el controlador, el modelo, la vista y el servicio.
 
 02:46.610 --> 02:48.920
-If you have it, have their own dedicated folder.
+tengan su propia carpeta dedicada.
 
 02:48.920 --> 02:53.960
-That way you can easily see the different separations of concerns.
+De esa manera usted puede ver fácilmente las diferentes separaciones de las preocupaciones.
 
 02:54.790 --> 02:55.330
-Cool.
+Genial.
 
 02:55.930 --> 02:57.250
-So let's run the demo here.
+Así que vamos a ejecutar la demo aquí.
 
 02:57.250 --> 02:58.450
-I'll make it nice and big.
+La haré grande y bonita.
 
 03:00.280 --> 03:01.810
-Now, let's take a look at this.
+Ahora, echemos un vistazo a esto.
 
 03:01.810 --> 03:04.150
-So here we have two different views.
+Aquí tenemos dos vistas diferentes.
 
 03:04.150 --> 03:07.930
-You could think that this is part of one layout, but there are actually two prefabs.
+Podrías pensar que esto es parte de un diseño, pero en realidad hay dos prefabricados.
 
 03:07.930 --> 03:16.450
-So we put them out there and we want to be able to edit this one here and say Hello world from the left.
+Así que los ponemos ahí y queremos ser capaces de editar este de aquí y decir Hola mundo desde la izquierda.
 
 03:16.450 --> 03:20.500
-And notice both text fields get updated in real time.
+Y observa que ambos campos de texto se actualizan en tiempo real.
 
 03:20.980 --> 03:25.030
-Let's go over here and then say I am on the right.
+Vayamos aquí y digamos que estoy a la derecha.
 
 03:25.570 --> 03:28.270
-And you can see that both get updated.
+Y puedes ver que ambos se actualizan.
 
 03:28.270 --> 03:31.050
-So we have two way binding in the MVCs.
+Así que tenemos dos vías de unión en el MVC.
 
 03:31.060 --> 03:32.580
-So let's see how that's done.
+Veamos cómo se hace.
 
 03:32.590 --> 03:40.270
-Now, as I may have mentioned in an earlier part of this video series, Unity did historically did not
+Ahora, como pude haber mencionado en una parte anterior de esta serie de videos, Unity históricamente no hizo
 
 03:40.270 --> 03:41.920
-support any two way binding.
+soporta ningún tipo de enlace bidireccional.
 
 03:42.680 --> 03:49.370
-Then they've added it in the editor for editing tools, and in the future it will come to runtime,
+Luego lo han añadido en el editor de herramientas de edición, y en el futuro llegará al tiempo de ejecución,
 
 03:49.520 --> 03:52.520
-especially as part of the UI toolkit.
+especialmente como parte del conjunto de herramientas de interfaz de usuario.
 
 03:52.520 --> 03:58.790
-So I'm not using UI toolkit here, and that feature for runtime two way binding by Unity is not yet
+Así que no estoy usando el kit de herramientas de interfaz de usuario aquí, y esa característica para la vinculación bidireccional en tiempo de ejecución por Unity no es todavía
 
 03:58.790 --> 04:04.010
-available at the time of this recording, so I've done a custom solution here, so let's take a look
+disponible en el momento de esta grabación, así que he hecho una solución personalizada aquí, así que echemos un vistazo
 
 04:04.010 --> 04:04.520
-at that.
+a eso.
 
 04:07.820 --> 04:13.550
-So here in the scene, I have The World, which is a game object that just has the camera and lighting
+Así que aquí en la escena, tengo el mundo, que es un objeto de juego que sólo tiene la cámara y la iluminación
 
 04:13.550 --> 04:14.120
-in it.
+en él.
 
 04:14.330 --> 04:19.850
-Then I have the left view, which if I move the left.
+Luego tengo la vista izquierda, que si muevo la izquierda.
 
 04:23.090 --> 04:23.930
-I can't even of that.
+No puedo ni de eso.
 
 04:25.330 --> 04:25.810
-All right.
+De acuerdo.
 
 04:25.810 --> 04:27.700
-And then we have the right view as well.
+Y también tenemos la vista derecha.
 
 04:27.730 --> 04:29.860
-And then we have the data binding example.
+Y luego tenemos el ejemplo de vinculación de datos.
 
 04:29.860 --> 04:33.620
-Now the data binding takes a reference from the left and the right view.
+Ahora el enlace de datos toma una referencia de las vistas izquierda y derecha.
 
 04:33.640 --> 04:36.760
-So let's start our code journey here.
+Así que vamos a empezar nuestro viaje de código aquí.
 
 04:37.690 --> 04:39.400
-So here's the monobehaviour.
+Así que aquí está el mono-comportamiento.
 
 04:39.400 --> 04:42.500
-That is an example running the entire scene.
+Este es un ejemplo ejecutando toda la escena.
 
 04:42.520 --> 04:44.530
-I have the two serialized fields.
+Tengo los dos campos serializados.
 
 04:44.530 --> 04:47.790
-We just looked at the left view and the right view.
+Acabamos de ver la vista izquierda y la vista derecha.
 
 04:47.800 --> 04:52.150
-And then in here in the start, I'm going to create a new context.
+Y luego aquí en el inicio, voy a crear un nuevo contexto.
 
 04:52.180 --> 04:59.080
-Now, we haven't seen this in earlier demos and in the heart of the course, we don't show this exact
+Ahora, no hemos visto esto en demos anteriores y en el corazón del curso, no mostramos esta exacta
 
 04:59.080 --> 05:02.470
-workflow, but here I'm creating.
+flujo de trabajo, pero aquí estoy creando.
 
 05:08.140 --> 05:08.620
-Here.
+Aquí.
 
 05:08.620 --> 05:14.650
-I'm creating the context outside of the Mini and I'm passing that in here.
+Estoy creando el contexto fuera del Mini y lo estoy pasando aquí.
 
 05:15.010 --> 05:18.520
-And then I have the left view and the right view.
+Y luego tengo la vista izquierda y la vista derecha.
 
 05:19.120 --> 05:25.120
-So I created outside and I pass the same value into each of the.
+Así que he creado fuera y pasar el mismo valor en cada uno de los.
 
 05:26.060 --> 05:27.050
-Concerns.
+Preocupaciones.
 
 05:27.210 --> 05:33.200
-Oh, actually, now that I think about it, there's a different demo where we have multiple minis in
+Oh, en realidad, ahora que lo pienso, hay una demo diferente donde tenemos múltiples minis en
 
 05:33.200 --> 05:35.960
-the same project and this is borrowed from that.
+el mismo proyecto y esto es prestado de eso.
 
 05:35.960 --> 05:40.850
-So creating the context outside of the mini is not explicitly required.
+Así que crear el contexto fuera del mini no es explícitamente necesario.
 
 05:40.850 --> 05:46.460
-Here it is for the other demo called Multiple Minis, which you can take a look at in the series.
+Aquí está para la otra demo llamada Minis Múltiples, a la que puedes echar un vistazo en la serie.
 
 05:46.460 --> 05:50.020
-So this comment is not necessarily required here.
+Así que este comentario no es necesariamente necesario aquí.
 
 05:50.030 --> 05:51.980
-Now let's go ahead and look at the Mini.
+Ahora veamos el Mini.
 
 05:53.020 --> 06:01.150
-So here what I do is I have the data binding set up in its own mini, and the Mini here is going to
+Así que aquí lo que hago es que tengo la vinculación de datos configurado en su propio mini, y el Mini aquí va a
 
 06:01.150 --> 06:04.600
-take references for the left view and the right view and store them.
+tomar referencias para la vista izquierda y la vista derecha y almacenarlas.
 
 06:05.960 --> 06:10.010
-Then down here in the it's this is the initialize of the Mini.
+Luego aquí abajo en el it's esta es la inicialización del Mini.
 
 06:10.950 --> 06:12.660
-I'm going to set up the model.
+Voy a configurar el modelo.
 
 06:12.840 --> 06:15.840
-There's one model I'm going to set up The View.
+Voy a configurar el modelo The View.
 
 06:15.870 --> 06:16.860
-There's two views.
+Hay dos vistas.
 
 06:16.890 --> 06:18.060
-A left one and a right one.
+Una a la izquierda y otra a la derecha.
 
 06:18.060 --> 06:24.730
-So again, notice that they're distinct separate user interfaces and then I'll have the controller here.
+Así que de nuevo, observe que son interfaces de usuario distintas y separadas y luego tendré el controlador aquí.
 
 06:24.750 --> 06:31.320
-Now, the the controller is going to take a reference to the model and both views and as with all minis,
+Ahora, el controlador va a tomar una referencia al modelo y ambas vistas y como con todos los minis,
 
 06:31.320 --> 06:33.840
-the controller is the smartest of the concerns.
+el controlador es la más inteligente de las preocupaciones.
 
 06:33.840 --> 06:38.490
-So it takes a reference to the different parts and it's the controller that's going to be able to have
+Así que toma una referencia a las diferentes partes y es el controlador el que va a ser capaz de tener
 
 06:38.490 --> 06:40.290
-them working together.
+trabajando juntos.
 
 06:41.160 --> 06:42.660
-So here's the controller.
+Así que aquí está el controlador.
 
 06:43.230 --> 06:46.560
-I think this is the only concern we'll take a look at here in this demo.
+Creo que esta es la única preocupación que veremos en esta demo.
 
 06:46.830 --> 06:49.920
-I take the left and the right, I store them here.
+Tomo la izquierda y la derecha, las guardo aquí.
 
 06:49.920 --> 06:51.210
-I store the model.
+Almaceno el modelo.
 
 06:51.480 --> 06:53.370
-Then down here.
+Luego aquí abajo.
 
 06:54.400 --> 06:55.270
 Ooh.
 
 06:55.750 --> 06:58.100
-I was expecting there to be more logic here.
+Esperaba que hubiera más lógica aquí.
 
 06:58.120 --> 06:59.560
-Let me think about this for a second.
+Déjame pensarlo un segundo.
 
 07:01.690 --> 07:03.040
-Yeah, I guess there's.
+Sí, supongo que la hay.
 
 07:03.190 --> 07:04.840
-I created this a bit ago.
+Creé esto hace un rato.
 
 07:05.800 --> 07:10.210
-Often, you know, what I'm about to show in the views is how they do the syncing.
+A menudo, ya sabes, lo que voy a mostrar en las vistas es cómo hacen la sincronización.
 
 07:10.210 --> 07:15.550
-But you could do the sinking of the two values for the text field on the left and the text field on
+Pero usted podría hacer el hundimiento de los dos valores para el campo de texto a la izquierda y el campo de texto en
 
 07:15.550 --> 07:16.990
-the right in the controller.
+de la derecha en el controlador.
 
 07:16.990 --> 07:18.940
-So I was kind of expecting to see it here.
+Así que esperaba verlo aquí.
 
 07:18.940 --> 07:21.220
-But let's go take a look at the other concerns.
+Pero echemos un vistazo a las otras preocupaciones.
 
 07:21.220 --> 07:22.510
-So here's the model.
+Aquí está el modelo.
 
 07:24.060 --> 07:26.430
-And the model in MVCs.
+Y el modelo en MVC.
 
 07:28.290 --> 07:30.450
-Is the dumbest of the concerns.
+Es la más tonta de las preocupaciones.
 
 07:30.450 --> 07:35.670
-So if controller is kind of the smartest, the most aware, it has the context of the kind of the whole
+Así que si el controlador es el más inteligente, el más consciente, que tiene el contexto de la clase de todo el
 
 07:35.670 --> 07:38.790
-situation models are on the dumber end of things.
+los modelos de situación están en el extremo más tonto de las cosas.
 
 07:38.790 --> 07:41.130
-It just stores data and that's it.
+Sólo almacena datos y ya está.
 
 07:41.130 --> 07:44.040
-So here it's going to store a string of message.
+Así que aquí va a almacenar una cadena de mensajes.
 
 07:45.160 --> 07:47.950
-And it's going to start with that initial value.
+Y va a empezar con ese valor inicial.
 
 07:47.980 --> 07:50.110
-We saw that says, edit this text.
+Vimos que dice, edita este texto.
 
 07:50.110 --> 07:53.080
-We'll run the demo one more time so you can see that being set.
+Vamos a ejecutar la demo una vez más para que puedas ver que se establece.
 
 07:54.460 --> 07:56.790
-Then let's look at the left and right view.
+Luego veamos la vista izquierda y derecha.
 
 07:56.800 --> 07:58.600
-So here's the left view.
+Aquí está la vista izquierda.
 
 07:58.630 --> 08:05.820
-It's going to use mono behavior as we often want to do for UI related concerns.
+Vamos a utilizar el comportamiento mono como a menudo queremos hacer para las cuestiones relacionadas con la interfaz de usuario.
 
 08:05.830 --> 08:10.060
-It's optional to extend mono behavior in Mini, but here we want to do it.
+Es opcional extender el comportamiento mono en Mini, pero aquí queremos hacerlo.
 
 08:10.940 --> 08:13.820
-And then down here, here is where the binding is going to be.
+Y luego aquí abajo, aquí es donde va a estar el enlace.
 
 08:13.820 --> 08:16.310
-So let me make sure that this is on the screen in a nice spot.
+Así que déjame asegurarme de que esto está en la pantalla en un buen lugar.
 
 08:16.310 --> 08:18.650
-So again, we are in initialize.
+De nuevo, estamos en inicializar.
 
 08:18.980 --> 08:22.970
-I just want to be able to make plenty of room here to talk about it.
+Sólo quiero ser capaz de hacer un montón de espacio aquí para hablar de ello.
 
 08:22.970 --> 08:23.410
-Okay.
+De acuerdo.
 
 08:23.420 --> 08:25.790
-So the first thing I do is I set this up.
+Lo primero que hago es preparar esto.
 
 08:25.790 --> 08:33.560
-So what I do is I have a reference to the model now in MVCs.
+Así que lo que hago es que tengo una referencia al modelo ahora en MVC.
 
 08:33.800 --> 08:38.330
-The controller can always access the other concerns.
+El controlador siempre puede acceder a las otras preocupaciones.
 
 08:38.600 --> 08:45.410
-But as a best practice, you want to limit the access from other model.
+Pero como una mejor práctica, desea limitar el acceso de otro modelo.
 
 08:45.410 --> 08:48.440
-For example, to view and view to model.
+Por ejemplo, a la vista y la vista al modelo.
 
 08:48.440 --> 08:50.360
-You want to be very aware of those.
+Tienes que ser muy consciente de ello.
 
 08:50.360 --> 08:56.270
-Here, I'm making a conscious choice to actually have the view, which is the class we're in, get a
+Aquí, estoy haciendo una elección consciente para que la vista, que es la clase en la que estamos, obtenga un
 
 08:56.270 --> 08:57.380
-reference to the model.
+referencia al modelo.
 
 08:57.380 --> 09:03.590
-And the way that you can do that is by asking the context which is implicitly available for you and
+Y la forma en que puedes hacerlo es preguntando al contexto que está implícitamente disponible para ti y
 
 09:03.590 --> 09:08.630
-say, Hey, model locator, go get me a reference to the model that's in the game.
+decir, Hey, localizador de modelos, ve a buscarme una referencia al modelo que está en el juego.
 
 09:08.660 --> 09:15.480
-It looks a little bit like dependency injection, this particular line here, but it's not quite that
+Se parece un poco a la inyección de dependencia, esta línea en particular aquí, pero no es exactamente eso
 
 09:15.480 --> 09:17.100
-universal of a solution.
+solución universal.
 
 09:17.130 --> 09:22.860
-The context has locators just for the models so anybody can get them if we need to.
+El contexto tiene localizadores sólo para los modelos para que cualquiera pueda obtenerlos si lo necesitamos.
 
 09:22.890 --> 09:25.650
-So here in the view, we just get a reference to that model.
+Así que aquí en la vista, obtenemos una referencia a ese modelo.
 
 09:25.800 --> 09:30.030
-Remember, that model is just holding the string of what the on screen messages.
+Recuerde, ese modelo es sólo la celebración de la cadena de lo que los mensajes en pantalla.
 
 09:30.880 --> 09:33.870
-Then we're going to do the the binding here.
+Entonces vamos a hacer la vinculación aquí.
 
 09:33.880 --> 09:43.440
-So if the data model for the message changes, then we're going to listen back to that below.
+Así que si el modelo de datos para el mensaje cambia, entonces vamos a escuchar de nuevo a que a continuación.
 
 09:43.450 --> 09:47.500
-So any time the data model changes, we will hear it.
+Así que cada vez que el modelo de datos cambie, lo escucharemos.
 
 09:47.620 --> 09:51.940
-And any time the view changes, we're going to listen to that.
+Y cada vez que cambie la vista, lo escucharemos.
 
 09:51.940 --> 09:54.430
-So down below we'll look at the method for each of them.
+Así que más abajo veremos el método para cada uno de ellos.
 
 09:54.430 --> 09:55.420
-But remember, we're listening.
+Pero recuerda, estamos escuchando.
 
 09:55.420 --> 09:58.810
-If the model changes or if the view changes.
+Si el modelo cambia o si la vista cambia.
 
 09:59.230 --> 10:02.800
-So down here, let's look at this one first.
+Así que aquí abajo, veamos esto primero.
 
 10:03.530 --> 10:10.100
-If the data model changes, then we'll update the view.
+Si el modelo de datos cambia, entonces actualizaremos la vista.
 
 10:11.800 --> 10:18.160
-And down here, if the view changes, then we'll update the model.
+Y aquí abajo, si la vista cambia, entonces actualizaremos el modelo.
 
 10:18.160 --> 10:24.490
-So each of these two just do the opposite end of this two way binding and that's it.
+Así que cada uno de estos dos acaba de hacer el extremo opuesto de este vínculo de dos vías y eso es todo.
 
 10:24.760 --> 10:30.340
-So the nuts and bolts of this particular flow are not unique to Mini.
+Así que las tuercas y tornillos de este flujo en particular no son exclusivos de Mini.
 
 10:30.370 --> 10:36.070
-You could do that outside of Mini, but the classes that help it all happen are included in here.
+Podrías hacerlo fuera de Mini, pero las clases que ayudan a que todo suceda están incluidas aquí.
 
 10:36.070 --> 10:43.540
-And it's especially an interesting topic when we talk about mini MVCs because data binding is a major
+Y es especialmente un tema interesante cuando hablamos de mini MVC porque la vinculación de datos es una de las principales
 
 10:43.540 --> 10:44.850
-plus.
+más.
 
 10:44.860 --> 10:50.440
-If you have data binding, then using something like mini MVC is even quicker and easier to set up.
+Si usted tiene la vinculación de datos, a continuación, utilizando algo como mini MVC es aún más rápido y más fácil de configurar.
 
 10:52.190 --> 10:54.020
-So let's run the demo one more time.
+Vamos a ejecutar la demo una vez más.
 
 10:57.940 --> 10:59.470
-I think I uncommented something.
+Creo que he descomentado algo.
 
 10:59.470 --> 11:00.880
-That's why we're recompiling there.
+Por eso estamos recompilando ahí.
 
 11:00.910 --> 11:02.740
-So here again, we're running.
+Así que aquí de nuevo, estamos corriendo.
 
 11:02.740 --> 11:06.780
-We load from the service, the edit this text actually that was hardcoded.
+Cargamos desde el servicio, la edición de este texto en realidad que fue codificado.
 
 11:06.790 --> 11:11.290
-We have the hardcoded value and if I type into the left side, we get that.
+Tenemos el valor hardcoded y si escribo en el lado izquierdo, obtenemos eso.
 
 11:11.290 --> 11:14.260
-And if I say hi on the right side, it's synced.
+Y si digo hola en el lado derecho, se sincroniza.
 
 11:14.260 --> 11:15.040
-So that's it.
+Así que ya está.
 
 11:15.040 --> 11:19.900
-That's data binding inside this Unity MVC demo.
+Eso es vinculación de datos dentro de esta demo Unity MVC.

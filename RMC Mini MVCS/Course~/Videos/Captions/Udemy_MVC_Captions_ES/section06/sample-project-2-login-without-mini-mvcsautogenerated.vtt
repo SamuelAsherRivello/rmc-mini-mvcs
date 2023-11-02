@@ -1,709 +1,709 @@
 WEBVTT
 
 00:03.200 --> 00:04.700
-Here we are inside Unity.
+Aquí estamos dentro de Unity.
 
 00:04.700 --> 00:10.490
-I've got a fresh project where I've installed the mini VCs framework and imported the samples.
+Tengo un proyecto nuevo en el que he instalado el framework mini VCs y he importado las muestras.
 
 00:10.520 --> 00:13.960
-Here's a file structure for the version that has many.
+Aquí está la estructura de archivos para la versión que tiene muchos.
 
 00:13.970 --> 00:19.660
-We've got resources, including that text file we're going to load to simulate a service layer call.
+Tenemos recursos, incluyendo ese archivo de texto que vamos a cargar para simular una llamada a la capa de servicio.
 
 00:19.670 --> 00:23.750
-We've got a science folder with our one scene and then we've got runtime scripts.
+Tenemos una carpeta de ciencia con nuestra escena y luego tenemos los scripts de ejecución.
 
 00:23.750 --> 00:29.210
-We've not yet taken a look at the structure of the MVCs code in a sample, so let's do that.
+Todavía no hemos echado un vistazo a la estructura del código MVCs en una muestra, así que vamos a hacer eso.
 
 00:29.210 --> 00:34.370
-Now, starting at the bottom, we have the example file itself that's attached to a game object in the
+Ahora, a partir de la parte inferior, tenemos el propio archivo de ejemplo que se adjunta a un objeto de juego en el
 
 00:34.370 --> 00:34.880
-scene.
+escena.
 
 00:34.880 --> 00:37.010
-Then we have the log in mini class.
+Luego tenemos el registro en la mini clase.
 
 00:37.010 --> 00:40.880
-This is the highest level structure of the MVCs world.
+Esta es la estructura de más alto nivel del mundo MVCs.
 
 00:40.880 --> 00:47.900
-Then, as per typical convention, I create a folder for each the model view controller and service.
+Luego, según la convención típica, creo una carpeta para cada modelo, vista, controlador y servicio.
 
 00:47.900 --> 00:50.750
-Inside the View, there's one class, the login view.
+Dentro de la vista, hay una clase, la vista de inicio de sesión.
 
 00:50.750 --> 00:54.140
-Inside the service, there's one class, the login service.
+Dentro del servicio, hay una clase, el servicio de login.
 
 00:54.140 --> 00:55.250
-Inside the model.
+Dentro del modelo.
 
 00:55.250 --> 01:02.210
-We've got two classes, a user data class, as well as the main model itself for the log in inside the
+Tenemos dos clases, una clase de datos de usuario, así como el modelo principal en sí para el inicio de sesión dentro de la
 
 01:02.210 --> 01:03.200
-controller folder.
+carpeta del controlador.
 
 01:03.200 --> 01:07.070
-I have the log in controller, which is the main controller for the project.
+Tengo el controlador de inicio de sesión, que es el controlador principal del proyecto.
 
 01:07.160 --> 01:12.050
-It's also appropriate to have a subfolder here for all of the commands for a project.
+También es apropiado tener una subcarpeta aquí para todos los comandos de un proyecto.
 
 01:12.050 --> 01:16.970
-I'll talk a little bit more about commands since we haven't taken a look at them yet in previous code
+Voy a hablar un poco más sobre los comandos, ya que no hemos echado un vistazo a ellos todavía en el código anterior
 
 01:16.970 --> 01:17.770
-sessions.
+sesiones.
 
 01:17.780 --> 01:22.940
-Now, while this is a relatively simple example, it would be reasonable in a production project to
+Ahora bien, aunque este es un ejemplo relativamente simple, sería razonable en un proyecto de producción
 
 01:22.940 --> 01:29.330
-follow the same folder structure and we would see each of the folders get populated with multiple models,
+seguir la misma estructura de carpetas y veríamos cada una de las carpetas pobladas con múltiples modelos,
 
 01:29.330 --> 01:36.680
-multiple views and services, lots of controllers, probably as well as a real robust folder full of
+múltiples vistas y servicios, un montón de controladores, probablemente, así como una carpeta robusta real lleno de
 
 01:36.680 --> 01:37.490
-commands.
+comandos.
 
 01:37.490 --> 01:44.330
-You can think of the command manager as a radio station that's able to broadcast to any of the concerns.
+Puedes pensar en el gestor de comandos como una estación de radio capaz de emitir a cualquiera de las preocupaciones.
 
 01:44.330 --> 01:50.510
-So high level messages that are appropriate there, things like in this case, logging in, logging
+Así que los mensajes de alto nivel que son apropiados allí, cosas como en este caso, inicio de sesión, inicio de sesión
 
 01:50.510 --> 01:51.920
-out, clearing the screen.
+salir, limpiar la pantalla.
 
 01:51.920 --> 01:55.730
-If we had such a feature, those would sit here as individual commands.
+Si tuviéramos una función de este tipo, que se sientan aquí como comandos individuales.
 
 01:55.730 --> 01:58.340
-So here we are running the mini example.
+Así que aquí estamos ejecutando el mini ejemplo.
 
 01:58.340 --> 02:01.070
-As the hint shows, there's a suggested password.
+Como muestra la pista, hay una contraseña sugerida.
 
 02:01.070 --> 02:03.410
-That's the only password that's acceptable here.
+Esa es la única contraseña aceptable aquí.
 
 02:03.440 --> 02:05.570
-We're checking against a local file.
+Estamos comprobando un archivo local.
 
 02:05.570 --> 02:09.170
-I have correct data there and I'll submit and we see success.
+Tengo los datos correctos allí y voy a enviar y vemos el éxito.
 
 02:09.170 --> 02:14.090
-What's happening there is the service layer loads a local text file and it just makes sure that what
+Lo que está pasando es que la capa de servicio carga un archivo de texto local y se asegura de que lo que hay en él es correcto.
 
 02:14.090 --> 02:17.990
-the user typed into the UI matches what's in that text file.
+el usuario ha escrito en la interfaz de usuario coincide con lo que hay en ese archivo de texto.
 
 02:17.990 --> 02:23.960
-It's a very simplified substitute for some sort of complex back end interaction.
+Es un sustituto muy simplificado de algún tipo de interacción compleja.
 
 02:25.330 --> 02:28.260
-Let's dig into the code, starting with the high level example.
+Profundicemos en el código, empezando por el ejemplo de alto nivel.
 
 02:28.270 --> 02:32.800
-Here's the example itself, which is a behavior sitting on a game object in the scene.
+Aquí está el ejemplo en sí, que es un comportamiento que se encuentra en un objeto del juego en la escena.
 
 02:32.830 --> 02:37.570
-Now, many MVCs does not require that any of its concerns be honored behaviors.
+Ahora, muchos MVCs no requieren que ninguna de sus preocupaciones sean comportamientos honrados.
 
 02:37.570 --> 02:45.070
-But in this specific example, as is probably common in your work as well, you have the view b amount
+Pero en este ejemplo específico, como es probablemente común en tu trabajo también, tienes la vista b amount
 
 02:45.070 --> 02:45.880
-of behavior.
+de comportamiento.
 
 02:46.000 --> 02:52.840
-So an easy way to bring that into the fold here is to have that sit as amount of behavior on a game
+Así que una manera fácil de traer que en el redil aquí es tener que sentarse como cantidad de comportamiento en un juego
 
 02:52.840 --> 02:58.240
-object in the scene, drag it in as a serialized reference here, and then be able to pass it into the
+en la escena, arrastrarlo como una referencia serializada aquí, y luego ser capaz de pasar en el
 
 02:58.240 --> 03:00.260
-log in mini constructor as we see here.
+mini constructor de registro como vemos aquí.
 
 03:00.280 --> 03:03.310
-Let's take a quick look at the scene just to see how that's wired up.
+Vamos a echar un vistazo rápido a la escena para ver cómo está configurada.
 
 03:03.310 --> 03:05.950
-So here in the scene I have to log in View selected.
+Así que aquí en la escena tengo que entrar en Ver seleccionado.
 
 03:05.950 --> 03:11.360
-You can see in the Inspector window there's a login view script that's sitting on this game object.
+Puedes ver en la ventana del Inspector que hay un script de inicio de sesión de vista que está sentado en este objeto de juego.
 
 03:11.380 --> 03:17.110
-Now, with the example itself selected, we can see a serialized field sitting there waiting for a reference
+Ahora, con el ejemplo seleccionado, podemos ver un campo serializado esperando una referencia
 
 03:17.110 --> 03:18.270
-to the log in view.
+al registro en la vista.
 
 03:18.280 --> 03:22.300
-That's really the only wiring up that we need in the scene itself.
+Ese es realmente el único cableado que necesitamos en la propia escena.
 
 03:22.570 --> 03:28.420
-There's alternative ways to do this, but it's very familiar for us to have mono behaviors like a view
+Hay formas alternativas de hacer esto, pero es muy familiar para nosotros tener comportamientos mono como una vista
 
 03:28.420 --> 03:32.230
-sit in the scene and drag a reference into a serialized field here.
+sentarse en la escena y arrastrar una referencia a un campo serializado aquí.
 
 03:32.230 --> 03:38.080
-Back in the example here inside the start, after we create the class and pass in the view we simply
+De vuelta en el ejemplo aquí dentro del inicio, después de crear la clase y pasar en la vista que simplemente
 
 03:38.080 --> 03:39.070
-initialize.
+inicializamos.
 
 03:39.070 --> 03:40.510
-That's it from this level.
+Eso es todo desde este nivel.
 
 03:40.510 --> 03:42.340
-Let's take a look at the next class.
+Echemos un vistazo a la siguiente clase.
 
 03:42.820 --> 03:45.100
-Here we are inside the log in mini class.
+Aquí estamos dentro de la mini clase log in.
 
 03:45.490 --> 03:51.490
-This sample is pretty conventional in that it takes a context, model, view controller and service
+Este ejemplo es bastante convencional en el sentido de que toma un contexto, un modelo, un controlador de vista y un servicio
 
 03:51.490 --> 03:54.970
-one of each so I can take advantage of the base class here.
+uno de cada para que pueda tomar ventaja de la clase base aquí.
 
 03:54.970 --> 04:02.830
-Many NPCs extend it and pass in the strong types for each of the concerns that I want inside the constructor
+Muchos NPCs la extienden y pasan los tipos fuertes para cada una de las preocupaciones que quiero dentro del constructor
 
 04:02.830 --> 04:07.210
-I just pass in the view and inside the initialize I do the bulk of the work.
+Yo solo paso la vista y dentro del initialize hago la mayor parte del trabajo.
 
 04:07.210 --> 04:10.970
-Here I create the context, model, view and controller.
+Aquí creo el contexto, el modelo, la vista y el controlador.
 
 04:10.990 --> 04:15.340
-Notice that the controller is the only constructor that takes several arguments.
+Observa que el controlador es el único constructor que toma varios argumentos.
 
 04:15.340 --> 04:21.400
-This gives us a hint here that the controller is a bit more knowing and more significant in the structure.
+Esto nos da una pista aquí de que el controlador es un poco más conocedor y más significativo en la estructura.
 
 04:21.400 --> 04:23.880
-And finally we initialize each of its parts.
+Y finalmente inicializamos cada una de sus partes.
 
 04:23.890 --> 04:25.360
-That's it for this class.
+Eso es todo para esta clase.
 
 04:25.360 --> 04:30.940
-Now, in previous sample code we step through each the model view controller and service.
+Ahora, en el código de ejemplo anterior pasamos a través de cada uno de los modelos vista controlador y servicio.
 
 04:30.940 --> 04:34.510
-For the sake of brevity here, the service layer is very similar.
+En aras de la brevedad aquí, la capa de servicio es muy similar.
 
 04:34.510 --> 04:38.830
-Please take a look at the code if you'd like and also the model as well.
+Por favor, echa un vistazo al código si quieres y también al modelo.
 
 04:38.830 --> 04:42.670
-So the unique aspects here are the view and the controller.
+Así que los aspectos únicos aquí son la vista y el controlador.
 
 04:42.670 --> 04:43.900
-Let's take a look at each.
+Echemos un vistazo a cada uno.
 
 04:44.200 --> 04:45.460
-Here's the login view.
+Aquí está la vista de inicio de sesión.
 
 04:45.460 --> 04:48.790
-So remember this is sitting on a game object in the scene.
+Así que recuerda que esto está sentado en un objeto de juego en la escena.
 
 04:48.790 --> 04:54.010
-It's not created on the fly like some of the other concerns in this particular demo.
+No se crea sobre la marcha como algunas de las otras preocupaciones en esta demo en particular.
 
 04:54.010 --> 04:58.720
-I'll scroll down here so we can take a look at the high level of the class and then I'll step through
+Me desplazaré hacia abajo aquí para que podamos echar un vistazo al alto nivel de la clase y luego voy a pasar a través de
 
 04:58.720 --> 04:59.740
-it line by line.
+línea por línea.
 
 05:32.460 --> 05:34.990
-First, we have some custom unity events.
+En primer lugar, tenemos algunos eventos unity personalizados.
 
 05:35.010 --> 05:38.960
-This is not really a specific flow to this mini MVCs.
+Esto no es realmente un flujo específico para este mini MVC.
 
 05:38.970 --> 05:40.580
-It's a general practice.
+Es una práctica general.
 
 05:40.590 --> 05:46.800
-Any time you want to send a unity event within Unity and you want to send a long type to parameters,
+Cada vez que quieras enviar un evento dentro de Unity y quieras enviar un tipo largo a parámetros,
 
 05:46.800 --> 05:52.800
-you always subclass as we see here, it isn't really important that we look at the details of the classes
+siempre subclase como vemos aquí, no es realmente importante que nos fijamos en los detalles de las clases
 
 05:52.800 --> 05:55.140
-here because there is no implementation.
+aquí porque no hay implementación.
 
 05:55.140 --> 06:01.610
-We just declare the class as a way to give it a name and declare what subtype it would have inside.
+Sólo declaramos la clase como una forma de darle un nombre y declarar qué subtipo tendría dentro.
 
 06:01.620 --> 06:08.490
-For example, the log in Unity event accepts the user data whenever it's invoked and passes that info
+Por ejemplo, el evento Unity de inicio de sesión acepta los datos del usuario cada vez que es invocado y pasa esa información
 
 06:08.490 --> 06:08.970
-alone.
+solo.
 
 06:08.970 --> 06:12.340
-So this is the first view that we've seen that extends mono behavior.
+Así que esta es la primera vista que hemos visto que extiende el comportamiento mono.
 
 06:12.360 --> 06:17.910
-Remember that with many MVCs, using mounted behaviors is completely optional, but probably in each
+Recuerde que con muchos MVCs, el uso de comportamientos montados es completamente opcional, pero probablemente en cada uno
 
 06:17.910 --> 06:24.270
-sample of any complexity and certainly in a production use case, you would extend mono behavior for
+ejemplo de cualquier complejidad y ciertamente en un caso de uso de producción, extenderías el comportamiento mono para
 
 06:24.270 --> 06:25.190
-your views.
+tus vistas.
 
 06:25.200 --> 06:30.600
-That's because the role of the view is to deal with user input and user interface elements.
+Eso es porque el papel de la vista es tratar con la entrada del usuario y los elementos de la interfaz de usuario.
 
 06:30.600 --> 06:34.540
-And in unity, it just makes more sense to have mono behaviors be involved.
+Y en Unity, tiene más sentido tener comportamientos mono involucrados.
 
 06:34.560 --> 06:38.040
-Next, we declare properties and here fields.
+A continuación, declaramos las propiedades y aquí los campos.
 
 06:38.430 --> 06:44.610
-Now notice these UI elements are the same as the non mini MVC version we saw before.
+Ahora observa que estos elementos UI son los mismos que la versión no mini MVC que vimos antes.
 
 06:44.640 --> 06:48.330
-The idea is that they look and behave the same each of the samples.
+La idea es que se vean y se comporten igual cada una de las muestras.
 
 06:48.330 --> 06:53.040
-So you're going to see a lot of familiar code here from the last section here in the initialize.
+Así que vas a ver un montón de código familiar aquí desde la última sección aquí en la inicialización.
 
 06:53.040 --> 06:55.080
-We've got a couple interesting things happening.
+Tenemos un par de cosas interesantes sucediendo.
 
 06:55.080 --> 07:02.340
-So first we have a block of UI buttons and we're subscribing to the unity events that we would see in
+Así que primero tenemos un bloque de botones de interfaz de usuario y estamos suscribiendo a los eventos de unidad que veríamos en
 
 07:02.340 --> 07:03.960
-a non mini MVCs version.
+una versión no mini MVCs.
 
 07:03.960 --> 07:05.100
-This is pretty standard.
+Esto es bastante estándar.
 
 07:05.100 --> 07:09.630
-Any time you want to hear back from Unity's UI, you subscribe to its unity events.
+Cada vez que quieras saber algo de la UI de Unity, suscríbete a sus eventos unity.
 
 07:09.630 --> 07:12.890
-But this second section is unique to this framework.
+Pero esta segunda sección es única para este framework.
 
 07:12.900 --> 07:17.520
-Here we use the context which is available from any concern and access.
+Aquí utilizamos el contexto que está disponible desde cualquier preocupación y acceso.
 
 07:17.520 --> 07:18.640
-The command Manager.
+El gestor de comandos.
 
 07:18.660 --> 07:24.450
-Now again, I'll talk a bit more about command manager here during this particular sample to get deeper.
+Ahora de nuevo, voy a hablar un poco más sobre el gestor de comandos aquí durante esta muestra en particular para profundizar.
 
 07:24.540 --> 07:29.910
-The command manager sits on the context and the context is passed around to all of the concerns.
+El gestor de comandos se sienta en el contexto y el contexto se pasa a todas las preocupaciones.
 
 07:29.910 --> 07:37.290
-One of the things you can do with the command manager is subscribe to listen to different notifications
+Una de las cosas que puedes hacer con el gestor de comandos es suscribirte para escuchar diferentes notificaciones
 
 07:37.290 --> 07:38.910
-that are coming in as commands.
+que llegan como comandos.
 
 07:39.390 --> 07:41.310
-The other is that you can invoke them.
+La otra es que puedes invocarlos.
 
 07:41.310 --> 07:48.240
-Now remember, none of the concerns that either adds these or invokes them needs to know who is listening
+Ahora recuerda, ninguna de las preocupaciones que o bien las añade o las invoca necesita saber quién está escuchando
 
 07:48.240 --> 07:54.000
-or who else is in invoking the command manager is the middleman that sits between the two layers of
+o quién más está invocando el gestor de comandos es el intermediario que se encuentra entre las dos capas de
 
 07:54.000 --> 07:55.500
-the observer and the sender.
+el observador y el emisor.
 
 07:55.710 --> 08:01.560
-So what's nice about that is you can blindly send out messaging something like a radio station that's
+Así que lo bueno de esto es que puedes enviar mensajes a ciegas a algo como una emisora de radio que es
 
 08:01.560 --> 08:03.480
-just broadcasting out into the sky.
+emitiendo hacia el cielo.
 
 08:03.480 --> 08:08.910
-And anywhere that someone happens to be tuning into that frequency or that specific command, they get
+Y en cualquier lugar que alguien sintonice esa frecuencia o ese comando específico, reciben
 
 08:08.910 --> 08:09.690
-the message.
+el mensaje.
 
 08:09.690 --> 08:15.450
-And something we see as we go down below the code lines in this class, we often use the view to ask
+Y algo que vemos a medida que bajamos por debajo de las líneas de código en esta clase, a menudo usamos la vista para preguntar
 
 08:15.450 --> 08:15.900
-unity.
+unidad.
 
 08:15.900 --> 08:20.880
-UI was something clicked and then we translate that into a command.
+UI se hizo clic en algo y luego lo traducimos en un comando.
 
 08:20.880 --> 08:22.410
-We'll see how that gets done here.
+Veremos cómo se hace aquí.
 
 08:22.440 --> 08:27.510
-As with the previous example, anytime the user types into the text fields or clears it out, it's just
+Al igual que con el ejemplo anterior, cada vez que el usuario escribe en los campos de texto o lo borra, es sólo
 
 08:27.510 --> 08:29.410
-updates the login button.
+actualiza el botón de inicio de sesión.
 
 08:29.430 --> 08:33.960
-The idea is that you would validate if the user submission is potentially correct.
+La idea es que valide si el envío del usuario es potencialmente correcto.
 
 08:33.960 --> 08:38.760
-We simply check, is the field empty or is it not empty?
+Simplemente comprobamos si el campo está vacío o no.
 
 08:38.760 --> 08:43.920
-Whenever the login button is clicked, we translate that to a view event and we dispatch it out.
+Cada vez que se hace clic en el botón de inicio de sesión, lo traducimos a un evento de vista y lo enviamos.
 
 08:43.920 --> 08:47.520
-We don't know from this scope who is listening or if anyone is listening.
+No sabemos desde este ámbito quién está escuchando o si alguien está escuchando.
 
 08:47.520 --> 08:51.360
-But as we get into the next section, we'll see who is the subscriber here.
+Pero cuando entremos en la siguiente sección, veremos quién es el suscriptor aquí.
 
 08:51.900 --> 08:52.500
-Same thing.
+Lo mismo.
 
 08:52.500 --> 08:55.290
-When the logout button is clicked, we send that message out.
+Cuando se hace clic en el botón de cierre de sesión, enviamos ese mensaje.
 
 08:55.290 --> 08:59.790
-So we're translating some kind of a local unity event into a custom view event.
+Así que estamos traduciendo una especie de evento de unidad local a un evento de vista personalizada.
 
 09:00.640 --> 09:02.560
-As part of a general best practice.
+Como parte de una mejor práctica general.
 
 09:02.560 --> 09:07.210
-Whatever we subscribe to inside the destroy, here we unsubscribe.
+Cualquier cosa a la que nos suscribamos dentro del destroy, aquí la desuscribimos.
 
 09:07.510 --> 09:12.820
-Now, up above in this class, we subscribe to listen to the Logout command and here the view as saying
+Ahora, arriba en esta clase, nos suscribimos para escuchar el comando Logout y aquí la vista dice
 
 09:12.820 --> 09:20.110
-Any time any concern sends the logout command, I'll capture that and I'll clear out my fields and I
+En cualquier momento cualquier preocupación envía el comando de cierre de sesión, voy a capturar que y voy a limpiar mis campos y yo
 
 09:20.110 --> 09:22.360
-will update my button Click ability.
+Actualizaré mi botón "Click".
 
 09:22.630 --> 09:25.750
-And the View is also listening to log in submission.
+Y la Vista también está escuchando el inicio de sesión.
 
 09:25.960 --> 09:31.660
-Whenever that happens, it gets the UI prepared for submitting and the views also listening to whenever
+Cada vez que eso sucede, se prepara la interfaz de usuario para la presentación y las vistas también escuchando siempre que
 
 09:31.660 --> 09:32.950
-login is completed.
+se complete el inicio de sesión.
 
 09:33.250 --> 09:38.440
-This is the largest method I think in this particular class, but it works exactly like the non mini
+Este es el método más grande creo que en esta clase en particular, pero funciona exactamente igual que el no mini
 
 09:38.440 --> 09:39.040
-version.
+versión.
 
 09:39.040 --> 09:42.940
-So you can go look at that one and see how I describe the details here.
+Así que usted puede ir a ver que uno y ver cómo describo los detalles aquí.
 
 09:42.940 --> 09:44.650
-We're really doing the same things.
+Realmente estamos haciendo las mismas cosas.
 
 09:45.130 --> 09:48.430
-Just for example sake, I have a bit of extra code here.
+Sólo por ejemplo, tengo un poco de código extra aquí.
 
 09:48.430 --> 09:55.060
-So the highlighted portion here is showing that each command comes along with any data that's relevant.
+Así que la parte resaltada aquí está mostrando que cada comando viene junto con cualquier dato que sea relevante.
 
 09:55.390 --> 10:01.870
-So when the login is completed, we have the user data and we can show that out to the UI if we like,
+Así que cuando el inicio de sesión se ha completado, tenemos los datos del usuario y podemos mostrarlos a la interfaz de usuario si queremos,
 
 10:02.350 --> 10:10.330
-just to demonstrate a complete alternative to that approach from any scope, including the view, we
+sólo para demostrar una alternativa completa a ese enfoque desde cualquier ámbito, incluida la vista, nosotros
 
 10:10.330 --> 10:14.350
-can ask the context, Hey, go get me this particular model.
+podemos pedir al contexto, Hey, ve a buscarme este modelo en particular.
 
 10:14.350 --> 10:20.950
-It will get that model if it exists and we can do anything we like, including debug logging out those
+Obtendrá ese modelo si existe y podemos hacer lo que queramos, incluyendo el registro de depuración de los que
 
 10:20.950 --> 10:21.700
-values.
+valores.
 
 10:21.700 --> 10:25.240
-So this is another example of the flexibility.
+Así que este es otro ejemplo de la flexibilidad.
 
 10:25.240 --> 10:31.450
-The convention here is probably it's best that you send messaging along with the command.
+La convención aquí es que probablemente es mejor que envíes mensajes junto con el comando.
 
 10:31.450 --> 10:37.480
-So there's less coupling, there's less knowledge of this concern about the structure of another concern.
+Así que hay menos acoplamiento, hay menos conocimiento de esta preocupación sobre la estructura de otra preocupación.
 
 10:37.480 --> 10:43.510
-The highlighted code here is suggesting that, hey, the view knows which data to look at in which model,
+El código resaltado aquí está sugiriendo que, hey, la vista sabe qué datos mirar en qué modelo,
 
 10:43.510 --> 10:45.790
-which could be considered overreach.
+lo que podría considerarse una extralimitación.
 
 10:45.790 --> 10:52.900
-But depending on the use case you have and also depending how your UI is structured, it may make perfectly
+Pero dependiendo del caso de uso que tengas y también dependiendo de cómo esté estructurada tu interfaz de usuario, puede hacer perfectamente
 
 10:52.900 --> 10:57.730
-good sense for your view to go into particular models for rendering that data.
+sentido que tu vista vaya a modelos particulares para renderizar esos datos.
 
 10:57.730 --> 11:00.820
-We don't want the view to directly affect the model data.
+No queremos que la vista afecte directamente a los datos del modelo.
 
 11:00.820 --> 11:02.470
-That would be a bad practice.
+Eso sería una mala práctica.
 
 11:02.470 --> 11:04.180
-That's the end of the View class here.
+Aquí termina la clase View.
 
 11:04.180 --> 11:09.010
-Now, before we move on, I want to take a moment and look into the command manager and the command
+Ahora, antes de seguir adelante, quiero tomar un momento y mirar en el gestor de comandos y el comando
 
 11:09.010 --> 11:12.550
-structure because we haven't looked at that in previous example code before.
+estructura porque no hemos mirado que en el código de ejemplo anterior antes.
 
 11:12.850 --> 11:19.450
-So remember here in the same class up above in the initialize, we're adding command listeners.
+Así que recuerda aquí en la misma clase de arriba en el inicializar, estamos añadiendo oyentes de comandos.
 
 11:19.450 --> 11:22.060
-So let's take a look at what exactly that does.
+Echemos un vistazo a lo que hace exactamente.
 
 11:22.060 --> 11:24.540
-We'll start looking at the context for review.
+Empezaremos mirando el contexto para revisarlo.
 
 11:24.550 --> 11:29.800
-So remember that the context class is important because it has the model locator and the command manager
+Así que recuerde que la clase de contexto es importante porque tiene el localizador de modelo y el gestor de comandos
 
 11:30.100 --> 11:32.830
-Relevant to this discussion is the command manager.
+Relevante para esta discusión es el gestor de comandos.
 
 11:32.830 --> 11:37.450
-You can think of the command manager as a list of different commands that have been registered.
+Puedes pensar en el gestor de comandos como una lista de diferentes comandos que han sido registrados.
 
 11:37.450 --> 11:44.530
-So it's API allows you to add in listening to those commands and invoke any commands to allow for flexibility.
+Así que su API le permite añadir en la escucha de los comandos e invocar cualquier comando para permitir la flexibilidad.
 
 11:44.530 --> 11:49.960
-The command must be an AI command, but notice that that I command it's mostly a marker interface.
+El comando debe ser un comando AI, pero fíjate que ese comando I es principalmente una interfaz de marcador.
 
 11:49.960 --> 11:54.070
-We don't have any guaranteed implementation depending on the needs you have.
+No tenemos ninguna implementación garantizada dependiendo de las necesidades que tengas.
 
 11:54.070 --> 12:01.510
-You may want to have an alternative implementation here requiring some sort of execute and undo functionality.
+Puede que quieras tener una implementación alternativa aquí que requiera algún tipo de funcionalidad de ejecutar y deshacer.
 
 12:01.510 --> 12:08.470
-But for the base use case that I have in these samples, I'm just passing it along as a dumb object
+Pero para el caso de uso base que tengo en estos ejemplos, sólo lo estoy pasando como un objeto tonto
 
 12:08.470 --> 12:09.400
-of parameters.
+de parámetros.
 
 12:09.400 --> 12:14.470
-Let's take a look at one of the examples that I use in the case of the log in submitted.
+Echemos un vistazo a uno de los ejemplos que utilizo en el caso del registro en presentado.
 
 12:14.830 --> 12:16.270
-Let's look at the structure.
+Veamos la estructura.
 
 12:16.270 --> 12:22.360
-We can see that the log in submitted command like it's required implements the interface of I command
+Podemos ver que el comando log in submitted como es requerido implementa la interfaz del comando I
 
 12:22.360 --> 12:25.660
-as far as the implementation inside its custom to its own needs.
+en cuanto a la implementación dentro de su costumbre a sus propias necesidades.
 
 12:25.660 --> 12:31.060
-So all it really does is have a constructor that takes exactly the data we need in this type of operation
+Así que todo lo que realmente hace es tener un constructor que toma exactamente los datos que necesitamos en este tipo de operación
 
 12:31.060 --> 12:32.730
-and holds it here locally.
+y los mantiene aquí localmente.
 
 12:32.740 --> 12:34.780
-In a moment we'll see where it gets invoked.
+En un momento veremos donde se invoca.
 
 12:34.780 --> 12:39.790
-But remember, it's the view that is listening for this command and whenever log in submitted command
+Pero recuerda, es la vista la que está a la escucha de este comando y cada vez que se inicie sesión se enviará el comando
 
 12:39.790 --> 12:45.610
-happens, it responds by updating the UI and using that user data that's passed along that we see here
+responde actualizando la UI y usando los datos del usuario que vemos aquí
 
 12:45.610 --> 12:47.200
-to help populate the UI.
+para ayudar a rellenar la interfaz de usuario.
 
 12:47.230 --> 12:48.910
-That's it for the login view.
+Eso es todo para la vista de inicio de sesión.
 
 12:48.910 --> 12:52.780
-So back here at the high level login mini class, we've looked at the view.
+Así que de vuelta aquí en la mini clase de login de alto nivel, hemos visto la vista.
 
 12:52.780 --> 12:54.910
-Now finally we'll look at the controller.
+Ahora finalmente veremos el controlador.
 
 12:54.910 --> 12:56.380
-That's the last piece of the puzzle.
+Esta es la última pieza del puzzle.
 
 12:56.380 --> 13:02.680
-The login controller extends base controller and as with any case, using the mini MVCs, extending
+El controlador de inicio de sesión extiende el controlador base y como en cualquier caso, usando los mini MVCs, extendiendo
 
 13:02.680 --> 13:04.030
-the base is optional.
+la base es opcional.
 
 13:04.030 --> 13:08.620
-Here we're getting some free functionality, which I talked about in earlier code samples, so I'll
+Aquí estamos consiguiendo algo de funcionalidad libre, de la que hablé en ejemplos de código anteriores, así que voy a
 
 13:08.620 --> 13:09.690
-skip that for now.
+saltaré eso por ahora.
 
 13:09.700 --> 13:13.030
-Inside the initialize, the controller has references.
+Dentro de la inicialización, el controlador tiene referencias.
 
 13:13.030 --> 13:15.390
-Now to the other major concerns.
+Ahora a las otras preocupaciones mayores.
 
 13:15.400 --> 13:21.790
-Notice what we do here is we wire up listening to any of those events that are interesting to us.
+Fíjate en lo que hacemos aquí, estamos a la escucha de cualquiera de los eventos que nos interesan.
 
 13:21.790 --> 13:26.020
-We listen to the model, we listen to the view and we listen to the service.
+Escuchamos el modelo, escuchamos la vista y escuchamos el servicio.
 
 13:26.350 --> 13:28.870
-You can begin to see that the controller is the glue.
+Puedes empezar a ver que el controlador es el pegamento.
 
 13:28.870 --> 13:34.330
-It's the middle person that sits between these different layers, listens to an event of one, and as
+Es la persona intermedia que se sienta entre estas diferentes capas, escucha los eventos de una, y como
 
 13:34.330 --> 13:37.150
-we'll see in a moment, is be able to send communication out.
+veremos en un momento, es capaz de enviar la comunicación hacia fuera.
 
 13:37.150 --> 13:38.560
-Here's a perfect example.
+Aquí tenemos un ejemplo perfecto.
 
 13:38.560 --> 13:43.750
-We're listening to The View log in, and when that happens, we invoke a command.
+Estamos escuchando a The View iniciar sesión, y cuando eso sucede, invocamos un comando.
 
 13:43.750 --> 13:49.840
-So imagine kind of listening with two cups and a long string, a very coupled type of communication.
+Así que imagina una especie de escucha con dos tazas y una cadena larga, un tipo de comunicación muy acoplada.
 
 13:49.840 --> 13:54.820
-Here the controller is listening directly to the view for a specific event to happen.
+Aquí el controlador está escuchando directamente a la vista para que ocurra un evento específico.
 
 13:54.820 --> 13:56.140
-That's what we see here.
+Eso es lo que vemos aquí.
 
 13:56.140 --> 14:00.070
-Then it's going to translate that to a much more broad radio station type.
+Luego va a traducir eso a un tipo de estación de radio mucho más amplia.
 
 14:00.130 --> 14:02.180
-Broadcast when it sends the command out?
+¿Difusión cuando envía el comando?
 
 14:02.200 --> 14:03.010
-Absolutely.
+Absolutamente.
 
 14:03.010 --> 14:08.230
-Any concern in this whole project that has access to the same context, which all four of our tiers
+Cualquier preocupación en todo este proyecto que tenga acceso al mismo contexto, que los cuatro de nuestros niveles
 
 14:08.230 --> 14:14.170
-have access to the same context, we'd be able to subscribe and listen to this log in submitted command
+tienen acceso al mismo contexto, que sería capaz de suscribirse y escuchar este registro en el comando enviado
 
 14:14.170 --> 14:15.460
-that gets fired here.
+que se dispara aquí.
 
 14:15.460 --> 14:19.240
-And that consuming scope doesn't necessarily know which scope sent it.
+Y ese ámbito consumidor no sabe necesariamente qué ámbito lo envió.
 
 14:19.240 --> 14:22.870
-And we think of that as a good practice that is decoupled communication.
+Y pensamos en eso como una buena práctica que es la comunicación desacoplada.
 
 14:22.870 --> 14:27.970
-So again, we invoke that command and then we tell the service to start the doing the login process.
+De nuevo, invocamos ese comando y le decimos al servicio que inicie el proceso de login.
 
 14:27.970 --> 14:35.590
-Whenever the log out happens, we translate that view event out into a command When the service is complete
+Cada vez que ocurre el cierre de sesión, traducimos ese evento de vista a un comando Cuando el servicio está completo
 
 14:35.590 --> 14:42.010
-and it has logged in successfully, we're able to update the model directly, which is a best practice.
+y ha iniciado sesión con éxito, podemos actualizar el modelo directamente, lo cual es una buena práctica.
 
 14:42.010 --> 14:45.010
-Controllers can read and write to the model.
+Los controladores pueden leer y escribir en el modelo.
 
 14:45.010 --> 14:47.020
-And finally we send out a command.
+Y finalmente enviamos un comando.
 
 14:47.020 --> 14:51.310
-Now you have lots of different ways that you can structure these communications.
+Ahora tienes muchas formas diferentes de estructurar estas comunicaciones.
 
 14:51.310 --> 14:58.000
-For example, here, instead of directly updating the model and sending the command, we could, in
+Por ejemplo, aquí, en lugar de actualizar directamente el modelo y enviar el comando, podríamos, en
 
 14:58.000 --> 15:05.410
-theory, just update the model and any concern that wants to know when the model is updated would directly
+teoría, sólo actualizar el modelo y cualquier preocupación que quiere saber cuando el modelo se actualiza directamente
 
 15:05.410 --> 15:07.720
-subscribe to the model that's feasible.
+suscribirse al modelo que sea factible.
 
 15:07.720 --> 15:13.870
-Another alternative is, instead of this controller directly impacting the model by setting values,
+Otra alternativa es, en lugar de que este controlador afecte directamente al modelo estableciendo valores,
 
 15:13.870 --> 15:20.260
-we could only send out the command, and some other concern would be responsible to listen to that command
+podríamos sólo enviar el comando, y alguna otra preocupación sería responsable de escuchar a ese comando
 
 15:20.260 --> 15:21.640
-and update the model.
+y actualizar el modelo.
 
 15:21.640 --> 15:26.890
-Now, for a simple project where we have one model and one controller, what I'm showing here is probably
+Ahora, para un proyecto simple donde tenemos un modelo y un controlador, lo que estoy mostrando aquí es probablemente
 
 15:26.890 --> 15:33.610
-most appropriate, but in a much larger project, you may have a controller and model pair for different
+más apropiado, pero en un proyecto mucho más grande, puede tener un controlador y el par de modelos para diferentes
 
 15:33.610 --> 15:35.440
-areas of the application.
+áreas de la aplicación.
 
 15:35.440 --> 15:42.100
-So one controller might just say, Hey, I know when I get this particular message in, I just go tell
+Así que un controlador podría decir, Hey, sé que cuando recibo este mensaje en particular, sólo voy a decirle a
 
 15:42.100 --> 15:46.660
-with a command to the other concerns how they should be reacting.
+con un comando a las otras preocupaciones cómo deben reaccionar.
 
 15:46.660 --> 15:52.450
-This allows you to decouple even the controller logic into multiple controllers.
+Esto te permite desacoplar incluso la lógica del controlador en múltiples controladores.
 
 15:52.450 --> 15:56.530
-And finally, any time the model changes, we send out a command.
+Y finalmente, cada vez que el modelo cambia, enviamos un comando.
 
 15:56.530 --> 15:58.210
-That's it for this complete demo.
+Eso es todo para esta demo completa.
 
 15:58.210 --> 16:00.280
-Let's take another look at the running app.
+Echemos otro vistazo a la aplicación en ejecución.
 
 16:00.280 --> 16:01.150
-So here we are.
+Aquí estamos.
 
 16:01.150 --> 16:04.150
-Finally, we'll take another look at the running example.
+Finalmente, echaremos otro vistazo al ejemplo en ejecución.
 
 16:16.350 --> 16:18.240
-I'll use the correct password here.
+Usaré la contraseña correcta aquí.
 
 16:22.220 --> 16:23.720
-And we get success.
+Y tenemos éxito.
 
 16:24.610 --> 16:25.990
-That's it for this demo.
+Eso es todo para esta demostración.

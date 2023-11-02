@@ -1,244 +1,244 @@
 WEBVTT
 
 00:00.120 --> 00:04.320
-Let's take a look at the clock sample without many MVCs.
+Echemos un vistazo a la muestra del reloj sin muchos MVCs.
 
 00:04.620 --> 00:06.670
-Here we are inside Unity.
+Aquí estamos dentro de Unity.
 
 00:06.690 --> 00:13.170
-We've set up a new Unity project using the latest TFS version of the Unity Editor.
+Hemos creado un nuevo proyecto Unity usando la última versión TFS del Editor Unity.
 
 00:13.170 --> 00:18.930
-Following the instructions from earlier in the course, we've added the mini MVCs package and imported
+Siguiendo las instrucciones de antes en el curso, hemos añadido el paquete mini MVCs e importado
 
 00:18.930 --> 00:19.840
-the samples.
+los ejemplos.
 
 00:19.860 --> 00:25.290
-Here, we'll take a look at the clock sample, and we'll begin with the version that does not have many,
+Aquí, vamos a echar un vistazo a la muestra del reloj, y vamos a empezar con la versión que no tiene muchos,
 
 00:25.290 --> 00:26.580
-MVCs added.
+MVCs añadidos.
 
 00:26.610 --> 00:31.440
-It's expected that this feels like a review for you in basic unity knowledge.
+Es de esperar que esto parezca un repaso para ti en conocimientos básicos de unity.
 
 00:31.470 --> 00:32.770
-Let's run the scene.
+Vamos a ejecutar la escena.
 
 00:32.790 --> 00:34.650
-So here we are with the scene running.
+Así que aquí estamos con la escena ejecutándose.
 
 00:34.650 --> 00:41.010
-We have no real UI here, but in the console window we have some debug log statements that's functioning
+No tenemos interfaz de usuario real aquí, pero en la ventana de la consola tenemos algunas declaraciones de registro de depuración que está funcionando
 
 00:41.010 --> 00:42.870
-something like UI for us.
+algo así como UI para nosotros.
 
 00:42.870 --> 00:47.160
-There's no user input, but every second we get a debug log statement.
+No hay entrada de usuario, pero cada segundo obtenemos una declaración de registro de depuración.
 
 00:47.310 --> 00:48.770
-That's the whole example.
+Ese es todo el ejemplo.
 
 00:48.780 --> 00:51.620
-Let's take a look at the code in the hierarchy view.
+Echemos un vistazo al código en la vista jerárquica.
 
 00:51.630 --> 00:56.760
-We see we have an empty world game object that has the default camera and lighting.
+Vemos que tenemos un objeto de juego mundo vacío que tiene la cámara y la iluminación por defecto.
 
 00:56.760 --> 01:01.770
-We're not really using the camera in lighting here, but for consistency's sake, I have that in every
+Realmente no estamos utilizando la cámara en la iluminación aquí, pero por coherencia, tengo que en cada
 
 01:01.770 --> 01:02.400
-scene.
+escena.
 
 01:02.610 --> 01:06.450
-Then we've got one game object with our example script.
+Luego tenemos un objeto de juego con nuestro script de ejemplo.
 
 01:06.450 --> 01:08.190
-Let's open that example script up.
+Abramos ese script de ejemplo.
 
 01:08.190 --> 01:11.940
-That's the one script that runs this entire scene.
+Ese es el script que ejecuta toda la escena.
 
 01:12.210 --> 01:13.410
-Here's the example.
+Aquí está el ejemplo.
 
 01:13.410 --> 01:15.840
-You can see that it extends mono behavior.
+Puedes ver que extiende el comportamiento mono.
 
 01:16.350 --> 01:20.280
-I'll do a quick scan through the code and then go through it line by line.
+Voy a hacer una exploración rápida a través del código y luego ir a través de él línea por línea.
 
 01:40.730 --> 01:43.810
-So for this first example, I'll go over some fundamentals.
+Así que para este primer ejemplo, voy a repasar algunos fundamentos.
 
 01:43.820 --> 01:48.350
-We've got our using statement that tell this class which other classes it can reference.
+Tenemos nuestra sentencia using que le dice a esta clase a qué otras clases puede hacer referencia.
 
 01:48.350 --> 01:51.350
-We have a namespace appropriate for this example class.
+Tenemos un namespace apropiado para esta clase de ejemplo.
 
 01:51.350 --> 01:53.060
-We have the class definition here.
+Aquí tenemos la definición de la clase.
 
 01:53.060 --> 01:54.650
-We're extending mono behavior.
+Estamos extendiendo el comportamiento mono.
 
 01:54.650 --> 01:56.240
-We have some private fields.
+Tenemos algunos campos privados.
 
 01:56.240 --> 01:59.240
-These are variables that we'll use throughout this example.
+Estas son variables que usaremos a lo largo de este ejemplo.
 
 01:59.240 --> 02:05.000
-Notice here, instead of using INT and float directly, we're using the observable class.
+Fíjate que aquí, en lugar de usar INT y float directamente, estamos usando la clase observable.
 
 02:05.000 --> 02:07.490
-This is covered in an earlier section of the course.
+Esto está cubierto en una sección anterior del curso.
 
 02:07.490 --> 02:11.570
-But remember the observable class gives us some additional functionality.
+Pero recuerda que la clase observable nos da alguna funcionalidad adicional.
 
 02:11.570 --> 02:17.870
-In the case of time delay, we're storing an INT, but we're also able to get an event dispatched every
+En el caso del tiempo de retardo, estamos almacenando un INT, pero también somos capaces de obtener un evento despachado cada
 
 02:17.870 --> 02:19.760
-time that int value changes.
+cada vez que el valor int cambia.
 
 02:19.760 --> 02:26.330
-This brings the observer pattern to a simple piece of data, and we're using this throughout every sample.
+Esto lleva el patrón observador a una simple pieza de datos, y estamos usando esto en cada muestra.
 
 02:26.360 --> 02:32.810
-It's optional when using mini MVC, but highly recommended inside Unity Start method, which is called
+Es opcional cuando se utiliza mini MVC, pero muy recomendable dentro del método Unity Start, que se llama
 
 02:32.810 --> 02:33.230
-once.
+una vez.
 
 02:33.230 --> 02:39.800
-As the scene wakes up, we get started by loading inside this example and all the samples we're going
+Como la escena se despierta, empezamos cargando dentro de este ejemplo y todas las muestras que vamos a
 
 02:39.800 --> 02:41.570
-to load a local file.
+para cargar un archivo local.
 
 02:41.570 --> 02:48.740
-This in the MVC world once we see that sample is our way to mimic calling a back end server.
+Esto en el mundo MVC una vez que vemos que la muestra es nuestra manera de imitar llamar a un servidor back-end.
 
 02:48.740 --> 02:54.950
-Loading a local file is quite easy, but it's asynchronous and it's external data, so it's appropriate
+Cargar un archivo local es bastante fácil, pero es asíncrono y son datos externos, por lo que es apropiado
 
 02:54.950 --> 02:56.600
-for the scope of service.
+para el alcance del servicio.
 
 02:56.600 --> 03:02.870
-It's a bit of a contrived and silly example because of course we could hard code the value of the time
+Es un ejemplo un poco artificioso y tonto porque, por supuesto, podríamos codificar el valor de la hora
 
 03:02.870 --> 03:04.100
-delay here in C-sharp.
+retraso aquí en Do sostenido.
 
 03:04.100 --> 03:07.520
-But again, this is done for samples sake here in the project window.
+Pero de nuevo, esto se hace para las muestras aquí en la ventana del proyecto.
 
 03:07.520 --> 03:13.160
-We can see the location of that local text file and here we see the contents of that text file.
+Podemos ver la ubicación de ese archivo de texto local y aquí vemos el contenido de ese archivo de texto.
 
 03:13.280 --> 03:17.000
-It's simply a string that we will type into.
+Es simplemente una cadena en la que escribiremos.
 
 03:17.000 --> 03:23.360
-INT Now, again, of course, this value 1000 could be hard coded in C-sharp, but we're just illustrating
+INT Ahora, de nuevo, por supuesto, este valor 1000 podría ser codificado en C-sharp, pero sólo estamos ilustrando
 
 03:23.360 --> 03:24.890
-how to load external data.
+cómo cargar datos externos.
 
 03:24.890 --> 03:29.930
-So we load that text, we wait a half a second just to simulate a delay.
+Así que cargamos ese texto, esperamos medio segundo para simular un retraso.
 
 03:29.930 --> 03:36.350
-This is helpful so that we know that in more complex examples where accounting for the subtle latency
+Esto es útil para que sepamos que en ejemplos más complejos donde la contabilidad de la latencia sutil
 
 03:36.350 --> 03:41.360
-that we'd get from calling a real backend service, then assuming that we've loaded successfully, we
+que obtendríamos llamando a un servicio backend real, entonces asumiendo que hemos cargado con éxito, nosotros
 
 03:41.360 --> 03:47.120
-we grab that string value and type it as int, Remember that time delay is an observable type.
+cogemos ese valor de cadena y lo escribimos como int, Recuerda que el tiempo de retardo es un tipo observable.
 
 03:47.120 --> 03:51.590
-So when we're setting the value, we have to set the dot value property within.
+Así que cuando estamos estableciendo el valor, tenemos que establecer la propiedad dot value dentro.
 
 03:51.590 --> 03:56.960
-Again, the benefit of doing it this way is we'll get an automatic event dispatched whenever that value
+De nuevo, la ventaja de hacerlo de esta manera es que obtendremos un evento automático cada vez que el valor
 
 03:56.960 --> 03:57.710
-changes.
+cambie.
 
 03:57.710 --> 04:03.260
-We're not really taking advantage of it in this simple example, but we'll see that in later code.
+Realmente no lo estamos aprovechando en este sencillo ejemplo, pero lo veremos en código posterior.
 
 04:03.260 --> 04:05.870
-Now that's successfully loaded, we'll start the ticking.
+Ahora que se ha cargado correctamente, comenzaremos el tic-tac.
 
 04:05.870 --> 04:07.430
-This is the clock itself.
+Este es el reloj.
 
 04:07.430 --> 04:12.350
-In order to have code called repeatedly, there's many things you can do inside unity.
+Para que el código sea llamado repetidamente, hay muchas cosas que puedes hacer dentro de unity.
 
 04:12.350 --> 04:17.240
-The most basic and common one is to use a code routine.
+La más básica y común es usar una rutina de código.
 
 04:17.390 --> 04:20.270
-So all we do here is start up a code routine.
+Así que todo lo que hacemos aquí es iniciar una rutina de código.
 
 04:20.270 --> 04:21.890
-This will be called repeatedly.
+Esto será llamado repetidamente.
 
 04:21.890 --> 04:23.960
-So this is a contrived example.
+Este es un ejemplo artificial.
 
 04:23.960 --> 04:30.380
-But really I just wanted to tick up using real world seconds from one into infinity.
+Pero en realidad sólo quería marcar usando segundos del mundo real desde uno hasta el infinito.
 
 04:30.380 --> 04:35.350
-As long as the scene is open, we use time, time to grab that from unity.
+Mientras la escena esté abierta, usamos el tiempo, time para cogerlo de unity.
 
 04:35.360 --> 04:42.650
-Each time I update our time variable and a call a separate handler to deal with the consequence as we
+Cada vez que actualice nuestra variable de tiempo y una llamada a un controlador independiente para hacer frente a la consecuencia, ya que
 
 04:42.650 --> 04:44.240
-handle that consequence here.
+manejar esa consecuencia aquí.
 
 04:44.240 --> 04:49.220
-And quite simply, I wanted to have an example that doesn't have an explicit view.
+Y simplemente, quería tener un ejemplo que no tuviera una vista explícita.
 
 04:49.220 --> 04:57.130
-So we just debug log here that simulates some sort of user feedback without any additional complexity.
+Así que sólo depurar registro aquí que simula algún tipo de retroalimentación del usuario sin ninguna complejidad adicional.
 
 04:57.140 --> 04:59.030
-Let's run the scene one more time.
+Vamos a ejecutar la escena una vez más.
 
 05:05.720 --> 05:07.310
-And we see the clock ticking.
+Y vemos el tic-tac del reloj.
 
 05:07.430 --> 05:08.240
-That's it.
+Ya está.
 
 05:09.440 --> 05:13.450
-So that was the clock working without many MVCs.
+Así que ese era el reloj funcionando sin muchos MVCs.
 
 05:13.460 --> 05:16.430
-I expect for everything we covered there to be review.
+Espero que todo lo que hemos cubierto haya sido revisado.
 
 05:16.460 --> 05:23.630
-We've seen classes, methods, variables, properties, events, serialized fields and more.
+Hemos visto clases, métodos, variables, propiedades, eventos, campos serializados y más.
 
 05:23.660 --> 05:29.720
-That's a good unity foundation for us to have as common understanding before we move on to the mini
+Esa es una buena base de unidad para nosotros tener como comprensión común antes de pasar a la mini
 
 05:29.720 --> 05:31.040
-MVCs example.
+ejemplo de MVCs.
 
 05:31.820 --> 05:32.540
-Thanks.
+Gracias.

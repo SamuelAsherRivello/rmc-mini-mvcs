@@ -1,145 +1,145 @@
 WEBVTT
 
 00:00.270 --> 00:03.750
-The Mini MVCs Rollerball Sample Project.
+El proyecto de ejemplo Mini MVCs Rollerball.
 
 00:04.580 --> 00:11.300
-With each sample project, there's an opportunity to peel back more of the layers in MVCs and think
+Con cada proyecto de ejemplo, hay una oportunidad para pelar más de las capas en MVCs y pensar
 
 00:11.300 --> 00:13.090
-critically about these concepts.
+críticamente sobre estos conceptos.
 
 00:13.100 --> 00:15.590
-This will dramatically increase your learning.
+Esto aumentará dramáticamente tu aprendizaje.
 
 00:15.620 --> 00:20.390
-To kick start your thoughts, consider the pros and benefits of the framework in each sample.
+Para poner en marcha tus pensamientos, considera los pros y los beneficios del marco en cada ejemplo.
 
 00:20.390 --> 00:22.900
-With which aspects are you feeling more comfortable?
+¿Con qué aspectos te sientes más cómodo?
 
 00:22.910 --> 00:26.180
-Are you beginning to see the long term benefits of choosing a framework?
+¿Está empezando a ver los beneficios a largo plazo de elegir un marco?
 
 00:26.180 --> 00:30.410
-Which parts of the framework are you excited about and want to learn more along the way?
+¿Qué partes del marco de trabajo te entusiasman y quieres aprender más sobre la marcha?
 
 00:30.410 --> 00:33.290
-You might identify some possible cons or drawbacks.
+Podrías identificar algunos posibles contras o inconvenientes.
 
 00:33.290 --> 00:36.680
-Which aspects of the framework may not work for your needs?
+¿Qué aspectos del marco pueden no funcionar para tus necesidades?
 
 00:36.680 --> 00:42.410
-Is there anything you can do to get the results that you need and which patterns and practices remain
+¿Hay algo que puedas hacer para obtener los resultados que necesitas y qué patrones y prácticas permanecen
 
 00:42.410 --> 00:43.430
-unclear for you?
+sin aclarar?
 
 00:43.430 --> 00:44.930
-Think about these points.
+Piensa en estos puntos.
 
 00:44.930 --> 00:50.570
-Engage in the community, take notes and reflect as we're stepping into this sample will be in a project
+Participa en la comunidad, toma notas y reflexiona mientras nos adentramos en esta muestra será en un proyecto
 
 00:50.570 --> 00:54.020
-that has the source code for the framework as well as the samples.
+que tiene el código fuente para el marco, así como las muestras.
 
 00:54.140 --> 00:59.000
-Each of the samples we cover has a version with many MVCs and without.
+Cada una de las muestras que cubrimos tiene una versión con muchos MVCs y sin ellos.
 
 00:59.000 --> 01:07.790
-With the Rollerball sample, we see a simple complete three D game includes audio UI input and physics.
+Con la muestra Rollerball, vemos un simple juego completo de tres D incluye audio UI input y física.
 
 01:07.790 --> 01:13.490
-From an architectural standpoint, we'll see a bit more complexity than we've seen in previous samples.
+Desde un punto de vista arquitectónico, veremos un poco más de complejidad que en las muestras anteriores.
 
 01:13.490 --> 01:19.340
-Here we have multiple views and multiple controllers showing the scalability of the framework.
+Aquí tenemos múltiples vistas y múltiples controladores mostrando la escalabilidad del framework.
 
 01:19.340 --> 01:24.050
-And with its integration into unity, we see multiple mono behaviors in use as well.
+Y con su integración en unity, vemos múltiples comportamientos mono en uso también.
 
 01:24.050 --> 01:28.640
-Due to the added complexity here, the target audience is intermediate developers.
+Debido a la complejidad añadida aquí, el público objetivo son los desarrolladores intermedios.
 
 01:28.640 --> 01:33.890
-If you followed along well with the previous samples, this is a great opportunity to learn even more.
+Si has seguido bien los ejemplos anteriores, esta es una gran oportunidad para aprender aún más.
 
 01:33.890 --> 01:39.620
-As we're digging into this sample, consider which of these coding assignments you'd like to take on.
+Mientras profundizamos en esta muestra, considera cuál de estas tareas de codificación te gustaría llevar a cabo.
 
 01:39.620 --> 01:42.410
-There's a variety here and you could even create your own.
+Aquí hay una gran variedad e incluso podrías crear las tuyas propias.
 
 01:42.410 --> 01:46.580
-Starting with lower difficulty is just to explain back these concepts.
+Empezar con la dificultad más baja es sólo para volver a explicar estos conceptos.
 
 01:46.580 --> 01:50.860
-After digging into the example, are you comfortable enough to explain it to a friend?
+Después de profundizar en el ejemplo, ¿te sientes lo suficientemente cómodo como para explicárselo a un amigo?
 
 01:50.870 --> 01:52.700
-Each sample includes unit testing.
+Cada ejemplo incluye pruebas unitarias.
 
 01:52.700 --> 01:56.780
-Can you add one more unit test that makes sense in the context of the sample?
+¿Puedes añadir una prueba unitaria más que tenga sentido en el contexto de la muestra?
 
 01:56.780 --> 02:03.440
-You can add a new UI feature, perhaps adding text or a button to the UI and then wiring it up properly
+Puedes añadir una nueva característica a la interfaz de usuario, quizás añadiendo texto o un botón a la interfaz de usuario y luego cableándolo adecuadamente
 
 02:03.440 --> 02:05.240
-in a way that makes sense to the framework.
+de forma que tenga sentido para el framework.
 
 02:05.240 --> 02:11.030
-You could create some other type of new input, perhaps having keyboard input, do something appropriate
+Podrías crear algún otro tipo de entrada nueva, quizás tener entrada de teclado, hacer algo apropiado
 
 02:11.030 --> 02:11.810
-for the sample.
+para la muestra.
 
 02:11.810 --> 02:13.340
-You could copy the sample.
+Podrías copiar la muestra.
 
 02:13.340 --> 02:18.410
-Perhaps the sample has some things that are interesting for a different use case copy and paste the
+Tal vez la muestra tiene algunas cosas que son interesantes para un caso de uso diferente copiar y pegar el
 
 02:18.410 --> 02:24.590
-entire parent folder, rename each class so that it's unique or give it a new namespace and then add
+toda la carpeta padre, renombra cada clase para que sea única o dale un nuevo espacio de nombres y luego añade
 
 02:24.590 --> 02:26.900
-and adjust the functionality to meet your needs.
+y ajustar la funcionalidad para satisfacer sus necesidades.
 
 02:26.900 --> 02:32.600
-And perhaps the most challenging of this list would be to create a new sample yourself instead of copying
+Y tal vez el más difícil de esta lista sería crear una nueva muestra en lugar de copiar
 
 02:32.600 --> 02:33.380
-and pasting.
+y pegar.
 
 02:33.380 --> 02:36.140
-Here, begin with the empty canvas of a new project.
+Aquí, empieza con el lienzo vacío de un nuevo proyecto.
 
 02:36.140 --> 02:39.320
-Import the framework itself and start coding from scratch.
+Importa el propio framework y empieza a codificar desde cero.
 
 02:39.320 --> 02:43.130
-That certainly demonstrates a firm grasp of all the concepts.
+Eso sin duda demuestra una firme comprensión de todos los conceptos.
 
 02:43.130 --> 02:48.020
-Doing assignments like these helps to deepen your knowledge with practical experience.
+Hacer tareas como estas ayuda a profundizar tus conocimientos con la experiencia práctica.
 
 02:48.020 --> 02:53.810
-Let's see this in action You can create a new Unity project, import the mini and framework.
+Veamos esto en acción Puedes crear un nuevo proyecto Unity, importar el mini y el framework.
 
 02:53.810 --> 03:00.200
-Import the samples, Open this particular sample, explore the version within that doesn't use mini
+Importar las muestras, Abrir esta muestra en particular, explorar la versión que no utiliza mini
 
 03:00.200 --> 03:03.170
-MVCs to gain the basic knowledge of how it operates.
+MVC para obtener los conocimientos básicos de su funcionamiento.
 
 03:03.170 --> 03:06.980
-And then look at the version with many MVCs and with each sample.
+Y luego mira la versión con muchos MVCs y con cada muestra.
 
 03:06.980 --> 03:10.100
-I'll do some live coding with one of the sample assignments.
+Voy a hacer un poco de codificación en vivo con una de las asignaciones de la muestra.
 
 03:10.100 --> 03:11.300
-Let's get started.
+Vamos a empezar.

@@ -1,484 +1,484 @@
 WEBVTT
 
 00:00.080 --> 00:09.410
-Let's take a look at a demo of the mini MVC system and how you can have multiple minis in the same project.
+Echemos un vistazo a una demo del sistema mini MVC y cómo puedes tener múltiples minis en el mismo proyecto.
 
 00:09.440 --> 00:11.750
-Now, why would you need to do that?
+Ahora, ¿por qué necesitarías hacer eso?
 
 00:14.180 --> 00:15.380
-It is a great question.
+Es una gran pregunta.
 
 00:15.380 --> 00:17.760
-I needed to have a drink of water just to think about it.
+Necesitaba beber un poco de agua sólo para pensar en ello.
 
 00:17.780 --> 00:27.650
-So typically in a project, the reason that you bring on an off the shelf architecture like MVC or specifically
+Así que normalmente en un proyecto, la razón por la que traes una arquitectura off the shelf como MVC o específicamente
 
 00:27.650 --> 00:35.600
-in this case, the mini MVC framework, is that you want to set your project up to be more maintainable
+en este caso, el mini MVC framework, es que usted desea configurar su proyecto para ser más fácil de mantener
 
 00:35.600 --> 00:38.960
-and more scalable as the project grows.
+y más escalable a medida que el proyecto crece.
 
 00:39.700 --> 00:46.810
-Now, the first thing that you would do is create the mini structure and inside of it the model view
+Ahora, lo primero que debes hacer es crear la mini estructura y dentro de ella la vista del modelo
 
 00:46.810 --> 00:48.660
-controller and service.
+controlador y servicio.
 
 00:48.670 --> 00:53.230
-Most of our demo projects have that level of complexity.
+La mayoría de nuestros proyectos de demostración tienen ese nivel de complejidad.
 
 00:53.590 --> 01:00.130
-If you want to add a bit more complexity into the project because the feature set grows, you could
+Si quieres añadir un poco más de complejidad al proyecto porque el conjunto de características crece, podrías
 
 01:00.130 --> 01:05.350
-add another model, another view, another controller, another service, right?
+añadir otro modelo, otra vista, otro controlador, otro servicio, ¿verdad?
 
 01:05.350 --> 01:12.430
-So you could have as many of those concerns as you want, all within the same mini, but you could also
+Así que usted podría tener tantas de esas preocupaciones como desee, todo dentro de la misma mini, pero también podría
 
 01:12.430 --> 01:18.910
-another tool that you have at your disposal is to have multiple minis be in the same project.
+otra herramienta que tienes a tu disposición es tener múltiples minis en el mismo proyecto.
 
 01:18.910 --> 01:24.970
-So imagine a game where the core game loop, let's say we're playing Pac-Man, taking the input of Pac-Man,
+Imagina un juego en el que el bucle central, digamos que estamos jugando a Pac-Man, toma la entrada de Pac-Man,
 
 01:24.970 --> 01:31.480
-moving around, grabbing the power pellets, the eye of the enemies, all that core game logic could
+moviéndose, cogiendo las bolitas de energía, el ojo de los enemigos, toda esa lógica central del juego podría
 
 01:31.480 --> 01:34.810
-live in one mini and you complete your whole game that way.
+vivir en una miniatura y completar todo el juego de esa manera.
 
 01:34.810 --> 01:38.770
-And then you say, Well, now we need to make a meta loop around the entire thing.
+Y entonces dices, bueno, ahora necesitamos hacer un meta bucle alrededor de todo el asunto.
 
 01:38.770 --> 01:44.600
-We need to have multiple worlds, we need to have some social features, we need to have multiplayer,
+Necesitamos tener múltiples mundos, necesitamos tener algunas características sociales, necesitamos tener multijugador,
 
 01:44.600 --> 01:50.570
-we need to have high score tables, whatever you're going to wrap around the core experience, you could
+necesitamos tener tablas de puntuación, lo que sea que vayas a envolver alrededor de la experiencia principal, podrías
 
 01:50.570 --> 01:56.120
-add model view controller for that, or you could create a separate mini that is the meta game and then
+añadir un controlador modelo-vista para eso, o podrías crear un mini juego separado que sea el meta juego y luego
 
 01:56.120 --> 02:02.030
-you could have the core game mini and the meta mini talk to each other in a predictable way.
+puedes hacer que el mini juego principal y el mini meta se comuniquen entre sí de una manera predecible.
 
 02:02.030 --> 02:09.260
-So there's lots of different ways that you can scale up your project once you get mini MVC Incorporated
+Así que hay un montón de maneras diferentes que usted puede escalar su proyecto una vez que obtenga mini MVC Incorporado
 
 02:09.260 --> 02:10.340
-into your project.
+en tu proyecto.
 
 02:10.340 --> 02:15.530
-So we'll take a look at a demo of multiple minis in one demo project.
+Así que vamos a echar un vistazo a una demostración de múltiples minis en un proyecto de demostración.
 
 02:15.530 --> 02:21.230
-So this is part of a course which is the MVC architecture for Unity Course.
+Así que esto es parte de un curso que es la arquitectura MVC para Unity Curso.
 
 02:21.230 --> 02:23.960
-MVC stands for Model View and Controller.
+MVC significa Modelo, Vista y Controlador.
 
 02:23.990 --> 02:27.410
-The high level content is here even deeper.
+El contenido de alto nivel es aquí aún más profundo.
 
 02:27.410 --> 02:33.650
-Looking at the course content, we can see that we've got different sample projects, so the course
+Mirando el contenido del curso, podemos ver que tenemos diferentes proyectos de ejemplo, por lo que el curso
 
 02:33.650 --> 02:40.910
-goes over how to create a simple clock, how to create a login, how to have the Rollerball unity demo
+repasa cómo crear un reloj simple, cómo crear un login, cómo tener la demo de Rollerball unity
 
 02:40.940 --> 02:46.400
-where you have a ball moving with physics, collecting different cubes done with physics and scoring
+donde tienes una bola que se mueve con la física, la recogida de diferentes cubos hecho con la física y la puntuación
 
 02:46.400 --> 02:47.030
-points.
+puntos.
 
 02:47.030 --> 02:48.830
-It's a classic unity project.
+Es un proyecto clásico de unity.
 
 02:48.830 --> 02:55.100
-It's done for you here in mini MVC in the course, and then there's a custom sample project as well.
+Está hecho para ti aquí en mini MVC en el curso, y también hay un proyecto de ejemplo personalizado.
 
 02:55.100 --> 02:58.340
-What we're looking at now is more demos that we've added.
+Lo que estamos viendo ahora son más demos que hemos añadido.
 
 02:58.340 --> 03:03.380
-On top of that, there's about ten different ones, but the one we're going to focus on here is multi
+Además de eso, hay unas diez diferentes, pero en la que nos vamos a centrar aquí es multi
 
 03:03.410 --> 03:04.040
 minis.
 
 03:04.040 --> 03:06.200
-So let's take a look at that inside Unity.
+Así que echemos un vistazo dentro de Unity.
 
 03:06.860 --> 03:08.840
-So here we are inside Unity.
+Aquí estamos dentro de Unity.
 
 03:08.840 --> 03:14.930
-If you look at the if you're in the course and you follow the course, you can download it that way.
+Si miras el si estás en el curso y sigues el curso, puedes descargarlo de esa manera.
 
 03:14.930 --> 03:22.820
-If you're in the just grabbing the free code off of GitHub, then you'll have the mini MVC here in your
+Si estás en el sólo agarrar el código libre de GitHub, entonces usted tendrá el mini MVC aquí en su
 
 03:22.820 --> 03:28.550
-package manager and you just want to go over here to the samples and import the samples and then you'll
+gestor de paquetes y sólo tienes que ir aquí a las muestras y la importación de las muestras y, a continuación, podrás
 
 03:28.550 --> 03:30.260
-have access to all we're about to see.
+tendrás acceso a todo lo que vamos a ver.
 
 03:30.260 --> 03:32.000
-And that's already done here for me.
+Y eso ya está hecho aquí para mí.
 
 03:32.000 --> 03:35.390
-And if I look over here in the more folder.
+Y si miro aquí en la carpeta más.
 
 03:37.260 --> 03:40.350
-We have we got multiple minis here, right?
+Tenemos múltiples minis aquí, ¿verdad?
 
 03:40.350 --> 03:42.060
-So that's the one we've got set up.
+Este es el que tenemos preparado.
 
 03:44.070 --> 03:49.350
-So in the multiple minis we've got, let's just run the scene to start with.
+Así que en los múltiples minis que tenemos, vamos a ejecutar la escena para empezar.
 
 03:51.320 --> 03:59.300
-So here we have a left mini, which is a view model controller on the left side of the screen and a
+Así que aquí tenemos un mini izquierda, que es un controlador de modelo de vista en el lado izquierdo de la pantalla y un
 
 03:59.300 --> 04:01.870
-right mini, which is a completely separate mini.
+mini derecho, que es un mini completamente separado.
 
 04:01.880 --> 04:08.960
-So if you follow it along and seen previous videos in the course or previous videos from this topic
+Así que si lo sigues y has visto videos anteriores en el curso o videos anteriores de este tema
 
 04:08.960 --> 04:14.960
-on YouTube from me, you'll know that generally in each demo we have exactly one mini.
+en YouTube por mi parte, sabrás que generalmente en cada demo tenemos exactamente un mini.
 
 04:14.960 --> 04:21.140
-But for talking about how you could scale up and those options I mentioned just a few minutes ago,
+Pero para hablar de cómo se podría ampliar y esas opciones que he mencionado hace unos minutos,
 
 04:21.140 --> 04:25.820
-this demo shows two minis here, so notice they look kind of similar.
+esta demo muestra dos minis aquí, así que fíjate en que se parecen.
 
 04:26.210 --> 04:32.240
-One is about 50% of the screen real estate on the left and one is about 50% on the right.
+Uno ocupa el 50% de la pantalla a la izquierda y el otro el 50% a la derecha.
 
 04:32.240 --> 04:35.180
-And they have quite similar looking layouts and stuff.
+Y tienen un diseño bastante similar.
 
 04:35.180 --> 04:39.620
-That was just to have kind of some some similarities here for for symmetry.
+Eso era sólo para tener algunas similitudes aquí por simetría.
 
 04:39.620 --> 04:45.740
-But they don't necessarily need to be logically or semantically similar in that way.
+Pero no necesariamente tienen que ser lógica o semánticamente similares en ese sentido.
 
 04:45.740 --> 04:46.940
-You could have one.
+Podrías tener uno.
 
 04:46.940 --> 04:51.450
-Again, that's just the core logic of the game and one that's the meta around it.
+De nuevo, eso es sólo la lógica central del juego y una que es la meta a su alrededor.
 
 04:51.480 --> 04:57.210
-You could have one that is about 10% of the user experience and another one that is 90% of the experience.
+Puedes tener uno que sea el 10% de la experiencia del usuario y otro que sea el 90% de la experiencia.
 
 04:57.210 --> 04:58.920
-You could have even more than two.
+Podrías tener incluso más de dos.
 
 04:58.950 --> 05:01.860
-You could have three, four, five minis inside of a project.
+Podrías tener tres, cuatro, cinco minis dentro de un proyecto.
 
 05:01.890 --> 05:05.340
-You could imagine creating a unity package that is a mini.
+Podrías imaginar crear un paquete unity que sea un mini.
 
 05:07.260 --> 05:08.460
-In distributing them.
+Al distribuirlos.
 
 05:08.460 --> 05:14.670
-And then people who have a mini based project or a non mini based project could bring that package in
+Y entonces la gente que tiene un proyecto basado en mini o un proyecto no basado en mini podría traer ese paquete en
 
 05:14.670 --> 05:15.750
-and everything could work.
+y todo podría funcionar.
 
 05:15.750 --> 05:20.310
-So you can think of minis as their own little world and a lot of flexibility in how you integrate them.
+Así que puedes pensar en las minis como en su propio pequeño mundo y con mucha flexibilidad para integrarlas.
 
 05:20.400 --> 05:22.200
-So here what we do.
+Esto es lo que hacemos.
 
 05:22.850 --> 05:26.150
-Is we can click the increment counter button on the left.
+Es que podemos hacer clic en el botón de incremento del contador a la izquierda.
 
 05:27.020 --> 05:30.290
-And it is updating the counter on the right mini.
+Y se actualiza el contador en la miniatura de la derecha.
 
 05:30.560 --> 05:32.720
-Now, there's lots of ways you could structure this.
+Ahora, hay muchas maneras de estructurar esto.
 
 05:32.750 --> 05:38.600
-It's a somewhat arbitrary example here to split this, but for the sake of demo on the left, it takes
+Es un ejemplo un tanto arbitraria aquí para dividir esto, pero por el bien de la demostración de la izquierda, se toma
 
 05:38.600 --> 05:41.710
-input and on the right it renders to the View.
+entrada y a la derecha se representa a la vista.
 
 05:41.720 --> 05:43.670
-So let's take a look at how this scene is set up.
+Así que echemos un vistazo a cómo está configurada esta escena.
 
 05:44.860 --> 05:50.560
-So here we have the world which just hides the camera and the light, since that's not too interesting
+Así que aquí tenemos el mundo que sólo oculta la cámara y la luz, ya que no es demasiado interesante
 
 05:50.560 --> 05:51.550
-for our talk.
+para nuestra charla.
 
 05:51.850 --> 05:59.740
-Then we have the left view, which is the portion just shown on the left and the right, which is the
+Luego tenemos la vista de la izquierda, que es la parte que se acaba de mostrar a la izquierda y la derecha, que es el
 
 05:59.740 --> 06:01.150
-portion just shown on the right.
+la parte de la derecha.
 
 06:01.180 --> 06:03.760
-Each of those are unity canvases.
+Cada uno de ellos son lienzos de unidad.
 
 06:03.760 --> 06:04.690
-If you care.
+Si te interesa.
 
 06:04.780 --> 06:10.180
-Then down here we have the multi mini example itself.
+Luego aquí abajo tenemos el propio ejemplo del multi mini.
 
 06:10.180 --> 06:11.740
-So this is a monobehaviour.
+Así que esto es un mono comportamiento.
 
 06:11.740 --> 06:18.550
-That is the demo that gets everything started and I just pass in a reference to the left view and a
+Esta es la demo que pone todo en marcha y yo sólo paso una referencia a la vista de la izquierda y un
 
 06:18.550 --> 06:24.760
-reference to the right view so that the demo can link them up together the way that it needs to.
+a la vista derecha para que la demo pueda enlazarlas de la forma que necesite.
 
 06:25.060 --> 06:27.850
-So let's start here by looking at the mini example.
+Empecemos por el mini ejemplo.
 
 06:29.080 --> 06:30.360
-You zoom out a little bit.
+Se aleja un poco.
 
 06:31.910 --> 06:33.380
-So zamana behavior.
+Entonces el comportamiento de zamana.
 
 06:33.920 --> 06:35.600
-I take a serialized field.
+Tomo un campo serializado.
 
 06:37.520 --> 06:38.900
-Of the left and the right.
+De la izquierda y de la derecha.
 
 06:40.620 --> 06:42.180
-Then what I do.
+Entonces lo que hago.
 
 06:42.210 --> 06:46.020
-Quite fundamental and important to this demo.
+Bastante fundamental e importante para esta demostración.
 
 06:46.740 --> 06:56.100
-Is I create the context outside of the minis and I pass the same context in to the left mini and into
+Es crear el contexto fuera de los minis y pasar el mismo contexto al mini de la izquierda y a
 
 06:56.100 --> 06:57.000
-the right mini.
+al mini derecho.
 
 06:57.090 --> 06:58.740
-Now, why is that important?
+Ahora, ¿por qué es importante?
 
 06:58.860 --> 07:05.610
-The context, much like the typical word context in life, context is decisive.
+El contexto, muy parecido al típico contexto de las palabras en la vida, el contexto es decisivo.
 
 07:05.640 --> 07:12.630
-Context determines which options and possibilities present themselves as available to you.
+El contexto determina qué opciones y posibilidades se presentan como disponibles para ti.
 
 07:12.660 --> 07:18.580
-So if I pass the same context into the left and to the right, they're able to communicate to each other.
+Así que si paso el mismo contexto a la izquierda y a la derecha, son capaces de comunicarse entre sí.
 
 07:18.600 --> 07:24.630
-They can, for example, send commands to each other or get a reference to the model for each other.
+Pueden, por ejemplo, enviarse comandos el uno al otro u obtener una referencia al modelo del otro.
 
 07:24.660 --> 07:26.790
-They're basically living in one world.
+Básicamente viven en un mismo mundo.
 
 07:26.820 --> 07:28.980
-If for sake of argument.
+Si por el bien del argumento.
 
 07:29.990 --> 07:36.140
-I had a context one and a context two and I passed one into the left and two into the right.
+Tengo un contexto uno y un contexto dos y paso uno a la izquierda y dos a la derecha.
 
 07:36.170 --> 07:39.530
-Then left and right cannot talk to each other.
+Entonces la izquierda y la derecha no pueden hablar entre ellas.
 
 07:39.770 --> 07:46.310
-That's part of the encapsulation of how object oriented programming work, which is reinforced in how
+Eso es parte de la encapsulación de cómo funciona la programación orientada a objetos, que se refuerza en cómo
 
 07:46.340 --> 07:47.330
-many works.
+funciona.
 
 07:47.330 --> 07:53.150
-But if you want to be able to communicate, then you pass the exact same one reference to both.
+Pero si quieres poder comunicarte, entonces pasas exactamente la misma referencia a ambos.
 
 07:53.600 --> 07:54.080
-Right.
+Correcto.
 
 07:54.080 --> 07:59.630
-So let's look at the example on the left takes in that left view, takes in the context that we just
+Así que vamos a ver el ejemplo de la izquierda toma en esa vista izquierda, toma en el contexto que acabamos de
 
 07:59.630 --> 08:00.470
-discussed.
+discutido.
 
 08:03.770 --> 08:06.800
-And it will do the initialization.
+Y hará la inicialización.
 
 08:06.800 --> 08:09.060
-So let's see how the initialization works.
+Veamos cómo funciona la inicialización.
 
 08:09.080 --> 08:15.560
-So what it does here is let's see, there's different options that I mentioned here in the comments.
+Así que lo que hace aquí es ver, hay diferentes opciones que he mencionado aquí en los comentarios.
 
 08:15.560 --> 08:17.720
-You could do different things.
+Puedes hacer diferentes cosas.
 
 08:17.720 --> 08:21.320
-But what I do here is I create the model here inside.
+Pero lo que hago aquí es crear el modelo aquí dentro.
 
 08:21.440 --> 08:29.690
-I pass that universal context into the model, then I pass the context into the view, and then I create
+Paso ese contexto universal al modelo, luego paso el contexto a la vista, y luego creo
 
 08:29.690 --> 08:30.620
-the left controller.
+el controlador izquierdo.
 
 08:30.620 --> 08:32.480
-So let's take a look at the left controller.
+Echemos un vistazo al controlador izquierdo.
 
 08:32.480 --> 08:35.000
-It's going to take a reference to the model and the view.
+Va a tomar una referencia al modelo y a la vista.
 
 08:35.030 --> 08:42.500
-Remember, model is dumb data storage and view is dumb rendering to the user and taking input from the
+Recuerde, el modelo es tonto de almacenamiento de datos y la vista es tonto de representación para el usuario y la toma de entrada de la
 
 08:42.500 --> 08:43.160
-user.
+usuario.
 
 08:44.030 --> 08:51.500
-And down here, all I'm going to do is say, Hey, left view, any time the user clicks that increment
+Y aquí abajo, todo lo que voy a hacer es decir, Hey, vista izquierda, cada vez que el usuario haga clic en ese incremento
 
 08:51.500 --> 08:53.390
-button, let me hear about it.
+botón, déjame escucharlo.
 
 08:54.140 --> 08:59.300
-Then down here, when I handle that, anytime you've clicked the button and we've heard about it, I
+Luego, aquí abajo, cuando me ocupe de eso, cada vez que haya hecho clic en el botón y hemos oído hablar de él, yo
 
 08:59.300 --> 09:00.960
-just update the view.
+simplemente actualizo la vista.
 
 09:00.980 --> 09:01.530
-Sorry.
+Perdón.
 
 09:01.550 --> 09:02.660
-Update the model.
+Actualiza el modelo.
 
 09:02.720 --> 09:05.330
-So by adding that value there.
+Así que añadiendo ese valor ahí.
 
 09:06.020 --> 09:08.330
-Now let's take a look at the right.
+Ahora echemos un vistazo a la derecha.
 
 09:11.730 --> 09:13.410
-What I say to Ray Mini.
+Lo que le digo a Ray Mini.
 
 09:13.650 --> 09:15.240
-So here I am with this.
+Así que aquí estoy con esto.
 
 09:15.240 --> 09:16.140
-Here we back here.
+Aquí estamos de vuelta.
 
 09:16.140 --> 09:20.160
-So the left, when we saw takes the click and updates the model.
+Así que la izquierda, cuando vimos toma el clic y actualiza el modelo.
 
 09:20.400 --> 09:22.050
-Now let's look at the right one.
+Ahora echemos un vistazo a la derecha.
 
 09:22.050 --> 09:26.160
-So it's going to store the right view in the context same as before.
+Así que va a almacenar la vista derecha en el contexto igual que antes.
 
 09:26.190 --> 09:28.320
-Now it's going to do something a little bit different.
+Ahora va a hacer algo un poco diferente.
 
 09:28.500 --> 09:35.940
-Instead of creating its own model, it's going to say, Hey, context, do you already have a model
+En lugar de crear su propio modelo, va a decir, Hey, contexto, ¿tienes ya un modelo
 
 09:35.940 --> 09:37.560
-with this particular name?
+con este nombre en particular?
 
 09:37.560 --> 09:40.530
-And we know we do because the left one just created it.
+Y sabemos que lo tenemos porque la izquierda acaba de crearlo.
 
 09:40.530 --> 09:46.770
-And here we're going to say, hey, right view, here's your context in case you want to listen to that
+Y aquí vamos a decir, hey, vista derecha, aquí está tu contexto en caso de que quieras escuchar eso
 
 09:46.770 --> 09:48.510
-universal shared context.
+contexto universal compartido.
 
 09:48.510 --> 09:50.550
-And then we create the right controller.
+Y luego creamos el controlador adecuado.
 
 09:50.670 --> 09:51.810
-Let's take a look at that.
+Echemos un vistazo a eso.
 
 09:52.710 --> 09:57.120
-Now the right controller here is going to.
+Ahora el controlador derecho aquí va a.
 
 09:58.880 --> 10:04.550
-Now remember, the left controller said, hey, user did did the user click the button?
+Ahora recuerda, el controlador de la izquierda dijo, hey, el usuario hizo ¿el usuario hizo clic en el botón?
 
 10:04.640 --> 10:08.300
-This one says, Hey, model, did the model change?
+Este dice, Hey, modelo, ¿cambió el modelo?
 
 10:08.690 --> 10:13.550
-And then down here, if the model changes, it's going to send out a command.
+Y luego aquí abajo, si el modelo cambia, va a enviar un comando.
 
 10:14.530 --> 10:23.560
-So we've got different examples about how command is useful and how you can talk directly to the model.
+Así que tenemos diferentes ejemplos acerca de cómo comando es útil y cómo se puede hablar directamente con el modelo.
 
 10:24.160 --> 10:29.920
-So some throughout these demos, as you're looking at them, you'll often see I have different options
+Así que a lo largo de estas demos, mientras las miras, verás que a menudo tengo diferentes opciones
 
 10:29.920 --> 10:31.180
-that are communicated.
+que se comunican.
 
 10:33.720 --> 10:37.500
-So here in this demo, what we're doing is invoking a command.
+Así que aquí en esta demo, lo que estamos haciendo es invocar un comando.
 
 10:37.530 --> 10:46.380
-Now, in in the series, if you look at commands, you can think of a command is a reusable set of instructions
+Ahora, en la serie, si nos fijamos en los comandos, se puede pensar en un comando es un conjunto reutilizable de instrucciones
 
 10:46.380 --> 10:48.870
-that sent through the context.
+que se envían a través del contexto.
 
 10:48.870 --> 10:54.350
-And any concern that wants to can say, Hey, I want to hear any time that command happens.
+Y cualquier interés que quiera puede decir, Hey, quiero escuchar cada vez que ese comando ocurra.
 
 10:54.360 --> 10:58.140
-And in this case, I'm invoking the counter changed command.
+Y en este caso, estoy invocando el comando contador cambiado.
 
 10:58.140 --> 11:01.500
-And if any of the contexts want to hear about that, they can.
+Y si alguno de los contextos quiere enterarse de eso, puede hacerlo.
 
 11:02.010 --> 11:03.500
-So that's it for this demo.
+Así que eso es todo para esta demo.
 
 11:03.510 --> 11:05.550
-Let's take a one more look at just running it.
+Echemos un vistazo más al funcionamiento.
 
 11:06.990 --> 11:10.080
-So again, the left side here takes the input.
+De nuevo, el lado izquierdo toma la entrada.
 
 11:10.080 --> 11:15.240
-I'll click the increment button one, two, three and the right side renders the output.
+Voy a hacer clic en el botón de incremento uno, dos, tres y el lado derecho muestra la salida.
 
 11:15.240 --> 11:19.170
-So it's going to show the value of the model on the right.
+Así que va a mostrar el valor del modelo de la derecha.
 
 11:20.230 --> 11:20.950
-That's it.
+Eso es todo.

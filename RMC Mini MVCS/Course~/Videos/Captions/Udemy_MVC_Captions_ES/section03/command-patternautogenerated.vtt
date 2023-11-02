@@ -1,184 +1,184 @@
 WEBVTT
 
 00:00.180 --> 00:02.800
-Let's look at the command design pattern.
+Veamos el patrón de diseño de comandos.
 
 00:02.820 --> 00:05.390
-Command is a behavioral design pattern.
+Command es un patrón de diseño de comportamiento.
 
 00:05.400 --> 00:09.210
-It's somewhat similar to observer, but different enough.
+Es algo similar al observador, pero lo suficientemente diferente.
 
 00:09.210 --> 00:11.340
-It qualifies as its own pattern.
+Se califica como su propio patrón.
 
 00:11.430 --> 00:17.730
-Some of the benefits of using it include you can execute and undo functionality.
+Algunos de los beneficios de usarlo incluyen que puedes ejecutar y deshacer la funcionalidad.
 
 00:17.730 --> 00:23.360
-That's often when many teams bring it on to be able to have undo functionality in their UI.
+Eso es a menudo cuando muchos equipos lo traen para poder tener la funcionalidad de deshacer en su UI.
 
 00:23.370 --> 00:30.600
-But even without that paradigm, it's still tremendously successful in giving you the benefits of observer
+Pero incluso sin ese paradigma, sigue siendo tremendamente exitoso en darte los beneficios del observador
 
 00:30.600 --> 00:37.530
-with a bit more decoupling and abstraction compared to the observer pattern here, we don't need a reference
+con un poco más de desacoplamiento y abstracción en comparación con el patrón observador aquí, no necesitamos una referencia
 
 00:37.530 --> 00:40.020
-to the sender of the message.
+al remitente del mensaje.
 
 00:40.020 --> 00:47.790
-Instead, both the sender and the observer know about some sort of a messaging system that sits between
+En su lugar, tanto el remitente como el observador conocen algún tipo de sistema de mensajería que se encuentra entre
 
 00:47.790 --> 00:48.240
-them.
+entre ellos.
 
 00:48.480 --> 00:51.510
-In later code, we'll see this called the command manager.
+En código posterior, veremos esto llamado el gestor de comandos.
 
 00:51.510 --> 00:57.780
-As long as those scopes can reach that command manager, it acts as the middleman between them and communication.
+Siempre y cuando los ámbitos pueden llegar a que el gestor de comandos, que actúa como intermediario entre ellos y la comunicación.
 
 00:57.780 --> 01:03.990
-And like the observer, this allows for data exchange and communication, which is isolated from, well,
+Y al igual que el observador, esto permite el intercambio de datos y la comunicación, que está aislado de, bueno,
 
 01:03.990 --> 01:07.410
-if one changes, does the other one necessarily need to change?
+si uno cambia, ¿tiene que cambiar necesariamente el otro?
 
 01:07.410 --> 01:11.720
-And you can certainly have multiple observers easily added and removed.
+Y ciertamente puedes tener múltiples observadores fácilmente añadidos y eliminados.
 
 01:11.730 --> 01:12.270
-We'll see.
+Ya veremos.
 
 01:12.270 --> 01:15.600
-A parallel to the observer example we saw earlier here.
+Un paralelo al ejemplo del observador que vimos antes aquí.
 
 01:15.600 --> 01:22.640
-The three key parts are creating the command system, adding a listener and invoking it.
+Las tres partes clave son crear el sistema de comandos, añadir un listener e invocarlo.
 
 01:22.650 --> 01:28.230
-Now typically we'd be sending commands between two or more classes, but for brevity sake, I've included
+Ahora normalmente estaríamos enviando comandos entre dos o más clases, pero por brevedad, he incluido
 
 01:28.230 --> 01:29.760
-in one class file here.
+en un archivo de clase aquí.
 
 01:29.760 --> 01:33.380
-This way we can see a complete functional example quite quickly.
+De esta manera podemos ver un ejemplo funcional completo con bastante rapidez.
 
 01:33.390 --> 01:37.710
-Now I'll mention a few more patterns, but I'll go a little bit more quickly.
+Ahora mencionaré algunos patrones más, pero iré un poco más rápido.
 
 01:37.860 --> 01:44.730
-The next couple that I'm going to show are things that we'll see in the spirit of how MVC architectures
+El siguiente par que voy a mostrar son cosas que veremos en el espíritu de cómo las arquitecturas MVC
 
 01:44.730 --> 01:45.570
-are organized.
+se organizan.
 
 01:45.570 --> 01:48.960
-One you may already be familiar with is the singleton pattern.
+Uno con el que quizás ya estés familiarizado es el patrón singleton.
 
 01:48.960 --> 01:55.710
-Any time you want to have a system created exactly once inside your code and have global access to it,
+Siempre que quieras tener un sistema creado exactamente una vez dentro de tu código y tener acceso global a él,
 
 01:55.710 --> 01:57.990
-that's a great place for the Singleton pattern.
+ese es un buen lugar para el patrón Singleton.
 
 01:57.990 --> 02:05.010
-Recent updates to Unity have some native solutions for this, but traditionally we've used community
+Las actualizaciones recientes de Unity tienen algunas soluciones nativas para esto, pero tradicionalmente hemos utilizado la comunidad
 
 02:05.010 --> 02:13.440
-based singleton mono behavior classes that help us access globally to a given mono behavior or some
+que nos ayudan a acceder globalmente a un comportamiento mono dado o a algún tipo de comportamiento mono.
 
 02:13.440 --> 02:14.420
-other data type.
+otro tipo de datos.
 
 02:14.430 --> 02:21.450
-Secondly, the facade pattern helps us reduce the perceived complexity of a series of subsystems.
+En segundo lugar, el patrón de fachada nos ayuda a reducir la complejidad percibida de una serie de subsistemas.
 
 02:21.540 --> 02:28.050
-Let's say you have an input system and a rendering system and a physics system all created for your
+Digamos que tienes un sistema de entrada y un sistema de renderizado y un sistema de física, todos creados para tu
 
 02:28.050 --> 02:29.790
-game instead of your player.
+juego en lugar de tu jugador.
 
 02:29.790 --> 02:35.940
-Knowing the details of those systems, your player could interact with a facade that in turn calls those
+Conociendo los detalles de esos sistemas, tu jugador podría interactuar con una fachada que a su vez llame a esos
 
 02:35.940 --> 02:39.960
-individual systems or select subsections of what they can do.
+sistemas individuales o seleccionar subsecciones de lo que pueden hacer.
 
 02:39.960 --> 02:43.890
-Often, in developer parlance, we call this wrapping functionality.
+A menudo, en el lenguaje de los desarrolladores, llamamos a esto funcionalidad envolvente.
 
 02:43.890 --> 02:49.560
-So you might say I wrapped three systems into one class for the ease of use.
+Así que se podría decir que envolví tres sistemas en una clase para facilitar su uso.
 
 02:49.560 --> 02:53.010
-Mediator and proxy are two additional patterns.
+Mediador y proxy son dos patrones adicionales.
 
 02:53.010 --> 02:59.700
-They are indeed separate, but I may use the terms interchangeably in both mediation and proxy.
+De hecho están separados, pero puedo usar los términos indistintamente en mediador y proxy.
 
 02:59.700 --> 03:05.130
-I mean, having some sort of middleman that stands between the communication, some of the benefits
+Quiero decir, tener algún tipo de intermediario que se interponga entre la comunicación, algunos de los beneficios
 
 03:05.130 --> 03:09.330
-here are that you can easily make changes to either of the two classes.
+aquí es que usted puede fácilmente hacer cambios a cualquiera de las dos clases.
 
 03:09.330 --> 03:15.150
-In that example, tweak the middleman and you don't have to massively refactor the system.
+En ese ejemplo, modifica el intermediario y no tendrás que refactorizar masivamente el sistema.
 
 03:15.150 --> 03:17.070
-So it's a way to mitigate change.
+Así que es una forma de mitigar el cambio.
 
 03:17.070 --> 03:19.980
-We'll see some of these concepts in the architectures later.
+Veremos algunos de estos conceptos en las arquitecturas más adelante.
 
 03:19.980 --> 03:26.280
-So just with a brief overview of design patterns here, we see that they're reusable solutions that
+Así que sólo con una breve visión general de los patrones de diseño aquí, vemos que son soluciones reutilizables que
 
 03:26.280 --> 03:30.540
-help us solve the design challenges that come up often in our game development.
+nos ayudan a resolver los desafíos de diseño que surgen a menudo en nuestro desarrollo de juegos.
 
 03:30.540 --> 03:36.030
-While Singleton may be one that you're most familiar with in Unity, as it's often discussed, the observer
+Mientras Singleton puede ser uno con el que estés más familiarizado en Unity, como se discute a menudo, el observador
 
 03:36.030 --> 03:42.840
-pattern is probably the most useful for a beginner developer to elevate their game a little bit and
+es probablemente el más útil para un desarrollador principiante para elevar su juego un poco y
 
 03:42.840 --> 03:47.820
-some of these other patterns I mentioned specifically because later when we look at architectures,
+algunos de estos otros patrones que he mencionado específicamente porque más tarde cuando nos fijamos en las arquitecturas,
 
 03:47.820 --> 03:51.600
-I'll be able to use those terms and you'll have a bit more familiarity.
+podré usar esos términos y tú estarás un poco más familiarizado.
 
 03:51.900 --> 03:57.150
-In summary for this section, we've looked at some of the high level software design concepts.
+En resumen para esta sección, hemos visto algunos de los conceptos de diseño de software de alto nivel.
 
 03:57.150 --> 04:04.470
-We looked at design principles as philosophies to solve challenges, UML for a way to diagram and communicate
+Hemos visto los principios de diseño como filosofías para resolver retos, UML como una forma de diagramar y comunicar...
 
 04:04.470 --> 04:05.790
-about our ideas.
+nuestras ideas.
 
 04:05.790 --> 04:11.580
-And we looked at some design patterns, specifically observer and command, which will come back to
+Y vimos algunos patrones de diseño, específicamente el observador y el comando, que volverá a
 
 04:11.580 --> 04:12.180
-you later.
+más tarde.
 
 04:12.180 --> 04:15.640
-And they're a great way to decouple communication within your project.
+Y son una gran manera de desacoplar la comunicación dentro de tu proyecto.
 
 04:15.660 --> 04:17.880
-Next, let's discuss architecture.
+A continuación, vamos a discutir la arquitectura.
 
 04:17.880 --> 04:23.430
-We'll look at some of the available solutions out there, the pros and cons of each of them, and narrow
+Vamos a ver algunas de las soluciones disponibles por ahí, los pros y los contras de cada uno de ellos, y estrecha
 
 04:23.430 --> 04:28.290
-down to some of the popular frameworks we can use specifically for unity.
+a algunos de los marcos populares que podemos utilizar específicamente para la unidad.
 
 04:28.440 --> 04:29.370
-Thanks.
+Gracias.

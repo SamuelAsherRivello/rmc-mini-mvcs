@@ -1,202 +1,202 @@
 WEBVTT
 
 00:00.150 --> 00:04.260
-First, let's look at the version without many, MVCs added.
+Primero, veamos la versión sin muchos, MVCs añadidos.
 
 00:05.260 --> 00:11.860
-Here we are in an empty unity project where I've added the mini MVCs framework as well as the samples.
+Aquí estamos en un proyecto unity vacío donde he añadido el mini framework MVCs así como las muestras.
 
 00:12.070 --> 00:18.040
-Here's the folder structure for the Rollerball game without many since we've looked at the folder structure
+Aquí está la estructura de carpetas para el juego Rollerball sin muchos desde que hemos visto la estructura de carpetas
 
 00:18.040 --> 00:19.490
-of other samples before.
+de otras muestras antes.
 
 00:19.510 --> 00:20.640
-Let's jump right in.
+Entremos de lleno.
 
 00:20.650 --> 00:23.330
-First, let's run the scene and see how it plays.
+En primer lugar, vamos a ejecutar la escena y ver cómo se reproduce.
 
 00:23.350 --> 00:28.840
-The UI updates showing I have zero score and that the instructions are to use the arrow keys.
+La interfaz de usuario se actualiza mostrando que tengo cero puntos y que las instrucciones son utilizar las teclas de flecha.
 
 00:28.840 --> 00:31.510
-I also have a restart button I can click.
+También tengo un botón de reinicio en el que puedo hacer clic.
 
 00:32.320 --> 00:36.430
-I'll use the four arrow keys here to move the ball around.
+Usaré las cuatro flechas del teclado para mover la bola.
 
 00:38.280 --> 00:42.660
-Now, you may not be able to hear it in the video, but it's playing a noise each time I collect one
+Ahora, puede que no seas capaz de oírlo en el vídeo, pero está reproduciendo un ruido cada vez que recojo uno
 
 00:42.660 --> 00:49.170
-of these pickups, as well as reflecting it in the updated UI score, the status changed to you win.
+de estas pastillas, así como reflejarlo en la puntuación de interfaz de usuario actualizada, el estado cambiado a usted gana.
 
 00:49.170 --> 00:51.900
-So the game is over and I can no longer input.
+Así que el juego ha terminado y ya no puedo introducir más datos.
 
 00:51.900 --> 00:55.170
-I can no longer input with the keys, but I'll click the restart button.
+Ya no puedo introducir con las teclas, pero voy a pulsar el botón de reinicio.
 
 00:55.170 --> 00:58.080
-The restart button shows a prompt here which I can cancel.
+El botón de reinicio muestra un mensaje que puedo cancelar.
 
 01:01.230 --> 01:02.520
-Or I can confirm.
+O puedo confirmar.
 
 01:05.820 --> 01:10.020
-Confirming restarts the game as if I hadn't played yet and I can play again.
+Confirmar reinicia el juego como si no hubiera jugado todavía y puedo jugar de nuevo.
 
 01:10.830 --> 01:11.520
-That's it.
+Ya está.
 
 01:12.000 --> 01:13.850
-Here we are in the example script.
+Aquí estamos en el script de ejemplo.
 
 01:13.860 --> 01:19.170
-As with the other examples, the high level example script extends mono behavior.
+Como en los otros ejemplos, el script de ejemplo de alto nivel extiende el comportamiento de mono.
 
 01:19.170 --> 01:22.170
-This way it can sit on a game object in the scene.
+De esta forma puede situarse sobre un objeto del juego en la escena.
 
 01:22.170 --> 01:28.200
-We have three serialized fields here so that this example can reach out into the scene and access a
+Tenemos tres campos serializados aquí para que este ejemplo pueda llegar a la escena y acceder a un
 
 01:28.200 --> 01:34.020
-game object for the player, a game object for the UI and a list of all the pickup objects in the scene.
+objeto de juego para el jugador, un objeto de juego para la interfaz de usuario y una lista de todos los objetos de recogida en la escena.
 
 01:34.020 --> 01:36.480
-We maintain some high level state for.
+Mantenemos un estado de alto nivel para.
 
 01:36.510 --> 01:38.460
-Is the game currently over?
+¿Ha terminado el juego?
 
 01:38.460 --> 01:42.960
-Is the game currently paused and some other scoring values?
+¿Está el juego actualmente en pausa y algunos otros valores de puntuación?
 
 01:43.740 --> 01:46.770
-And some other scoring values in the start method.
+Y algunos otros valores de puntuación en el método de inicio.
 
 01:46.770 --> 01:53.130
-We listen from here in the main game script into the UI in the player for some key events here in the
+Escuchamos desde aquí, en el script principal del juego, en la interfaz de usuario del reproductor, algunos eventos clave aquí en el método de inicio.
 
 01:53.130 --> 01:58.290
-update, which executes every frame as long as the scene is running, we have our core game loop.
+update, que se ejecuta en cada fotograma mientras la escena se esté ejecutando, tenemos nuestro bucle principal del juego.
 
 01:58.290 --> 02:04.080
-If at any time the game is over or we're paused, we exit out of the loop so nothing else happens.
+Si en algún momento se acaba el juego o estamos en pausa, salimos del bucle para que no pase nada más.
 
 02:04.080 --> 02:07.590
-It's this script that we're in here that has control of the pickups.
+Es este script en el que estamos aquí el que tiene el control de las recogidas.
 
 02:07.590 --> 02:13.590
-It loops through all the pickups and calls rotate on them to give them that cosmetic rotation.
+Recorre todos los pickups y los rota para darles esa rotación cosmética.
 
 02:13.590 --> 02:18.750
-The reason that it's done here and not inside the pickup, for example, is just so that when the game
+La razón por la que se hace aquí y no dentro del pickup, por ejemplo, es sólo para que cuando el juego
 
 02:18.750 --> 02:21.450
-pauses, we have the pickups pausing as well.
+se detiene, las pastillas también se detienen.
 
 02:21.450 --> 02:27.270
-And finally here from the game scope, we capture user input and we pass it along the player so that
+Y por último aquí desde el ámbito del juego, capturamos la entrada del usuario y la pasamos a lo largo del jugador para que
 
 02:27.270 --> 02:28.890
-the ball can roll around here.
+la pelota pueda rodar por aquí.
 
 02:28.890 --> 02:34.230
-In the load method, we load from a local text file to get the maximum number of points required to
+En el método de carga, cargamos desde un archivo de texto local para obtener el número máximo de puntos necesarios para
 
 02:34.230 --> 02:34.650
-win.
+ganar.
 
 02:34.650 --> 02:40.380
-It loads the number three as we've seen with previous demos, this is an example, just as an excuse
+Carga el número tres como hemos visto en demos anteriores, esto es un ejemplo, solo como excusa
 
 02:40.380 --> 02:41.730
-to use the service layer.
+para usar la capa de servicio.
 
 02:41.730 --> 02:43.770
-Once we look at the mini MVC version.
+Una vez que nos fijamos en la versión mini MVC.
 
 02:43.770 --> 02:49.590
-So of course this value could be hardcoded here, but instead we load it from a script just as an example
+Por supuesto, este valor podría ser codificado aquí, pero en su lugar lo cargamos desde un script sólo como un ejemplo
 
 02:49.590 --> 02:50.520
-of external data.
+de datos externos.
 
 02:50.520 --> 02:56.760
-Periodically, when the game here wants to update the on screen UI, we can call this method any time
+Periódicamente, cuando el juego aquí quiere actualizar la interfaz de usuario en pantalla, podemos llamar a este método en cualquier momento
 
 02:56.760 --> 03:00.990
-that the UI button for restarting is clicked, this method is executed.
+que se pulse el botón UI para reiniciar, se ejecutará este método.
 
 03:00.990 --> 03:07.530
-We pause the game, instantiate an on screen dialog window that floats over the rest of the game, Handle
+Pausamos el juego, instanciamos una ventana de diálogo en pantalla que flota sobre el resto del juego, Mango
 
 03:07.530 --> 03:12.570
-the consequence If the user clicks, cancel in the dialog and handle the consequence.
+la consecuencia Si el usuario hace clic, cancelar en el diálogo y manejar la consecuencia.
 
 03:12.570 --> 03:16.920
-If the user confirms to restart the game each time the player collides with the pickup.
+Si el usuario confirma reiniciar el juego cada vez que el jugador colisione con la recogida.
 
 03:16.920 --> 03:21.630
-This method is called the pickup object is turned invisible and a sound is played.
+Si se llama a este método el objeto pickup se vuelve invisible y se reproduce un sonido.
 
 03:21.630 --> 03:28.800
-The score counts up from 0 to 1 to 2 to 3, and then when it reaches the required max value, which
+La puntuación cuenta de 0 a 1 a 2 a 3, y luego cuando alcanza el valor máximo requerido, que
 
 03:28.800 --> 03:32.090
-typically is three, then the game is over and you win.
+típicamente es tres, entonces el juego termina y ganas.
 
 03:32.100 --> 03:34.050
-That's it for the core game logic.
+Eso es todo en cuanto a la lógica del juego.
 
 03:34.050 --> 03:35.760
-Let's look at the scene hierarchy.
+Veamos la jerarquía de la escena.
 
 03:35.760 --> 03:41.640
-So in the scene hierarchy here, if I select the game example itself, we see some serialized fields
+Así que en la jerarquía de escenas aquí, si selecciono el ejemplo de juego en sí, vemos algunos campos serializados
 
 03:41.640 --> 03:47.130
-in the inspector, including a reference to the player, the UI, and each pickup in the scene.
+en el inspector, incluyendo una referencia al jugador, la interfaz de usuario, y cada recogida en la escena.
 
 03:47.130 --> 03:52.800
-The player is here with the player script, the UI is here with the UI script, and each of our pickups
+El jugador está aquí con el script del jugador, la UI está aquí con el script de la UI, y cada uno de nuestros pickups
 
 03:52.800 --> 03:55.860
-is stored here all under the same parent game object.
+se almacena aquí bajo el mismo objeto padre del juego.
 
 03:55.860 --> 03:57.630
-Each has a pickup script on top.
+Cada uno tiene un script de recogida encima.
 
 03:57.630 --> 04:01.170
-Let's take a final look at the game running again so I can press play.
+Echemos un último vistazo al juego ejecutándose de nuevo para poder pulsar play.
 
 04:01.170 --> 04:03.150
-I can wander around here.
+Puedo deambular por aquí.
 
 04:03.360 --> 04:06.780
-Notice that the pickups are rotating.
+Observa que las pastillas están girando.
 
 04:09.370 --> 04:14.950
-And if I click the restart button while the prompt is up here, while this dialog window is showing,
+Y si pulso el botón de reinicio mientras el prompt está aquí arriba, mientras esta ventana de diálogo se está mostrando,
 
 04:14.950 --> 04:21.220
-the cubes are not rotating, It's a small visual detail, but it clues in that this game is able to
+los cubos no giran, es un pequeño detalle visual, pero es una pista de que este juego es capaz de
 
 04:21.220 --> 04:26.710
-save the state of when we're currently paused as well as when the game is over.
+guardar el estado de cuando estamos en pausa, así como cuando el juego ha terminado.
 
 04:26.710 --> 04:29.710
-Watch when I win the pickup, stop rotating as well.
+Mira cuando gane la recogida, deja de girar también.
 
 04:36.290 --> 04:42.290
-I've one and the pickup stop rotating managing state like is game over and is game paused seem like
+Tengo uno y el pickup deja de girar manejando el estado como se acaba el juego y se pausa el juego parece que
 
 04:42.290 --> 04:48.050
-little details but having them smoothly orchestrated throughout the concerns as we see here demonstrates
+pequeños detalles, pero tenerlos suavemente orquestados a lo largo de las preocupaciones como vemos aquí demuestra
 
 04:48.050 --> 04:49.850
-a good and simple game design.
+un buen y simple diseño de juego.
