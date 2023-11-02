@@ -1,0 +1,400 @@
+WEBVTT
+
+00:00.150 --> 00:03.750
+Configuración de la ventana del ejecutor de pruebas y clases de prueba.
+
+00:03.750 --> 00:07.380
+El código fuente del framework de pruebas está disponible a través del gestor de paquetes.
+
+00:07.380 --> 00:14.580
+Puedes añadir el paquete buscando el test framework, importar el test framework y opcionalmente importar
+
+00:14.580 --> 00:15.270
+cobertura de código.
+
+00:15.270 --> 00:19.980
+Herramientas El Unity Test framework incluye todas las librerías necesarias para probar tu código CE.
+
+00:19.980 --> 00:25.830
+Ahora, como individuo o como equipo, si eres nuevo en las pruebas, no tienes que probar todo tu código
+
+00:25.830 --> 00:26.670
+a la vez.
+
+00:26.670 --> 00:32.550
+Puedes poco a poco, con el tiempo, empezar a probar cuanto más código esté cubierto de pruebas, mejor.
+
+00:32.550 --> 00:37.740
+tendrás más confianza algunas formas de integrarlo en tu equipo que sea agradable y fácil.
+
+00:37.860 --> 00:44.670
+Es añadir pruebas sólo para las nuevas características o añadir pruebas a los sistemas clave antes de una refactorización importante.
+
+00:44.670 --> 00:48.780
+Y una gran manera de empezar es probar sólo durante la corrección de errores.
+
+00:48.780 --> 00:55.200
+Si un usuario informa de un error, primero se replica la existencia del error con una prueba que falla.
+
+00:55.200 --> 00:57.930
+Luego se corrige el código y la prueba pasa.
+
+00:57.930 --> 01:00.690
+Puedes dejar este test como legado.
+
+01:00.690 --> 01:03.420
+¿Así que estás seguro de que ese fallo no volverá en el futuro?
+
+01:03.420 --> 01:08.880
+El concepto de cobertura de código se refiere a cuánto de tu código base está cubierto con pruebas.
+
+01:09.150 --> 01:16.680
+Si tienes una clase y tres métodos en todo tu proyecto y los tres tienen pruebas, entonces
+
+01:16.680 --> 01:18.390
+tienes una cobertura del 100%.
+
+01:18.390 --> 01:21.120
+En general, cuanto mayor sea la cobertura, mejor.
+
+01:21.120 --> 01:27.390
+Puedes abrir esa ventana de cobertura de código, ejecutar tus pruebas, y obtendrás resultados robustos que te mostrarán
+
+01:27.390 --> 01:32.280
+no sólo el porcentaje por clase y sistema, sino dentro de cada clase.
+
+01:32.280 --> 01:36.900
+Obtendrá una lectura línea por línea de los métodos que tienen cobertura y los que no.
+
+01:37.320 --> 01:38.430
+Es muy útil.
+
+01:38.430 --> 01:43.770
+Puedes hacer un seguimiento de cuánto de tu código está siendo probado, localizar cualquier vulnerabilidad que tengas durante tu
+
+01:43.770 --> 01:48.840
+proceso de prueba, y también supervisar su creciente cobertura en el tiempo.
+
+01:48.840 --> 01:54.930
+Con estas librerías instaladas, puedes crear tu primera prueba, abrir la ventana de ejecución de pruebas, crear
+
+01:54.930 --> 02:00.510
+una carpeta de prueba, y sus activos crear su primera clase y su primer método en esa clase.
+
+02:00.510 --> 02:05.820
+En ese momento, esas pruebas se mostrarán en la ejecución de la prueba o ventana donde se puede hacer clic, ejecutar y ver
+
+02:05.820 --> 02:06.450
+ejecutarse.
+
+02:06.450 --> 02:09.180
+Aquí hay un ejemplo de una clase de prueba con un método de prueba.
+
+02:09.300 --> 02:11.100
+Fíjate que parece bastante normal.
+
+02:11.100 --> 02:16.980
+C Sharpe El atributo test que se muestra entre corchetes es la salsa secreta.
+
+02:16.980 --> 02:22.380
+Aquí, el sistema busca cualquier método marcado con ese atributo para considerarlo una prueba.
+
+02:22.380 --> 02:26.730
+Como mencioné, las pruebas son un arte y hay muchas formas diferentes de abordarlas.
+
+02:26.730 --> 02:32.040
+Un buen recurso que utilizo es dividir cada método en tres secciones.
+
+02:32.610 --> 02:35.310
+Organizar, actuar y afirmar.
+
+02:35.460 --> 02:39.960
+En arrange haces una o más líneas necesarias para configurar la prueba.
+
+02:39.960 --> 02:45.750
+En la parte de actuar, ejecutas lo que sea que esté específicamente relacionado con la prueba, y luego
+
+02:45.750 --> 02:46.560
+haces la afirmación.
+
+02:46.560 --> 02:49.530
+Afirmar significa asumir que algo es cierto.
+
+02:49.530 --> 02:52.410
+Así que el marco de pruebas viene en la librería assert.
+
+02:52.410 --> 02:55.920
+Imagina que tenemos un sistema matemático personalizado que te permite sumar dos números.
+
+02:55.920 --> 02:56.550
+Juntos.
+
+02:56.550 --> 03:03.930
+Podríamos afirmar que la suma de cinco más diez es igual a 15, y lo consideraríamos una prueba exitosa.
+
+03:04.050 --> 03:06.200
+La ejecutaríamos y veríamos que pasa.
+
+03:06.210 --> 03:07.650
+Veámoslo en acción.
+
+03:07.650 --> 03:10.620
+Abriré un proyecto unity que tenga un test listo.
+
+03:10.710 --> 03:14.010
+Echaremos un vistazo a cómo funciona y ejecutaremos el test.
+
+03:15.110 --> 03:17.630
+Aquí estamos en un proyecto unity vacío.
+
+03:17.630 --> 03:20.360
+Empezaré configurando el marco de pruebas.
+
+03:20.510 --> 03:22.370
+Abriré el gestor de paquetes.
+
+03:26.970 --> 03:30.980
+El gestor de paquetes muestra los paquetes que ya están instalados.
+
+03:30.990 --> 03:36.660
+Es posible que el proyecto con el que empiezas ya tenga el test framework añadido.
+
+03:37.390 --> 03:40.070
+Pero si no lo tiene, aquí te explicamos cómo puedes añadirlo tú mismo.
+
+03:40.090 --> 03:44.890
+Busca en el Registro de Unity el test framework e instala la última versión.
+
+03:44.890 --> 03:52.630
+A continuación, para las características adicionales opcionales, busque en el Registro de Unity la cobertura de código e instale el código
+
+03:52.630 --> 03:54.400
+coverage tiene algunas muestras opcionales.
+
+03:54.400 --> 03:55.870
+No las instalaré aquí.
+
+03:56.760 --> 04:02.160
+Ahora revisando los paquetes que tenemos en el proyecto, vemos tanto el framework de pruebas como opcionalmente si
+
+04:02.160 --> 04:04.160
+elegiste instalar la cobertura de codificación IT.
+
+04:04.170 --> 04:07.290
+Ahora este proyecto es totalmente compatible para tener pruebas unitarias.
+
+04:09.140 --> 04:09.860
+Para empezar.
+
+04:09.860 --> 04:11.630
+Abriremos la ventana del ejecutor de pruebas.
+
+04:12.050 --> 04:16.340
+La ventana del ejecutor de pruebas tiene dos pestañas, modo edición y modo reproducción.
+
+04:16.580 --> 04:18.200
+Porque no tenemos ninguna prueba añadida.
+
+04:18.230 --> 04:23.210
+La ventana es muy útil y ofrece algunas opciones de creación clic para hacer pruebas para nosotros.
+
+04:23.240 --> 04:26.690
+En una demo posterior, mostraré cómo crear tests desde cero.
+
+04:27.050 --> 04:30.260
+Por ahora, pegaré uno que ya tengo preparado.
+
+04:31.220 --> 04:35.960
+La prueba que se muestra aquí fue pegada desde el proyecto de ejemplo Mini MVCs.
+
+04:35.960 --> 04:36.920
+Para el curso.
+
+04:36.920 --> 04:40.450
+Para ayudarnos a centrarnos, he eliminado todo excepto la prueba que queremos ver.
+
+04:40.460 --> 04:45.130
+Vamos a explorar la prueba, ejecutar nuestras ventanas, comenzando con el modo de edición aquí en la pestaña de modo de edición.
+
+04:45.140 --> 04:49.580
+Por defecto, todas las pruebas del proyecto están listadas aquí en la pestaña de modo de edición.
+
+04:49.580 --> 04:55.820
+Por defecto, se muestran todas las pruebas disponibles en cualquier lugar de la carpeta assets y de la carpeta packages.
+
+04:55.820 --> 04:59.780
+Puede filtrar por categoría para ver sólo algunas de las pruebas.
+
+04:59.780 --> 05:04.880
+No tenemos muchas pruebas aquí, pero sólo para la demostración, voy a elegir la categoría para nuestras muestras.
+
+05:04.880 --> 05:08.720
+Ahora la ventana muestra una jerarquía de todas las pruebas organizadas por namespace.
+
+05:08.720 --> 05:15.470
+Cuando despliego todo en los niveles inferiores, veo la clase de prueba y luego un método de prueba debajo.
+
+05:15.470 --> 05:18.470
+Podemos ejecutar todas las pruebas y ver que pasan.
+
+05:18.650 --> 05:22.130
+Podemos seleccionar una prueba individual y ejecutar la seleccionada.
+
+05:22.130 --> 05:26.960
+Si la prueba pasa o falla, tenemos una manera fácil de llegar al código fuente con un clic derecho
+
+05:26.960 --> 05:27.560
+menú.
+
+05:30.280 --> 05:31.930
+Aquí está el código de prueba completo.
+
+05:32.290 --> 05:35.120
+Este es el mismo que vimos antes en la presentación.
+
+05:35.140 --> 05:36.360
+Repasemos lo más destacado.
+
+05:36.370 --> 05:40.990
+Tenemos un atributo opcional de categoría que ayuda a organizar nuestras pruebas.
+
+05:41.290 --> 05:46.930
+Ese desplegable que mostré, filtra en base a este valor, puedes tener muchas clases de prueba que son
+
+05:46.930 --> 05:48.040
+en la misma categoría.
+
+05:48.040 --> 05:50.950
+Usted puede tener muchas clases de prueba que están en la misma categoría.
+
+05:50.950 --> 05:52.450
+Entonces tenemos el atributo test.
+
+05:52.450 --> 05:57.190
+Esto es lo que le dice al marco de pruebas que este método es en realidad un método de prueba.
+
+05:57.990 --> 06:00.740
+Sin esto, no aparecerá en la ventana del test runner.
+
+06:00.750 --> 06:07.710
+A continuación, utilizamos el paradigma familiar pero opcional de un acto de rango y afirmar esto es sólo una manera que yo uso
+
+06:07.710 --> 06:10.170
+como una convención para organizar mi lógica de prueba.
+
+06:10.170 --> 06:16.350
+También, cuando nombro mis pruebas, elijo nombrarlas basándome en lo que está bajo prueba, cuál es la expectativa
+
+06:16.350 --> 06:17.640
+y cuál es la situación.
+
+06:17.640 --> 06:24.120
+Así que aquí estoy probando el método ADD que el resultado será 15 cuando paso cinco y diez como los operandos.
+
+06:24.120 --> 06:25.890
+Vamos al modo de reproducción.
+
+06:25.890 --> 06:31.410
+La pestaña del modo reproducción es muy similar y parece que muestra exactamente la misma prueba, pero no es así.
+
+06:31.410 --> 06:32.370
+Abriré la fuente.
+
+06:32.370 --> 06:34.350
+Aquí está el código fuente para una prueba en modo reproducción.
+
+06:34.350 --> 06:35.610
+¿En qué se diferencia esto?
+
+06:35.610 --> 06:40.320
+La principal diferencia es dónde se encuentra en la ventana del proyecto.
+
+06:40.440 --> 06:41.640
+Te lo mostraré en un momento.
+
+06:41.640 --> 06:47.610
+Una diferencia opcional que elijo es que para mis pruebas en modo de reproducción, añado la clase con el modo de reproducción
+
+06:47.610 --> 06:53.010
+prueba, mientras que en el modo ed sólo anexar con la prueba que me ayuda a organizar.
+
+06:53.010 --> 06:58.980
+Ahora aquí para la demostración, estoy probando exactamente el mismo comportamiento una vez en el modo de edición y una vez en el modo de reproducción.
+
+06:58.980 --> 07:01.290
+Esto probablemente no es necesario para usted.
+
+07:01.290 --> 07:08.280
+En lugar de eso, pruebe por defecto en modo edición y sólo utilice el modo reproducción cuando necesite capturar la reproducción.
+
+07:08.280 --> 07:15.690
+como el inicio o la funcionalidad de objetos de juego, detección de colisiones, otras cosas que
+
+07:15.690 --> 07:16.980
+sólo ocurren en tiempo de ejecución.
+
+07:16.980 --> 07:21.180
+Como se discutió en el curso, utilizo la misma convención de nomenclatura de métodos que vimos antes.
+
+07:21.180 --> 07:22.170
+Anotemos dos.
+
+07:22.320 --> 07:24.330
+Observemos dos diferencias clave aquí.
+
+07:24.330 --> 07:31.320
+Usamos un atributo de prueba de unidad, no un atributo de prueba, como vimos antes, y además de un rango
+
+07:31.320 --> 07:34.470
+act y assert hay un paradigma opcional a weight.
+
+07:34.470 --> 07:41.160
+Esto se utiliza aquí sólo para demostrar el hecho de que mientras que las pruebas de modo de edición se ejecutan de forma sincrónica jugar
+
+07:41.160 --> 07:44.670
+pueden ejecutarse de forma asíncrona.
+
+07:44.670 --> 07:49.860
+Así que si tienes algún código que requiera pruebas asíncronas, el modo play es una gran opción.
+
+07:49.860 --> 07:52.620
+Echemos un vistazo a la ventana del proyecto para ver la organización.
+
+07:52.620 --> 07:58.080
+Observe que la prueba de modo de edición está en una carpeta del editor y observe que la prueba de modo de reproducción está en un tiempo de ejecución
+
+07:58.080 --> 07:58.500
+carpeta.
+
+07:58.500 --> 08:05.310
+Esa diferencia junto con las diferencias en los archivos de definición de ensamblado adyacentes a estas pruebas
+
+08:05.310 --> 08:09.870
+es como el sistema sabe que una es una prueba de editor y la otra es una prueba de modo de reproducción.
+
+08:09.870 --> 08:11.370
+Ejecutaré las pruebas del modo de juego.
+
+08:11.370 --> 08:13.460
+Finalmente, ejecutaré la prueba de modo de juego.
+
+08:13.470 --> 08:18.840
+La ventana del ejecutor de pruebas se comporta igual con una excepción, ya que se trata de pruebas en modo reproducción.
+
+08:18.840 --> 08:25.710
+Unity creará una escena anónima, ejecutará la prueba en aislamiento, y luego destruirá la escena.
+
+08:25.740 --> 08:31.710
+Mientras todo esto sucede bastante rápido, usted notará que sucede aquí como un plus, como una ejecución de prensa todo
+
+08:31.710 --> 08:34.680
+en lugar de ejecutar todas las pruebas en un milisegundo.
+
+08:34.680 --> 08:39.600
+Por ejemplo, como puede hacer aquí el modo de edición, tarda varios milisegundos en ejecutarse.
+
+08:39.600 --> 08:46.220
+Aquí tenemos la oportunidad de ver una prueba ejecutándose, viendo la ventana del ejecutor de pruebas y viendo lo básico.
+
+08:46.230 --> 08:48.990
+A continuación, echemos un vistazo a cómo crearíamos nuestras propias pruebas.

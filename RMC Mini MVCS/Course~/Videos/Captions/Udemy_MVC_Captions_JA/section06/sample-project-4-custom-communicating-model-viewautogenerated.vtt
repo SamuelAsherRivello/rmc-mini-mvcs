@@ -1,0 +1,352 @@
+WEBVTT
+
+00:00.090 --> 00:04.620
+Cuando el controlador actualiza directamente la vista, estamos pasando por alto el modelo.
+
+00:04.620 --> 00:09.620
+Esencialmente, estamos almacenando los datos del modelo directamente en la vista.
+
+00:09.630 --> 00:15.900
+Y desde un punto de vista fundamental, estamos saliendo de MVC separación de preocupaciones.
+
+00:16.020 --> 00:21.870
+Vamos a iterar sobre esto y traer un poco más de principios sólidos para el código.
+
+00:22.630 --> 00:29.440
+En su lugar, lo que podríamos hacer es cuando el usuario hace clic en el botón de añadir, el controlador podría traducir los
+
+00:29.440 --> 00:32.500
+valores de interfaz de usuario de la vista en el modelo.
+
+00:32.530 --> 00:33.580
+Hagámoslo ahora.
+
+00:33.580 --> 00:35.530
+Veamos qué hemos hecho diferente aquí.
+
+00:35.740 --> 00:41.830
+Hemos actualizado cada uno de estos manejadores para que sean un poco más convencionales en las prácticas de MVCs.
+
+00:41.860 --> 00:47.920
+Ahora, cuando añadimos, tomamos esos valores de la vista y los ponemos directamente en el modelo y luego en reset,
+
+00:47.920 --> 00:53.860
+estamos haciendo algo un poco redundante, pero estamos borrando la vista y luego borrar
+
+00:53.860 --> 00:54.470
+el modelo.
+
+00:54.490 --> 00:59.800
+No está mal, pero esa redundancia que vemos ahí no alcanza un objetivo de simplicidad.
+
+00:59.830 --> 01:05.620
+Ahora tenemos algunas opciones aquí con el fin de crear una mejor unión entre la vista y el modelo,
+
+01:05.620 --> 01:12.160
+podríamos ir a la vista y hacer que la vista escuche directamente al modelo para operaciones de sólo lectura.
+
+01:12.160 --> 01:13.660
+Esa es una buena práctica.
+
+01:13.660 --> 01:21.580
+Una alternativa sería aquí en el controlador para enviar un comando diciendo, Hey, vista ir restablecer a ti mismo
+
+01:21.580 --> 01:24.370
+o diciendo Hey, view el modelo ha cambiado.
+
+01:24.370 --> 01:24.910
+En el pasado.
+
+01:24.910 --> 01:25.930
+Proyectos de muestra.
+
+01:25.930 --> 01:31.660
+Hemos utilizado comandos a este nivel, pero para probar algo nuevo, vamos a entrar en La Vista y que observe
+
+01:31.660 --> 01:34.360
+directamente al modelo para cualquier cambio.
+
+01:34.360 --> 01:42.580
+Y dentro de la inicialización vamos a utilizar el contexto y el localizador del modelo para obtener una referencia a la calculadora
+
+01:42.580 --> 01:43.030
+modelo.
+
+01:43.030 --> 01:49.660
+Las mejores prácticas apoyan que la vista lea del modelo, pero sería una extralimitación del papel
+
+01:49.660 --> 01:52.870
+de la vista para establecer directamente cualquier valor aquí.
+
+01:53.020 --> 02:00.090
+Así que todo lo que estoy haciendo es escuchar el valor cambiado en A, B, y el resultado como una forma abreviada.
+
+02:00.100 --> 02:05.680
+Estoy usando lo que se llama una expresión lambda, y es una forma rápida de observar un evento de esta manera
+
+02:05.680 --> 02:07.720
+y manejar la consecuencia.
+
+02:07.720 --> 02:15.010
+Los observables en valor cambiado pasa el p valor anterior y ver valor actual.
+
+02:15.010 --> 02:21.400
+Así que cada vez que uno de estos observables cambia, actualizo la vista al valor actual sólo con esos
+
+02:21.400 --> 02:22.090
+pocas líneas.
+
+02:22.090 --> 02:27.280
+Ahora tenemos la vista ligada al modelo usando las mejores prácticas.
+
+02:27.280 --> 02:32.670
+De vuelta aquí en el controlador de la calculadora, volvemos a nuestros manejadores de eventos como estaban antes.
+
+02:32.680 --> 02:38.620
+Ahora, como hemos añadido el enlace desde la vista directamente al modelo, el controlador ya no
+
+02:38.620 --> 02:44.500
+necesita establecer manualmente cualquier valor en la vista por lo que podemos deshacernos de estas líneas y podemos deshacernos de
+
+02:44.500 --> 02:45.200
+esto también.
+
+02:45.220 --> 02:47.770
+Vamos a ejecutar la escena y ver como se comporta.
+
+02:47.770 --> 02:49.330
+Aquí estamos en la escena en ejecución.
+
+02:49.330 --> 02:52.270
+Introduzco algunos valores y pulso reset parece bien.
+
+02:52.270 --> 02:59.260
+Vemos que cuando se reinicia, pone algunos ceros en estos campos que no están ahí inicialmente.
+
+02:59.260 --> 03:01.120
+Es un pequeño detalle, pero lo solucionaremos.
+
+03:01.120 --> 03:02.740
+Ahora intentemos la operación de anuncios.
+
+03:02.740 --> 03:06.040
+Y la operación ad funciona bien aquí en el controlador de la calculadora.
+
+03:06.040 --> 03:11.170
+Vamos a reiniciar inicialmente antes de que el usuario haga cualquier entrada dentro de inicializar.
+
+03:11.170 --> 03:17.290
+Después de hacer las escuchas de anuncios existentes, voy a imitar la consecuencia de que se pulse el botón de reinicio.
+
+03:17.980 --> 03:19.820
+Vamos a ejecutar la escena y ver el resultado.
+
+03:19.840 --> 03:25.410
+Ahora, cuando ejecutamos la aplicación por primera vez antes de hacer cualquier entrada de usuario, vemos esos familiares ceros.
+
+03:25.420 --> 03:31.370
+Esta es una gran manera de tener una apariencia consistente antes y después de que el usuario comience a interactuar.
+
+03:31.390 --> 03:33.160
+La aplicación está ahora completa.
+
+03:33.160 --> 03:39.250
+Podemos introducir A, introducir B, sumar los resultados y reiniciar todos los campos.
+
+03:39.250 --> 03:46.780
+Hasta ahora en este ejemplo personalizado, hemos utilizado el modelo vista controlador, hemos observado eventos y obtenido
+
+03:46.780 --> 03:48.070
+que nuestra aplicación funcione bien.
+
+03:48.370 --> 03:53.170
+No hemos usado ningún comando y en una aplicación lo suficientemente pequeña, eso está bien.
+
+03:53.170 --> 03:56.560
+Pero quiero demostrar cómo un comando podría añadir valor aquí.
+
+03:56.560 --> 04:02.440
+Dejaré todas las ligaduras que tenemos ahora, pero reemplazaré estas líneas con el comando
+
+04:02.440 --> 04:05.320
+para que la vista sepa como reiniciarse.
+
+04:05.320 --> 04:06.940
+Empecemos llamando al comando.
+
+04:06.940 --> 04:10.960
+Usamos el contexto y el gestor de comandos para invocar un nuevo comando.
+
+04:10.960 --> 04:12.990
+Lo llamaré comando reset.
+
+04:13.000 --> 04:16.090
+Ahora vamos a crear esa clase en su forma más básica.
+
+04:16.090 --> 04:20.020
+Duplicaré la plantilla de la clase y la colocaré en el lugar apropiado.
+
+04:20.020 --> 04:26.110
+Aquí dentro de la carpeta del controlador, he creado una carpeta de comandos y añadido nuestro comando reset.
+
+04:26.110 --> 04:30.660
+Hasta ahora le he dado un espacio de nombres y actualizado el nombre de la clase de la plantilla.
+
+04:30.670 --> 04:36.520
+Todo lo que tenemos que hacer aquí es implementar el comando I y vamos a saltar de nuevo al código donde usamos este back
+
+04:36.520 --> 04:38.140
+en el controlador de la calculadora.
+
+04:38.140 --> 04:39.490
+El código se ve bien.
+
+04:39.490 --> 04:41.550
+Ahora estamos invocando un comando.
+
+04:41.560 --> 04:43.390
+¿Quién tendría que escuchar esto?
+
+04:43.390 --> 04:48.210
+Bueno, cualquier interés podría suscribirse y escuchar cuando ocurre el reinicio.
+
+04:48.220 --> 04:53.470
+En nuestro caso, iremos a The View, escucharemos este comando y reiniciaremos esos tres campos.
+
+04:53.470 --> 05:00.070
+Así que aquí en la vista de la calculadora dentro de la inicialización, usamos el contexto y el gestor de comandos para añadir
+
+05:00.070 --> 05:01.270
+un receptor de comandos aquí.
+
+05:01.270 --> 05:06.940
+Cada vez que el comando reset es llamado, este código se ejecuta y restablece esos campos.
+
+05:06.940 --> 05:11.860
+Ahora, en este ejemplo específico, esto es un poco problemático y redundante.
+
+05:11.860 --> 05:18.640
+Ya teníamos el enlace funcionando, pero quería mostrar cómo conectar un comando por si acaso.
+
+05:18.640 --> 05:19.840
+Vamos a ejecutar este ejemplo.
+
+05:19.840 --> 05:20.980
+Aquí está todo funcionando.
+
+05:20.980 --> 05:23.710
+Aquí está la funcionalidad de reinicio que funciona bien.
+
+05:23.710 --> 05:26.530
+Aquí está la funcionalidad de anuncios que también funciona bien.
+
+05:26.530 --> 05:32.500
+Así que en este caso específico, voy a quitar el comando antes de terminar el proyecto.
+
+05:32.800 --> 05:39.460
+He vuelto al controlador y he comentado ese código y he vuelto a la vista y he comentado
+
+05:39.460 --> 05:42.490
+ese código y el código relacionado también.
+
+05:43.850 --> 05:45.020
+Vamos a ejecutar la demo.
+
+05:45.050 --> 05:45.620
+Ya está.
+
+05:45.620 --> 05:46.670
+Ejecutando la demo.
+
+05:46.700 --> 05:48.230
+Hacer la operación de anuncio.
+
+05:49.610 --> 05:50.630
+Funciona muy bien.
+
+05:50.660 --> 05:51.590
+Haz el reinicio.
+
+05:53.910 --> 05:55.140
+También funciona bien.
+
+05:55.170 --> 05:59.890
+Incluiré este ejemplo de calculadora en la base de código para que puedas comprobarlo también.
+
+05:59.910 --> 06:05.730
+Para aquellos de ustedes que tomaron la asignación del desafío de codificación y completaron esto por sí mismos antes de ver
+
+06:05.730 --> 06:09.150
+el video, espero que hayan aprendido mucho con esa actividad.
+
+06:09.510 --> 06:15.420
+En general, el proceso que hemos utilizado aquí es algo que se puede utilizar en proyectos más grandes y VCs como
+
+06:15.420 --> 06:15.960
+así.
+
+06:15.990 --> 06:21.330
+Primero piensas en cuáles son tus requisitos, cuál será la experiencia del usuario, y luego rompes...
+
+06:21.330 --> 06:27.060
+en cada una de las preocupaciones, modelo, vista, controlador y servicio.
+
+06:27.060 --> 06:31.500
+A continuación, piensa en qué funcionalidad base, si la hay, necesitas para las preocupaciones.
+
+06:31.530 --> 06:37.740
+Ahora, mientras que esta muestra era bastante pequeña y sólo requiere un modelo de vista y controlador para una simple
+
+06:37.740 --> 06:44.730
+ejemplo de una hora, probablemente verás que para el típico proyecto de un mes o un año tendrás muchos,
+
+06:44.730 --> 06:49.710
+muchas vistas y muchos modelos y muchos controladores.
+
+06:49.710 --> 06:53.490
+Incluso con un proyecto de esa escala, seguirías estos pasos.
+
+06:53.490 --> 06:59.880
+Y el mismo tiempo que hemos pasado juntos aquí comenzando este proyecto es como empezarías un proyecto mucho más grande.
+
+06:59.880 --> 07:00.990
+más grande.
+
+07:01.740 --> 07:07.620
+Con el tiempo, se vería la ampliación de cada una de esas preocupaciones, tal vez tener una vista que se pone un poco
+
+07:07.620 --> 07:08.520
+demasiado grande.
+
+07:08.520 --> 07:10.860
+Así que lo divides en dos vistas.
+
+07:10.860 --> 07:16.360
+También tendrás una larga biblioteca de comandos que puedes usar y reutilizar a lo largo de tu proyecto.
+
+07:16.380 --> 07:18.450
+Imagina los próximos pasos para esta calculadora.
+
+07:18.450 --> 07:24.450
+Algo que quizás quieras hacer como tarea de codificación opcional sería añadir, restar funcionalidad
+
+07:24.870 --> 07:27.480
+o añadir pruebas unitarias al proyecto.
+
+07:27.480 --> 07:30.600
+Podrías probar el modelo, la vista, el controlador.
+
+07:30.600 --> 07:35.220
+Podrías tomar la lógica de adición y separarla en su propia clase.
+
+07:35.370 --> 07:41.220
+Algo así como mi sistema matemático con un método de SUMAR y otro de RESTAR.
+
+07:41.950 --> 07:46.360
+Esa sería una gran manera de escalar tu aprendizaje a partir de esta muestra y avanzar.
+
+07:46.810 --> 07:48.680
+Eso es todo para la calculadora Mini.
+
+07:48.700 --> 07:49.600
+Gracias.

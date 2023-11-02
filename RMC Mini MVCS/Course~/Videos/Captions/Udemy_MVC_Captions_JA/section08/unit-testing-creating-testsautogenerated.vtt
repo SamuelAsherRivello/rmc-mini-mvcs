@@ -1,0 +1,196 @@
+WEBVTT
+
+00:00.090 --> 00:01.510
+Creando pruebas unitarias.
+
+00:01.530 --> 00:03.600
+Clase de prueba y métodos de prueba.
+
+00:03.600 --> 00:07.260
+Este es el código para una clase de prueba que contiene un método de prueba.
+
+00:07.260 --> 00:12.510
+Dentro, seguimos el paradigma opcional de arrange, act y assert.
+
+00:12.510 --> 00:14.970
+Esa es la convención que uso para todas mis pruebas.
+
+00:14.970 --> 00:19.120
+Así que hemos visto cómo es una prueba y cómo ejecutar una prueba existente.
+
+00:19.140 --> 00:20.750
+Ahora vamos a crear nuestro propio test.
+
+00:20.760 --> 00:27.780
+Abriremos un proyecto vacío, abriremos la ventana de ejecución del test, crearemos una carpeta de test, una clase de test,
+
+00:27.780 --> 00:29.760
+y un método dentro de esa prueba.
+
+00:29.910 --> 00:31.740
+Luego ejecutaremos el test y veremos el resultado.
+
+00:31.740 --> 00:34.020
+Aquí estamos en un proyecto bastante vacío.
+
+00:34.020 --> 00:37.410
+Ya tengo añadido el unity test framework.
+
+00:37.410 --> 00:43.920
+Vamos a abrir la ventana del ejecutor de pruebas, ya que el proyecto no tiene pruebas de modo de edición ni de modo de reproducción,
+
+00:43.920 --> 00:47.670
+cada una de esas pestañas ofrece algunas opciones aquí para empezar.
+
+00:47.670 --> 00:53.610
+En primer lugar, vamos a crear una carpeta de montaje de pruebas de modo de edición haciendo clic en el botón que crea una nueva carpeta
+
+00:53.610 --> 00:59.430
+en nuestra ventana de proyecto, incluyendo un ensamblado configurado para pruebas, ensamblados unitarios y el ensamblado
+
+00:59.430 --> 01:07.110
+archivo de definición está fuera del alcance de este curso, pero en resumen esta unidad señales de que las cosas dentro de
+
+01:07.110 --> 01:11.700
+esta carpeta dada debe ser compilado, debe ser compilado de una manera única.
+
+01:11.700 --> 01:16.470
+Así que ahora que tenemos esa carpeta de ensamblado de prueba configurada, podemos crear nuestra primera clase de prueba.
+
+01:16.470 --> 01:21.390
+Cada uno de estos pasos se puede hacer manualmente sin utilizar la ventana, pero voy a continuar haciendo clic en el botón
+
+01:21.390 --> 01:26.610
+botón siguiente aquí para crear un script de prueba en la carpeta actual en la ventana del proyecto que crea un
+
+01:26.610 --> 01:29.600
+nueva clase de prueba y nos da dos métodos de prueba.
+
+01:29.610 --> 01:32.430
+Fíjate en la ventana de ejecución del test o ventana, todo aparece.
+
+01:32.550 --> 01:33.930
+Voy a ejecutar todas esas pruebas.
+
+01:33.930 --> 01:35.150
+Todas las pruebas pasan.
+
+01:35.160 --> 01:37.230
+Echemos un vistazo al código generado.
+
+01:37.230 --> 01:42.090
+En este punto, usted es libre de cambiar el nombre de la clase y estos métodos como mejor le parezca.
+
+01:42.090 --> 01:45.660
+Y luego, por supuesto copiar y pegar para añadir más métodos dentro.
+
+01:45.660 --> 01:50.940
+No hay límite en el número de métodos de prueba que puede tener en una clase de prueba, pero por lo general se utiliza
+
+01:50.940 --> 01:57.990
+la clase para organizar ciertos temas, tal vez una clase de prueba para cada clase de producción y luego una
+
+01:57.990 --> 02:01.170
+método de prueba para cada método en producción.
+
+02:01.170 --> 02:03.420
+Quieres probar algo así.
+
+02:03.420 --> 02:07.110
+Estos comentarios son generados automáticamente por unity y son bastante útiles.
+
+02:07.650 --> 02:09.120
+Repasaré lo más destacado aquí.
+
+02:09.120 --> 02:10.380
+Usando el test.
+
+02:10.920 --> 02:19.290
+Usar el atributo test nos prepara para una prueba normal en modo edición Usar el atributo test de la unidad permite
+
+02:19.290 --> 02:22.250
+ejecutar un test sobre múltiples frames.
+
+02:22.260 --> 02:26.790
+Ahora, he mencionado antes que el uso de unity test es más adecuado para el modo de juego.
+
+02:26.790 --> 02:31.320
+Tienes muchas más opciones en cuanto al tipo de funcionalidad asíncrona que puedes hacer allí.
+
+02:31.320 --> 02:38.160
+Efectivamente es posible aquí y como sugiere el comentario, puedes usar yield return null para saltarte un frame.
+
+02:38.160 --> 02:43.020
+Por ejemplo, hacer la configuración, luego esperar un fotograma y hacer la prueba.
+
+02:43.020 --> 02:44.010
+Algo parecido.
+
+02:44.010 --> 02:47.730
+Por ejemplo, haciendo el código de configuración, esperando un fotograma.
+
+02:48.380 --> 02:51.080
+Y luego hacer la aserción, algo así.
+
+02:51.080 --> 02:54.620
+Aquí, de vuelta en la unidad voy a pestaña sobre el.
+
+02:55.350 --> 02:57.840
+Play mode y seguiré los mismos pasos.
+
+02:57.840 --> 03:04.020
+En primer lugar, vamos a crear una carpeta de ensamblaje de prueba de modo de juego y luego voy a crear un script de prueba.
+
+03:04.020 --> 03:09.900
+En esta carpeta podemos ver en el test runner que tenemos una clase de prueba que contiene dos métodos de prueba.
+
+03:10.500 --> 03:13.370
+Voy a ejecutar todo y vemos que todo pasa.
+
+03:13.380 --> 03:15.350
+Echemos un vistazo al código generado.
+
+03:15.360 --> 03:21.960
+El código generado aquí es realmente idéntico tanto en modo reproducción como en modo edición.
+
+03:21.960 --> 03:24.240
+Te dan puntos de partida muy similares.
+
+03:24.240 --> 03:25.110
+Ya está.
+
+03:26.480 --> 03:31.700
+Estamos empezando a ver que con la ventana del corredor de pruebas y sólo un poco de Do sostenido añadido.
+
+03:31.700 --> 03:35.250
+Podemos hacer más cosas con nuestros proyectos unity que antes.
+
+03:35.270 --> 03:41.420
+Si eres nuevo en las pruebas unitarias, estarás familiarizado con el uso de unity para crear código en tiempo de ejecución, pero las pruebas
+
+03:41.420 --> 03:42.800
+es algo diferente.
+
+03:43.480 --> 03:46.750
+Nunca es experimentado directamente por los usuarios finales.
+
+03:47.200 --> 03:49.770
+Este código sólo se ejecuta en modo de prueba.
+
+03:49.790 --> 03:52.320
+Ni siquiera está empaquetado en tu compilación final.
+
+03:52.330 --> 03:59.470
+Empezamos a ver las pruebas ahora como una pequeña ventana en momentos y tiempo en una aplicación más grande de pruebas
+
+03:59.470 --> 04:03.030
+con un enfoque estrecho para asegurar que obtenemos resultados consistentes.
+
+04:03.040 --> 04:08.320
+Hasta ahora, hemos estado hablando sobre todo de añadir nuevas pruebas al código existente.
+
+04:08.350 --> 04:13.420
+A continuación, veremos cómo añadir pruebas mientras estamos desarrollando código con el desarrollo dirigido por pruebas.
+
+04:13.420 --> 04:14.200
+Gracias.

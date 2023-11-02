@@ -1,0 +1,184 @@
+WEBVTT
+
+00:00.180 --> 00:02.800
+Veamos el patrón de diseño de comandos.
+
+00:02.820 --> 00:05.390
+Command es un patrón de diseño de comportamiento.
+
+00:05.400 --> 00:09.210
+Es algo similar al observador, pero lo suficientemente diferente.
+
+00:09.210 --> 00:11.340
+Se califica como su propio patrón.
+
+00:11.430 --> 00:17.730
+Algunos de los beneficios de usarlo incluyen que puedes ejecutar y deshacer la funcionalidad.
+
+00:17.730 --> 00:23.360
+Eso es a menudo cuando muchos equipos lo traen para poder tener la funcionalidad de deshacer en su UI.
+
+00:23.370 --> 00:30.600
+Pero incluso sin ese paradigma, sigue siendo tremendamente exitoso en darte los beneficios del observador
+
+00:30.600 --> 00:37.530
+con un poco más de desacoplamiento y abstracción en comparación con el patrón observador aquí, no necesitamos una referencia
+
+00:37.530 --> 00:40.020
+al remitente del mensaje.
+
+00:40.020 --> 00:47.790
+En su lugar, tanto el remitente como el observador conocen algún tipo de sistema de mensajería que se encuentra entre
+
+00:47.790 --> 00:48.240
+entre ellos.
+
+00:48.480 --> 00:51.510
+En código posterior, veremos esto llamado el gestor de comandos.
+
+00:51.510 --> 00:57.780
+Siempre y cuando los ámbitos pueden llegar a que el gestor de comandos, que actúa como intermediario entre ellos y la comunicación.
+
+00:57.780 --> 01:03.990
+Y al igual que el observador, esto permite el intercambio de datos y la comunicación, que está aislado de, bueno,
+
+01:03.990 --> 01:07.410
+si uno cambia, ¿tiene que cambiar necesariamente el otro?
+
+01:07.410 --> 01:11.720
+Y ciertamente puedes tener múltiples observadores fácilmente añadidos y eliminados.
+
+01:11.730 --> 01:12.270
+Ya veremos.
+
+01:12.270 --> 01:15.600
+Un paralelo al ejemplo del observador que vimos antes aquí.
+
+01:15.600 --> 01:22.640
+Las tres partes clave son crear el sistema de comandos, añadir un listener e invocarlo.
+
+01:22.650 --> 01:28.230
+Ahora normalmente estaríamos enviando comandos entre dos o más clases, pero por brevedad, he incluido
+
+01:28.230 --> 01:29.760
+en un archivo de clase aquí.
+
+01:29.760 --> 01:33.380
+De esta manera podemos ver un ejemplo funcional completo con bastante rapidez.
+
+01:33.390 --> 01:37.710
+Ahora mencionaré algunos patrones más, pero iré un poco más rápido.
+
+01:37.860 --> 01:44.730
+El siguiente par que voy a mostrar son cosas que veremos en el espíritu de cómo las arquitecturas MVC
+
+01:44.730 --> 01:45.570
+se organizan.
+
+01:45.570 --> 01:48.960
+Uno con el que quizás ya estés familiarizado es el patrón singleton.
+
+01:48.960 --> 01:55.710
+Siempre que quieras tener un sistema creado exactamente una vez dentro de tu código y tener acceso global a él,
+
+01:55.710 --> 01:57.990
+ese es un buen lugar para el patrón Singleton.
+
+01:57.990 --> 02:05.010
+Las actualizaciones recientes de Unity tienen algunas soluciones nativas para esto, pero tradicionalmente hemos utilizado la comunidad
+
+02:05.010 --> 02:13.440
+que nos ayudan a acceder globalmente a un comportamiento mono dado o a algún tipo de comportamiento mono.
+
+02:13.440 --> 02:14.420
+otro tipo de datos.
+
+02:14.430 --> 02:21.450
+En segundo lugar, el patrón de fachada nos ayuda a reducir la complejidad percibida de una serie de subsistemas.
+
+02:21.540 --> 02:28.050
+Digamos que tienes un sistema de entrada y un sistema de renderizado y un sistema de física, todos creados para tu
+
+02:28.050 --> 02:29.790
+juego en lugar de tu jugador.
+
+02:29.790 --> 02:35.940
+Conociendo los detalles de esos sistemas, tu jugador podría interactuar con una fachada que a su vez llame a esos
+
+02:35.940 --> 02:39.960
+sistemas individuales o seleccionar subsecciones de lo que pueden hacer.
+
+02:39.960 --> 02:43.890
+A menudo, en el lenguaje de los desarrolladores, llamamos a esto funcionalidad envolvente.
+
+02:43.890 --> 02:49.560
+Así que se podría decir que envolví tres sistemas en una clase para facilitar su uso.
+
+02:49.560 --> 02:53.010
+Mediador y proxy son dos patrones adicionales.
+
+02:53.010 --> 02:59.700
+De hecho están separados, pero puedo usar los términos indistintamente en mediador y proxy.
+
+02:59.700 --> 03:05.130
+Quiero decir, tener algún tipo de intermediario que se interponga entre la comunicación, algunos de los beneficios
+
+03:05.130 --> 03:09.330
+aquí es que usted puede fácilmente hacer cambios a cualquiera de las dos clases.
+
+03:09.330 --> 03:15.150
+En ese ejemplo, modifica el intermediario y no tendrás que refactorizar masivamente el sistema.
+
+03:15.150 --> 03:17.070
+Así que es una forma de mitigar el cambio.
+
+03:17.070 --> 03:19.980
+Veremos algunos de estos conceptos en las arquitecturas más adelante.
+
+03:19.980 --> 03:26.280
+Así que sólo con una breve visión general de los patrones de diseño aquí, vemos que son soluciones reutilizables que
+
+03:26.280 --> 03:30.540
+nos ayudan a resolver los desafíos de diseño que surgen a menudo en nuestro desarrollo de juegos.
+
+03:30.540 --> 03:36.030
+Mientras Singleton puede ser uno con el que estés más familiarizado en Unity, como se discute a menudo, el observador
+
+03:36.030 --> 03:42.840
+es probablemente el más útil para un desarrollador principiante para elevar su juego un poco y
+
+03:42.840 --> 03:47.820
+algunos de estos otros patrones que he mencionado específicamente porque más tarde cuando nos fijamos en las arquitecturas,
+
+03:47.820 --> 03:51.600
+podré usar esos términos y tú estarás un poco más familiarizado.
+
+03:51.900 --> 03:57.150
+En resumen para esta sección, hemos visto algunos de los conceptos de diseño de software de alto nivel.
+
+03:57.150 --> 04:04.470
+Hemos visto los principios de diseño como filosofías para resolver retos, UML como una forma de diagramar y comunicar...
+
+04:04.470 --> 04:05.790
+nuestras ideas.
+
+04:05.790 --> 04:11.580
+Y vimos algunos patrones de diseño, específicamente el observador y el comando, que volverá a
+
+04:11.580 --> 04:12.180
+más tarde.
+
+04:12.180 --> 04:15.640
+Y son una gran manera de desacoplar la comunicación dentro de tu proyecto.
+
+04:15.660 --> 04:17.880
+A continuación, vamos a discutir la arquitectura.
+
+04:17.880 --> 04:23.430
+Vamos a ver algunas de las soluciones disponibles por ahí, los pros y los contras de cada uno de ellos, y estrecha
+
+04:23.430 --> 04:28.290
+a algunos de los marcos populares que podemos utilizar específicamente para la unidad.
+
+04:28.440 --> 04:29.370
+Gracias.

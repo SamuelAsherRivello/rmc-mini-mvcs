@@ -1,0 +1,319 @@
+WEBVTT
+
+00:00.090 --> 00:01.360
+Desarrollo basado en pruebas.
+
+00:01.380 --> 00:04.920
+Este es un ejemplo de una clase de prueba con un método de prueba.
+
+00:04.920 --> 00:08.450
+Ya en el curso, hemos visto cómo ejecutar una prueba existente.
+
+00:08.460 --> 00:14.910
+Hemos visto cómo crear nuevas pruebas desde cero el desarrollo dirigido por pruebas o TDD es la práctica de añadir
+
+00:14.910 --> 00:17.550
+pruebas antes de añadir el código de producción.
+
+00:17.550 --> 00:21.290
+Para algunos, especialmente los nuevos en las pruebas, esto puede parecer extraño.
+
+00:21.300 --> 00:26.430
+Vamos a aprender más acerca de la técnica y señalar que se puede mezclar la prueba de desarrollo impulsado con la tradicional
+
+00:26.430 --> 00:29.490
+como quieras en tus propios flujos de trabajo.
+
+00:29.520 --> 00:36.570
+TDD crea pruebas que especifican y validan lo que el código hará una vez creado.
+
+00:37.110 --> 00:38.280
+Este es el flujo de trabajo.
+
+00:38.280 --> 00:44.220
+Creas una nueva prueba, añades la implementación suficiente dentro de ella para que el código compile.
+
+00:44.220 --> 00:48.610
+Ya que hemos añadido el suficiente código de producción para que este código compile.
+
+00:48.630 --> 00:54.000
+Quizás incluso teniendo una implementación vacía, ejecutamos el test y el test falla.
+
+00:54.450 --> 00:55.590
+Eso es lo esperado.
+
+00:55.590 --> 01:01.950
+Y en realidad es un muy buen punto de partida para ver por primera vez una prueba que falla, tenemos más confianza
+
+01:01.950 --> 01:05.040
+de que la prueba, una vez superada, signifique realmente algo.
+
+01:05.040 --> 01:09.420
+Entonces refactorizas tu código de producción hasta que el código pase y sigues adelante.
+
+01:09.420 --> 01:16.020
+TDD no es simplemente el orden de probar primero y escribir el código de producción después.
+
+01:16.020 --> 01:19.140
+Es también una forma de pensar sobre tus proyectos.
+
+01:19.140 --> 01:24.230
+Algo de esto realmente necesitas practicarlo para sentir los resultados.
+
+01:24.240 --> 01:31.110
+Pero lo que encuentro con más experiencia TDD es que piensas en tu nuevo código de manera diferente, eres
+
+01:31.110 --> 01:38.160
+más centrado en tu desarrollo, creas más código atómico que hace sólo una cosa, y cuando
+
+01:38.160 --> 01:42.180
+tu código de prueba pasa, es un pase más significativo.
+
+01:42.210 --> 01:48.840
+Otra forma de ver este flujo es que escribes una prueba que falla, haces que la prueba pase, y entonces
+
+01:48.840 --> 01:51.660
+refactorizas tu código para cumplir otros objetivos.
+
+01:51.660 --> 01:58.590
+Tienes optimización, estándares de codificación, etc. y luego repites, Veamos esto en acción.
+
+01:58.590 --> 02:01.320
+Abriremos un proyecto unity que ya tiene una prueba.
+
+02:01.320 --> 02:08.790
+Utilizaremos TDD para añadir un nuevo test, crearemos suficiente código de producción para que compile, veremos un fallo
+
+02:08.790 --> 02:12.090
+y luego refactorizar hasta que tengamos un resultado satisfactorio.
+
+02:13.020 --> 02:16.130
+Aquí estamos en un proyecto unity bastante vacío.
+
+02:16.140 --> 02:22.560
+Me he asegurado de que el framework de pruebas ya está añadido en el gestor de paquetes como se ha mostrado antes, y
+
+02:22.560 --> 02:25.590
+He copiado una prueba para empezar.
+
+02:25.620 --> 02:28.350
+Vamos a echar un vistazo a esa prueba aquí en el modo de edición.
+
+02:28.350 --> 02:33.780
+Tengo una prueba que proporciona cobertura en el método ADD de una simple clase de matemáticas.
+
+02:33.780 --> 02:34.850
+Vamos a ejecutar el test.
+
+02:34.860 --> 02:35.900
+Pasa.
+
+02:35.910 --> 02:41.430
+Echemos un vistazo al código y aquí vemos la prueba con la que estamos familiarizados de antes en la presentación.
+
+02:41.430 --> 02:45.330
+Ahora vamos a realizar algunas pruebas de desarrollo como se discute aquí.
+
+02:45.360 --> 02:51.450
+La idea es que si tuviéramos que ampliar la funcionalidad del sistema de matemáticas, tenemos algunos enfoques.
+
+02:51.450 --> 02:57.090
+Podríamos ir a crear ese código de producción sin ninguna prueba y después.
+
+02:58.260 --> 03:01.350
+Y después quizás añadimos pruebas o quizás no.
+
+03:02.530 --> 03:08.530
+Sin embargo, con el desarrollo dirigido por pruebas, vamos a probar primero antes de haber añadido cualquier producción
+
+03:08.530 --> 03:09.040
+de producción.
+
+03:09.870 --> 03:11.010
+Veamos cómo funciona.
+
+03:11.040 --> 03:11.700
+Me lo imagino.
+
+03:11.700 --> 03:11.880
+Yo.
+
+03:13.080 --> 03:14.040
+Vamos a imaginar.
+
+03:14.040 --> 03:16.680
+El sistema matemático necesita un método de resta.
+
+03:17.980 --> 03:22.240
+Ahora, este método abstracto no existe todavía, como veremos cuando veamos el código fuente.
+
+03:23.150 --> 03:24.830
+Pero vamos a hacer una prueba de todos modos.
+
+03:25.760 --> 03:29.060
+Empezaré añadiendo el atributo test.
+
+03:29.270 --> 03:37.130
+Voy a nombrar el método con lo que está bajo prueba, lo que es el resultado esperado y en qué situación espero
+
+03:37.130 --> 03:38.390
+para restar.
+
+03:38.390 --> 03:40.130
+El resultado sería cinco.
+
+03:40.160 --> 03:45.140
+Si paso en diez y cinco, diez menos cinco es cinco.
+
+03:45.170 --> 03:48.980
+Para hacer la prueba, instanciaré una nueva copia de mi sistema matemático.
+
+03:49.220 --> 03:52.250
+Obtengo el resultado llamando al método de la resta.
+
+03:52.280 --> 03:56.830
+El texto rojo aquí indica que mi editor de código sabe que no hay método de resta.
+
+03:56.840 --> 04:03.320
+Y, por último, esperamos que nuestro método devuelva un valor de cinco porque he copiado y pegado esto desde el archivo
+
+04:03.320 --> 04:04.100
+ejemplo anterior.
+
+04:04.100 --> 04:05.060
+Dice 15.
+
+04:05.090 --> 04:06.180
+Lo cambiaré ahora.
+
+04:06.200 --> 04:08.150
+Ahora está comprobando la suposición correcta.
+
+04:08.840 --> 04:13.180
+Ahora sabemos que esto no va a compilar, pero guardemos y volvamos a unity.
+
+04:13.190 --> 04:14.750
+Observemos dos cosas.
+
+04:14.750 --> 04:19.250
+Una, la ventana de la consola muestra correctamente que hay un error de compilación.
+
+04:19.250 --> 04:24.300
+Y notar en la ventana del ejecutor de pruebas, que todavía no vemos nuestro nuevo método.
+
+04:24.320 --> 04:26.610
+Estas son buenas cosas a tener en cuenta en TDD.
+
+04:26.630 --> 04:30.970
+El siguiente paso es hacer el código suficiente para que compile.
+
+04:30.980 --> 04:34.700
+Es muy importante que no terminemos la implementación en esta fase.
+
+04:34.700 --> 04:36.920
+Aquí está el código fuente de nuestro sistema matemático.
+
+04:36.920 --> 04:42.050
+Esta es la implementación más simple que puedo hacer para que el código compile.
+
+04:42.050 --> 04:45.740
+Fíjate que no termino la implementación correcta.
+
+04:45.740 --> 04:52.550
+Ahora, en este ejemplo parece trivial porque sabemos que todo lo que tenemos que hacer es restar A y B.
+
+04:52.550 --> 04:58.460
+Sin embargo, normalmente en el desarrollo dirigido por pruebas, la implementación de un método dado sería más compleja
+
+04:58.460 --> 04:59.540
+y llevaría más tiempo.
+
+04:59.540 --> 05:03.470
+En cualquier caso, siempre nos detenemos aquí una vez que tenemos suficiente para compilar.
+
+05:04.230 --> 05:05.360
+Veamos la prueba.
+
+05:05.370 --> 05:09.150
+Nuestro editor de código correctamente ya no muestra restar en rojo.
+
+05:09.570 --> 05:11.340
+Guardemos y comprobemos la unidad.
+
+05:11.370 --> 05:13.710
+Ahora no vemos ningún error de consola.
+
+05:13.710 --> 05:14.280
+Estupendo.
+
+05:14.280 --> 05:15.540
+Todo está compilando.
+
+05:15.540 --> 05:19.290
+Y ahora nuestra ventana de ejecución de pruebas muestra correctamente el nuevo método de prueba.
+
+05:19.290 --> 05:20.430
+Vamos a ejecutar todas las pruebas.
+
+05:20.430 --> 05:26.430
+Podemos considerar la prueba de fracaso porque uno o más métodos de prueba fallan.
+
+05:26.430 --> 05:31.350
+Cuando miramos cuando seleccionamos el método que falla, vemos alguna pequeña entrada allí.
+
+05:31.350 --> 05:34.200
+Vemos un poco de texto de salida que muestra por qué falló.
+
+05:34.470 --> 05:38.490
+Está esperando cinco, pero en su lugar devuelve cero.
+
+05:38.490 --> 05:40.560
+Ahora, ¿por qué pasamos por esto?
+
+05:40.560 --> 05:46.350
+Puede parecer trivial, pero es una distinción importante que creamos una prueba, creemos que probar la
+
+05:46.350 --> 05:49.260
+funcionalidad adecuada y primero vemos que falla.
+
+05:49.260 --> 05:55.560
+Eso nos da una buena base para saber cuando una implementación adecuada da un aprobado con confianza.
+
+05:55.560 --> 05:57.420
+Añadamos aquí la implementación adecuada.
+
+05:57.420 --> 06:02.160
+Asumimos que el primer parámetro que entra sería mayor que el segundo, y simplemente devolvemos
+
+06:02.160 --> 06:05.670
+y simplemente devolvemos a menos B, vamos a guardar y ejecutar la prueba.
+
+06:07.570 --> 06:12.600
+Ahora la prueba se ejecuta bien y hemos completado nuestro primer ejemplo de desarrollo dirigido por pruebas.
+
+06:12.610 --> 06:13.450
+Ya está.
+
+06:13.990 --> 06:20.680
+Ahora, sé por mi propia experiencia que me tomó tiempo y práctica con las pruebas para sentir realmente el
+
+06:20.680 --> 06:21.520
+beneficios.
+
+06:21.520 --> 06:29.890
+Mientras hemos tenido una breve visión general con las pruebas unitarias, la creación de pruebas unitarias y el desarrollo dirigido por pruebas.
+
+06:30.580 --> 06:35.200
+Espero que estés empezando a ver algunos de los beneficios que podrían funcionar bien para ti.
+
+06:35.200 --> 06:41.350
+Combinando lo que has aprendido aquí sobre pruebas con la arquitectura MVC, tienes las herramientas para crear
+
+06:41.350 --> 06:47.460
+proyectos más modulares, escalables, optimizados, robustos y fiables.
+
+06:47.470 --> 06:52.610
+La combinación de pruebas y una buena arquitectura es realmente poderosa.
+
+06:52.630 --> 06:53.500
+Gracias.

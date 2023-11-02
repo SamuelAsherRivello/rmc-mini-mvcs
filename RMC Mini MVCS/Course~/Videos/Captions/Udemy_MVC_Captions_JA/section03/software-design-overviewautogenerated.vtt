@@ -1,0 +1,133 @@
+WEBVTT
+
+00:00.240 --> 00:02.490
+Resumen del diseño del software.
+
+00:02.670 --> 00:06.000
+Empecemos con la teoría de los principios de diseño.
+
+00:06.180 --> 00:10.710
+Los desarrolladores veteranos pueden hacer que parezca fácil, pero el código limpio no se escribe por casualidad.
+
+00:10.740 --> 00:17.430
+Para crear buenos proyectos hay que utilizar principios sólidos, buenos flujos de trabajo y patrones productivos.
+
+00:17.430 --> 00:18.670
+en tu proceso.
+
+00:18.690 --> 00:21.440
+En primer lugar, hablemos de los principios de diseño.
+
+00:21.450 --> 00:25.040
+Son las filosofías que conducen a un desarrollo de software productivo.
+
+00:25.050 --> 00:32.490
+Los beneficios incluyen una planificación más rápida, una comunicación clara y concentración durante el desarrollo.
+
+00:32.700 --> 00:37.350
+La historia de la informática está llena de estos principios de diseño.
+
+00:37.470 --> 00:39.850
+Repasaré algunos de los más populares.
+
+00:39.870 --> 00:46.410
+Esta es una excelente oportunidad para que investigues por tu cuenta los que te resulten nuevos y profundices
+
+00:46.410 --> 00:49.370
+en las que ya conozcas.
+
+00:49.380 --> 00:56.220
+Empecemos con los principios sólidos, donde cada letra de sólido corresponde a un principio de diseño.
+
+00:56.490 --> 01:04.530
+El principio de responsabilidad única es el deseo general de que cada una de tus clases y estructuras
+
+01:04.530 --> 01:06.050
+haga una sola cosa.
+
+01:06.060 --> 01:14.010
+El principio abierto cerrado significa que cada clase debe estar abierta a la extensión, pero cerrada a la modificación.
+
+01:14.010 --> 01:19.290
+Con la programación orientada a objetos, tienes herencia e interfaces.
+
+01:19.290 --> 01:27.840
+El principio de la lista de sustitución establece que cualquier subtipo debe ser capaz de ser emitido como el padre.
+
+01:27.870 --> 01:29.220
+e interfaz.
+
+01:29.220 --> 01:36.030
+Segregación significa que no debemos aplicar más interfaces a un tipo dado de las necesarias.
+
+01:36.030 --> 01:41.970
+Y por último, la inversión de dependencias indica que cuando se trata de código alto y código bajo en
+
+01:41.970 --> 01:49.280
+un sistema, el código de alto nivel no debería depender de implementaciones concretas del código de bajo nivel.
+
+01:49.290 --> 01:55.140
+En su lugar, debería utilizar algo como interfaces para abstraer que algunos otros conceptos populares incluyen.
+
+01:55.140 --> 01:56.520
+No te repitas.
+
+01:56.520 --> 02:02.940
+Este es un recordatorio que usamos como desarrolladores que si te encuentras copiando, pegando, código literal
+
+02:02.940 --> 02:08.910
+o conceptos, puede haber un enfoque sistemático que nos ayude a reutilizar ese código de manera más eficiente.
+
+02:08.940 --> 02:15.540
+Keep it simple nos recuerda que no debemos complicar en exceso nuestras soluciones.
+
+02:15.540 --> 02:19.500
+Nos recuerda que no construyamos hoy las soluciones del mañana.
+
+02:20.310 --> 02:21.870
+En el desarrollo iterativo.
+
+02:21.870 --> 02:28.080
+Queremos resolver los retos que tenemos ante nosotros ahora con principios sólidos y no diseñar algo que
+
+02:28.080 --> 02:30.180
+sea necesariamente a prueba de futuro.
+
+02:30.210 --> 02:36.630
+A menudo no sabemos qué nos deparará el futuro, y diseñar para mañana es una complicación innecesaria.
+
+02:36.630 --> 02:42.870
+Practicar los principios aquí expuestos y aplicarlos a tu proyecto te proporcionará automáticamente
+
+02:42.870 --> 02:49.150
+más escalabilidad, mantenibilidad y calidad de vida como desarrollador.
+
+02:49.170 --> 02:54.900
+Cuando pensamos en estos principios de diseño de software en esta sección en particular, empezamos desde un alto
+
+02:54.900 --> 03:00.720
+nivel teórico cosas que pueden ser más universales a través de diferentes plataformas de programación.
+
+03:00.720 --> 03:06.450
+Entonces vamos a entrar en más las tuercas y los pernos de cómo se aplica, en particular dentro de la unidad.
+
+03:06.600 --> 03:13.890
+Pero te darás cuenta de esta diferencia cuando hablamos de alto nivel y luego concretamente en bajo nivel y en todo
+
+03:13.890 --> 03:19.890
+que puedes desarrollar tu propio estilo personal de cuales de estos principios impactan en tu vida laboral diaria
+
+03:19.890 --> 03:21.020
+más que otros.
+
+03:21.030 --> 03:27.180
+También llegaremos a reconocer algunos de estos principios a través de las arquitecturas que utilizamos y, en última instancia
+
+03:27.180 --> 03:30.030
+el código que hacemos juntos en las secciones de codificación.
+
+03:30.150 --> 03:31.260
+Eso es todo por ahora.
+
+03:31.260 --> 03:31.980
+Gracias.

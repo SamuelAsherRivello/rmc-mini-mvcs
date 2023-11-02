@@ -1,0 +1,142 @@
+WEBVTT
+
+00:00.390 --> 00:03.270
+Instalación de los mini MVCs.
+
+00:04.310 --> 00:06.980
+El código fuente completo está disponible gratuitamente en git.
+
+00:07.010 --> 00:08.870
+El enlace se incluirá a continuación.
+
+00:08.870 --> 00:11.880
+Los pasos para la instalación es seguir ese enlace.
+
+00:11.900 --> 00:13.850
+Crear un nuevo proyecto unity.
+
+00:13.850 --> 00:19.610
+Te sugiero las últimas cargas de unity y luego importas este paquete a tu proyecto.
+
+00:19.610 --> 00:27.410
+Dentro del menú superior de Unity navegas por Window Package Manager Add package from git URL y usas el botón
+
+00:27.410 --> 00:29.120
+URL de la página git.
+
+00:29.300 --> 00:31.640
+Aquí estamos en nuestro navegador web favorito.
+
+00:31.640 --> 00:37.460
+Mirando el repositorio del proyecto en GitHub, hacemos clic en código y podemos ver la URL git completa.
+
+00:37.490 --> 00:39.950
+Quieres copiar eso y traerlo a unity.
+
+00:39.980 --> 00:44.840
+Aquí estamos en un proyecto unity vacío usando la última versión de unity.
+
+00:45.690 --> 00:47.490
+Abriremos el gestor de paquetes.
+
+00:58.370 --> 01:03.970
+El gestor de paquetes muestra todas las dependencias actuales y te permite añadir más.
+
+01:03.980 --> 01:07.500
+Pulsamos el botón más y elegimos añadir una nueva URL git.
+
+01:07.520 --> 01:13.970
+Pegamos la URL que obtuvimos del repositorio de github y ahora el mini MVCs se ha añadido con éxito a tu repositorio de github.
+
+01:13.970 --> 01:14.540
+proyecto.
+
+01:14.540 --> 01:20.000
+Observe en la ventana del proyecto que no tenemos nada en los activos en este ejemplo en particular, porque es
+
+01:20.000 --> 01:24.440
+un proyecto vacío y en paquetes podemos ver muchos MVCs.
+
+01:26.280 --> 01:30.780
+Así que es un poco fuera del tema, pero voy a hablar un poco acerca de la unidad y los paquetes.
+
+01:30.780 --> 01:34.590
+Históricamente, Unity ofrecía activos a través de la tienda de activos.
+
+01:34.620 --> 01:40.470
+Estos activos se descargaban en algo así como un archivo zip que se descomprimía en el proyecto y era
+
+01:40.470 --> 01:41.510
+usarlos.
+
+01:41.520 --> 01:43.270
+El sistema funcionaba bastante bien.
+
+01:43.290 --> 01:47.750
+Hace unos años, la unidad amplió enormemente la forma en que se entregaría este sistema.
+
+01:47.760 --> 01:53.880
+El almacén de activos sigue existiendo como concepto, pero ahora cuando descargas cosas de terceros,
+
+01:53.880 --> 01:58.290
+incluyendo este paquete que estoy ofreciendo aquí, viene a través del gestor de paquetes de Unity.
+
+01:58.290 --> 02:03.120
+Algunos beneficios incluyen que tienes otra vía que es muy fácil de añadir cosas a tu proyecto.
+
+02:03.120 --> 02:04.050
+Como hemos visto.
+
+02:04.350 --> 02:08.370
+También puedes incluir como desarrollador muestras para compartir con otros.
+
+02:08.370 --> 02:12.000
+Echaremos un vistazo a algunas muestras para muchos MVC en secciones posteriores.
+
+02:12.000 --> 02:17.040
+Periódicamente, cuando estés usando este paquete o cualquier otro, comprueba en el gestor de paquetes que
+
+02:17.040 --> 02:22.110
+si se ha publicado una nueva versión para asegurarte de que siempre estás ejecutando el código más actualizado En este
+
+02:22.110 --> 02:25.380
+hemos echado un vistazo a los mini MVC.
+
+02:25.380 --> 02:31.980
+Hemos tenido una visión general, hablado de algunos de los pros y los contras, algunas características, beneficios y ver que
+
+02:31.980 --> 02:34.620
+es una alternativa más ligera que otros frameworks.
+
+02:34.620 --> 02:38.540
+Vimos cómo instalarlo en tus proyectos y estamos listos para explorar más.
+
+02:38.550 --> 02:40.020
+A continuación, profundizaremos.
+
+02:40.020 --> 02:45.420
+Este va a ser el primer vistazo al código real de este framework, Aprendiendo los fundamentos a través de
+
+02:45.420 --> 02:46.290
+ejemplos.
+
+02:46.290 --> 02:52.530
+Vamos a ver proyectos de ejemplo, cómo tomar toda la teoría en este curso y aplicarlo a C-sharp
+
+02:52.530 --> 02:53.120
+código.
+
+02:53.130 --> 02:59.370
+Ahora, sé que hemos hablado de un montón de principios, patrones, conceptos, filosofías hasta esto
+
+02:59.370 --> 02:59.940
+punto.
+
+02:59.940 --> 03:04.230
+Todo se unirá cuando empecemos a verlo en el código de ejemplo.
+
+03:04.230 --> 03:06.180
+Estoy deseando verlo contigo.
+
+03:06.180 --> 03:07.050
+Gracias.

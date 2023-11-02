@@ -1,0 +1,733 @@
+WEBVTT
+
+00:00.180 --> 00:03.600
+La muestra del reloj con muchos MVCs.
+
+00:04.290 --> 00:06.390
+Aquí estamos dentro de un proyecto vacío.
+
+00:06.390 --> 00:10.800
+He añadido el framework Mini y VCs e importado las muestras.
+
+00:11.010 --> 00:15.690
+Aquí, vamos a echar un vistazo a la versión del reloj con muchos MVCs.
+
+00:15.930 --> 00:17.760
+Empezaré ejecutando la muestra.
+
+00:21.160 --> 00:21.460
+Aquí.
+
+00:21.460 --> 00:27.820
+No tenemos ninguna interfaz de usuario real sucediendo, pero en la consola de registro de depuración tenemos algunas declaraciones de registro de depuración y
+
+00:27.820 --> 00:32.020
+muestran el tiempo transcurrido mientras la escena ha estado abierta.
+
+00:32.440 --> 00:33.130
+Ya está.
+
+00:33.130 --> 00:36.090
+No hay interfaz de usuario, ni tampoco funcionalidad para la entrada de datos.
+
+00:36.100 --> 00:38.650
+Esta es la primera vez que vemos la estructura de archivos.
+
+00:38.650 --> 00:42.760
+Tengo el script de ejemplo que se encuentra en un objeto del juego en la escena.
+
+00:42.760 --> 00:48.130
+Tengo la mini clase reloj que se crea y contiene todas las preocupaciones.
+
+00:48.130 --> 00:54.940
+Luego tengo clases relacionadas con cada una de las preocupaciones, modelo, vista, controlador y servicio.
+
+00:54.940 --> 00:58.900
+Un concepto adicional que aún no hemos discutido es el contexto.
+
+00:58.900 --> 01:02.690
+Cuando echemos un vistazo a este código, fíjate en el papel del contexto.
+
+01:02.710 --> 01:04.750
+Aquí está el mini ejemplo en sí.
+
+01:08.980 --> 01:10.210
+Es un de comportamiento.
+
+01:10.210 --> 01:15.090
+Y en su inicio instanciamos el objeto mini clase y llamamos a inicializar.
+
+01:15.100 --> 01:16.830
+Aquí tenemos la mini clase reloj.
+
+01:16.840 --> 01:20.200
+Esto extiende la clase mini y VCs framework.
+
+01:20.410 --> 01:24.990
+Puedes pensar en esto como el objeto padre que contiene todas las cuatro preocupaciones.
+
+01:25.000 --> 01:31.990
+Esta es una clase genérica en la que pasamos el tipo fuerte del contexto modelo, vista, controlador
+
+01:31.990 --> 01:32.830
+y servicio.
+
+01:32.830 --> 01:37.240
+Aquí está la inicialización con la estructura de los mini MVC.
+
+01:37.240 --> 01:41.980
+Todas las partes principales implicadas tienen una llamada explícita a inicializar.
+
+01:41.980 --> 01:47.530
+Este es un gran lugar para poner cualquier código que debe suceder exactamente una vez que los sistemas se despiertan.
+
+01:47.530 --> 01:49.110
+¿Qué hacemos aquí?
+
+01:49.120 --> 01:55.900
+En primer lugar, nos aseguramos de que lo tenemos inicializado y luego creamos el modelo de contexto, la vista, el controlador
+
+01:55.900 --> 01:56.770
+y el servicio.
+
+01:56.800 --> 02:01.810
+Observa que los constructores para cada uno no toman argumentos excepto el controlador.
+
+02:01.960 --> 02:09.940
+Este es uno de nuestros primeros ejemplos en código donde vemos que el controlador es el más potente y capaz
+
+02:09.940 --> 02:15.820
+de las preocupaciones porque el controlador sirve para ser el pegamento que mantiene juntos el modelo de vista y
+
+02:15.820 --> 02:20.350
+le pasamos esas referencias para que sepa cómo manejarlas.
+
+02:20.350 --> 02:25.150
+Y finalmente, seguimos la mejor práctica donde cada una de las preocupaciones se inicializa.
+
+02:25.180 --> 02:29.790
+Fíjate que todo toma el contexto y aún no hemos hablado del contexto.
+
+02:29.800 --> 02:30.970
+Echemos un vistazo.
+
+02:31.000 --> 02:33.340
+El contexto es una clase del framework.
+
+02:33.340 --> 02:39.100
+Implementa la interfaz del contexto AI, y el resto del sistema busca esa interfaz.
+
+02:39.100 --> 02:45.190
+Así que eres libre de crear tu propia alternativa al contexto simplemente implementando esa interfaz.
+
+02:45.190 --> 02:49.900
+Pero yo encuentro que para mis usos, esta implementación base normalmente sirve a mis necesidades.
+
+02:49.900 --> 02:52.000
+Sólo tiene dos cosas.
+
+02:52.000 --> 02:58.150
+Tiene un localizador de modelos y un gestor de comandos, ambos disponibles públicamente desde el exterior, y
+
+02:58.150 --> 02:59.950
+se crean en el momento de la instanciación.
+
+02:59.950 --> 03:01.600
+¿Cuál es el papel del contacto?
+
+03:01.600 --> 03:08.590
+Puedes pensar en el contexto como el sistema de mensajería al que las cuatro preocupaciones tienen referencia.
+
+03:08.620 --> 03:10.720
+¿Cuáles son las cosas que cualquier preocupación puede hacer con él?
+
+03:10.720 --> 03:16.150
+Bueno, usando el gestor de comandos, pueden escuchar cualquier comando e invocar cualquier comando.
+
+03:16.150 --> 03:18.880
+Esa es la parte de mensajería y el localizador de modelos.
+
+03:18.880 --> 03:25.390
+Mientras que un concepto más avanzado te permite opcionalmente registrar cualquier modelo y recuperar ese modelo.
+
+03:25.390 --> 03:31.690
+Así que cualquiera de las preocupaciones podría registrar un modelo o escuchar los eventos del modelo.
+
+03:31.690 --> 03:37.480
+Aquí abajo en el constructor, vemos que esas dos partes se instancian, y como un experimento
+
+03:37.480 --> 03:40.300
+tengo un localizador de contexto.
+
+03:40.690 --> 03:48.430
+Esto permite a cualquier ámbito añadir un contexto como el que vemos aquí, y cualquier otro ámbito puede obtener ese contexto
+
+03:48.430 --> 03:49.000
+si es necesario.
+
+03:49.000 --> 03:51.160
+En ejemplos más complejos, veremos.
+
+03:51.160 --> 03:57.130
+Esto puede ser útil si tu proyecto tiene dos mini ejes VM diferentes y quieres comunicar entre
+
+03:57.130 --> 04:01.570
+para este primer ejemplo, no entraremos en esa complejidad así que puedes ignorar este detalle.
+
+04:01.570 --> 04:05.920
+Así termina la discusión de alto nivel de todo este ejemplo.
+
+04:05.920 --> 04:12.490
+Vemos que tenemos el mini objeto padre que tiene las cuatro preocupaciones dentro, y cada una de ellas tiene
+
+04:12.490 --> 04:14.890
+una referencia al contexto de alto nivel.
+
+04:14.890 --> 04:17.800
+Es importante que entendamos esos conceptos básicos.
+
+04:17.800 --> 04:22.330
+Siéntete libre de volver a ver esta parte del curso para tener una comprensión más clara.
+
+04:22.330 --> 04:25.720
+Ahora repasemos cada una de las preocupaciones y veamos cómo funcionan.
+
+04:25.720 --> 04:28.600
+Ya hemos visto el contexto, así que veamos el modelo.
+
+04:28.600 --> 04:31.030
+Esta es la primera preocupación que hemos visto en el código.
+
+04:31.030 --> 04:36.910
+Así que vamos a echar un vistazo más profundo en la forma en que se construye y veremos que todas las demás preocupaciones en esta muestra
+
+04:36.910 --> 04:41.080
+y la mayoría de las otras preocupaciones en la otra muestra siguen un patrón similar.
+
+04:41.080 --> 04:44.630
+Así que en futuras discusiones, no trataremos este tema con tanta profundidad.
+
+04:44.650 --> 04:47.790
+Observe que el modelo del reloj amplía el modelo base.
+
+04:47.800 --> 04:51.760
+Ahora extender cualquiera de las clases base es opcional.
+
+04:51.760 --> 04:56.620
+Viene con algunas funcionalidades gratuitas, pero eres libre de abordarlo de una manera alternativa si lo deseas.
+
+04:56.620 --> 04:57.700
+más flexibilidad.
+
+04:57.700 --> 05:03.160
+Así que aquí tenemos una convención sugerida, pero hay flexibilidad para que hagas tus propias soluciones.
+
+05:03.160 --> 05:04.660
+Echemos un vistazo al modelo base.
+
+05:04.660 --> 05:08.920
+El modelo base implementa el modelo I, el modelo I implementa, el modelo I.
+
+05:08.920 --> 05:14.770
+Es posible que en futuras versiones del framework, hagamos algo personalizado aquí para modelar, pero
+
+05:14.770 --> 05:18.670
+por ahora sólo imita lo que cualquier otra preocupación es capaz de hacer.
+
+05:18.670 --> 05:25.570
+El I concern es capaz de inicializar y aceptar un contexto por lo que cualquier clase que implemente esta interfaz
+
+05:25.570 --> 05:32.080
+es capaz de inicializar aceptando un contexto en el método inicializado, y luego es capaz de almacenar y
+
+05:32.080 --> 05:35.620
+mantener una propiedad pública a ese contexto.
+
+05:35.620 --> 05:42.070
+Así que esto es lo que las cuatro preocupaciones son capaces de hacer Ahora, mientras que los patrones de uso sugeridos de cómo
+
+05:42.070 --> 05:47.560
+usamos un modelo es diferente de cómo usamos un controlador, sabemos que bajo el capó son igualmente
+
+05:47.560 --> 05:48.130
+capaces.
+
+05:48.130 --> 05:50.350
+De nuevo, esto permite la máxima flexibilidad.
+
+05:50.350 --> 05:55.720
+Dando un paso atrás aquí como vemos modelo de reloj se extiende modelo base, que acabamos de explorar, echemos un vistazo a
+
+05:55.720 --> 05:57.640
+el resto de cómo funciona el modelo de reloj.
+
+05:57.640 --> 06:01.600
+Puedes pensar en el modelo como el almacén de datos para todos los datos en tiempo de ejecución.
+
+06:01.600 --> 06:03.640
+Bien, ¿qué necesita el ejemplo del reloj?
+
+06:03.640 --> 06:05.440
+Bueno, necesita la hora actual.
+
+06:05.440 --> 06:08.200
+Y luego, en nuestro ejemplo, mantiene el retraso.
+
+06:08.300 --> 06:10.280
+Entre cada tictac del reloj.
+
+06:10.280 --> 06:17.160
+Para nosotros, va a ser un segundo, por lo que veremos que muestra un segundo, luego 2 segundos, luego 3
+
+06:17.160 --> 06:18.110
+segundos y así sucesivamente.
+
+06:18.110 --> 06:24.410
+El modelo, como cualquier preocupación, tiene la inicialización y la única funcionalidad personalizada que hacemos aquí es inicializar
+
+06:24.410 --> 06:26.960
+el valor de nuestras variables observables.
+
+06:26.960 --> 06:28.280
+Eso es todo para el modelo de reloj.
+
+06:28.280 --> 06:30.050
+A continuación, veamos la vista del reloj.
+
+06:30.050 --> 06:38.720
+La vista del reloj implementa la vista del ojo y al igual que vimos antes, la vista del ojo es capaz de tener un inicializar
+
+06:38.720 --> 06:41.060
+y tomar un contexto, eso es todo.
+
+06:41.060 --> 06:42.530
+Así que no exploraremos eso más.
+
+06:42.530 --> 06:46.310
+No necesitamos ninguna funcionalidad base, así que no usaremos ninguna clase base aquí.
+
+06:46.310 --> 06:48.110
+Sólo implementamos la vista nosotros mismos.
+
+06:48.110 --> 06:52.730
+Así que tenemos algunas propiedades, algunos campos y nos encargamos de la inicialización.
+
+06:52.730 --> 06:56.450
+Esto es material repetitivo para cualquiera de las preocupaciones.
+
+06:56.450 --> 06:59.720
+Lo único personalizado que hacemos aquí es utilizar el contexto.
+
+06:59.720 --> 07:05.150
+Este es nuestro primer uso de ver que accedemos al gestor de comandos dentro y escuchamos a una costumbre
+
+07:05.150 --> 07:07.910
+personalizado llamado comando de cambio de hora.
+
+07:07.910 --> 07:12.800
+Cada vez que el gestor de comandos invoque ese comando, podremos escucharlo aquí.
+
+07:12.800 --> 07:15.590
+Ahora, esta es la primera oportunidad de ver al gestor de comandos en acción.
+
+07:15.590 --> 07:20.300
+Así que recuerda la diferencia clave entre comandos y eventos con comandos.
+
+07:20.300 --> 07:24.260
+No necesitamos saber quién enviará este tipo de mensaje.
+
+07:24.260 --> 07:28.460
+Sólo nos suscribimos al intermediario del gestor de comandos y lo manejamos de esa manera.
+
+07:28.520 --> 07:30.230
+Es una solución desacoplada.
+
+07:30.230 --> 07:31.640
+Cada preocupación implementa.
+
+07:31.640 --> 07:33.800
+Lo requerido se inicializa.
+
+07:33.800 --> 07:40.700
+Esto es más de una mejor práctica que yo uso en lugar de algo específico de los frameworks MVC, pero yo sólo
+
+07:40.700 --> 07:46.070
+hacer un método que comprueba fácilmente si estamos inicializados, y si no lo estamos, lanza una excepción.
+
+07:46.070 --> 07:50.690
+Veremos que se utiliza en la parte superior de casi todos los métodos en cada preocupación.
+
+07:50.690 --> 07:55.250
+Es una forma sencilla de comprobar que tus métodos públicos no son invocados demasiado pronto.
+
+07:55.250 --> 08:00.860
+Ahora, cada vez que el gestor de comandos despacha ese evento relacionado, lo estamos manejando aquí, podemos
+
+08:00.860 --> 08:04.760
+ver que lo primero que hacemos es asegurarnos de que estamos inicializados.
+
+08:04.760 --> 08:08.600
+Esperamos que cada vez que se ejecute la escena se inicialice, bien.
+
+08:08.600 --> 08:13.460
+Esto es sólo una comprobación adicional que asegura que los ciclos de vida están funcionando correctamente.
+
+08:13.460 --> 08:17.000
+La única funcionalidad personalizada que hacemos aquí es la depuración.
+
+08:17.000 --> 08:17.600
+Cerrar sesión.
+
+08:17.600 --> 08:22.430
+Recuerda, no tenemos ningún UI en pantalla, no estamos usando ningún comportamiento monte.
+
+08:22.430 --> 08:26.960
+Así que nuestra forma de hablar a través de la Vista es simplemente usando una sentencia debug log.
+
+08:26.960 --> 08:31.760
+Esto no significa que necesites seguir estos pasos cada vez que depures el registro en tus proyectos.
+
+08:31.760 --> 08:35.600
+Lo haces tan libremente como lo harías en cualquier proyecto típico.
+
+08:35.600 --> 08:43.070
+Esto es sólo un ejemplo artificial, creado para mostrar algún tipo de retroalimentación de los usuarios sin ningún comportamiento mono
+
+08:43.070 --> 08:46.070
+o UI que mantiene este ejemplo bastante simple.
+
+08:46.070 --> 08:47.900
+A continuación, vamos a ver el servicio de reloj.
+
+08:47.900 --> 08:50.330
+El servicio de reloj extiende el servicio base.
+
+08:50.330 --> 08:57.380
+Al igual que con todas las preocupaciones que extienden una clase base que es opcional, todo lo que hace es hacer la inicialización
+
+08:57.380 --> 09:01.280
+y la configuración del contexto que hemos visto en otras preocupaciones.
+
+09:01.280 --> 09:06.890
+Este servicio está diseñado para cargar algo y luego notificar al sistema cuando está cargado.
+
+09:06.890 --> 09:08.960
+Así que tenemos un evento de unidad personalizado aquí.
+
+09:08.960 --> 09:12.650
+Los datos reales que se cargan desde este servicio es el tiempo de retardo.
+
+09:12.650 --> 09:14.120
+Así que está disponible aquí.
+
+09:14.120 --> 09:17.930
+Dentro de la inicialización, hacemos la configuración básica.
+
+09:17.930 --> 09:23.120
+La única cosa realmente personalizada que hacemos aquí es inicializar ese retardo de tiempo desde algún lugar fuera de esto
+
+09:23.120 --> 09:24.830
+scope load será llamado.
+
+09:24.830 --> 09:31.310
+Y lo que vemos aquí es muy similar a la funcionalidad de la versión no mini MVCs que vimos
+
+09:31.310 --> 09:32.060
+antes.
+
+09:32.240 --> 09:36.470
+Sólo carga un archivo de texto local, toma el valor de la cadena fuera de él tipos.
+
+09:36.470 --> 09:38.300
+Es int y lo almacena para nosotros.
+
+09:38.300 --> 09:43.100
+Algo a destacar aquí es que una vez cargados los datos, se dispara ese evento loaded.
+
+09:43.100 --> 09:46.370
+Aún no hemos visto qué ámbito va a consumir ese evento.
+
+09:46.370 --> 09:46.670
+Siguiente.
+
+09:46.670 --> 09:47.900
+Veamos el controlador.
+
+09:47.900 --> 09:53.510
+Esta va a ser la preocupación más compleja de esta muestra y en la mayoría de las muestras a los controladores donde
+
+09:53.510 --> 09:58.100
+veremos la mayor parte del código, el controlador del reloj extiende el controlador base en este caso.
+
+09:58.100 --> 10:01.640
+Y en todos los casos en los que veas que se usa una clase base, es opcional.
+
+10:01.640 --> 10:05.360
+Puedes, por supuesto, crear tu propia clase que implemente el controlador.
+
+10:05.360 --> 10:11.180
+Pero aquí tenemos alguna funcionalidad de base que va a ser el manejo de la inicialización y teniendo
+
+10:11.180 --> 10:11.870
+en el contexto.
+
+10:11.870 --> 10:17.090
+Debido a que el controlador de reloj se ocupa de algunos argumentos específicos, he decidido que el controlador base es un
+
+10:17.090 --> 10:22.670
+genérico y le pasas los valores de tipo fuerte para la vista del modelo y el servicio.
+
+10:22.670 --> 10:26.870
+En el constructor, pasamos la vista del modelo y el servicio a la clase base.
+
+10:26.870 --> 10:32.450
+En el initialize, hacemos lo típico que hacen todos los concerns, que es manejar el initialize y el
+
+10:32.450 --> 10:34.250
+tomar el contexto y almacenarlo.
+
+10:34.430 --> 10:40.220
+La única cosa realmente personalizada que estamos haciendo aquí es escuchar al modelo, suscribiéndonos a uno de los observables
+
+10:40.220 --> 10:44.150
+y escuchar al servicio para saber cuándo se carga el servicio.
+
+10:44.150 --> 10:49.040
+Ahora, mientras hemos hablado del concepto observable y hemos visto el código fuente del modelo, esto es
+
+10:49.040 --> 10:55.220
+el primer lugar que hemos visto suscribirse al evento Unity desde una de las clases observables.
+
+10:55.220 --> 11:03.140
+Así que cada vez que el valor de tiempo del modelo se establece desde cualquier ámbito, este cambio de valor se dispararía.
+
+11:03.410 --> 11:08.180
+Y de nuevo, el uso de observables es opcional pero recomendado para todos.
+
+11:08.510 --> 11:15.710
+Propiedades dentro del modelo, se obtiene este paradigma automático de ser capaz de establecer el valor y ser
+
+11:15.710 --> 11:18.560
+capaz de escuchar cuando ese valor se ha establecido y cambiado.
+
+11:18.560 --> 11:25.310
+Así que cuando ese servicio se carga, actualizamos el modelo basado en lo que el servicio obtuvo de su externo
+
+11:25.310 --> 11:25.700
+datos.
+
+11:25.700 --> 11:27.530
+Y entonces empezamos el tic-tac del reloj.
+
+11:27.530 --> 11:32.960
+El tic-tac del reloj funciona de forma muy similar a como vimos que lo hacía la versión no mini de la NBC.
+
+11:32.990 --> 11:34.700
+Sin embargo, hay una distinción clave.
+
+11:34.700 --> 11:40.730
+Anteriormente hablé de cómo unity colapsa el modelo vista controlador en varias áreas del motor unity,
+
+11:40.730 --> 11:45.590
+uno de los cuales es que el comportamiento mono en sí es bastante potente y abarca muchas preocupaciones.
+
+11:45.590 --> 11:52.070
+Ahora, en el ejemplo no mini MVCs, he utilizado una rutina CO con el fin de llamar a código repetible porque esto
+
+11:52.070 --> 11:54.200
+ejemplo no utiliza comportamientos mono.
+
+11:54.200 --> 11:58.040
+Ahora no tengo el mismo acceso a la rutina CO.
+
+11:58.040 --> 12:00.140
+Hay muchas formas de fingirlo.
+
+12:00.140 --> 12:05.600
+Lo que he elegido hacer aquí es tener una clase separada en la que eres libre de profundizar si quieres, y
+
+12:05.600 --> 12:08.060
+todo lo que hace es llamar código repetible.
+
+12:08.060 --> 12:10.430
+Lo llamo para este ejemplo Clock Helper.
+
+12:10.430 --> 12:15.110
+Cómo funciona está fuera del alcance de este ejemplo, pero sólo sé que es una solución para cómo llamar a
+
+12:15.110 --> 12:15.950
+código repetible.
+
+12:15.950 --> 12:17.900
+Y fue una de las soluciones que elegí.
+
+12:17.900 --> 12:23.210
+Algo clave a tener en cuenta aquí es aquí en el controlador, cada vez que el tiempo de retardo ocurre, que es
+
+12:23.210 --> 12:26.030
+cada segundo, estoy configurando los datos del modelo.
+
+12:26.030 --> 12:29.210
+Así que tenemos el controlador estableciendo un valor en el modelo.
+
+12:29.210 --> 12:34.760
+Y como hemos escuchado el evento unity para cualquier momento, ese valor del modelo cambia, obtenemos esto
+
+12:34.760 --> 12:35.270
+callback.
+
+12:35.270 --> 12:41.180
+Así que aquí estamos en el controlador, suscribiéndonos a los cambios del modelo y manejándolos, convirtiéndolos en
+
+12:41.180 --> 12:42.050
+comandos.
+
+12:42.050 --> 12:45.860
+Ese es un patrón muy común que veremos en todo MVC.
+
+12:45.860 --> 12:52.910
+Tomamos un evento que está algo desacoplado y lo traducimos en un comando que está altamente desacoplado.
+
+12:53.030 --> 12:59.570
+Recuerde, los comandos son capaces de ser observados y escuchados por cualquiera de las preocupaciones, siempre y cuando tengan
+
+12:59.570 --> 13:02.570
+acceso al contexto, que todas nuestras preocupaciones hacen.
+
+13:02.570 --> 13:10.190
+Así que cada vez que veas invocar comando, puedes pensar que es un mensaje como una estación de radio que cualquier preocupación
+
+13:10.190 --> 13:11.030
+puede escuchar.
+
+13:11.030 --> 13:13.340
+Es un concepto muy poderoso.
+
+13:13.340 --> 13:18.620
+Te ofrece flexibilidad para comunicarte desde y hacia cualquier preocupación.
+
+13:18.620 --> 13:25.040
+Ahora, mientras que eso es muy flexible, queremos seguir las convenciones básicas donde el controlador es el principal
+
+13:25.040 --> 13:30.110
+que estará enviando y recibiendo estos comandos, habrá excepciones y las veremos
+
+13:30.110 --> 13:35.900
+en los ejemplos decidir exactamente cómo utilizar los eventos de la unidad y cómo utilizar los comandos en su proyecto es
+
+13:35.900 --> 13:38.510
+parte del arte de usar MVC.
+
+13:38.510 --> 13:41.180
+En diapositivas anteriores, he sugerido convenciones.
+
+13:41.180 --> 13:42.770
+Eres libre de seguirlas.
+
+13:42.770 --> 13:46.490
+Sólo recomiendo ser consistente si aplicas alguna excepción.
+
+13:46.490 --> 13:47.210
+Eso es todo.
+
+13:47.210 --> 13:52.730
+Hemos cubierto la creación del contexto, el modelo, la vista, el controlador y el servicio.
+
+13:53.000 --> 13:55.910
+A continuación, sólo inicializar todos ellos.
+
+13:56.180 --> 14:02.240
+Así que ahora desde una perspectiva de línea de tiempo, tenemos un comportamiento monarca en la escena y en su inicio
+
+14:02.240 --> 14:05.630
+creó el mini dentro del minis initialize.
+
+14:05.630 --> 14:11.660
+Creó lo que estamos viendo aquí, el cableado de todas estas piezas diferentes y luego inicializar en este
+
+14:11.660 --> 14:17.450
+ejemplo en particular, porque estoy familiarizado con su funcionamiento, sé que cuando el controlador se inicializa,
+
+14:17.450 --> 14:22.190
+eso es lo que inicia el tic-tac y realmente pone en marcha este ejemplo.
+
+14:22.190 --> 14:23.960
+Eso es todo para el resumen del código.
+
+14:23.960 --> 14:27.740
+Este es probablemente el ejemplo de código más denso.
+
+14:27.740 --> 14:32.000
+A pesar de ser una muestra simple, tenemos muchos conceptos aquí.
+
+14:32.000 --> 14:36.770
+Estamos tomando toda la teoría que hemos visto en las diapositivas anteriores y uniéndola.
+
+14:36.770 --> 14:39.950
+Echemos un vistazo a la muestra ejecutándose una vez más aquí en la escena.
+
+14:39.950 --> 14:46.700
+He seleccionado un objeto de juego podemos ver en el inspector que el objeto de juego sólo tiene el ejemplo y voy a
+
+14:46.700 --> 14:47.660
+ejecutar el ejemplo.
+
+14:51.590 --> 14:59.960
+Como se está ejecutando cada retardo de tiempo, que es de 1000 milisegundos, significa que tenemos un tick por segundo.
+
+15:00.710 --> 15:03.770
+Y nuestra declaración de registro de depuración aparece en la consola.
+
+15:04.540 --> 15:06.430
+Este es el ejemplo completo.
+
+15:06.610 --> 15:11.020
+Hemos visto todos los conceptos del servicio modelo vista controlador.
+
+15:11.680 --> 15:17.230
+Cómo se inicializan, cómo el contexto es el pegamento que ayuda a los mensajes entre ellos.
+
+15:17.230 --> 15:23.770
+Y tienes una excelente base para ver la teoría que hemos aprendido aplicada en código C-sharp real.
+
+15:24.100 --> 15:26.740
+Así que esa es nuestra primera muestra completa.
+
+15:26.740 --> 15:29.710
+Viendo código funcionando con mini MVCs.
+
+15:29.710 --> 15:36.520
+Aunque el caso de uso es muy simple, todo lo que estamos haciendo es cada segundo hacer una declaración de registro de depuración.
+
+15:36.520 --> 15:39.730
+Vemos que tenemos un montón de conceptos para hacer que eso suceda.
+
+15:39.730 --> 15:46.240
+Ahora, este es el primer ejemplo que verás cuando se utiliza una arquitectura a medida, como muchos MVC,
+
+15:46.270 --> 15:47.860
+se siente verboso.
+
+15:47.860 --> 15:54.160
+Se siente como, Hey, ¿no podríamos haber hecho que en una sola clase como lo hicimos con el no mini MVC
+
+15:54.160 --> 15:54.670
+versión?
+
+15:54.670 --> 15:58.060
+Pero recuerda, queremos invertir en nuestro software.
+
+15:58.060 --> 16:04.360
+Queremos utilizar estas mejores prácticas y no será en un ejemplo de diez minutos que realmente entendemos
+
+16:04.360 --> 16:11.140
+todo el poder diez días en un proyecto, diez meses en un proyecto, teniendo que la separación de código adecuado
+
+16:11.140 --> 16:15.780
+que viene con un marco a medida es increíblemente poderoso y paga dividendos.
+
+16:15.790 --> 16:16.930
+Eso es todo por ahora.
+
+16:16.930 --> 16:17.650
+Gracias.
