@@ -1,454 +1,454 @@
 WEBVTT
 
 00:00.170 --> 00:00.500
-All right.
+Gut so.
 
 00:00.500 --> 00:03.080
-Here, let's take a look at the bouncy ball demo.
+Schauen wir uns nun die Hüpfball-Demo an.
 
 00:03.110 --> 00:05.900
-I'm a little bit in front of the word demo, but there it is.
+Ich stehe ein bisschen vor dem Wort Demo, aber da ist es.
 
 00:05.900 --> 00:09.580
-So this is part of the mini mvc's course.
+Das ist also ein Teil des Kurses von mini mvc.
 
 00:09.590 --> 00:14.330
-This is a unity architecture course that's available for purchase.
+Das ist ein Unity-Architektur-Kurs, den man kaufen kann.
 
 00:14.330 --> 00:19.970
-And all the code we're showing here, including the full code for the course, is freely available on
+Und der gesamte Code, den wir hier zeigen, einschließlich des vollständigen Codes für den Kurs, ist frei verfügbar auf
 
 00:19.970 --> 00:20.510
 GitHub.
 
 00:20.510 --> 00:21.950
-So you can take a look at that.
+Sie können also einen Blick darauf werfen.
 
 00:21.950 --> 00:30.620
-The link below this course is about you doing architecture Inside Unity, the Model view and controller
+Der Link unter diesem Kurs handelt von der Architektur in Unity, dem Model View und Controller
 
 00:30.620 --> 00:31.160
-in it.
+darin.
 
 00:31.160 --> 00:36.560
-We'll cover the course introduction, we'll talk about unity, we'll look at software design.
+Wir werden die Kurseinführung behandeln, wir werden über Unity sprechen, wir werden uns das Softwaredesign ansehen.
 
 00:36.560 --> 00:42.740
-Let's take a look at the next slide to go even deeper in software design, we look at design principles.
+Schauen wir uns die nächste Folie an, um noch tiefer in das Softwaredesign einzusteigen, wir schauen uns die Designprinzipien an.
 
 00:42.740 --> 00:44.780
-We look at design patterns.
+Wir sehen uns Entwurfsmuster an.
 
 00:44.780 --> 00:46.160
-What are those things?
+Was sind das für Dinge?
 
 00:46.160 --> 00:49.310
-We look at ways to diagram our designs.
+Wir schauen uns an, wie wir unsere Entwürfe grafisch darstellen können.
 
 00:49.310 --> 00:56.090
-With UML, we look at all the different architectural options for unity, and then we land on mini MVCs,
+Mit UML schauen wir uns all die verschiedenen architektonischen Optionen für Unity an, und dann landen wir bei Mini-MVCs,
 
 00:56.120 --> 01:01.170
-which is a custom free architecture as the leading solution.
+die eine benutzerdefinierte Architektur als führende Lösung darstellt.
 
 01:01.850 --> 01:05.150
-Then there's four different sample projects included in the course.
+Dann gibt es vier verschiedene Beispielprojekte, die in dem Kurs enthalten sind.
 
 01:05.150 --> 01:07.790
-But today we're going over even more demos.
+Aber heute werden wir noch mehr Demos durchgehen.
 
 01:07.790 --> 01:09.920
-Besides those, I think I've added ten more.
+Ich glaube, ich habe noch zehn weitere hinzugefügt.
 
 01:09.950 --> 01:13.040
-So we're going to go over the bouncy ball demo here.
+Also, wir werden hier die Hüpfball-Demo durchgehen.
 
 01:13.040 --> 01:14.450
-So let's take a look at that.
+Schauen wir uns das mal an.
 
 01:14.870 --> 01:17.240
-So here I am in the sample project.
+Hier bin ich also im Beispielprojekt.
 
 01:17.240 --> 01:23.540
-If you've gotten the sample project here, the mini MVCs, and followed the instructions from the Git
+Wenn Sie das Beispielprojekt hier bekommen haben, die Mini-MVCs, und den Anweisungen von Git gefolgt sind
 
 01:23.540 --> 01:28.430
-repo, then come into the samples here and just import those samples.
+Repo befolgt hast, dann kommst du zu den Beispielen hier und importierst einfach diese Beispiele.
 
 01:28.430 --> 01:30.350
-Now I've already done that for us here.
+Jetzt habe ich das schon für uns getan.
 
 01:30.380 --> 01:37.640
-We can see the samples and we can see here in the more folder there is the bouncy ball mini.
+Wir können die Samples sehen und wir können hier im more Ordner den bouncy ball mini sehen.
 
 01:37.640 --> 01:39.380
-So let's look at those.
+Schauen wir uns das mal an.
 
 01:40.520 --> 01:41.810
-And here is the demo.
+Und hier ist die Demo.
 
 01:41.810 --> 01:44.120
-So let's just run the demo just to start.
+Starten wir also erst einmal die Demo.
 
 01:46.100 --> 01:47.690
-It's a little bit of audio playing.
+Es wird ein bisschen Audio abgespielt.
 
 01:47.690 --> 01:49.160
-I'm not sure if you can hear that.
+Ich bin nicht sicher, ob man das hören kann.
 
 01:49.950 --> 01:59.220
-But all it's doing is using unity physics to bounce a ball on a surface and then it updates the UI.
+Aber alles, was es tut, ist, Unity-Physik zu verwenden, um einen Ball auf eine Oberfläche aufprallen zu lassen, und dann wird die Benutzeroberfläche aktualisiert.
 
 01:59.250 --> 02:02.060
-Now, there's no interactivity in this demo.
+In dieser Demo gibt es keine Interaktivität.
 
 02:02.070 --> 02:04.500
-Actually, I think I can hit spacebar if I remember.
+Ich glaube, ich kann die Leertaste drücken, wenn ich mich erinnere.
 
 02:05.320 --> 02:05.530
-Now.
+Jetzt.
 
 02:06.610 --> 02:08.410
-Now there's no interactivity.
+Jetzt gibt es keine Interaktivität.
 
 02:08.980 --> 02:14.140
-So all it does here is run on its own and use some physics.
+Alles, was es hier macht, ist, dass es alleine läuft und etwas Physik benutzt.
 
 02:14.140 --> 02:18.400
-So you could take a look at how that physics interacts and you can see that the UI is getting updated
+Du kannst dir also anschauen, wie die Physik interagiert und du kannst sehen, dass die Benutzeroberfläche aktualisiert wird
 
 02:18.400 --> 02:18.690
-there.
+dort.
 
 02:18.700 --> 02:20.530
-So let's take a look at how this is structured.
+Schauen wir uns also an, wie das Ganze strukturiert ist.
 
 02:22.980 --> 02:28.410
-So here in the scene, we've got a world game object that just hides the camera and light, which are
+Hier in der Szene haben wir also ein Weltobjekt, das nur die Kamera und das Licht versteckt, die sind
 
 02:28.410 --> 02:29.490
-not too interesting.
+nicht sehr interessant sind.
 
 02:29.520 --> 02:36.630
-Then we have the bouncy ball view, which has all the graphics that we see there and also the UI.
+Dann haben wir die Bouncy-Ball-Ansicht, die alle Grafiken, die wir dort sehen, und auch die Benutzeroberfläche enthält.
 
 02:36.660 --> 02:38.760
-So let's just look at the UI elements.
+Schauen wir uns also nur die UI-Elemente an.
 
 02:38.790 --> 02:42.090
-It's got the title and status there.
+Es gibt den Titel und den Status.
 
 02:42.090 --> 02:47.550
-So this is the view contains everything we see visually and The View also plays the audio.
+Das ist also die Ansicht, die alles enthält, was wir visuell sehen, und die Ansicht spielt auch den Ton ab.
 
 02:47.580 --> 02:52.770
-Now I'm not sure in the recording if you could hear the audio, but it's just going bounce, bounce,
+Ich bin mir nicht sicher, ob man in der Aufnahme den Ton hören kann, aber er läuft einfach hin und her, hin und her,
 
 02:52.770 --> 02:54.760
-bounce and playing a little noise there.
+bounce und spielt ein kleines Geräusch.
 
 02:54.780 --> 02:56.760
-So that's it for there.
+Das war's dann auch schon.
 
 02:57.420 --> 03:00.540
-Now let's take a look at the example itself.
+Schauen wir uns nun das Beispiel selbst an.
 
 03:00.540 --> 03:04.050
-So this is a monobehaviour called the bouncy ball mini example.
+Dies ist also ein Monobehaviour mit dem Namen "Bouncy ball mini example".
 
 03:04.050 --> 03:09.810
-And all I do is drag in the view as the only reference that it needs to take here.
+Und alles was ich tue ist, die Ansicht als einzige Referenz hierher zu ziehen.
 
 03:09.810 --> 03:12.540
-And then this is off and ready to go.
+Und dann ist das hier fertig und einsatzbereit.
 
 03:12.540 --> 03:14.190
-So let's look at the source code here.
+Schauen wir uns also den Quellcode hier an.
 
 03:16.110 --> 03:17.810
-Zoom out a little bit here.
+Zoomen Sie hier ein wenig heraus.
 
 03:17.820 --> 03:19.950
-So here's the example.
+Hier ist also das Beispiel.
 
 03:20.040 --> 03:23.970
-The example is going to take the view in as a serialized field.
+In diesem Beispiel wird die Ansicht als serialisiertes Feld verwendet.
 
 03:24.150 --> 03:27.840
-Then it is going to just start in the start here.
+Dann wird es hier einfach mit dem Start beginnen.
 
 03:27.840 --> 03:31.920
-It's going to create a new bouncing bouncy ball mini and pass in the view.
+Es wird ein neuer Bouncing Bouncy Ball Mini erstellt und in die Ansicht übergeben.
 
 03:31.920 --> 03:37.290
-So Mini here in this terminology is the wrapper for the entire app.
+Mini ist also in dieser Terminologie der Wrapper für die gesamte App.
 
 03:37.290 --> 03:41.940
-So any time you see Mini in the source code, it's meant to be the most parent structure.
+Jedes Mal, wenn du Mini im Quellcode siehst, soll es die übergeordnete Struktur sein.
 
 03:41.940 --> 03:45.420
-And inside of it, it has several elements, including The View.
+Und innerhalb dieser Struktur gibt es mehrere Elemente, einschließlich The View.
 
 03:45.870 --> 03:47.460
-Let's take a look at that next.
+Schauen wir uns das als nächstes an.
 
 03:50.920 --> 03:54.250
-So opening up The view.
+Öffnen Sie also die Ansicht.
 
 03:56.600 --> 03:58.280
-The view is going to extend.
+Die Ansicht wird erweitert.
 
 03:58.310 --> 03:58.860
-I'm sorry.
+Es tut mir leid.
 
 03:58.880 --> 04:00.890
-I'm opening up the Mini to start with.
+Ich öffne den Mini, um damit zu beginnen.
 
 04:01.370 --> 04:04.580
-So in the Mini I take the view element.
+Im Mini nehme ich also das Ansichtselement.
 
 04:04.610 --> 04:07.040
-It also has an audio controller there.
+Es hat auch einen Audio-Controller dort.
 
 04:07.040 --> 04:11.180
-And here's what we do inside the mini initialize.
+Und hier ist, was wir innerhalb der Mini-Initialisierung tun.
 
 04:11.210 --> 04:19.700
-We're going to create a context, a model controller service, and it's going to wire them all together
+Wir erstellen einen Kontext, einen Model Controller Service, und verbinden sie alle miteinander
 
 04:19.700 --> 04:21.400
-here in this one line.
+hier in dieser einen Zeile.
 
 04:21.410 --> 04:28.040
-So any time you see the controller getting initialized in the mini world, the controller is the most,
+Jedes Mal, wenn Sie sehen, dass der Controller in der Miniwelt initialisiert wird, ist der Controller der wichtigste,
 
 04:28.430 --> 04:32.750
-let's say, most knowledgeable concern in the whole system.
+sagen wir mal, der sachkundigste Bereich im ganzen System.
 
 04:32.750 --> 04:36.020
-So the mini itself has four parts inside.
+Der Mini selbst hat also vier Teile im Inneren.
 
 04:36.020 --> 04:40.670
-One of those parts is the controller, and the controller is the most knowledgeable part.
+Einer dieser Teile ist der Controller, und der Controller ist der wissendste Teil.
 
 04:40.670 --> 04:46.550
-So it takes in a reference to the other three concerns and it's what will say, Hey, data model, what's
+Er nimmt also eine Referenz zu den anderen drei Bereichen auf und sagt: Hey, Datenmodell, was ist
 
 04:46.550 --> 04:47.450
-your value?
+dein Wert?
 
 04:47.480 --> 04:50.060
-Hey view, did anybody interact with you?
+Hey View, hat jemand mit dir interagiert?
 
 04:50.090 --> 04:52.430
-Hey service, can you load something for me?
+Hey service, kannst du etwas für mich laden?
 
 04:52.430 --> 04:54.830
-It's the controller that's going to glue all that together.
+Es ist der Controller, der das alles zusammenfügt.
 
 04:55.520 --> 04:57.780
-So let's look at the model quickly.
+Schauen wir uns also schnell das Modell an.
 
 04:58.170 --> 05:04.650
-The model is going to hold values for how many times have we counted up and what is the maximum?
+Das Modell wird Werte für wie viele Male wir hochgezählt haben und was ist das Maximum?
 
 05:04.650 --> 05:07.560
-So it's going to say one of three, two of three.
+Es wird also sagen: eins von drei, zwei von drei.
 
 05:07.560 --> 05:12.510
-And then when it reaches three of three, it's going to reset itself one of three, two of three.
+Und dann, wenn es drei von drei erreicht, wird es sich selbst auf eins von drei, zwei von drei zurücksetzen.
 
 05:12.510 --> 05:14.580
-So that's how those two values work there.
+So funktionieren also diese beiden Werte hier.
 
 05:14.610 --> 05:17.460
-Here, notice that they're both set to zero.
+Hier siehst du, dass sie beide auf Null gesetzt sind.
 
 05:17.460 --> 05:21.360
-So we'll take a look at what sets the max to three in a moment.
+Wir werden uns also gleich ansehen, was den Maximalwert auf drei setzt.
 
 05:22.020 --> 05:23.700
-Now let's look at the service.
+Schauen wir uns nun den Dienst an.
 
 05:23.700 --> 05:27.960
-So the service layer is what is meant to call any external data.
+Die Serviceschicht ist also dafür gedacht, externe Daten abzurufen.
 
 05:27.960 --> 05:34.620
-If your game does not need any external data from the beginning or ever, you can omit this step.
+Wenn Ihr Spiel von Anfang an keine externen Daten benötigt, können Sie diesen Schritt auslassen.
 
 05:34.620 --> 05:36.150
-You don't need to have a service.
+Du brauchst keinen Dienst zu haben.
 
 05:36.150 --> 05:43.080
-But typically today's games call back end services, local files that are external to the game itself,
+Aber typischerweise rufen die heutigen Spiele Backend-Dienste auf, lokale Dateien, die außerhalb des Spiels selbst liegen,
 
 05:43.080 --> 05:49.140
-like we see here, and this service concept is a great one for that.
+wie wir hier sehen, und dieses Dienstkonzept ist dafür hervorragend geeignet.
 
 05:49.140 --> 05:56.850
-So here all it's going to do is it's going to load a local text file and then parse that value into
+Hier wird also nur eine lokale Textdatei geladen und dieser Wert dann geparst in
 
 05:56.850 --> 05:58.830
-the bounce bounce count.
+den Bounce Bounce Count.
 
 05:58.860 --> 06:01.530
-Max So let's look at this text file.
+Max Schauen wir uns also diese Textdatei an.
 
 06:01.710 --> 06:04.200
-It's here in resources texts.
+Es ist hier in den Ressourcentexten.
 
 06:04.380 --> 06:07.440
-If I open it up, it starts with the value three.
+Wenn ich sie öffne, beginnt sie mit dem Wert drei.
 
 06:07.440 --> 06:11.280
-So it seems a little silly here that you would have a value.
+Es scheint also ein bisschen dumm, dass man hier einen Wert hat.
 
 06:11.310 --> 06:14.010
-Why not just hard code three in C sharp?
+Warum nicht einfach drei in Cis codieren?
 
 06:14.040 --> 06:17.580
-This is just an arbitrary demo to show.
+Dies ist nur ein willkürliches Beispiel, um zu zeigen.
 
 06:17.580 --> 06:21.330
-Let's put some data outside the app and go load it.
+Lass uns ein paar Daten außerhalb der App platzieren und sie laden.
 
 06:21.330 --> 06:24.830
-I could have also loaded this from the back end, for example.
+Ich hätte dies auch vom Backend aus laden können, zum Beispiel.
 
 06:24.840 --> 06:26.190
-So that's it for the service.
+Das war's also mit dem Dienst.
 
 06:26.220 --> 06:29.700
-It's just going to go load that value three and pass it back to the controller.
+Er lädt einfach diesen Wert drei und gibt ihn an den Controller zurück.
 
 06:30.430 --> 06:31.780
-Now let's look at the controller.
+Schauen wir uns nun den Controller an.
 
 06:31.810 --> 06:36.010
-This is the last thing that we need to look at in the controller here.
+Dies ist die letzte Sache, die wir uns in der Steuerung ansehen müssen.
 
 06:36.740 --> 06:40.820
-We inherit from base controller, as the comment says here.
+Wir erben vom Basis-Controller, wie der Kommentar hier sagt.
 
 06:41.060 --> 06:44.570
-By the way, always base is optional to extend.
+Übrigens, base ist immer optional zu erweitern.
 
 06:44.570 --> 06:48.950
-It's just going to give you some free functionality, but you can begin to see through these examples
+Es wird Ihnen nur ein paar freie Funktionen geben, aber Sie können anfangen, durch diese Beispiele zu sehen
 
 06:48.950 --> 06:53.590
-how few lines of code there are to get this architecture set up.
+wie wenige Codezeilen nötig sind, um diese Architektur einzurichten.
 
 06:53.600 --> 06:59.210
-Well, I say that also someone looking at this example could say, Hey, I could bounce a ball with
+Nun, ich behaupte, dass auch jemand, der sich dieses Beispiel ansieht, sagen könnte: "Hey, ich könnte einen Ball springen lassen mit
 
 06:59.210 --> 07:02.690
-one monobehaviour why do I need these other classes?
+ein Monobehaviour, warum brauche ich diese anderen Klassen?
 
 07:02.690 --> 07:08.060
-But again, the example here is you were learning fundamentals in a very simple use case.
+Aber auch hier ist das Beispiel, dass Sie die Grundlagen in einem sehr einfachen Anwendungsfall lernen.
 
 07:08.060 --> 07:14.540
-Now imagine growing your project up to the size of Fortnite managing multiplayer metagame.
+Stellen Sie sich nun vor, dass Ihr Projekt auf die Größe von Fortnite anwächst, um das Multiplayer-Metaspiel zu verwalten.
 
 07:14.540 --> 07:18.380
-Each of the players, all of the things you can do with your player.
+Jeder der Spieler, all die Dinge, die man mit seinem Spieler machen kann.
 
 07:18.380 --> 07:23.270
-We would have thousands of classes and tens of thousands of lines of code.
+Wir würden Tausende von Klassen und Zehntausende von Codezeilen haben.
 
 07:23.300 --> 07:29.930
-Having this best practices divided into model view controller and service really pays dividends on your
+Die Aufteilung dieser Best Practices in Model-View-Controller und Service macht sich wirklich bezahlt bei
 
 07:29.930 --> 07:30.800
-projects.
+Projekte.
 
 07:30.800 --> 07:32.510
-That's why we're starting so simple.
+Deshalb fangen wir so einfach an.
 
 07:32.510 --> 07:38.060
-So it's a common concern when people are getting into learning architectures, it feels like, Hey,
+Es ist also eine häufige Sorge, wenn Leute anfangen, Architekturen zu lernen, es fühlt sich an wie, Hey,
 
 07:38.060 --> 07:42.310
-that's a lot of classes or a lot of lines of code to get simple things done.
+das sind eine Menge Klassen oder eine Menge Codezeilen, um einfache Dinge zu erledigen.
 
 07:42.320 --> 07:48.350
-It's true, but you're paying in some investment time now to learn these fundamentals.
+Das stimmt, aber Sie investieren jetzt etwas Zeit, um diese Grundlagen zu lernen.
 
 07:48.350 --> 07:55.610
-So as your project scale your set right, it's a wonderful thing that three months into a solo project
+Wenn du also dein Projekt richtig skalierst, ist es eine wunderbare Sache, dass du nach drei Monaten in einem Soloprojekt
 
 07:55.610 --> 08:02.000
-or two weeks into a five person project, there is not a question of where the next feature should go
+oder zwei Wochen nach einem Fünf-Personen-Projekt, keine Frage mehr ist, wohin der nächste Beitrag gehen soll
 
 08:02.000 --> 08:07.850
-because you guys are all working together on the same architectural pattern and you know, hey, a button
+weil ihr alle zusammen an der gleichen Architektur arbeitet und ihr wisst, hey, eine Schaltfläche
 
 08:07.850 --> 08:12.530
-click well, that's going to start in The view and that's going to then go to the controller and then
+klicken, nun, das wird in der Ansicht beginnen und das wird dann zum Controller gehen und dann
 
 08:12.530 --> 08:13.400
-go to the model.
+zum Modell gehen.
 
 08:13.430 --> 08:14.810
-You're speaking the same language.
+Du sprichst die gleiche Sprache.
 
 08:14.810 --> 08:21.560
-So the Udemy course talks about the benefits and the cost benefit analysis of bringing on new tech like
+Der Udemy-Kurs spricht also über die Vorteile und die Kosten-Nutzen-Analyse der Einführung neuer Technologien wie
 
 08:21.560 --> 08:23.120
-this many MVCs.
+diese vielen MVCs.
 
 08:23.120 --> 08:24.800
-So back to the controller here.
+Also zurück zum Controller hier.
 
 08:24.800 --> 08:29.120
-What we do is we initialize the view with some text fields.
+Wir initialisieren die Ansicht mit einigen Textfeldern.
 
 08:29.120 --> 08:31.820
-We go listen to that service here.
+Wir hören diesen Dienst hier ab.
 
 08:32.680 --> 08:36.430
-And then whenever the service loads, we take that value.
+Und wenn der Dienst geladen wird, nehmen wir diesen Wert.
 
 08:36.460 --> 08:39.670
-We loaded from the text field and we pass it to the model.
+Wir haben ihn aus dem Textfeld geladen und übergeben ihn an das Modell.
 
 08:39.790 --> 08:42.520
-Then we listen to the view and we say, Hey, view.
+Dann hören wir auf die Ansicht und sagen: Hey, Ansicht.
 
 08:42.520 --> 08:49.630
-Any time the physics detects the ball has bounced, then let's capture that here and we'll update that
+Jedes Mal, wenn die Physik feststellt, dass der Ball gesprungen ist, erfassen wir das hier und aktualisieren es
 
 08:49.630 --> 08:53.490
-listening anytime that the bounce count has changed here.
+Jedes Mal, wenn sich die Anzahl der Sprünge geändert hat, hören wir hier zu.
 
 08:53.500 --> 08:55.630
-So there's a little bit more to look at here.
+Hier gibt es also noch ein bisschen mehr zu sehen.
 
 08:55.630 --> 08:56.610
-You can dig in.
+Du kannst dich einarbeiten.
 
 08:56.620 --> 09:02.170
-We also have a little bit of the command pattern which we'll look at in a future example.
+Wir haben auch ein wenig von dem Befehlsmuster, das wir uns in einem späteren Beispiel ansehen werden.
 
 09:02.170 --> 09:04.060
-So let's run the demo one more time.
+Führen wir die Demo also noch einmal aus.
 
 09:08.740 --> 09:11.680
-Yeah, I can see that the mic is picking up the bouncing.
+Ja, ich kann sehen, dass das Mikrofon das Aufprallen aufnimmt.
 
 09:13.350 --> 09:14.130
-So it just goes.
+Also geht es einfach.
 
 09:14.130 --> 09:14.820
-One, two, three.
+Eins, zwei, drei.
 
 09:14.820 --> 09:15.510
-One, two, three.
+Eins, zwei, drei.
 
 09:15.510 --> 09:16.290
-One, two, three.
+Eins, zwei, drei.
 
 09:16.740 --> 09:18.420
-That's it for the count up demo.
+Das war's mit der Zähldemo.

@@ -1,664 +1,664 @@
 WEBVTT
 
 00:00.150 --> 00:06.650
-Here I am in an empty unity project set up with many NPCs framework added as well as the samples imported.
+Hier bin ich in einem leeren Unity-Projekt, das mit vielen NPCs eingerichtet ist und die Beispiele importiert hat.
 
 00:06.660 --> 00:10.170
-Here's the folder structure for the version of the game with Mini.
+Hier ist die Ordnerstruktur für die Version des Spiels mit Mini.
 
 00:10.770 --> 00:15.360
-Now we've seen this folder structure before in earlier samples, so I won't go into great detail.
+Wir haben diese Ordnerstruktur bereits in früheren Beispielen gesehen, daher werde ich nicht weiter ins Detail gehen.
 
 00:15.360 --> 00:20.400
-One thing I do want to mention is that just for demo sake, I've chosen to have the pickup component
+Eine Sache, die ich erwähnen möchte, ist, dass ich die Komponente "Pickup" nur zur Demonstration gewählt habe
 
 00:20.430 --> 00:24.750
-be outside of the mini MVC structurally and within the code.
+außerhalb der Mini-MVC-Struktur und innerhalb des Codes zu haben.
 
 00:24.750 --> 00:26.880
-During the sample overview, I'll mention why.
+Während der Beispielübersicht werde ich erwähnen, warum.
 
 00:26.880 --> 00:29.460
-Let's start by opening the main example script.
+Beginnen wir mit dem Öffnen des Hauptbeispielskripts.
 
 00:29.460 --> 00:34.200
-Here we are in the main sample script as we've done before, This extends mono behavior and here we
+Hier sind wir im Hauptbeispielskript, wie wir es schon vorher gemacht haben, Dieses erweitert das Mono-Verhalten und hier haben wir
 
 00:34.200 --> 00:40.440
-have a few serialized fields in earlier samples we've seen at maximum one serialized field used at this
+haben ein paar serialisierte Felder in früheren Beispielen haben wir maximal ein serialisiertes Feld an dieser Stelle gesehen
 
 00:40.440 --> 00:40.980
-level.
+Ebene.
 
 00:40.980 --> 00:42.320
-But here we have three.
+Aber hier haben wir drei.
 
 00:42.330 --> 00:46.800
-This is because this version of Mini MVCs has three views.
+Das liegt daran, dass diese Version von Mini MVCs drei Ansichten hat.
 
 00:46.800 --> 00:51.780
-There's lots of ways you can integrate the views into the framework, but a nice flow I have here is
+Es gibt viele Möglichkeiten, wie man die Views in das Framework integrieren kann, aber ein schöner Ablauf, den ich hier habe, ist
 
 00:51.780 --> 00:57.480
-to serialize them on the example script and then drag in references from the related game objects of
+sie im Beispielskript zu serialisieren und dann Referenzen aus den zugehörigen Spielobjekten von
 
 00:57.480 --> 01:01.170
-view, player and UI into the inspector window.
+View, Player und UI in das Inspektorfenster.
 
 01:01.170 --> 01:06.450
-Here in the start we create the mini class, pass in those references and initialize.
+Hier im Start erstellen wir die Miniklasse, übergeben diese Referenzen und initialisieren.
 
 01:06.450 --> 01:08.250
-Let's take a look at the scene hierarchy.
+Werfen wir einen Blick auf die Szenenhierarchie.
 
 01:08.250 --> 01:14.820
-So here in the scene hierarchy, the main example script has three serialized references where I've
+Hier in der Szenenhierarchie hat das Hauptbeispielskript drei serialisierte Referenzen, die ich
 
 01:14.820 --> 01:19.080
-just dragged in references to those other three game objects sitting in the scene.
+Referenzen zu den anderen drei Spielobjekten in der Szene eingefügt habe.
 
 01:19.080 --> 01:24.810
-We have the player view with a script, we have the input view with a script and we have the UI view
+Wir haben die Spieleransicht mit einem Skript, wir haben die Eingabeansicht mit einem Skript und wir haben die UI-Ansicht
 
 01:24.810 --> 01:25.650
-with a script.
+mit einem Skript.
 
 01:25.650 --> 01:32.460
-You can imagine with a more complex project you may want to break your UI and other view elements into
+Sie können sich vorstellen, dass Sie bei einem komplexeren Projekt Ihre UI und andere Ansichtselemente aufteilen möchten in
 
 01:32.460 --> 01:33.930
-several game objects.
+mehrere Spielobjekte aufteilen.
 
 01:34.760 --> 01:40.460
-Each one can be handled independently or perhaps assigned to different developers with less opportunity
+Jedes dieser Objekte kann unabhängig behandelt werden oder vielleicht verschiedenen Entwicklern zugewiesen werden, die weniger Gelegenheit haben
 
 01:40.460 --> 01:43.130
-for conflicts and work overlaps here.
+für Konflikte und Arbeitsüberschneidungen.
 
 01:43.160 --> 01:49.610
-The reasoning is logical that the player has a different role within the game than the UI, and the
+Die Argumentation ist logisch, denn der Spieler hat eine andere Rolle im Spiel als die UI, und die
 
 01:49.610 --> 01:51.410
-input too is quite different.
+Input ist auch ganz anders.
 
 01:51.440 --> 01:53.060
-Let's resume looking at the code.
+Schauen wir uns den Code noch einmal an.
 
 01:53.060 --> 01:54.780
-Here we are in the Rollerball mini.
+Hier sind wir im Rollerball mini.
 
 01:54.800 --> 01:57.990
-Here I'm implementing I Mini NBCs.
+Hier implementiere ich I Mini NBCs.
 
 01:58.010 --> 02:03.860
-In previous samples we have been sub classing the base mini MVC class.
+In den vorangegangenen Beispielen haben wir die MVC-Basisklasse Mini unterteilt.
 
 02:04.540 --> 02:05.320
-Subclasses.
+Unterklassen.
 
 02:05.350 --> 02:10.290
-Makes sense when you want exactly one model view controller and service.
+Macht Sinn, wenn man genau einen Model-View-Controller und Service haben möchte.
 
 02:10.300 --> 02:13.210
-Having one of each is common for simple projects.
+Für einfache Projekte ist es üblich, jeweils eine Klasse zu haben.
 
 02:13.210 --> 02:14.920
-So that's the default that makes sense.
+Das ist also der Standard, der Sinn macht.
 
 02:14.920 --> 02:20.350
-However, here, because we're going to have more granularity as we scale up, we simply implement this
+Hier jedoch, weil wir mehr Granularität haben werden, wenn wir das Projekt vergrößern, implementieren wir einfach Folgendes
 
 02:20.350 --> 02:25.450
-interface and it gives us more flexibility to structure things the way we'd like here in the properties.
+Schnittstelle, und das gibt uns mehr Flexibilität, die Dinge so zu strukturieren, wie wir sie hier in den Eigenschaften haben wollen.
 
 02:25.450 --> 02:29.560
-We set up the initialized in context as we have before and other samples.
+Wir richten die Initialisierung im Kontext ein, so wie wir es zuvor und in anderen Beispielen getan haben.
 
 02:29.560 --> 02:37.180
-We set up our model, we set up multiple views, we set up multiple controllers and we set up our service
+Wir richten unser Modell ein, wir richten mehrere Views ein, wir richten mehrere Controller ein und wir richten unseren Service ein
 
 02:37.180 --> 02:38.500
-down here in the constructor.
+hier unten im Konstruktor.
 
 02:38.500 --> 02:42.460
-We accept the three parameters corresponding to the UI's.
+Wir akzeptieren die drei Parameter, die den UI's entsprechen.
 
 02:42.460 --> 02:48.010
-Remember, those are serialized fields and for ease of use, just dragged into the scene and for ease
+Erinnern Sie sich, das sind serialisierte Felder und der Einfachheit halber werden sie einfach in die Szene gezogen und der Einfachheit halber
 
 02:48.010 --> 02:49.930
-of use are passed in through here.
+der Einfachheit halber werden sie hier durchgereicht.
 
 02:49.930 --> 02:55.410
-In our initialize we set up the context, the model service and controller as we've seen before.
+In unserem initialize richten wir den Kontext, den Model Service und den Controller ein, wie wir es schon gesehen haben.
 
 02:55.420 --> 02:59.680
-Notice here in the controller, we're taking more parameters than we've seen before.
+Beachten Sie, dass wir hier im Controller mehr Parameter als zuvor verwenden.
 
 02:59.680 --> 03:00.640
-Just like this.
+Genau wie hier.
 
 03:00.640 --> 03:03.310
-Mini has some additional views and controllers.
+Mini hat einige zusätzliche Ansichten und Steuerungen.
 
 03:03.310 --> 03:06.640
-This constructor itself takes a few additional parameters.
+Dieser Konstruktor selbst benötigt ein paar zusätzliche Parameter.
 
 03:06.640 --> 03:12.760
-The order we initialize things in here is generally not important, but often since controllers take
+Die Reihenfolge, in der wir die Dinge hier initialisieren, ist im Allgemeinen nicht wichtig, aber da die Controller oft
 
 03:12.760 --> 03:20.020
-parameters in their constructor, we create the controllers last and even initialize them last that
+Parameter in ihrem Konstruktor nehmen, erstellen wir die Controller zuletzt und initialisieren sie auch zuletzt, so dass
 
 03:20.020 --> 03:21.430
-way when they're initialized.
+Weise, wenn sie initialisiert werden.
 
 03:21.430 --> 03:26.920
-We know that the parts we'd passed into them beforehand are already initialized From all the things
+Wir wissen, dass die Teile, die wir ihnen vorher übergeben haben, bereits initialisiert sind.
 
 03:26.920 --> 03:28.000
-we've initialized.
+die wir initialisiert haben.
 
 03:28.000 --> 03:34.960
-We've already seen examples in previous samples of the model and of the controllers and of the view.
+Wir haben bereits in früheren Beispielen Beispiele für das Modell, die Controller und den View gesehen.
 
 03:34.960 --> 03:38.860
-So I'm going to take a look at the controller here since it does something unique.
+Ich werde mir jetzt den Controller ansehen, da er etwas Einzigartiges tut.
 
 03:38.860 --> 03:42.070
-Here we are in the controller class and some previous samples.
+Hier sind wir in der Controller-Klasse und einigen früheren Beispielen.
 
 03:42.070 --> 03:45.640
-We've seen our controller extend a base controller.
+Wir haben gesehen, dass unser Controller einen Basis-Controller erweitert.
 
 03:45.640 --> 03:52.540
-Again, the base makes the most sense when you have one model, one view, one controller and one service,
+Wiederum macht die Basis den meisten Sinn, wenn man ein Model, einen View, einen Controller und einen Service hat,
 
 03:52.540 --> 03:54.010
-which is a good default.
+was ein guter Standard ist.
 
 03:54.130 --> 03:59.560
-However, any time you want to have more of these concerns, for example, multiple views.
+Wenn Sie jedoch mehr davon haben wollen, z.B. mehrere Views.
 
 04:00.400 --> 04:02.620
-We need a custom controller to manage those.
+Wir brauchen einen eigenen Controller, um diese zu verwalten.
 
 04:02.620 --> 04:08.070
-So here we implement AI controller as we've seen before, and then we do the implementation custom below.
+Hier implementieren wir also einen AI-Controller, wie wir ihn schon gesehen haben, und dann machen wir die benutzerdefinierte Implementierung unten.
 
 04:08.080 --> 04:11.290
-We handle initialized in context as we've seen in the past.
+Wir behandeln die Initialisierung im Kontext, wie wir es in der Vergangenheit gesehen haben.
 
 04:11.290 --> 04:16.300
-Inside the constructor, we pass all the arguments in and store them, and inside the initialize we
+Innerhalb des Konstruktors übergeben wir alle Argumente und speichern sie, und innerhalb des Initialisierungsprozesses
 
 04:16.300 --> 04:21.400
-do our typical setup with initialized in context and then move on to some custom details.
+machen wir unser typisches Setup mit initialized in context und gehen dann zu einigen benutzerdefinierten Details über.
 
 04:21.400 --> 04:26.680
-We observe events from the model, we observe events from The View, and we set up the service kicking
+Wir beobachten Ereignisse aus dem Modell, wir beobachten Ereignisse aus der Ansicht, und wir richten den Dienst ein, der startet
 
 04:26.680 --> 04:29.650
-off the loading Any time the UI restart button is called.
+der das Laden jedes Mal abbricht, wenn der UI-Neustart-Button aufgerufen wird.
 
 04:29.650 --> 04:31.330
-This method gets called as well.
+Diese Methode wird ebenfalls aufgerufen.
 
 04:31.330 --> 04:37.510
-The implementation is exactly like we've seen in the non mini MVC version where we offer the user a
+Die Implementierung ist genau so, wie wir es in der Nicht-Mini-MVC-Version gesehen haben, wo wir dem Benutzer eine
 
 04:37.510 --> 04:44.680
-dialog window of are you sure you want to restart and then handle the OC or cancel concepts here when
+Dialogfenster mit der Frage "Sind Sie sicher, dass Sie neu starten wollen?" anbieten und dann die OC- oder Cancel-Konzepte hier behandeln, wenn
 
 04:44.680 --> 04:45.730
-the service is loaded.
+der Dienst geladen wird.
 
 04:45.730 --> 04:49.540
-This gets called and we set up the model values any time our input.
+Dies wird aufgerufen und wir richten die Modellwerte ein, wenn wir sie eingeben.
 
 04:49.540 --> 04:51.730
-Vue dispatches an event.
+Vue löst ein Ereignis aus.
 
 04:52.450 --> 04:53.740
-This method gets called.
+Diese Methode wird aufgerufen.
 
 04:53.740 --> 04:55.120
-Two things of note here.
+Zwei Dinge sind hier zu beachten.
 
 04:55.120 --> 05:01.300
-First of all, we have the model storing a value for our we currently in game over or are we currently
+Erstens, das Modell speichert einen Wert für den aktuellen Spielstand oder für die aktuelle Situation
 
 05:01.300 --> 05:01.810
-paused.
+pausiert.
 
 05:01.810 --> 05:07.450
-So several places in the code here you'll see that if either of those is the case, we exit out of a
+An mehreren Stellen des Codes werden Sie sehen, dass wir, wenn einer der beiden Fälle zutrifft, das Spiel verlassen, indem wir
 
 05:07.450 --> 05:08.170
-method early.
+Methode frühzeitig verlassen.
 
 05:08.170 --> 05:10.120
-So essentially nothing is happening.
+Es passiert also im Grunde nichts.
 
 05:10.120 --> 05:12.190
-If we're paused or we're game over.
+Wenn wir pausieren oder das Spiel vorbei ist.
 
 05:12.190 --> 05:18.100
-And then as we're beginning to see a very common pattern here, here in the controller, we're listening
+Und dann sehen wir hier ein sehr häufiges Muster, hier im Controller, wir hören zu
 
 05:18.100 --> 05:19.720
-to The View.
+auf die Ansicht.
 
 05:19.720 --> 05:26.050
-When the View calls the method, this method here gets called and we translate that view event into
+Wenn die View die Methode aufruft, wird diese Methode hier aufgerufen und wir übersetzen das View-Ereignis in
 
 05:26.050 --> 05:26.890
-a command.
+einen Befehl.
 
 05:27.340 --> 05:34.570
-Again, taking the very coupled logic of a view event and broadcasting that like a radio station in
+Nochmals, wir nehmen die sehr gekoppelte Logik eines View-Ereignisses und senden es wie einen Radiosender in
 
 05:34.570 --> 05:35.920
-the form of a command.
+in Form eines Befehls.
 
 05:36.100 --> 05:42.160
-At this point, any concern that wants to listen in can listen in to this input value, which is a vector
+An diesem Punkt kann jeder Konzern, der zuhören will, diesen Eingabewert abhören, der ein Vektor ist
 
 05:42.160 --> 05:48.070
-of which direction the user is hitting using the arrow keys any time the view for the player detects
+der angibt, in welche Richtung der Benutzer mit den Pfeiltasten drückt, wenn die Ansicht für den Player erkennt
 
 05:48.100 --> 05:49.660
-a collision with a pickup.
+eine Kollision mit einem Pickup.
 
 05:49.660 --> 05:54.700
-This method is called We set the pickup invisible since it's been collected and play a sound and then
+Diese Methode wird aufgerufen Wir machen den Pickup unsichtbar, da er eingesammelt wurde, und spielen einen Sound und dann
 
 05:54.700 --> 05:58.780
-we count up the score value from 0 to 1, two and three.
+zählen wir den Punktestand von 0 bis 1, zwei und drei hoch.
 
 05:58.780 --> 06:02.020
-And if our score max value is three, then we call it game over.
+Wenn der Maximalwert der Punktzahl drei ist, ist das Spiel vorbei.
 
 06:02.020 --> 06:07.840
-We're beginning to see some patterns as we continue through these samples, as well as seeing flexibility
+Wir beginnen, einige Muster zu erkennen, wenn wir mit diesen Stichproben weitermachen, und wir sehen auch Flexibilität
 
 06:07.840 --> 06:10.690
-in how we can handle different aspects of game development.
+in der Art und Weise, wie wir verschiedene Aspekte der Spielentwicklung behandeln können.
 
 06:10.690 --> 06:16.990
-So here we are in the controller and we're seeing this event broadcast from the model that, hey, my
+Hier sind wir also im Controller und wir sehen dieses Ereignis, das vom Modell gesendet wird, dass, hey, mein
 
 06:16.990 --> 06:18.130
-score has been updated.
+Punktestand wurde aktualisiert.
 
 06:18.130 --> 06:21.280
-So let's think of a few different ways that you could handle that.
+Überlegen wir uns also, wie man das handhaben könnte.
 
 06:21.280 --> 06:25.360
-Different concerns might be interested in the score being updated.
+Verschiedene Unternehmen könnten daran interessiert sein, dass der Punktestand aktualisiert wird.
 
 06:25.360 --> 06:31.990
-For example, the UI may want to update the number of the score value shown on the screen, and in theory,
+Zum Beispiel könnte die Benutzeroberfläche die Nummer des auf dem Bildschirm angezeigten Wertes aktualisieren wollen, und zwar theoretisch,
 
 06:31.990 --> 06:37.900
-some other concern may want to handle special effects or audio or something else that should happen
+ein anderer Bereich könnte Spezialeffekte oder Audio oder etwas anderes, das passieren soll, behandeln wollen
 
 06:37.900 --> 06:39.370
-every time score changes.
+jedes Mal, wenn sich der Spielstand ändert.
 
 06:39.370 --> 06:45.670
-All of those concerns could get a reference to the model and subscribe to the same event and handle
+Alle diese Bereiche könnten einen Verweis auf das Modell erhalten und dasselbe Ereignis abonnieren und behandeln
 
 06:45.670 --> 06:47.500
-the consequences we're seeing here.
+die Konsequenzen, die wir hier sehen.
 
 06:47.620 --> 06:49.090
-That would be one solution.
+Das wäre eine Lösung.
 
 06:49.090 --> 06:52.480
-However, in this sample, we're doing a different solution.
+In diesem Beispiel machen wir jedoch eine andere Lösung.
 
 06:52.480 --> 06:59.170
-The only concern that's listening to that model change is the controller, and the controller is translating
+Der einzige Bereich, der auf diese Modelländerung hört, ist der Controller, und der Controller übersetzt
 
 06:59.170 --> 07:00.940
-that event into a command.
+dieses Ereignis in einen Befehl.
 
 07:00.940 --> 07:07.270
-Since commands are a radio station that are being broadcast to any concern, this is an especially easy
+Da Befehle ein Radiosender sind, der an jeden beliebigen Konzern gesendet wird, ist dies eine besonders einfache
 
 07:07.270 --> 07:12.700
-way for any concern to to listen in on this command without needing a reference to the model.
+Weg für jeden Konzern, diesen Befehl mitzuhören, ohne einen Bezug zum Modell zu benötigen.
 
 07:13.030 --> 07:14.890
-That's the key differentiator there.
+Das ist das entscheidende Unterscheidungsmerkmal.
 
 07:14.890 --> 07:18.190
-No reference to the model is needed to listen to this command.
+Es wird kein Verweis auf das Modell benötigt, um auf diesen Befehl zu hören.
 
 07:18.190 --> 07:23.350
-And when the model changes here for this value, we see the same setup and one the model changes.
+Und wenn sich das Modell hier für diesen Wert ändert, sehen wir dieselbe Einstellung und eine Änderung des Modells.
 
 07:23.350 --> 07:25.900
-For this value, we see the same setup again.
+Für diesen Wert sehen wir wieder den gleichen Aufbau.
 
 07:25.900 --> 07:27.250
-That's it for the controller.
+Das war's mit dem Controller.
 
 07:27.250 --> 07:28.540
-Let's take a look at the view.
+Werfen wir einen Blick auf die Ansicht.
 
 07:28.570 --> 07:30.940
-Here we are in the UI view, for example.
+Hier sind wir in der UI-Ansicht, zum Beispiel.
 
 07:30.940 --> 07:37.180
-Now as we've discussed before, there's no concern in many MVCs that must be a mono behavior, but that's
+Nun, wie wir bereits besprochen haben, gibt es in vielen MVCs keine Bedenken, dass es sich um ein Mono-Verhalten handeln muss, aber das ist
 
 07:37.180 --> 07:37.870
 optional.
 
 07:37.870 --> 07:39.370
-You can do it any time you want.
+Sie können es jederzeit tun.
 
 07:39.370 --> 07:45.670
-And here, because this is a UI element, because Unity UI works well on mono behaviors and because
+Und hier, weil dies ein UI-Element ist, weil Unity UI gut mit Mono-Verhalten funktioniert und weil
 
 07:45.670 --> 07:51.700
-I like the idea of the view sitting on a game object in the scene, I extend my behavior.
+ich die Idee mag, dass die Ansicht auf einem Spielobjekt in der Szene sitzt, erweitere ich mein Verhalten.
 
 07:51.700 --> 07:57.070
-Here I create a custom event so that any time the restart button is clicked, I can broadcast an event
+Hier erstelle ich ein benutzerdefiniertes Ereignis, so dass ich jedes Mal, wenn der Neustart-Button angeklickt wird, ein Ereignis senden kann
 
 07:57.070 --> 07:57.430
-here.
+hier.
 
 07:57.430 --> 08:00.130
-I handle initializing context as we always do.
+Ich behandle die Initialisierung des Kontexts, wie wir es immer tun.
 
 08:00.130 --> 08:07.180
-I have reference to different UI text fields, buttons as well as the dialog window that gets attached
+Ich habe Verweise auf verschiedene UI-Textfelder, Schaltflächen sowie auf das Dialogfenster, das angehängt wird
 
 08:07.180 --> 08:08.740
-when the user hits restart.
+wenn der Benutzer auf Neustart drückt.
 
 08:08.740 --> 08:14.110
-Here in the initialize, we do pretty standard stuff, including subscribing to that restart button
+Hier in der Initialisierung machen wir ziemlichen Standardkram, einschließlich des Abonnements für die Neustart-Schaltfläche
 
 08:14.110 --> 08:14.520
-event.
+Ereignis.
 
 08:14.530 --> 08:16.930
-We've seen this pattern before here.
+Dieses Muster haben wir hier schon einmal gesehen.
 
 08:16.930 --> 08:22.420
-A view is interested in some commands, some of those radio stations that are going to be broadcast
+Eine Ansicht interessiert sich für einige Befehle, einige der Radiosender, die ausgestrahlt werden sollen
 
 08:22.420 --> 08:30.430
-from an unknown sender Since the UI view handles showing the values of the current score, the maximum
+von einem unbekannten Absender Da die UI-Ansicht die Werte des aktuellen Spielstands anzeigt, ist die maximale
 
 08:30.430 --> 08:34.810
-score and the status message, it makes sense that we would subscribe to those commands.
+und die Statusmeldung anzeigt, ist es sinnvoll, dass wir diese Befehle abonnieren.
 
 08:34.810 --> 08:35.140
-Here.
+hier.
 
 08:35.140 --> 08:39.430
-We'll be updating the score text from multiple spots so we have a method here to help here.
+Wir werden den Text des Spielstands an mehreren Stellen aktualisieren, also haben wir hier eine Methode, die uns dabei hilft.
 
 08:39.430 --> 08:42.760
-When the score change command happens, we update the UI here.
+Wenn der Befehl zur Änderung des Spielstandes erfolgt, aktualisieren wir die Benutzeroberfläche hier.
 
 08:42.760 --> 08:47.950
-When the score max command happens, we update the UI as well, and when the status command happens,
+Wenn der Befehl score max ausgeführt wird, aktualisieren wir die Benutzeroberfläche ebenfalls, und wenn der Befehl status ausgeführt wird,
 
 08:47.950 --> 08:49.120
-we update the status.
+aktualisieren wir den Status.
 
 08:49.120 --> 08:54.130
-So when I was talking about the controller, I mentioned there's different ways you could structure
+Als ich über den Controller gesprochen habe, habe ich erwähnt, dass es verschiedene Möglichkeiten gibt, ihn zu strukturieren
 
 08:54.130 --> 08:55.150
-communication.
+Kommunikation.
 
 08:55.150 --> 09:02.230
-The solution I've chosen here is for the UI not to have a direct reference to the model and to listen
+Die Lösung, die ich hier gewählt habe, ist, dass die Benutzeroberfläche keinen direkten Bezug zum Modell hat und zuhört
 
 09:02.230 --> 09:03.010
-directly.
+direkt.
 
 09:03.550 --> 09:07.720
-Instead, we're getting that information indirectly by using these commands.
+Stattdessen erhalten wir diese Informationen indirekt durch die Verwendung dieser Befehle.
 
 09:07.720 --> 09:14.410
-In your use of many MVC, you can choose whether you want to have events with coupling or commands with
+Bei der Verwendung von MVC können Sie wählen, ob Sie Ereignisse mit Kopplung oder Befehle mit Kopplung haben wollen.
 
 09:14.410 --> 09:18.700
-less coupling, and depending on your needs, there could be pros and cons to each of those solution
+weniger Kopplung haben wollen, und je nach Ihren Bedürfnissen kann jede dieser Lösungen Vor- und Nachteile haben
 
 09:18.700 --> 09:19.120
-paths.
+Wege.
 
 09:19.120 --> 09:24.100
-But just for sake of demo, what if we did want this view to access the model directly?
+Aber nur zur Veranschaulichung: Was wäre, wenn wir wollen, dass diese Ansicht direkt auf das Modell zugreift?
 
 09:24.100 --> 09:29.620
-It is indeed a best practice to do that for reading data from the model, but it's not recommended that
+Es ist in der Tat eine Best Practice, das zu tun, um Daten aus dem Modell zu lesen, aber es wird nicht empfohlen, dass
 
 09:29.620 --> 09:31.750
-the View writes to the model directly.
+die Ansicht direkt in das Modell schreibt.
 
 09:31.750 --> 09:37.360
-So let's do an example of how to read just so we see that syntax up here in the UI views Initialize
+Also lasst uns ein Beispiel machen, wie man liest, nur damit wir die Syntax hier oben in den UI Views sehen Initialize
 
 09:37.360 --> 09:43.270
-again, just for sake of example, we could comment out the score, changed command and instead listen
+Nochmals, nur als Beispiel, wir könnten den Befehl score, changed auskommentieren und stattdessen hören
 
 09:43.270 --> 09:44.500
-directly to the model.
+direkt auf das Modell hören.
 
 09:44.500 --> 09:45.610
-Let's see how we would do that.
+Schauen wir uns an, wie wir das machen würden.
 
 09:45.610 --> 09:51.280
-Well, I know which model we'd want to reference and I know how we can access it by using the context
+Nun, ich weiß, welches Modell wir referenzieren wollen und ich weiß, wie wir darauf zugreifen können, indem wir den Kontext verwenden
 
 09:51.280 --> 09:52.000
-and model local.
+und model local.
 
 09:52.510 --> 09:55.960
-As long as the Rollerball model has been registered, we can get it.
+Solange das Rollerball-Modell registriert ist, können wir es abrufen.
 
 09:55.960 --> 10:01.420
-Then I listen to the event I care about and think we're doing the score here, and whenever its value
+Dann höre ich mir das Ereignis an, das mich interessiert, und denke, dass wir hier den Punktestand machen, und immer, wenn sein Wert
 
 10:01.420 --> 10:03.480
-changes, we add a listener.
+ändert, fügen wir einen Listener hinzu.
 
 10:03.490 --> 10:07.300
-I'll make a new handler, either manually or automatically.
+Ich werde einen neuen Handler erstellen, entweder manuell oder automatisch.
 
 10:07.300 --> 10:10.060
-You can create the proper method for it.
+Sie können die richtige Methode dafür erstellen.
 
 10:10.060 --> 10:15.550
-And then I want to mimic exactly what was happening beforehand, setting the local score to the proper
+Und dann möchte ich genau das nachahmen, was vorher passiert ist, indem ich den lokalen Spielstand auf den richtigen Wert setze
 
 10:15.550 --> 10:16.630
-incoming value.
+eingehenden Wert.
 
 10:16.630 --> 10:17.980
-For documentation sake.
+Aus Gründen der Dokumentation.
 
 10:17.980 --> 10:21.010
-I can update the names of these arguments so they make more sense.
+Ich kann die Namen dieser Argumente aktualisieren, damit sie mehr Sinn ergeben.
 
 10:21.010 --> 10:21.910
-And there we have it.
+Und da haben wir es.
 
 10:21.910 --> 10:28.510
-I've demonstrated how instead of using a command, I get a reference to the model, subscribe to the
+Ich habe demonstriert, wie ich anstelle eines Befehls einen Verweis auf das Modell erhalte, indem ich mich bei der
 
 10:28.510 --> 10:31.390
-event and handle the event directly.
+Ereignis abonniere und das Ereignis direkt behandle.
 
 10:31.390 --> 10:37.180
-Like many things we're seeing here, this pattern of communication from a model change to the view can
+Wie viele andere Dinge, die wir hier sehen, kann dieses Muster der Kommunikation von einer Modelländerung zur Ansicht
 
 10:37.180 --> 10:38.890
-be handled multiple ways.
+auf mehrere Arten gehandhabt werden.
 
 10:38.890 --> 10:43.350
-The two that I've shown here are either with a command or without.
+Die beiden, die ich hier gezeigt habe, sind entweder mit oder ohne Befehl.
 
 10:43.360 --> 10:49.600
-Earlier I mentioned that for demos sake, I chose to put the pickup in a separate folder here to remind
+Vorhin habe ich erwähnt, dass ich den Pickup in einen separaten Ordner gelegt habe, um zu verdeutlichen
 
 10:49.600 --> 10:52.120
-us it's being treated a bit differently.
+dass er ein bisschen anders behandelt wird.
 
 10:52.120 --> 10:59.740
-Sometimes in a project you may want to have things that exist inside the Mini structurally and outside
+Manchmal möchte man in einem Projekt Dinge haben, die strukturell innerhalb des Minis existieren und außerhalb
 
 10:59.740 --> 11:00.340
-the Mini.
+des Minis.
 
 11:00.340 --> 11:02.860
-This is an example of something that's outside.
+Dies ist ein Beispiel für etwas, das sich außerhalb befindet.
 
 11:02.860 --> 11:07.510
-It's not part of a model view controller service, it's not part of the mini itself.
+Es ist nicht Teil eines Model-View-Controller-Dienstes, es ist nicht Teil des Minis selbst.
 
 11:07.510 --> 11:09.790
-You could have structured things differently.
+Sie hätten die Dinge auch anders strukturieren können.
 
 11:09.790 --> 11:13.720
-But here, just for demo sake, again, I'm showing this sitting outside.
+Aber hier, nur zur Demonstration, zeige ich es noch einmal im Freien sitzend.
 
 11:13.720 --> 11:17.770
-Each of the yellow cubes that we see in the scene has this pickup component on it.
+Jeder der gelben Würfel, die wir in der Szene sehen, hat diese Abnehmerkomponente.
 
 11:18.070 --> 11:22.690
-Let's take a look at its contents here in the pickup component class, we extend model behavior, which
+Schauen wir uns den Inhalt der Pickup-Komponente an, wir erweitern das Modellverhalten, das
 
 11:22.690 --> 11:23.440
-makes sense.
+Sinn macht.
 
 11:23.440 --> 11:28.290
-We want to have a cube sitting in the scene and have it do things like rotate around.
+Wir wollen einen Würfel in der Szene sitzen haben und ihn Dinge tun lassen, wie z.B. sich drehen.
 
 11:28.300 --> 11:34.270
-Now, the three primary things that this needs to do in the role of the game is be a rotating cube,
+Die drei wichtigsten Dinge, die dieser Würfel im Spiel tun muss, sind ein rotierender Würfel zu sein,
 
 11:34.300 --> 11:40.480
-be available to be picked up, and then when it gets picked up, the game needs to handle its consequence
+zum Aufnehmen zur Verfügung stehen, und dann, wenn er aufgenommen wird, muss das Spiel seine Konsequenzen handhaben
 
 11:40.480 --> 11:46.000
-here, restore some local fields so that this pick up knows is the game paused or is the game over?
+hier, einige lokale Felder wiederherstellen, damit dieser Abholer weiß, ob das Spiel pausiert oder vorbei ist?
 
 11:46.000 --> 11:52.840
-Yet here in the update, the cube rotates itself unless it's paused or the game is over.
+Aber hier in der Aktualisierung dreht sich der Würfel selbst, es sei denn, das Spiel ist pausiert oder vorbei.
 
 11:52.840 --> 12:00.580
-This type of high level game state being used by smaller parts like the player, the enemy, the pickups
+Diese Art von hochrangigem Spielstatus wird von kleineren Teilen wie dem Spieler, dem Feind und den Pickups verwendet
 
 12:00.580 --> 12:02.140
-in a game, it's very common.
+in einem Spiel, das ist sehr häufig.
 
 12:02.140 --> 12:05.950
-So I was exploring in this demo how to pass that information around.
+Also habe ich in dieser Demo untersucht, wie man diese Informationen weitergeben kann.
 
 12:05.950 --> 12:12.880
-There's multiple different solutions, but what I'm about to show you is an experimental idea just to
+Es gibt mehrere verschiedene Lösungen, aber was ich Ihnen jetzt zeigen werde, ist eine experimentelle Idee, um
 
 12:12.880 --> 12:15.610
-help broaden your mind about what's possible.
+zu helfen, Ihre Vorstellung von dem, was möglich ist, zu erweitern.
 
 12:15.610 --> 12:19.930
-This is not necessarily the best practice nor the most simple path.
+Dies ist nicht unbedingt die beste Praxis und auch nicht der einfachste Weg.
 
 12:19.930 --> 12:21.580
-It's a somewhat crazy idea.
+Es ist eine etwas verrückte Idee.
 
 12:21.580 --> 12:22.450
-Let's take a look.
+Schauen wir uns das mal an.
 
 12:22.450 --> 12:29.710
-Since I'm considering this pickup somewhat outside of the system, it is not a view by choice nor another
+Da ich diesen Pickup etwas außerhalb des Systems betrachte, ist es weder eine Ansicht nach Wahl noch eine andere
 
 12:29.710 --> 12:30.340
-concern.
+Anliegen.
 
 12:30.340 --> 12:34.030
-How can we have it access the data from inside the view?
+Wie können wir den Zugriff auf die Daten innerhalb der Ansicht ermöglichen?
 
 12:34.030 --> 12:40.300
-Well, one time as the scene wakes up and this object awakes, we make a bridge to the Mini and here
+Nun, einmal, wenn die Szene aufwacht und dieses Objekt erwacht, machen wir eine Brücke zum Mini und hier
 
 12:40.300 --> 12:42.070
-is the experimental solution.
+ist die experimentelle Lösung.
 
 12:42.070 --> 12:47.380
-Now we've seen context and we've seen the context model locator.
+Jetzt haben wir den Kontext gesehen und den Kontextmodell-Locator gesehen.
 
 12:47.380 --> 12:51.660
-The model locator allows you to register a model and retrieve it.
+Der Model Locator erlaubt es, ein Modell zu registrieren und es abzurufen.
 
 12:51.670 --> 12:53.620
-We saw that earlier in this sample.
+Wir haben das schon früher in diesem Beispiel gesehen.
 
 12:53.620 --> 12:58.810
-The context locator is not used anywhere in the framework except right here.
+Der Kontext-Locator wird nirgendwo im Framework verwendet, außer hier.
 
 12:58.810 --> 13:04.690
-It's a singleton, which any context can add itself into the context locator.
+Es ist ein Singleton, das jeder Kontext selbst in den Kontext-Locator einfügen kann.
 
 13:04.690 --> 13:08.620
-And any scope, including this one here, can get the context out.
+Und jeder Bereich, auch dieser hier, kann den Kontext herausholen.
 
 13:08.620 --> 13:15.430
-So any time, any context gets added and any model gets added to that context, we check, Hey, is
+Also jedes Mal, wenn ein Kontext hinzugefügt wird und ein Modell zu diesem Kontext hinzugefügt wird, prüfen wir, Hey, ist
 
 13:15.430 --> 13:16.930
-that a model I care about?
+das ein Modell, das mich interessiert?
 
 13:16.930 --> 13:19.450
-And then we subscribe to those changes here.
+Und dann abonnieren wir diese Änderungen hier.
 
 13:19.450 --> 13:24.610
-In the event handler, we just store a local version of those values that we care about.
+Im Event-Handler speichern wir einfach eine lokale Version der Werte, die uns interessieren.
 
 13:24.610 --> 13:32.200
-And now any time the game is over or not, or the game is paused or not, each pickup listens to that
+Und jedes Mal, wenn das Spiel zu Ende ist oder nicht, oder wenn das Spiel pausiert oder nicht, hört jeder Pickup auf diese
 
 13:32.200 --> 13:33.560
-and properly responds.
+und antwortet entsprechend.
 
 13:33.580 --> 13:39.940
-Now, for this specific use case, I would not handle it this way, but I wanted it in one of the samples
+Für diesen speziellen Anwendungsfall würde ich es nicht so handhaben, aber ich wollte es in einem der Beispiele
 
 13:39.940 --> 13:45.070
-just to show you how to bridge non mini world with the mini world.
+um Ihnen zu zeigen, wie man eine Brücke zwischen der Nicht-Miniwelt und der Miniwelt schlägt.
 
 13:45.070 --> 13:47.020
-And here's an example of how to do that.
+Und hier ist ein Beispiel dafür, wie man das macht.
 
 13:47.020 --> 13:53.530
-Real world use cases of this could be if you decide to have a game that is currently not mini enabled
+In der realen Welt könnte dies der Fall sein, wenn man sich entscheidet, ein Spiel zu haben, das derzeit nicht mini-fähig ist
 
 13:53.530 --> 13:59.080
-and you want to bring the mini in to a hybrid solution, you could use the technique you've got here
+und man den Mini in eine Hybridlösung einbringen möchte, könnte man die hier vorgestellte Technik verwenden
 
 13:59.080 --> 14:03.010
-to have portions of your game that aren't yet in a mini concern.
+um Teile deines Spiels zu haben, die noch nicht in einem Mini enthalten sind.
 
 14:03.010 --> 14:05.200
-Reach into the mini world as they need.
+Greifen Sie in die Miniwelt, wie sie es brauchen.
 
 14:05.200 --> 14:09.400
-So I hope to inspire some ideas, including this experimental portion here.
+Ich hoffe also, dass ich einige Ideen inspirieren kann, einschließlich dieses experimentellen Teils hier.
 
 14:09.400 --> 14:12.490
-We've now looked at all the code we want to for this sample.
+Wir haben uns nun den gesamten Code für dieses Beispiel angesehen.
 
 14:12.490 --> 14:13.360
-That's it.
+Das war's.

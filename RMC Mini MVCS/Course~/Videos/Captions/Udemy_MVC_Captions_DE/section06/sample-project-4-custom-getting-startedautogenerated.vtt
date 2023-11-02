@@ -1,433 +1,433 @@
 WEBVTT
 
 00:04.590 --> 00:06.900
-Here we are in our favor browser at Unity.
+Hier sind wir in unserem Lieblingsbrowser bei Unity.
 
 00:07.620 --> 00:10.220
-Here we'll download the Unity editor and get started.
+Hier laden wir den Unity-Editor herunter und fangen an.
 
 00:10.230 --> 00:13.380
-The Get started has several different pricing plans here.
+Der Get started hat hier verschiedene Preispläne.
 
 00:13.380 --> 00:18.870
-Unity, personal or Unity student are a great fit to get started for free for professional use.
+Unity, Personal oder Unity Student eignen sich hervorragend für den kostenlosen Einstieg in die professionelle Nutzung.
 
 00:18.870 --> 00:20.640
-There's other plans available as well.
+Es sind auch andere Pläne verfügbar.
 
 00:20.640 --> 00:23.430
-I'm on a Windows machine so I'll download for Windows.
+Ich arbeite mit einem Windows-Rechner, also lade ich es für Windows herunter.
 
 00:23.730 --> 00:29.730
-I've downloaded Unity, open up the installer and we'll continue through the setup experience.
+Ich habe Unity heruntergeladen, öffne das Installationsprogramm und wir fahren mit der Einrichtung fort.
 
 00:29.730 --> 00:32.610
-Once setup is complete, I'll open the Unity Hub.
+Sobald die Einrichtung abgeschlossen ist, öffne ich den Unity Hub.
 
 00:32.610 --> 00:39.600
-The Unity Hub helps us install the Unity editor different versions if we like as well as create an open
+Der Unity Hub hilft uns, den Unity-Editor in verschiedenen Versionen zu installieren, wenn wir möchten, sowie eine offene
 
 00:39.600 --> 00:40.350
-projects.
+Projekte zu erstellen.
 
 00:40.350 --> 00:41.880
-I'll create a new project.
+Ich werde ein neues Projekt erstellen.
 
 00:41.880 --> 00:44.250
-Unity offers many different templates.
+Unity bietet viele verschiedene Vorlagen an.
 
 00:45.130 --> 00:51.340
-The key here is that we want to use the latest unity version called ELTs.
+Der Schlüssel hier ist, dass wir die neueste Unity-Version namens ELTs verwenden wollen.
 
 00:51.370 --> 00:57.340
-This changes over time, but unity clearly shows this is the version which receives long term support.
+Diese ändert sich mit der Zeit, aber Unity zeigt deutlich, dass dies die Version ist, die langfristig unterstützt wird.
 
 00:57.340 --> 00:59.890
-And it's typically the latest public release.
+Und es ist normalerweise die letzte öffentliche Version.
 
 00:59.890 --> 01:01.870
-The default template that unity shows.
+Die Standardvorlage, die Unity anzeigt.
 
 01:01.870 --> 01:03.910
-Here is the three D core.
+Hier ist der Drei-D-Kern.
 
 01:03.940 --> 01:09.100
-Many MVCs is compatible with many of these different templates, so we can choose freely.
+Viele MVCs sind mit vielen dieser verschiedenen Vorlagen kompatibel, so dass wir frei wählen können.
 
 01:09.220 --> 01:10.690
-But I'll go with the default here.
+Aber ich werde hier die Standardvorlage verwenden.
 
 01:10.690 --> 01:14.950
-I'll call the project calculator mini and install it in my favorite folder.
+Ich nenne das Projekt calculator mini und installiere es in meinem Lieblingsordner.
 
 01:14.950 --> 01:20.140
-Each time you create a new project, Unity will make all the installation files and dependencies set
+Jedes Mal, wenn du ein neues Projekt erstellst, wird Unity alle Installationsdateien und Abhängigkeiten setzen
 
 01:20.140 --> 01:24.820
-up for you following the URL provided in the course in the resources section.
+für Sie einrichten, indem Sie der URL folgen, die Sie im Kurs im Abschnitt Ressourcen finden.
 
 01:25.240 --> 01:28.190
-We'll come here to GitHub and click the code button.
+Wir kommen hier zu GitHub und klicken auf die Schaltfläche Code.
 
 01:28.210 --> 01:34.390
-We want to capture this git URL which we'll use to import the mini and VCs into unity.
+Wir wollen diese Git-URL erfassen, die wir verwenden werden, um die Mini- und VCs in Unity zu importieren.
 
 01:34.390 --> 01:38.600
-Once the project is created, Unity opens up and gives us the default display.
+Sobald das Projekt erstellt ist, öffnet sich Unity und zeigt uns die Standardanzeige.
 
 01:38.620 --> 01:42.040
-This template comes with a sample scene, which is a great place to begin.
+Diese Vorlage wird mit einer Beispielszene geliefert, die ein guter Anfang ist.
 
 01:42.040 --> 01:45.810
-Next, we'll open up the package manager and install Mini and VCs.
+Als nächstes öffnen wir den Paketmanager und installieren Mini und VCs.
 
 01:45.820 --> 01:50.110
-We'll add a package from the get URL paste in the URL we got from GitHub.
+Wir fügen ein Paket aus der Get-URL hinzu und fügen die URL ein, die wir von GitHub erhalten haben.
 
 01:50.110 --> 01:56.350
-Once mini NBC's is installed, you can optionally install the samples as well, especially when getting
+Sobald mini NBC's installiert ist, kannst du optional auch die Beispiele installieren, besonders wenn du
 
 01:56.350 --> 01:56.790
-started.
+beginnen.
 
 01:56.800 --> 01:58.420
-I highly recommend doing that.
+Ich empfehle das sehr.
 
 01:58.420 --> 02:03.880
-You may find that one of the samples is similar enough to your intended goals and you can begin with
+Vielleicht finden Sie heraus, dass eine der Proben Ihren Zielen ähnlich genug ist und Sie können beginnen mit
 
 02:03.880 --> 02:07.380
-it either copying and pasting or using it as reference.
+entweder kopieren und einfügen oder als Referenz verwenden.
 
 02:07.390 --> 02:11.380
-In our case, we're not going to import the samples, we're going to work from scratch.
+In unserem Fall werden wir die Proben nicht importieren, sondern von Grund auf neu arbeiten.
 
 02:11.380 --> 02:12.400
-With one exception.
+Mit einer Ausnahme.
 
 02:12.400 --> 02:18.070
-I'll use a template file which I can copy and paste just to keep our classes looking consistent and
+Ich werde eine Vorlagendatei verwenden, die ich kopieren und einfügen kann, damit unsere Klassen einheitlich aussehen und
 
 02:18.070 --> 02:18.580
-readable.
+lesbar zu halten.
 
 02:18.580 --> 02:21.790
-The mini NBC's package comes with a template.
+Das Mini-NBC-Paket wird mit einer Vorlage geliefert.
 
 02:21.790 --> 02:28.090
-I'll copy it into our assets folder and open it up using consistent coding standards or a coding template
+Ich kopiere es in den Ordner "Assets" und öffne es unter Verwendung einheitlicher Kodierungsstandards oder einer Kodierungsvorlage
 
 02:28.090 --> 02:29.650
-like this is optional.
+wie dies ist optional.
 
 02:29.650 --> 02:32.800
-I recommend each team consider it based on their own goals.
+Ich empfehle jedem Team, dies auf der Grundlage seiner eigenen Ziele zu erwägen.
 
 02:32.800 --> 02:38.110
-For the purposes of this discussion, I'm using it just to keep my code consistent and to make it more
+Für die Zwecke dieser Diskussion verwende ich es nur, um meinen Code konsistent zu halten und um ihn besser zu machen.
 
 02:38.110 --> 02:39.010
-readable for you.
+für Sie lesbar zu machen.
 
 02:39.010 --> 02:41.530
-I'll copy and paste this to start new classes.
+Ich werde das kopieren und einfügen, um neue Klassen zu beginnen.
 
 02:41.530 --> 02:46.540
-It has the class definition an example property and example field and more.
+Es enthält die Klassendefinition, ein Beispiel für eine Eigenschaft, ein Beispiel für ein Feld und mehr.
 
 02:46.540 --> 02:48.940
-Let's think about our project file structure.
+Lassen Sie uns über die Struktur unserer Projektdatei nachdenken.
 
 02:48.940 --> 02:50.140
-I like the scene folder.
+Ich mag den Szenenordner.
 
 02:50.140 --> 02:51.580
-I'll just rename our scene.
+Ich werde unsere Szene einfach umbenennen.
 
 02:51.580 --> 02:58.450
-My convention is that I create a script folder in the assets and create a runtime editor and test folder
+Meine Konvention ist, dass ich einen Skript-Ordner in den Assets anlege und einen Runtime-Editor und einen Test-Ordner erstelle
 
 02:58.450 --> 02:58.930
-within.
+innerhalb.
 
 02:58.930 --> 03:03.940
-Then because we're working with many, I like to create dedicated folders for the mini structure as
+Da wir mit vielen Dateien arbeiten, erstelle ich gerne spezielle Ordner für die Ministruktur als
 
 03:03.940 --> 03:07.210
-well as a folder for the model view controller and service.
+sowie einen Ordner für den Model-View-Controller und den Service.
 
 03:07.210 --> 03:11.590
-In this case, we're not going to be creating a service, but I'll leave the folder there in case in
+In diesem Fall werden wir keinen Service erstellen, aber ich lasse den Ordner dort, für den Fall, dass in
 
 03:11.590 --> 03:12.340
-the future.
+der Zukunft.
 
 03:12.340 --> 03:14.060
-Adding a service makes sense now.
+Das Hinzufügen eines Dienstes ist jetzt sinnvoll.
 
 03:14.060 --> 03:16.540
-I'll set up the scene hierarchy and create our first script.
+Ich werde die Szenenhierarchie einrichten und unser erstes Skript erstellen.
 
 03:16.540 --> 03:21.670
-The default scene structure provided by Unity is one main camera and one directional light.
+Die Standard-Szenenstruktur von Unity ist eine Hauptkamera und ein gerichtetes Licht.
 
 03:21.700 --> 03:27.310
-My own personal preference is to put those into a world game object so I can hide the complexity there.
+Meine persönliche Vorliebe ist es, diese in ein Welt-Spielobjekt zu packen, damit ich die Komplexität dort verstecken kann.
 
 03:27.310 --> 03:30.010
-Now create one game object for the example itself.
+Erstellen Sie nun ein Spielobjekt für das Beispiel selbst.
 
 03:30.010 --> 03:33.370
-That's the one mono behavior which kicks off the process.
+Das ist das eine Mono-Verhalten, das den Prozess in Gang setzt.
 
 03:33.370 --> 03:37.900
-I'll give it the name calculator, mini example and I'll give it a script of the same name.
+Ich gebe ihm den Namen calculator, mini example und ich gebe ihm ein Skript mit demselben Namen.
 
 03:37.900 --> 03:39.790
-Here's the starting point for the new file.
+Hier ist der Startpunkt für die neue Datei.
 
 03:39.790 --> 03:43.680
-As Unity creates it, we'll paste in that class template and update it properly.
+Wenn Unity die Datei erstellt, fügen wir die Klassenvorlage ein und aktualisieren sie entsprechend.
 
 03:43.690 --> 03:44.710
-Here's the updated file.
+Hier ist die aktualisierte Datei.
 
 03:44.710 --> 03:45.460
-Let's take a look.
+Schauen wir uns das mal an.
 
 03:45.460 --> 03:48.310
-I gave it a namespace specific to this sample project.
+Ich habe einen Namespace speziell für dieses Beispielprojekt erstellt.
 
 03:48.310 --> 03:53.290
-I match the class name to the file name and I think about what code will need to get started here.
+Ich passe den Klassennamen an den Dateinamen an und überlege mir, welchen Code ich brauche, um hier loszulegen.
 
 03:53.290 --> 03:56.830
-We'll just need a start method in which we're going to create the mini.
+Wir brauchen nur eine Start-Methode, in der wir die Miniatur erstellen werden.
 
 03:56.830 --> 03:59.380
-Let's go create the class file for the Mini and come back.
+Erstellen wir die Klassendatei für den Mini und kommen wir zurück.
 
 03:59.380 --> 04:03.370
-I'll duplicate the class template and create the calculator mini class.
+Ich dupliziere die Klassenvorlage und erstelle die Taschenrechner-Miniklasse.
 
 04:03.370 --> 04:05.350
-Here we are in the calculator mini class.
+Hier sind wir in der Taschenrechner-Miniklasse.
 
 04:05.350 --> 04:08.170
-Now we'll use the first classes from our framework.
+Jetzt verwenden wir die ersten Klassen aus unserem Framework.
 
 04:08.170 --> 04:16.690
-We have an option here for the main mini if we want to extend the mini MVCs base class or use an interface.
+Wir haben hier eine Option für die main mini, ob wir die Basisklasse der mini MVCs erweitern oder eine Schnittstelle verwenden wollen.
 
 04:17.510 --> 04:22.580
-Now, because we're not using any service layer, it makes sense to use an interface that gives us more
+Da wir keine Serviceschicht verwenden, ist es sinnvoll, eine Schnittstelle zu verwenden, die uns mehr Möglichkeiten bietet
 
 04:22.580 --> 04:23.330
-flexibility.
+Flexibilität bietet.
 
 04:23.330 --> 04:26.430
-So here we'll implement AI Mini and VCs.
+Hier werden wir also AI Mini und VCs implementieren.
 
 04:26.450 --> 04:29.060
-Each code editor expresses it in a different way.
+Jeder Code-Editor drückt es auf eine andere Weise aus.
 
 04:29.090 --> 04:32.740
-Here in my editor, it shows a red squiggly indicating something is wrong.
+Hier in meinem Editor zeigt ein roter Schnörkel an, dass etwas falsch ist.
 
 04:32.750 --> 04:37.760
-I'll check the context menu because I've chosen to implement an interface, but I haven't actually done
+Ich überprüfe das Kontextmenü, weil ich mich entschieden habe, eine Schnittstelle zu implementieren, aber ich habe es nicht wirklich getan
 
 04:37.760 --> 04:39.160
-the implementation yet.
+die Implementierung noch nicht gemacht.
 
 04:39.170 --> 04:44.120
-The code editor offers to do that for me, and as we're going forward, I'll do this workflow.
+Der Code-Editor bietet mir an, das für mich zu tun, und wenn wir weitermachen, werde ich diesen Arbeitsablauf durchführen.
 
 04:44.120 --> 04:46.340
-I'll choose to implement those missing members.
+Ich entscheide mich für die Implementierung der fehlenden Elemente.
 
 04:46.340 --> 04:48.200
-I'll leave all checked by default.
+Ich lasse alle standardmäßig markiert.
 
 04:48.200 --> 04:49.580
-Let's take a look at the result.
+Schauen wir uns das Ergebnis an.
 
 04:49.580 --> 04:54.140
-We've got an initialized property and some initialization related methods.
+Wir haben eine initialisierte Eigenschaft und einige initialisierungsbezogene Methoden.
 
 04:54.140 --> 04:58.850
-We now have enough code in the calculator mini to jump back to the example and finish it up.
+Wir haben jetzt genug Code im Mini-Rechner, um zum Beispiel zurückzukehren und es zu beenden.
 
 04:58.850 --> 05:03.290
-So here in the calculator mini example in its start method, we'll finish up coding.
+Hier im Beispiel des Mini-Rechners, in seiner Startmethode, beenden wir die Codierung.
 
 05:03.290 --> 05:03.530
-Here.
+Hier.
 
 05:03.530 --> 05:06.890
-We've created an instance of the calculator mini and called initialize.
+Wir haben eine Instanz des Taschenrechners mini erstellt und initialize aufgerufen.
 
 05:06.890 --> 05:07.940
-That's all we need here.
+Das ist alles, was wir hier brauchen.
 
 05:07.940 --> 05:12.110
-In this example file, let's keep going in the calculator mini class itself.
+In dieser Beispieldatei gehen wir in der Klasse calculator mini selbst weiter.
 
 05:12.110 --> 05:17.180
-So as you're getting used to using the mini and VCs framework, this is a great chance for you to take
+Wenn Sie sich mit dem Mini und dem VCs-Framework vertraut gemacht haben, ist dies eine gute Gelegenheit, um
 
 05:17.180 --> 05:21.590
-a look at other sample projects just to follow along and see how the structure is.
+einen Blick auf andere Beispielprojekte zu werfen, um zu sehen, wie die Struktur ist.
 
 05:21.590 --> 05:22.760
-But I'll think out loud.
+Aber ich werde laut denken.
 
 05:22.760 --> 05:26.900
-What we need from the Mini is which of the concerns it's going to care for.
+Was wir vom Mini brauchen, ist, um welche Anliegen er sich kümmern wird.
 
 05:27.050 --> 05:32.330
-So we'll have to declare those, we'll initialize those concerns and if needed, we'll wire them up
+Also müssen wir diese deklarieren, wir initialisieren sie und wenn nötig, verkabeln wir sie
 
 05:32.330 --> 05:32.840
-together.
+zusammen.
 
 05:32.840 --> 05:34.070
-I'll go ahead and do that now.
+Ich fahre fort und mache das jetzt.
 
 05:34.070 --> 05:37.130
-So if we're not already initialized we'll initialize.
+Also, wenn wir nicht schon initialisiert sind, werden wir initialisieren.
 
 05:37.130 --> 05:42.050
-And then I stubbed out or put some temporary comments where the code will go.
+Und dann habe ich ein paar temporäre Kommentare eingefügt, wo der Code hinkommen soll.
 
 05:42.290 --> 05:45.470
-We create the model, the controller and initialize them.
+Wir erstellen das Modell, den Controller und initialisieren sie.
 
 05:46.570 --> 05:52.930
-You may remember from earlier sample projects that because our view is going to extend mono behavior
+Du erinnerst dich vielleicht an frühere Beispielprojekte, weil unsere Ansicht das Mono-Verhalten erweitern wird
 
 05:52.930 --> 05:56.600
-and sit in the scene hierarchy, we'll set that up in a different way.
+und in der Szenenhierarchie sitzt, werden wir das auf eine andere Weise einrichten.
 
 05:56.620 --> 06:01.660
-Here my code editor is indicating red, which means, hey, those classes don't exist, so let's go
+Hier zeigt mein Code-Editor rot an, was bedeutet, hey, diese Klassen existieren nicht, also lass uns gehen
 
 06:01.660 --> 06:02.050
-create them.
+sie erstellen.
 
 06:02.050 --> 06:02.370
-Now.
+jetzt.
 
 06:02.380 --> 06:06.110
-I'll copy the class template for the basic structure of what we need.
+Ich kopiere die Klassenvorlage für die Grundstruktur dessen, was wir brauchen.
 
 06:06.130 --> 06:09.420
-I've created the classes for the model view and controller.
+Ich habe die Klassen für den Model-View und den Controller erstellt.
 
 06:09.430 --> 06:10.270
-Let's take a look.
+Schauen wir uns das mal an.
 
 06:10.270 --> 06:11.470
-Here's the model class.
+Hier ist die Modellklasse.
 
 06:11.470 --> 06:16.300
-I gave it a namespace and updated the class title but didn't add the implementation yet.
+Ich habe ihr einen Namespace gegeben und den Klassentitel aktualisiert, aber die Implementierung noch nicht hinzugefügt.
 
 06:16.300 --> 06:20.190
-Here's the calculator view class and here's the calculator controller class.
+Hier ist die View-Klasse des Taschenrechners und hier ist die Controller-Klasse des Taschenrechners.
 
 06:20.200 --> 06:23.680
-Now that we at least have the basics of those classes constructed.
+Nun, da wir zumindest die Grundlagen dieser Klassen aufgebaut haben.
 
 06:24.370 --> 06:29.180
-Let's go back and fix any compiler errors back here in the calculator mini class.
+Gehen wir zurück und beheben alle Compilerfehler hier in der calculator-Miniklasse.
 
 06:29.200 --> 06:32.200
-We've got a few errors to solve while we created these classes.
+Wir haben ein paar Fehler zu beheben, während wir diese Klassen erstellt haben.
 
 06:32.200 --> 06:34.030
-Now it can't be located yet.
+Jetzt kann sie noch nicht gefunden werden.
 
 06:34.030 --> 06:38.860
-We right click and see that the editor recognizes them but needs a using statement.
+Wir klicken mit der rechten Maustaste und sehen, dass der Editor sie erkennt, aber eine using-Anweisung benötigt.
 
 06:38.860 --> 06:42.700
-Those classes are now working properly, but they lack the initialize.
+Diese Klassen funktionieren jetzt richtig, aber ihnen fehlt das Initialize.
 
 06:42.700 --> 06:47.350
-Let's start putting some real code in each of those class files because the calculator model has base
+Fangen wir an, echten Code in jede dieser Klassendateien einzufügen, denn das Taschenrechnermodell hat base
 
 06:47.350 --> 06:48.400
-functionality.
+Funktionalität.
 
 06:48.760 --> 06:50.020
-We'll extend base model.
+Wir werden das Basismodell erweitern.
 
 06:50.020 --> 06:51.760
-Base model comes with initialize.
+Das Basismodell kommt mit initialize.
 
 06:51.760 --> 06:53.140
-So that's all we need to do here.
+Das ist alles, was wir hier tun müssen.
 
 06:53.140 --> 06:58.210
-For now for the calculator controller, we're going to want some custom functionality again because
+Für den Calculator-Controller brauchen wir wieder eine eigene Funktionalität, denn
 
 06:58.210 --> 06:59.680
-we're not using service.
+wir keinen Dienst verwenden.
 
 06:59.680 --> 07:05.470
-Now as a side point, we could certainly use the base controller and create a service which is empty
+Nebenbei könnten wir natürlich den Basis-Controller verwenden und einen leeren Service erstellen
 
 07:05.470 --> 07:06.640
-and we don't really need it.
+und wir brauchen ihn nicht wirklich.
 
 07:06.640 --> 07:10.210
-If you think in the future you're definitely going to need a service at some point.
+Wenn Sie denken, dass Sie in der Zukunft auf jeden Fall einen Dienst brauchen werden.
 
 07:10.210 --> 07:11.470
-That's not a bad solution.
+Das ist keine schlechte Lösung.
 
 07:11.470 --> 07:16.360
-But for the sake of this project, because we know we don't need a service right now, I'll use an interface
+Aber für dieses Projekt, weil wir wissen, dass wir im Moment keinen Dienst brauchen, werde ich eine Schnittstelle verwenden
 
 07:16.360 --> 07:20.620
-instead we implement my controller, choose to implement the missing members.
+stattdessen implementieren wir meinen Controller, um die fehlenden Mitglieder zu implementieren.
 
 07:20.620 --> 07:24.310
-I'll leave the default settings here and let's take a look at the results we get.
+Ich lasse die Standardeinstellungen hier und schaue mir die Ergebnisse an, die wir erhalten.
 
 07:24.310 --> 07:27.970
-Initialize context and some initialization methods.
+Initialisiere den Kontext und einige Initialisierungsmethoden.
 
 07:27.970 --> 07:29.080
-That's all we need for now.
+Das ist alles, was wir im Moment brauchen.
 
 07:29.080 --> 07:34.810
-As we go through this, we'll step through adding just enough implementation, always returning to the
+Im weiteren Verlauf fügen wir schrittweise gerade genug Implementierung hinzu und kehren immer wieder zum
 
 07:34.810 --> 07:40.990
-most parent concept here, the Calculator Mini and seeing what the next logical step is for implementation.
+übergeordneten Konzept zurück, dem Taschenrechner Mini, und sehen, was der nächste logische Schritt für die Implementierung ist.
 
 07:40.990 --> 07:46.000
-An alternative approach would be to completely develop the model, then completely develop the view
+Ein alternativer Ansatz wäre die vollständige Entwicklung des Modells und dann die vollständige Entwicklung der Ansicht
 
 07:46.000 --> 07:49.870
-in the controller and then do the mini MVCs as a final step.
+im Controller und dann die Mini-MVCs als letzten Schritt zu machen.
 
 07:49.870 --> 07:54.250
-You can proceed in whichever way makes sense to you, but for the purpose of this discussion, we'll
+Sie können so vorgehen, wie es für Sie sinnvoll ist, aber für die Zwecke dieser Diskussion, werden wir
 
 07:54.250 --> 07:57.400
-keep returning to this class here and solving the challenges that pop up.
+immer wieder zu dieser Klasse hier zurückkehren und die auftauchenden Herausforderungen lösen.
 
 07:57.400 --> 08:02.350
-So both the model and the controller are expecting a context, So let's create that now by passing in
+Sowohl das Modell als auch der Controller erwarten einen Kontext, also erstellen wir diesen jetzt durch die Übergabe von
 
 08:02.350 --> 08:06.070
-those context values, I think we've solved all the compiler errors.
+Ich denke, wir haben alle Compilerfehler gelöst.
 
 08:06.070 --> 08:09.070
-For now, let's return to unity and check our progress.
+Kehren wir nun zu Unity zurück und überprüfen unseren Fortschritt.
 
 08:09.070 --> 08:12.190
-Here we are in unity with no compilation errors.
+Hier sind wir in Unity ohne Kompilierungsfehler.

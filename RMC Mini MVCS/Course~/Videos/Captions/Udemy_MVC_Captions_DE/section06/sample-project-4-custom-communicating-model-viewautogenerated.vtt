@@ -1,352 +1,352 @@
 WEBVTT
 
 00:00.090 --> 00:04.620
-When the controller directly updates the view, we're bypassing the model.
+Wenn der Controller direkt die Ansicht aktualisiert, umgehen wir das Modell.
 
 00:04.620 --> 00:09.620
-Essentially, we're storing the model data directly on The View.
+Im Wesentlichen speichern wir die Modelldaten direkt in der Ansicht.
 
 00:09.630 --> 00:15.900
-And from a fundamental standpoint, we're slipping out of MVC separation of concerns.
+Und von einem grundsätzlichen Standpunkt aus gesehen, entgleiten wir der MVC Trennung der Belange.
 
 00:16.020 --> 00:21.870
-Let's iterate on this and bring a bit more sound principles to the code.
+Lassen Sie uns das iterieren und ein paar solidere Prinzipien in den Code einbringen.
 
 00:22.630 --> 00:29.440
-Instead, what we could do is when the user clicks the add button, the controller could translate those
+Wenn der Benutzer auf die Schaltfläche "Hinzufügen" klickt, könnte der Controller stattdessen Folgendes übersetzen
 
 00:29.440 --> 00:32.500
-UI values from the view into the model.
+UI-Werte aus der Ansicht in das Modell.
 
 00:32.530 --> 00:33.580
-Let's do that now.
+Lassen Sie uns das jetzt tun.
 
 00:33.580 --> 00:35.530
-Let's see what we've done differently here.
+Schauen wir mal, was wir hier anders gemacht haben.
 
 00:35.740 --> 00:41.830
-We've updated each of these handlers to be a bit more conventional in the practices of MVCs.
+Wir haben jeden dieser Handler aktualisiert, um ein bisschen konventioneller in den Praktiken der MVCs zu sein.
 
 00:41.860 --> 00:47.920
-Now, when we add, we take those view values and put them directly into the model and then in reset,
+Wenn wir jetzt hinzufügen, nehmen wir diese View-Werte und setzen sie direkt in das Modell und dann in reset,
 
 00:47.920 --> 00:53.860
-we're doing something a little bit redundant, but we're clearing out the view and then clearing out
+tun wir etwas ein wenig Redundantes, aber wir löschen die Ansicht und dann löschen wir die
 
 00:53.860 --> 00:54.470
-the model.
+das Modell.
 
 00:54.490 --> 00:59.800
-It's not bad, but that redundancy we see there doesn't reach a goal of simplicity.
+Es ist nicht schlecht, aber die Redundanz, die wir dort sehen, erreicht nicht das Ziel der Einfachheit.
 
 00:59.830 --> 01:05.620
-Now we've got some options here in order to create a better binding between the view and the model,
+Jetzt haben wir hier einige Optionen, um eine bessere Verbindung zwischen der Ansicht und dem Modell herzustellen,
 
 01:05.620 --> 01:12.160
-we could either go into the view and have the view listen directly to the model for read only operations.
+Wir können entweder in die Ansicht gehen und die Ansicht direkt auf das Modell für reine Leseoperationen hören lassen.
 
 01:12.160 --> 01:13.660
-That's a good best practice.
+Das ist eine gute Praxis.
 
 01:13.660 --> 01:21.580
-An alternative would be here in the controller to dispatch a command saying, Hey, view go reset yourself
+Eine Alternative wäre hier im Controller einen Befehl zu senden, der sagt, Hey, view go reset yourself
 
 01:21.580 --> 01:24.370
-or saying Hey, view the model has changed.
+oder zu sagen: Hey, view das Modell hat sich geändert.
 
 01:24.370 --> 01:24.910
-In the past.
+In der Vergangenheit.
 
 01:24.910 --> 01:25.930
-Sample projects.
+Beispielhafte Projekte.
 
 01:25.930 --> 01:31.660
-We've used commands at this level, but to try something new, let's go into The View and have it observed
+Wir haben Befehle auf dieser Ebene verwendet, aber um etwas Neues auszuprobieren, gehen wir in The View und lassen es beobachten
 
 01:31.660 --> 01:34.360
-directly to the model for any changes.
+direkt an das Modell für alle Änderungen.
 
 01:34.360 --> 01:42.580
-And inside the initialize we'll use the context and the model locator to get a reference to the calculator
+Und innerhalb der Initialisierung verwenden wir den Kontext und den Modell-Locator, um einen Verweis auf den Taschenrechner zu erhalten
 
 01:42.580 --> 01:43.030
-model.
+Modell.
 
 01:43.030 --> 01:49.660
-Best practices support that the view reads from the model, but it would be an overstep of the role
+Best Practices unterstützen, dass die Ansicht aus dem Modell liest, aber es wäre eine Überschreitung der Rolle
 
 01:49.660 --> 01:52.870
-of the view for it to directly set any values here.
+der Ansicht überschreiten, wenn sie hier direkt Werte setzen würde.
 
 01:53.020 --> 02:00.090
-So all I'm doing is listening to the value changed on A, B, and the result as a shorthand.
+Alles, was ich tue, ist, auf den geänderten Wert von A, B und das Ergebnis zu hören, als Kurzform.
 
 02:00.100 --> 02:05.680
-I'm using what's called a lambda expression, and it's a nice quick way to observe an event in this
+Ich verwende einen so genannten Lambda-Ausdruck, und das ist eine gute und schnelle Möglichkeit, ein Ereignis zu beobachten
 
 02:05.680 --> 02:07.720
-case and handle the consequence.
+Fall zu beobachten und die Folge zu behandeln.
 
 02:07.720 --> 02:15.010
-The observables on value changed passes the p previous value and see current value.
+Die Observablen bei Wertänderung übergeben den p vorherigen Wert und sehen den aktuellen Wert.
 
 02:15.010 --> 02:21.400
-So any time one of these observable changes, I update the view to the current value with just those
+Jedes Mal, wenn sich eine dieser Observablen ändert, aktualisiere ich die Ansicht auf den aktuellen Wert mit nur diesen
 
 02:21.400 --> 02:22.090
-few lines.
+wenigen Zeilen.
 
 02:22.090 --> 02:27.280
-Now we have the view bound to the model using best practices.
+Jetzt haben wir die Ansicht mit dem Modell verbunden, indem wir Best Practices verwenden.
 
 02:27.280 --> 02:32.670
-Back here in the calculator controller, we return to our event handlers as they were before.
+Hier im Taschenrechner-Controller kehren wir zu unseren Event-Handlern zurück, wie sie vorher waren.
 
 02:32.680 --> 02:38.620
-Now, because we've added the binding from the view directly to the model, the controller no longer
+Da wir nun die Bindung von der Ansicht direkt zum Modell hinzugefügt haben, ist der Controller nicht mehr
 
 02:38.620 --> 02:44.500
-needs to manually set any values on the View so we can get rid of these lines and we can get rid of
+manuell irgendwelche Werte in der View setzen, so dass wir diese Zeilen loswerden können und wir können
 
 02:44.500 --> 02:45.200
-this as well.
+auch dies.
 
 02:45.220 --> 02:47.770
-Let's go ahead and run the scene and see how it behaves.
+Lassen wir die Szene laufen und sehen wir, wie sie sich verhält.
 
 02:47.770 --> 02:49.330
-Here we are in the running scene.
+Hier sind wir in der laufenden Szene.
 
 02:49.330 --> 02:52.270
-I'll input some values and hit reset looks good.
+Ich gebe ein paar Werte ein und drücke auf "Reset" - sieht gut aus.
 
 02:52.270 --> 02:59.260
-We do see that when it gets reset, it puts some zeros in these fields which aren't there initially.
+Wir sehen, dass beim Zurücksetzen einige Nullen in diese Felder eingetragen werden, die ursprünglich nicht vorhanden waren.
 
 02:59.260 --> 03:01.120
-It's a small detail, but we'll address that.
+Es ist ein kleines Detail, aber wir werden uns darum kümmern.
 
 03:01.120 --> 03:02.740
-Now let's try the ad operation.
+Versuchen wir nun die Anzeigenoperation.
 
 03:02.740 --> 03:06.040
-And the ad operation works well here in the calculator controller.
+Und die Anzeigenoperation funktioniert hier im Taschenrechner-Controller gut.
 
 03:06.040 --> 03:11.170
-Let's reset initially before the user does any input inside initialize.
+Lassen Sie uns zunächst zurücksetzen, bevor der Benutzer irgendeine Eingabe in initialize macht.
 
 03:11.170 --> 03:17.290
-After doing the existing ad listeners, I'll mimic the consequence of the reset button being hit.
+Nachdem ich die vorhandenen Ad-Listener ausgeführt habe, ahme ich die Konsequenz nach, wenn der Reset-Button gedrückt wird.
 
 03:17.980 --> 03:19.820
-Let's run the scene and see the result.
+Lassen wir die Szene laufen und sehen wir uns das Ergebnis an.
 
 03:19.840 --> 03:25.410
-Now, when we first run the app before doing any user input, we see those familiar zeros.
+Wenn wir die Anwendung zum ersten Mal starten, bevor wir eine Benutzereingabe machen, sehen wir die bekannten Nullen.
 
 03:25.420 --> 03:31.370
-This is a great way to have a consistent look and feel before and after the user starts interacting.
+Dies ist eine gute Möglichkeit, ein einheitliches Erscheinungsbild zu erreichen, bevor und nachdem der Benutzer mit der Interaktion beginnt.
 
 03:31.390 --> 03:33.160
-The application is now complete.
+Die Anwendung ist nun vollständig.
 
 03:33.160 --> 03:39.250
-We're able to input A, input B, add the results together and reset all the fields.
+Wir können A eingeben, B eingeben, die Ergebnisse zusammenzählen und alle Felder zurücksetzen.
 
 03:39.250 --> 03:46.780
-So far in this custom example, we've used the model view controller, we've observed events and gotten
+Bis jetzt haben wir in diesem benutzerdefinierten Beispiel den Model-View-Controller verwendet, wir haben Ereignisse beobachtet und erhalten
 
 03:46.780 --> 03:48.070
-our app to work well.
+dass unsere App gut funktioniert.
 
 03:48.370 --> 03:53.170
-We haven't used any commands and in a small enough application, that's okay.
+Wir haben keine Befehle verwendet, und bei einer kleinen Anwendung ist das auch in Ordnung.
 
 03:53.170 --> 03:56.560
-But I do want to demonstrate how a command could add value here.
+Aber ich möchte demonstrieren, wie ein Befehl hier einen Mehrwert bringen kann.
 
 03:56.560 --> 04:02.440
-I'll leave all the binding in place that we have now, but I'll replace these lines here with the command
+Ich lasse die gesamte Bindung, die wir jetzt haben, bestehen, aber ich ersetze diese Zeilen hier durch den Befehl
 
 04:02.440 --> 04:05.320
-so the view knows how to reset itself.
+damit die Ansicht weiß, wie sie sich selbst zurücksetzen kann.
 
 04:05.320 --> 04:06.940
-Let's start by calling the command.
+Beginnen wir mit dem Aufruf des Befehls.
 
 04:06.940 --> 04:10.960
-We use the context and command manager to invoke a new command.
+Wir verwenden den Kontext und den Befehlsmanager, um einen neuen Befehl aufzurufen.
 
 04:10.960 --> 04:12.990
-I'll call it the reset command.
+Ich nenne ihn den Reset-Befehl.
 
 04:13.000 --> 04:16.090
-Now let's create that class in its most basic form.
+Lassen Sie uns nun diese Klasse in ihrer einfachsten Form erstellen.
 
 04:16.090 --> 04:20.020
-I'll duplicate the class template and place it in the proper location.
+Ich dupliziere die Klassenvorlage und platziere sie an der richtigen Stelle.
 
 04:20.020 --> 04:26.110
-Here inside the controller folder, I've created a command folder and added our reset command.
+Hier im Controller-Ordner habe ich einen Befehlsordner erstellt und unseren Reset-Befehl hinzugefügt.
 
 04:26.110 --> 04:30.660
-So far I've given it a namespace and updated the class name from the template.
+Bis jetzt habe ich ihm einen Namespace gegeben und den Klassennamen aus der Vorlage aktualisiert.
 
 04:30.670 --> 04:36.520
-All we've got to do here is implement I command and let's jump back to the code where we use this back
+Alles, was wir hier tun müssen, ist, den I-Befehl zu implementieren, und lassen Sie uns zu dem Code zurückkehren, in dem wir diesen zurück verwenden
 
 04:36.520 --> 04:38.140
-in the calculator controller.
+im Controller des Taschenrechners.
 
 04:38.140 --> 04:39.490
-The code is looking good.
+Der Code sieht gut aus.
 
 04:39.490 --> 04:41.550
-We're now invoking a command.
+Wir rufen jetzt einen Befehl auf.
 
 04:41.560 --> 04:43.390
-So who would need to listen to this?
+Wer muss sich das anhören?
 
 04:43.390 --> 04:48.210
-Well, any concern could subscribe and listen to when the reset happens.
+Nun, jeder Konzern könnte sich anmelden und zuhören, wenn der Reset passiert.
 
 04:48.220 --> 04:53.470
-In our case, we'll go to The View, we'll listen for this command and we'll reset those three fields.
+In unserem Fall gehen wir zu The View, warten auf diesen Befehl und setzen diese drei Felder zurück.
 
 04:53.470 --> 05:00.070
-So here in the calculator view inside the initialize, we use the context and command manager to add
+Hier in der Taschenrechneransicht innerhalb der Initialisierung verwenden wir den Kontext- und Befehlsmanager, um Folgendes hinzuzufügen
 
 05:00.070 --> 05:01.270
-a command listener here.
+einen Kommando-Listener hinzuzufügen.
 
 05:01.270 --> 05:06.940
-Whenever the reset command gets called, this code executes and resets those fields.
+Immer wenn der Reset-Befehl aufgerufen wird, wird dieser Code ausgeführt und setzt die Felder zurück.
 
 05:06.940 --> 05:11.860
-Now, in this specific example, this is a bit problematic and redundant.
+In diesem speziellen Beispiel ist dies ein wenig problematisch und überflüssig.
 
 05:11.860 --> 05:18.640
-We already had the binding working, but I did want to show how to wire up a command just in case.
+Die Bindung hat bereits funktioniert, aber ich wollte zeigen, wie man einen Befehl verdrahtet, nur für den Fall.
 
 05:18.640 --> 05:19.840
-Let's run this example.
+Führen wir dieses Beispiel aus.
 
 05:19.840 --> 05:20.980
-Here's everything running.
+Hier ist alles am Laufen.
 
 05:20.980 --> 05:23.710
-Here is the reset functionality that works well.
+Hier ist die Rücksetzfunktion, die gut funktioniert.
 
 05:23.710 --> 05:26.530
-Here's the ad functionality that also works well.
+Hier ist die Anzeigenfunktion, die ebenfalls gut funktioniert.
 
 05:26.530 --> 05:32.500
-So in this specific case, I'm going to remove the command before finishing up the project.
+In diesem speziellen Fall werde ich also den Befehl entfernen, bevor ich das Projekt beende.
 
 05:32.800 --> 05:39.460
-I've gone back into the controller and commented out that code and gone back into The View and commented
+Ich bin zurück in den Controller gegangen und habe den Code auskommentiert und bin zurück in die View gegangen und habe kommentiert
 
 05:39.460 --> 05:42.490
-out that code and related code as well.
+diesen Code und den dazugehörigen Code auskommentiert.
 
 05:43.850 --> 05:45.020
-Let's run the demo.
+Lasst uns die Demo starten.
 
 05:45.050 --> 05:45.620
-Here we are.
+Hier sind wir nun.
 
 05:45.620 --> 05:46.670
-Running the demo.
+Ausführung der Demo.
 
 05:46.700 --> 05:48.230
-Do the ad operation.
+Führe die Anzeigenoperation durch.
 
 05:49.610 --> 05:50.630
-Works great.
+Funktioniert prima.
 
 05:50.660 --> 05:51.590
-Do the reset.
+Führe den Reset durch.
 
 05:53.910 --> 05:55.140
-Works great as well.
+Funktioniert auch gut.
 
 05:55.170 --> 05:59.890
-I'll include this calculator example in the code base so you can check it out as well.
+Ich werde dieses Rechenbeispiel in die Codebasis aufnehmen, damit Sie es auch ausprobieren können.
 
 05:59.910 --> 06:05.730
-For those of you who took the coding challenge assignment and completed this yourself before watching
+Für diejenigen unter euch, die an der Programmieraufgabe teilgenommen haben und diese selbst ausgefüllt haben, bevor sie zugesehen haben
 
 06:05.730 --> 06:09.150
-the video, I hope you learned a lot by going through that activity.
+das Video angesehen haben, hoffe ich, dass sie durch diese Aktivität viel gelernt haben.
 
 06:09.510 --> 06:15.420
-Overall, the process that we used here is something that you can use on larger and VCs projects as
+Insgesamt ist der Prozess, den wir hier verwendet haben, etwas, das Sie bei größeren und VCs-Projekten ebenso verwenden können
 
 06:15.420 --> 06:15.960
-well.
+verwenden.
 
 06:15.990 --> 06:21.330
-You think first about what your requirements are, what the user experience will be, and then you break
+Man denkt zuerst darüber nach, was die Anforderungen sind, wie die Benutzererfahrung sein wird, und dann bricht man
 
 06:21.330 --> 06:27.060
-that down into each of the concerns, model, view, controller and service.
+in die einzelnen Bereiche Model, View, Controller und Service.
 
 06:27.060 --> 06:31.500
-Then think about which base functionality, if any, you need for the concerns.
+Dann überlegt man sich, welche Basisfunktionalität man für die Belange braucht, wenn überhaupt.
 
 06:31.530 --> 06:37.740
-Now, while this sample was quite small and required only a model view and controller for a simple one
+Nun, während dieses Beispiel recht klein war und nur ein Model-View und einen Controller für ein einfaches
 
 06:37.740 --> 06:44.730
-hour example, you'll probably see for the typical project of one month or one year that you have many,
+Stunde benötigt, werden Sie wahrscheinlich sehen, dass Sie für ein typisches Projekt von einem Monat oder einem Jahr viele haben,
 
 06:44.730 --> 06:49.710
-many views and many models and many controllers.
+viele Ansichten und viele Modelle und viele Controller.
 
 06:49.710 --> 06:53.490
-Even with a project of that scale, you would still follow these steps.
+Selbst bei einem Projekt dieser Größenordnung würden Sie diese Schritte befolgen.
 
 06:53.490 --> 06:59.880
-And the same time we've spent together here starting this project is how you would start a much larger
+Und dieselbe Zeit, die wir hier zusammen verbracht haben, um dieses Projekt zu starten, würden Sie auch für ein viel größeres Projekt verwenden
 
 06:59.880 --> 07:00.990
-project as well.
+Projekt starten.
 
 07:01.740 --> 07:07.620
-Over time, you would see scaling up each of those concerns, perhaps having one view that gets a little
+Im Laufe der Zeit werden Sie sehen, dass Sie jedes dieser Anliegen ausbauen und vielleicht eine Ansicht haben, die ein wenig
 
 07:07.620 --> 07:08.520
-too large.
+zu groß wird.
 
 07:08.520 --> 07:10.860
-So you split it into two views.
+Also teilt man sie in zwei Ansichten auf.
 
 07:10.860 --> 07:16.360
-You'll also have a long library of commands that you can use and reuse throughout your project.
+Sie werden auch eine lange Bibliothek von Befehlen haben, die Sie in Ihrem Projekt verwenden und wiederverwenden können.
 
 07:16.380 --> 07:18.450
-Imagine next steps for this calculator.
+Stellen Sie sich die nächsten Schritte für diesen Taschenrechner vor.
 
 07:18.450 --> 07:24.450
-Something you may want to do as an optional coding assignment would be to add, subtract functionality
+Eine optionale Programmieraufgabe könnte darin bestehen, Funktionen hinzuzufügen, zu subtrahieren
 
 07:24.870 --> 07:27.480
-or add unit testing to the project.
+oder Unit-Tests zum Projekt hinzufügen.
 
 07:27.480 --> 07:30.600
-You could test the model, the view, the controller.
+Sie könnten das Modell, die Ansicht und den Controller testen.
 
 07:30.600 --> 07:35.220
-You could take the addition logic and separate it into its own class.
+Man könnte die Additionslogik in eine eigene Klasse auslagern.
 
 07:35.370 --> 07:41.220
-Something like my math system with a method of ADD and another method of subtract.
+So etwas wie mein mathematisches System mit einer Methode für ADD und einer anderen Methode für Subtract.
 
 07:41.950 --> 07:46.360
-That would be a great way to scale up your learning from this sample and move forward.
+Das wäre ein guter Weg, um das Lernen aus diesem Beispiel zu erweitern und voranzukommen.
 
 07:46.810 --> 07:48.680
-That's it for the calculator Mini.
+Das war's mit dem Taschenrechner Mini.
 
 07:48.700 --> 07:49.600
-Thanks.
+Danke!

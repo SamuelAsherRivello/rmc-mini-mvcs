@@ -1,733 +1,733 @@
 WEBVTT
 
 00:00.180 --> 00:03.600
-The clock sample with many MVCs.
+Das Uhrenbeispiel mit vielen MVCs.
 
 00:04.290 --> 00:06.390
-Here we are inside an empty project.
+Hier sind wir in einem leeren Projekt.
 
 00:06.390 --> 00:10.800
-I've added the Mini and VCs framework and imported the samples.
+Ich habe das Mini und VCs Framework hinzugefügt und die Beispiele importiert.
 
 00:11.010 --> 00:15.690
-Here, let's take a look at the version of the clock with many MVCs.
+Schauen wir uns nun die Version der Uhr mit vielen MVCs an.
 
 00:15.930 --> 00:17.760
-I'll start by running the sample.
+Ich beginne mit der Ausführung des Beispiels.
 
 00:21.160 --> 00:21.460
-Here.
+hier.
 
 00:21.460 --> 00:27.820
-We've got no real UI happening, but in the debug log console we have some debug log statements and
+Wir haben keine wirkliche Benutzeroberfläche, aber in der Debug-Log-Konsole haben wir einige Debug-Log-Anweisungen und
 
 00:27.820 --> 00:32.020
-they're showing the elapsed time as long as the scene has been open.
+sie zeigen die verstrichene Zeit an, solange die Szene geöffnet war.
 
 00:32.440 --> 00:33.130
-That's it.
+Das war's.
 
 00:33.130 --> 00:36.090
-There's no UI, no functionality for input either.
+Es gibt kein UI, auch keine Funktionalität für Eingaben.
 
 00:36.100 --> 00:38.650
-This is the first time we've seen the file structure.
+Dies ist das erste Mal, dass wir die Dateistruktur sehen.
 
 00:38.650 --> 00:42.760
-I have the example script itself which sits on a game object in the scene.
+Ich habe das Beispielskript selbst, das sich auf einem Spielobjekt in der Szene befindet.
 
 00:42.760 --> 00:48.130
-I have the clock mini class which gets created and contains all the concerns.
+Ich habe die Uhr-Miniklasse, die erstellt wird und alle Belange enthält.
 
 00:48.130 --> 00:54.940
-Then I have classes related to each of the concerns, model, view, controller and service.
+Dann habe ich Klassen, die mit jedem der Anliegen verbunden sind, Model, View, Controller und Service.
 
 00:54.940 --> 00:58.900
-One additional concept we haven't discussed yet is the context.
+Ein zusätzliches Konzept, das wir noch nicht besprochen haben, ist der Kontext.
 
 00:58.900 --> 01:02.690
-As we take a look at this code, look at the role of the context.
+Wenn wir uns diesen Code ansehen, sollten wir uns die Rolle des Kontexts ansehen.
 
 01:02.710 --> 01:04.750
-Here's the mini example itself.
+Hier ist das Minibeispiel selbst.
 
 01:08.980 --> 01:10.210
-It's a of behavior.
+Es ist ein Verhalten.
 
 01:10.210 --> 01:15.090
-And on its start we instantiate the mini class object and we call initialize.
+Und beim Start instanziieren wir das Objekt der Miniklasse und rufen initialize auf.
 
 01:15.100 --> 01:16.830
-Here's the clock mini class.
+Hier ist die Uhr-Miniklasse.
 
 01:16.840 --> 01:20.200
-This extends the mini and VCs framework class.
+Sie erweitert die Mini- und VCs-Rahmenklasse.
 
 01:20.410 --> 01:24.990
-You can think of this as the parent object that holds all of the four concerns.
+Man kann sich dies als das übergeordnete Objekt vorstellen, das alle vier Anliegen enthält.
 
 01:25.000 --> 01:31.990
-This is a generic class into which we pass the strong type of the context model, view, controller
+Dies ist eine generische Klasse, in die wir den starken Typ des Kontexts Model, View, Controller übergeben
 
 01:31.990 --> 01:32.830
-and service.
+und des Dienstes übergeben.
 
 01:32.830 --> 01:37.240
-Here's the initialize with the structure of mini MVCs.
+Hier ist das Initialisieren mit der Struktur von Mini-MVCs.
 
 01:37.240 --> 01:41.980
-All the major parts involved all have an explicit initialized call.
+Alle beteiligten Hauptteile haben einen expliziten Initialisierungsaufruf.
 
 01:41.980 --> 01:47.530
-This is a great place for you to put any code that should happen exactly once as the systems wake up.
+Dies ist ein großartiger Ort, um Code zu platzieren, der genau einmal beim Aufwachen des Systems passieren soll.
 
 01:47.530 --> 01:49.110
-So what do we do in here?
+Was machen wir also hier?
 
 01:49.120 --> 01:55.900
-First, we just make sure we have it initialized yet then we create the context model, view, controller
+Zuerst stellen wir sicher, dass es initialisiert ist, dann erstellen wir das Kontextmodell, die Ansicht und den Controller
 
 01:55.900 --> 01:56.770
-and service.
+und den Dienst.
 
 01:56.800 --> 02:01.810
-Notice that the constructors for each don't take any arguments except the controller.
+Man beachte, dass die Konstruktoren für jeden keine Argumente außer dem Controller annehmen.
 
 02:01.960 --> 02:09.940
-This is one of our first examples in code where we see the controller is the most powerful and capable
+Dies ist eines unserer ersten Beispiele im Code, bei dem wir sehen, dass der Controller am mächtigsten und fähigsten ist
 
 02:09.940 --> 02:15.820
-of the concerns because the controller serves to be the glue that holds together the model view and
+ist, denn der Controller ist der Klebstoff, der die Modellansicht und die
 
 02:15.820 --> 02:20.350
-service we pass in those references so it knows how to manage and deal with them.
+Service übergeben wir diese Referenzen, damit er weiß, wie man sie verwaltet und mit ihnen umgeht.
 
 02:20.350 --> 02:25.150
-And finally, we follow the best practice where each of the concerns gets initialized.
+Und schließlich folgen wir der bewährten Praxis, bei der jeder der Anliegen initialisiert wird.
 
 02:25.180 --> 02:29.790
-Notice that everything takes the context and we haven't talked about the context yet.
+Beachten Sie, dass alles den Kontext benötigt und wir haben noch nicht über den Kontext gesprochen.
 
 02:29.800 --> 02:30.970
-Let's take a look.
+Schauen wir uns das mal an.
 
 02:31.000 --> 02:33.340
-Context is a framework class.
+Context ist eine Rahmenklasse.
 
 02:33.340 --> 02:39.100
-It implements the interface of AI context, and the rest of the system looks for that interface.
+Sie implementiert die Schnittstelle von AI Context, und der Rest des Systems sucht nach dieser Schnittstelle.
 
 02:39.100 --> 02:45.190
-So you're free to create your own alternative to context simply by implementing that interface.
+Es steht Ihnen also frei, Ihre eigene Alternative zu context zu erstellen, indem Sie einfach diese Schnittstelle implementieren.
 
 02:45.190 --> 02:49.900
-But I find for my uses, this base implementation usually serves my needs.
+Aber ich finde, dass diese Basisimplementierung für meine Zwecke in der Regel ausreicht.
 
 02:49.900 --> 02:52.000
-It has just two things within it.
+Sie hat nur zwei Dinge in sich.
 
 02:52.000 --> 02:58.150
-It has a model locator and a command manager, both of which are publicly available from outside, and
+Sie hat einen Model Locator und einen Command Manager, die beide von außen zugänglich sind, und
 
 02:58.150 --> 02:59.950
-they're created upon instantiation.
+sie werden bei der Instanziierung erstellt.
 
 02:59.950 --> 03:01.600
-So what's the role of the contact?
+Was ist die Rolle des Kontakts?
 
 03:01.600 --> 03:08.590
-You can think of the context as the messaging system that all of the four concerns have reference to.
+Man kann sich den Kontext als das Nachrichtensystem vorstellen, auf das sich alle vier Anliegen beziehen.
 
 03:08.620 --> 03:10.720
-What are the things any concern can do with it?
+Was kann jeder Konzern damit machen?
 
 03:10.720 --> 03:16.150
-Well, by using the command manager, they can listen to any commands and invoke any commands.
+Nun, mit Hilfe des Befehlsmanagers können sie auf alle Befehle hören und alle Befehle aufrufen.
 
 03:16.150 --> 03:18.880
-That's the messaging portion and model locator.
+Das ist der Messaging-Teil und der Model Locator.
 
 03:18.880 --> 03:25.390
-While a more advanced concept optionally allows you to register any model and retrieve that model.
+Ein fortschrittlicheres Konzept erlaubt es Ihnen, jedes Modell zu registrieren und abzurufen.
 
 03:25.390 --> 03:31.690
-So any one of the concerns could register a model or listen to model events.
+Jedes der Anliegen könnte also ein Modell registrieren oder auf Modellereignisse hören.
 
 03:31.690 --> 03:37.480
-Down here in the constructor, we see that those two parts get instantiated, and as an experimental
+Hier unten im Konstruktor sehen wir, dass diese beiden Teile instanziiert werden, und als Experiment
 
 03:37.480 --> 03:40.300
-feature, I have a context locator.
+Funktion habe ich einen Kontext-Locator.
 
 03:40.690 --> 03:48.430
-This allows any scope to add a context like we see here, and any other concern can get that context
+Damit kann jeder Bereich einen Kontext hinzufügen, wie wir hier sehen, und jeder andere Bereich kann diesen Kontext erhalten
 
 03:48.430 --> 03:49.000
-if needed.
+falls erforderlich.
 
 03:49.000 --> 03:51.160
-In more complex examples, we'll see.
+In komplexeren Beispielen werden wir sehen.
 
 03:51.160 --> 03:57.130
-This could be useful if your project has two different mini MV axes and you want to communicate between
+Dies könnte nützlich sein, wenn Ihr Projekt zwei verschiedene Mini-MV-Achsen hat und Sie zwischen
 
 03:57.130 --> 04:01.570
-them for this first sample, we won't get into that complexity so you can ignore this detail.
+Für dieses erste Beispiel werden wir uns nicht mit dieser Komplexität befassen, so dass Sie dieses Detail ignorieren können.
 
 04:01.570 --> 04:05.920
-So that ends the high level discussion of this entire example.
+Damit endet die Diskussion dieses Beispiels auf hohem Niveau.
 
 04:05.920 --> 04:12.490
-We see that we have the mini parent object which has the four concerns within, and each of them has
+Wir sehen, dass wir das Mini-Elternobjekt haben, das die vier Anliegen enthält, und jedes von ihnen hat
 
 04:12.490 --> 04:14.890
-a reference to the context from a high level.
+einen Verweis auf den Kontext von einer höheren Ebene.
 
 04:14.890 --> 04:17.800
-It's important that we understand those basic concepts.
+Es ist wichtig, dass wir diese grundlegenden Konzepte verstehen.
 
 04:17.800 --> 04:22.330
-Feel free to rewatch this portion of the course to gain a clearer understanding.
+Sie können sich diesen Teil des Kurses gerne noch einmal ansehen, um ein besseres Verständnis zu erlangen.
 
 04:22.330 --> 04:25.720
-Now let's go through each of the concerns and see how they operate.
+Gehen wir nun die einzelnen Anliegen durch und sehen wir uns an, wie sie funktionieren.
 
 04:25.720 --> 04:28.600
-We already looked at the context, so let's look at the model.
+Wir haben uns bereits den Kontext angesehen, also schauen wir uns das Modell an.
 
 04:28.600 --> 04:31.030
-This is the first concern we've seen in code.
+Dies ist das erste Problem, das wir im Code gesehen haben.
 
 04:31.030 --> 04:36.910
-So we'll take a deeper look at how it's constructed and we'll see that all other concerns in this sample
+Schauen wir uns also genauer an, wie es aufgebaut ist, und wir werden sehen, dass alle anderen Bedenken in diesem Beispiel
 
 04:36.910 --> 04:41.080
-and most of the other concerns in the other sample follow a similar pattern.
+und die meisten anderen Anliegen in der anderen Stichprobe einem ähnlichen Muster folgen.
 
 04:41.080 --> 04:44.630
-So in future discussions, we will not cover this as deeply.
+Daher werden wir in künftigen Diskussionen nicht mehr so ausführlich darauf eingehen.
 
 04:44.650 --> 04:47.790
-Notice here that the clock model extends the base model.
+Beachten Sie hier, dass das Uhrenmodell das Basismodell erweitert.
 
 04:47.800 --> 04:51.760
-Now extending any of the base classes is optional.
+Die Erweiterung einer der Basisklassen ist nun optional.
 
 04:51.760 --> 04:56.620
-It comes with some free functionality, but you're free to approach it in an alternative way if you'd
+Es wird mit einigen freien Funktionen geliefert, aber es steht Ihnen frei, es auf eine andere Art und Weise anzugehen, wenn Sie möchten
 
 04:56.620 --> 04:57.700
-like more flexibility.
+mehr Flexibilität wünschen.
 
 04:57.700 --> 05:03.160
-So here we have a convention suggested, but there's flexibility for you to do your own solutions.
+Hier wird also eine Konvention vorgeschlagen, aber Sie haben die Flexibilität, Ihre eigenen Lösungen zu finden.
 
 05:03.160 --> 05:04.660
-Let's take a look at the base model.
+Werfen wir einen Blick auf das Basismodell.
 
 05:04.660 --> 05:08.920
-Base model implements I model, I model implements, I concern.
+Das Basismodell implementiert das I-Modell, das I-Modell implementiert das I-Konzept.
 
 05:08.920 --> 05:14.770
-It's possible in future versions of the framework, we might do something custom here to model, but
+Es ist möglich, dass wir in zukünftigen Versionen des Frameworks hier etwas anpassen, um zu modellieren, aber
 
 05:14.770 --> 05:18.670
-for right now it just mimics what any other concern is able to do.
+im Moment ahmt es einfach nach, was jeder andere Konzern tun kann.
 
 05:18.670 --> 05:25.570
-The I concern is able to initialize and accept a context so any class that implements this interface
+Die I-Sorge ist in der Lage, einen Kontext zu initialisieren und zu akzeptieren, so dass jede Klasse, die diese Schnittstelle implementiert
 
 05:25.570 --> 05:32.080
-is able to initialize accepting a context in the initialized method, and then it's able to store and
+in der Lage ist, sich zu initialisieren und einen Kontext in der initialisierten Methode zu akzeptieren, und dann ist sie in der Lage, zu speichern und
 
 05:32.080 --> 05:35.620
-maintain a public property to that context.
+eine öffentliche Eigenschaft zu diesem Kontext zu pflegen.
 
 05:35.620 --> 05:42.070
-So this is what all four of the concerns are able to do Now while the suggested usage patterns of how
+Das ist es also, was alle vier Konzerne tun können. Während die vorgeschlagenen Nutzungsmuster, wie
 
 05:42.070 --> 05:47.560
-we use a model is different than how we use a controller, know that under the hood they're equally
+wie wir ein Modell verwenden, anders ist als die Verwendung eines Controllers, wissen wir, dass sie unter der Haube gleich sind
 
 05:47.560 --> 05:48.130
-capable.
+fähig sind.
 
 05:48.130 --> 05:50.350
-Again, this allows for ultimate flexibility.
+Auch dies ermöglicht eine ultimative Flexibilität.
 
 05:50.350 --> 05:55.720
-Stepping back here as we see clock model extends base model, which we just explored, let's look at
+Wenn wir hier zurückgehen und sehen, dass das Uhrenmodell das Basismodell erweitert, das wir gerade erkundet haben, sehen wir uns Folgendes an
 
 05:55.720 --> 05:57.640
-the rest of how clock model operates.
+den Rest der Funktionsweise des Uhrenmodells.
 
 05:57.640 --> 06:01.600
-You can think of the model as the data store for all runtime data.
+Sie können sich das Modell als den Datenspeicher für alle Laufzeitdaten vorstellen.
 
 06:01.600 --> 06:03.640
-Well, what does the clock example need?
+Nun, was braucht das Uhrenbeispiel?
 
 06:03.640 --> 06:05.440
-Well, it needs the current time.
+Nun, es braucht die aktuelle Zeit.
 
 06:05.440 --> 06:08.200
-And then in our example, it maintains the delay.
+Und in unserem Beispiel behält sie die Verzögerung bei.
 
 06:08.300 --> 06:10.280
-Between each tick of the clock.
+Zwischen jedem Ticken der Uhr.
 
 06:10.280 --> 06:17.160
-For us, it's going to be one second, so we'll see it display one second, then 2 seconds, then 3
+Für uns wird es eine Sekunde sein, also werden wir sehen, dass es eine Sekunde anzeigt, dann 2 Sekunden, dann 3
 
 06:17.160 --> 06:18.110
-seconds and so on.
+Sekunden und so weiter.
 
 06:18.110 --> 06:24.410
-The model, like any concern, has the initialize and the only custom functionality we do here is initialize
+Das Modell hat, wie jeder Konzern, die Initialisierung und die einzige benutzerdefinierte Funktionalität, die wir hier machen, ist die Initialisierung
 
 06:24.410 --> 06:26.960
-the value of our observable variables.
+den Wert unserer beobachtbaren Variablen.
 
 06:26.960 --> 06:28.280
-That's it for the clock model.
+Das war's mit dem Uhrenmodell.
 
 06:28.280 --> 06:30.050
-Next, let's look at the clock view.
+Als nächstes sehen wir uns die Ansicht der Uhr an.
 
 06:30.050 --> 06:38.720
-The clock view implements eye view and just like we saw before, the eye view is able to have a initialize
+Die Uhr-Ansicht implementiert die Augen-Ansicht und genau wie wir zuvor gesehen haben, kann die Augen-Ansicht eine Initialisierung haben
 
 06:38.720 --> 06:41.060
-and take a context that's about it.
+und einen Kontext nehmen, das war's schon.
 
 06:41.060 --> 06:42.530
-So we won't explore that further.
+Wir werden das also nicht weiter untersuchen.
 
 06:42.530 --> 06:46.310
-We don't need any base functionality, so we don't use any base class here.
+Wir brauchen keine Basisfunktionalität, also verwenden wir hier keine Basisklasse.
 
 06:46.310 --> 06:48.110
-We just implement the view ourselves.
+Wir implementieren die Ansicht einfach selbst.
 
 06:48.110 --> 06:52.730
-So we have some properties, some fields and we handle the initialization.
+Wir haben also einige Eigenschaften, einige Felder und wir behandeln die Initialisierung.
 
 06:52.730 --> 06:56.450
-This is boilerplate stuff for any of the concerns.
+Dies ist ein Standardkram für alle Anliegen.
 
 06:56.450 --> 06:59.720
-The only thing custom we do here is we use the context.
+Das einzige, was wir hier tun, ist, den Kontext zu verwenden.
 
 06:59.720 --> 07:05.150
-This is our first use of seeing that we access the command manager within and we listen to a custom
+Hier sehen wir zum ersten Mal, dass wir auf den Befehlsmanager zugreifen und auf einen benutzerdefinierten Kontext hören.
 
 07:05.150 --> 07:07.910
-command called the time changed command.
+Befehl namens "Zeit geändert".
 
 07:07.910 --> 07:12.800
-Any time the command manager invokes that command, we'll be able to listen to it here.
+Jedes Mal, wenn der Befehlsmanager diesen Befehl aufruft, können wir ihn hier abhören.
 
 07:12.800 --> 07:15.590
-Now, this is the first chance to see Command manager in action.
+Dies ist die erste Gelegenheit, den Befehlsmanager in Aktion zu sehen.
 
 07:15.590 --> 07:20.300
-So remember the key difference between commands and events with commands.
+Erinnern Sie sich also an den entscheidenden Unterschied zwischen Befehlen und Ereignissen mit Befehlen.
 
 07:20.300 --> 07:24.260
-We don't need to know who will send this type of message.
+Wir brauchen nicht zu wissen, wer diese Art von Nachricht senden wird.
 
 07:24.260 --> 07:28.460
-We only subscribe to the middleman of the command manager and handle it that way.
+Wir abonnieren nur den Vermittler des Befehlsmanagers und handhaben es auf diese Weise.
 
 07:28.520 --> 07:30.230
-It's a decoupled solution.
+Es ist eine entkoppelte Lösung.
 
 07:30.230 --> 07:31.640
-Each concern implements.
+Jeder Bereich implementiert.
 
 07:31.640 --> 07:33.800
-The required is initialized.
+Die erforderliche wird initialisiert.
 
 07:33.800 --> 07:40.700
-This is more of a best practice that I use instead of something specific to MVC frameworks, but I just
+Dies ist eher eine bewährte Praxis, die ich benutze, anstatt etwas spezifisches für MVC-Frameworks, aber ich habe einfach
 
 07:40.700 --> 07:46.070
-make a method that easily checks if we're initialized, and if we're not, it throws an exception.
+eine Methode, die einfach überprüft, ob wir initialisiert sind, und wenn nicht, wird eine Ausnahme geworfen.
 
 07:46.070 --> 07:50.690
-We'll see that used at the top of pretty much every method in every concern.
+Wir werden sehen, dass das am Anfang von so ziemlich jeder Methode in jedem Konzern verwendet wird.
 
 07:50.690 --> 07:55.250
-It's a simple grade to gate check that your public methods aren't called too early.
+Es ist eine einfache Methode, um zu überprüfen, dass die öffentlichen Methoden nicht zu früh aufgerufen werden.
 
 07:55.250 --> 08:00.860
-Now, each time the command manager dispatches that related event, we're handling that here, we can
+Jedes Mal, wenn der Befehlsmanager das entsprechende Ereignis auslöst, können wir das hier behandeln
 
 08:00.860 --> 08:04.760
-see that the first thing we do is ensure that we are indeed initialized.
+sehen, dass das erste, was wir tun, ist sicherzustellen, dass wir tatsächlich initialisiert sind.
 
 08:04.760 --> 08:08.600
-We expect every time the scene runs will be initialized, fine.
+Wir erwarten, dass die Szene jedes Mal, wenn sie läuft, initialisiert wird, gut.
 
 08:08.600 --> 08:13.460
-This is just an additional gate check that ensures that the lifecycles are operating properly.
+Dies ist nur eine zusätzliche Prüfung, die sicherstellt, dass die Lebenszyklen ordnungsgemäß ablaufen.
 
 08:13.460 --> 08:17.000
-Then the only real custom piece of functionality we do here is debug.
+Die einzige wirklich benutzerdefinierte Funktion, die wir hier ausführen, ist die Fehlersuche.
 
 08:17.000 --> 08:17.600
-Log out.
+Abmelden.
 
 08:17.600 --> 08:22.430
-Remember, we don't have any on screen UI, we're not using any monte behaviors.
+Denken Sie daran, dass wir keine Benutzeroberfläche auf dem Bildschirm haben, wir verwenden keine Monte-Verhaltensweisen.
 
 08:22.430 --> 08:26.960
-So our way to speak out through the View is just using a debug log statement.
+Wir können uns also über die View äußern, indem wir eine Debug-Log-Anweisung verwenden.
 
 08:26.960 --> 08:31.760
-This doesn't mean you would need to walk through these steps every time you debug log in your projects.
+Das bedeutet nicht, dass Sie diese Schritte jedes Mal durchlaufen müssen, wenn Sie Debug Log in Ihren Projekten verwenden.
 
 08:31.760 --> 08:35.600
-You do that as freely as you would in any typical project.
+Sie machen das genauso frei wie in jedem anderen Projekt.
 
 08:35.600 --> 08:43.070
-This is just a contrived, created example to show some sort of user feedback without any mono behaviors
+Dies ist nur ein erfundenes Beispiel, um eine Art von Benutzer-Feedback zu zeigen, ohne irgendwelche Mono-Verhaltensweisen
 
 08:43.070 --> 08:46.070
-or UI that keeps this example quite simple.
+oder UI, was dieses Beispiel recht einfach hält.
 
 08:46.070 --> 08:47.900
-Next, let's look at the clock service.
+Schauen wir uns als nächstes den Uhrendienst an.
 
 08:47.900 --> 08:50.330
-The clock service extends base service.
+Der Uhrendienst erweitert den Basisdienst.
 
 08:50.330 --> 08:57.380
-As with all concerns that extend a base class that's optional, all it does is do the initialization
+Wie bei allen Belangen, die eine Basisklasse erweitern, die optional ist, ist alles, was er tut, die Initialisierung
 
 08:57.380 --> 09:01.280
-and context set up that we've seen in other concerns.
+und das Einrichten des Kontextes, wie wir es in anderen Belangen gesehen haben.
 
 09:01.280 --> 09:06.890
-This service is designed to load something and then notify the system when that's loaded.
+Dieser Dienst ist dazu gedacht, etwas zu laden und dann das System zu benachrichtigen, wenn es geladen ist.
 
 09:06.890 --> 09:08.960
-So we have a custom unity event here.
+Wir haben hier also ein benutzerdefiniertes Unity-Ereignis.
 
 09:08.960 --> 09:12.650
-The actual data that gets loaded from this service is the time delay.
+Die eigentlichen Daten, die von diesem Dienst geladen werden, sind die Zeitverzögerung.
 
 09:12.650 --> 09:14.120
-So that's made available here.
+Das wird hier also zur Verfügung gestellt.
 
 09:14.120 --> 09:17.930
-Inside the initialize, we do the basic concern setup.
+Innerhalb der Initialisierung führen wir die Grundeinstellungen durch.
 
 09:17.930 --> 09:23.120
-The only thing really custom we do here is initialize that time delay from somewhere outside of this
+Das Einzige, was wir hier tun, ist, die Zeitverzögerung von irgendwo außerhalb zu initialisieren
 
 09:23.120 --> 09:24.830
-scope load will be called.
+Der Bereich load wird aufgerufen.
 
 09:24.830 --> 09:31.310
-And what we see here is very similar to the functionality of the non mini MVCs version we looked at
+Und was wir hier sehen, ist der Funktionalität der nicht-mini MVCs Version sehr ähnlich, die wir uns angesehen haben
 
 09:31.310 --> 09:32.060
-before.
+vorher angesehen haben.
 
 09:32.240 --> 09:36.470
-It just loads a local text file, grabs the string value out of it types.
+Es wird einfach eine lokale Textdatei geladen, der String-Wert wird aus dieser Datei ausgelesen und getippt.
 
 09:36.470 --> 09:38.300
-It is int and stores it for us.
+Es ist int und speichert es für uns.
 
 09:38.300 --> 09:43.100
-Something of note here is that once the data is loaded, that loaded event is fired.
+Bemerkenswert ist, dass das Ereignis "loaded" ausgelöst wird, sobald die Daten geladen sind.
 
 09:43.100 --> 09:46.370
-We haven't yet seen which scope is going to consume that event.
+Wir haben noch nicht gesehen, welcher Bereich dieses Ereignis konsumieren wird.
 
 09:46.370 --> 09:46.670
-Next.
+Weiter.
 
 09:46.670 --> 09:47.900
-Let's look at the controller.
+Schauen wir uns den Controller an.
 
 09:47.900 --> 09:53.510
-This is going to be the most complex concern of this sample and in most samples to controllers where
+Dies wird das komplexeste Problem dieses Beispiels und der meisten Beispiele für Controller sein, bei denen
 
 09:53.510 --> 09:58.100
-we'll see the bulk of the code, the clock controller extends base controller in this case.
+wir den Großteil des Codes sehen werden, erweitert der Uhren-Controller in diesem Fall den Basis-Controller.
 
 09:58.100 --> 10:01.640
-And in all cases where you see a base class used, it's optional.
+Und in allen Fällen, in denen eine Basisklasse verwendet wird, ist sie optional.
 
 10:01.640 --> 10:05.360
-You can, of course create your own class that implements the controller.
+Sie können natürlich Ihre eigene Klasse erstellen, die den Controller implementiert.
 
 10:05.360 --> 10:11.180
-But here we get some base functionality which is going to be handling the initialization and taking
+Aber hier bekommen wir eine Basisfunktionalität, die sich um die Initialisierung kümmert und die
 
 10:11.180 --> 10:11.870
-in the context.
+im Kontext.
 
 10:11.870 --> 10:17.090
-Because clock controller deals with some specific arguments, I've decided that base controller is a
+Da der Uhren-Controller mit einigen spezifischen Argumenten arbeitet, habe ich beschlossen, dass der Basis-Controller ein
 
 10:17.090 --> 10:22.670
-generic and you pass in the strongly type values for the model view and service.
+generisch ist und man die Werte des starken Typs für die Modellansicht und den Dienst einfügt.
 
 10:22.670 --> 10:26.870
-In the constructor, we pass the model view and service to the base class.
+Im Konstruktor übergeben wir die Modellansicht und den Dienst an die Basisklasse.
 
 10:26.870 --> 10:32.450
-In the initialize, we do the typical thing that all concerns do, which is handle the initialize and
+In der Initialisierung machen wir das Typische, was alle Belange tun, nämlich das Initialisieren und
 
 10:32.450 --> 10:34.250
-take in the context and store it.
+nehmen den Kontext auf und speichern ihn.
 
 10:34.430 --> 10:40.220
-The only real custom stuff we're doing here is listening to the model, subscribing to one of the observable
+Das einzige, was wir hier tun, ist das Abhören des Modells, das Abonnieren einer der beobachtbaren
 
 10:40.220 --> 10:44.150
-events and listening to the service so that we know when the service is loaded.
+Ereignisse und das Abhören des Dienstes, damit wir wissen, wann der Dienst geladen ist.
 
 10:44.150 --> 10:49.040
-Now, while we've talked about the observable concept and we've seen the model source code, this is
+Nun, da wir über das Observable-Konzept gesprochen haben und den Quellcode des Modells gesehen haben, ist dies
 
 10:49.040 --> 10:55.220
-the first place we've seen subscribing to the Unity event from one of the observable classes.
+die erste Stelle, an der wir das Abonnieren des Unity-Ereignisses von einer der Observable-Klassen gesehen haben.
 
 10:55.220 --> 11:03.140
-So any time model time value is set from any scope, this on value change would get fired.
+Jedes Mal, wenn der Modellzeitwert von einem beliebigen Bereich aus gesetzt wird, wird dieses Ereignis bei einer Wertänderung ausgelöst.
 
 11:03.410 --> 11:08.180
-And again, the use of observables is optional but recommended for all.
+Auch hier ist die Verwendung von Observablen optional, aber für alle empfohlen.
 
 11:08.510 --> 11:15.710
-Properties within the model, you get this automatic paradigm of being able to set the value and being
+Eigenschaften innerhalb des Modells, erhalten Sie dieses automatische Paradigma der Möglichkeit, den Wert zu setzen und zu
 
 11:15.710 --> 11:18.560
-able to listen to when that value has been set and changed.
+in der Lage zu hören, wann dieser Wert gesetzt und geändert wurde.
 
 11:18.560 --> 11:25.310
-So when that service is loaded, we update the model based on what the service got from its external
+Wenn der Dienst geladen wird, aktualisieren wir das Modell basierend auf dem, was der Dienst von seinem externen
 
 11:25.310 --> 11:25.700
-data.
+Daten.
 
 11:25.700 --> 11:27.530
-And then we start the ticking of the clock.
+Und dann beginnen wir mit dem Ticken der Uhr.
 
 11:27.530 --> 11:32.960
-The ticking of the clock operates very similar to how we saw the non mini NBC's version do it.
+Das Ticken der Uhr funktioniert sehr ähnlich wie bei der nicht-miniaturisierten NBC-Version.
 
 11:32.990 --> 11:34.700
-However, there's a key distinction.
+Es gibt jedoch einen wichtigen Unterschied.
 
 11:34.700 --> 11:40.730
-Earlier I talked about how unity collapses model view controller in several areas of the unity engine,
+Vorhin habe ich darüber gesprochen, wie Unity Model-View-Controller in verschiedenen Bereichen der Unity-Engine zusammenfasst,
 
 11:40.730 --> 11:45.590
-one of which is that mono behavior itself is quite powerful and spans many concerns.
+einer davon ist, dass das Mono-Verhalten selbst ziemlich mächtig ist und viele Bereiche umfasst.
 
 11:45.590 --> 11:52.070
-Now in the non mini MVCs example, I used a CO routine in order to call repeatable code because this
+Im Nicht-Mini-MVCs-Beispiel habe ich eine CO-Routine verwendet, um wiederholbaren Code aufzurufen, weil dieser
 
 11:52.070 --> 11:54.200
-example uses no mono behaviors.
+Beispiel keine Mono-Verhaltensweisen verwendet.
 
 11:54.200 --> 11:58.040
-I don't have the same access to CO routine now.
+Ich habe jetzt nicht mehr den gleichen Zugriff auf die CO-Routine.
 
 11:58.040 --> 12:00.140
-There's lots of ways that I could fake it.
+Es gibt viele Möglichkeiten, wie ich es vortäuschen kann.
 
 12:00.140 --> 12:05.600
-What I've chosen to do here is have a separate class which you're free to dig into if you like, and
+Ich habe mich hier für eine separate Klasse entschieden, in die ihr hineinschnuppern könnt, wenn ihr wollt, und
 
 12:05.600 --> 12:08.060
-all it does is call repeatable code.
+alles, was sie tut, ist, wiederholbaren Code aufzurufen.
 
 12:08.060 --> 12:10.430
-I call that for this example Clock Helper.
+Ich nenne das für dieses Beispiel Clock Helper.
 
 12:10.430 --> 12:15.110
-How it works is outside the scope of this example, but just know it's a workaround for how to call
+Wie das funktioniert, liegt außerhalb des Rahmens dieses Beispiels, aber Sie sollten wissen, dass es ein Workaround für den Aufruf von
 
 12:15.110 --> 12:15.950
-repeatable code.
+wiederholbarer Code.
 
 12:15.950 --> 12:17.900
-And it was one of the solutions that I went with.
+Und das war eine der Lösungen, die ich gewählt habe.
 
 12:17.900 --> 12:23.210
-Something key to note here is here in the controller, every time the time delay happens, which is
+Wichtig ist, dass hier im Controller jedes Mal, wenn die Zeitverzögerung auftritt, die
 
 12:23.210 --> 12:26.030
-every second, I'm setting the model data.
+jede Sekunde, setze ich die Modelldaten.
 
 12:26.030 --> 12:29.210
-So we have the controller setting a value on the model.
+Der Controller setzt also einen Wert für das Modell.
 
 12:29.210 --> 12:34.760
-And because we've listened to the unity event for any time, that model value changes, we get this
+Und weil wir auf das Unity-Ereignis gehört haben, wenn sich der Modellwert ändert, erhalten wir dies
 
 12:34.760 --> 12:35.270
-callback.
+Rückruf.
 
 12:35.270 --> 12:41.180
-So here we are in the controller, subscribe to model changes and handling them, turning them into
+Hier sind wir also im Controller, der Modelländerungen abonniert und sie behandelt, indem er sie in
 
 12:41.180 --> 12:42.050
-commands.
+Befehle.
 
 12:42.050 --> 12:45.860
-That's a very common pattern that we'll see throughout MVC.
+Das ist ein sehr verbreitetes Muster, das wir überall in MVC sehen werden.
 
 12:45.860 --> 12:52.910
-We take an event which is somewhat decoupled and we translate it into a command which is highly decoupled.
+Wir nehmen ein Ereignis, das etwas entkoppelt ist, und übersetzen es in einen Befehl, der stark entkoppelt ist.
 
 12:53.030 --> 12:59.570
-Remember, commands are able to be observed and listened to by any of the concerns as long as they have
+Denken Sie daran, dass Befehle von jedem der Beteiligten beobachtet und abgehört werden können, solange sie
 
 12:59.570 --> 13:02.570
-access to the context, which all of our concerns do.
+Zugriff auf den Kontext haben, was bei allen unseren Anliegen der Fall ist.
 
 13:02.570 --> 13:10.190
-So any time you see invoke command, you can think that's a message like a radio station that any concern
+Jedes Mal, wenn Sie "invoke command" sehen, können Sie denken, dass dies eine Nachricht ist, wie ein Radiosender, dass jeder Konzern
 
 13:10.190 --> 13:11.030
-can listen to.
+anhören kann.
 
 13:11.030 --> 13:13.340
-This is a very powerful concept.
+Dies ist ein sehr wirkungsvolles Konzept.
 
 13:13.340 --> 13:18.620
-It offers you flexibility to communicate to and from any concern.
+Es bietet Ihnen die Flexibilität, zu und von jedem Anliegen zu kommunizieren.
 
 13:18.620 --> 13:25.040
-Now, while that's very flexible, we want to follow the basic conventions where controller is the main
+Obwohl das sehr flexibel ist, wollen wir den grundlegenden Konventionen folgen, bei denen der Controller der Hauptprozessor ist
 
 13:25.040 --> 13:30.110
-concern that will be sending and receiving these commands, there will be exceptions and we'll see them
+der diese Befehle sendet und empfängt, es wird Ausnahmen geben und wir werden sie sehen
 
 13:30.110 --> 13:35.900
-in the examples deciding exactly how you use unity events and how you use commands in your project is
+In den Beispielen wird genau entschieden, wie man Unity Events und Befehle in seinem Projekt verwendet
 
 13:35.900 --> 13:38.510
-part of the art of using MVC.
+Teil der Kunst der Verwendung von MVC.
 
 13:38.510 --> 13:41.180
-In earlier slides, I suggested conventions.
+In früheren Folien habe ich Konventionen vorgeschlagen.
 
 13:41.180 --> 13:42.770
-You're free to follow those.
+Es steht Ihnen frei, diesen zu folgen.
 
 13:42.770 --> 13:46.490
-I just recommend being consistent if you do apply any exceptions.
+Ich empfehle nur, konsequent zu sein, wenn Sie irgendwelche Ausnahmen anwenden.
 
 13:46.490 --> 13:47.210
-So that's it.
+Das war's also.
 
 13:47.210 --> 13:52.730
-We've covered the creation of the context, the model, the view, the controller and the service.
+Wir haben die Erstellung des Kontexts, des Modells, der Ansicht, des Controllers und des Dienstes behandelt.
 
 13:53.000 --> 13:55.910
-Then we just initialize all of them.
+Dann initialisieren wir sie einfach alle.
 
 13:56.180 --> 14:02.240
-So now from a timeline perspective, we did have a monarch behavior in the scene and on its start it
+Aus der Sicht der Zeitleiste haben wir nun ein Monarch-Verhalten in der Szene und beim Start ist es
 
 14:02.240 --> 14:05.630
-created the mini inside the minis initialize.
+die Miniatur innerhalb der Initialisierung der Miniatur erstellt.
 
 14:05.630 --> 14:11.660
-It created what we're seeing here, wiring up all of these different pieces and then initialize in this
+Es erzeugte das, was wir hier sehen, indem es all diese verschiedenen Teile miteinander verdrahtete und dann in dieser Szene initialisierte
 
 14:11.660 --> 14:17.450
-particular example, because I'm familiar with how it works, I know that when the controller gets initialized,
+speziellen Beispiel, weil ich weiß, wie es funktioniert, weiß ich, dass wenn der Controller initialisiert wird,
 
 14:17.450 --> 14:22.190
-that's what starts the ticking and really gets this example going.
+das ist es, was das Ticken in Gang setzt und dieses Beispiel wirklich in Gang bringt.
 
 14:22.190 --> 14:23.960
-That's it for the code overview.
+Das war's mit der Codeübersicht.
 
 14:23.960 --> 14:27.740
-This is probably the most dense code sample.
+Dies ist wahrscheinlich das dichteste Codebeispiel.
 
 14:27.740 --> 14:32.000
-Despite being a simple sample, we've got a lot of concepts here.
+Obwohl es ein einfaches Beispiel ist, haben wir hier eine Menge Konzepte.
 
 14:32.000 --> 14:36.770
-We're taking all of the theory we've seen in the past slides and bringing it all together.
+Wir nehmen all die Theorie, die wir in den letzten Folien gesehen haben, und bringen sie zusammen.
 
 14:36.770 --> 14:39.950
-Let's take a look at the sample running one more time here in the scene.
+Schauen wir uns das Beispiel hier in der Szene noch einmal an.
 
 14:39.950 --> 14:46.700
-I've selected a game object we can see in the inspector that game object just has the example and I'll
+Ich habe ein Spielobjekt ausgewählt, wir können im Inspektor sehen, dass das Spielobjekt das Beispiel hat und ich werde
 
 14:46.700 --> 14:47.660
-run the sample.
+das Beispiel ausführen.
 
 14:51.590 --> 14:59.960
-As it's running every time delay, which is 1000 milliseconds, means that we get one tick per second.
+Da es mit einer Zeitverzögerung von 1000 Millisekunden läuft, bekommen wir einen Tick pro Sekunde.
 
 15:00.710 --> 15:03.770
-And our debug log statement shows up in the console.
+Und unsere Debug-Protokollanweisung erscheint in der Konsole.
 
 15:04.540 --> 15:06.430
-That's the complete example.
+Das ist das vollständige Beispiel.
 
 15:06.610 --> 15:11.020
-We've seen all of the concepts of model view controller service.
+Wir haben alle Konzepte des Model-View-Controller-Service kennengelernt.
 
 15:11.680 --> 15:17.230
-How they get initialized, how the context is the glue that helps message all between them.
+Wie sie initialisiert werden, wie der Kontext der Klebstoff ist, der dabei hilft, alle Nachrichten zwischen ihnen zu übermitteln.
 
 15:17.230 --> 15:23.770
-And you have an excellent foundation for seeing the theory we've learned applied in real C-sharp code.
+Und Sie haben eine ausgezeichnete Grundlage, um zu sehen, wie die Theorie, die wir gelernt haben, in echtem C-Sharp-Code angewendet wird.
 
 15:24.100 --> 15:26.740
-So that's our first complete sample.
+Das ist also unser erstes vollständiges Beispiel.
 
 15:26.740 --> 15:29.710
-Seeing code running with mini MVCs.
+Sehen, wie der Code mit Mini-MVCs läuft.
 
 15:29.710 --> 15:36.520
-While the use case is very simple, all we're doing is every second doing a debug log statement.
+Obwohl der Anwendungsfall sehr einfach ist, ist alles, was wir tun, jede Sekunde eine Debug-Log-Anweisung zu machen.
 
 15:36.520 --> 15:39.730
-We see that we've got a lot of concepts to make that happen.
+Wir sehen, dass wir eine Menge von Konzepten haben, um das zu erreichen.
 
 15:39.730 --> 15:46.240
-Now, this is the first example you'll see where when using a bespoke architecture, like many MVCs,
+Dies ist das erste Beispiel, das Sie sehen werden, wenn Sie eine maßgeschneiderte Architektur verwenden, wie viele MVCs,
 
 15:46.270 --> 15:47.860
-it feels verbose.
+es fühlt sich langatmig an.
 
 15:47.860 --> 15:54.160
-It feels like, Hey, couldn't we have done that in just one class like we did with the non mini MVC
+Es fühlt sich an wie: Hey, hätten wir das nicht in nur einer Klasse machen können, wie wir es mit dem nicht-mini MVC gemacht haben
 
 15:54.160 --> 15:54.670
-version?
+Version?
 
 15:54.670 --> 15:58.060
-But remember, we want to invest in our software.
+Aber denken Sie daran, wir wollen in unsere Software investieren.
 
 15:58.060 --> 16:04.360
-We want to use these best practices and it won't be in a ten minute example that we really understand
+Wir wollen diese Best Practices anwenden, und es wird kein zehnminütiges Beispiel sein, das wir wirklich verstehen
 
 16:04.360 --> 16:11.140
-the full power ten days into a project, ten months into a project, having that proper code separation
+zehn Tage nach einem Projekt, zehn Monate nach einem Projekt, die volle Leistung einer korrekten Codetrennung
 
 16:11.140 --> 16:15.780
-that comes with a bespoke framework is incredibly powerful and pays dividends.
+die mit einem maßgeschneiderten Framework einhergeht, ist unglaublich leistungsfähig und zahlt sich aus.
 
 16:15.790 --> 16:16.930
-That's it for now.
+Das war's für jetzt.
 
 16:16.930 --> 16:17.650
-Thanks.
+Danke!

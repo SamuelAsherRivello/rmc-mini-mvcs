@@ -1,196 +1,196 @@
 WEBVTT
 
 00:00.520 --> 00:03.490
-The Unity MVC framework.
+Das Unity MVC-Framework.
 
 00:03.490 --> 00:10.750
-I created the Unity UMBC framework several years ago based on my learnings at the time and my architectural
+Ich habe das Unity UMBC-Framework vor einigen Jahren entwickelt, basierend auf meinen damaligen Erkenntnissen und meinen architektonischen
 
 00:10.750 --> 00:11.460
-goals.
+Ziele.
 
 00:11.470 --> 00:17.140
-The benefits of using this particular framework I find are that it is proven and based on a lot of the
+Die Vorteile der Verwendung dieses speziellen Frameworks sind, dass es sich bewährt hat und auf einer Vielzahl von
 
 00:17.140 --> 00:20.310
-principles and patterns that we've seen before in the course.
+Prinzipien und Mustern basiert, die wir in diesem Kurs bereits kennengelernt haben.
 
 00:20.320 --> 00:26.080
-While the version exists only for unity, in theory, the patterns there are language agnostic, so
+Die Version existiert zwar nur für Unity, aber theoretisch sind die Muster dort sprachunabhängig, also
 
 00:26.080 --> 00:28.920
-you could bring it to different platforms if you chose.
+man sie auf andere Plattformen übertragen kann, wenn man will.
 
 00:28.930 --> 00:35.740
-It brings a more testable environment to unity because each area of your code is separated and decoupled.
+Es bringt eine besser testbare Umgebung zu Unity, weil jeder Bereich des Codes getrennt und entkoppelt ist.
 
 00:35.740 --> 00:39.940
-And like many of the established architectures, we've taken a look at unity.
+Und wie viele der etablierten Architekturen haben wir einen Blick auf Unity geworfen.
 
 00:39.940 --> 00:45.010
-And this allows for faster development and much more efficient maintenance on your projects.
+Und das ermöglicht eine schnellere Entwicklung und eine viel effizientere Wartung Ihrer Projekte.
 
 00:45.010 --> 00:50.860
-At the time of creation, I had a mono behavior centric flow to how I was developing in unity.
+Zum Zeitpunkt der Erstellung hatte ich einen mono behavior centric flow, wie ich in Unity entwickelte.
 
 00:50.920 --> 00:53.860
-So I built this system to work in the same way.
+Also habe ich dieses System so gebaut, dass es auf die gleiche Weise funktioniert.
 
 00:53.860 --> 00:58.300
-So one of the key features here is that it heavily uses mono behaviors.
+Eines der Hauptmerkmale hier ist, dass es stark auf Mono-Verhaltensweisen setzt.
 
 00:58.300 --> 01:01.780
-Each of the four concerns extends mono behavior.
+Jeder der vier Bereiche erweitert das Mono-Verhalten.
 
 01:01.780 --> 01:07.060
-This means that you can hang each of these concerns on a game object, which is great using all the
+Das bedeutet, dass man jeden dieser Belange an ein Spielobjekt hängen kann, was großartig ist, wenn man alle
 
 01:07.060 --> 01:12.550
-familiar workflows we have in unity for game objects and components, including serializing fields on
+vertrauten Workflows, die wir in Unity für Spielobjekte und Komponenten haben, einschließlich der Serialisierung von Feldern auf
 
 01:12.550 --> 01:13.570
-any of the concerns.
+jedes der Anliegen.
 
 01:13.570 --> 01:17.890
-For example, in the screenshot here you can see one of the models.
+Auf dem Screenshot hier sehen Sie zum Beispiel eines der Modelle.
 
 01:17.890 --> 01:23.920
-The model is a mono behavior, so it can have serialized fields and sit nicely in your unity inspector
+Das Modell ist ein Mono-Verhalten, so dass es serialisierte Felder haben kann und sich gut in den Unity Inspector einfügt
 
 01:23.920 --> 01:24.250
-view.
+Ansicht.
 
 01:24.250 --> 01:27.550
-So what's the high level structure of you and VCs?
+Wie ist die Struktur von dir und den VCs auf hoher Ebene?
 
 01:27.550 --> 01:34.090
-Well, we have the familiar m v from the patterns we've looked at before, where each of those four
+Nun, wir haben das bekannte m v aus den Mustern, die wir uns zuvor angesehen haben, wo jedes dieser vier
 
 01:34.090 --> 01:36.130
-concerns extends mono behavior.
+betrifft, erweitert das Mono-Verhalten.
 
 01:36.130 --> 01:42.700
-Then inside my game code, I would create an app concept, which is also amount of behavior.
+Dann würde ich in meinem Spielcode ein App-Konzept erstellen, das auch eine Menge Verhalten ist.
 
 01:42.700 --> 01:48.430
-That's the one thing in my scene under which all of this sits again, some benefits of the mono behavior
+Das ist die eine Sache in meiner Szene, unter der all dies wieder sitzt, einige Vorteile des Mono-Verhaltens
 
 01:48.430 --> 01:50.740
-approach as it feels very native to unity.
+Ansatz, da es sich sehr nativ für Unity anfühlt.
 
 01:50.740 --> 01:55.360
-Things are sitting in the scene on game objects and can be separated, as I like.
+Die Dinge sitzen in der Szene auf Spielobjekten und können getrennt werden, wie ich es mag.
 
 01:55.360 --> 01:58.270
-Now in this chapter, we're just doing an overview of this.
+In diesem Kapitel geben wir nur einen Überblick über diese Dinge.
 
 01:58.270 --> 02:01.000
-We're eventually going to move on to a different framework.
+Wir werden schließlich zu einem anderen Rahmenwerk übergehen.
 
 02:01.000 --> 02:04.480
-Here's a snippet from how the UMBC system works.
+Hier ist ein Ausschnitt aus der Funktionsweise des UMBC-Systems.
 
 02:04.480 --> 02:08.680
-There are some takeaways from this older system that I still really like.
+Es gibt einige Erkenntnisse aus diesem älteren System, die mir immer noch sehr gut gefallen.
 
 02:08.680 --> 02:13.480
-First, in a lot of the concerns, like the base controller we see here, I use generics.
+Erstens verwende ich in vielen Bereichen, wie z.B. dem Basis-Controller, den wir hier sehen, Generika.
 
 02:13.480 --> 02:19.450
-Generics are a fantastic way in C-sharp to create some reusable template classes.
+Generics sind eine fantastische Möglichkeit in C-Sharp, um wiederverwendbare Template-Klassen zu erstellen.
 
 02:19.450 --> 02:25.840
-Secondly, the workflow I have here allows for strong typing, which is great in the specific instances
+Zweitens erlaubt der Arbeitsablauf, den ich hier habe, eine starke Typisierung, was in bestimmten Fällen großartig ist
 
 02:25.840 --> 02:27.100
-of how my game flows.
+wie mein Spiel abläuft.
 
 02:27.100 --> 02:32.770
-I'm able to get the auto completion, which shows me the properties and methods that make sense for
+Ich kann die automatische Vervollständigung nutzen, die mir die Eigenschaften und Methoden anzeigt, die sinnvoll sind für
 
 02:32.770 --> 02:37.630
-the context and the framework introduces the concepts we've learned from the design patterns.
+und das Framework führt die Konzepte ein, die wir aus den Entwurfsmustern gelernt haben.
 
 02:37.630 --> 02:45.070
-We have both the command manager for high level FA Communication in a more decoupled fashion and unity
+Wir haben sowohl den Befehlsmanager für die FA-Kommunikation auf hoher Ebene in einer mehr entkoppelten Art und Weise als auch Unity
 
 02:45.070 --> 02:48.670
-events for local level, lower level communication.
+Ereignisse für die Kommunikation auf lokaler, untergeordneter Ebene.
 
 02:48.670 --> 02:53.350
-The key difference here, as we discussed when we talked about these patterns before, is that the command
+Der Hauptunterschied hier ist, wie wir bereits bei der Diskussion dieser Muster besprochen haben, dass der Befehl
 
 02:53.350 --> 02:58.750
-manager concept doesn't need for the sender and receiver to have references to each other, whereas
+Manager-Konzept keine Referenzen zwischen Sender und Empfänger benötigt, während
 
 02:58.750 --> 03:04.420
-the Unity event concept requires that the observer have a reference to the sender.
+das Unity-Ereigniskonzept erfordert, dass der Beobachter einen Verweis auf den Absender hat.
 
 03:04.420 --> 03:09.550
-This gives the framework two tiers of how it can communicate between the major concerns.
+Dies gibt dem Framework zwei Ebenen, wie es zwischen den Hauptanliegen kommunizieren kann.
 
 03:09.550 --> 03:15.490
-So at the time that I created this particular framework, it embraced the principles in how I approached
+Zu der Zeit, als ich diesen speziellen Rahmen schuf, umfasste er die Prinzipien, wie ich an die folgenden Punkte herangehe
 
 03:15.490 --> 03:16.690
-Unity projects.
+Unity-Projekte.
 
 03:16.690 --> 03:20.410
-As I mentioned, it was a very mono behavior centric approach.
+Wie ich bereits erwähnt habe, war es ein sehr mono behavioristischer Ansatz.
 
 03:20.410 --> 03:23.020
-The project is still alive and can be utilized.
+Das Projekt ist immer noch lebendig und kann genutzt werden.
 
 03:23.020 --> 03:27.130
-For the sake of this course, I'm going to recommend we choose a different framework that I'll talk
+Für diesen Kurs werde ich empfehlen, dass wir ein anderes Framework wählen, über das ich sprechen werde.
 
 03:27.130 --> 03:27.880
-about next.
+sprechen werde.
 
 03:27.880 --> 03:34.690
-But I'm mentioning this project as a valid example in my architectural portfolio in a place from which
+Aber ich erwähne dieses Projekt als ein gültiges Beispiel in meinem Architekturportfolio an einem Ort, von dem aus
 
 03:34.690 --> 03:38.440
-I learned a lot overall in this section, we talked about architectures.
+Ich habe insgesamt viel gelernt in diesem Abschnitt, wir haben über Architekturen gesprochen.
 
 03:38.440 --> 03:42.610
-We saw the pros and cons of using any given established architecture.
+Wir sahen die Vor- und Nachteile der Verwendung einer bestimmten etablierten Architektur.
 
 03:42.610 --> 03:47.440
-We talked about some of the differences in key established architectures we can choose from.
+Wir sprachen über einige der Unterschiede zwischen den wichtigsten etablierten Architekturen, die uns zur Verfügung stehen.
 
 03:47.440 --> 03:50.710
-We saw the drawbacks of using the no architecture approach.
+Wir haben die Nachteile des Ansatzes "keine Architektur" gesehen.
 
 03:50.710 --> 03:55.960
-While that feels very natural, especially as a beginner, it ultimately doesn't pay dividends.
+Obwohl sich das sehr natürlich anfühlt, vor allem als Anfänger, zahlt es sich letztendlich nicht aus.
 
 03:55.960 --> 04:01.840
-And we saw a list of some of the unity centric frameworks we can choose for doing in game architecture,
+Und wir haben eine Liste mit einigen der Unity-zentrierten Frameworks gesehen, die wir für die Spielarchitektur wählen können,
 
 04:01.840 --> 04:05.740
-including the you and VC's project that I created several years ago.
+einschließlich des Projekts von dir und VC, das ich vor einigen Jahren entwickelt habe.
 
 04:05.740 --> 04:11.770
-Next, let's discuss a different framework, the Mini and VC's framework, which I created more recently.
+Als Nächstes wollen wir einen anderen Rahmen besprechen, den Rahmen von Mini und VC, den ich vor kurzem erstellt habe.
 
 04:11.770 --> 04:17.260
-This is the culmination of all the lessons we have here throughout the course the design principles,
+Dies ist der Höhepunkt all der Lektionen, die wir hier im Laufe des Kurses die Designprinzipien haben,
 
 04:17.260 --> 04:21.400
-the design patterns, learnings from other architectures, including my own.
+die Entwurfsmuster, Lehren aus anderen Architekturen, einschließlich meiner eigenen.
 
 04:21.400 --> 04:26.710
-We'll look at an overview of the system, the pros and cons of using it and how to get started.
+Wir werden uns einen Überblick über das System verschaffen, die Vor- und Nachteile der Verwendung und wie man anfängt.
 
 04:26.710 --> 04:32.230
-This section on architectures was especially thorough and had a lot of information.
+Dieser Abschnitt über die Architekturen war besonders gründlich und enthielt eine Menge Informationen.
 
 04:32.230 --> 04:38.710
-Feel free to rewatch some sections to get those concepts a little bit more deeply ingrained and we'll
+Schauen Sie sich einige Abschnitte noch einmal an, um die Konzepte zu verinnerlichen, und wir werden
 
 04:38.710 --> 04:40.540
-move on together to the next section.
+gemeinsam zum nächsten Abschnitt übergehen.
 
 04:40.540 --> 04:41.290
-Thank you.
+Ich danke Ihnen.

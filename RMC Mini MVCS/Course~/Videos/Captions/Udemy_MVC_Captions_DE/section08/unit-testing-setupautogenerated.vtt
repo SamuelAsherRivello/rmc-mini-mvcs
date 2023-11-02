@@ -1,400 +1,400 @@
 WEBVTT
 
 00:00.150 --> 00:03.750
-Set up for the test runner window and test classes.
+Einrichten des Fensters des Testläufers und der Testklassen.
 
 00:03.750 --> 00:07.380
-The source code for the test framework is available through the package manager.
+Der Quellcode für das Testframework ist über den Paketmanager verfügbar.
 
 00:07.380 --> 00:14.580
-You can add the package searching for test framework, import the test framework and optionally import
+Sie können die Paketsuche für das Testframework hinzufügen, das Testframework importieren und optional importieren
 
 00:14.580 --> 00:15.270
-code coverage.
+Code-Abdeckung.
 
 00:15.270 --> 00:19.980
-Tooling The Unity Test framework includes all the libraries needed to test your CE code.
+Tooling Das Unity Test Framework enthält alle Bibliotheken, die zum Testen des CE Codes benötigt werden.
 
 00:19.980 --> 00:25.830
-Now, as an individual or a team, if you're new to testing, you don't have to test all of your code
+Wenn Sie als Einzelperson oder als Team neu im Testen sind, müssen Sie nicht Ihren gesamten Code testen
 
 00:25.830 --> 00:26.670
-at once.
+auf einmal testen.
 
 00:26.670 --> 00:32.550
-You can slowly, over time start testing the more of your code that is covered with tests, the better
+Sie können langsam, mit der Zeit anfangen zu testen, je mehr von Ihrem Code mit Tests abgedeckt wird, desto besser
 
 00:32.550 --> 00:37.740
-you'll have more confidence some ways you can integrate it into your team that's nice and easy.
+Sie werden mehr Vertrauen in einige Möglichkeiten haben, wie Sie es in Ihr Team integrieren können.
 
 00:37.860 --> 00:44.670
-Are adding tests only for new features or add testing to key systems before a major refactor.
+Fügen Sie Tests nur für neue Funktionen hinzu oder fügen Sie Tests für wichtige Systeme vor einem größeren Refactoring hinzu.
 
 00:44.670 --> 00:48.780
-And a great way to get started is testing just during bug fixes.
+Und ein guter Anfang ist das Testen nur während der Fehlerbehebung.
 
 00:48.780 --> 00:55.200
-If a user reports a bug, you first replicate the existence of the bug with a failing test.
+Wenn ein Benutzer einen Fehler meldet, repliziert man zunächst die Existenz des Fehlers mit einem fehlgeschlagenen Test.
 
 00:55.200 --> 00:57.930
-Then you fix the code and the test passes.
+Dann korrigiert man den Code und der Test ist erfolgreich.
 
 00:57.930 --> 01:00.690
-You can leave this test behind as a legacy.
+Sie können diesen Test als Vermächtnis zurücklassen.
 
 01:00.690 --> 01:03.420
-So you're sure that that bug doesn't return in the future?
+Sie sind also sicher, dass der Fehler in Zukunft nicht mehr auftritt?
 
 01:03.420 --> 01:08.880
-The concept of code coverage refers to how much of your code base is covered with tests.
+Das Konzept der Codeabdeckung bezieht sich darauf, wie viel Ihrer Codebasis durch Tests abgedeckt ist.
 
 01:09.150 --> 01:16.680
-If you have one class and three methods in your entire project and all three of them have tests, then
+Wenn Sie in Ihrem gesamten Projekt eine Klasse und drei Methoden haben und alle drei mit Tests versehen sind, dann
 
 01:16.680 --> 01:18.390
-you have 100% coverage.
+haben Sie 100% Abdeckung.
 
 01:18.390 --> 01:21.120
-Generally speaking, the higher the coverage, the better.
+Im Allgemeinen gilt: Je höher die Abdeckung, desto besser.
 
 01:21.120 --> 01:27.390
-You can open up that code coverage window, run your tests, and you get robust results showing you
+Sie können das Codeabdeckungsfenster öffnen, Ihre Tests laufen lassen und Sie erhalten zuverlässige Ergebnisse, die Ihnen zeigen
 
 01:27.390 --> 01:32.280
-not just the percentage per class and system, but within every class.
+nicht nur den Prozentsatz pro Klasse und System, sondern auch innerhalb jeder Klasse.
 
 01:32.280 --> 01:36.900
-You get a line by line readout of which methods have coverage and which don't.
+Sie erhalten eine zeilenweise Anzeige der Methoden, die abgedeckt sind und die nicht abgedeckt sind.
 
 01:37.320 --> 01:38.430
-It's very useful.
+Das ist sehr nützlich.
 
 01:38.430 --> 01:43.770
-You can track how much of your code is being tested, locate any vulnerabilities you have during your
+Sie können nachverfolgen, wie viel von Ihrem Code getestet wird, und alle Schwachstellen aufspüren, die Sie während Ihrer
 
 01:43.770 --> 01:48.840
-testing process, and also monitor your increasing coverage over time.
+testen und auch die zunehmende Abdeckung im Laufe der Zeit überwachen.
 
 01:48.840 --> 01:54.930
-With those libraries installed, you can create your first test, open up the test run window, create
+Wenn diese Bibliotheken installiert sind, können Sie Ihren ersten Test erstellen, das Testlauffenster öffnen und
 
 01:54.930 --> 02:00.510
-a test folder, and your assets create your first class and your first method in that class.
+einen Testordner, und Ihre Assets erstellen Ihre erste Klasse und Ihre erste Methode in dieser Klasse.
 
 02:00.510 --> 02:05.820
-At that point, those tests will show up in the test run or window where you can click, run and see
+Dann werden diese Tests im Testlauf oder im Testfenster angezeigt, wo Sie auf "Ausführen" klicken und Folgendes sehen können
 
 02:05.820 --> 02:06.450
-them execute.
+wie sie ausgeführt werden.
 
 02:06.450 --> 02:09.180
-Here's an example of a test class with a test method.
+Hier ist ein Beispiel für eine Testklasse mit einer Testmethode.
 
 02:09.300 --> 02:11.100
-Notice it looks like pretty normal.
+Beachten Sie, dass es ziemlich normal aussieht.
 
 02:11.100 --> 02:16.980
-C Sharpe The test attribute shown there in the square brackets is the secret sauce.
+C Sharpe Das Testattribut in den eckigen Klammern ist die geheime Sauce.
 
 02:16.980 --> 02:22.380
-Here, the system looks for any methods marked with that attribute to consider it a test.
+Hier sucht das System nach allen Methoden, die mit diesem Attribut gekennzeichnet sind, um sie als Test zu betrachten.
 
 02:22.380 --> 02:26.730
-As I mentioned, testing is an art form and there's many different ways to approach it.
+Wie ich bereits erwähnt habe, ist das Testen eine Kunstform und es gibt viele verschiedene Möglichkeiten, es anzugehen.
 
 02:26.730 --> 02:32.040
-A nice device I use is within each method to divide it up into three sections.
+Eine gute Methode, die ich verwende, ist, jede Methode in drei Abschnitte zu unterteilen.
 
 02:32.610 --> 02:35.310
-Arrange, act and assert.
+Anordnen, handeln und behaupten.
 
 02:35.460 --> 02:39.960
-In arrange you do one or more lines that's required to set up the test.
+In "arrange" machst du eine oder mehrere Zeilen, die zum Einrichten des Tests notwendig sind.
 
 02:39.960 --> 02:45.750
-In the act portion, you execute whatever it is that's specifically related to the test, and then you
+Im act-Teil führen Sie alles aus, was mit dem Test zu tun hat, und dann
 
 02:45.750 --> 02:46.560
-do the assert.
+führen Sie die Behauptung aus.
 
 02:46.560 --> 02:49.530
-Asserting means to assume something is true.
+Behaupten bedeutet, dass man annimmt, dass etwas wahr ist.
 
 02:49.530 --> 02:52.410
-So the testing framework comes in assert library.
+Das Test-Framework kommt also in der Assert-Bibliothek.
 
 02:52.410 --> 02:55.920
-Imagine we have a custom math system that allows you to add two numbers.
+Stellen Sie sich vor, wir haben ein benutzerdefiniertes mathematisches System, mit dem Sie zwei Zahlen addieren können.
 
 02:55.920 --> 02:56.550
-Together.
+Zusammen.
 
 02:56.550 --> 03:03.930
-We could assert that the sum of five plus ten equals 15, and we'd consider that a successful test.
+Wir könnten behaupten, dass die Summe von fünf plus zehn gleich 15 ist, und wir würden das als einen erfolgreichen Test betrachten.
 
 03:04.050 --> 03:06.200
-We'd run it and see that it passes.
+Wir würden den Test durchführen und sehen, dass er erfolgreich ist.
 
 03:06.210 --> 03:07.650
-Let's see this in action.
+Lass uns das in Aktion sehen.
 
 03:07.650 --> 03:10.620
-I'll open up a unity project that's got a test ready.
+Ich werde ein Unity-Projekt öffnen, das einen Test bereithält.
 
 03:10.710 --> 03:14.010
-We'll take a look at how it works and run the test.
+Wir schauen uns an, wie es funktioniert und führen den Test aus.
 
 03:15.110 --> 03:17.630
-Here we are in an empty unity project.
+Hier sind wir in einem leeren Unity-Projekt.
 
 03:17.630 --> 03:20.360
-I'll begin by setting up the test framework.
+Ich beginne mit dem Einrichten des Test-Frameworks.
 
 03:20.510 --> 03:22.370
-So I'll open the package manager.
+Also öffne ich den Paketmanager.
 
 03:26.970 --> 03:30.980
-The package manager shows which packages are already installed.
+Der Paketmanager zeigt an, welche Pakete bereits installiert sind.
 
 03:30.990 --> 03:36.660
-It's possible that the project you begin with already has the test framework added.
+Es ist möglich, dass das Projekt, mit dem Sie beginnen, bereits das Testframework hinzugefügt hat.
 
 03:37.390 --> 03:40.070
-But if it doesn't, here's how you can add it yourself.
+Wenn das nicht der Fall ist, können Sie es hier selbst hinzufügen.
 
 03:40.090 --> 03:44.890
-Search in the Unity Registry for test framework and install the latest version.
+Suchen Sie in der Unity Registry nach dem Test Framework und installieren Sie die neueste Version.
 
 03:44.890 --> 03:52.630
-Next for optional additional features, search the Unity Registry for code coverage and install code
+Als nächstes suchen Sie in der Unity Registry nach Code Coverage für optionale Zusatzfunktionen und installieren Code
 
 03:52.630 --> 03:54.400
-coverage has some optional samples.
+coverage hat einige optionale Beispiele.
 
 03:54.400 --> 03:55.870
-I won't install them here.
+Ich werde sie hier nicht installieren.
 
 03:56.760 --> 04:02.160
-Now reviewing the packages we have in the project, we see both the test framework and optionally if
+Wenn wir nun die Pakete im Projekt betrachten, sehen wir sowohl das Testframework als auch optional
 
 04:02.160 --> 04:04.160
-you chose to install IT coding coverage.
+Sie sich entschieden haben, IT Coding Coverage zu installieren.
 
 04:04.170 --> 04:07.290
-Now this project is fully compatible to have unit testing.
+Jetzt ist dieses Projekt vollständig kompatibel für Unit-Tests.
 
 04:09.140 --> 04:09.860
-To get started.
+Um anzufangen.
 
 04:09.860 --> 04:11.630
-We'll open up the test runner window.
+Wir öffnen das Test-Runner-Fenster.
 
 04:12.050 --> 04:16.340
-The test runner window has two tabs, edit mode and play mode.
+Das Fenster des Testläufers hat zwei Registerkarten, den Bearbeitungsmodus und den Abspielmodus.
 
 04:16.580 --> 04:18.200
-Because we have no tests added.
+Weil wir keine Tests hinzugefügt haben.
 
 04:18.230 --> 04:23.210
-The window is very helpful and offers some clickable creation options to make tests for us.
+Das Fenster ist sehr hilfreich und bietet einige anklickbare Erstellungsoptionen, um Tests für uns zu erstellen.
 
 04:23.240 --> 04:26.690
-In a later demo, I'll show how to create tests from scratch.
+In einer späteren Demo werde ich zeigen, wie man Tests von Grund auf erstellt.
 
 04:27.050 --> 04:30.260
-For now, I'll just paste one in that I have already prepared.
+Für den Moment füge ich einfach einen ein, den ich bereits vorbereitet habe.
 
 04:31.220 --> 04:35.960
-The testing shown here was pasted in from the Mini MVCs sample project.
+Der hier gezeigte Test wurde aus dem Mini MVCs Beispielprojekt eingefügt.
 
 04:35.960 --> 04:36.920
-For the course.
+Für den Kurs.
 
 04:36.920 --> 04:40.450
-To help us focus, I removed everything except the test we want to look at.
+Damit wir uns konzentrieren können, habe ich alles außer dem Test, den wir uns ansehen wollen, entfernt.
 
 04:40.460 --> 04:45.130
-Let's explore the test, run our windows, starting with the edit mode here in the edit mode tab.
+Schauen wir uns den Test an, führen wir unsere Fenster aus und beginnen wir mit dem Bearbeitungsmodus hier auf der Registerkarte Bearbeitungsmodus.
 
 04:45.140 --> 04:49.580
-By default, all of the tests in the project are listed here in the edit mode tab.
+Standardmäßig sind alle Tests des Projekts hier auf der Registerkarte Bearbeitungsmodus aufgelistet.
 
 04:49.580 --> 04:55.820
-By default, all the tests available anywhere in the assets folder and packages folder are shown.
+Standardmäßig werden hier alle Tests angezeigt, die sich irgendwo im Ordner assets und im Ordner packages befinden.
 
 04:55.820 --> 04:59.780
-You can filter by category to see only some of the tests.
+Sie können nach Kategorien filtern, um nur einige der Tests zu sehen.
 
 04:59.780 --> 05:04.880
-We don't have many tests here, but just for demo sake, I'll choose the category for our samples.
+Wir haben hier nicht viele Tests, aber nur zur Veranschaulichung wähle ich die Kategorie für unsere Proben.
 
 05:04.880 --> 05:08.720
-Now the window shows a hierarchy of all the tests organized by namespace.
+Jetzt zeigt das Fenster eine Hierarchie aller Tests, die nach Namespace geordnet sind.
 
 05:08.720 --> 05:15.470
-When I expand all at the lower levels, I see the test class and then a test method under.
+Wenn ich alle unteren Ebenen aufklappe, sehe ich die Testklasse und dann eine Testmethode darunter.
 
 05:15.470 --> 05:18.470
-We can run all the tests and see that they pass.
+Wir können alle Tests ausführen und sehen, dass sie bestehen.
 
 05:18.650 --> 05:22.130
-We can select an individual test and run the selected.
+Wir können einen einzelnen Test auswählen und den ausgewählten ausführen.
 
 05:22.130 --> 05:26.960
-Whether the test passes or fails, we have an easy way to get to the source code with a right click
+Unabhängig davon, ob der Test bestanden wurde oder nicht, können wir mit einem Rechtsklick auf den Quellcode zugreifen
 
 05:26.960 --> 05:27.560
-menu.
+Menü.
 
 05:30.280 --> 05:31.930
-Here's the complete test code.
+Hier ist der komplette Testcode.
 
 05:32.290 --> 05:35.120
-This is the same we saw earlier in the presentation.
+Dies ist derselbe, den wir vorhin in der Präsentation gesehen haben.
 
 05:35.140 --> 05:36.360
-Let's go over the highlights.
+Schauen wir uns die Highlights an.
 
 05:36.370 --> 05:40.990
-We have an optional category attribute that helps organize our testing.
+Wir haben ein optionales Kategorie-Attribut, das uns hilft, unsere Tests zu organisieren.
 
 05:41.290 --> 05:46.930
-That dropdown that I showed, filters based on this value, you can have many test classes that are
+Die Dropdown-Liste, die ich gezeigt habe, filtert auf der Grundlage dieses Wertes, Sie können viele Testklassen haben, die
 
 05:46.930 --> 05:48.040
-in the same category.
+der gleichen Kategorie angehören.
 
 05:48.040 --> 05:50.950
-You can have many test classes that are in the same category.
+Man kann viele Testklassen haben, die sich in derselben Kategorie befinden.
 
 05:50.950 --> 05:52.450
-Then we have the test attribute.
+Dann haben wir das Attribut test.
 
 05:52.450 --> 05:57.190
-This is what tells the test framework that this method is actually a test method.
+Damit wird dem Test-Framework mitgeteilt, dass diese Methode eine Testmethode ist.
 
 05:57.990 --> 06:00.740
-Without this, it won't show up in the test runner window.
+Ohne dies wird die Methode nicht im Fenster des Testläufers angezeigt.
 
 06:00.750 --> 06:07.710
-Then we use the familiar but optional paradigm of a range act and assert this is just a way that I use
+Dann verwenden wir das vertraute, aber optionale Paradigma eines Bereichsakts und behaupten, dass dies nur eine Möglichkeit ist, die ich verwende
 
 06:07.710 --> 06:10.170
-as a convention to organize my test logic.
+als eine Konvention, um meine Testlogik zu organisieren.
 
 06:10.170 --> 06:16.350
-Also, when I name my tests, I choose to name them based on what is under the test, what is the expectation
+Wenn ich meine Tests benenne, wähle ich einen Namen, der auf dem Testgegenstand basiert, d.h. auf dem, was ich erwarte
 
 06:16.350 --> 06:17.640
-and what is the situation.
+und wie die Situation ist.
 
 06:17.640 --> 06:24.120
-So here I'm testing the ADD method that the result will be 15 when I pass five and ten as the operands.
+Hier teste ich also die ADD-Methode, dass das Ergebnis 15 sein wird, wenn ich fünf und zehn als Operanden übergebe.
 
 06:24.120 --> 06:25.890
-Let's tab over to play mode.
+Wechseln wir in den Spielmodus.
 
 06:25.890 --> 06:31.410
-The play mode tab looks very similar and it looks like it's showing the exact same test, but it's not.
+Die Registerkarte "Spielmodus" sieht sehr ähnlich aus und es sieht so aus, als ob sie genau denselben Test anzeigt, aber das ist nicht der Fall.
 
 06:31.410 --> 06:32.370
-I'll open the source.
+Ich werde die Quelle öffnen.
 
 06:32.370 --> 06:34.350
-Here's the source code for a play mode test.
+Hier ist der Quellcode für einen Test im Spielmodus.
 
 06:34.350 --> 06:35.610
-So how is this different?
+Was ist der Unterschied?
 
 06:35.610 --> 06:40.320
-The primary difference is where it's located in the project window.
+Der Hauptunterschied liegt darin, wo er im Projektfenster zu finden ist.
 
 06:40.440 --> 06:41.640
-I'll show that in a moment.
+Das werde ich gleich zeigen.
 
 06:41.640 --> 06:47.610
-An optional difference I choose is that for my tests in play mode, I append the class with play mode
+Ein optionaler Unterschied, den ich gewählt habe, ist, dass ich für meine Tests im Spielmodus die Klasse mit Spielmodus anhänge
 
 06:47.610 --> 06:53.010
-test, whereas in ed mode I just append with test that helps me organize.
+test, während ich im ed-Modus einfach test anhänge, was mir bei der Organisation hilft.
 
 06:53.010 --> 06:58.980
-Now here for demo sake, I'm testing the exact same behavior once in edit mode and once in play mode.
+Zur Veranschaulichung teste ich das gleiche Verhalten einmal im Bearbeitungsmodus und einmal im Spielmodus.
 
 06:58.980 --> 07:01.290
-That's probably not necessary for you.
+Das ist für Sie wahrscheinlich nicht nötig.
 
 07:01.290 --> 07:08.280
-You instead test by default in edit mode and only use play mode testing when you need to capture play
+Testen Sie stattdessen standardmäßig im Bearbeitungsmodus und verwenden Sie die Tests im Wiedergabemodus nur, wenn Sie die Wiedergabe erfassen müssen
 
 07:08.280 --> 07:15.690
-mode events such as start awake or game object functionality, collision detection, other things that
+Ereignisse im Spielmodus, wie z.B. das Aufwachen oder die Funktionalität von Spielobjekten, Kollisionserkennung und andere Dinge, die
 
 07:15.690 --> 07:16.980
-only happen at runtime.
+nur zur Laufzeit passieren.
 
 07:16.980 --> 07:21.180
-As discussed in the course, I use the same method naming convention we saw before.
+Wie im Kurs besprochen, verwende ich dieselbe Namenskonvention für Methoden, die wir zuvor gesehen haben.
 
 07:21.180 --> 07:22.170
-Let's note two.
+Notieren wir uns zwei.
 
 07:22.320 --> 07:24.330
-Let's note two key differences here.
+Hier sind zwei wichtige Unterschiede zu beachten.
 
 07:24.330 --> 07:31.320
-We use a unity test attribute, not a test attribute, as we saw before, and in addition to a range
+Wir verwenden ein Einheitsattribut und nicht ein Testattribut, wie wir zuvor gesehen haben, und zusätzlich zu einem Bereich
 
 07:31.320 --> 07:34.470
-act and assert there's an optional a weight paradigm.
+act und assert gibt es noch ein optionales Gewichtsparadigma.
 
 07:34.470 --> 07:41.160
-This is used here just to demonstrate the fact that while edit mode tests execute synchronously play
+Dies wird hier nur benutzt, um die Tatsache zu demonstrieren, dass Tests im Bearbeitungsmodus synchron ablaufen
 
 07:41.160 --> 07:44.670
-mode tests can execute asynchronously.
+Tests auch asynchron ausgeführt werden können.
 
 07:44.670 --> 07:49.860
-So if you have any code that requires asynchronous testing, play mode is a great option.
+Wenn Sie also einen Code haben, der asynchrone Tests erfordert, ist der Abspielmodus eine gute Option.
 
 07:49.860 --> 07:52.620
-Let's take a look at the project window to see the organization.
+Werfen wir einen Blick auf das Projektfenster, um die Organisation zu sehen.
 
 07:52.620 --> 07:58.080
-Notice that the edit mode test is in an editor folder and notice that the play mode test is in a runtime
+Beachten Sie, dass sich der Test im Bearbeitungsmodus in einem Editor-Ordner befindet und der Test im Wiedergabemodus in einem Runtime-Ordner
 
 07:58.080 --> 07:58.500
-folder.
+Ordner.
 
 07:58.500 --> 08:05.310
-That difference together with the differences in the assembly definition files adjacent to these tests
+Dieser Unterschied zusammen mit den Unterschieden in den Assembly-Definitionsdateien neben diesen Tests
 
 08:05.310 --> 08:09.870
-is how the system knows that one is an editor test and one is a play mode test.
+weiß das System, dass es sich bei einem Test um einen Editor-Test und bei dem anderen um einen Spielmodus-Test handelt.
 
 08:09.870 --> 08:11.370
-I'll run the play mode tests.
+Ich führe die Tests im Spielmodus durch.
 
 08:11.370 --> 08:13.460
-Finally, I'll run the play mode test.
+Zum Schluss führe ich den Spielmodustest aus.
 
 08:13.470 --> 08:18.840
-The test runner window behaves the same with one exception because these are play mode tests.
+Das Fenster des Testläufers verhält sich gleich, mit einer Ausnahme, da es sich um Tests im Wiedergabemodus handelt.
 
 08:18.840 --> 08:25.710
-Unity will create an anonymous scene, execute the test in isolation, and then destroy the scene.
+Unity wird eine anonyme Szene erstellen, den Test isoliert ausführen und dann die Szene zerstören.
 
 08:25.740 --> 08:31.710
-While this all happens quite rapidly, you'll notice it happening here as a plus, as a press run all
+Während dies alles ziemlich schnell passiert, werden Sie es hier als Pluspunkt bemerken, da ein Pressedurchlauf alle
 
 08:31.710 --> 08:34.680
-instead of running all the tests in one millisecond.
+anstatt alle Tests in einer Millisekunde auszuführen.
 
 08:34.680 --> 08:39.600
-For example, as the edit mode may do here, it takes several milliseconds to execute.
+Zum Beispiel, wie hier im Bearbeitungsmodus, dauert die Ausführung mehrere Millisekunden.
 
 08:39.600 --> 08:46.220
-Here we got a chance to see a test running, seeing the test runner window and seeing the basics.
+Hier haben wir die Möglichkeit, einen laufenden Test zu sehen, das Fenster des Testläufers zu sehen und die Grundlagen zu erkennen.
 
 08:46.230 --> 08:48.990
-Next, let's take a look at how we'd create our own tests.
+Als nächstes wollen wir uns ansehen, wie wir unsere eigenen Tests erstellen.

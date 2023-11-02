@@ -1,550 +1,550 @@
 WEBVTT
 
 00:00.080 --> 00:03.800
-So we'll start from the top there with the calculator.
+Wir beginnen also von oben mit dem Taschenrechner.
 
 00:04.520 --> 00:06.320
-So let's jump into unity here.
+Springen wir also hier in die Einheit.
 
 00:07.300 --> 00:11.350
-So here is the project that I've linked into the chat.
+Hier ist also das Projekt, das ich im Chat verlinkt habe.
 
 00:11.380 --> 00:17.470
-You can see there is a git repo and there's instructions on how to install that git repo.
+Wie ihr sehen könnt, gibt es ein Git-Repositorium und es gibt Anweisungen, wie man dieses Git-Repositorium installiert.
 
 00:17.620 --> 00:24.850
-After you've done that, you'll see in the package manager you're following the git instructions, you'll
+Nachdem du das getan hast, wirst du im Paketmanager sehen, dass du den Git-Anweisungen folgst, du wirst
 
 00:24.850 --> 00:26.260
-have this package installed.
+dieses Paket installiert haben.
 
 00:26.260 --> 00:29.080
-This is the RMK mini MVCs.
+Das sind die RMK Mini-MVCs.
 
 00:29.080 --> 00:33.460
-So RMK is my consulting company, Ravella, multi-media consulting.
+RMK ist also mein Beratungsunternehmen, Ravella, Multi-Media Consulting.
 
 00:33.460 --> 00:35.770
-All of the packages that I release have that name.
+Alle Pakete, die ich herausgebe, tragen diesen Namen.
 
 00:35.770 --> 00:42.610
-And then the mini MVCs concept is model view controller service and with just a very light footprint.
+Und dann ist das Mini-MVC-Konzept ein Model-View-Controller-Service, der nur einen sehr geringen Platzbedarf hat.
 
 00:42.610 --> 00:48.460
-So it handles the most basic common workflows that you'll encounter, including everything we're looking
+Es handhabt also die grundlegendsten Arbeitsabläufe, die man antrifft, einschließlich all der Dinge, die wir uns ansehen
 
 00:48.460 --> 00:54.160
-at today is built on top of this tech and it's mini because it's quite elegant, lightweight.
+heute betrachten, basiert auf dieser Technologie, und sie ist klein, weil sie sehr elegant und leicht ist.
 
 00:54.160 --> 00:54.910
-ET cetera.
+et cetera.
 
 00:55.000 --> 00:59.950
-Then under the samples here, you're going to want to click samples and import.
+Dann klicken Sie unter den Proben hier auf Proben und importieren.
 
 00:59.960 --> 01:02.410
-I've already done that, so we're going to go look over it.
+Das habe ich schon gemacht, also sehen wir es uns an.
 
 01:02.410 --> 01:06.130
-But again, the Readme explains how to get those samples in there.
+Aber auch hier wird in der Readme-Datei erklärt, wie man diese Beispiele hineinbekommt.
 
 01:07.050 --> 01:09.640
-So let's start with our first one here.
+Beginnen wir also mit unserem ersten Beispiel hier.
 
 01:09.660 --> 01:13.920
-We're going to close a few things here just to get us ready here.
+Wir werden hier ein paar Dinge schließen, um uns vorzubereiten.
 
 01:14.040 --> 01:19.710
-Then in the project, in the assets, we have, the more folder and we're going to step through them.
+Dann haben wir im Projekt, in den Assets, den Ordner "More" und wir gehen sie durch.
 
 01:19.710 --> 01:23.740
-So we'll start from the top and look at this calculator sample.
+Wir fangen also ganz oben an und schauen uns das Beispiel für den Taschenrechner an.
 
 01:23.760 --> 01:32.490
-Now all of the MVC structures, we organize the folder structure to mimic the MVC pattern, and every
+Alle MVC-Strukturen, wir organisieren die Ordnerstruktur, um das MVC-Muster zu imitieren, und jede
 
 01:32.490 --> 01:37.020
-once in a while I'll just make sure that I have my video on the correct side.
+hin und wieder stelle ich sicher, dass ich mein Video auf der richtigen Seite habe.
 
 01:37.050 --> 01:39.480
-For example, I can bounce myself over here.
+Ich kann mich zum Beispiel hier hinstellen.
 
 01:39.510 --> 01:41.670
-Sometimes I might be covering stuff up.
+Manchmal verdecke ich vielleicht etwas.
 
 01:41.670 --> 01:45.540
-Just know if and when I catch myself doing it, I'll pop myself back over here.
+Ich weiß nur, dass ich, wenn ich mich dabei erwische, hierher zurückspringen werde.
 
 01:45.660 --> 01:48.000
-So again, here's the structure.
+Also noch einmal, hier ist die Struktur.
 
 01:48.000 --> 01:56.100
-We have a folder for model view and Controller, and let's open up one of the parent folders here.
+Wir haben einen Ordner für Model View und Controller, und wir öffnen einen der übergeordneten Ordner hier.
 
 01:56.100 --> 01:57.540
-And here we're looking at it.
+Und hier sehen wir es uns an.
 
 01:57.540 --> 02:04.680
-I'll try to be aware as I'm showing the code here of having the code be presented about 25 lines high
+Ich werde versuchen, bei der Darstellung des Codes darauf zu achten, dass der Code etwa 25 Zeilen hoch ist
 
 02:04.710 --> 02:06.030
-so that you get quite a bit.
+so dass man eine ganze Menge mitbekommt.
 
 02:06.030 --> 02:09.580
-But it shouldn't underlap my video here.
+Aber es sollte mein Video hier nicht unterschneiden.
 
 02:09.730 --> 02:11.470
-So let's talk about this.
+Also lasst uns darüber reden.
 
 02:11.770 --> 02:16.960
-So this is the monobehaviour that sits in the scene that kicks off the entire project.
+Dies ist also das Monobehaviour, das in der Szene sitzt, die das gesamte Projekt startet.
 
 02:16.960 --> 02:22.120
-If you're familiar with Unity, you know that at the very least you'd have one game object in the scene
+Wenn du mit Unity vertraut bist, weißt du, dass du zumindest ein Spielobjekt in der Szene haben solltest
 
 02:22.120 --> 02:28.230
-with one monobehaviour on it, and that's where you kick off your project game demo, etcetera.
+mit einem Monobehaviour darauf, und das ist, wo du dein Projekt Spiel-Demo startest, etcetera.
 
 02:28.240 --> 02:36.460
-So here we have that and all I do here is I have a serialized field to grab The View, which is a separate
+Hier haben wir das und alles was ich hier tue ist ein serialisiertes Feld, um die Ansicht zu greifen, die eine separate
 
 02:36.460 --> 02:39.310
-game object, just to separate the concerns.
+Spielobjekt ist, nur um die Belange zu trennen.
 
 02:39.310 --> 02:44.220
-And then in the start method provided by Unity, I create the calculator mini.
+Und dann erstelle ich in der von Unity bereitgestellten Startmethode den Mini-Rechner.
 
 02:44.230 --> 02:49.540
-So any time you see one of my classes called Mini, that's meant to be this parent object.
+Jedes Mal, wenn du eine meiner Klassen namens Mini siehst, soll das dieses übergeordnete Objekt sein.
 
 02:49.540 --> 02:52.390
-And typically in these examples there's exactly one.
+Und typischerweise gibt es in diesen Beispielen genau eine.
 
 02:52.390 --> 02:58.360
-So here all I do is take the view in, pass it into the mini and initialize the Mini.
+Hier ist alles was ich tue, die Ansicht zu nehmen, sie an den Mini zu übergeben und den Mini zu initialisieren.
 
 02:58.390 --> 03:01.470
-Now let's run the demo and see exactly what happens here.
+Jetzt lassen wir die Demo laufen und sehen, was genau hier passiert.
 
 03:01.480 --> 03:02.820
-Make it nice and big for us.
+Mach es schön groß für uns.
 
 03:02.830 --> 03:10.030
-So here we have an A field, a B field, a result field, and then we're able to add them together and
+Hier haben wir also ein A-Feld, ein B-Feld, ein Ergebnisfeld, und dann können wir sie zusammenzählen und
 
 03:10.030 --> 03:10.810
-reset them.
+sie zurücksetzen.
 
 03:10.810 --> 03:16.120
-Notice that add and reset are grayed out because you haven't inputted any fields in here.
+Beachten Sie, dass Hinzufügen und Zurücksetzen ausgegraut sind, weil Sie hier keine Felder eingegeben haben.
 
 03:16.120 --> 03:18.600
-So there's some very light validation done.
+Es wurde also eine sehr leichte Validierung durchgeführt.
 
 03:18.610 --> 03:21.910
-Let's say we wanted to add two plus three.
+Sagen wir, wir wollen zwei plus drei addieren.
 
 03:21.940 --> 03:26.320
-Now the Add button is available and we click them and the result is five.
+Jetzt ist die Schaltfläche Hinzufügen verfügbar und wir klicken darauf und das Ergebnis ist fünf.
 
 03:26.320 --> 03:32.140
-I can click reset, I'll choose five and ten and click add again.
+Ich kann auf Zurücksetzen klicken, ich wähle fünf und zehn und klicke wieder auf Hinzufügen.
 
 03:32.140 --> 03:34.180
-And we see the result is 15.
+Und wir sehen, dass das Ergebnis 15 ist.
 
 03:34.180 --> 03:41.950
-So we have the UI shown here and then some sort of calculations being done on the UI and then those
+Wir haben hier also die Benutzeroberfläche und dann eine Art von Berechnungen, die auf der Benutzeroberfläche durchgeführt werden, und dann diese
 
 03:41.950 --> 03:44.470
-results of the calculations go back to the UI.
+Ergebnisse der Berechnungen gehen zurück an die Benutzeroberfläche.
 
 03:44.500 --> 03:53.110
-So very fundamental classic example of doing MVC here is to divide up what as a beginner you might make
+Ein sehr grundlegendes, klassisches Beispiel für MVC ist hier die Aufteilung dessen, was man als Anfänger machen könnte
 
 03:53.110 --> 04:00.010
-one class that does all of this, has the views, has the UI, does the calculations, takes the user
+eine Klasse, die all das macht, die Views hat, die UI hat, die Berechnungen macht, den Benutzer nimmt
 
 04:00.010 --> 04:02.110
-input, reflects it out there.
+Eingaben und spiegelt sie wieder.
 
 04:02.110 --> 04:05.200
-But on a larger project that would become unscalable.
+Aber bei einem größeren Projekt wäre das nicht mehr skalierbar.
 
 04:05.620 --> 04:08.050
-So let's see what, how we set up the scene here.
+Schauen wir uns also an, wie wir die Szene hier aufbauen.
 
 04:08.490 --> 04:15.300
-So we've got in each of these scenes, we have a world game object, which is just an empty game object
+Wir haben also in jeder dieser Szenen ein Welt-Spielobjekt, welches einfach ein leeres Spielobjekt ist
 
 04:15.300 --> 04:18.000
-that has a couple children in it, the camera and the lighting.
+das ein paar Kinder in sich hat, die Kamera und die Beleuchtung.
 
 04:18.000 --> 04:22.380
-So I just hide that since it's the boilerplate basic stuff in every single scene.
+Also verstecke ich das einfach, da es in jeder einzelnen Szene das Grundgerüst ist.
 
 04:22.410 --> 04:24.260
-Then we have the calculator view.
+Dann haben wir die Taschenrechneransicht.
 
 04:24.270 --> 04:25.530
-Let's take a look at that.
+Schauen wir uns das mal an.
 
 04:25.530 --> 04:33.570
-So that is using Unity UI, which is the most popular UI system that's been around for years.
+Das ist also Unity UI, das populärste UI-System, das es schon seit Jahren gibt.
 
 04:33.600 --> 04:39.510
-Not to be confused with UI toolkit, which is even newer, but this is your standard UI and we've got
+Nicht zu verwechseln mit UI Toolkit, das noch neuer ist, aber das ist die Standard-UI und wir haben
 
 04:39.510 --> 04:42.690
-the different UI elements, we have the event system.
+die verschiedenen UI-Elemente, wir haben das Ereignissystem.
 
 04:42.690 --> 04:44.820
-It's all pretty boilerplate stuff.
+Das ist alles ziemlich banales Zeug.
 
 04:45.540 --> 04:48.480
-And then here I will pop myself over here.
+Und dann werde ich mich hier drüben hinstellen.
 
 04:48.480 --> 04:55.050
-So we have the calculator view script, and that is just one custom script that I've added that takes
+Wir haben also das Skript "Calculator View", und das ist nur ein benutzerdefiniertes Skript, das ich hinzugefügt habe, das
 
 04:55.050 --> 04:56.990
-each of those UI elements.
+jedes dieser UI-Elemente.
 
 04:57.000 --> 05:00.000
-So what I do with that is.
+Was ich also damit mache, ist.
 
 05:00.910 --> 05:04.480
-Just store them there and then be able to get access to them.
+Ich speichere sie einfach dort und kann dann auf sie zugreifen.
 
 05:04.480 --> 05:06.170
-So that's how the View is set up.
+So ist also die Ansicht aufgebaut.
 
 05:06.190 --> 05:10.890
-Then, as I mentioned, here's the example itself and we're dragged the view into that.
+Dann, wie ich schon sagte, hier ist das Beispiel selbst und wir ziehen die Ansicht hinein.
 
 05:10.900 --> 05:18.010
-So any time in many MVCs that you want to have a view that extends Monobehaviour, which is a super
+Also immer wenn man in vielen MVCs einen View haben will, der Monobehaviour erweitert, was ein super
 
 05:18.010 --> 05:24.760
-common but optional pattern, then you want to have that be able to be accessed by the Mini itself.
+übliches, aber optionales Muster ist, dann möchte man, dass das Mini selbst darauf zugreifen kann.
 
 05:24.760 --> 05:28.900
-So you pass in the reference to the view into the example.
+Sie geben also den Verweis auf die Ansicht in das Beispiel ein.
 
 05:28.900 --> 05:31.500
-So again, here we were in our example.
+Hier waren wir also wieder in unserem Beispiel.
 
 05:31.510 --> 05:32.710
-Here's the view.
+Hier ist die Ansicht.
 
 05:32.740 --> 05:33.790
-Here comes the Mini.
+Hier kommt der Mini.
 
 05:33.820 --> 05:35.680
-Let's take a look at how that's set up.
+Schauen wir uns mal an, wie das aufgebaut ist.
 
 05:37.650 --> 05:39.180
-Again each time.
+Jedes Mal aufs Neue.
 
 05:40.180 --> 05:42.040
-Getting a little wild with our zoom here.
+Hier wird es ein bisschen wild mit unserem Zoom.
 
 05:42.340 --> 05:42.670
-Okay.
+OK.
 
 05:42.820 --> 05:46.200
-So here is the mini pattern.
+Hier ist also das Mini-Muster.
 
 05:46.210 --> 05:52.750
-It extends the built in AI mini MVCs here in the constructor.
+Es erweitert die eingebauten AI mini MVCs hier im Konstruktor.
 
 05:52.750 --> 05:54.490
-It takes in that view.
+Es nimmt diese Ansicht auf.
 
 05:54.670 --> 05:58.150
-Then in the initialize, it creates a context.
+Dann in der Initialisierung wird ein Kontext erstellt.
 
 05:58.180 --> 06:05.410
-Now, context is the glue that has the model view and controller communicating into the into the same
+Nun, der Kontext ist der Klebstoff, der die Kommunikation zwischen Model View und Controller in die gleiche Richtung lenkt
 
 06:05.410 --> 06:06.040
-system.
+System kommunizieren.
 
 06:06.040 --> 06:10.600
-If you had multiple contexts, you would have multiple minis.
+Wenn man mehrere Kontexte hätte, würde man mehrere Minis haben.
 
 06:10.600 --> 06:16.320
-But typically in our projects, including this one, we have one mini, which means we have one context.
+Aber typischerweise haben wir in unseren Projekten, auch in diesem, einen Mini, was bedeutet, dass wir einen Kontext haben.
 
 06:16.330 --> 06:20.500
-You can think of it like the little radio channel that gets all these three different concerns to talk
+Man kann es sich wie einen kleinen Radiosender vorstellen, der all diese drei verschiedenen Anliegen zum Sprechen bringt
 
 06:20.500 --> 06:21.160
-to each other.
+miteinander sprechen.
 
 06:21.160 --> 06:25.060
-So we create a context there, just creating the simple context there.
+Also erstellen wir dort einen Kontext, einfach nur einen einfachen Kontext.
 
 06:25.090 --> 06:30.250
-Then we create a custom model that's going to hold our specific values here.
+Dann erstellen wir ein benutzerdefiniertes Modell, das unsere spezifischen Werte enthalten wird.
 
 06:31.010 --> 06:33.680
-We create a specific controller here.
+Wir erstellen hier einen speziellen Controller.
 
 06:33.710 --> 06:38.780
-Controllers are the glue again that get the business logic done.
+Controller sind wiederum der Klebstoff, der die Geschäftslogik erledigt.
 
 06:38.780 --> 06:44.690
-So I take in a model, I take in a view and are able to have the two of them talk to each other.
+Ich nehme also ein Modell, ich nehme eine Ansicht und kann die beiden miteinander reden lassen.
 
 06:44.690 --> 06:50.000
-And then as is the standard pattern with this, what I do is I.
+Und dann, wie es das Standardmuster bei diesem Vorgang ist, tue ich es.
 
 06:51.570 --> 06:54.150
-Initialize everything explicitly.
+Alles explizit initialisieren.
 
 06:54.150 --> 06:56.850
-So you can see here we create the context.
+Sie sehen hier, dass wir den Kontext erstellen.
 
 06:56.880 --> 06:58.320
-We create the model.
+Wir erstellen das Modell.
 
 06:58.350 --> 06:59.760
-We create the controller.
+Wir erstellen den Controller.
 
 06:59.760 --> 07:02.820
-And then after all that, we initialize each thing.
+Und dann, nach all dem, initialisieren wir jedes Ding.
 
 07:02.850 --> 07:05.760
-Typically it's at the initialization phase.
+Normalerweise ist das in der Initialisierungsphase.
 
 07:05.760 --> 07:07.890
-That stuff really starts happening.
+Dann geht es erst richtig los.
 
 07:07.890 --> 07:14.190
-If I didn't initialize them, they would sit there, perhaps connected together and ready to do things
+Wenn ich sie nicht initialisiere, sitzen sie da, sind vielleicht miteinander verbunden und bereit, etwas zu tun
 
 07:14.190 --> 07:16.340
-but wouldn't really kick off their process.
+aber sie würden ihren Prozess nicht wirklich in Gang setzen.
 
 07:16.350 --> 07:20.670
-And as I mentioned here, often the order of initialization is important.
+Und wie ich hier schon erwähnt habe, ist die Reihenfolge der Initialisierung oft wichtig.
 
 07:20.670 --> 07:26.460
-So I have to initialize the model, the view and the controller, and that's not an explicit rule across
+Ich muss also das Modell, den View und den Controller initialisieren, und das ist keine explizite Regel über
 
 07:26.460 --> 07:33.120
-all projects, but you'll find that depending on which the dependencies happen, you'd want to have
+alle Projekte, aber Sie werden feststellen, dass je nachdem, welche Abhängigkeiten auftreten, Sie die
 
 07:33.120 --> 07:37.050
-them start kind of in the simplest and easiest to initialize.
+sie in der einfachsten und am leichtesten zu initialisierenden Form beginnen.
 
 07:37.050 --> 07:40.380
-And typically your controller is initialized last.
+Und normalerweise wird der Controller zuletzt initialisiert.
 
 07:40.560 --> 07:41.340
 So cool.
 
 07:41.340 --> 07:42.900
-Let's take a look at each of these.
+Lassen Sie uns einen Blick auf jeden dieser Punkte werfen.
 
 07:43.380 --> 07:45.240
-Here's the calculator model.
+Hier ist das Taschenrechnermodell.
 
 07:46.010 --> 07:51.620
-So the model in the MVC framework is just your dumb data storage.
+Das Modell im MVC-Framework ist also nur ein dummer Datenspeicher.
 
 07:51.620 --> 07:57.350
-So here I'm storing the A, B and result that we saw in The View.
+Hier speichere ich also A, B und das Ergebnis, das wir in The View gesehen haben.
 
 07:57.380 --> 08:04.700
-Now I use a custom class that I've created that's included in the mini MVC called an Observable.
+Jetzt verwende ich eine benutzerdefinierte Klasse, die ich erstellt habe und die im Mini-MVC enthalten ist, genannt Observable.
 
 08:04.700 --> 08:09.910
-So any time you see observable INT, just think that that's a regular old unity.
+Jedes Mal, wenn Sie Observable INT sehen, denken Sie einfach, dass es sich um eine normale alte Einheit handelt.
 
 08:09.920 --> 08:16.100
-INT That's meant to store whole numbers, but it comes with a little bit of extra power that can dispatch
+INT Das ist dazu gedacht, ganze Zahlen zu speichern, aber es hat ein bisschen Extra-Power, mit der man
 
 08:16.130 --> 08:19.190
-events and be listened to and do a little bit of data binding.
+Ereignisse versenden und abgehört werden und ein wenig Datenbindung betreiben.
 
 08:19.190 --> 08:24.440
-So here I'm storing three different ints and then I initialize them all to 000.
+Hier speichere ich also drei verschiedene Ints und initialisiere sie alle auf 000.
 
 08:24.440 --> 08:26.180
-So that's it for the model.
+Das war's also mit dem Modell.
 
 08:27.490 --> 08:28.900
-Now we're back here.
+Jetzt sind wir wieder hier.
 
 08:28.900 --> 08:30.280
-Let's look at the controller.
+Schauen wir uns den Controller an.
 
 08:30.310 --> 08:33.070
-Controllers tend to be a little bit more complex.
+Controller sind in der Regel etwas komplexer.
 
 08:33.070 --> 08:37.030
-So here I am using the interface I controller.
+Hier verwende ich also den Interface I Controller.
 
 08:37.960 --> 08:44.520
-I have a reference to the model which we just looked at and the view I store them here.
+Ich habe einen Verweis auf das Modell, das wir uns gerade angesehen haben, und die Ansicht, die ich hier speichere.
 
 08:44.530 --> 08:51.610
-And then in the initialize, what I do is I listen that any time the add button or reset button are
+Und dann in der Initialisierung höre ich zu, dass jedes Mal, wenn die Schaltfläche "Hinzufügen" oder "Zurücksetzen" betätigt wird
 
 08:51.610 --> 08:56.140
-clicked, I listen back to that and let's look at what the consequences are.
+geklickt wird, höre ich mir das an und schaue mir an, was die Konsequenzen sind.
 
 08:56.140 --> 09:03.460
-Well, any time the controller here here's the view button has been reset then what we'll do is we'll
+Nun, jedes Mal, wenn der Controller hier der Ansichts-Button zurückgesetzt wurde, werden wir folgendes tun
 
 09:03.460 --> 09:05.260
-reset the values in the model.
+die Werte im Modell zurücksetzen.
 
 09:05.290 --> 09:06.160
-Pretty simple.
+Ziemlich einfach.
 
 09:06.160 --> 09:07.030
-Straightforward.
+Unkompliziert.
 
 09:08.190 --> 09:13.890
-Any time the ad is done here, the controllers actually what does the calculation?
+Jedes Mal, wenn die Anzeige hier gemacht wird, machen die Kontrolleure eigentlich die Berechnung?
 
 09:13.890 --> 09:20.190
-So it's going to say A plus B is the result and that's it.
+Es wird also sagen, dass A plus B das Ergebnis ist und das war's.
 
 09:20.220 --> 09:30.060
-Now, notice here again, because I have the A, B and result are of of type observable int you always
+Beachten Sie auch hier, dass A, B und das Ergebnis vom Typ observable int sind und Sie immer
 
 09:30.060 --> 09:32.940
-have to do dot value to actually set them.
+muss man immer dot value machen, um sie zu setzen.
 
 09:32.940 --> 09:37.680
-So you can take a look at the source of the observable int and the free git repo that's linked in the
+Sie können also einen Blick auf den Quelltext von observable int und das freie Git Repo werfen, das im
 
 09:37.680 --> 09:38.310
-chat.
+Chat.
 
 09:38.550 --> 09:41.730
-But you'll see that the.
+Aber du wirst sehen, dass die.
 
 09:43.890 --> 09:51.030
-The powerful thing here is that any time you set that value, the an event is dispatched, which any
+Der Clou an der Sache ist, dass jedes Mal, wenn Sie diesen Wert setzen, ein Ereignis ausgelöst wird, das jede
 
 09:51.030 --> 09:52.290
-system can listen to.
+System zuhören kann.
 
 09:52.320 --> 09:55.920
-So again, we're starting to talk about some some light data binding there.
+Wir fangen also wieder an, über eine leichte Datenbindung zu sprechen.
 
 09:56.070 --> 09:57.210
-So that's it.
+Das war's also.
 
 09:57.210 --> 10:01.140
-Now, let's just talk about the view, which is the last thing that we haven't looked at.
+Lassen Sie uns nun über die Ansicht sprechen, die das letzte ist, was wir noch nicht betrachtet haben.
 
 10:01.140 --> 10:04.500
-So we'll go up here to our reference of The View.
+Also gehen wir hier hoch zu unserer Referenz von The View.
 
 10:07.150 --> 10:07.750
-All right.
+In Ordnung.
 
 10:07.750 --> 10:10.810
-So the view, it extends monobehaviour.
+Der View erweitert also das Monobehaviour.
 
 10:10.810 --> 10:16.870
-So there's no rule that any of the MVCs concerns need to extend Monobehaviour.
+Es gibt also keine Regel, die besagt, dass alle MVCs Monobehaviour erweitern müssen.
 
 10:18.310 --> 10:19.190
-It's up to you.
+Es liegt an Ihnen.
 
 10:19.210 --> 10:23.050
-Each of them or all of them, or none of them can extend model behavior.
+Jeder von ihnen oder alle von ihnen oder keiner von ihnen kann das Modellverhalten erweitern.
 
 10:23.050 --> 10:26.740
-But it's very common that the view extend model behavior.
+Aber es ist sehr üblich, dass die Ansicht das Modellverhalten erweitert.
 
 10:26.740 --> 10:31.330
-And that's because typically The View deals with taking user input.
+Und das liegt daran, dass die View typischerweise mit der Entgegennahme von Benutzereingaben zu tun hat.
 
 10:32.180 --> 10:34.520
-Showing and rendering graphics to the user.
+Anzeigen und Rendern von Grafiken für den Benutzer.
 
 10:34.520 --> 10:38.030
-And in the unity world, having a mana beaver helps that stuff happen.
+Und in der Unity-Welt hilft ein Mana Beaver dabei, diese Dinge zu erledigen.
 
 10:38.210 --> 10:42.710
-So here I create some unity events for when the add and reset button are clicked.
+Hier erstelle ich also einige Unity-Ereignisse für das Anklicken des Add- und Reset-Buttons.
 
 10:42.740 --> 10:44.330
-There's some setup here.
+Hier gibt es einige Einstellungen.
 
 10:44.390 --> 10:52.010
-I listen to the UI elements, so I'm using unity events here to listen for when these textfield changes.
+Ich höre auf die UI-Elemente, also verwende ich hier Unity-Ereignisse, um zu hören, wenn sich diese Textfelder ändern.
 
 10:53.090 --> 11:00.530
-I any time one of these text fields, any time the model value changes.
+Jedes Mal, wenn sich eines dieser Textfelder ändert, ändert sich auch der Modellwert.
 
 11:00.530 --> 11:06.070
-So here I'm listening to the A here, I'm listening to the B and here I'm listening to the result.
+Hier höre ich also das A ab, hier höre ich das B ab und hier höre ich das Ergebnis ab.
 
 11:06.080 --> 11:11.030
-Any time that those change, then I just update the text values.
+Jedes Mal, wenn sich diese Werte ändern, aktualisiere ich einfach die Textwerte.
 
 11:11.030 --> 11:13.430
-So this is our two way binding.
+Dies ist also unsere zweiseitige Bindung.
 
 11:13.430 --> 11:20.810
-If the user types into the input field that gets listened to here and sent to the model, and if the
+Wenn der Benutzer in das Eingabefeld tippt, wird das hier abgehört und an das Modell gesendet, und wenn die
 
 11:20.810 --> 11:26.840
-model ever gets changed because of the Add or the reset, then it passes it back to the view.
+Modell aufgrund des Hinzufügens oder Zurücksetzens geändert wird, dann wird es an die Ansicht zurückgegeben.
 
 11:26.840 --> 11:29.360
-So that's where we're doing our data binding.
+Das ist also die Stelle, an der wir unsere Datenbindung durchführen.
 
 11:29.360 --> 11:37.100
-And down here I do a little additional step to gray out the reset button and gray out the add button.
+Und hier unten mache ich einen kleinen zusätzlichen Schritt, um die Schaltfläche "Zurücksetzen" und die Schaltfläche "Hinzufügen" auszublenden.
 
 11:37.100 --> 11:42.170
-If there isn't any valid input in the fields, then I just check that here.
+Wenn es keine gültigen Eingaben in den Feldern gibt, dann überprüfe ich das einfach hier.
 
 11:43.380 --> 11:44.670
-And anything else to see here?
+Und gibt es hier sonst noch etwas zu sehen?
 
 11:44.670 --> 11:51.810
-Yeah, I guess when the user clicks the add button, then I dispatch the add a custom event.
+Ja, ich denke, wenn der Benutzer auf die Schaltfläche "Hinzufügen" klickt, wird ein benutzerdefiniertes Ereignis "Hinzufügen" ausgelöst.
 
 11:52.080 --> 11:53.940
-So let's run the demo again.
+Lassen wir die Demo noch einmal laufen.
 
 11:55.330 --> 11:58.510
-I'll make it nice and big and.
+Ich werde es schön groß machen und.
 
 12:01.400 --> 12:03.950
-Well, maybe I was covering up code for a lot of that.
+Nun, vielleicht habe ich den Code für einen Großteil davon verdeckt.
 
 12:04.870 --> 12:05.150
 Hmm.
 
 12:05.640 --> 12:06.420
-Whoops.
+Huch.
 
 12:06.430 --> 12:09.010
-We'll just try and pop myself on the right side here.
+Wir versuchen einfach, mich auf der richtigen Seite zu platzieren.
 
 12:09.130 --> 12:09.910
 So.
 
 12:10.850 --> 12:14.770
-Let's try one plus one and then I'll hit reset.
+Versuchen wir es mit eins plus eins und dann drücke ich auf Reset.
 
 12:14.950 --> 12:18.130
-And two plus two and I'll add.
+Und zwei plus zwei und ich addiere.
 
 12:18.250 --> 12:20.170
-So there's the result that we have there.
+Das ist also das Ergebnis, das wir hier haben.
 
 12:20.170 --> 12:22.210
-So that's it for the calculator demo.
+Das war's also mit der Rechnerdemo.
