@@ -1,0 +1,199 @@
+WEBVTT
+
+00:00.720 --> 00:02.340
+The unity structure.
+
+00:02.340 --> 00:05.260
+This course has broken into different learning tracks.
+
+00:05.280 --> 00:10.770
+In theory, we'll take a step back and look at some of the fundamentals of software and game design.
+
+00:10.770 --> 00:17.070
+When talking about the ED, we'll look at Unity, the ED tool itself, which is what we as developers
+
+00:17.070 --> 00:19.170
+open and use as our software.
+
+00:19.170 --> 00:24.450
+And in code sections, we'll look at the C-sharp programming language and how it applies to unity game
+
+00:24.450 --> 00:25.230
+development.
+
+00:25.290 --> 00:26.910
+Let's start with theory.
+
+00:26.910 --> 00:34.200
+The software development lifecycle includes many stages, taking us from an idea to a finished product.
+
+00:34.200 --> 00:40.470
+This includes requirements, analysis, planning the project, designing the concept and carries on
+
+00:40.470 --> 00:43.710
+to development, testing and deployment.
+
+00:43.710 --> 00:51.180
+While unity is a powerful tool across many of these stages, we focus on using unity in the development,
+
+00:51.180 --> 00:53.370
+testing and deployment phases.
+
+00:53.370 --> 00:55.350
+Inside the world of unity.
+
+00:55.350 --> 01:02.970
+The concepts are structured as follows Within a project you have one or more scenes inside each scene.
+
+01:02.970 --> 01:06.570
+You have game objects with components attached.
+
+01:06.570 --> 01:14.100
+Those components may handle things like the mesh renderer, the collider, audio, rigid body for physics,
+
+01:14.100 --> 01:17.520
+particle systems, and of course custom scripting.
+
+01:17.520 --> 01:21.960
+Game object is a fundamental piece of the puzzle within unity.
+
+01:21.960 --> 01:28.950
+That is everything that is visual and non visual onto which we hang our custom components and Unity's
+
+01:28.950 --> 01:30.520
+built in components as well.
+
+01:30.540 --> 01:33.750
+Take a look at this gameplay screenshot as an example.
+
+01:34.440 --> 01:39.870
+Here we have a game scene that is broken up into several different prefabs.
+
+01:39.870 --> 01:46.070
+You can think of a prefab as a game object with one or more components that's stored for reuse.
+
+01:46.080 --> 01:51.540
+For example, we see multiple coins here, each with a unique position and rotation.
+
+01:51.540 --> 01:59.070
+However, the coin has some common features as well perhaps functionality, collision detection, how
+
+01:59.070 --> 02:06.180
+it's rendered and those common features are held in the prefab when organizing your project and deciding
+
+02:06.180 --> 02:07.290
+on the structure.
+
+02:08.080 --> 02:14.100
+Teams often choose between scenes and prefabs for high level organization.
+
+02:14.110 --> 02:17.830
+Game object is the fundamental concept within any scene.
+
+02:17.830 --> 02:23.470
+And while there can be many different components on a game object, the transform component is ever
+
+02:23.470 --> 02:30.250
+present the transform component stores and manipulates aspects of how that object sits in the world.
+
+02:30.250 --> 02:34.750
+Whether the object has graphics or not, it has a transform object.
+
+02:34.750 --> 02:38.710
+The code we use is the language of instructions for the software.
+
+02:38.710 --> 02:43.480
+Unity's historical roots relate to the mono project.
+
+02:43.480 --> 02:47.140
+This was an open source version of the DOT net framework.
+
+02:47.350 --> 02:53.860
+You'll still see the term mono used a bit through the Unity API, including the mono behavior.
+
+02:53.860 --> 02:57.490
+While in the past Unity offered several different programming languages.
+
+02:57.490 --> 03:03.760
+C-sharp is the only programming choice now, and while Unity supports C-sharp, it doesn't depend on
+
+03:03.760 --> 03:04.920
+the DOT net framework.
+
+03:04.930 --> 03:12.370
+Unity's version of C-sharp is quite robust and features a lot of different data, concepts and structures.
+
+03:12.370 --> 03:18.550
+The main namespaces we use inside Unity is the Unity engine for runtime code.
+
+03:18.550 --> 03:26.560
+The Unity editor for Edit Time Code and the System namespace, which includes a lot of different functionality
+
+03:26.560 --> 03:32.290
+not specifically related to unity, but quite helpful, including math, libraries, etc..
+
+03:32.290 --> 03:36.610
+Here's an example of a custom script in C-sharp for use in unity.
+
+03:36.610 --> 03:39.280
+Starting from the top, we see using statements.
+
+03:39.280 --> 03:43.990
+These bring in namespaces that we need to use in this particular class file.
+
+03:44.590 --> 03:50.950
+Then we see a namespace that helps us declare and organize where this code sits in our project.
+
+03:50.950 --> 03:55.810
+Next, we declare the public class or interface that defines this type.
+
+03:55.810 --> 03:59.200
+Notice here we're extending or inheriting monarch behavior.
+
+03:59.200 --> 04:04.630
+Now, from within this scope, we can access all the functionality of monarch behavior as well.
+
+04:04.630 --> 04:07.360
+Some specific unity features of note here.
+
+04:07.360 --> 04:11.470
+The ability to serialize field using the serialized field attribute.
+
+04:11.470 --> 04:18.310
+This can take a public value or private value and render it out to the unity inspector so that while
+
+04:18.310 --> 04:21.570
+the live game is playing, we can tweak that setting.
+
+04:21.580 --> 04:24.730
+This helps in prototyping and gameplay design.
+
+04:24.730 --> 04:30.040
+The monitor behavior comes with many key events you can tap into by naming one of your methods.
+
+04:30.040 --> 04:30.670
+Awake.
+
+04:30.670 --> 04:36.460
+You capture the event of when that object is first awoken in the world.
+
+04:36.460 --> 04:39.160
+This happens just once afterwards.
+
+04:39.160 --> 04:40.930
+The start method is called here.
+
+04:40.930 --> 04:46.210
+It's good to set up any dependencies with any other objects and then the update method is called every
+
+04:46.210 --> 04:47.500
+frame thereafter.
+
+04:47.500 --> 04:52.210
+This is a great place to do input, logic and updating graphics.
+
+04:52.930 --> 04:58.690
+These are just a few of the events or method overrides you can take advantage of, but certainly these
+
+04:58.690 --> 05:00.970
+are some of the most important thanks.

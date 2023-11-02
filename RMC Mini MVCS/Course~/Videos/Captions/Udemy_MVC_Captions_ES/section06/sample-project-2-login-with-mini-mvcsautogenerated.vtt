@@ -1,0 +1,169 @@
+WEBVTT
+
+00:00.150 --> 00:04.260
+First, let's look at the version without many, MVCs added.
+
+00:05.180 --> 00:08.070
+Here we are inside of an empty unity project.
+
+00:08.090 --> 00:13.370
+I have already added the mini NPCs framework and imported the samples.
+
+00:13.670 --> 00:15.650
+Let's open up the login sample.
+
+00:16.830 --> 00:22.710
+Here's the file structure for the version of this sample that does not have the mini MVC added.
+
+00:23.280 --> 00:29.820
+In the resources section, I have the prefab that's used for the UI as well as the text file that gets
+
+00:29.820 --> 00:32.550
+loaded simulating the service layer.
+
+00:33.180 --> 00:38.700
+I've got one scene and in that scene we have the one example file that kicks it all off.
+
+00:39.090 --> 00:40.920
+Let's start by running the example.
+
+00:41.220 --> 00:44.550
+This example is an offline simulation of login.
+
+00:45.030 --> 00:50.460
+We use the familiar pattern of inputting a username and a password.
+
+00:50.940 --> 00:52.560
+Clicking the login button.
+
+00:52.560 --> 00:57.330
+Typically, a back end service would validate if these fields match up correctly.
+
+00:58.290 --> 01:03.300
+In this case, I'm loading a local file and just checking that the local password matches what I've
+
+01:03.330 --> 01:04.260
+typed in here.
+
+01:04.710 --> 01:07.890
+Let's go ahead and do a working example.
+
+01:19.820 --> 01:23.960
+As the onscreen text hints there, the password is evident.
+
+01:30.490 --> 01:35.890
+When I hit log in, there's a short delay and then we have success that I've properly logged in.
+
+01:53.070 --> 01:57.540
+Now I've logged out and I'll now log in using an obviously wrong password.
+
+02:00.680 --> 02:02.640
+And we see the message failed.
+
+02:02.660 --> 02:04.410
+So everything is working great here.
+
+02:04.430 --> 02:06.950
+Let's look at all the code to get this to happen.
+
+02:06.950 --> 02:09.500
+And we'll start with the high level example file.
+
+02:10.380 --> 02:12.380
+Here's the code for the example file.
+
+02:12.390 --> 02:17.310
+I'll start by doing a scroll down through it and then I'll go check it out line by line.
+
+02:44.380 --> 02:49.690
+We start not with the main example class file itself, but with a helper data object.
+
+02:51.310 --> 02:56.260
+This user data object holds the username and password as it's about to be submitted.
+
+02:56.530 --> 03:01.780
+Here's the example itself, and as with all examples, we extend mount of behavior so we can attach
+
+03:01.780 --> 03:03.080
+it to a game object.
+
+03:03.100 --> 03:07.990
+Then we see serialized fields for all the different UI elements inside the start.
+
+03:07.990 --> 03:14.380
+Here we subscribe to some built in unity events for the UI, and then we mimic the clicking of the logout
+
+03:14.380 --> 03:17.160
+button just by calling the logout function there.
+
+03:17.170 --> 03:19.870
+That just clears out the UI as we start fresh.
+
+03:19.900 --> 03:26.890
+Next, any time those two input fields are edited, this gets called and we simply update.
+
+03:26.890 --> 03:28.840
+Are you allowed to submit yet?
+
+03:28.840 --> 03:33.670
+This is a very simple check, but I'm just saying if the fields are empty, you can't submit.
+
+03:33.670 --> 03:36.610
+If there's anything in the fields you can submit.
+
+03:36.760 --> 03:40.510
+Here's what happens when we click log in and there's quite a bit here.
+
+03:40.510 --> 03:44.200
+This is the most significant method, so I'll step through it by section.
+
+03:44.350 --> 03:48.430
+First, I create a new user data based on what the user has typed into the fields.
+
+03:48.430 --> 03:54.500
+Then I toggle the intractability, see, or if it's disabled or not for each of the UI elements.
+
+03:54.520 --> 04:00.820
+Now, as we've seen with the previous sample, we simulate an online back end call by just loading a
+
+04:00.820 --> 04:02.080
+local text file.
+
+04:02.200 --> 04:05.320
+This does some asynchronous operation.
+
+04:05.320 --> 04:12.190
+It is external data, so once we discuss service layers, this makes sense for a service layer component
+
+04:12.250 --> 04:17.950
+and we can see at the end there what we're getting is the text representation of the valid password
+
+04:17.950 --> 04:20.710
+and we're just checking it against what the user submitted.
+
+04:21.970 --> 04:23.050
+Assuming there's a match.
+
+04:23.050 --> 04:25.180
+We call this a successful login.
+
+04:25.420 --> 04:31.570
+We update the UI to be enabled again as appropriate, and then we show a success or failure message
+
+04:31.570 --> 04:32.380
+on the screen.
+
+04:32.410 --> 04:38.770
+Lastly, at any time if the user hits the logout button and then also we mimic this in the start method
+
+04:38.770 --> 04:39.560
+by calling this form.
+
+04:39.580 --> 04:42.280
+Initially, this just clears out the UI.
+
+04:42.310 --> 04:43.890
+Let's run the example again.
+
+04:43.900 --> 04:48.790
+I'll populate it with working info that works successfully and the demo is complete.

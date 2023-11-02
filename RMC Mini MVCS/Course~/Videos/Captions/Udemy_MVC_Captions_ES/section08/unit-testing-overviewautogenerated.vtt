@@ -1,0 +1,358 @@
+WEBVTT
+
+00:00.210 --> 00:02.340
+The unit testing overview.
+
+00:02.340 --> 00:04.220
+First, a bit of context.
+
+00:04.230 --> 00:11.790
+As your projects grow with more scripts, more methods, more complexity, it can be difficult to ensure
+
+00:11.790 --> 00:14.610
+that new code doesn't break any old code.
+
+00:14.640 --> 00:20.020
+Automated testing can help ensure that your code is functioning as you expect.
+
+00:20.040 --> 00:26.640
+Automated testing helps us by finding out how and where bugs occur earlier in the process instead of
+
+00:26.640 --> 00:31.140
+the much more expensive option of waiting for your end users to report these bugs.
+
+00:31.140 --> 00:37.650
+So you can use MVC architectures without testing and you can use testing without MVC architecture.
+
+00:37.650 --> 00:41.140
+So why is it important to talk about these topics together?
+
+00:41.160 --> 00:46.860
+It's because the combination of these two technologies is incredibly powerful by using an architecture
+
+00:46.860 --> 00:48.090
+like MVC.
+
+00:48.120 --> 00:54.450
+It helps ensure that your code is more decoupled, that each class has a single purpose and that solutions
+
+00:54.450 --> 00:55.140
+are simpler.
+
+00:55.140 --> 00:58.060
+All of these are traits for more testable code as well.
+
+00:58.080 --> 01:04.740
+Adding testing to your project will add robustness, more confidence, and it encourages simple solutions,
+
+01:04.740 --> 01:09.090
+especially when enabled with test driven development, which we'll discuss.
+
+01:09.090 --> 01:12.690
+Adding unit testing to your project and workflow will save time.
+
+01:12.690 --> 01:15.620
+It saves planning, development and maintenance.
+
+01:15.630 --> 01:21.450
+It adds more confidence to your code, and with that confidence you can have much more boldness in your
+
+01:21.450 --> 01:22.460
+risk factors.
+
+01:22.470 --> 01:29.010
+Think about running all of your tests before a major refactor, and then after saving you time and giving
+
+01:29.010 --> 01:31.530
+you more confidence that the refactor worked well.
+
+01:31.560 --> 01:33.750
+Testing is both an art and a science.
+
+01:33.750 --> 01:38.480
+With more research and more practice, each developer can develop their own art.
+
+01:38.490 --> 01:43.050
+Also low level testing that's testing things at the unit level.
+
+01:43.620 --> 01:49.200
+Individual methods, let's say, and the practices and evolution of your software that will come from
+
+01:49.200 --> 01:56.370
+that encourages higher level discussion as well about the architectural choices, dependencies or lack
+
+01:56.370 --> 02:00.840
+thereof throughout your code and how coupled or decoupled these systems are.
+
+02:00.870 --> 02:06.980
+This is all part of a larger conversation which invites bringing good organization to your software.
+
+02:06.990 --> 02:13.530
+Our first goal, especially new to testing, is to make sure that a specific method has the desired
+
+02:13.530 --> 02:14.300
+results.
+
+02:14.310 --> 02:21.060
+Once that's done, you can now test it with unexpected conditions and corner cases that may invite discussion
+
+02:21.060 --> 02:24.390
+and analysis over the structure of the class itself.
+
+02:24.390 --> 02:28.230
+Then you can look at the purpose of the system that that class sits in.
+
+02:28.230 --> 02:35.430
+And as I mentioned, this type of analysis gives us an opportunity and a format to look at the large
+
+02:35.430 --> 02:37.290
+scale solution we have before us.
+
+02:37.290 --> 02:37.980
+In software.
+
+02:37.980 --> 02:43.250
+There's many different types of testing and whether you know it or not, you're already doing testing.
+
+02:43.260 --> 02:46.980
+A few of the most common types of tests are a smoke test.
+
+02:46.980 --> 02:50.730
+This is a rather casual test of does it work For me?
+
+02:50.730 --> 02:55.380
+And for many of us, this may be the only type of project testing we're doing.
+
+02:56.030 --> 03:03.050
+Every time you do some new code, you run the app like a user or play the game like a player and you
+
+03:03.050 --> 03:08.300
+see does that particular path through the app or the game work the way I expect it to?
+
+03:08.330 --> 03:14.210
+Then there's user testing where periodically, perhaps after a weekly build, you invite some users
+
+03:14.210 --> 03:16.340
+or players to give the game a try.
+
+03:16.370 --> 03:21.880
+Here you're looking for not just does it have any bugs, but does it meet the user's expectations?
+
+03:21.890 --> 03:23.840
+Is it fun to play things like that?
+
+03:23.840 --> 03:30.320
+And with the unit test, you're looking at a very small section of the experience, perhaps just a single
+
+03:30.320 --> 03:34.790
+method call or a small series of calls as systems work together.
+
+03:34.790 --> 03:38.120
+And you're asking, does it work as it's intended to work?
+
+03:38.150 --> 03:43.280
+As I mentioned, we're already doing smoke testing as a fundamental way to approach projects.
+
+03:43.280 --> 03:45.410
+So let's imagine a simple example here.
+
+03:45.410 --> 03:50.240
+If we had a click the button app, which has a button, and when you click it, you win.
+
+03:50.360 --> 03:52.730
+We could add some code to that.
+
+03:52.730 --> 03:55.040
+Compile and run the experience.
+
+03:55.040 --> 03:59.670
+Click the one button and see if it shows the victory text of you win.
+
+03:59.690 --> 04:05.120
+That would be a smoke test and you could pass that on to the user and see if it works for them.
+
+04:05.450 --> 04:11.470
+In both cases, this is a rather expensive test to perform and it's a very narrow usage of the code
+
+04:11.480 --> 04:11.810
+here.
+
+04:11.810 --> 04:17.570
+In this simple example, it may seem like we can capture all the use cases, but imagine a larger game
+
+04:17.570 --> 04:19.940
+with core loops and metal loops.
+
+04:20.210 --> 04:26.240
+You can't count on the developer or the user and the user testing, testing all the buttons, all the
+
+04:26.240 --> 04:30.200
+functionality, all the input and all the potential outcomes.
+
+04:30.200 --> 04:36.560
+When done properly, unit testing can capture more pathways through the code more quickly, and you
+
+04:36.560 --> 04:40.550
+can run that suite of tests automatically more frequently over time.
+
+04:40.550 --> 04:44.690
+You're building a list of permanent tests that sit ready to be run.
+
+04:44.690 --> 04:48.050
+So you know that new code doesn't break any old functionality.
+
+04:48.050 --> 04:54.440
+Some teams operate under Agile development principles, which includes a chunk of your calendar called
+
+04:54.440 --> 04:55.130
+a sprint.
+
+04:55.130 --> 05:01.910
+For example, every two weeks the team commits to adding some new features each hour, day, week or
+
+05:01.910 --> 05:02.540
+sprint.
+
+05:02.540 --> 05:05.240
+The team can run those automated tests again.
+
+05:05.240 --> 05:07.610
+It's a great opportunity to catch any bugs.
+
+05:07.610 --> 05:09.950
+So how are we running these tests exactly?
+
+05:09.980 --> 05:13.730
+Well, unity has testing support within the Unity editor.
+
+05:13.730 --> 05:19.660
+There's a dedicated window you can open up and manually execute those tests any time you like.
+
+05:19.670 --> 05:21.220
+That's a great place to start.
+
+05:21.230 --> 05:25.850
+Of course, automating this as possible to and recommended for larger projects.
+
+05:25.850 --> 05:32.150
+There's ways to tie this in with your version control so that every time you commit or commit to a certain
+
+05:32.150 --> 05:34.460
+branch, you can run those tests again.
+
+05:34.760 --> 05:39.170
+Unity itself offers some services, including Unity Cloud build.
+
+05:39.170 --> 05:45.170
+This mimics running those tests and building your game, but done on a server automatically doing it
+
+05:45.170 --> 05:47.960
+once a day or at whatever frequency makes sense.
+
+05:47.960 --> 05:52.670
+Now, in general unity development, we're familiar with two different modes being inside the unity
+
+05:52.670 --> 05:53.660
+experience.
+
+05:54.020 --> 05:56.870
+Before we hit the play button, we're an edit mode.
+
+05:56.870 --> 06:01.430
+Once we hit play until that scene stops, we're in play mode.
+
+06:01.730 --> 06:05.780
+With unity testing, you're able to test in either of those two modes.
+
+06:05.780 --> 06:07.970
+Then there are several different ways to approach that.
+
+06:08.450 --> 06:13.580
+Some of the testing ideas that you'd have here would be to call a method and see if it gives you the
+
+06:13.580 --> 06:14.720
+expected result.
+
+06:14.720 --> 06:20.720
+Let's say we have a math system class with an ADD method and you just pass in known parameters and see
+
+06:20.720 --> 06:22.280
+if it matches the known result.
+
+06:22.280 --> 06:27.200
+You can also have tests that ask specific questions about ED functionality.
+
+06:27.230 --> 06:33.920
+Did the Ed window pop up at the proper sizing where our game objects or the camera in the proper position
+
+06:33.920 --> 06:35.480
+before the scene begins?
+
+06:35.480 --> 06:41.000
+Doing testing and edit mode when you can is a great place to start, so do that by default.
+
+06:41.000 --> 06:41.540
+Play mode.
+
+06:41.570 --> 06:47.030
+Testing is incredibly useful, but it comes with the added complexity of runtime code.
+
+06:47.710 --> 06:52.900
+Here, you're testing not just as a certain method return and result, but you're testing that within
+
+06:52.900 --> 06:57.100
+the larger lifecycle of game objects and other unity concepts.
+
+06:57.200 --> 07:03.850
+And if it here is, you can test code that relies on a wake start update, etc. things that only execute
+
+07:03.850 --> 07:04.520
+at runtime.
+
+07:04.540 --> 07:11.320
+Some testing ideas here are to see if a prefab once instantiated executes its start method properly.
+
+07:11.320 --> 07:12.720
+Without any exceptions.
+
+07:12.730 --> 07:14.860
+You can test code over time.
+
+07:15.580 --> 07:17.890
+Does this loop execute properly?
+
+07:17.890 --> 07:19.280
+After a few seconds.
+
+07:19.300 --> 07:21.940
+You can check runtime physics interactions.
+
+07:21.940 --> 07:28.850
+How many bounces will a ball have in your 3D game before it stops testing the bouncing factor?
+
+07:28.870 --> 07:30.430
+A little bit more context here.
+
+07:30.430 --> 07:36.970
+So historically, unity did not offer testing built into the editor using the test run or window.
+
+07:36.970 --> 07:37.480
+We'll see.
+
+07:37.480 --> 07:43.360
+In the many years since Unity first launched, this functionality was slowly added in and expanded.
+
+07:43.360 --> 07:45.220
+As of the latest version of Unity.
+
+07:45.220 --> 07:50.650
+We have everything we need to execute the types of tests we want in the ways we want them.
+
+07:50.650 --> 07:56.020
+There's never been a better time to add unit testing into your workflow, and together we'll see how
+
+07:56.020 --> 07:56.830
+to do that.
+
+07:57.250 --> 07:58.090
+Thanks.

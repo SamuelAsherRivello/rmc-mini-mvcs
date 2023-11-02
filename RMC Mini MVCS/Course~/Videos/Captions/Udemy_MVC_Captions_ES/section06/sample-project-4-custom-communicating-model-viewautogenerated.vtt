@@ -1,0 +1,352 @@
+WEBVTT
+
+00:00.090 --> 00:04.620
+When the controller directly updates the view, we're bypassing the model.
+
+00:04.620 --> 00:09.620
+Essentially, we're storing the model data directly on The View.
+
+00:09.630 --> 00:15.900
+And from a fundamental standpoint, we're slipping out of MVC separation of concerns.
+
+00:16.020 --> 00:21.870
+Let's iterate on this and bring a bit more sound principles to the code.
+
+00:22.630 --> 00:29.440
+Instead, what we could do is when the user clicks the add button, the controller could translate those
+
+00:29.440 --> 00:32.500
+UI values from the view into the model.
+
+00:32.530 --> 00:33.580
+Let's do that now.
+
+00:33.580 --> 00:35.530
+Let's see what we've done differently here.
+
+00:35.740 --> 00:41.830
+We've updated each of these handlers to be a bit more conventional in the practices of MVCs.
+
+00:41.860 --> 00:47.920
+Now, when we add, we take those view values and put them directly into the model and then in reset,
+
+00:47.920 --> 00:53.860
+we're doing something a little bit redundant, but we're clearing out the view and then clearing out
+
+00:53.860 --> 00:54.470
+the model.
+
+00:54.490 --> 00:59.800
+It's not bad, but that redundancy we see there doesn't reach a goal of simplicity.
+
+00:59.830 --> 01:05.620
+Now we've got some options here in order to create a better binding between the view and the model,
+
+01:05.620 --> 01:12.160
+we could either go into the view and have the view listen directly to the model for read only operations.
+
+01:12.160 --> 01:13.660
+That's a good best practice.
+
+01:13.660 --> 01:21.580
+An alternative would be here in the controller to dispatch a command saying, Hey, view go reset yourself
+
+01:21.580 --> 01:24.370
+or saying Hey, view the model has changed.
+
+01:24.370 --> 01:24.910
+In the past.
+
+01:24.910 --> 01:25.930
+Sample projects.
+
+01:25.930 --> 01:31.660
+We've used commands at this level, but to try something new, let's go into The View and have it observed
+
+01:31.660 --> 01:34.360
+directly to the model for any changes.
+
+01:34.360 --> 01:42.580
+And inside the initialize we'll use the context and the model locator to get a reference to the calculator
+
+01:42.580 --> 01:43.030
+model.
+
+01:43.030 --> 01:49.660
+Best practices support that the view reads from the model, but it would be an overstep of the role
+
+01:49.660 --> 01:52.870
+of the view for it to directly set any values here.
+
+01:53.020 --> 02:00.090
+So all I'm doing is listening to the value changed on A, B, and the result as a shorthand.
+
+02:00.100 --> 02:05.680
+I'm using what's called a lambda expression, and it's a nice quick way to observe an event in this
+
+02:05.680 --> 02:07.720
+case and handle the consequence.
+
+02:07.720 --> 02:15.010
+The observables on value changed passes the p previous value and see current value.
+
+02:15.010 --> 02:21.400
+So any time one of these observable changes, I update the view to the current value with just those
+
+02:21.400 --> 02:22.090
+few lines.
+
+02:22.090 --> 02:27.280
+Now we have the view bound to the model using best practices.
+
+02:27.280 --> 02:32.670
+Back here in the calculator controller, we return to our event handlers as they were before.
+
+02:32.680 --> 02:38.620
+Now, because we've added the binding from the view directly to the model, the controller no longer
+
+02:38.620 --> 02:44.500
+needs to manually set any values on the View so we can get rid of these lines and we can get rid of
+
+02:44.500 --> 02:45.200
+this as well.
+
+02:45.220 --> 02:47.770
+Let's go ahead and run the scene and see how it behaves.
+
+02:47.770 --> 02:49.330
+Here we are in the running scene.
+
+02:49.330 --> 02:52.270
+I'll input some values and hit reset looks good.
+
+02:52.270 --> 02:59.260
+We do see that when it gets reset, it puts some zeros in these fields which aren't there initially.
+
+02:59.260 --> 03:01.120
+It's a small detail, but we'll address that.
+
+03:01.120 --> 03:02.740
+Now let's try the ad operation.
+
+03:02.740 --> 03:06.040
+And the ad operation works well here in the calculator controller.
+
+03:06.040 --> 03:11.170
+Let's reset initially before the user does any input inside initialize.
+
+03:11.170 --> 03:17.290
+After doing the existing ad listeners, I'll mimic the consequence of the reset button being hit.
+
+03:17.980 --> 03:19.820
+Let's run the scene and see the result.
+
+03:19.840 --> 03:25.410
+Now, when we first run the app before doing any user input, we see those familiar zeros.
+
+03:25.420 --> 03:31.370
+This is a great way to have a consistent look and feel before and after the user starts interacting.
+
+03:31.390 --> 03:33.160
+The application is now complete.
+
+03:33.160 --> 03:39.250
+We're able to input A, input B, add the results together and reset all the fields.
+
+03:39.250 --> 03:46.780
+So far in this custom example, we've used the model view controller, we've observed events and gotten
+
+03:46.780 --> 03:48.070
+our app to work well.
+
+03:48.370 --> 03:53.170
+We haven't used any commands and in a small enough application, that's okay.
+
+03:53.170 --> 03:56.560
+But I do want to demonstrate how a command could add value here.
+
+03:56.560 --> 04:02.440
+I'll leave all the binding in place that we have now, but I'll replace these lines here with the command
+
+04:02.440 --> 04:05.320
+so the view knows how to reset itself.
+
+04:05.320 --> 04:06.940
+Let's start by calling the command.
+
+04:06.940 --> 04:10.960
+We use the context and command manager to invoke a new command.
+
+04:10.960 --> 04:12.990
+I'll call it the reset command.
+
+04:13.000 --> 04:16.090
+Now let's create that class in its most basic form.
+
+04:16.090 --> 04:20.020
+I'll duplicate the class template and place it in the proper location.
+
+04:20.020 --> 04:26.110
+Here inside the controller folder, I've created a command folder and added our reset command.
+
+04:26.110 --> 04:30.660
+So far I've given it a namespace and updated the class name from the template.
+
+04:30.670 --> 04:36.520
+All we've got to do here is implement I command and let's jump back to the code where we use this back
+
+04:36.520 --> 04:38.140
+in the calculator controller.
+
+04:38.140 --> 04:39.490
+The code is looking good.
+
+04:39.490 --> 04:41.550
+We're now invoking a command.
+
+04:41.560 --> 04:43.390
+So who would need to listen to this?
+
+04:43.390 --> 04:48.210
+Well, any concern could subscribe and listen to when the reset happens.
+
+04:48.220 --> 04:53.470
+In our case, we'll go to The View, we'll listen for this command and we'll reset those three fields.
+
+04:53.470 --> 05:00.070
+So here in the calculator view inside the initialize, we use the context and command manager to add
+
+05:00.070 --> 05:01.270
+a command listener here.
+
+05:01.270 --> 05:06.940
+Whenever the reset command gets called, this code executes and resets those fields.
+
+05:06.940 --> 05:11.860
+Now, in this specific example, this is a bit problematic and redundant.
+
+05:11.860 --> 05:18.640
+We already had the binding working, but I did want to show how to wire up a command just in case.
+
+05:18.640 --> 05:19.840
+Let's run this example.
+
+05:19.840 --> 05:20.980
+Here's everything running.
+
+05:20.980 --> 05:23.710
+Here is the reset functionality that works well.
+
+05:23.710 --> 05:26.530
+Here's the ad functionality that also works well.
+
+05:26.530 --> 05:32.500
+So in this specific case, I'm going to remove the command before finishing up the project.
+
+05:32.800 --> 05:39.460
+I've gone back into the controller and commented out that code and gone back into The View and commented
+
+05:39.460 --> 05:42.490
+out that code and related code as well.
+
+05:43.850 --> 05:45.020
+Let's run the demo.
+
+05:45.050 --> 05:45.620
+Here we are.
+
+05:45.620 --> 05:46.670
+Running the demo.
+
+05:46.700 --> 05:48.230
+Do the ad operation.
+
+05:49.610 --> 05:50.630
+Works great.
+
+05:50.660 --> 05:51.590
+Do the reset.
+
+05:53.910 --> 05:55.140
+Works great as well.
+
+05:55.170 --> 05:59.890
+I'll include this calculator example in the code base so you can check it out as well.
+
+05:59.910 --> 06:05.730
+For those of you who took the coding challenge assignment and completed this yourself before watching
+
+06:05.730 --> 06:09.150
+the video, I hope you learned a lot by going through that activity.
+
+06:09.510 --> 06:15.420
+Overall, the process that we used here is something that you can use on larger and VCs projects as
+
+06:15.420 --> 06:15.960
+well.
+
+06:15.990 --> 06:21.330
+You think first about what your requirements are, what the user experience will be, and then you break
+
+06:21.330 --> 06:27.060
+that down into each of the concerns, model, view, controller and service.
+
+06:27.060 --> 06:31.500
+Then think about which base functionality, if any, you need for the concerns.
+
+06:31.530 --> 06:37.740
+Now, while this sample was quite small and required only a model view and controller for a simple one
+
+06:37.740 --> 06:44.730
+hour example, you'll probably see for the typical project of one month or one year that you have many,
+
+06:44.730 --> 06:49.710
+many views and many models and many controllers.
+
+06:49.710 --> 06:53.490
+Even with a project of that scale, you would still follow these steps.
+
+06:53.490 --> 06:59.880
+And the same time we've spent together here starting this project is how you would start a much larger
+
+06:59.880 --> 07:00.990
+project as well.
+
+07:01.740 --> 07:07.620
+Over time, you would see scaling up each of those concerns, perhaps having one view that gets a little
+
+07:07.620 --> 07:08.520
+too large.
+
+07:08.520 --> 07:10.860
+So you split it into two views.
+
+07:10.860 --> 07:16.360
+You'll also have a long library of commands that you can use and reuse throughout your project.
+
+07:16.380 --> 07:18.450
+Imagine next steps for this calculator.
+
+07:18.450 --> 07:24.450
+Something you may want to do as an optional coding assignment would be to add, subtract functionality
+
+07:24.870 --> 07:27.480
+or add unit testing to the project.
+
+07:27.480 --> 07:30.600
+You could test the model, the view, the controller.
+
+07:30.600 --> 07:35.220
+You could take the addition logic and separate it into its own class.
+
+07:35.370 --> 07:41.220
+Something like my math system with a method of ADD and another method of subtract.
+
+07:41.950 --> 07:46.360
+That would be a great way to scale up your learning from this sample and move forward.
+
+07:46.810 --> 07:48.680
+That's it for the calculator Mini.
+
+07:48.700 --> 07:49.600
+Thanks.

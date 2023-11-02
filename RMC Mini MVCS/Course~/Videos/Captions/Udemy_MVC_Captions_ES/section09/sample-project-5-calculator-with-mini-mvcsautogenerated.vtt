@@ -1,0 +1,550 @@
+WEBVTT
+
+00:00.080 --> 00:03.800
+So we'll start from the top there with the calculator.
+
+00:04.520 --> 00:06.320
+So let's jump into unity here.
+
+00:07.300 --> 00:11.350
+So here is the project that I've linked into the chat.
+
+00:11.380 --> 00:17.470
+You can see there is a git repo and there's instructions on how to install that git repo.
+
+00:17.620 --> 00:24.850
+After you've done that, you'll see in the package manager you're following the git instructions, you'll
+
+00:24.850 --> 00:26.260
+have this package installed.
+
+00:26.260 --> 00:29.080
+This is the RMK mini MVCs.
+
+00:29.080 --> 00:33.460
+So RMK is my consulting company, Ravella, multi-media consulting.
+
+00:33.460 --> 00:35.770
+All of the packages that I release have that name.
+
+00:35.770 --> 00:42.610
+And then the mini MVCs concept is model view controller service and with just a very light footprint.
+
+00:42.610 --> 00:48.460
+So it handles the most basic common workflows that you'll encounter, including everything we're looking
+
+00:48.460 --> 00:54.160
+at today is built on top of this tech and it's mini because it's quite elegant, lightweight.
+
+00:54.160 --> 00:54.910
+ET cetera.
+
+00:55.000 --> 00:59.950
+Then under the samples here, you're going to want to click samples and import.
+
+00:59.960 --> 01:02.410
+I've already done that, so we're going to go look over it.
+
+01:02.410 --> 01:06.130
+But again, the Readme explains how to get those samples in there.
+
+01:07.050 --> 01:09.640
+So let's start with our first one here.
+
+01:09.660 --> 01:13.920
+We're going to close a few things here just to get us ready here.
+
+01:14.040 --> 01:19.710
+Then in the project, in the assets, we have, the more folder and we're going to step through them.
+
+01:19.710 --> 01:23.740
+So we'll start from the top and look at this calculator sample.
+
+01:23.760 --> 01:32.490
+Now all of the MVC structures, we organize the folder structure to mimic the MVC pattern, and every
+
+01:32.490 --> 01:37.020
+once in a while I'll just make sure that I have my video on the correct side.
+
+01:37.050 --> 01:39.480
+For example, I can bounce myself over here.
+
+01:39.510 --> 01:41.670
+Sometimes I might be covering stuff up.
+
+01:41.670 --> 01:45.540
+Just know if and when I catch myself doing it, I'll pop myself back over here.
+
+01:45.660 --> 01:48.000
+So again, here's the structure.
+
+01:48.000 --> 01:56.100
+We have a folder for model view and Controller, and let's open up one of the parent folders here.
+
+01:56.100 --> 01:57.540
+And here we're looking at it.
+
+01:57.540 --> 02:04.680
+I'll try to be aware as I'm showing the code here of having the code be presented about 25 lines high
+
+02:04.710 --> 02:06.030
+so that you get quite a bit.
+
+02:06.030 --> 02:09.580
+But it shouldn't underlap my video here.
+
+02:09.730 --> 02:11.470
+So let's talk about this.
+
+02:11.770 --> 02:16.960
+So this is the monobehaviour that sits in the scene that kicks off the entire project.
+
+02:16.960 --> 02:22.120
+If you're familiar with Unity, you know that at the very least you'd have one game object in the scene
+
+02:22.120 --> 02:28.230
+with one monobehaviour on it, and that's where you kick off your project game demo, etcetera.
+
+02:28.240 --> 02:36.460
+So here we have that and all I do here is I have a serialized field to grab The View, which is a separate
+
+02:36.460 --> 02:39.310
+game object, just to separate the concerns.
+
+02:39.310 --> 02:44.220
+And then in the start method provided by Unity, I create the calculator mini.
+
+02:44.230 --> 02:49.540
+So any time you see one of my classes called Mini, that's meant to be this parent object.
+
+02:49.540 --> 02:52.390
+And typically in these examples there's exactly one.
+
+02:52.390 --> 02:58.360
+So here all I do is take the view in, pass it into the mini and initialize the Mini.
+
+02:58.390 --> 03:01.470
+Now let's run the demo and see exactly what happens here.
+
+03:01.480 --> 03:02.820
+Make it nice and big for us.
+
+03:02.830 --> 03:10.030
+So here we have an A field, a B field, a result field, and then we're able to add them together and
+
+03:10.030 --> 03:10.810
+reset them.
+
+03:10.810 --> 03:16.120
+Notice that add and reset are grayed out because you haven't inputted any fields in here.
+
+03:16.120 --> 03:18.600
+So there's some very light validation done.
+
+03:18.610 --> 03:21.910
+Let's say we wanted to add two plus three.
+
+03:21.940 --> 03:26.320
+Now the Add button is available and we click them and the result is five.
+
+03:26.320 --> 03:32.140
+I can click reset, I'll choose five and ten and click add again.
+
+03:32.140 --> 03:34.180
+And we see the result is 15.
+
+03:34.180 --> 03:41.950
+So we have the UI shown here and then some sort of calculations being done on the UI and then those
+
+03:41.950 --> 03:44.470
+results of the calculations go back to the UI.
+
+03:44.500 --> 03:53.110
+So very fundamental classic example of doing MVC here is to divide up what as a beginner you might make
+
+03:53.110 --> 04:00.010
+one class that does all of this, has the views, has the UI, does the calculations, takes the user
+
+04:00.010 --> 04:02.110
+input, reflects it out there.
+
+04:02.110 --> 04:05.200
+But on a larger project that would become unscalable.
+
+04:05.620 --> 04:08.050
+So let's see what, how we set up the scene here.
+
+04:08.490 --> 04:15.300
+So we've got in each of these scenes, we have a world game object, which is just an empty game object
+
+04:15.300 --> 04:18.000
+that has a couple children in it, the camera and the lighting.
+
+04:18.000 --> 04:22.380
+So I just hide that since it's the boilerplate basic stuff in every single scene.
+
+04:22.410 --> 04:24.260
+Then we have the calculator view.
+
+04:24.270 --> 04:25.530
+Let's take a look at that.
+
+04:25.530 --> 04:33.570
+So that is using Unity UI, which is the most popular UI system that's been around for years.
+
+04:33.600 --> 04:39.510
+Not to be confused with UI toolkit, which is even newer, but this is your standard UI and we've got
+
+04:39.510 --> 04:42.690
+the different UI elements, we have the event system.
+
+04:42.690 --> 04:44.820
+It's all pretty boilerplate stuff.
+
+04:45.540 --> 04:48.480
+And then here I will pop myself over here.
+
+04:48.480 --> 04:55.050
+So we have the calculator view script, and that is just one custom script that I've added that takes
+
+04:55.050 --> 04:56.990
+each of those UI elements.
+
+04:57.000 --> 05:00.000
+So what I do with that is.
+
+05:00.910 --> 05:04.480
+Just store them there and then be able to get access to them.
+
+05:04.480 --> 05:06.170
+So that's how the View is set up.
+
+05:06.190 --> 05:10.890
+Then, as I mentioned, here's the example itself and we're dragged the view into that.
+
+05:10.900 --> 05:18.010
+So any time in many MVCs that you want to have a view that extends Monobehaviour, which is a super
+
+05:18.010 --> 05:24.760
+common but optional pattern, then you want to have that be able to be accessed by the Mini itself.
+
+05:24.760 --> 05:28.900
+So you pass in the reference to the view into the example.
+
+05:28.900 --> 05:31.500
+So again, here we were in our example.
+
+05:31.510 --> 05:32.710
+Here's the view.
+
+05:32.740 --> 05:33.790
+Here comes the Mini.
+
+05:33.820 --> 05:35.680
+Let's take a look at how that's set up.
+
+05:37.650 --> 05:39.180
+Again each time.
+
+05:40.180 --> 05:42.040
+Getting a little wild with our zoom here.
+
+05:42.340 --> 05:42.670
+Okay.
+
+05:42.820 --> 05:46.200
+So here is the mini pattern.
+
+05:46.210 --> 05:52.750
+It extends the built in AI mini MVCs here in the constructor.
+
+05:52.750 --> 05:54.490
+It takes in that view.
+
+05:54.670 --> 05:58.150
+Then in the initialize, it creates a context.
+
+05:58.180 --> 06:05.410
+Now, context is the glue that has the model view and controller communicating into the into the same
+
+06:05.410 --> 06:06.040
+system.
+
+06:06.040 --> 06:10.600
+If you had multiple contexts, you would have multiple minis.
+
+06:10.600 --> 06:16.320
+But typically in our projects, including this one, we have one mini, which means we have one context.
+
+06:16.330 --> 06:20.500
+You can think of it like the little radio channel that gets all these three different concerns to talk
+
+06:20.500 --> 06:21.160
+to each other.
+
+06:21.160 --> 06:25.060
+So we create a context there, just creating the simple context there.
+
+06:25.090 --> 06:30.250
+Then we create a custom model that's going to hold our specific values here.
+
+06:31.010 --> 06:33.680
+We create a specific controller here.
+
+06:33.710 --> 06:38.780
+Controllers are the glue again that get the business logic done.
+
+06:38.780 --> 06:44.690
+So I take in a model, I take in a view and are able to have the two of them talk to each other.
+
+06:44.690 --> 06:50.000
+And then as is the standard pattern with this, what I do is I.
+
+06:51.570 --> 06:54.150
+Initialize everything explicitly.
+
+06:54.150 --> 06:56.850
+So you can see here we create the context.
+
+06:56.880 --> 06:58.320
+We create the model.
+
+06:58.350 --> 06:59.760
+We create the controller.
+
+06:59.760 --> 07:02.820
+And then after all that, we initialize each thing.
+
+07:02.850 --> 07:05.760
+Typically it's at the initialization phase.
+
+07:05.760 --> 07:07.890
+That stuff really starts happening.
+
+07:07.890 --> 07:14.190
+If I didn't initialize them, they would sit there, perhaps connected together and ready to do things
+
+07:14.190 --> 07:16.340
+but wouldn't really kick off their process.
+
+07:16.350 --> 07:20.670
+And as I mentioned here, often the order of initialization is important.
+
+07:20.670 --> 07:26.460
+So I have to initialize the model, the view and the controller, and that's not an explicit rule across
+
+07:26.460 --> 07:33.120
+all projects, but you'll find that depending on which the dependencies happen, you'd want to have
+
+07:33.120 --> 07:37.050
+them start kind of in the simplest and easiest to initialize.
+
+07:37.050 --> 07:40.380
+And typically your controller is initialized last.
+
+07:40.560 --> 07:41.340
+So cool.
+
+07:41.340 --> 07:42.900
+Let's take a look at each of these.
+
+07:43.380 --> 07:45.240
+Here's the calculator model.
+
+07:46.010 --> 07:51.620
+So the model in the MVC framework is just your dumb data storage.
+
+07:51.620 --> 07:57.350
+So here I'm storing the A, B and result that we saw in The View.
+
+07:57.380 --> 08:04.700
+Now I use a custom class that I've created that's included in the mini MVC called an Observable.
+
+08:04.700 --> 08:09.910
+So any time you see observable INT, just think that that's a regular old unity.
+
+08:09.920 --> 08:16.100
+INT That's meant to store whole numbers, but it comes with a little bit of extra power that can dispatch
+
+08:16.130 --> 08:19.190
+events and be listened to and do a little bit of data binding.
+
+08:19.190 --> 08:24.440
+So here I'm storing three different ints and then I initialize them all to 000.
+
+08:24.440 --> 08:26.180
+So that's it for the model.
+
+08:27.490 --> 08:28.900
+Now we're back here.
+
+08:28.900 --> 08:30.280
+Let's look at the controller.
+
+08:30.310 --> 08:33.070
+Controllers tend to be a little bit more complex.
+
+08:33.070 --> 08:37.030
+So here I am using the interface I controller.
+
+08:37.960 --> 08:44.520
+I have a reference to the model which we just looked at and the view I store them here.
+
+08:44.530 --> 08:51.610
+And then in the initialize, what I do is I listen that any time the add button or reset button are
+
+08:51.610 --> 08:56.140
+clicked, I listen back to that and let's look at what the consequences are.
+
+08:56.140 --> 09:03.460
+Well, any time the controller here here's the view button has been reset then what we'll do is we'll
+
+09:03.460 --> 09:05.260
+reset the values in the model.
+
+09:05.290 --> 09:06.160
+Pretty simple.
+
+09:06.160 --> 09:07.030
+Straightforward.
+
+09:08.190 --> 09:13.890
+Any time the ad is done here, the controllers actually what does the calculation?
+
+09:13.890 --> 09:20.190
+So it's going to say A plus B is the result and that's it.
+
+09:20.220 --> 09:30.060
+Now, notice here again, because I have the A, B and result are of of type observable int you always
+
+09:30.060 --> 09:32.940
+have to do dot value to actually set them.
+
+09:32.940 --> 09:37.680
+So you can take a look at the source of the observable int and the free git repo that's linked in the
+
+09:37.680 --> 09:38.310
+chat.
+
+09:38.550 --> 09:41.730
+But you'll see that the.
+
+09:43.890 --> 09:51.030
+The powerful thing here is that any time you set that value, the an event is dispatched, which any
+
+09:51.030 --> 09:52.290
+system can listen to.
+
+09:52.320 --> 09:55.920
+So again, we're starting to talk about some some light data binding there.
+
+09:56.070 --> 09:57.210
+So that's it.
+
+09:57.210 --> 10:01.140
+Now, let's just talk about the view, which is the last thing that we haven't looked at.
+
+10:01.140 --> 10:04.500
+So we'll go up here to our reference of The View.
+
+10:07.150 --> 10:07.750
+All right.
+
+10:07.750 --> 10:10.810
+So the view, it extends monobehaviour.
+
+10:10.810 --> 10:16.870
+So there's no rule that any of the MVCs concerns need to extend Monobehaviour.
+
+10:18.310 --> 10:19.190
+It's up to you.
+
+10:19.210 --> 10:23.050
+Each of them or all of them, or none of them can extend model behavior.
+
+10:23.050 --> 10:26.740
+But it's very common that the view extend model behavior.
+
+10:26.740 --> 10:31.330
+And that's because typically The View deals with taking user input.
+
+10:32.180 --> 10:34.520
+Showing and rendering graphics to the user.
+
+10:34.520 --> 10:38.030
+And in the unity world, having a mana beaver helps that stuff happen.
+
+10:38.210 --> 10:42.710
+So here I create some unity events for when the add and reset button are clicked.
+
+10:42.740 --> 10:44.330
+There's some setup here.
+
+10:44.390 --> 10:52.010
+I listen to the UI elements, so I'm using unity events here to listen for when these textfield changes.
+
+10:53.090 --> 11:00.530
+I any time one of these text fields, any time the model value changes.
+
+11:00.530 --> 11:06.070
+So here I'm listening to the A here, I'm listening to the B and here I'm listening to the result.
+
+11:06.080 --> 11:11.030
+Any time that those change, then I just update the text values.
+
+11:11.030 --> 11:13.430
+So this is our two way binding.
+
+11:13.430 --> 11:20.810
+If the user types into the input field that gets listened to here and sent to the model, and if the
+
+11:20.810 --> 11:26.840
+model ever gets changed because of the Add or the reset, then it passes it back to the view.
+
+11:26.840 --> 11:29.360
+So that's where we're doing our data binding.
+
+11:29.360 --> 11:37.100
+And down here I do a little additional step to gray out the reset button and gray out the add button.
+
+11:37.100 --> 11:42.170
+If there isn't any valid input in the fields, then I just check that here.
+
+11:43.380 --> 11:44.670
+And anything else to see here?
+
+11:44.670 --> 11:51.810
+Yeah, I guess when the user clicks the add button, then I dispatch the add a custom event.
+
+11:52.080 --> 11:53.940
+So let's run the demo again.
+
+11:55.330 --> 11:58.510
+I'll make it nice and big and.
+
+12:01.400 --> 12:03.950
+Well, maybe I was covering up code for a lot of that.
+
+12:04.870 --> 12:05.150
+Hmm.
+
+12:05.640 --> 12:06.420
+Whoops.
+
+12:06.430 --> 12:09.010
+We'll just try and pop myself on the right side here.
+
+12:09.130 --> 12:09.910
+So.
+
+12:10.850 --> 12:14.770
+Let's try one plus one and then I'll hit reset.
+
+12:14.950 --> 12:18.130
+And two plus two and I'll add.
+
+12:18.250 --> 12:20.170
+So there's the result that we have there.
+
+12:20.170 --> 12:22.210
+So that's it for the calculator demo.
