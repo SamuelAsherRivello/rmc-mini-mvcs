@@ -1,0 +1,94 @@
+WEBVTT
+
+00:00.080 --> 00:01.490
+Hello and welcome.
+
+00:01.490 --> 00:05.940
+I've spent some time to add even more content and I'm going to go over it today.
+
+00:05.960 --> 00:06.620
+Great.
+
+00:06.650 --> 00:13.520
+What I wanted to do in this talk is go through some advanced topics and advanced demos that I've created.
+
+00:14.090 --> 00:17.150
+So we'll go through them one by one and let's see what we got here.
+
+00:17.150 --> 00:24.140
+If you're using unity for 2 or 3 years full time, even on production projects, you'll find that even
+
+00:24.140 --> 00:30.500
+as the best minds come together and work on projects bringing some best practices to it, it still becomes
+
+00:30.500 --> 00:37.160
+a challenge to organize your projects in a way that can scale, that can be testable, that can be maintainable.
+
+00:37.160 --> 00:42.380
+Even if you're kind of new to the concepts of MVC, you'll be able to start seeing the patterns.
+
+00:42.380 --> 00:44.840
+As I go through each of these examples.
+
+00:44.840 --> 00:48.890
+UI Toolkit How to build an in-game tutorial.
+
+00:48.890 --> 00:53.840
+You know, when you want the player to be guided through their first five minutes, learning the keys,
+
+00:53.840 --> 00:59.480
+etcetera, you know, how do you exactly add that into a game then an approach of multiple minis.
+
+00:59.480 --> 01:04.890
+So once you get used to the MVC architectural concept, we usually think of having one of those in the
+
+01:04.890 --> 01:06.300
+entire project.
+
+01:06.300 --> 01:10.590
+But what if you actually want to break your project and have more than one mini in it, which you definitely
+
+01:10.590 --> 01:11.160
+can?
+
+01:11.700 --> 01:13.710
+I'll talk about data binding as well.
+
+01:13.710 --> 01:19.740
+So if you want to have a text field in your UI and then map that to where your data is stored and any
+
+01:19.740 --> 01:26.910
+time you have the user update that text, it'll automatically update the data model and the reverse.
+
+01:26.910 --> 01:29.880
+Anytime the data model updates, it'll update the UI.
+
+01:30.060 --> 01:33.990
+So looking at data binding, unity doesn't natively support that.
+
+01:33.990 --> 01:40.680
+Quite excitingly, that is available in UI toolkit for editor now and in the future.
+
+01:40.680 --> 01:43.500
+It's coming in Unity for runtime.
+
+01:43.500 --> 01:44.910
+I'm very excited about that.
+
+01:44.910 --> 01:48.810
+This is a custom approach that does some data binding.
+
+01:48.930 --> 01:55.260
+Then we'll look at a simple game, this bouncy ball game, and then starting from the top we'll look
+
+01:55.260 --> 01:56.130
+at a calculator.
+
+01:56.130 --> 01:59.790
+And this count up example is very introductory ways to take a look.
+
+01:59.790 --> 02:03.450
+So we'll start from the top there with the calculator.
+
+02:03.450 --> 02:05.130
+So let's jump into unity here.

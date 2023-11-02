@@ -1,0 +1,595 @@
+WEBVTT
+
+00:00.290 --> 00:00.740
+All right.
+
+00:00.740 --> 00:04.940
+Let's talk about how you would do an in-game tutorial in something.
+
+00:06.730 --> 00:14.230
+First of all, why is having an in-game tutorial useful to the end user experience and why is it challenging
+
+00:14.230 --> 00:15.280
+for developers?
+
+00:15.310 --> 00:25.000
+Well, often when we play video games, there's enough rules about the game world, about how to interact,
+
+00:25.000 --> 00:30.010
+doing the input that you have to tell the user about that explicitly.
+
+00:30.370 --> 00:37.180
+A tutorial is a device that in the first one minute, ten minute, one hour of gameplay, you give the
+
+00:37.180 --> 00:39.490
+user additional information.
+
+00:39.490 --> 00:46.720
+So as they walk up to a character, you explain how to hit a button to start the conversation.
+
+00:46.720 --> 00:51.430
+Whereas after five hours of that game you wouldn't need to show them every time.
+
+00:51.430 --> 00:57.640
+So this is something that is temporary, often done at the beginning or the first time the user encounters
+
+00:57.640 --> 00:58.360
+something.
+
+00:58.540 --> 01:01.840
+So that's why we want to have it right now.
+
+01:01.840 --> 01:03.100
+Why is it challenging?
+
+01:03.130 --> 01:06.260
+Well, because it doesn't always happen.
+
+01:06.260 --> 01:10.370
+Like typically when we create game features, they're always available here.
+
+01:10.370 --> 01:15.460
+We want this only to happen in the first minute or 10 minutes or 1 hour, as I mentioned.
+
+01:15.470 --> 01:21.530
+So you could either go through all of your game systems and have them each say, Hey, if we're in the
+
+01:21.530 --> 01:26.030
+first ten minutes, do this extra thing, but otherwise don't do the extra thing.
+
+01:26.030 --> 01:30.530
+But that becomes a bit of code that you have to put in a lot of different systems.
+
+01:30.530 --> 01:34.960
+So what we're going to see here is how to do in-game tutorials in a different way.
+
+01:34.970 --> 01:40.970
+We're going to have the core game logic know nothing about the tutorials and then we'll have a tutorial
+
+01:40.970 --> 01:47.810
+entity sit off to the side and listen to what the core game is doing and it is only going to be active
+
+01:47.810 --> 01:53.900
+for the first ten minutes and then if it goes away, the core game never knew about it and doesn't know
+
+01:53.900 --> 01:54.920
+about it anymore.
+
+01:54.920 --> 01:56.870
+So let's take a look at how that would work.
+
+01:57.650 --> 02:04.070
+Now, this talk and this demo scene is part of a larger course, which is the mini architecture for
+
+02:04.070 --> 02:06.920
+unity course that you can get linked below.
+
+02:06.950 --> 02:12.740
+Now, that's a paid course where you get to see samples on how this feature works.
+
+02:12.740 --> 02:15.110
+About the theory of software design.
+
+02:15.110 --> 02:16.700
+Here's an in-depth look.
+
+02:16.700 --> 02:22.430
+Looking at design patterns, looking at design principles, learning UML, diagramming, covering different
+
+02:22.460 --> 02:26.360
+types of unity architectures and why you might need them.
+
+02:26.930 --> 02:33.020
+The spoiler alert here is that you want them because they help you scale projects, create more maintainable
+
+02:33.020 --> 02:40.010
+code and have more error free workflows as you're building a project that scales.
+
+02:40.700 --> 02:42.650
+It includes lots of different stuff.
+
+02:42.680 --> 02:48.740
+One thing we've added here is a ten or more additional demos since the course was first created, and
+
+02:48.740 --> 02:52.550
+one of them is how to do a tutorial, and that's the one we're going to look at now.
+
+02:52.910 --> 02:54.830
+So let's jump into unity here.
+
+02:55.580 --> 03:05.240
+So if you get the mini MVCs package free from Git or as part of the course, you'll download and install
+
+03:05.240 --> 03:07.300
+that with the git instructions.
+
+03:07.310 --> 03:11.840
+And then here in the samples tab, you'll import the examples.
+
+03:11.840 --> 03:14.680
+And that's what we're going to be taking a look at here on the side.
+
+03:14.840 --> 03:15.950
+I've already done that.
+
+03:15.950 --> 03:24.560
+So when I go more and then I open up the tutorial mini, we can see we've got some prefabs, we've got
+
+03:24.560 --> 03:31.370
+the scene, we've got a bit of code here that has the tutorial view and the tutorial controller.
+
+03:31.490 --> 03:33.350
+Let's go ahead and run this.
+
+03:40.760 --> 03:45.580
+Yeah, I'm actually going to show something before we step into this, because notice the tutorial.
+
+03:45.590 --> 03:46.640
+Well, I'll just make a nice big.
+
+03:47.870 --> 03:56.090
+So the tutorial that is in this scene is in the box in the upper corner there it says tutorial enter
+
+03:56.090 --> 03:57.770
+username and password.
+
+03:57.800 --> 04:04.010
+So here for simplicity I'm mimicking how a web experience would work.
+
+04:04.040 --> 04:07.130
+Often we're logging in to web experiences.
+
+04:07.130 --> 04:14.120
+You have a username and a password that is the core real estate of the screen is the login mini example.
+
+04:14.120 --> 04:21.530
+Now that example sits in a different scene to just illustrate how separate this tutorial and the core
+
+04:21.530 --> 04:22.880
+game logic can be.
+
+04:22.880 --> 04:29.000
+I have the login mini as a separate scene, so that's a scene you can go and look at in depth and you
+
+04:29.000 --> 04:35.480
+can see how many can be used to put a username, password, login button, log out button in there.
+
+04:35.480 --> 04:39.920
+So it's telling me here that the password is one, two, three, four.
+
+04:39.920 --> 04:46.550
+So if I go ahead here and I type in the name, I'm going to type in my name.
+
+04:47.480 --> 04:48.200
+Like that.
+
+04:49.490 --> 04:53.660
+Then I'll start typing in the password if I type in pass.
+
+04:55.360 --> 05:02.440
+Notice as I start typing the tutorial knows so at first tells you, hey, go put in the username and
+
+05:02.440 --> 05:03.190
+the password.
+
+05:03.190 --> 05:09.010
+But the moment you've done the username and you start typing the password, it's like, Oh, you might
+
+05:09.010 --> 05:10.720
+be ready to click log in.
+
+05:10.720 --> 05:18.640
+So this is an arbitrary example about how the tutorial is looking into your progress through the core
+
+05:18.640 --> 05:22.140
+user experience and giving you some helpful hints.
+
+05:22.150 --> 05:26.530
+It could say, Hey, here's a character you can interact with in the game.
+
+05:26.530 --> 05:32.740
+Click A to start dialogue and after the user is familiar with that, you never want to show them the
+
+05:32.740 --> 05:34.840
+click A to start dialogue again.
+
+05:34.840 --> 05:35.180
+Right?
+
+05:35.260 --> 05:36.370
+Same thing here.
+
+05:36.370 --> 05:39.700
+This is sitting off to the side showing information.
+
+05:39.700 --> 05:44.230
+This could be available perhaps only temporarily through the game.
+
+05:44.230 --> 05:51.880
+But the core idea here is that the the game itself doesn't know about the tutorial.
+
+05:52.300 --> 05:52.870
+Right?
+
+05:53.350 --> 05:54.700
+Then I click log in.
+
+05:54.700 --> 05:55.730
+I get failed.
+
+05:55.730 --> 05:58.130
+It says you failed the tutorial, try again.
+
+05:58.130 --> 06:01.250
+So I'll log out and then I'll use the pass.
+
+06:01.250 --> 06:02.540
+One, two, three, four.
+
+06:02.540 --> 06:05.600
+Which is the as the hint shows is the real answer.
+
+06:05.630 --> 06:06.470
+I'll hit log in.
+
+06:06.470 --> 06:10.070
+It says you completed the tutorial, so see how nice that is.
+
+06:10.070 --> 06:12.920
+That tutorial sits off to the side and gives you helpful hints.
+
+06:12.920 --> 06:15.730
+It could certainly give you much more hints than what's shown here.
+
+06:15.740 --> 06:17.960
+Let's see how that structure works.
+
+06:19.050 --> 06:27.150
+So here we have the tutorial view, which is the UI here with the.
+
+06:28.640 --> 06:29.190
+There we go.
+
+06:29.210 --> 06:30.520
+The title and the body.
+
+06:30.530 --> 06:32.420
+So it's just sitting up there in the corner.
+
+06:32.420 --> 06:33.710
+Simple Unity UI.
+
+06:35.740 --> 06:42.700
+Then the Mini here is going to take in a reference of that view, which we got right here.
+
+06:42.970 --> 06:45.370
+And let's take a look at how the Mini is structured.
+
+06:47.230 --> 06:48.760
+So there's a comment here.
+
+06:48.760 --> 06:49.630
+I'll just read it.
+
+06:49.660 --> 06:53.170
+The example is the main entry point to the demo.
+
+06:53.440 --> 06:56.990
+A tutorial does not need to load a separate scene.
+
+06:57.010 --> 07:03.850
+That's done here only to demonstrate that this is a completely unrelated code that can properly decorate
+
+07:03.880 --> 07:07.360
+a user experience on top of a system without knowing.
+
+07:07.360 --> 07:10.660
+So we could have everything be in this scene.
+
+07:10.660 --> 07:16.300
+But I'm showing like, hey, if we load that login example, this can be so separate that it can be
+
+07:16.300 --> 07:17.230
+laid on top.
+
+07:17.230 --> 07:21.190
+And just that illustration of separation is nice, right?
+
+07:21.580 --> 07:23.920
+So here we'll take in The View.
+
+07:24.950 --> 07:30.510
+Now, most of the demo scenes that come in fact, all of the demo scenes except this one that come with
+
+07:30.510 --> 07:32.870
+the Mini are one scene demos.
+
+07:32.930 --> 07:41.990
+But here again, after I load up the mini, I go ahead and I load in that log in with mini example,
+
+07:42.140 --> 07:44.600
+which is just the log in portion.
+
+07:44.600 --> 07:50.630
+And it was created long before this demo and it knows nothing about the tutorial operating on top of
+
+07:50.630 --> 07:50.900
+it.
+
+07:50.900 --> 07:53.450
+It didn't even need to be updated for this.
+
+07:53.630 --> 07:57.620
+Then down here what I do is make a bridge to the Mini.
+
+08:02.760 --> 08:03.840
+And then.
+
+08:07.330 --> 08:09.040
+I do the wiring up here.
+
+08:09.250 --> 08:15.880
+So what I do in the make a bridge is I go and get the model from the loaded scene so you can look at
+
+08:15.880 --> 08:17.800
+the code above to see how that's done.
+
+08:17.800 --> 08:24.790
+But now that I know, okay, here's the model from the loaded scene, we as the tutorial need to listen
+
+08:24.790 --> 08:25.600
+in to that.
+
+08:25.840 --> 08:36.640
+So I initialize the view using the context of the core logic, and then I create a tutorial controller
+
+08:36.640 --> 08:37.390
+here.
+
+08:38.330 --> 08:41.570
+And I pass in the login model and the view.
+
+08:41.660 --> 08:44.930
+So here is the tutorial logic here.
+
+08:44.930 --> 08:47.930
+Let's go ahead and take a look in the controller and see how it works.
+
+08:52.110 --> 08:58.830
+So what I do is I update the tutorials, little window to say the word tutorial, just to kick off the
+
+08:58.830 --> 08:59.790
+clarity there.
+
+08:59.910 --> 09:04.230
+And then I start listening in to the login model.
+
+09:04.470 --> 09:07.150
+So remember, I load that extra scene.
+
+09:07.170 --> 09:14.100
+I grab the model from it because it was created using Mini, so I'm able to grab the login model from
+
+09:14.100 --> 09:18.390
+it and then I listen to a value called Can I log in?
+
+09:19.010 --> 09:23.180
+And then I listen to some different commands.
+
+09:23.300 --> 09:25.820
+So any time the log in.
+
+09:28.030 --> 09:31.630
+Login button becomes enabled can login is true.
+
+09:31.630 --> 09:35.820
+So I'm able to listen for that so that I can step through the process.
+
+09:35.830 --> 09:44.020
+Then any time the log out command happens, any time the log in, submitted happens and any time the
+
+09:44.020 --> 09:45.730
+log in completed happens.
+
+09:45.730 --> 09:48.610
+So there's four things that I've been able to listen to.
+
+09:48.610 --> 09:56.500
+Now, in theory, if you're developing the tutorial and the core logic at the same time, the step would
+
+09:56.500 --> 09:57.340
+be like this.
+
+09:57.340 --> 10:03.310
+Once you get the basic structure we have here, let's say that you had introduced the idea of walking
+
+10:03.310 --> 10:06.220
+up to and talking to characters in an RPG game.
+
+10:06.220 --> 10:13.810
+You'd want your core login model here to expose an event like Started conversation with character equals
+
+10:13.810 --> 10:14.470
+True.
+
+10:14.500 --> 10:19.960
+Or here's a new command that says the start conversation command.
+
+10:19.990 --> 10:26.470
+Either of those, you'd want to have them as part of the core game logic and be updated and dispatched.
+
+10:26.500 --> 10:33.260
+Then the tutorial out here can hook into that as we see here, either through the model or through the
+
+10:33.260 --> 10:37.490
+context command manager and be able to listen to those things.
+
+10:37.640 --> 10:45.200
+So the usefulness here down here, we see that anytime the log out happens in the core logic, I will
+
+10:45.200 --> 10:53.180
+update the tutorial text to be its first phrase of okay, it's time to enter login, enter username
+
+10:53.180 --> 10:53.990
+and password.
+
+10:54.440 --> 11:01.430
+Any time can log in is changed which because the core logic knows should we be able to log in at this
+
+11:01.430 --> 11:02.510
+moment or not?
+
+11:02.540 --> 11:07.340
+The tutorial updates itself again and says a little bit more information.
+
+11:07.700 --> 11:15.680
+Any time the user has submitted to log in the tutorial will say waiting for the result and any time
+
+11:15.680 --> 11:21.920
+the log in is finished it listens in and says, Well, if you were successful then you're successful
+
+11:21.920 --> 11:25.790
+in the tutorial or if you were not successful then you failed the tutorial.
+
+11:25.820 --> 11:29.360
+So it's an arbitrary demo here.
+
+11:29.720 --> 11:32.120
+This is kind of a silly example.
+
+11:32.780 --> 11:34.910
+To give help for a form like this.
+
+11:34.910 --> 11:40.520
+But you can imagine in a game there might be many different parts of the core logic that you would want
+
+11:40.520 --> 11:43.370
+to expose to the tutorial system.
+
+11:43.580 --> 11:50.450
+So two different teams in theory, just again to illustrate the separation could work on the one could
+
+11:50.450 --> 11:55.730
+work on the core game logic and one could work on the tutorial logic as well as other systems.
+
+11:55.730 --> 12:01.490
+But I'm just showing about the separation here and they're all speaking through the login model and
+
+12:01.490 --> 12:02.270
+the commands.
+
+12:02.270 --> 12:03.170
+So that's it.
+
+12:03.200 --> 12:05.390
+Now let's take a look at the demo running again.
+
+12:07.120 --> 12:12.220
+So again, bulk of the screen real estate is is loaded from another scene.
+
+12:12.220 --> 12:15.450
+It knows nothing that it's been loaded in the tutorial.
+
+12:15.460 --> 12:22.060
+The tutorial sits on top and has just a little bit of view in the corner there and shows well, it's
+
+12:22.060 --> 12:23.050
+the tutorial.
+
+12:23.050 --> 12:25.000
+Enter the username and password.
+
+12:25.000 --> 12:27.400
+So I start typing in there and it updates.
+
+12:27.400 --> 12:29.860
+It says okay, click log in.
+
+12:30.520 --> 12:31.800
+Now I click login.
+
+12:31.840 --> 12:33.610
+It said Waiting for result.
+
+12:33.610 --> 12:35.410
+And then it says, Oh, you failed.
+
+12:35.470 --> 12:37.150
+And I click log out.
+
+12:37.180 --> 12:39.310
+Notice the tutorial changes again.
+
+12:39.340 --> 12:43.020
+Now I can type some stuff in and then I'll type the correct answer here.
+
+12:43.030 --> 12:44.080
+One, two, three, four.
+
+12:44.320 --> 12:45.310
+Click, log in.
+
+12:45.340 --> 12:46.720
+It says Waiting for a result.
+
+12:46.720 --> 12:49.250
+And then it says, You completed the tutorial.
+
+12:49.270 --> 12:55.960
+So it's as tightly integrated as if it was part of the core logic, but you gain the benefit of that
+
+12:55.960 --> 12:56.920
+separation.
+
+12:56.920 --> 13:02.740
+So in the earlier part of this video I mentioned one of the benefits of that tutorial.
+
+13:03.870 --> 13:09.030
+Being separate is that maybe you only want it to run for the first one minute of gameplay.
+
+13:09.240 --> 13:14.730
+I could simply disable the tutorial up there in the corner and the core game logic doesn't need to know
+
+13:14.730 --> 13:16.020
+about the tutorial.
+
+13:16.020 --> 13:18.290
+It doesn't need to know if it's enabled or not.
+
+13:18.300 --> 13:22.020
+Or imagine that there's a settings menu and the settings has.
+
+13:22.020 --> 13:23.010
+Check this box.
+
+13:23.010 --> 13:27.470
+If you want the tutorial, check this box if you don't want the tutorial.
+
+13:27.480 --> 13:33.270
+So that also could enable that little window in the corner here to be toggled on or toggled off.
+
+13:34.360 --> 13:34.770
+Great.
+
+13:34.780 --> 13:36.160
+So that's it for that demo.

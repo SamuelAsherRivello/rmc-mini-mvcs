@@ -1,0 +1,319 @@
+WEBVTT
+
+00:00.090 --> 00:01.360
+Test driven development.
+
+00:01.380 --> 00:04.920
+Here's an example of a test class with a test method.
+
+00:04.920 --> 00:08.450
+Already in the course, we've seen how to run an existing test.
+
+00:08.460 --> 00:14.910
+We've seen how to create new tests from scratch test driven development or TDD is the practice of adding
+
+00:14.910 --> 00:17.550
+tests before you add your production code.
+
+00:17.550 --> 00:21.290
+For some, especially those new to testing, this can seem odd.
+
+00:21.300 --> 00:26.430
+We'll learn more about the technique and note that you can mix test driven development with traditional
+
+00:26.430 --> 00:29.490
+testing however you like into your own workflows.
+
+00:29.520 --> 00:36.570
+TDD creates tests that specify and validate what code will do once it's created.
+
+00:37.110 --> 00:38.280
+Here's the workflow.
+
+00:38.280 --> 00:44.220
+You create a new test, you add just enough implementation within it so that the code compiles.
+
+00:44.220 --> 00:48.610
+Since we've added just enough production code for this code to compile.
+
+00:48.630 --> 00:54.000
+Perhaps even having an empty implementation, we run the test and the test fails.
+
+00:54.450 --> 00:55.590
+That's expected.
+
+00:55.590 --> 01:01.950
+And it's actually a very good place to start by first seeing a failing test, we have more confidence
+
+01:01.950 --> 01:05.040
+that the test, once it passes, actually mean something.
+
+01:05.040 --> 01:09.420
+You then refactor your production code until the code passes and then move on.
+
+01:09.420 --> 01:16.020
+TDD is not simply the order of testing first and writing your production code second.
+
+01:16.020 --> 01:19.140
+It's also a way of thinking about your projects.
+
+01:19.140 --> 01:24.230
+Some of this you really need to practice and in order to feel the results.
+
+01:24.240 --> 01:31.110
+But what I find with more TDD experience is that you think about your new code differently, you're
+
+01:31.110 --> 01:38.160
+more focused in your development, you create more atomic code that does just one thing, and when you
+
+01:38.160 --> 01:42.180
+have your testing code pass, it's a more meaningful pass.
+
+01:42.210 --> 01:48.840
+Another way to look at this flow is that you write a failing test, you make the test pass, and then
+
+01:48.840 --> 01:51.660
+you refactor your code to meet any other goals.
+
+01:51.660 --> 01:58.590
+You have optimization, coding standards, etc. and then you repeat, Let's see this in action.
+
+01:58.590 --> 02:01.320
+We'll open up a unity project that's got a test already.
+
+02:01.320 --> 02:08.790
+We'll use TDD to add a new test, create just enough production code for it to compile, see a failing
+
+02:08.790 --> 02:12.090
+result, and then refactor till we have a passing result.
+
+02:13.020 --> 02:16.130
+Here we are in a fairly empty unity project.
+
+02:16.140 --> 02:22.560
+I've made sure that the test framework is already added in the package manager as shown earlier, and
+
+02:22.560 --> 02:25.590
+I've copied one test in for us to begin with.
+
+02:25.620 --> 02:28.350
+Let's take a look at that test here in edit mode.
+
+02:28.350 --> 02:33.780
+I have one test providing coverage on the ADD method of a simple math class.
+
+02:33.780 --> 02:34.850
+Let's run the test.
+
+02:34.860 --> 02:35.900
+It passes.
+
+02:35.910 --> 02:41.430
+Let's take a look at the code and here we see the one test we're familiar with from earlier in the presentation.
+
+02:41.430 --> 02:45.330
+Now let's perform some test driven development as discussed here.
+
+02:45.360 --> 02:51.450
+The idea is that if we were to expand the functionality of the math system, we have a few approaches.
+
+02:51.450 --> 02:57.090
+We could either go create that production code without any testing and afterwards.
+
+02:58.260 --> 03:01.350
+And afterwards maybe we add tests or maybe we don't.
+
+03:02.530 --> 03:08.530
+However, with test driven development, we're going to test first before we've added any production
+
+03:08.530 --> 03:09.040
+code.
+
+03:09.870 --> 03:11.010
+Let's see how that works.
+
+03:11.040 --> 03:11.700
+I'll imagine.
+
+03:11.700 --> 03:11.880
+I'm.
+
+03:13.080 --> 03:14.040
+Let's imagine.
+
+03:14.040 --> 03:16.680
+The math system needs a subtract method.
+
+03:17.980 --> 03:22.240
+Now, this abstract method doesn't exist yet, as we'll see when we look at the source code.
+
+03:23.150 --> 03:24.830
+But let's make a test for it anyway.
+
+03:25.760 --> 03:29.060
+I'll start by adding the test attribute.
+
+03:29.270 --> 03:37.130
+I'll name the method with what is under test, what's the expected result and in what situation I expect
+
+03:37.130 --> 03:38.390
+for subtract.
+
+03:38.390 --> 03:40.130
+The result would be five.
+
+03:40.160 --> 03:45.140
+If I pass in ten and five, ten minus five is five.
+
+03:45.170 --> 03:48.980
+To set up the test, I instantiate a new copy of my math system.
+
+03:49.220 --> 03:52.250
+I get the result by calling the subtract method.
+
+03:52.280 --> 03:56.830
+The red text here indicates my code editor knows there's no subtract method.
+
+03:56.840 --> 04:03.320
+And finally, we expect our method to return a value of five because I copied and pasted this from the
+
+04:03.320 --> 04:04.100
+earlier example.
+
+04:04.100 --> 04:05.060
+It says 15.
+
+04:05.090 --> 04:06.180
+I'll change that now.
+
+04:06.200 --> 04:08.150
+Now it's checking the proper assumption.
+
+04:08.840 --> 04:13.180
+Now we know this is not going to compile, but let's save and return to unity.
+
+04:13.190 --> 04:14.750
+Let's note two things.
+
+04:14.750 --> 04:19.250
+One, the console window is properly showing that there is a compiler error.
+
+04:19.250 --> 04:24.300
+And to notice in the test runner window, we don't yet see our new method.
+
+04:24.320 --> 04:26.610
+These are good things to note in TDD.
+
+04:26.630 --> 04:30.970
+The next step is to make just enough code that it compiles.
+
+04:30.980 --> 04:34.700
+It's very important we don't finish the implementation at this stage.
+
+04:34.700 --> 04:36.920
+Here's the source code for our math system.
+
+04:36.920 --> 04:42.050
+Here's the very simplest implementation I can do that gets the code to compile.
+
+04:42.050 --> 04:45.740
+Notice that I don't finish the proper implementation.
+
+04:45.740 --> 04:52.550
+Now, in this example it seems trivial because we know all we need to do is subtract A and B.
+
+04:52.550 --> 04:58.460
+However, normally in test driven development, the implementation of a given method would be more complex
+
+04:58.460 --> 04:59.540
+and take more time.
+
+04:59.540 --> 05:03.470
+Regardless, we always stop here once we have enough to compile.
+
+05:04.230 --> 05:05.360
+Let's look at the test.
+
+05:05.370 --> 05:09.150
+Our code editor properly no longer shows subtract in red.
+
+05:09.570 --> 05:11.340
+Let's save and check unity.
+
+05:11.370 --> 05:13.710
+Now we don't see any console errors.
+
+05:13.710 --> 05:14.280
+Great.
+
+05:14.280 --> 05:15.540
+Everything is compiling.
+
+05:15.540 --> 05:19.290
+And now our test runner window properly shows the new test method.
+
+05:19.290 --> 05:20.430
+Let's run all tests.
+
+05:20.430 --> 05:26.430
+You can consider the testing of failure because one or more tests methods fail.
+
+05:26.430 --> 05:31.350
+When we look at when we select the failing method, we see some small input there.
+
+05:31.350 --> 05:34.200
+We see a bit of output text that shows why it failed.
+
+05:34.470 --> 05:38.490
+It's expecting five, but instead it's returning zero.
+
+05:38.490 --> 05:40.560
+Now, why did we go through the motions here?
+
+05:40.560 --> 05:46.350
+It may seem trivial, but it's an important distinction that we create a test, we believe test the
+
+05:46.350 --> 05:49.260
+proper functionality and we first see it fail.
+
+05:49.260 --> 05:55.560
+That gives us a good basis to know when a proper implementation gives a pass with confidence.
+
+05:55.560 --> 05:57.420
+Let's add the proper implementation here.
+
+05:57.420 --> 06:02.160
+We assume that the first parameter coming in would be larger than the second, and we simply return
+
+06:02.160 --> 06:05.670
+and we simply return a minus B, let's save and run the test.
+
+06:07.570 --> 06:12.600
+Now the test runs well and we've completed our first example of test driven development.
+
+06:12.610 --> 06:13.450
+That's it.
+
+06:13.990 --> 06:20.680
+Now, I know from my own experience that it took me time and practice with testing to really feel the
+
+06:20.680 --> 06:21.520
+benefits.
+
+06:21.520 --> 06:29.890
+While we've had a brief overview with unit testing, creating unit tests and test driven development.
+
+06:30.580 --> 06:35.200
+I hope you're beginning to see some of the benefits that could work well for you.
+
+06:35.200 --> 06:41.350
+Combining what you've learned here about testing with MVC architecture, you have the tools to create
+
+06:41.350 --> 06:47.460
+projects that are more modular, scalable, optimized, robust and dependable.
+
+06:47.470 --> 06:52.610
+The combination of testing and good architecture is really powerful.
+
+06:52.630 --> 06:53.500
+Thanks.
