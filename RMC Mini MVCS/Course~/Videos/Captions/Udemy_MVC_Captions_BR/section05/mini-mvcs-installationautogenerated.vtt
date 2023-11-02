@@ -1,142 +1,142 @@
 WEBVTT
 
 00:00.390 --> 00:03.270
-Installation of the mini MVCs.
+Instalação dos mini MVCs.
 
 00:04.310 --> 00:06.980
-The full source code is available free on git.
+O código-fonte completo está disponível gratuitamente no git.
 
 00:07.010 --> 00:08.870
-The link will be included below.
+O link será incluído abaixo.
 
 00:08.870 --> 00:11.880
-The steps for installation is to follow that link.
+Os passos para a instalação devem seguir esse link.
 
 00:11.900 --> 00:13.850
-Create a new unity project.
+Crie um novo projeto unity.
 
 00:13.850 --> 00:19.610
-I suggest the latest loads of unity and then you import this package into your project.
+Sugiro as cargas mais recentes do unity e depois importe esse pacote para o seu projeto.
 
 00:19.610 --> 00:27.410
-Within Unity's top menu you navigate Window Package Manager Add package from git URL and you use the
+No menu superior do Unity, navegue até Window Package Manager Add package from git URL e use o comando
 
 00:27.410 --> 00:29.120
-URL atop the git page.
+URL no topo da página do git.
 
 00:29.300 --> 00:31.640
-Here we are in our favorite web browser.
+Aqui estamos em nosso navegador favorito.
 
 00:31.640 --> 00:37.460
-Looking at the project repo In GitHub, we click code and we can see the full git URL.
+Olhando para o repositório do projeto no GitHub, clicamos no código e podemos ver a URL completa do git.
 
 00:37.490 --> 00:39.950
-You want to copy that and bring that into unity.
+Você deseja copiá-lo e trazê-lo para a unidade.
 
 00:39.980 --> 00:44.840
-Here we are in an empty unity project using the latest version of unity.
+Aqui estamos em um projeto unity vazio usando a versão mais recente do unity.
 
 00:45.690 --> 00:47.490
-We'll open up the package manager.
+Vamos abrir o gerenciador de pacotes.
 
 00:58.370 --> 01:03.970
-The package manager shows all of the current dependencies and allows you to add more.
+O gerenciador de pacotes mostra todas as dependências atuais e permite que você adicione mais.
 
 01:03.980 --> 01:07.500
-We hit the plus button and choose to add a new git URL.
+Pressionamos o botão mais e escolhemos adicionar uma nova URL do git.
 
 01:07.520 --> 01:13.970
-We paste in the URL we got from the github repo and now the mini MVCs is successfully added into your
+Colamos a URL que obtivemos do repositório do github e agora o mini MVCs foi adicionado com sucesso ao seu
 
 01:13.970 --> 01:14.540
-project.
+projeto.
 
 01:14.540 --> 01:20.000
-Notice in the project window that we have nothing in assets in this particular example because it's
+Observe na janela do projeto que não temos nada em ativos neste exemplo específico porque é
 
 01:20.000 --> 01:24.440
-an empty project and under packages we can see many MVCs.
+um projeto vazio e, em pacotes, podemos ver muitos MVCs.
 
 01:26.280 --> 01:30.780
-So it's a bit off the subject, but I'll talk a little bit about unity and packages.
+Então, isso foge um pouco do assunto, mas vou falar um pouco sobre unity e pacotes.
 
 01:30.780 --> 01:34.590
-Historically, Unity offered assets through the asset store.
+Historicamente, a Unity oferecia recursos por meio da loja de recursos.
 
 01:34.620 --> 01:40.470
-These assets were downloaded in something like a zip file that you would unzip in your project and be
+Esses recursos eram baixados em algo como um arquivo zip que você descompactaria em seu projeto e seria
 
 01:40.470 --> 01:41.510
-able to use them.
+capaz de usá-los.
 
 01:41.520 --> 01:43.270
-The system worked fairly well.
+O sistema funcionava razoavelmente bem.
 
 01:43.290 --> 01:47.750
-A few years back, unity greatly expanded in how this system would be delivered.
+Alguns anos atrás, a unidade expandiu muito a forma como esse sistema seria fornecido.
 
 01:47.760 --> 01:53.880
-The asset store still very much exists as a concept, but now when you download things from third parties,
+A loja de ativos ainda existe como um conceito, mas agora quando você baixa coisas de terceiros,
 
 01:53.880 --> 01:58.290
-including this package that I'm offering here, it comes through the Unity Package manager.
+incluindo esse pacote que estou oferecendo aqui, ele vem por meio do gerenciador de pacotes Unity.
 
 01:58.290 --> 02:03.120
-Some benefits include you have another pathway that's very easy to add things to your project.
+Alguns benefícios incluem ter outro caminho que é muito fácil de adicionar coisas ao seu projeto.
 
 02:03.120 --> 02:04.050
-As we've seen.
+Como já vimos.
 
 02:04.350 --> 02:08.370
-You can also include as a developer samples to share with others.
+Você também pode incluir, como desenvolvedor, amostras para compartilhar com outras pessoas.
 
 02:08.370 --> 02:12.000
-We'll take a look at some samples for many MVCs in later sections.
+Daremos uma olhada em alguns exemplos para muitos MVCs em seções posteriores.
 
 02:12.000 --> 02:17.040
-Periodically as you're using this package or any others, check back into the package manager to see
+Periodicamente, quando estiver usando esse pacote ou qualquer outro, verifique novamente o gerenciador de pacotes para ver
 
 02:17.040 --> 02:22.110
-if a new version has been released to make sure you're always running the most updated code In this
+se uma nova versão foi lançada para garantir que você esteja sempre executando o código mais atualizado.
 
 02:22.110 --> 02:25.380
-section, we've taken a look at the mini MVCs.
+seção, demos uma olhada nos mini MVCs.
 
 02:25.380 --> 02:31.980
-We had an overview, talked about some of the pros and cons, some features, benefits and see that
+Tivemos uma visão geral, falamos sobre alguns dos prós e contras, algumas características, benefícios e vimos que
 
 02:31.980 --> 02:34.620
-it's a lighter alternative to some other frameworks.
+ele é uma alternativa mais leve do que outros frameworks.
 
 02:34.620 --> 02:38.540
-We saw how to install it into your projects and are ready to explore more.
+Vimos como instalá-lo em seus projetos e estamos prontos para explorar mais.
 
 02:38.550 --> 02:40.020
-Next, we'll dig deeper.
+A seguir, vamos nos aprofundar mais.
 
 02:40.020 --> 02:45.420
-This is going to be the first look at the real code of this framework, Learning the fundamentals through
+Esta será a primeira olhada no código real dessa estrutura, aprendendo os fundamentos por meio de
 
 02:45.420 --> 02:46.290
-examples.
+exemplos.
 
 02:46.290 --> 02:52.530
-We're going to see sample projects, how to take all the theory in this course and apply it to C-sharp
+Veremos exemplos de projetos, como pegar toda a teoria deste curso e aplicá-la ao C-sharp
 
 02:52.530 --> 02:53.120
-code.
+código.
 
 02:53.130 --> 02:59.370
-Now, I know we've talked about a lot of principles, patterns, concepts, philosophies up to this
+Sei que já falamos sobre muitos princípios, padrões, conceitos e filosofias até aqui
 
 02:59.370 --> 02:59.940
-point.
+ponto.
 
 02:59.940 --> 03:04.230
-It's all going to come together when we start to see it in the sample code.
+Tudo isso vai se encaixar quando começarmos a ver no código de exemplo.
 
 03:04.230 --> 03:06.180
-I look forward to seeing it with you.
+Estou ansioso para ver isso com você.
 
 03:06.180 --> 03:07.050
-Thanks.
+Muito obrigado.

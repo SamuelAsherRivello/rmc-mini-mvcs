@@ -1,208 +1,208 @@
 WEBVTT
 
 00:00.330 --> 00:02.580
-Now let's look at architectures.
+Agora vamos dar uma olhada nas arquiteturas.
 
 00:03.000 --> 00:08.190
-A software architecture is the fundamental organization of all of its parts.
+Uma arquitetura de software é a organização fundamental de todas as suas partes.
 
 00:08.190 --> 00:13.880
-We'll see that architectures are built on top of design principles and patterns.
+Veremos que as arquiteturas são construídas com base em princípios e padrões de design.
 
 00:13.890 --> 00:18.210
-Benefits include that these are proven solutions to repeatable problems.
+Os benefícios incluem o fato de serem soluções comprovadas para problemas que podem ser repetidos.
 
 00:18.210 --> 00:25.080
-By organizing our project in a bespoke way, we can bring confidence, scalability, performance and
+Ao organizar nosso projeto de forma personalizada, podemos trazer confiança, escalabilidade, desempenho e
 
 00:25.080 --> 00:26.490
-more to our projects.
+mais para os nossos projetos.
 
 00:26.490 --> 00:32.670
-Software architectures are typically high level and could be applied to various languages or platforms,
+As arquiteturas de software são normalmente de alto nível e podem ser aplicadas a várias linguagens ou plataformas,
 
 00:32.670 --> 00:39.420
-and also by using them, we can have faster development as well as easier time in the maintenance phases
+e, ao usá-las, também podemos ter um desenvolvimento mais rápido e um tempo mais fácil nas fases de manutenção
 
 00:39.420 --> 00:40.560
-of our projects.
+de nossos projetos.
 
 00:40.560 --> 00:46.140
-Now, while we often think as developers that our job is adding new features and that that's the majority
+Agora, embora muitas vezes pensemos, como desenvolvedores, que nosso trabalho é adicionar novos recursos e que essa é a maior parte
 
 00:46.140 --> 00:53.880
-of our experience, research shows that 80% of the time on a software project is maintaining the code.
+de nossa experiência, pesquisas mostram que 80% do tempo em um projeto de software é a manutenção do código.
 
 00:54.000 --> 01:00.660
-So by making choices for architectures, design principles and patterns up front and applying them throughout
+Portanto, ao fazer escolhas de arquiteturas, princípios de design e padrões antecipadamente e aplicá-los durante todo o processo
 
 01:00.660 --> 01:06.960
-our project, when we are adding features, that large maintenance phase can be easier and raise our
+nosso projeto, quando estivermos adicionando recursos, essa grande fase de manutenção poderá ser mais fácil e aumentar nossa
 
 01:06.960 --> 01:09.180
-quality of life from a high level.
+qualidade de vida em um nível elevado.
 
 01:09.180 --> 01:15.960
-Some types of architectures are the no architecture approach, typically young teams or individuals
+Alguns tipos de arquiteturas são a abordagem sem arquitetura, geralmente com equipes jovens ou indivíduos
 
 01:15.960 --> 01:17.550
-who are getting into software.
+que estão começando a trabalhar com software.
 
 01:17.550 --> 01:23.550
-We'll do what feels right in the moment without some larger perspective or vision for the project.
+Faremos o que parecer certo no momento, sem uma perspectiva ou visão maior para o projeto.
 
 01:23.550 --> 01:25.080
-But ultimately we'll see.
+Mas, no final das contas, veremos.
 
 01:25.080 --> 01:26.400
-We need something else.
+Precisamos de algo mais.
 
 01:26.400 --> 01:32.790
-Veteran teams can use custom architectural solutions where they look at the unique needs of a team and
+As equipes veteranas podem usar soluções de arquitetura personalizadas, nas quais analisam as necessidades exclusivas de uma equipe e
 
 01:32.790 --> 01:39.420
-the product that they're creating, employing a library of those principles and patterns and create
+o produto que estão criando, empregando uma biblioteca desses princípios e padrões e criando
 
 01:39.420 --> 01:40.710
-their own solution.
+sua própria solução.
 
 01:40.710 --> 01:46.830
-There are pros and cons to this approach, and another key type is using an established architecture,
+Há prós e contras nessa abordagem, e outro tipo importante é usar uma arquitetura estabelecida,
 
 01:46.830 --> 01:52.460
-something we can pull off the shelf and apply in a prescriptive manner to our projects.
+algo que podemos tirar da prateleira e aplicar de forma prescritiva em nossos projetos.
 
 01:52.470 --> 02:01.740
-These include MVP and VC and VM, and there's many, many more we'll look at the details of these.
+Isso inclui MVP, VC e VM, e há muitos, muitos outros que veremos nos detalhes.
 
 02:02.010 --> 02:08.700
-So while it feels quite natural to just develop as we go and do what feels right in the moment, this
+Portanto, embora pareça bastante natural desenvolver à medida que avançamos e fazer o que parece certo no momento, isso
 
 02:08.700 --> 02:11.190
-no architecture approach has drawbacks.
+abordagem sem arquitetura tem desvantagens.
 
 02:11.190 --> 02:16.710
-Whether you're an individual or on a small team, there will be more debate on how to add each feature
+Seja você um indivíduo ou uma equipe pequena, haverá mais debates sobre como adicionar cada recurso
 
 02:16.710 --> 02:22.860
-since you don't have a recipe that leads to inconsistencies over the life of one developer and across
+já que você não tem uma receita que leva a inconsistências ao longo da vida de um desenvolvedor e entre
 
 02:22.860 --> 02:28.110
-each other developer on the team, that means applying re factors becomes more challenging because there's
+cada outro desenvolvedor da equipe, o que significa que a aplicação dos fatores de rejeição se torna mais desafiadora porque há
 
 02:28.110 --> 02:30.570
-all subtle variations in the code base.
+todas as variações sutis na base de código.
 
 02:30.840 --> 02:37.100
-It becomes much more difficult to read the code one day later, one week later or one year later.
+Torna-se muito mais difícil ler o código um dia depois, uma semana depois ou um ano depois.
 
 02:37.110 --> 02:43.410
-Also, when you're bringing new team members on or taking team members off of the project, it's more
+Além disso, quando você traz novos membros para a equipe ou retira membros do projeto, é mais
 
 02:43.410 --> 02:44.640
-labor intensive.
+trabalho intensivo.
 
 02:44.670 --> 02:47.430
-You have to do more custom explanations.
+Você tem que fazer mais explicações personalizadas.
 
 02:47.430 --> 02:52.260
-The new dev needs to spend more time to understand what's there and the code base.
+O novo desenvolvedor precisa gastar mais tempo para entender o que está lá e a base de código.
 
 02:52.260 --> 02:57.990
-And each time a developer departs, they have to explain and document more of their custom personal
+E cada vez que um desenvolvedor sai, ele tem de explicar e documentar mais do seu costume pessoal
 
 02:57.990 --> 03:00.540
-flavor on how they applied that to the project.
+sobre como eles aplicaram isso ao projeto.
 
 03:00.540 --> 03:06.180
-Now, to many devs, particularly beginners, this approach still might feel like the fastest way to
+Agora, para muitos desenvolvedores, especialmente os iniciantes, essa abordagem ainda pode parecer a maneira mais rápida de
 
 03:06.180 --> 03:07.590
-get your features across.
+transmitir seus recursos.
 
 03:07.590 --> 03:14.160
-And often we see developers in prototype phases throw these rules out the window and do the no architecture
+E, muitas vezes, vemos os desenvolvedores nas fases de protótipo jogarem essas regras pela janela e fazerem a arquitetura não
 
 03:14.160 --> 03:14.790
-approach.
+abordagem.
 
 03:14.790 --> 03:21.090
-However, such fast code does indeed bring more bugs and complexity to the project, and the cost of
+Entretanto, esse código rápido de fato traz mais bugs e complexidade ao projeto, e o custo de
 
 03:21.090 --> 03:23.910
-software bugs grows exponentially over time.
+bugs de software cresce exponencialmente com o tempo.
 
 03:24.150 --> 03:30.090
-If you can catch bugs earlier, it's quicker to fix and has less of an impact on your overall project.
+Se você conseguir detectar os bugs mais cedo, a correção será mais rápida e terá menos impacto no projeto como um todo.
 
 03:30.090 --> 03:35.820
-Research shows that if you catch that same bug after you've shipped the product, it can be 30 times
+Pesquisas mostram que se você detectar o mesmo erro depois de enviar o produto, ele pode ser 30 vezes
 
 03:35.820 --> 03:40.950
-or more difficult to fix that bug and get that new version out.
+ou mais difícil consertar o erro e lançar a nova versão.
 
 03:40.950 --> 03:46.770
-So best practices are to create maintainable code from the beginning to increase automation and any
+Portanto, as melhores práticas são criar um código de fácil manutenção desde o início para aumentar a automação e qualquer
 
 03:46.770 --> 03:52.440
-testing around it, which we'll talk about later to catch those bugs early and often and to fix all
+testes em torno dele, sobre os quais falaremos mais tarde, para detectar esses bugs com antecedência e frequência e corrigir todos os
 
 03:52.440 --> 03:56.040
-of your bugs before you move on to making new features.
+de seus erros antes de passar a criar novos recursos.
 
 03:56.040 --> 04:02.550
-Software research shows that more than 80% of bugs happens with around 20% of the functionality.
+Pesquisas sobre software mostram que mais de 80% dos bugs ocorrem em cerca de 20% da funcionalidade.
 
 04:02.580 --> 04:08.610
-These can be the core pieces of glue or the architecture that holds everything together, working quickly
+Essas podem ser as peças centrais de cola ou a arquitetura que mantém tudo unido, funcionando rapidamente
 
 04:08.610 --> 04:14.820
-to add new features for the architecture or the no architecture approach will cause more and more problems
+adicionar novos recursos para a arquitetura ou a abordagem sem arquitetura causará mais e mais problemas
 
 04:14.820 --> 04:15.420
-over time.
+com o passar do tempo.
 
 04:15.420 --> 04:23.160
-Also, quite surprising to many, over 80% of the life of developers on a software project, that 80%
+Além disso, o que é surpreendente para muitos, mais de 80% da vida dos desenvolvedores em um projeto de software, esses 80%
 
 04:23.160 --> 04:27.360
-is maintaining the code base, not necessarily adding new features.
+é a manutenção da base de código, não necessariamente a adição de novos recursos.
 
 04:27.360 --> 04:33.630
-So while we might think that all day is adding features, it's quite a small part of the overall workload.
+Portanto, embora possamos pensar que o dia inteiro está adicionando recursos, essa é uma parte muito pequena da carga de trabalho geral.
 
 04:33.630 --> 04:41.160
-So a key takeaway here is to do that 20% of new functionality and features in an efficient long term
+Portanto, a principal lição aqui é fazer esses 20% de novas funcionalidades e recursos de forma eficiente a longo prazo
 
 04:41.160 --> 04:47.220
-methodology so that when we're spending the time maintaining the code base, we reap those benefits
+para que, quando estivermos gastando tempo mantendo a base de código, possamos colher esses benefícios
 
 04:47.220 --> 04:47.790
-together.
+juntos.
 
 04:47.790 --> 04:56.220
-We'll see that using an established architecture like MVC will bring us many benefits in our unity development.
+Veremos que o uso de uma arquitetura estabelecida como a MVC nos trará muitos benefícios em nosso desenvolvimento de unidade.
 
 04:56.580 --> 04:59.850
-One of the themes we see in this section is that often the.
+Um dos temas que vemos nesta seção é que, muitas vezes, o...
 
 05:00.040 --> 05:04.870
-Idea we have about how software development goes doesn't match the reality.
+A ideia que temos sobre como ocorre o desenvolvimento de software não corresponde à realidade.
 
 05:04.960 --> 05:10.840
-We feel like all day is about adding new features, but actually that's a small part of the lifespan
+Achamos que o dia inteiro é para adicionar novos recursos, mas na verdade essa é uma pequena parte da vida útil
 
 05:10.840 --> 05:11.650
-of a project.
+de um projeto.
 
 05:11.650 --> 05:17.350
-When we begin to think about long term solutions that make that maintenance easier, we place a higher
+Quando começamos a pensar em soluções de longo prazo que facilitam a manutenção, colocamos um nível mais alto de
 
 05:17.350 --> 05:23.690
-value on learning good design principles, design patterns, and ultimately architectures.
+valor no aprendizado de bons princípios de design, padrões de design e, por fim, arquiteturas.
 
 05:23.710 --> 05:25.240
-That's it for this section.
+Isso é tudo para esta seção.
 
 05:25.240 --> 05:25.990
-Thank you.
+Muito obrigado.
