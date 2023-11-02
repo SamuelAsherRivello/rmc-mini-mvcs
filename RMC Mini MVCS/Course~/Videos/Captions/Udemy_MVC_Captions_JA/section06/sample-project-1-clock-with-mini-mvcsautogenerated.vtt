@@ -1,733 +1,733 @@
 WEBVTT
 
 00:00.180 --> 00:03.600
-The clock sample with many MVCs.
+MVCが多い時計のサンプル。
 
 00:04.290 --> 00:06.390
-Here we are inside an empty project.
+ここは空のプロジェクトの中です。
 
 00:06.390 --> 00:10.800
-I've added the Mini and VCs framework and imported the samples.
+MiniとVCのフレームワークを追加し、サンプルをインポートしました。
 
 00:11.010 --> 00:15.690
-Here, let's take a look at the version of the clock with many MVCs.
+ここで、MVCがたくさんあるバージョンの時計を見てみましょう。
 
 00:15.930 --> 00:17.760
-I'll start by running the sample.
+まずはサンプルを実行してみます。
 
 00:21.160 --> 00:21.460
-Here.
+ここで
 
 00:21.460 --> 00:27.820
-We've got no real UI happening, but in the debug log console we have some debug log statements and
+UIは何も表示されていませんが、デバッグ・ログ・コンソールにデバッグ・ログが表示されています。
 
 00:27.820 --> 00:32.020
-they're showing the elapsed time as long as the scene has been open.
+シーンが開いている間の経過時間が表示されています。
 
 00:32.440 --> 00:33.130
-That's it.
+以上です。
 
 00:33.130 --> 00:36.090
-There's no UI, no functionality for input either.
+UIも入力機能もありません。
 
 00:36.100 --> 00:38.650
-This is the first time we've seen the file structure.
+ファイル構造を初めて見ました。
 
 00:38.650 --> 00:42.760
-I have the example script itself which sits on a game object in the scene.
+サンプルスクリプトはシーンのゲームオブジェクトに置いてあります。
 
 00:42.760 --> 00:48.130
-I have the clock mini class which gets created and contains all the concerns.
+時計のミニクラスが作成され、すべての関心事を含んでいます。
 
 00:48.130 --> 00:54.940
-Then I have classes related to each of the concerns, model, view, controller and service.
+そして、モデル、ビュー、コントローラー、サービスといったそれぞれの関心事に関連するクラスがあります。
 
 00:54.940 --> 00:58.900
-One additional concept we haven't discussed yet is the context.
+さらに、まだ説明していない概念として、コンテキストがあります。
 
 00:58.900 --> 01:02.690
-As we take a look at this code, look at the role of the context.
+このコードを見ながら、コンテキストの役割を見てみましょう。
 
 01:02.710 --> 01:04.750
-Here's the mini example itself.
+これがミニサンプルです。
 
 01:08.980 --> 01:10.210
-It's a of behavior.
+動作の一例です。
 
 01:10.210 --> 01:15.090
-And on its start we instantiate the mini class object and we call initialize.
+ミニクラスのオブジェクトをインスタンス化し、initializeを呼び出します。
 
 01:15.100 --> 01:16.830
-Here's the clock mini class.
+これが時計のミニクラスです。
 
 01:16.840 --> 01:20.200
-This extends the mini and VCs framework class.
+ミニクラスとVCフレームワーククラスを継承しています。
 
 01:20.410 --> 01:24.990
-You can think of this as the parent object that holds all of the four concerns.
+これは、4つの関心事をすべて保持する親オブジェクトと考えることができます。
 
 01:25.000 --> 01:31.990
-This is a generic class into which we pass the strong type of the context model, view, controller
+これは一般的なクラスで、コンテキストのモデル、ビュー、コントローラーの強い型を渡します。
 
 01:31.990 --> 01:32.830
-and service.
+とサービスを渡す。
 
 01:32.830 --> 01:37.240
-Here's the initialize with the structure of mini MVCs.
+ミニMVCの構造で初期化を行います。
 
 01:37.240 --> 01:41.980
-All the major parts involved all have an explicit initialized call.
+関係する主要な部分はすべて明示的に初期化された呼び出しを持っています。
 
 01:41.980 --> 01:47.530
-This is a great place for you to put any code that should happen exactly once as the systems wake up.
+これは、システムがウェイクアップするときに一度だけ発生するコードを置くのに最適な場所だ。
 
 01:47.530 --> 01:49.110
-So what do we do in here?
+ここで何をする？
 
 01:49.120 --> 01:55.900
-First, we just make sure we have it initialized yet then we create the context model, view, controller
+まず、初期化されていることを確認し、コンテキストモデル、ビュー、コントローラを作成する。
 
 01:55.900 --> 01:56.770
-and service.
+とサービスを作成します。
 
 01:56.800 --> 02:01.810
-Notice that the constructors for each don't take any arguments except the controller.
+それぞれのコンストラクタはコントローラ以外の引数を取らないことに注意してください。
 
 02:01.960 --> 02:09.940
-This is one of our first examples in code where we see the controller is the most powerful and capable
+これは、コントローラーが最も強力で有能であることを示す最初の例の一つです。
 
 02:09.940 --> 02:15.820
-of the concerns because the controller serves to be the glue that holds together the model view and
+コントローラはモデル・ビューを統合する接着剤の役割を果たすからです。
 
 02:15.820 --> 02:20.350
-service we pass in those references so it knows how to manage and deal with them.
+サービスでは参照を渡すので、それをどのように管理し、扱うかを知っています。
 
 02:20.350 --> 02:25.150
-And finally, we follow the best practice where each of the concerns gets initialized.
+そして最後に、ベストプラクティスに従って各コンサーンを初期化する。
 
 02:25.180 --> 02:29.790
-Notice that everything takes the context and we haven't talked about the context yet.
+まだコンテキストの話はしていない。
 
 02:29.800 --> 02:30.970
-Let's take a look.
+見てみよう。
 
 02:31.000 --> 02:33.340
-Context is a framework class.
+コンテキストはフレームワークのクラスです。
 
 02:33.340 --> 02:39.100
-It implements the interface of AI context, and the rest of the system looks for that interface.
+AIコンテキストのインターフェイスを実装しており、他のシステムはそのインターフェイスを探します。
 
 02:39.100 --> 02:45.190
-So you're free to create your own alternative to context simply by implementing that interface.
+つまり、そのインターフェイスを実装するだけで、コンテキストの代わりになるものを自由に作ることができるわけだ。
 
 02:45.190 --> 02:49.900
-But I find for my uses, this base implementation usually serves my needs.
+しかし、私の用途では、この基本的な実装が大抵の場合私のニーズを満たしてくれる。
 
 02:49.900 --> 02:52.000
-It has just two things within it.
+この実装には2つだけある。
 
 02:52.000 --> 02:58.150
-It has a model locator and a command manager, both of which are publicly available from outside, and
+モデルロケータとコマンドマネージャがある。
 
 02:58.150 --> 02:59.950
-they're created upon instantiation.
+インスタンス化時に作成される
 
 02:59.950 --> 03:01.600
-So what's the role of the contact?
+コンタクトの役割は？
 
 03:01.600 --> 03:08.590
-You can think of the context as the messaging system that all of the four concerns have reference to.
+コンテキストは、4つの関心事のすべてが参照するメッセージングシステムと考えることができます。
 
 03:08.620 --> 03:10.720
-What are the things any concern can do with it?
+どのようなことができるのでしょうか？
 
 03:10.720 --> 03:16.150
-Well, by using the command manager, they can listen to any commands and invoke any commands.
+コマンドマネージャーを使えば、どんなコマンドでも聞くことができるし、どんなコマンドでも呼び出すことができる。
 
 03:16.150 --> 03:18.880
-That's the messaging portion and model locator.
+これがメッセージング部分とモデルロケーターだ。
 
 03:18.880 --> 03:25.390
-While a more advanced concept optionally allows you to register any model and retrieve that model.
+より高度なコンセプトとして、任意のモデルを登録し、そのモデルを検索することができます。
 
 03:25.390 --> 03:31.690
-So any one of the concerns could register a model or listen to model events.
+つまり、モデルを登録したり、モデルのイベントをリッスンしたりすることができるのだ。
 
 03:31.690 --> 03:37.480
-Down here in the constructor, we see that those two parts get instantiated, and as an experimental
+コンストラクタでは、この2つの部分がインスタンス化されます。
 
 03:37.480 --> 03:40.300
-feature, I have a context locator.
+ということです。
 
 03:40.690 --> 03:48.430
-This allows any scope to add a context like we see here, and any other concern can get that context
+これにより、どのスコープでも、ここにあるようなコンテキストを追加することができ、他のどのコンサルトもそのコンテキストを取得することができる。
 
 03:48.430 --> 03:49.000
-if needed.
+必要であれば
 
 03:49.000 --> 03:51.160
-In more complex examples, we'll see.
+もっと複雑な例を見てみよう。
 
 03:51.160 --> 03:57.130
-This could be useful if your project has two different mini MV axes and you want to communicate between
+これは、プロジェクトに2つの異なるミニMV軸があり、その間を通信したい場合に便利です。
 
 03:57.130 --> 04:01.570
-them for this first sample, we won't get into that complexity so you can ignore this detail.
+この最初のサンプルでは、そのような複雑なことには触れませんので、この詳細は無視してかまいません。
 
 04:01.570 --> 04:05.920
-So that ends the high level discussion of this entire example.
+これでこの例全体のハイレベルな議論は終わりです。
 
 04:05.920 --> 04:12.490
-We see that we have the mini parent object which has the four concerns within, and each of them has
+ミニ親オブジェクトは4つの関心事を内包しており、それぞれの関心事には
 
 04:12.490 --> 04:14.890
-a reference to the context from a high level.
+上位レベルからのコンテキストへの参照。
 
 04:14.890 --> 04:17.800
-It's important that we understand those basic concepts.
+その基本概念を理解することが重要なのだ。
 
 04:17.800 --> 04:22.330
-Feel free to rewatch this portion of the course to gain a clearer understanding.
+この部分を再視聴して理解を深めてください。
 
 04:22.330 --> 04:25.720
-Now let's go through each of the concerns and see how they operate.
+では、それぞれの懸念事項を確認し、それがどのように作用するかを見ていこう。
 
 04:25.720 --> 04:28.600
-We already looked at the context, so let's look at the model.
+文脈はすでに見ましたので、モデルを見てみましょう。
 
 04:28.600 --> 04:31.030
-This is the first concern we've seen in code.
+これはコードで見た最初の懸念事項です。
 
 04:31.030 --> 04:36.910
-So we'll take a deeper look at how it's constructed and we'll see that all other concerns in this sample
+どのように構築されているのか、さらに詳しく見てみましょう。
 
 04:36.910 --> 04:41.080
-and most of the other concerns in the other sample follow a similar pattern.
+そして、他のサンプルの他の懸念事項のほとんども同じようなパターンに従っている。
 
 04:41.080 --> 04:44.630
-So in future discussions, we will not cover this as deeply.
+そのため、今後の議論では、これほど深く取り上げることはないだろう。
 
 04:44.650 --> 04:47.790
-Notice here that the clock model extends the base model.
+時計モデルがベースモデルを拡張していることに注目してください。
 
 04:47.800 --> 04:51.760
-Now extending any of the base classes is optional.
+ベースクラスの拡張はオプションです。
 
 04:51.760 --> 04:56.620
-It comes with some free functionality, but you're free to approach it in an alternative way if you'd
+しかし、もしあなたがそれを望むのであれば、別の方法でアプローチすることもできます。
 
 04:56.620 --> 04:57.700
-like more flexibility.
+もっと柔軟性が欲しいなら
 
 04:57.700 --> 05:03.160
-So here we have a convention suggested, but there's flexibility for you to do your own solutions.
+つまり、ここで提案された慣例はあるが、あなた独自の解決策を講じる柔軟性があるということだ。
 
 05:03.160 --> 05:04.660
-Let's take a look at the base model.
+ベースモデルを見てみましょう。
 
 05:04.660 --> 05:08.920
-Base model implements I model, I model implements, I concern.
+ベースモデルはIモデルを実装しています。
 
 05:08.920 --> 05:14.770
-It's possible in future versions of the framework, we might do something custom here to model, but
+フレームワークの将来のバージョンでは、このモデルに対して何かカスタムなことをする可能性はあるが
 
 05:14.770 --> 05:18.670
-for right now it just mimics what any other concern is able to do.
+しかし、今のところ、それは他の懸念ができることを模倣するだけです。
 
 05:18.670 --> 05:25.570
-The I concern is able to initialize and accept a context so any class that implements this interface
+そのため、このインターフェイスを実装したクラスはすべて
 
 05:25.570 --> 05:32.080
-is able to initialize accepting a context in the initialized method, and then it's able to store and
+初期化メソッドでコンテキストを受け取って初期化することができる。
 
 05:32.080 --> 05:35.620
-maintain a public property to that context.
+そのコンテキストのパブリックプロパティを保持する。
 
 05:35.620 --> 05:42.070
-So this is what all four of the concerns are able to do Now while the suggested usage patterns of how
+このように、4つの懸念事項のすべてが可能である。
 
 05:42.070 --> 05:47.560
-we use a model is different than how we use a controller, know that under the hood they're equally
+モデルの使い方はコントローラの使い方とは異なりますが、その中身は同じです。
 
 05:47.560 --> 05:48.130
-capable.
+できる。
 
 05:48.130 --> 05:50.350
-Again, this allows for ultimate flexibility.
+繰り返しになるが、これが究極の柔軟性を可能にしている。
 
 05:50.350 --> 05:55.720
-Stepping back here as we see clock model extends base model, which we just explored, let's look at
+クロックモデルがベースモデルを拡張していることがわかる。
 
 05:55.720 --> 05:57.640
-the rest of how clock model operates.
+時計モデルの残りの動作を見てみよう。
 
 05:57.640 --> 06:01.600
-You can think of the model as the data store for all runtime data.
+モデルはすべてのランタイムデータのデータストアと考えることができる。
 
 06:01.600 --> 06:03.640
-Well, what does the clock example need?
+では、時計の例では何が必要なのか？
 
 06:03.640 --> 06:05.440
-Well, it needs the current time.
+現在の時刻が必要です。
 
 06:05.440 --> 06:08.200
-And then in our example, it maintains the delay.
+そして、この例では遅延を維持します。
 
 06:08.300 --> 06:10.280
-Between each tick of the clock.
+時計の針と針の間
 
 06:10.280 --> 06:17.160
-For us, it's going to be one second, so we'll see it display one second, then 2 seconds, then 3
+1秒、2秒、3秒と表示される。
 
 06:17.160 --> 06:18.110
-seconds and so on.
+秒と表示される。
 
 06:18.110 --> 06:24.410
-The model, like any concern, has the initialize and the only custom functionality we do here is initialize
+モデルには、他の懸念事項と同様に、初期化機能があり、ここで行う唯一のカスタム機能は初期化だけである。
 
 06:24.410 --> 06:26.960
-the value of our observable variables.
+観測変数の値です。
 
 06:26.960 --> 06:28.280
-That's it for the clock model.
+これで時計モデルは完成だ。
 
 06:28.280 --> 06:30.050
-Next, let's look at the clock view.
+次に時計ビューを見てみましょう。
 
 06:30.050 --> 06:38.720
-The clock view implements eye view and just like we saw before, the eye view is able to have a initialize
+時計ビューはアイ・ビューを実装しています。
 
 06:38.720 --> 06:41.060
-and take a context that's about it.
+を実行し、コンテキストを取得する。
 
 06:41.060 --> 06:42.530
-So we won't explore that further.
+というわけで、これ以上は調べない。
 
 06:42.530 --> 06:46.310
-We don't need any base functionality, so we don't use any base class here.
+ベースとなる機能は必要ないので、ここではベースクラスは使いません。
 
 06:46.310 --> 06:48.110
-We just implement the view ourselves.
+ビューを実装するだけです。
 
 06:48.110 --> 06:52.730
-So we have some properties, some fields and we handle the initialization.
+プロパティとフィールドを用意し、初期化を行います。
 
 06:52.730 --> 06:56.450
-This is boilerplate stuff for any of the concerns.
+これは、あらゆる懸念事項に対する定型的なものです。
 
 06:56.450 --> 06:59.720
-The only thing custom we do here is we use the context.
+ここで行う唯一のカスタムは、コンテキストを使用することです。
 
 06:59.720 --> 07:05.150
-This is our first use of seeing that we access the command manager within and we listen to a custom
+これは、コマンド・マネージャーにアクセスし、カスタム・コマンドをリッスンする最初の例だ。
 
 07:05.150 --> 07:07.910
-command called the time changed command.
+コマンドをリッスンしている。
 
 07:07.910 --> 07:12.800
-Any time the command manager invokes that command, we'll be able to listen to it here.
+コマンドマネージャーがこのコマンドを呼び出したら、いつでもここでそのコマンドを聞くことができる。
 
 07:12.800 --> 07:15.590
-Now, this is the first chance to see Command manager in action.
+コマンドマネージャーの動きを見る最初のチャンスだ。
 
 07:15.590 --> 07:20.300
-So remember the key difference between commands and events with commands.
+コマンドとイベントの違いを覚えておこう。
 
 07:20.300 --> 07:24.260
-We don't need to know who will send this type of message.
+誰がこのようなメッセージを送るのか知る必要はない。
 
 07:24.260 --> 07:28.460
-We only subscribe to the middleman of the command manager and handle it that way.
+コマンドマネージャーという中間管理者にサブスクライブするだけです。
 
 07:28.520 --> 07:30.230
-It's a decoupled solution.
+これは分離されたソリューションです。
 
 07:30.230 --> 07:31.640
-Each concern implements.
+各コンサーンが実装します。
 
 07:31.640 --> 07:33.800
-The required is initialized.
+必須は初期化される。
 
 07:33.800 --> 07:40.700
-This is more of a best practice that I use instead of something specific to MVC frameworks, but I just
+これは、MVCフレームワーク特有のものというより、私が使っているベストプラクティスですが、私はただ
 
 07:40.700 --> 07:46.070
-make a method that easily checks if we're initialized, and if we're not, it throws an exception.
+初期化されているかどうかを簡単にチェックするメソッドを作り、初期化されていなければ例外を投げる。
 
 07:46.070 --> 07:50.690
-We'll see that used at the top of pretty much every method in every concern.
+このメソッドは、すべてのメソッドの先頭で使われます。
 
 07:50.690 --> 07:55.250
-It's a simple grade to gate check that your public methods aren't called too early.
+パブリック・メソッドの呼び出しが早すぎないかチェックするための簡単な方法です。
 
 07:55.250 --> 08:00.860
-Now, each time the command manager dispatches that related event, we're handling that here, we can
+さて、コマンドマネージャーが関連するイベントをディスパッチするたびに、私たちはここでそれを処理します。
 
 08:00.860 --> 08:04.760
-see that the first thing we do is ensure that we are indeed initialized.
+まず最初に初期化されていることを確認します。
 
 08:04.760 --> 08:08.600
-We expect every time the scene runs will be initialized, fine.
+シーンが実行されるたびに初期化されることを期待しています。
 
 08:08.600 --> 08:13.460
-This is just an additional gate check that ensures that the lifecycles are operating properly.
+これは、ライフサイクルが正しく動作しているかどうかを確認するための追加のゲートチェックです。
 
 08:13.460 --> 08:17.000
-Then the only real custom piece of functionality we do here is debug.
+そして、デバッグのためのカスタム機能です。
 
 08:17.000 --> 08:17.600
-Log out.
+ログアウト。
 
 08:17.600 --> 08:22.430
-Remember, we don't have any on screen UI, we're not using any monte behaviors.
+画面上にUIはなく、モンテのビヘイビアも使っていない。
 
 08:22.430 --> 08:26.960
-So our way to speak out through the View is just using a debug log statement.
+だから、Viewを通して発言する方法は、デバッグログ文を使うだけだ。
 
 08:26.960 --> 08:31.760
-This doesn't mean you would need to walk through these steps every time you debug log in your projects.
+これは、プロジェクトでログをデバッグするたびにこの手順を踏む必要があるという意味ではありません。
 
 08:31.760 --> 08:35.600
-You do that as freely as you would in any typical project.
+一般的なプロジェクトと同じように、自由にやってください。
 
 08:35.600 --> 08:43.070
-This is just a contrived, created example to show some sort of user feedback without any mono behaviors
+これは、モノの挙動を伴わない、ある種のユーザーのフィードバックを示すために作られた、作為的な例です。
 
 08:43.070 --> 08:46.070
-or UI that keeps this example quite simple.
+また、UIもシンプルである。
 
 08:46.070 --> 08:47.900
-Next, let's look at the clock service.
+次に時計サービスを見てみよう。
 
 08:47.900 --> 08:50.330
-The clock service extends base service.
+時計サービスはベースサービスを拡張しています。
 
 08:50.330 --> 08:57.380
-As with all concerns that extend a base class that's optional, all it does is do the initialization
+基本クラスを拡張するすべての懸念事項がそうであるように、それは初期化を行うだけです。
 
 08:57.380 --> 09:01.280
-and context set up that we've seen in other concerns.
+とコンテキストのセットアップを行うだけである。
 
 09:01.280 --> 09:06.890
-This service is designed to load something and then notify the system when that's loaded.
+このサービスは何かをロードし、ロードが完了したらシステムに通知するように設計されています。
 
 09:06.890 --> 09:08.960
-So we have a custom unity event here.
+カスタムユニティイベントです。
 
 09:08.960 --> 09:12.650
-The actual data that gets loaded from this service is the time delay.
+このサービスから実際に読み込まれるデータは時間遅延です。
 
 09:12.650 --> 09:14.120
-So that's made available here.
+ここで利用できるようになります。
 
 09:14.120 --> 09:17.930
-Inside the initialize, we do the basic concern setup.
+initializeの中では、基本的な懸念事項の設定を行っています。
 
 09:17.930 --> 09:23.120
-The only thing really custom we do here is initialize that time delay from somewhere outside of this
+この中で唯一カスタムなのは、時間遅延を初期化することです。
 
 09:23.120 --> 09:24.830
-scope load will be called.
+スコープのロードが呼び出される。
 
 09:24.830 --> 09:31.310
-And what we see here is very similar to the functionality of the non mini MVCs version we looked at
+そして、ここで見られるのは、ミニMVCでないバージョンの機能と非常によく似ている。
 
 09:31.310 --> 09:32.060
-before.
+以前
 
 09:32.240 --> 09:36.470
-It just loads a local text file, grabs the string value out of it types.
+ローカルのテキストファイルを読み込んで、そこから文字列の値を取り出します。
 
 09:36.470 --> 09:38.300
-It is int and stores it for us.
+int型で保存してくれる
 
 09:38.300 --> 09:43.100
-Something of note here is that once the data is loaded, that loaded event is fired.
+データが読み込まれると、loadedイベントが発生します。
 
 09:43.100 --> 09:46.370
-We haven't yet seen which scope is going to consume that event.
+どのスコープがそのイベントを消費するのか、まだ見ていない。
 
 09:46.370 --> 09:46.670
-Next.
+次です。
 
 09:46.670 --> 09:47.900
-Let's look at the controller.
+コントローラを見てみましょう。
 
 09:47.900 --> 09:53.510
-This is going to be the most complex concern of this sample and in most samples to controllers where
+これはこのサンプルの最も複雑な問題であり、多くのサンプルではコントローラーに
 
 09:53.510 --> 09:58.100
-we'll see the bulk of the code, the clock controller extends base controller in this case.
+クロックコントローラはベースコントローラを継承しています。
 
 09:58.100 --> 10:01.640
-And in all cases where you see a base class used, it's optional.
+ベースクラスが使用されている場合はすべてオプションです。
 
 10:01.640 --> 10:05.360
-You can, of course create your own class that implements the controller.
+もちろん、コントローラを実装した独自のクラスを作ることもできます。
 
 10:05.360 --> 10:11.180
-But here we get some base functionality which is going to be handling the initialization and taking
+しかし、ここではいくつかの基本的な機能を提供している。
 
 10:11.180 --> 10:11.870
-in the context.
+となる。
 
 10:11.870 --> 10:17.090
-Because clock controller deals with some specific arguments, I've decided that base controller is a
+クロックコントローラーは特定の引数を扱うので、ベースコントローラーは
 
 10:17.090 --> 10:22.670
-generic and you pass in the strongly type values for the model view and service.
+ジェネリックとし、モデルビューとサービスには強く型の値を渡します。
 
 10:22.670 --> 10:26.870
-In the constructor, we pass the model view and service to the base class.
+コンストラクタでは、モデルビューとサービスを基底クラスに渡します。
 
 10:26.870 --> 10:32.450
-In the initialize, we do the typical thing that all concerns do, which is handle the initialize and
+initializeでは、すべての懸念が行う典型的なことを行います。
 
 10:32.450 --> 10:34.250
-take in the context and store it.
+10:32.450 --> 10:34.250
 
 10:34.430 --> 10:40.220
-The only real custom stuff we're doing here is listening to the model, subscribing to one of the observable
+ここで行っている唯一のカスタム処理は、モデルをリッスンし、observableの一つを購読することである。
 
 10:40.220 --> 10:44.150
-events and listening to the service so that we know when the service is loaded.
+イベントと、サービスがいつロードされたかを知るためにサービスをリッスンすることである。
 
 10:44.150 --> 10:49.040
-Now, while we've talked about the observable concept and we've seen the model source code, this is
+さて、ここまでobservableの概念について説明し、モデルのソースコードを見てきた。
 
 10:49.040 --> 10:55.220
-the first place we've seen subscribing to the Unity event from one of the observable classes.
+observableクラスからUnityのイベントを購読するのを見たのはこれが初めてです。
 
 10:55.220 --> 11:03.140
-So any time model time value is set from any scope, this on value change would get fired.
+つまり、どのスコープからでも、モデルの時間値が設定されると、この時間値の変更に関するイベントが発生することになる。
 
 11:03.410 --> 11:08.180
-And again, the use of observables is optional but recommended for all.
+繰り返しになるが、observablesの使用はオプションだが、すべての人に推奨される。
 
 11:08.510 --> 11:15.710
-Properties within the model, you get this automatic paradigm of being able to set the value and being
+モデル内のプロパティは、値を設定することができるという自動的なパラダイムを得ることができます。
 
 11:15.710 --> 11:18.560
-able to listen to when that value has been set and changed.
+その値がいつ設定され、いつ変更されたかを知ることができる。
 
 11:18.560 --> 11:25.310
-So when that service is loaded, we update the model based on what the service got from its external
+そのため、そのサービスがロードされると、そのサービスが外部から取得した値に基づいてモデルを更新する。
 
 11:25.310 --> 11:25.700
-data.
+データを更新する。
 
 11:25.700 --> 11:27.530
-And then we start the ticking of the clock.
+そして、時計の針が動き始めます。
 
 11:27.530 --> 11:32.960
-The ticking of the clock operates very similar to how we saw the non mini NBC's version do it.
+時計の針は、ミニじゃないNBCのバージョンで見たのとよく似た動きをする。
 
 11:32.990 --> 11:34.700
-However, there's a key distinction.
+しかし、重要な違いがある。
 
 11:34.700 --> 11:40.730
-Earlier I talked about how unity collapses model view controller in several areas of the unity engine,
+先ほど、unityエンジンのいくつかの領域で、unityがどのようにモデル・ビュー・コントローラーを崩壊させるかについて話しました、
 
 11:40.730 --> 11:45.590
-one of which is that mono behavior itself is quite powerful and spans many concerns.
+そのうちの1つは、monoの動作自体が非常に強力で、多くの関心事にまたがっているということです。
 
 11:45.590 --> 11:52.070
-Now in the non mini MVCs example, I used a CO routine in order to call repeatable code because this
+さて、ミニMVC以外の例では、繰り返し可能なコードを呼び出すためにCOルーチンを使いました。
 
 11:52.070 --> 11:54.200
-example uses no mono behaviors.
+この例ではモノビヘイビアは使っていません。
 
 11:54.200 --> 11:58.040
-I don't have the same access to CO routine now.
+今はCOルーチンにアクセスすることはできません。
 
 11:58.040 --> 12:00.140
-There's lots of ways that I could fake it.
+"偽装 "する方法はいくらでもある
 
 12:00.140 --> 12:05.600
-What I've chosen to do here is have a separate class which you're free to dig into if you like, and
+ここで私が選択したのは、好きなように自由に掘り下げることができる別のクラスだ。
 
 12:05.600 --> 12:08.060
-all it does is call repeatable code.
+このクラスは反復可能なコードを呼び出すだけだ。
 
 12:08.060 --> 12:10.430
-I call that for this example Clock Helper.
+この例ではClock Helperと呼んでいる。
 
 12:10.430 --> 12:15.110
-How it works is outside the scope of this example, but just know it's a workaround for how to call
+これがどのように機能するかはこの例の範囲外だが、次のように呼び出す方法の回避策であることだけは知っておいてほしい。
 
 12:15.110 --> 12:15.950
-repeatable code.
+反復可能なコード
 
 12:15.950 --> 12:17.900
-And it was one of the solutions that I went with.
+そして、それは私が採用した解決策のひとつだった。
 
 12:17.900 --> 12:23.210
-Something key to note here is here in the controller, every time the time delay happens, which is
+ここで重要なのは、コントローラーの中で、タイムディレイが発生するたびに
 
 12:23.210 --> 12:26.030
-every second, I'm setting the model data.
+毎秒、モデルデータをセットしている。
 
 12:26.030 --> 12:29.210
-So we have the controller setting a value on the model.
+つまり、コントローラーがモデルに値を設定しているわけだ。
 
 12:29.210 --> 12:34.760
-And because we've listened to the unity event for any time, that model value changes, we get this
+そして、モデルの値が変更されるたびにunityイベントをリッスンしているので、次のようになります。
 
 12:34.760 --> 12:35.270
-callback.
+コールバック
 
 12:35.270 --> 12:41.180
-So here we are in the controller, subscribe to model changes and handling them, turning them into
+つまり、ここではコントローラの中で、モデルの変更をサブスクライブし、それを処理し、それを
 
 12:41.180 --> 12:42.050
-commands.
+コマンドに変換する。
 
 12:42.050 --> 12:45.860
-That's a very common pattern that we'll see throughout MVC.
+これはMVCでよく見られるパターンだ。
 
 12:45.860 --> 12:52.910
-We take an event which is somewhat decoupled and we translate it into a command which is highly decoupled.
+これはMVCでよく見られるパターンです。
 
 12:53.030 --> 12:59.570
-Remember, commands are able to be observed and listened to by any of the concerns as long as they have
+コマンドは、どの関係者からも観察され、聞くことができる。
 
 12:59.570 --> 13:02.570
-access to the context, which all of our concerns do.
+コンテキストにアクセスできる。
 
 13:02.570 --> 13:10.190
-So any time you see invoke command, you can think that's a message like a radio station that any concern
+だから、invokeコマンドを見るときはいつでも、それはラジオ局のようなメッセージだと思えばいい。
 
 13:10.190 --> 13:11.030
-can listen to.
+13:10.190 --> 13:11.030
 
 13:11.030 --> 13:13.340
-This is a very powerful concept.
+これは非常に強力なコンセプトだ。
 
 13:13.340 --> 13:18.620
-It offers you flexibility to communicate to and from any concern.
+このコンセプトは非常に強力だ。
 
 13:18.620 --> 13:25.040
-Now, while that's very flexible, we want to follow the basic conventions where controller is the main
+さて、このように非常に柔軟ではあるが、我々は基本的な慣習に従いたい。
 
 13:25.040 --> 13:30.110
-concern that will be sending and receiving these commands, there will be exceptions and we'll see them
+コマンドを送受信することになるが、例外も存在する。
 
 13:30.110 --> 13:35.900
-in the examples deciding exactly how you use unity events and how you use commands in your project is
+|にできるようにあなたがそれをすることができます本当に出くわすことあなたは、実際には私のパートナーとi約束、誰でも素早くはちょうど無視これらの一見正確にどのように{}人のことを忘れることができます。
 
 13:35.900 --> 13:38.510
-part of the art of using MVC.
+MVCを使う技術の一部です。
 
 13:38.510 --> 13:41.180
-In earlier slides, I suggested conventions.
+以前のスライドで、私は規約を提案しました。
 
 13:41.180 --> 13:42.770
-You're free to follow those.
+それに従うのは自由だ。
 
 13:42.770 --> 13:46.490
-I just recommend being consistent if you do apply any exceptions.
+ただ、例外を適用する場合は一貫性を保つことをお勧めします。
 
 13:46.490 --> 13:47.210
-So that's it.
+以上です。
 
 13:47.210 --> 13:52.730
-We've covered the creation of the context, the model, the view, the controller and the service.
+ここまで、コンテキスト、モデル、ビュー、コントローラ、サービスの作成について説明しました。
 
 13:53.000 --> 13:55.910
-Then we just initialize all of them.
+そして、それらを初期化します。
 
 13:56.180 --> 14:02.240
-So now from a timeline perspective, we did have a monarch behavior in the scene and on its start it
+タイムラインから見ると、シーンに君主のビヘイビアがあり、その開始時に
 
 14:02.240 --> 14:05.630
-created the mini inside the minis initialize.
+ミニの初期化でミニを作成しました。
 
 14:05.630 --> 14:11.660
-It created what we're seeing here, wiring up all of these different pieces and then initialize in this
+このように、さまざまなパーツを配線して、初期化します。
 
 14:11.660 --> 14:17.450
-particular example, because I'm familiar with how it works, I know that when the controller gets initialized,
+この例では、コントローラーが初期化されるとき、私はそれがどのように動作するかを知っているので、私は知っている、
 
 14:17.450 --> 14:22.190
-that's what starts the ticking and really gets this example going.
+この例では、コントローラーが初期化されたときに、カチカチと音が鳴り始める。
 
 14:22.190 --> 14:23.960
-That's it for the code overview.
+コードの概要は以上です。
 
 14:23.960 --> 14:27.740
-This is probably the most dense code sample.
+おそらくこれが最も濃いコードサンプルでしょう。
 
 14:27.740 --> 14:32.000
-Despite being a simple sample, we've got a lot of concepts here.
+シンプルなサンプルにもかかわらず、ここにはたくさんのコンセプトが詰まっています。
 
 14:32.000 --> 14:36.770
-We're taking all of the theory we've seen in the past slides and bringing it all together.
+今までのスライドで見てきた理論を全てまとめています。
 
 14:36.770 --> 14:39.950
-Let's take a look at the sample running one more time here in the scene.
+もう一度、このシーンでサンプルの動きを見てみましょう。
 
 14:39.950 --> 14:46.700
-I've selected a game object we can see in the inspector that game object just has the example and I'll
+ゲームオブジェクトを選択しました。インスペクタを見ると、そのゲームオブジェクトにはちょうどサンプルが表示されています。
 
 14:46.700 --> 14:47.660
-run the sample.
+サンプルを実行します。
 
 14:51.590 --> 14:59.960
-As it's running every time delay, which is 1000 milliseconds, means that we get one tick per second.
+1000ミリ秒の遅延が発生するたびに実行されるので、1秒間に1ティックということになります。
 
 15:00.710 --> 15:03.770
-And our debug log statement shows up in the console.
+コンソールにデバッグログが表示されます。
 
 15:04.540 --> 15:06.430
-That's the complete example.
+これが完全な例だ。
 
 15:06.610 --> 15:11.020
-We've seen all of the concepts of model view controller service.
+モデル・ビュー・コントローラー・サービスの概念は全て理解できました。
 
 15:11.680 --> 15:17.230
-How they get initialized, how the context is the glue that helps message all between them.
+このように、モデル・ビュー・コントローラー・サービスの概念について見てきました。
 
 15:17.230 --> 15:23.770
-And you have an excellent foundation for seeing the theory we've learned applied in real C-sharp code.
+そして，学んだ理論を実際のC-sharpのコードに応用するための素晴らしい基礎ができました。
 
 15:24.100 --> 15:26.740
-So that's our first complete sample.
+これが最初の完全なサンプルです。
 
 15:26.740 --> 15:29.710
-Seeing code running with mini MVCs.
+ミニMVCで動くコードを見る。
 
 15:29.710 --> 15:36.520
-While the use case is very simple, all we're doing is every second doing a debug log statement.
+ユースケースはとてもシンプルですが、やっていることは毎秒デバッグログを記録することだけです。
 
 15:36.520 --> 15:39.730
-We see that we've got a lot of concepts to make that happen.
+それを実現するためのコンセプトがたくさんあることがわかります。
 
 15:39.730 --> 15:46.240
-Now, this is the first example you'll see where when using a bespoke architecture, like many MVCs,
+これは、多くのMVCのようにオーダーメイドのアーキテクチャを使用する場合の最初の例です、
 
 15:46.270 --> 15:47.860
-it feels verbose.
+冗長に感じる
 
 15:47.860 --> 15:54.160
-It feels like, Hey, couldn't we have done that in just one class like we did with the non mini MVC
+|にできるようにあなたがそれをすることができます本当に出くわすことあなたは、実際には私たち約束、誰でも素早くはちょうど無視これらの一見正確にどのように{}人のことを忘れることができます。
 
 15:54.160 --> 15:54.670
-version?
+バージョン？
 
 15:54.670 --> 15:58.060
-But remember, we want to invest in our software.
+しかし、我々はソフトウェアに投資したいのだ。
 
 15:58.060 --> 16:04.360
-We want to use these best practices and it won't be in a ten minute example that we really understand
+ベストプラクティスを使いたいし、10分で理解できるような例ではない。
 
 16:04.360 --> 16:11.140
-the full power ten days into a project, ten months into a project, having that proper code separation
+10日後のプロジェクト、10ヶ月後のプロジェクトで、適切なコード分離をすることで、最大限の力を発揮することができる。
 
 16:11.140 --> 16:15.780
-that comes with a bespoke framework is incredibly powerful and pays dividends.
+16:11.140 --> 16:15.780 オーダーメイドフレームワークは信じられないほど強力で、配当がある。
 
 16:15.790 --> 16:16.930
-That's it for now.
+今はここまで。
 
 16:16.930 --> 16:17.650
-Thanks.
+ありがとう。

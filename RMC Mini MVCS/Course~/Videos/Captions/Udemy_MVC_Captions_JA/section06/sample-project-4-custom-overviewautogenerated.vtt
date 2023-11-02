@@ -1,256 +1,256 @@
 WEBVTT
 
 00:00.120 --> 00:03.570
-The mini NBC's Custom Sample Project.
+ミニNBCのカスタムサンプルプロジェクト。
 
 00:03.570 --> 00:05.010
-Congratulations.
+おめでとうございます。
 
 00:05.010 --> 00:09.180
-You've successfully completed all the theory in this course together.
+あなたはこのコースの全ての理論を無事に修了しました。
 
 00:09.180 --> 00:11.010
-We've gone over the course introduction.
+コースの紹介は終わりました。
 
 00:11.010 --> 00:14.850
-We've looked at an overview of unity, including unity structure.
+ユニティの構造など、ユニティの概要を見てきました。
 
 00:14.850 --> 00:22.770
-We looked at software design from a high level covering design principles, design patterns, UML diagramming,
+デザイン原則、デザインパターン、UMLダイアグラムなど、ソフトウェアデザインを高いレベルから見てきました、
 
 00:22.770 --> 00:24.840
-as well as architectures themselves.
+00:22.770 --> 00:24.840 --> 00:24.840
 
 00:24.840 --> 00:29.340
-And then together we dove deep into the MINI and VCs architecture for Unity.
+そしてUnityのMINIとVCのアーキテクチャについて深く掘り下げていきました。
 
 00:29.340 --> 00:35.460
-Let's put all of this theory together into practice and create a new project from scratch.
+この理論を実践し、ゼロから新しいプロジェクトを作りましょう。
 
 00:35.460 --> 00:41.190
-Now, with each sample project we've covered and with this new one as well, we continue to peel back
+さて、これまで取り上げてきた各サンプルプロジェクト、そしてこの新しいプロジェクトでも、私たちは一皮むけようとしている。
 
 00:41.190 --> 00:46.770
-more layers in MVCs concepts and think critically about how we're applying it.
+MVCのコンセプトのレイヤーを増やし、それをどのように適用するかを批判的に考えていきます。
 
 00:46.770 --> 00:48.600
-As we go through this next section.
+次のセクションに進みます。
 
 00:48.600 --> 00:55.170
-Think for yourself about which aspects of architecture and this framework are you feeling most comfortable
+建築とこのフレームワークのどの側面が最も心地よいと感じるか、自分なりに考えてみてほしい。
 
 00:55.170 --> 00:55.410
-with?
+を考えてみてください。
 
 00:55.420 --> 01:00.150
-Are you starting to see the long term benefits when you apply architecture to your projects?
+アーキテクチャをプロジェクトに適用したとき、長期的なメリットを感じ始めていますか？
 
 01:00.150 --> 01:02.660
-Which parts of the framework do you want to explore more?
+フレームワークのどの部分をもっと探求したいですか？
 
 01:02.670 --> 01:06.390
-Also, consider which aspects may not work for your needs.
+また、どの部分があなたのニーズに合わないかも考えてみてください。
 
 01:06.390 --> 01:12.120
-What can you do to get the results that you want in a project in which design principles, patterns
+デザイン原則やパターンがあるプロジェクトで望む結果を得るためにはどうすればいいのか？
 
 01:12.120 --> 01:14.580
-and other concepts remain unclear?
+曖昧なままである。
 
 01:14.580 --> 01:19.440
-Well, up to this point we've seen several samples of MVCs in action.
+さて、ここまでMVCのサンプルをいくつか見てきました。
 
 01:19.440 --> 01:22.270
-In each case, we reviewed something that already existed.
+いずれの場合も、すでに存在するものを見直した。
 
 01:22.290 --> 01:24.510
-Now we'll create a new project from scratch.
+では、ゼロから新しいプロジェクトを作りましょう。
 
 01:24.510 --> 01:26.550
-Here's the high level process we'll do together.
+これが私たちが一緒に行うハイレベルなプロセスです。
 
 01:26.550 --> 01:29.370
-Well, what is our concept and what are the functional requirements?
+では、コンセプトと機能要件は？
 
 01:29.370 --> 01:30.690
-What does it need to do?
+何をする必要があるのか？
 
 01:30.720 --> 01:32.490
-What's the user experience?
+ユーザーエクスペリエンスは？
 
 01:32.490 --> 01:35.550
-What do they see, and what kind of input do they use?
+何を見るのか、どんな入力をするのか？
 
 01:35.550 --> 01:38.620
-Which architectural concerns will we need?
+どのようなアーキテクチャーが必要なのか？
 
 01:38.640 --> 01:42.960
-Model view controller service, perhaps multiple.
+モデル・ビュー・コントローラー・サービス。
 
 01:42.960 --> 01:47.730
-And for which of those concerns can we use the base functionality and for which ones do we need?
+どのような関心事にベースとなる機能を使い、どのような関心事にベースとなる機能が必要なのか？
 
 01:47.730 --> 01:49.260
-Some custom functionality?
+カスタム機能？
 
 01:49.260 --> 01:54.690
-So let's make a simple math app, a calculator using many MVCs.
+では、MVCを多用したシンプルな計算アプリを作ってみよう。
 
 01:54.690 --> 01:56.070
-Here's the requirements.
+これが必要条件です。
 
 01:56.340 --> 01:59.370
-We'll have some input text fields on the screen.
+画面上に入力欄をいくつか用意します。
 
 01:59.880 --> 02:06.750
-The user will type in two integer numbers and then click an add button to add them together mathematically
+ユーザーは2つの整数を入力し、加算ボタンをクリックして数学的に足し算をします。
 
 02:06.750 --> 02:07.650
-and show the result.
+と表示される。
 
 02:07.650 --> 02:09.930
-So how do we break this down into concerns?
+では、これをどうやって懸念材料に分解するのか？
 
 02:09.930 --> 02:11.430
-Well, the model stores the data.
+モデルはデータを保存します。
 
 02:11.430 --> 02:14.220
-So what type of data would we need to make this happen?
+では、これを実現するためにはどのようなデータが必要なのでしょうか？
 
 02:14.220 --> 02:19.590
-Well, starting just from the view and thinking about the data that way, we know we've got some text
+まあ、ビューから始めて、そのようにデータについて考えてみると、いくつかのテキストがあることがわかる。
 
 02:19.590 --> 02:22.620
-fields of the users entering and we need to store them somehow.
+フィールドがあるので、それを保存する必要がある。
 
 02:22.620 --> 02:28.290
-So we'll have an integer for the first text field, an integer for the second, and an integer for the
+最初のテキストフィールドは整数値、2番目のテキストフィールドは整数値、3番目のテキストフィールドは整数値とします。
 
 02:28.290 --> 02:28.860
-result.
+の結果が得られます。
 
 02:28.860 --> 02:35.400
-In the view, we'll have some sort of text for A, for B, and also for showing the result in the controller,
+ビューでは、A、B、そして結果をコントローラに表示するためのテキストを表示します、
 
 02:35.400 --> 02:41.460
-which is going to handle the logic would need something to do the add operation as well as a way to
+ロジックを処理するコントローラでは、追加操作と同様に
 
 02:41.460 --> 02:43.290
-clear or reset the app.
+をクリアするかリセットする必要がある。
 
 02:43.290 --> 02:49.290
-And while in earlier samples we used a service layer to load some external data, we don't need that
+また、以前のサンプルではサービスレイヤーを使って外部データを読み込んでいましたが、今回はその必要はありません。
 
 02:49.290 --> 02:51.480
-for this example, so we won't have a service.
+この例ではその必要はないので、サービスは使わない。
 
 02:51.480 --> 02:55.020
-So which of the so what base functionality will we use here?
+では、どの基本機能を使うのか？
 
 02:55.020 --> 03:00.240
-Here we're thinking about for which concerns do we want standard functionality and for which do we want
+ここでは、どのような関心事に対して標準的な機能が必要なのか、またどのような関心事に対して標準的な機能が必要なのかを考えている。
 
 03:00.240 --> 03:01.290
-custom functionality?
+カスタム機能？
 
 03:01.290 --> 03:05.400
-Well, as is typically the case for the model, we want some basic functionality.
+まあ、一般的なモデルと同じように、基本的な機能が欲しい。
 
 03:05.400 --> 03:08.610
-There usually isn't a need to stray from the base model.
+基本モデルから外れる必要はない。
 
 03:08.610 --> 03:11.580
-So here we'll be extending base model for the view.
+ここでは、ビューのベースモデルを拡張します。
 
 03:11.580 --> 03:16.230
-We will implement the eye view interface as well as extend mono behavior.
+アイビューのインターフェイスを実装し、monoのビヘイビアを拡張します。
 
 03:16.230 --> 03:18.110
-Now we've seen this pattern before.
+このパターンは以前にも見たことがありますね。
 
 03:18.120 --> 03:20.400
-Any time you want to use Unity's UI.
+UnityのUIを使いたい時はいつでも。
 
 03:20.400 --> 03:23.340
-Unity's UI plays very nice with mono behaviors.
+UnityのUIはmonoビヘイビアと相性がいい。
 
 03:23.340 --> 03:28.470
-So we'll lean into that and we'll use a mono behavior for our view for the controller.
+そこで、コントローラーのビューにmonoビヘイビアを使うことにします。
 
 03:28.470 --> 03:32.970
-While a base controller class exists that works best when we want one.
+コントローラにはベースとなるクラスが存在するが、それが必要な時に最適なのだ。
 
 03:32.970 --> 03:38.340
-Each of a model view controller and service here because we don't need the service.
+モデル・ビュー・コントローラーとサービスのそれぞれは、ここではサービスが必要ないから。
 
 03:38.340 --> 03:43.890
-We've got a few options of how to move forward, but quite simply will implement AI controller and create
+どのように進めるかいくつか選択肢がありますが、単純にAIコントローラを実装して
 
 03:43.890 --> 03:46.560
-custom functionality that doesn't use the service.
+サービスを使わないカスタム機能を作る。
 
 03:46.560 --> 03:50.790
-And again, on the service layer, we won't use a service, so we'll skip that part.
+また、サービスレイヤーではサービスを使わないので、その部分は省略する。
 
 03:50.790 --> 03:53.700
-This is because the app calls for no external data.
+このアプリは外部データを呼び出さないからです。
 
 03:53.700 --> 03:59.430
-So at this stage of the brainstorm, it's a great spot to think about diagramming, using UML.
+この段階では、UMLを使ったダイアグラムを考えるのに最適な場所です。
 
 03:59.460 --> 04:05.430
-This helps you think out where the dependencies lie, which interfaces would be implemented, which
+これは、依存関係がどこにあるのか、どのインターフェイスを実装するのか、どのインターフェイスを実装するのかを考えるのに役立ちます。
 
 04:05.430 --> 04:10.320
-classes would be extended, whether you're working on a project by yourself or together with the team,
+クラスが拡張されるのか、
 
 04:10.320 --> 04:14.310
-UML is a great way to communicate and to focus for development.
+UMLはコミュニケーションをとり、開発に集中するための素晴らしい方法です。
 
 04:14.310 --> 04:20.100
-So taking those same brainstorms we've had in the last few steps, we just articulate that visually.
+そのため、ここ数ステップで行ったブレインストーミングと同じように、視覚的に表現します。
 
 04:20.100 --> 04:25.530
-We'll have a calculator mini class that represents the whole structure inside.
+このような構造全体を表す電卓のミニクラスを用意します。
 
 04:25.530 --> 04:30.060
-We'll have a calculator model, a calculator controller and the calculator view.
+電卓モデル、電卓コントローラ、電卓ビューがあります。
 
 04:30.060 --> 04:33.270
-Throughout the course there's been several coding challenge assignments.
+コース全体を通して、コーディングの課題がいくつか出されています。
 
 04:33.270 --> 04:38.070
-If you're ready for the ultimate coding challenge assignment, you can pause the video here.
+このような場合、「next.next.next.next.next.next.next.
 
 04:38.070 --> 04:43.950
-Use just the information we talked about in this section and start coding from scratch once you complete
+このセクションで話した情報だけを使って、ゼロからコーディングを始めましょう。
 
 04:43.950 --> 04:49.110
-the assignment or if you find yourself getting stuck, you can return to this and see how we solved
+また、もしこの課題に行き詰まったら、このセクションに戻り、私たちがどのように解決したかを見ることができます。
 
 04:49.110 --> 04:49.650
-it together.
+をご覧下さい。
 
 04:49.650 --> 04:50.850
-Let's see this in action.
+実際にやってみよう
 
 04:50.850 --> 04:57.840
-I'm going to show from the very beginning getting unity, installing it, creating a new project, adding
+unityを入手し、インストールし、新しいプロジェクトを作成し、unityを追加するところから始めます。
 
 04:57.840 --> 04:59.910
-the mini and VC's framework and.
+ミニとVCのフレームワークと。
 
 04:59.960 --> 05:03.470
-Doing live coding for this calculator Sample project.
+この電卓サンプルプロジェクトのライブコーディングを行う。
 
 05:03.470 --> 05:08.690
-This sample project will feel a bit different than the ones we've done before because I'm coding it
+このサンプルプロジェクトは、私がコーディングしているので、今までのものとは少し違う感じになると思います。
 
 05:08.690 --> 05:14.030
-as I go, so there'll be less editing and if we're lucky, I'll make some mistakes along the way, which
+このサンプルプロジェクトは今までのものとは少し違う。
 
 05:14.030 --> 05:15.100
-we can solve together.
+一緒に解決しましょう。
 
 05:15.110 --> 05:16.280
-Let's get started.
+さあ、始めよう。

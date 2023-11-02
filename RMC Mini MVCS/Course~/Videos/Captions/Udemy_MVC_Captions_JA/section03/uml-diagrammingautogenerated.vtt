@@ -1,148 +1,148 @@
 WEBVTT
 
 00:00.400 --> 00:04.360
-Next, let's talk about UML or unified modeling language.
+次にUML（統一モデリング言語）について。
 
 00:04.720 --> 00:11.530
-We use UML to understand and to communicate about design patterns and software solutions.
+UMLはデザイン・パターンやソフトウェア・ソリューションを理解し、コミュニケーションするために使われます。
 
 00:11.950 --> 00:17.290
-I'm mentioning it in this course because I want to discuss a few design patterns in the next section,
+このコースでUMLについて触れるのは、次のセクションでいくつかのデザインパターンについて議論したいからです、
 
 00:17.290 --> 00:24.190
-and these diagrams give us a shorthand, a way to communicate these concepts more quickly and more visually.
+このダイアグラムは、これらの概念をより素早く、より視覚的に伝えるための速記法である。
 
 00:24.190 --> 00:29.920
-Some benefits of using UML are It allows for faster planning and clearer communication with your team
+UMLを使用する利点は以下の通りである。 より迅速なプランニングとチームとの明確なコミュニケーションが可能になる。
 
 00:29.920 --> 00:34.210
-members, and during development it helps focus you on the given solution.
+開発中は与えられた解決策に集中することができる。
 
 00:34.210 --> 00:40.310
-There's many different types of diagramming and even within Usmle there's many types of usmle diagrams.
+また、このようなダイアグラムを作成することで、チームのメンバーとのコミュニケーションも円滑になります。
 
 00:40.330 --> 00:47.740
-Most of what I'm showing here will be class diagrams, the way that classes interact from a very high
+ここではクラス図、つまりクラスがどのように相互作用しているかを非常に高い視点から描いています。
 
 00:47.740 --> 00:48.460
-level.
+レベルです。
 
 00:48.490 --> 00:55.120
-I'm not spelling out the individual methods and variables as we sometimes do in these diagrams.
+このような図では、個々のメソッドや変数を綴ることはありません。
 
 00:55.120 --> 01:01.630
-Instead, it's a high level relationship between the classes such that does this one class extend another
+その代わりに、あるクラスが別のクラスを継承しているかというような、クラス間の高度な関係を示しています。
 
 01:01.630 --> 01:05.470
-class using inheritance or does it compose another class?
+このクラスは別のクラスを継承しているのか、それとも別のクラスを構成しているのか？
 
 01:05.470 --> 01:05.740
-Here?
+ここで？
 
 01:05.740 --> 01:10.960
-In this picture, we see the example of the white arrow indicating inheritance.
+この写真では、白い矢印が継承を示しています。
 
 01:10.960 --> 01:16.480
-So within unity, for example, if you have a class that extends mono behavior, this would be the appropriate
+つまり、unityの中で、例えばmonoのビヘイビアを継承したクラスがある場合、このようになります。
 
 01:16.480 --> 01:17.590
-diagram to use.
+ダイアグラムを使用します。
 
 01:17.590 --> 01:20.500
-So we see here a few more examples.
+もう少し例を挙げましょう。
 
 01:20.680 --> 01:26.620
-Just understanding the basics of this is all we need to move forward to understand further diagrams.
+この基本を理解するだけで、さらなるダイアグラムの理解に進むことができる。
 
 01:26.620 --> 01:29.080
-The white Arrow indicates inheritance.
+白い矢印は継承を示す。
 
 01:29.080 --> 01:34.990
-The dotted line with the white arrow means we're implementing an interface and the black diamond and
+白い矢印の点線はインターフェースを実装していることを示し、黒い菱形と
 
 01:34.990 --> 01:39.040
-black arrow indicate composition and reference.
+黒い矢印はコンポジションとリファレンスを示している。
 
 01:39.040 --> 01:41.380
-Let's have fun here with a silly example.
+ここではくだらない例で楽しみましょう。
 
 01:41.380 --> 01:45.820
-A Toyota car is a type of car, so that makes sense.
+トヨタ車は車の一種ですから、意味は通じます。
 
 01:45.820 --> 01:51.070
-To use the inheritance if you're familiar with interfaces, you know, we often begin the type name
+インターフェイスに慣れている人なら、継承を利用するために、型名から始めることがよくありますよね。
 
 01:51.070 --> 01:55.660
-with an eye and we describe what sort of behavior is possible.
+を目にして、どのような振る舞いが可能かを記述します。
 
 01:55.660 --> 02:02.350
-So we could say that the wheel here is a class that implements the eye Rotatable interface composition
+つまり、この車輪は目のRotatableインターフェイスを実装したクラスであると言えます。
 
 02:02.350 --> 02:04.300
-and reference are quite similar.
+と参照はよく似ている。
 
 02:04.300 --> 02:08.470
-It's both a class using another class in some sort of way.
+他のクラスを何らかの方法で利用しているクラスです。
 
 02:08.500 --> 02:13.600
-The key difference here is that composition indicates that they have the same life cycle.
+ここでの重要な違いは、コンポジションが同じライフサイクルを持つことを示していることです。
 
 02:13.600 --> 02:18.300
-In this case, if the Toyota car was to vanish, the wheels would vanish with it.
+この場合、トヨタ車が消滅すれば、車輪も一緒に消滅することになる。
 
 02:18.310 --> 02:22.540
-We understand that wheels are part of it, connected in a shared life cycle.
+ホイールもその一部であり、ライフサイクルを共有しているのだと理解しています。
 
 02:22.540 --> 02:27.010
-However, that Toyota car may also use a system that uses GPS satellite.
+しかし、そのトヨタ車もGPS衛星を利用したシステムを使っているかもしれません。
 
 02:27.010 --> 02:28.600
-So it's also using this.
+つまり、これも使っているわけです。
 
 02:28.600 --> 02:34.000
-But we understand if the car were to vanish, the GPS satellite probably continues to exist.
+しかし、車が消えてもGPS衛星はおそらく存在し続けると理解しています。
 
 02:34.000 --> 02:40.480
-And with just these four types of lines, we can create lots of software solutions and clearly explain
+そして、この4種類のラインだけで、私たちはたくさんのソフトウェアソリューションを作成し、明確に説明することができます。
 
 02:40.480 --> 02:40.810
-them.
+02:40.810 --> 02:40.810
 
 02:40.810 --> 02:45.160
-Over my career, I've seen diagramming done in a variety of ways.
+私のキャリアにおいて、ダイアグラムは様々な方法で作られてきました。
 
 02:45.160 --> 02:52.390
-Those who are familiar with UML and lean heavily into it can do sketches on paper or use tools online
+UMLに慣れ親しみ、UMLに大きく傾倒している人たちは、紙にスケッチを描いたり、オンラインのツールを使ったりします。
 
 02:52.390 --> 02:55.030
-that help you connect up these lines and diagram them.
+を使うことができる。
 
 02:55.030 --> 03:00.430
-People who are not familiar with such an official way to diagram certainly can take a piece of paper
+このような公式な図解の仕方に慣れていない人は、紙に書いてもいい。
 
 03:00.430 --> 03:03.850
-or the back of a napkin and sketch out their ideas freely.
+ナプキンの裏でもいい。
 
 03:03.850 --> 03:09.880
-But the more of us that agree on some sort of a system for the language, the more easily we can communicate.
+しかし、言葉のシステムのようなものに同意する者が多ければ多いほど、コミュニケーションは容易になる。
 
 03:09.880 --> 03:12.520
-UML is a standard that's quite popular.
+UMLはかなりポピュラーな標準です。
 
 03:12.520 --> 03:16.750
-It's existed for a long time in computer science and it's worth giving a look.
+UMLはコンピュータサイエンスの分野では古くから存在しており、一見の価値がある。
 
 03:16.750 --> 03:23.380
-Whether you choose to learn from UML here and diagram yourself or you just learn enough to follow along
+UMLから学び、自分自身で図式化するのか、それともただついていくだけで十分なのか、どちらを選ぶにせよ
 
 03:23.380 --> 03:25.180
-in the course, that's fine with me.
+コースについていければそれでいい。
 
 03:25.300 --> 03:30.130
-We'll see a little bit more about how UML applies to some certain design patterns.
+UMLがあるデザインパターンにどのように適用されるのか、もう少し見ていきましょう。
 
 03:30.130 --> 03:30.850
-Next.
+次へ
 
 03:30.850 --> 03:31.660
-Thanks.
+ありがとう。

@@ -1,400 +1,400 @@
 WEBVTT
 
 00:00.150 --> 00:03.750
-Set up for the test runner window and test classes.
+テストランナーウィンドウとテストクラスのセットアップ。
 
 00:03.750 --> 00:07.380
-The source code for the test framework is available through the package manager.
+テストフレームワークのソースコードはパッケージマネージャーから入手できます。
 
 00:07.380 --> 00:14.580
-You can add the package searching for test framework, import the test framework and optionally import
+テストフレームワークのパッケージ検索を追加し、テストフレームワークをインポートし、オプションで
 
 00:14.580 --> 00:15.270
-code coverage.
+コード・カバレッジ
 
 00:15.270 --> 00:19.980
-Tooling The Unity Test framework includes all the libraries needed to test your CE code.
+ツール Unity Testフレームワークには、CEコードのテストに必要なライブラリがすべて含まれています。
 
 00:19.980 --> 00:25.830
-Now, as an individual or a team, if you're new to testing, you don't have to test all of your code
+個人として、あるいはチームとして、テストに慣れていない場合、すべてのコードをテストする必要はありません。
 
 00:25.830 --> 00:26.670
-at once.
+00:26.670 --> 00:26.670
 
 00:26.670 --> 00:32.550
-You can slowly, over time start testing the more of your code that is covered with tests, the better
+ゆっくり時間をかけてテストを始めればいい。
 
 00:32.550 --> 00:37.740
-you'll have more confidence some ways you can integrate it into your team that's nice and easy.
+00:37.740 --> 00:37.860 --> 00:37.860 --> 00:37.860 --> 00:37.860
 
 00:37.860 --> 00:44.670
-Are adding tests only for new features or add testing to key systems before a major refactor.
+新機能のためだけにテストを追加したり、大きなリファクタリングの前に主要なシステムにテストを追加する。
 
 00:44.670 --> 00:48.780
-And a great way to get started is testing just during bug fixes.
+また、バグフィックス時にテストを行うのも良い方法です。
 
 00:48.780 --> 00:55.200
-If a user reports a bug, you first replicate the existence of the bug with a failing test.
+ユーザーがバグを報告したら、まず失敗したテストでバグの存在を再現する。
 
 00:55.200 --> 00:57.930
-Then you fix the code and the test passes.
+そしてコードを修正し、テストをパスする。
 
 00:57.930 --> 01:00.690
-You can leave this test behind as a legacy.
+このテストはレガシーとして残すことができます。
 
 01:00.690 --> 01:03.420
-So you're sure that that bug doesn't return in the future?
+バグが再発することはないんだな？
 
 01:03.420 --> 01:08.880
-The concept of code coverage refers to how much of your code base is covered with tests.
+コード・カバレッジとは、コードベースのどれだけの部分をテストでカバーしているかという概念です。
 
 01:09.150 --> 01:16.680
-If you have one class and three methods in your entire project and all three of them have tests, then
+プロジェクト全体で1つのクラスと3つのメソッドがあり、その3つすべてにテストがある場合
 
 01:16.680 --> 01:18.390
-you have 100% coverage.
+カバレッジは100%です。
 
 01:18.390 --> 01:21.120
-Generally speaking, the higher the coverage, the better.
+一般的に言って、カバレッジは高ければ高いほど良い。
 
 01:21.120 --> 01:27.390
-You can open up that code coverage window, run your tests, and you get robust results showing you
+コード・カバレッジ・ウィンドウを開いてテストを実行すれば、以下のような結果が得られる。
 
 01:27.390 --> 01:32.280
-not just the percentage per class and system, but within every class.
+クラスやシステムごとのパーセンテージだけでなく、すべてのクラス内でのパーセンテージも表示される。
 
 01:32.280 --> 01:36.900
-You get a line by line readout of which methods have coverage and which don't.
+カバレッジのあるメソッドとないメソッドが行ごとに表示されます。
 
 01:37.320 --> 01:38.430
-It's very useful.
+とても便利です。
 
 01:38.430 --> 01:43.770
-You can track how much of your code is being tested, locate any vulnerabilities you have during your
+また、テスト中に脆弱性を発見することもできます。
 
 01:43.770 --> 01:48.840
-testing process, and also monitor your increasing coverage over time.
+また、カバレッジの拡大を長期にわたってモニターすることもできます。
 
 01:48.840 --> 01:54.930
-With those libraries installed, you can create your first test, open up the test run window, create
+これらのライブラリがインストールされた状態で、最初のテストを作成し、テスト実行ウィンドウを開き、次のように作成します。
 
 01:54.930 --> 02:00.510
-a test folder, and your assets create your first class and your first method in that class.
+最初のクラスとメソッドを作成します。
 
 02:00.510 --> 02:05.820
-At that point, those tests will show up in the test run or window where you can click, run and see
+その時点で、これらのテストはテストランやウィンドウに表示されます。
 
 02:05.820 --> 02:06.450
-them execute.
+実行される。
 
 02:06.450 --> 02:09.180
-Here's an example of a test class with a test method.
+テストメソッドを持つテストクラスの例です。
 
 02:09.300 --> 02:11.100
-Notice it looks like pretty normal.
+ごく普通に見えるだろう。
 
 02:11.100 --> 02:16.980
-C Sharpe The test attribute shown there in the square brackets is the secret sauce.
+C・シャープ 角括弧で囲んだテスト属性がミソだ。
 
 02:16.980 --> 02:22.380
-Here, the system looks for any methods marked with that attribute to consider it a test.
+この属性でマークされたメソッドをテストとみなす。
 
 02:22.380 --> 02:26.730
-As I mentioned, testing is an art form and there's many different ways to approach it.
+前述したように、テストは芸術であり、様々なアプローチの仕方がある。
 
 02:26.730 --> 02:32.040
-A nice device I use is within each method to divide it up into three sections.
+私が使っている良い方法は、それぞれのメソッドを3つのセクションに分けることです。
 
 02:32.610 --> 02:35.310
-Arrange, act and assert.
+アレンジ、アクション、アサート。
 
 02:35.460 --> 02:39.960
-In arrange you do one or more lines that's required to set up the test.
+arrangeではテストをセットアップするために必要な行を1つ以上書きます。
 
 02:39.960 --> 02:45.750
-In the act portion, you execute whatever it is that's specifically related to the test, and then you
+actの部分で、テストに関連することを実行する。
 
 02:45.750 --> 02:46.560
-do the assert.
+アサート
 
 02:46.560 --> 02:49.530
-Asserting means to assume something is true.
+アサートとは何かが真実であると仮定することです。
 
 02:49.530 --> 02:52.410
-So the testing framework comes in assert library.
+テストフレームワークはassertライブラリで提供される。
 
 02:52.410 --> 02:55.920
-Imagine we have a custom math system that allows you to add two numbers.
+2つの数字を足し算する数学のシステムがあるとしよう。
 
 02:55.920 --> 02:56.550
-Together.
+一緒に
 
 02:56.550 --> 03:03.930
-We could assert that the sum of five plus ten equals 15, and we'd consider that a successful test.
+5と10の和は15になる。
 
 03:04.050 --> 03:06.200
-We'd run it and see that it passes.
+テストが成功したとみなす。
 
 03:06.210 --> 03:07.650
-Let's see this in action.
+実際にやってみよう
 
 03:07.650 --> 03:10.620
-I'll open up a unity project that's got a test ready.
+テストの準備ができたunityプロジェクトを開いてみます。
 
 03:10.710 --> 03:14.010
-We'll take a look at how it works and run the test.
+どのように動作するか見て、テストを実行します。
 
 03:15.110 --> 03:17.630
-Here we are in an empty unity project.
+ここは空のunityプロジェクトです。
 
 03:17.630 --> 03:20.360
-I'll begin by setting up the test framework.
+テストフレームワークのセットアップから始めます。
 
 03:20.510 --> 03:22.370
-So I'll open the package manager.
+パッケージマネージャーを開きます。
 
 03:26.970 --> 03:30.980
-The package manager shows which packages are already installed.
+パッケージマネージャーには既にインストールされているパッケージが表示されます。
 
 03:30.990 --> 03:36.660
-It's possible that the project you begin with already has the test framework added.
+あなたが始めたプロジェクトには既にテストフレームワークが追加されている可能性があります。
 
 03:37.390 --> 03:40.070
-But if it doesn't, here's how you can add it yourself.
+しかし、もしそうでなければ、自分で追加する方法を紹介しよう。
 
 03:40.090 --> 03:44.890
-Search in the Unity Registry for test framework and install the latest version.
+Unityレジストリでtest frameworkを検索し、最新版をインストールします。
 
 03:44.890 --> 03:52.630
-Next for optional additional features, search the Unity Registry for code coverage and install code
+次にオプションの追加機能について、Unityレジストリでコードカバレッジを検索し、コードをインストールします。
 
 03:52.630 --> 03:54.400
-coverage has some optional samples.
+coverageにはいくつかのオプションサンプルがあります。
 
 03:54.400 --> 03:55.870
-I won't install them here.
+ここではインストールしません。
 
 03:56.760 --> 04:02.160
-Now reviewing the packages we have in the project, we see both the test framework and optionally if
+プロジェクトに含まれるパッケージを見直してみると、テストフレームワークとオプションのifがあります。
 
 04:02.160 --> 04:04.160
-you chose to install IT coding coverage.
+をインストールすることもできます。
 
 04:04.170 --> 04:07.290
-Now this project is fully compatible to have unit testing.
+これでこのプロジェクトはユニットテストに完全に対応した。
 
 04:09.140 --> 04:09.860
-To get started.
+さあ、始めましょう。
 
 04:09.860 --> 04:11.630
-We'll open up the test runner window.
+テストランナーのウィンドウを開きます。
 
 04:12.050 --> 04:16.340
-The test runner window has two tabs, edit mode and play mode.
+テストランナーウィンドウには編集モードと再生モードの2つのタブがあります。
 
 04:16.580 --> 04:18.200
-Because we have no tests added.
+まだテストは追加されていません。
 
 04:18.230 --> 04:23.210
-The window is very helpful and offers some clickable creation options to make tests for us.
+このウインドウはとても便利で、テストを作成するためのクリック可能な作成オプションがいくつか用意されている。
 
 04:23.240 --> 04:26.690
-In a later demo, I'll show how to create tests from scratch.
+この後のデモでは、テストをゼロから作成する方法を紹介する。
 
 04:27.050 --> 04:30.260
-For now, I'll just paste one in that I have already prepared.
+とりあえず、すでに用意したものを貼り付けてみる。
 
 04:31.220 --> 04:35.960
-The testing shown here was pasted in from the Mini MVCs sample project.
+このテストはMini MVCsのサンプルプロジェクトから貼り付けたものです。
 
 04:35.960 --> 04:36.920
-For the course.
+コースのため。
 
 04:36.920 --> 04:40.450
-To help us focus, I removed everything except the test we want to look at.
+集中力を高めるために、見たいテスト以外はすべて削除しました。
 
 04:40.460 --> 04:45.130
-Let's explore the test, run our windows, starting with the edit mode here in the edit mode tab.
+まずはエディット・モードから。
 
 04:45.140 --> 04:49.580
-By default, all of the tests in the project are listed here in the edit mode tab.
+デフォルトでは、プロジェクト内のすべてのテストがこのedit modeタブに表示されます。
 
 04:49.580 --> 04:55.820
-By default, all the tests available anywhere in the assets folder and packages folder are shown.
+デフォルトでは、assetsフォルダとpackagesフォルダのどこでも利用可能なすべてのテストが表示されます。
 
 04:55.820 --> 04:59.780
-You can filter by category to see only some of the tests.
+カテゴリで絞り込むと、一部のテストだけを表示することができます。
 
 04:59.780 --> 05:04.880
-We don't have many tests here, but just for demo sake, I'll choose the category for our samples.
+あまり多くのテストはありませんが、デモのためにサンプルのカテゴリーを選択します。
 
 05:04.880 --> 05:08.720
-Now the window shows a hierarchy of all the tests organized by namespace.
+このウィンドウには、ネームスペースごとに階層化されたテストが表示されます。
 
 05:08.720 --> 05:15.470
-When I expand all at the lower levels, I see the test class and then a test method under.
+下の階層をすべて展開すると、テストクラスが表示され、その下にテストメソッドが表示される。
 
 05:15.470 --> 05:18.470
-We can run all the tests and see that they pass.
+すべてのテストを実行し、パスすることを確認できる。
 
 05:18.650 --> 05:22.130
-We can select an individual test and run the selected.
+個々のテストを選択して実行することも可能です。
 
 05:22.130 --> 05:26.960
-Whether the test passes or fails, we have an easy way to get to the source code with a right click
+テストが合格でも不合格でも、右クリックで簡単にソースコードを見ることができる。
 
 05:26.960 --> 05:27.560
-menu.
+メニューにアクセスします。
 
 05:30.280 --> 05:31.930
-Here's the complete test code.
+これが完全なテストコードです。
 
 05:32.290 --> 05:35.120
-This is the same we saw earlier in the presentation.
+これはプレゼンテーションで見たものと同じです。
 
 05:35.140 --> 05:36.360
-Let's go over the highlights.
+ハイライトを見てみよう。
 
 05:36.370 --> 05:40.990
-We have an optional category attribute that helps organize our testing.
+オプションのcategory属性はテストを整理するのに役立ちます。
 
 05:41.290 --> 05:46.930
-That dropdown that I showed, filters based on this value, you can have many test classes that are
+このドロップダウンは、この値に基づいてフィルタリングを行うもので、多くのテストクラスを
 
 05:46.930 --> 05:48.040
-in the same category.
+同じカテゴリーに
 
 05:48.040 --> 05:50.950
-You can have many test classes that are in the same category.
+05:50.950→05:50.950→05:50.950→05:50.950→05:50.950
 
 05:50.950 --> 05:52.450
-Then we have the test attribute.
+次にテスト属性です。
 
 05:52.450 --> 05:57.190
-This is what tells the test framework that this method is actually a test method.
+これはテストフレームワークに対して、このメソッドがテストメソッドであることを示すものです。
 
 05:57.990 --> 06:00.740
-Without this, it won't show up in the test runner window.
+これがないと、テストランナーのウィンドウには表示されません。
 
 06:00.750 --> 06:07.710
-Then we use the familiar but optional paradigm of a range act and assert this is just a way that I use
+次に、おなじみだがオプションのパラダイムであるレンジアクトを使う。
 
 06:07.710 --> 06:10.170
-as a convention to organize my test logic.
+これは私がテストロジックを整理するために使っている方法である。
 
 06:10.170 --> 06:16.350
-Also, when I name my tests, I choose to name them based on what is under the test, what is the expectation
+また、テストに名前をつけるときは、何がテストの対象になっているのか、何を期待しているのかに基づいて名前を決めている。
 
 06:16.350 --> 06:17.640
-and what is the situation.
+どんな状況なのか。
 
 06:17.640 --> 06:24.120
-So here I'm testing the ADD method that the result will be 15 when I pass five and ten as the operands.
+ここではオペランドとして5と10を渡したときに結果が15になることをADDメソッドでテストしている。
 
 06:24.120 --> 06:25.890
-Let's tab over to play mode.
+プレイモードにタブオーバーしてみましょう。
 
 06:25.890 --> 06:31.410
-The play mode tab looks very similar and it looks like it's showing the exact same test, but it's not.
+プレイモードのタブはよく似ていて、全く同じテストが表示されているように見えますが、そうではありません。
 
 06:31.410 --> 06:32.370
-I'll open the source.
+ソースを開きます。
 
 06:32.370 --> 06:34.350
-Here's the source code for a play mode test.
+プレイモードのテストのソースコードです。
 
 06:34.350 --> 06:35.610
-So how is this different?
+どう違うんだ？
 
 06:35.610 --> 06:40.320
-The primary difference is where it's located in the project window.
+主な違いは、プロジェクトウィンドウのどこにあるかということです。
 
 06:40.440 --> 06:41.640
-I'll show that in a moment.
+すぐにお見せします。
 
 06:41.640 --> 06:47.610
-An optional difference I choose is that for my tests in play mode, I append the class with play mode
+オプションで、プレイモードのテストにはプレイモードのクラスを追加しています。
 
 06:47.610 --> 06:53.010
-test, whereas in ed mode I just append with test that helps me organize.
+edモードではtestとつけるだけだが、これは整理するのに便利だ。
 
 06:53.010 --> 06:58.980
-Now here for demo sake, I'm testing the exact same behavior once in edit mode and once in play mode.
+デモのために、まったく同じ動作をエディットモードとプレイモードで試している。
 
 06:58.980 --> 07:01.290
-That's probably not necessary for you.
+その必要はないだろう。
 
 07:01.290 --> 07:08.280
-You instead test by default in edit mode and only use play mode testing when you need to capture play
+その代わり、編集モードではデフォルトでテストし、プレーをキャプチャする必要があるときだけプレーモードのテストを使います。
 
 07:08.280 --> 07:15.690
-mode events such as start awake or game object functionality, collision detection, other things that
+プレイモードのテストは、ゲームオブジェクトの機能、衝突の検出、その他のテストなど、プレイモードのイベントをキャプチャする必要がある場合にのみ使用します。
 
 07:15.690 --> 07:16.980
-only happen at runtime.
+実行時のみ発生します。
 
 07:16.980 --> 07:21.180
-As discussed in the course, I use the same method naming convention we saw before.
+コースで説明したように、私は以前見たのと同じメソッドの命名規則を使っている。
 
 07:21.180 --> 07:22.170
-Let's note two.
+2つ書いておこう。
 
 07:22.320 --> 07:24.330
-Let's note two key differences here.
+ここで2つの重要な違いに注意しよう。
 
 07:24.330 --> 07:31.320
-We use a unity test attribute, not a test attribute, as we saw before, and in addition to a range
+以前見たように、テスト属性ではなく、ユニティーテスト属性を使用しています。
 
 07:31.320 --> 07:34.470
-act and assert there's an optional a weight paradigm.
+actとassertに加え、オプションでweightというパラダイムがあります。
 
 07:34.470 --> 07:41.160
-This is used here just to demonstrate the fact that while edit mode tests execute synchronously play
+これは、編集モードのテストが同期的に実行されるという事実を示すために使用されています。
 
 07:41.160 --> 07:44.670
-mode tests can execute asynchronously.
+モードのテストは非同期に実行される。
 
 07:44.670 --> 07:49.860
-So if you have any code that requires asynchronous testing, play mode is a great option.
+つまり、非同期テストが必要なコードがあれば、playモードは素晴らしい選択肢となる。
 
 07:49.860 --> 07:52.620
-Let's take a look at the project window to see the organization.
+プロジェクトウィンドウの構成を見てみましょう。
 
 07:52.620 --> 07:58.080
-Notice that the edit mode test is in an editor folder and notice that the play mode test is in a runtime
+エディットモードのテストはエディターフォルダーにあり、プレイモードのテストはランタイムにあることに注目してください。
 
 07:58.080 --> 07:58.500
-folder.
+フォルダにある。
 
 07:58.500 --> 08:05.310
-That difference together with the differences in the assembly definition files adjacent to these tests
+この違いは、これらのテストに隣接するアセンブリ定義ファイルの違いと合わせて、次のようになる。
 
 08:05.310 --> 08:09.870
-is how the system knows that one is an editor test and one is a play mode test.
+この違いは、エディターテストとプレイモードテストの違いである。
 
 08:09.870 --> 08:11.370
-I'll run the play mode tests.
+プレイモードのテストを実行します。
 
 08:11.370 --> 08:13.460
-Finally, I'll run the play mode test.
+最後にプレイモードのテストを行います。
 
 08:13.470 --> 08:18.840
-The test runner window behaves the same with one exception because these are play mode tests.
+テストランナーウィンドウの挙動は同じだが、プレイモードのテストであるため、1つの例外がある。
 
 08:18.840 --> 08:25.710
-Unity will create an anonymous scene, execute the test in isolation, and then destroy the scene.
+Unityは匿名シーンを作成し、テストを単独で実行した後、シーンを破棄します。
 
 08:25.740 --> 08:31.710
-While this all happens quite rapidly, you'll notice it happening here as a plus, as a press run all
+この処理は非常に高速に行われますが、ここではプラスアルファの処理として、すべてのプレス実行が行われていることに気づくでしょう。
 
 08:31.710 --> 08:34.680
-instead of running all the tests in one millisecond.
+を押すと、すべてのテストが1ミリ秒で実行される。
 
 08:34.680 --> 08:39.600
-For example, as the edit mode may do here, it takes several milliseconds to execute.
+例えば、編集モードがここで行うかもしれないが、実行に数ミリ秒かかる。
 
 08:39.600 --> 08:46.220
-Here we got a chance to see a test running, seeing the test runner window and seeing the basics.
+テストランナーのウィンドウが表示され、基本的なテストが実行されているのがわかります。
 
 08:46.230 --> 08:48.990
-Next, let's take a look at how we'd create our own tests.
+次に、独自のテストを作成する方法を見てみよう。

@@ -1,142 +1,142 @@
 WEBVTT
 
 00:00.390 --> 00:03.270
-Installation of the mini MVCs.
+ミニMVCのインストール。
 
 00:04.310 --> 00:06.980
-The full source code is available free on git.
+全ソースコードはgitで無料公開されています。
 
 00:07.010 --> 00:08.870
-The link will be included below.
+下にリンクがあります。
 
 00:08.870 --> 00:11.880
-The steps for installation is to follow that link.
+インストールはこのリンクから行います。
 
 00:11.900 --> 00:13.850
-Create a new unity project.
+新しいunityプロジェクトを作成します。
 
 00:13.850 --> 00:19.610
-I suggest the latest loads of unity and then you import this package into your project.
+unityの最新のロードをお勧めします。このパッケージをプロジェクトにインポートします。
 
 00:19.610 --> 00:27.410
-Within Unity's top menu you navigate Window Package Manager Add package from git URL and you use the
+Unity のトップメニューから Window Package Manager Add package from git URL を選択し、Add package from git URL を選択します。
 
 00:27.410 --> 00:29.120
-URL atop the git page.
+gitページの一番上にあるURLを使います。
 
 00:29.300 --> 00:31.640
-Here we are in our favorite web browser.
+お気に入りのウェブブラウザで見てみましょう。
 
 00:31.640 --> 00:37.460
-Looking at the project repo In GitHub, we click code and we can see the full git URL.
+GitHub のプロジェクト・レポを見ると、code をクリックすると git URL が表示されます。
 
 00:37.490 --> 00:39.950
-You want to copy that and bring that into unity.
+これをコピーしてunityに取り込みます。
 
 00:39.980 --> 00:44.840
-Here we are in an empty unity project using the latest version of unity.
+ここでは空のunityプロジェクトで最新バージョンのunityを使っています。
 
 00:45.690 --> 00:47.490
-We'll open up the package manager.
+パッケージマネージャーを開きます。
 
 00:58.370 --> 01:03.970
-The package manager shows all of the current dependencies and allows you to add more.
+パッケージマネージャーは現在の依存関係をすべて表示し、さらに追加することができます。
 
 01:03.980 --> 01:07.500
-We hit the plus button and choose to add a new git URL.
+プラスボタンを押して、新しいgit URLを追加します。
 
 01:07.520 --> 01:13.970
-We paste in the URL we got from the github repo and now the mini MVCs is successfully added into your
+githubのレポから取得したURLを貼り付けると、ミニMVCがあなたのレポに追加されます。
 
 01:13.970 --> 01:14.540
-project.
+プロジェクトに追加されました。
 
 01:14.540 --> 01:20.000
-Notice in the project window that we have nothing in assets in this particular example because it's
+プロジェクトウィンドウを見ると、この例ではassetsに何も入っていないことがわかります。
 
 01:20.000 --> 01:24.440
-an empty project and under packages we can see many MVCs.
+パッケージの下にはたくさんのMVCが見えます。
 
 01:26.280 --> 01:30.780
-So it's a bit off the subject, but I'll talk a little bit about unity and packages.
+というわけで、ちょっと話がそれましたが、unityとpackagesについて少し。
 
 01:30.780 --> 01:34.590
-Historically, Unity offered assets through the asset store.
+歴史的に、Unityはアセットストアを通してアセットを提供していました。
 
 01:34.620 --> 01:40.470
-These assets were downloaded in something like a zip file that you would unzip in your project and be
+これらのアセットはzipファイルのような形でダウンロードされ、プロジェクト内で解凍すると
 
 01:40.470 --> 01:41.510
-able to use them.
+使用することができます。
 
 01:41.520 --> 01:43.270
-The system worked fairly well.
+このシステムはかなりうまくいった。
 
 01:43.290 --> 01:47.750
-A few years back, unity greatly expanded in how this system would be delivered.
+数年前、ユニティはこのシステムの提供方法を大幅に拡大した。
 
 01:47.760 --> 01:53.880
-The asset store still very much exists as a concept, but now when you download things from third parties,
+アセットストアはまだコンセプトとして存在しますが、サードパーティからダウンロードするようになりました、
 
 01:53.880 --> 01:58.290
-including this package that I'm offering here, it comes through the Unity Package manager.
+このパッケージも含めて、Unityのパッケージマネージャーからダウンロードすることができます。
 
 01:58.290 --> 02:03.120
-Some benefits include you have another pathway that's very easy to add things to your project.
+|にできるようにあなたがそれをすることができます本当に出くわすことあなたは、実際には私のパートナーとi約束、誰でも素早くはちょうど無視これらの一見正確にどのように{}人のことを忘れることができます。
 
 02:03.120 --> 02:04.050
-As we've seen.
+これまで見てきたように
 
 02:04.350 --> 02:08.370
-You can also include as a developer samples to share with others.
+また、開発者用のサンプルとして他の人と共有することもできます。
 
 02:08.370 --> 02:12.000
-We'll take a look at some samples for many MVCs in later sections.
+この後のセクションで、多くのMVCのサンプルを見ていきましょう。
 
 02:12.000 --> 02:17.040
-Periodically as you're using this package or any others, check back into the package manager to see
+このパッケージや他のパッケージを使っているときは、定期的にパッケージマネージャーを確認してください。
 
 02:17.040 --> 02:22.110
-if a new version has been released to make sure you're always running the most updated code In this
+新しいバージョンがリリースされているかどうかを確認することで、常に最新のコードを実行することができます。
 
 02:22.110 --> 02:25.380
-section, we've taken a look at the mini MVCs.
+セクションでは、ミニMVCについて見てきました。
 
 02:25.380 --> 02:31.980
-We had an overview, talked about some of the pros and cons, some features, benefits and see that
+このセクションでは、ミニMVCの概要を説明し、長所と短所、いくつかの特徴や利点についてお話しました。
 
 02:31.980 --> 02:34.620
-it's a lighter alternative to some other frameworks.
+02:31.980→02:34.620他のフレームワークと比較して軽いということです。
 
 02:34.620 --> 02:38.540
-We saw how to install it into your projects and are ready to explore more.
+このページでは、その特徴や利点を紹介します。
 
 02:38.550 --> 02:40.020
-Next, we'll dig deeper.
+次はもっと深く掘り下げていきます。
 
 02:40.020 --> 02:45.420
-This is going to be the first look at the real code of this framework, Learning the fundamentals through
+このフレームワークの実際のコードを初めて見ることになります。
 
 02:45.420 --> 02:46.290
-examples.
+例
 
 02:46.290 --> 02:52.530
-We're going to see sample projects, how to take all the theory in this course and apply it to C-sharp
+このコースで学んだ理論をどのようにC-shineに適用するか，サンプルプロジェクトを見ていきます。
 
 02:52.530 --> 02:53.120
-code.
+コード
 
 02:53.130 --> 02:59.370
-Now, I know we've talked about a lot of principles, patterns, concepts, philosophies up to this
+さて、ここまで多くの原則、パターン、コンセプト、哲学について話してきたと思うが
 
 02:59.370 --> 02:59.940
-point.
+02:59.370 --> 02:59.940
 
 02:59.940 --> 03:04.230
-It's all going to come together when we start to see it in the sample code.
+サンプルコードで確認することで、すべてが見えてきます。
 
 03:04.230 --> 03:06.180
-I look forward to seeing it with you.
+楽しみにしています。
 
 03:06.180 --> 03:07.050
-Thanks.
+ありがとう。

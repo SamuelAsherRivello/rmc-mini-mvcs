@@ -1,145 +1,145 @@
 WEBVTT
 
 00:00.270 --> 00:03.750
-The Mini MVCs Rollerball Sample Project.
+Mini MVCs Rollerballサンプルプロジェクト。
 
 00:04.580 --> 00:11.300
-With each sample project, there's an opportunity to peel back more of the layers in MVCs and think
+各サンプルプロジェクトでは、MVCのレイヤーをもっと剥がして考える機会があります。
 
 00:11.300 --> 00:13.090
-critically about these concepts.
+00:11.300 --> 00:13.090
 
 00:13.100 --> 00:15.590
-This will dramatically increase your learning.
+そうすることで学習効果が飛躍的に高まります。
 
 00:15.620 --> 00:20.390
-To kick start your thoughts, consider the pros and benefits of the framework in each sample.
+各サンプルにあるフレームワークの長所と利点を考えてみましょう。
 
 00:20.390 --> 00:22.900
-With which aspects are you feeling more comfortable?
+どの点が心地よいと感じますか？
 
 00:22.910 --> 00:26.180
-Are you beginning to see the long term benefits of choosing a framework?
+フレームワークを選択することの長期的なメリットが見えてきましたか？
 
 00:26.180 --> 00:30.410
-Which parts of the framework are you excited about and want to learn more along the way?
+フレームワークのどの部分にワクワクしますか？
 
 00:30.410 --> 00:33.290
-You might identify some possible cons or drawbacks.
+短所や欠点になりそうなところを挙げてください。
 
 00:33.290 --> 00:36.680
-Which aspects of the framework may not work for your needs?
+フレームワークのどの部分があなたのニーズに合わないかもしれません。
 
 00:36.680 --> 00:42.410
-Is there anything you can do to get the results that you need and which patterns and practices remain
+あなたが必要とする結果を得るためにできることはありますか？
 
 00:42.410 --> 00:43.430
-unclear for you?
+曖昧なままなのか？
 
 00:43.430 --> 00:44.930
-Think about these points.
+これらの点について考えてみましょう。
 
 00:44.930 --> 00:50.570
-Engage in the community, take notes and reflect as we're stepping into this sample will be in a project
+このサンプルはプロジェクトに参加する予定である。
 
 00:50.570 --> 00:54.020
-that has the source code for the framework as well as the samples.
+フレームワークのソースコードとサンプルがあります。
 
 00:54.140 --> 00:59.000
-Each of the samples we cover has a version with many MVCs and without.
+サンプルにはMVCがたくさんあるバージョンとないバージョンがあります。
 
 00:59.000 --> 01:07.790
-With the Rollerball sample, we see a simple complete three D game includes audio UI input and physics.
+ローラーボールのサンプルでは、音声UI入力と物理演算を含むシンプルな完全3Dゲームを見ることができます。
 
 01:07.790 --> 01:13.490
-From an architectural standpoint, we'll see a bit more complexity than we've seen in previous samples.
+アーキテクチャー面では、これまでのサンプルよりも少し複雑になっています。
 
 01:13.490 --> 01:19.340
-Here we have multiple views and multiple controllers showing the scalability of the framework.
+ここでは、複数のビューと複数のコントローラーがあり、フレームワークのスケーラビリティを示しています。
 
 01:19.340 --> 01:24.050
-And with its integration into unity, we see multiple mono behaviors in use as well.
+また、unityに統合されたことで、複数のmonoビヘイビアも使用されています。
 
 01:24.050 --> 01:28.640
-Due to the added complexity here, the target audience is intermediate developers.
+また、unityに統合されたことで、複数のmonoビヘイビアが使用されています。
 
 01:28.640 --> 01:33.890
-If you followed along well with the previous samples, this is a great opportunity to learn even more.
+01:28.640→01:33.890:前のサンプルをよく理解された方は、さらに学ぶ絶好の機会です。
 
 01:33.890 --> 01:39.620
-As we're digging into this sample, consider which of these coding assignments you'd like to take on.
+このサンプルを見ながら、どのコーディングに挑戦したいか考えてみてください。
 
 01:39.620 --> 01:42.410
-There's a variety here and you could even create your own.
+このサンプルには様々なものがあり、自分で作成することも可能です。
 
 01:42.410 --> 01:46.580
-Starting with lower difficulty is just to explain back these concepts.
+
 
 01:46.580 --> 01:50.860
-After digging into the example, are you comfortable enough to explain it to a friend?
+例題を掘り下げた後、友人に説明するのに十分な自信がありますか？
 
 01:50.870 --> 01:52.700
-Each sample includes unit testing.
+各サンプルにはユニットテストが含まれています。
 
 01:52.700 --> 01:56.780
-Can you add one more unit test that makes sense in the context of the sample?
+サンプルの文脈で意味のあるユニットテストを1つ追加できますか？
 
 01:56.780 --> 02:03.440
-You can add a new UI feature, perhaps adding text or a button to the UI and then wiring it up properly
+新しいUI機能を追加することができます。おそらくUIにテキストやボタンを追加し、それを適切に配線します。
 
 02:03.440 --> 02:05.240
-in a way that makes sense to the framework.
+フレームワークにとって意味のある方法で。
 
 02:05.240 --> 02:11.030
-You could create some other type of new input, perhaps having keyboard input, do something appropriate
+キーボード入力のような新しい入力を作ることもできる。
 
 02:11.030 --> 02:11.810
-for the sample.
+02:11.030 --> 02:11.810
 
 02:11.810 --> 02:13.340
-You could copy the sample.
+02:11.810→02:13.310サンプルをコピーします。
 
 02:13.340 --> 02:18.410
-Perhaps the sample has some things that are interesting for a different use case copy and paste the
+おそらく、サンプルには別の使用例にとって興味深いものがあるはずです。
 
 02:18.410 --> 02:24.590
-entire parent folder, rename each class so that it's unique or give it a new namespace and then add
+親フォルダ全体をコピー＆ペーストし、各クラスの名前を一意になるように変更するか、新しい名前空間を与えてから
 
 02:24.590 --> 02:26.900
-and adjust the functionality to meet your needs.
+を追加し、ニーズに合わせて機能を調整します。
 
 02:26.900 --> 02:32.600
-And perhaps the most challenging of this list would be to create a new sample yourself instead of copying
+そしておそらくこのリストの中で最も難しいのは、新しいサンプルをコピーするのではなく、自分で作成することだろう。
 
 02:32.600 --> 02:33.380
-and pasting.
+をコピーして貼り付けることである。
 
 02:33.380 --> 02:36.140
-Here, begin with the empty canvas of a new project.
+ここでは、新しいプロジェクトの空のキャンバスから始めます。
 
 02:36.140 --> 02:39.320
-Import the framework itself and start coding from scratch.
+フレームワーク自体をインポートして、ゼロからコーディングを始めます。
 
 02:39.320 --> 02:43.130
-That certainly demonstrates a firm grasp of all the concepts.
+確かに、すべての概念をしっかりと把握していることがわかりますね。
 
 02:43.130 --> 02:48.020
-Doing assignments like these helps to deepen your knowledge with practical experience.
+このような課題をこなすことは、実践的な経験によって知識を深めるのに役立ちます。
 
 02:48.020 --> 02:53.810
-Let's see this in action You can create a new Unity project, import the mini and framework.
+Unityの新規プロジェクトを作成し、ミニとフレームワークをインポートします。
 
 02:53.810 --> 03:00.200
-Import the samples, Open this particular sample, explore the version within that doesn't use mini
+サンプルをインポートして、このサンプルを開き、miniを使わないバージョンを探します。
 
 03:00.200 --> 03:03.170
-MVCs to gain the basic knowledge of how it operates.
+MVCがどのように動作するのか基本的な知識を得る。
 
 03:03.170 --> 03:06.980
-And then look at the version with many MVCs and with each sample.
+そして、多くのMVCを使ったバージョンと各サンプルを見る。
 
 03:06.980 --> 03:10.100
-I'll do some live coding with one of the sample assignments.
+サンプル課題の一つでライブコーディングをしてみます。
 
 03:10.100 --> 03:11.300
-Let's get started.
+さあ、始めましょう。

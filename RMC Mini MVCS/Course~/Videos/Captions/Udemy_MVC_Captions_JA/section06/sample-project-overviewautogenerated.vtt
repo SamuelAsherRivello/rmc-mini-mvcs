@@ -1,181 +1,181 @@
 WEBVTT
 
 00:00.560 --> 00:03.770
-The mini MVCs sample projects.
+ミニMVCのサンプルプロジェクト。
 
 00:04.190 --> 00:11.210
-The sample code for learning more about mini MVCs is included in the package for the framework itself.
+ミニMVCについて詳しく学ぶためのサンプルコードは、フレームワーク自体のパッケージに含まれています。
 
 00:11.480 --> 00:14.690
-It's available freely on Git for download and unity.
+これはGit上で自由にダウンロード可能で、統一されています。
 
 00:15.110 --> 00:21.410
-To import those samples, open the package manager, select the mini MVCs package and you'll see the
+これらのサンプルをインポートするには、パッケージマネージャーを開き、mini MVCsパッケージを選択します。
 
 00:21.410 --> 00:23.580
-samples shown which you can import.
+と表示されます。
 
 00:23.600 --> 00:25.460
-You can see that in the screenshot here.
+スクリーンショットをご覧ください。
 
 00:25.460 --> 00:32.000
-When you bring in the mini MVCs package itself that populates the source in your packages folder.
+mini MVCsのパッケージを取り込むと、packagesフォルダにソースが入ります。
 
 00:32.000 --> 00:34.000
-That is everything you need to get started.
+これで始めるのに必要なものは全て揃いました。
 
 00:34.010 --> 00:39.260
-The samples we're discussing here are optional and a great way to learn more about the framework.
+ここで説明するサンプルはオプションであり、フレームワークについてより深く知るための素晴らしい方法です。
 
 00:39.260 --> 00:44.570
-If your needs are also similar to one of the sample projects, you can use the sample project to get
+もしあなたのニーズもサンプルプロジェクトのひとつと似ているのであれば、サンプルプロジェクトを使って
 
 00:44.570 --> 00:47.810
-started copying or modifying whatever's there.
+をコピーしたり修正したりすることができます。
 
 00:47.810 --> 00:50.720
-In this course, we'll take a look at several samples.
+このコースではいくつかのサンプルを見ていきます。
 
 00:50.720 --> 00:58.160
-Each of them shows the exact same end result With and without the mini MVCs, I find this especially
+ミニMVCを使っても使わなくても、最終的な結果は全く同じです。
 
 00:58.160 --> 00:58.800
-helpful.
+が参考になる。
 
 00:58.820 --> 01:02.330
-Begin with the version that does not feature many MVCs.
+MVCがあまりないバージョンから始めます。
 
 01:02.660 --> 01:07.700
-You can see the full functionality of solving the use case without any framework.
+フレームワークなしでユースケースを解決する機能をフルに見ることができます。
 
 01:07.700 --> 01:14.120
-Once you're familiar there, open up the version with many MVCs and you can see how those same use cases
+そこで慣れてきたら、MVCがたくさんあるバージョンを開いて、同じユースケースがどのように使われるかを見てみましょう。
 
 01:14.120 --> 01:16.050
-are solved using the framework.
+フレームワークを使って解決することができる。
 
 01:16.070 --> 01:21.860
-Feel free to bounce back and forth between those two examples so you have a thorough understanding.
+この2つの例を自由に行き来して、徹底的に理解してください。
 
 01:21.860 --> 01:24.110
-In this course we'll look at several samples.
+このコースではいくつかのサンプルを見ていきます。
 
 01:24.110 --> 01:26.270
-Here's a high level overview of each.
+それぞれの概要を説明します。
 
 01:26.270 --> 01:29.060
-The clock sample is a great place to get started.
+時計のサンプルです。
 
 01:29.060 --> 01:31.310
-It's the most simple of the samples.
+最もシンプルなサンプルです。
 
 01:31.310 --> 01:37.790
-It features no mono behaviors, and the only view, so to speak, is debug logging out to the console
+モノビヘイビアはなく、コンソールにログアウトするデバッグビューのみです。
 
 01:37.790 --> 01:38.330
-window.
+ウィンドウに表示されます。
 
 01:38.330 --> 01:43.870
-There's no input here, it just ticks like a clock and the audience is designed for beginners.
+ここでは入力はなく、ただ時計のように時を刻むだけで、観客は初心者向けに作られている。
 
 01:43.880 --> 01:46.280
-Next we have a user login sample.
+次はユーザーログインのサンプルです。
 
 01:46.280 --> 01:51.530
-While still quite simple, this example does use a mono behavior, one of them for the view.
+非常にシンプルですが、このサンプルではmonoビヘイビアを使用しています。
 
 01:51.530 --> 01:58.670
-It uses unity's UI and captures user input in the form of button clicks while we're mimicking the login.
+これはunityのUIを使用し、ログインを真似ている間にボタンクリックの形でユーザーの入力をキャプチャします。
 
 01:58.670 --> 02:03.560
-It's an offline only project, so the service layer loads a local file.
+オフライン専用のプロジェクトなので、サービスレイヤーはローカルファイルを読み込みます。
 
 02:03.560 --> 02:08.030
-This helps keep things easy to understand and requires no internet to use.
+そのため、インターネットに接続する必要がありません。
 
 02:08.030 --> 02:10.160
-The audience here is for beginners.
+初心者向けです。
 
 02:10.160 --> 02:15.560
-Next is a Rollerball sample inspired by one of Unity's built in learn projects.
+UnityのlearnプロジェクトにインスパイアされたRollerballのサンプルです。
 
 02:15.560 --> 02:22.280
-We're able to use the four arrow keys, roll a ball with physics around a tabletop and collect yellow
+矢印キーを4つ使って、物理演算でボールを転がし、黄色いボールを集めることができます。
 
 02:22.280 --> 02:23.510
-rotating pickups.
+02:22.280 --> 02:23.510
 
 02:23.510 --> 02:29.300
-This is the most complex of our examples will show, and it captures all the features of a simple but
+このゲームには、単純なゲームでありながら、以下のような特徴があります。
 
 02:29.300 --> 02:34.940
-complete three D game, including audio input, UI and physics.
+音声入力、UI、物理演算を含む完全な3Dゲームです。
 
 02:34.940 --> 02:38.570
-To illustrate the scalability of many MVCs.
+MVCのスケーラビリティを説明する。
 
 02:38.570 --> 02:43.070
-This project includes multiple views and multiple controllers.
+このプロジェクトには複数のビューと複数のコントローラーが含まれています。
 
 02:43.070 --> 02:48.860
-While still relatively simple, this project is appropriate for intermediate developers when deciding
+このプロジェクトはまだ比較的シンプルですが、中級の開発者にとっては、次のように判断するのに適しています。
 
 02:48.860 --> 02:50.780
-how best to teach architecture.
+アーキテクチャをどのように教えるのがベストなのか。
 
 02:50.780 --> 02:56.570
-The value of coding and getting your hands dirty in some samples became evident, wanting to express
+いくつかのサンプルでコーディングし、手を汚すことの価値が明らかになった。
 
 02:56.570 --> 03:00.050
-a variety of teaching principles throughout the concepts here.
+このコンセプトを通して、様々な指導の原則を表現したい。
 
 03:00.170 --> 03:02.810
-I broke it up into several projects.
+いくつかのプロジェクトに分けました。
 
 03:02.810 --> 03:09.950
-We have one project that uses no money behaviors and has no view that represents the most simple sample
+最もシンプルなサンプルとして、金銭的な行動を一切使わず、何の見解も持たないプロジェクトを1つ用意しました。
 
 03:09.950 --> 03:13.870
-all the way up to something with three d physics input, audio and more.
+物理入力やオーディオなど、3つの要素を含むものまであります。
 
 03:13.880 --> 03:20.210
-Now, while all the samples are relatively simple to the complexity you'd have in a triple A unity game,
+このサンプルは、トリプルAユニティゲームのような複雑なものから、比較的シンプルなものまであります、
 
 03:20.210 --> 03:25.910
-it's an appropriate playground to learn the concepts of MVC and see how they scale up for your needs.
+MVCの概念を学び、自分のニーズに合わせてどのようにスケールアップしていくかを確認するには適切な遊び場です。
 
 03:25.910 --> 03:29.420
-In this section we talked about the Mini and VC's sample projects.
+このセクションでは、MiniとVCのサンプルプロジェクトについてお話しました。
 
 03:29.420 --> 03:34.730
-We went over the installation, what features each of them have and some of the learning principles
+このセクションでは、ミニとVCのサンプルプロジェクトについて説明します。
 
 03:34.730 --> 03:35.270
-behind it.
+その背景にあるもの。
 
 03:35.270 --> 03:39.590
-Next, we'll dig even deeper by looking at the specific samples.
+次に、具体的なサンプルを見て、さらに掘り下げていきます。
 
 03:39.590 --> 03:44.900
-We'll see how to take all the theory that we've gone over in the course so far from design principles,
+これまでのコースで学んできた理論を、デザインの原則からどのように取り入れるかを見ていきます、
 
 03:44.900 --> 03:49.100
-design patterns, philosophies and bring it all into functional code.
+デザインパターン、哲学、そしてその全てを機能的なコードに落とし込む。
 
 03:49.100 --> 03:54.590
-I'll screen, share and do a review of each sample, and within each of them I'll do a short coding
+この記事では、「デザイン・パターン」と「機能的なコード」を紹介します。
 
 03:54.590 --> 03:59.030
-assignment live and encourage you to follow up with some other assignments that will be given.
+そして、その後に出される他の課題へのフォローアップを促します。
 
 03:59.030 --> 04:04.400
-These assignments are optional, but it's a fantastic way for you to get your hands dirty and understand
+これらの課題は任意だが、自分の手を汚して理解するための素晴らしい方法だ。
 
 04:04.400 --> 04:05.360
-these principles.
+これらの原則を理解するための素晴らしい方法です。
 
 04:05.360 --> 04:09.970
-I highly encourage you to follow up on these assignments as it's the best way to learn.
+私は、このような課題をフォローアップすることを強く勧めます。
 
 04:09.980 --> 04:10.760
-Thanks.
+ありがとう。

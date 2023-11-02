@@ -1,352 +1,352 @@
 WEBVTT
 
 00:00.090 --> 00:04.620
-When the controller directly updates the view, we're bypassing the model.
+コントローラーが直接ビューを更新する場合、モデルをバイパスすることになります。
 
 00:04.620 --> 00:09.620
-Essentially, we're storing the model data directly on The View.
+本質的には、モデルのデータをビューに直接保存しているのです。
 
 00:09.630 --> 00:15.900
-And from a fundamental standpoint, we're slipping out of MVC separation of concerns.
+そして、根本的な観点からは、MVCの懸念事項の分離から抜け出している。
 
 00:16.020 --> 00:21.870
-Let's iterate on this and bring a bit more sound principles to the code.
+これを反復して、もう少し健全な原則をコードに持ち込もう。
 
 00:22.630 --> 00:29.440
-Instead, what we could do is when the user clicks the add button, the controller could translate those
+その代わりに、ユーザーが追加ボタンをクリックしたときに、コントローラーがその内容を翻訳することができます。
 
 00:29.440 --> 00:32.500
-UI values from the view into the model.
+UI value from the view into the model.
 
 00:32.530 --> 00:33.580
-Let's do that now.
+それではやってみましょう。
 
 00:33.580 --> 00:35.530
-Let's see what we've done differently here.
+何が変わったか見てみましょう。
 
 00:35.740 --> 00:41.830
-We've updated each of these handlers to be a bit more conventional in the practices of MVCs.
+それぞれのハンドラーをMVCの慣習に沿ったものに更新しました。
 
 00:41.860 --> 00:47.920
-Now, when we add, we take those view values and put them directly into the model and then in reset,
+今、追加すると、ビューの値を直接モデルに入れて、リセットします、
 
 00:47.920 --> 00:53.860
-we're doing something a little bit redundant, but we're clearing out the view and then clearing out
+少し冗長ですが、ビューをクリアして、それから
 
 00:53.860 --> 00:54.470
-the model.
+モデル
 
 00:54.490 --> 00:59.800
-It's not bad, but that redundancy we see there doesn't reach a goal of simplicity.
+悪くはないのですが、この冗長さはシンプルというゴールには到達していません。
 
 00:59.830 --> 01:05.620
-Now we've got some options here in order to create a better binding between the view and the model,
+ここで、ビューとモデルの間のバインディングをより良いものにするために、いくつかのオプションを用意しました、
 
 01:05.620 --> 01:12.160
-we could either go into the view and have the view listen directly to the model for read only operations.
+01:05.620 --> 01:12.160 ビューとモデルの間のより良いバインディングを作成するために、いくつかの選択肢があります。
 
 01:12.160 --> 01:13.660
-That's a good best practice.
+ベストプラクティスですね。
 
 01:13.660 --> 01:21.580
-An alternative would be here in the controller to dispatch a command saying, Hey, view go reset yourself
+別の方法として、コントローラでコマンドを発行することもできます。
 
 01:21.580 --> 01:24.370
-or saying Hey, view the model has changed.
+あるいは、Hey, view the model has changed.
 
 01:24.370 --> 01:24.910
-In the past.
+過去には
 
 01:24.910 --> 01:25.930
-Sample projects.
+サンプルプロジェクト
 
 01:25.930 --> 01:31.660
-We've used commands at this level, but to try something new, let's go into The View and have it observed
+このレベルではコマンドを使用してきましたが、新しいことを試すために、ザ・ビューに入って観察してみましょう。
 
 01:31.660 --> 01:34.360
-directly to the model for any changes.
+モデルに直接変更を加えてみましょう。
 
 01:34.360 --> 01:42.580
-And inside the initialize we'll use the context and the model locator to get a reference to the calculator
+そして、initializeの中で、コンテキストとモデルロケータを使って計算機への参照を取得します。
 
 01:42.580 --> 01:43.030
-model.
+モデル
 
 01:43.030 --> 01:49.660
-Best practices support that the view reads from the model, but it would be an overstep of the role
+ベストプラクティスはビューがモデルから読み取ることを支持しますが、それは役割を踏み越えることになります。
 
 01:49.660 --> 01:52.870
-of the view for it to directly set any values here.
+ビューが直接値を設定することは、ビューの役割を逸脱しています。
 
 01:53.020 --> 02:00.090
-So all I'm doing is listening to the value changed on A, B, and the result as a shorthand.
+つまり、A,B,結果で変更された値を聞いているだけです。
 
 02:00.100 --> 02:05.680
-I'm using what's called a lambda expression, and it's a nice quick way to observe an event in this
+ラムダ式と呼ばれるものを使っている。
 
 02:05.680 --> 02:07.720
-case and handle the consequence.
+このようなケースを観察し、その結果を処理する素早い方法です。
 
 02:07.720 --> 02:15.010
-The observables on value changed passes the p previous value and see current value.
+valueが変更された時のobservablesはp前の値を渡し、現在の値を見る。
 
 02:15.010 --> 02:21.400
-So any time one of these observable changes, I update the view to the current value with just those
+つまり、これらのobservableのいずれかが変更されるたびに、ビューを現在の値に更新する。
 
 02:21.400 --> 02:22.090
-few lines.
+数行
 
 02:22.090 --> 02:27.280
-Now we have the view bound to the model using best practices.
+これで、ベストプラクティスを使ってビューをモデルにバインドすることができました。
 
 02:27.280 --> 02:32.670
-Back here in the calculator controller, we return to our event handlers as they were before.
+電卓コントローラに戻り、イベントハンドラを元に戻します。
 
 02:32.680 --> 02:38.620
-Now, because we've added the binding from the view directly to the model, the controller no longer
+ビューからモデルに直接バインディングを追加したので、コントローラはもはや
 
 02:38.620 --> 02:44.500
-needs to manually set any values on the View so we can get rid of these lines and we can get rid of
+ビューの値を手動で設定する必要がなくなりました。
 
 02:44.500 --> 02:45.200
-this as well.
+これも同様です。
 
 02:45.220 --> 02:47.770
-Let's go ahead and run the scene and see how it behaves.
+このシーンがどのような動きをするか見てみましょう。
 
 02:47.770 --> 02:49.330
-Here we are in the running scene.
+実行中のシーンです。
 
 02:49.330 --> 02:52.270
-I'll input some values and hit reset looks good.
+値を入力してリセットを押してみます。
 
 02:52.270 --> 02:59.260
-We do see that when it gets reset, it puts some zeros in these fields which aren't there initially.
+リセットされると、最初はなかったフィールドにゼロが入力されます。
 
 02:59.260 --> 03:01.120
-It's a small detail, but we'll address that.
+些細なことですが、対処します。
 
 03:01.120 --> 03:02.740
-Now let's try the ad operation.
+では、広告運用を試してみましょう。
 
 03:02.740 --> 03:06.040
-And the ad operation works well here in the calculator controller.
+電卓のコントローラーでは、広告操作がうまくいきました。
 
 03:06.040 --> 03:11.170
-Let's reset initially before the user does any input inside initialize.
+initializeの中でユーザーが何か入力する前に初期リセットしましょう。
 
 03:11.170 --> 03:17.290
-After doing the existing ad listeners, I'll mimic the consequence of the reset button being hit.
+既存の広告リスナーを実行した後、リセットボタンが押された結果を真似てみます。
 
 03:17.980 --> 03:19.820
-Let's run the scene and see the result.
+シーンを実行して、結果を見てみましょう。
 
 03:19.840 --> 03:25.410
-Now, when we first run the app before doing any user input, we see those familiar zeros.
+ユーザー入力の前にアプリを実行すると、おなじみのゼロが表示されます。
 
 03:25.420 --> 03:31.370
-This is a great way to have a consistent look and feel before and after the user starts interacting.
+これは、ユーザーが対話する前と後で一貫したルック＆フィールを持つための素晴らしい方法です。
 
 03:31.390 --> 03:33.160
-The application is now complete.
+これでアプリケーションは完成です。
 
 03:33.160 --> 03:39.250
-We're able to input A, input B, add the results together and reset all the fields.
+Aを入力し、Bを入力し、結果を足し合わせ、全てのフィールドをリセットすることができました。
 
 03:39.250 --> 03:46.780
-So far in this custom example, we've used the model view controller, we've observed events and gotten
+ここまでのカスタム例では、モデルビューコントローラーを使用し、イベントを観察し、結果を取得しました。
 
 03:46.780 --> 03:48.070
-our app to work well.
+アプリがうまく動くようになりました。
 
 03:48.370 --> 03:53.170
-We haven't used any commands and in a small enough application, that's okay.
+コマンドは使っていませんし、小規模なアプリケーションであれば問題ないでしょう。
 
 03:53.170 --> 03:56.560
-But I do want to demonstrate how a command could add value here.
+しかし、コマンドを使うことでどのような付加価値が生まれるかを示したい。
 
 03:56.560 --> 04:02.440
-I'll leave all the binding in place that we have now, but I'll replace these lines here with the command
+今あるバインディングはそのままにして、この行をコマンドに置き換えてみる。
 
 04:02.440 --> 04:05.320
-so the view knows how to reset itself.
+というコマンドに置き換える。
 
 04:05.320 --> 04:06.940
-Let's start by calling the command.
+まず、コマンドを呼び出します。
 
 04:06.940 --> 04:10.960
-We use the context and command manager to invoke a new command.
+コンテキストとコマンドマネージャーを使って新しいコマンドを呼び出します。
 
 04:10.960 --> 04:12.990
-I'll call it the reset command.
+これをリセットコマンドと呼ぶことにする。
 
 04:13.000 --> 04:16.090
-Now let's create that class in its most basic form.
+では、そのクラスを最も基本的な形で作ってみましょう。
 
 04:16.090 --> 04:20.020
-I'll duplicate the class template and place it in the proper location.
+クラステンプレートを複製し、適切な場所に配置します。
 
 04:20.020 --> 04:26.110
-Here inside the controller folder, I've created a command folder and added our reset command.
+controllerフォルダの中にcommandフォルダを作り、resetコマンドを追加します。
 
 04:26.110 --> 04:30.660
-So far I've given it a namespace and updated the class name from the template.
+ここまでで、名前空間を与え、テンプレートからクラス名を更新しました。
 
 04:30.670 --> 04:36.520
-All we've got to do here is implement I command and let's jump back to the code where we use this back
+あとは、Iコマンドを実装するだけだ。
 
 04:36.520 --> 04:38.140
-in the calculator controller.
+電卓のコントローラで
 
 04:38.140 --> 04:39.490
-The code is looking good.
+コードはいい感じです。
 
 04:39.490 --> 04:41.550
-We're now invoking a command.
+コマンドを実行しています。
 
 04:41.560 --> 04:43.390
-So who would need to listen to this?
+誰がこれを聞く必要があるんだ？
 
 04:43.390 --> 04:48.210
-Well, any concern could subscribe and listen to when the reset happens.
+リセットのタイミングを知ることができる。
 
 04:48.220 --> 04:53.470
-In our case, we'll go to The View, we'll listen for this command and we'll reset those three fields.
+この場合、"The View "にアクセスして、このコマンドをリッスンし、3つのフィールドをリセットする。
 
 04:53.470 --> 05:00.070
-So here in the calculator view inside the initialize, we use the context and command manager to add
+電卓ビューの初期化の中で、コンテキストとコマンドマネージャを使って、次のように追加します。
 
 05:00.070 --> 05:01.270
-a command listener here.
+コマンドリスナーを追加します。
 
 05:01.270 --> 05:06.940
-Whenever the reset command gets called, this code executes and resets those fields.
+リセット・コマンドが呼ばれるたびに、このコードが実行され、フィールドがリセットされる。
 
 05:06.940 --> 05:11.860
-Now, in this specific example, this is a bit problematic and redundant.
+さて、この具体例では、これは少し問題があり、冗長である。
 
 05:11.860 --> 05:18.640
-We already had the binding working, but I did want to show how to wire up a command just in case.
+バインディングはすでに機能していたが、念のためコマンドの配線方法を示したかった。
 
 05:18.640 --> 05:19.840
-Let's run this example.
+この例を実行してみよう。
 
 05:19.840 --> 05:20.980
-Here's everything running.
+すべて実行中です。
 
 05:20.980 --> 05:23.710
-Here is the reset functionality that works well.
+リセット機能がうまく機能しています。
 
 05:23.710 --> 05:26.530
-Here's the ad functionality that also works well.
+こちらも広告機能です。
 
 05:26.530 --> 05:32.500
-So in this specific case, I'm going to remove the command before finishing up the project.
+というわけで、この具体的なケースでは、プロジェクトを終える前にコマンドを削除することにする。
 
 05:32.800 --> 05:39.460
-I've gone back into the controller and commented out that code and gone back into The View and commented
+コントローラーに戻ってそのコードをコメントアウトし、ビューに戻ってコメントアウトしました。
 
 05:39.460 --> 05:42.490
-out that code and related code as well.
+をコメントアウトしました。
 
 05:43.850 --> 05:45.020
-Let's run the demo.
+デモを実行してみましょう。
 
 05:45.050 --> 05:45.620
-Here we are.
+さあ、できました。
 
 05:45.620 --> 05:46.670
-Running the demo.
+デモ走行中
 
 05:46.700 --> 05:48.230
-Do the ad operation.
+広告運用を行います。
 
 05:49.610 --> 05:50.630
-Works great.
+うまくいきました。
 
 05:50.660 --> 05:51.590
-Do the reset.
+リセットします。
 
 05:53.910 --> 05:55.140
-Works great as well.
+こちらも問題なし。
 
 05:55.170 --> 05:59.890
-I'll include this calculator example in the code base so you can check it out as well.
+この電卓の例もコードベースに載せておきますので、チェックしてみてください。
 
 05:59.910 --> 06:05.730
-For those of you who took the coding challenge assignment and completed this yourself before watching
+コーディング・チャレンジの課題を受け、見る前に自分でこれを完成させた人のために
 
 06:05.730 --> 06:09.150
-the video, I hope you learned a lot by going through that activity.
+ビデオを見て、多くのことを学んだと思う。
 
 06:09.510 --> 06:15.420
-Overall, the process that we used here is something that you can use on larger and VCs projects as
+全体として、ここで使用したプロセスは、より大規模なプロジェクトやVCのプロジェクトでも使用できるものだ。
 
 06:15.420 --> 06:15.960
-well.
+06:15.990 --> 06:15.960
 
 06:15.990 --> 06:21.330
-You think first about what your requirements are, what the user experience will be, and then you break
+まず、何が必要なのか、ユーザー・エクスペリエンスはどうなるのかを考え、そして、それを実現するためにはどうすればいいのかを考える。
 
 06:21.330 --> 06:27.060
-that down into each of the concerns, model, view, controller and service.
+そして、それをモデル、ビュー、コントローラー、サービスというそれぞれの関心事に分解する。
 
 06:27.060 --> 06:31.500
-Then think about which base functionality, if any, you need for the concerns.
+そして、その関心事に必要なベースとなる機能があれば、それを考えます。
 
 06:31.530 --> 06:37.740
-Now, while this sample was quite small and required only a model view and controller for a simple one
+さて、今回のサンプルは非常に小さく、モデル・ビュー・コントローラーだけのシンプルなものでしたが
 
 06:37.740 --> 06:44.730
-hour example, you'll probably see for the typical project of one month or one year that you have many,
+時間分の例ですが、1ヶ月や1年の典型的なプロジェクトでは、おそらく多くのものが必要になるでしょう、
 
 06:44.730 --> 06:49.710
-many views and many models and many controllers.
+多くのビュー、多くのモデル、多くのコントローラ。
 
 06:49.710 --> 06:53.490
-Even with a project of that scale, you would still follow these steps.
+そのような規模のプロジェクトであっても、以下のような手順を踏むことになる。
 
 06:53.490 --> 06:59.880
-And the same time we've spent together here starting this project is how you would start a much larger
+そして、このプロジェクトをスタートさせるのに費やした時間と同じ時間を、もっと大きなプロジェクトをスタートさせるのに費やすことになる。
 
 06:59.880 --> 07:00.990
-project as well.
+07:01.740 --> 07:00.990
 
 07:01.740 --> 07:07.620
-Over time, you would see scaling up each of those concerns, perhaps having one view that gets a little
+時間が経てば、それぞれの懸念事項をスケーリングしていくことになるだろう。
 
 07:07.620 --> 07:08.520
-too large.
+07:08.520 --> 07:08.520
 
 07:08.520 --> 07:10.860
-So you split it into two views.
+だから2つに分けた
 
 07:10.860 --> 07:16.360
-You'll also have a long library of commands that you can use and reuse throughout your project.
+また、プロジェクト全体で再利用できるコマンドの長いライブラリも手に入れることができる。
 
 07:16.380 --> 07:18.450
-Imagine next steps for this calculator.
+この電卓の次のステップを想像してみてください。
 
 07:18.450 --> 07:24.450
-Something you may want to do as an optional coding assignment would be to add, subtract functionality
+この電卓の次のステップを想像してみてください。
 
 07:24.870 --> 07:27.480
-or add unit testing to the project.
+あるいは単体テストを追加することである。
 
 07:27.480 --> 07:30.600
-You could test the model, the view, the controller.
+モデル、ビュー、コントローラーをテストすることができる。
 
 07:30.600 --> 07:35.220
-You could take the addition logic and separate it into its own class.
+追加ロジックを独自のクラスに分けることができます。
 
 07:35.370 --> 07:41.220
-Something like my math system with a method of ADD and another method of subtract.
+私の数学システムのように、ADDメソッドとSUBTECTメソッドを持つ。
 
 07:41.950 --> 07:46.360
-That would be a great way to scale up your learning from this sample and move forward.
+このサンプルからの学びをスケールアップして前進させる素晴らしい方法だろう。
 
 07:46.810 --> 07:48.680
-That's it for the calculator Mini.
+電卓ミニは以上です。
 
 07:48.700 --> 07:49.600
-Thanks.
+ありがとうございました。

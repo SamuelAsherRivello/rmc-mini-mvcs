@@ -1,136 +1,136 @@
 WEBVTT
 
 00:00.450 --> 00:02.370
-The unity overview.
+ユニティの概要
 
 00:02.850 --> 00:09.180
-The games industry is big and getting bigger amongst leisure time activities.
+ゲーム産業は余暇活動の中で大きく、そして大きくなっている。
 
 00:09.180 --> 00:15.210
-Playing interactive experiences like video games has become increasingly popular.
+ゲームのようなインタラクティブな体験はますます人気が高まっています。
 
 00:15.450 --> 00:20.220
-On a weekly basis, it makes up the most of these activities.
+週単位で見ると、これらの活動の中で最も多くなっている。
 
 00:20.490 --> 00:26.150
-The size of the global game development industry is tremendously big.
+世界のゲーム開発産業の規模はとてつもなく大きい。
 
 00:26.160 --> 00:30.990
-You can see across different continents the size of the global game market.
+世界のゲーム市場規模を大陸別に見てみましょう。
 
 00:30.990 --> 00:36.720
-There's many ways that game development teams can solve the challenges of developing games.
+ゲーム開発チームがゲーム開発の課題を解決する方法はたくさんあります。
 
 00:36.720 --> 00:42.810
-Choosing a middleware, a real time engine like Unity brings a lot of features and services to a game
+Unityのようなミドルウェアやリアルタイムエンジンを選択することで、ゲームに多くの機能やサービスをもたらすことができます。
 
 00:42.810 --> 00:46.480
-development team and allows you to create content more quickly.
+開発チームに多くの機能とサービスを提供し、より迅速にコンテンツを作成することができます。
 
 00:46.500 --> 00:52.320
-Unity is an industry leading choice for over a decade, and you can create content that is 2D three
+Unityは10年以上にわたって業界をリードする選択肢であり、2D3Dコンテンツを作成することができます。
 
 00:52.320 --> 00:56.550
-D, VR AR across all different sorts of industries.
+D、VR ARなど、あらゆる業種に対応できる。
 
 00:56.580 --> 01:01.940
-Gaming, of course, but also architecture, simulation, action and feature films.
+ゲームはもちろん、建築、シミュレーション、アクション、長編映画など。
 
 01:01.950 --> 01:09.830
-Unity is the name of the company, its services, the platform you build on and the runtime engine itself.
+Unityは会社の名前であり、サービスであり、構築するプラットフォームであり、ランタイムエンジンそのものです。
 
 01:09.840 --> 01:14.520
-Unity is just one development platform you can choose from, but it's tremendously popular.
+Unityは開発プラットフォームの1つに過ぎませんが、その人気は絶大です。
 
 01:14.520 --> 01:20.340
-Of the top 1000 performing mobile games, over 70% are created with unity.
+モバイルゲームのトップ1000のうち、70％以上がunityで作られています。
 
 01:20.610 --> 01:23.040
-Unity is created with everyone in mind.
+Unityはみんなのことを考えて作られています。
 
 01:23.040 --> 01:24.150
-Let's see more.
+もっと見よう。
 
 02:17.100 --> 02:20.070
-Here's a screenshot from a popular type of game.
+人気ゲームのスクリーンショットです。
 
 02:20.070 --> 02:24.090
-We can see here some of the essentials of video game development.
+ゲーム開発のエッセンスがここにあります。
 
 02:24.090 --> 02:28.810
-There's UI, these on screen elements, text and the minimap.
+UI、画面上の要素、テキスト、ミニマップなどがあります。
 
 02:28.830 --> 02:31.200
-These things make up the user interface.
+これらはユーザーインターフェイスを構成しています。
 
 02:31.560 --> 02:38.850
-There's the input taking input from finger swipes on a mobile device, gamepad controllers on a console
+モバイル機器では指のスワイプ、ゲーム機ではゲームパッドのコントローラーから入力されます。
 
 02:38.850 --> 02:40.800
-mouse and keyboard on PC.
+PCではマウスとキーボード
 
 02:40.830 --> 02:44.970
-There's rendering the audio and the graphics, of course, to the user.
+もちろん、音声やグラフィックのレンダリングもある。
 
 02:45.120 --> 02:49.240
-These can be two D or three D, and these elements can be animated.
+また、これらの要素はアニメーションさせることができます。
 
 02:49.260 --> 02:55.110
-There's many different types of animations in video game development from the screen fading in and out
+ゲーム開発には様々なアニメーションがあります。
 
 02:55.110 --> 02:57.410
-to the way the character walks around the world.
+キャラクターが世界を歩き回る様子まで。
 
 02:57.420 --> 03:00.600
-And finally there's the scripting or coding that you do.
+そして最後にスクリプトやコーディングを行います。
 
 03:00.690 --> 03:03.330
-In Unity, that's the C-sharp programming language.
+UnityではC-sharpというプログラミング言語を使っています。
 
 03:03.330 --> 03:06.700
-So when we think of unity, what are the features that are built in?
+では、Unityといえば、どのような機能が組み込まれているのでしょうか？
 
 03:06.720 --> 03:11.820
-Well, by choosing Unity as the middleware solution, you get a lot of features out of the box.
+ミドルウェアのソリューションとしてUnityを選択することで、箱からたくさんの機能を手に入れることができます。
 
 03:11.820 --> 03:14.610
-All the ones I just talked about and much, much more.
+今話したような機能だけでなく、もっともっと多くの機能があります。
 
 03:14.610 --> 03:18.630
-In addition to these features, there's also optional services.
+これらの機能に加えて、オプションサービスもあります。
 
 03:19.050 --> 03:26.280
-Unity provides different services for acquiring and measuring your users, providing backend functionality
+Unityでは、ユーザーの獲得や計測、バックエンド機能の提供など、さまざまなサービスを提供しています。
 
 03:26.280 --> 03:27.870
-as well as multiplayer.
+を提供する。
 
 03:28.440 --> 03:33.300
-Overall game teams can choose the tools and platforms that make sense for them.
+全体的なゲームチームは、自分たちにとって意味のあるツールやプラットフォームを選ぶことができる。
 
 03:34.060 --> 03:39.730
-Creating your own game engine is possible, but requires tremendous resources in a larger team.
+独自のゲームエンジンを作ることは可能だが、大規模なチームで膨大なリソースを必要とする。
 
 03:39.970 --> 03:42.670
-The end result may be more customizable.
+最終的にはカスタマイズできるようになるかもしれない。
 
 03:42.880 --> 03:49.450
-However, choosing something off the shelf like Unity, which brings these features and services, allows
+しかし、Unityのような既製品を選択することで、これらの機能やサービスを利用することができる。
 
 03:49.450 --> 03:55.460
-teams to offer end users much more content more quickly and of the choices out there.
+チームはエンドユーザーに、より多くのコンテンツをより迅速に提供することができる。
 
 03:55.480 --> 03:58.990
-Unity is among the most powerful and popular options.
+|にできるようにあなたがそれをすることができます本当に出くわすことあなたは、実際には私のパートナーとi約束、誰でも素早くあなたは忘れることができます。
 
 03:58.990 --> 04:02.410
-We've seen that the games industry is big and it's growing.
+ゲーム業界は大きく、成長していることがわかりました。
 
 04:02.650 --> 04:08.650
-Unity is a powerful option to choose and includes features and services out of the box.
+Unityは強力な選択肢であり、すぐに使える機能やサービスが含まれています。
 
 04:08.680 --> 04:14.110
-Next, we'll continue looking at unity, particularly its structure and organization.
+次はunity、特にその構造と組織について見ていきます。
 
 04:14.110 --> 04:14.980
-Thanks.
+ありがとう。

@@ -1,142 +1,142 @@
 WEBVTT
 
 00:00.120 --> 00:03.030
-The many NBC's Clock sample project.
+NBC's Clockのサンプルプロジェクト。
 
 00:03.030 --> 00:09.630
-With each sample project, there's an opportunity to peel back more of the layers in MVCs and think
+各サンプルプロジェクトでは、MVCのレイヤーをもっと剥がして考える機会があります。
 
 00:09.630 --> 00:11.460
-critically about these concepts.
+00:09.630 --> 00:11.460
 
 00:11.460 --> 00:13.930
-This will dramatically increase your learning.
+そうすることで、あなたの学びは飛躍的に深まることでしょう。
 
 00:13.950 --> 00:18.750
-To kick start your thoughts, consider the pros and benefits of the framework in each sample.
+各サンプルにあるフレームワークの長所と利点を考えてみましょう。
 
 00:18.750 --> 00:21.240
-With which aspects are you feeling more comfortable?
+どの点がより快適だと感じますか？
 
 00:21.240 --> 00:24.510
-Are you beginning to see the long term benefits of choosing a framework?
+フレームワークを選択することの長期的なメリットが見えてきましたか？
 
 00:24.510 --> 00:28.740
-Which parts of the framework are you excited about and want to learn more along the way?
+フレームワークのどの部分に興味がありますか？
 
 00:28.740 --> 00:31.650
-You might identify some possible cons or drawbacks.
+短所や欠点になりそうなところを挙げてください。
 
 00:31.650 --> 00:35.040
-Which aspects of the framework may not work for your needs?
+フレームワークのどの部分があなたのニーズに合わないかもしれません。
 
 00:35.040 --> 00:40.770
-Is there anything you can do to get the results that you need and which patterns and practices remain
+必要な結果を得るためにできることはあるのか、どのようなパターンやプラクティスが残っているのか。
 
 00:40.770 --> 00:41.760
-unclear for you?
+曖昧なままなのか？
 
 00:41.760 --> 00:43.290
-Think about these points.
+これらの点について考えてみましょう。
 
 00:43.290 --> 00:48.930
-Engage in the community, take notes and reflect as we're stepping into this sample will be in a project
+このサンプルはプロジェクトに参加する予定です。
 
 00:48.930 --> 00:52.380
-that has the source code for the framework as well as the samples.
+フレームワークのソースコードとサンプルがあります。
 
 00:52.500 --> 00:57.330
-Each of the samples we cover has a version with many MVCs and without.
+各サンプルにはMVCを多用したバージョンとそうでないバージョンがあります。
 
 00:57.330 --> 00:59.520
-In this sample we're looking at a simple clock.
+このサンプルではシンプルな時計を見ています。
 
 00:59.520 --> 01:05.300
-It has no view and instead uses debug log statements to see some sort of output into the console window.
+ビューを持たず、代わりにデバッグログ文を使ってコンソールウィンドウに何らかの出力を見ています。
 
 01:05.310 --> 01:07.410
-This keeps the example especially simple.
+これは特にシンプルな例です。
 
 01:07.410 --> 01:10.440
-It has no mono behaviors and no input either.
+モノ動作も入力もありません。
 
 01:10.440 --> 01:16.230
-As we're digging into this sample, consider which of these coding assignments you'd like to take on.
+このサンプルを掘り下げながら、どのコーディングに挑戦したいか考えてみてください。
 
 01:16.230 --> 01:19.020
-There's a variety here and you could even create your own.
+このサンプルには様々なものがあり、自分で作成することも可能です。
 
 01:19.020 --> 01:23.190
-Starting with lower difficulty is just to explain back these concepts.
+
 
 01:23.190 --> 01:27.450
-After digging into the example, are you comfortable enough to explain it to a friend?
+この例題を掘り下げた後、あなたは友人に説明することができますか？
 
 01:27.450 --> 01:29.310
-Each sample includes unit testing.
+各サンプルにはユニットテストが含まれています。
 
 01:29.310 --> 01:33.390
-Can you add one more unit test that makes sense in the context of the sample?
+サンプルの文脈で意味のあるユニットテストを1つ追加できますか？
 
 01:33.390 --> 01:40.050
-You can add a new UI feature, perhaps adding text or a button to the UI and then wiring it up properly
+新しいUI機能を追加することができます。おそらくUIにテキストやボタンを追加し、それを適切に配線します。
 
 01:40.050 --> 01:41.850
-in a way that makes sense to the framework.
+フレームワークにとって意味のある方法で。
 
 01:41.850 --> 01:47.640
-You could create some other type of new input, perhaps having keyboard input, do something appropriate
+キーボード入力のような新しい入力を作ることもできる。
 
 01:47.640 --> 01:48.420
-for the sample.
+01:47.640 --> 01:48.420
 
 01:48.420 --> 01:49.920
-You could copy the sample.
+サンプルをコピーしてください。
 
 01:49.920 --> 01:54.990
-Perhaps the sample has some things that are interesting for a different use case copy and paste the
+おそらく、このサンプルには、別のユースケースで興味深いことが書かれているはずです。
 
 01:54.990 --> 02:01.200
-entire parent folder, rename each class so that it's unique or give it a new namespace and then add
+親フォルダ全体をコピー＆ペーストし、各クラスの名前を一意になるように変更するか、新しい名前空間を与えてから
 
 02:01.200 --> 02:03.510
-and adjust the functionality to meet your needs.
+を追加し、ニーズに合わせて機能を調整します。
 
 02:03.510 --> 02:09.210
-And perhaps the most challenging of this list would be to create a new sample yourself instead of copying
+このリストの中で最も難しいのは、新しいサンプルをコピーするのではなく、自分で作成することでしょう。
 
 02:09.210 --> 02:09.960
-and pasting.
+をコピーして貼り付けることだ。
 
 02:09.960 --> 02:12.750
-Here, begin with the empty canvas of a new project.
+ここでは、新しいプロジェクトの空のキャンバスから始めます。
 
 02:12.750 --> 02:15.930
-Import the framework itself and start coding from scratch.
+フレームワーク自体をインポートして、ゼロからコーディングを始めます。
 
 02:15.930 --> 02:19.740
-That certainly demonstrates a firm grasp of all the concepts.
+確かに、すべてのコンセプトをしっかりと把握していることがわかりますね。
 
 02:19.740 --> 02:24.600
-Doing assignments like these helps to deepen your knowledge with practical experience.
+このような課題をこなすことは、実践的な経験によって知識を深めるのに役立ちます。
 
 02:24.600 --> 02:27.930
-Let's see this in action You can create a new Unity project.
+Unityの新規プロジェクトを作成します。
 
 02:27.930 --> 02:30.420
-Import the Mini MVCs Framework.
+Mini MVCs Frameworkをインポートします。
 
 02:30.420 --> 02:36.810
-Import the samples, open this particular sample, explore the version within that doesn't use mini
+サンプルをインポートし、このサンプルを開き、ミニを使用しないバージョンを探します。
 
 02:36.810 --> 02:39.780
-MVCs to gain the basic knowledge of how it operates.
+MVCの基本的な使い方を知ることができます。
 
 02:39.780 --> 02:45.360
-And then look at the version with many MVCs and with each sample, I'll do some live coding with one
+そして、多くのMVCを使ったバージョンを見て、それぞれのサンプルで、1つのMVCを使ってライブコーディングをしてみます。
 
 02:45.360 --> 02:46.680
-of the sample assignments.
+02:46.680 --> 02:46.680
 
 02:46.680 --> 02:47.910
-Let's get started.
+さあ、始めましょう。

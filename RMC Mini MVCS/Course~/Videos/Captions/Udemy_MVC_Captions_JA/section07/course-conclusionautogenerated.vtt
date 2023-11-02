@@ -1,112 +1,112 @@
 WEBVTT
 
 00:00.090 --> 00:00.570
-The course.
+コース
 
 00:00.570 --> 00:05.530
-Conclusion I hope you've enjoyed this course about NVQ architecture.
+結論 NVQ建築についてのこのコースを楽しんでいただけたなら幸いです。
 
 00:05.550 --> 00:12.270
-As much as I've enjoyed sharing it, we know that unity is a versatile engine and a perfect tool for
+unityは汎用性の高いエンジンであり、次のような用途に最適なツールです。
 
 00:12.270 --> 00:20.160
-creating great games using architectures like MVCs Brings confidence, organization and scalability
+MVCのようなアーキテクチャーを使って素晴らしいゲームを作ることで、信頼性、組織性、スケーラビリティをもたらします。
 
 00:20.160 --> 00:21.180
-to your projects.
+をプロジェクトにもたらす。
 
 00:21.180 --> 00:28.020
-This course is designed such that the takeaway is that now you're confident to design and develop projects
+このコースは、あなたが自信を持ってプロジェクトを設計・開発できるようになることを目的としています。
 
 00:28.020 --> 00:30.270
-using Unity and MVCs.
+UnityとMVCを使って。
 
 00:30.270 --> 00:36.780
-Every decision we make in software, be it the technology, the process or the people, can be viewed
+ソフトウェアにおけるすべての決定は、それが技術であれ、プロセスであれ、人材であれ、見ることができる。
 
 00:36.780 --> 00:38.430
-as a form of investment.
+一種の投資である。
 
 00:38.430 --> 00:43.970
-Each investment comes with a cost, but we trust that these decisions will ultimately pay off.
+それぞれの投資にはコストがかかるが、最終的にはこれらの決断が報われると信じている。
 
 00:43.980 --> 00:49.950
-That's very much how I recommend we look at architectures you've invested in yourself by completing
+それは、あなたが完成させることによって、あなた自身が投資したアーキテクチャーをどのように見るかということです。
 
 00:49.950 --> 00:50.790
-this course.
+00:50.790 --> 00:50.790
 
 00:50.790 --> 00:52.500
-Your projects and your team will.
+あなたのプロジェクトやチームが
 
 00:52.500 --> 00:53.070
-Thank you.
+ありがとうございました。
 
 00:53.070 --> 00:56.340
-In summary, unity is a great platform for us to use.
+まとめると、unityは私たちにとって素晴らしいプラットフォームです。
 
 00:56.340 --> 01:02.130
-We've seen that developers spend most of their time on the maintenance of existing code and that architecture
+開発者は既存のコードのメンテナンスにほとんどの時間を費やしていることがわかりました。
 
 01:02.130 --> 01:07.470
-can help developers create projects with confidence, performance and scalability.
+開発者が自信とパフォーマンス、そしてスケーラビリティを備えたプロジェクトを立ち上げる手助けをすることができる。
 
 01:07.470 --> 01:10.680
-MVC architectures are proven solutions.
+MVCアーキテクチャは実績のあるソリューションです。
 
 01:10.680 --> 01:12.480
-They've stood the test of time.
+01:10.680から01:12.480へ
 
 01:12.480 --> 01:18.570
-They help produce more testable projects and lead to faster development and better maintenance.
+MVCアーキテクチャは、テスト可能なプロジェクトを作成し、より迅速な開発とより良いメンテナンスにつながります。
 
 01:18.570 --> 01:25.890
-And we've seen that the Mini and VCs framework is ideal for production as well as educational purposes.
+また、MiniとVCのフレームワークは、プロダクションだけでなく、教育目的にも理想的であることがわかりました。
 
 01:25.890 --> 01:33.000
-Some suggested next steps are to dive deeper into the design principles and design patterns we covered
+次のステップとしては、今回取り上げた設計原理や設計パターンをより深く掘り下げていくことをお勧めします。
 
 01:33.000 --> 01:33.840
-in this course.
+01:33.000 --> 01:33.840
 
 01:33.840 --> 01:39.440
-Bring MVC architecture into your current Unity project and your next projects as well.
+MVCアーキテクチャを現在のUnityプロジェクトや次のプロジェクトに導入しましょう。
 
 01:39.450 --> 01:45.390
-I encourage you to check out other MVC frameworks for Unity so you can learn even more in this course.
+また、Unityの他のMVCフレームワークもぜひチェックしてみてください。
 
 01:45.390 --> 01:50.760
-We've covered a lot of concepts from high level theory right down into the code.
+このコースではUnityのMVCフレームワークについて学びます。
 
 01:50.760 --> 01:52.980
-It's important that the learning doesn't end here.
+ここで学習を終わらせないことが重要だ。
 
 01:52.980 --> 01:55.890
-Practice, practice and practice more.
+練習、練習、そしてもっと練習。
 
 01:56.310 --> 01:59.100
-Thank you very much for participating in the course.
+コースへの参加、ありがとうございました。
 
 01:59.100 --> 02:00.900
-I'm Samuel Asher Rivello.
+サミュエル・アッシャー・リベロです。
 
 02:00.930 --> 02:04.470
-I have over 20 years of experience in game development.
+ゲーム開発で20年以上の経験があります。
 
 02:04.470 --> 02:10.950
-It's my mission to educate and entertain with interactive technology and it's been my pleasure to share
+インタラクティブな技術で教育し、楽しませることが私の使命です。
 
 02:10.950 --> 02:12.210
-this course with you.
+このコースを皆さんと共有できることを嬉しく思います。
 
 02:12.210 --> 02:17.820
-If you enjoyed this course as much as I did, please share this course with friends and colleagues.
+もし私と同じようにこのコースを楽しんでいただけたなら、このコースを友人や同僚にシェアしてください。
 
 02:17.820 --> 02:22.620
-Learn with my other courses and I'm available for remote contract hire.
+他のコースと一緒に学びましょう！リモート契約も可能です。
 
 02:22.650 --> 02:24.260
-Contact me at my website.
+私のホームページからご連絡ください。
 
 02:24.270 --> 02:25.170
-Thanks again.
+ありがとうございました。

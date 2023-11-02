@@ -1,208 +1,208 @@
 WEBVTT
 
 00:00.330 --> 00:02.580
-Now let's look at architectures.
+次にアーキテクチャを見てみよう。
 
 00:03.000 --> 00:08.190
-A software architecture is the fundamental organization of all of its parts.
+ソフトウエア・アーキテクチャとは、すべての部品の基本的な構成です。
 
 00:08.190 --> 00:13.880
-We'll see that architectures are built on top of design principles and patterns.
+アーキテクチャは設計原理とパターンの上に構築されることがわかります。
 
 00:13.890 --> 00:18.210
-Benefits include that these are proven solutions to repeatable problems.
+これらの利点は、再現可能な問題に対する実証済みのソリューションであることです。
 
 00:18.210 --> 00:25.080
-By organizing our project in a bespoke way, we can bring confidence, scalability, performance and
+オーダーメイドの方法でプロジェクトを編成することで、信頼性、拡張性、パフォーマンス、および、チームワークを向上させることができる。
 
 00:25.080 --> 00:26.490
-more to our projects.
+をもたらすことができる。
 
 00:26.490 --> 00:32.670
-Software architectures are typically high level and could be applied to various languages or platforms,
+ソフトウェア・アーキテクチャは一般的に高レベルであり，様々な言語やプラットフォームに適用することができる、
 
 00:32.670 --> 00:39.420
-and also by using them, we can have faster development as well as easier time in the maintenance phases
+また，それを使うことによって，より迅速な開発が可能になり，メンテナンスの段階でも時間を節約することができる。
 
 00:39.420 --> 00:40.560
-of our projects.
+00:40.560 --> 00:40.560
 
 00:40.560 --> 00:46.140
-Now, while we often think as developers that our job is adding new features and that that's the majority
+私たちは開発者として新機能を追加することが仕事であり、それが大部分だと考えがちですが、それは間違いです。
 
 00:46.140 --> 00:53.880
-of our experience, research shows that 80% of the time on a software project is maintaining the code.
+00:46.140 --> 00:53.880 我々の経験の80%はコードのメンテナンスに費やされている。
 
 00:54.000 --> 01:00.660
-So by making choices for architectures, design principles and patterns up front and applying them throughout
+そのため、アーキテクチャや設計原則、パターンを前もって選択し、それをプロジェクト全体に適用することで、プロジェクトを成功に導くことができるのです。
 
 01:00.660 --> 01:06.960
-our project, when we are adding features, that large maintenance phase can be easier and raise our
+プロジェクト全体を通して適用することで、機能を追加していく際の大規模なメンテナンス・フェーズがより簡単になり、プロジェクトの質を向上させることができるのです。
 
 01:06.960 --> 01:09.180
-quality of life from a high level.
+クオリティ・オブ・ライフを高いレベルから引き上げることができる。
 
 01:09.180 --> 01:15.960
-Some types of architectures are the no architecture approach, typically young teams or individuals
+アーキテクチャーには、典型的な若いチームや個人によるノー・アーキテクチャー・アプローチもある。
 
 01:15.960 --> 01:17.550
-who are getting into software.
+01:15.960 --> 01:17.550
 
 01:17.550 --> 01:23.550
-We'll do what feels right in the moment without some larger perspective or vision for the project.
+プロジェクトの大きな展望やビジョンを持たずに、その場その場で正しいと思うことをやる。
 
 01:23.550 --> 01:25.080
-But ultimately we'll see.
+でも、最終的にはどうなるか。
 
 01:25.080 --> 01:26.400
-We need something else.
+他に必要なものがある
 
 01:26.400 --> 01:32.790
-Veteran teams can use custom architectural solutions where they look at the unique needs of a team and
+ベテランチームは、チーム独自のニーズを見て、カスタムアーキテクチャーソリューションを使うことができる。
 
 01:32.790 --> 01:39.420
-the product that they're creating, employing a library of those principles and patterns and create
+そのような原則やパターンをライブラリとして採用し、そのような製品を作成するのだ。
 
 01:39.420 --> 01:40.710
-their own solution.
+01:40.710 --> 01:40.710
 
 01:40.710 --> 01:46.830
-There are pros and cons to this approach, and another key type is using an established architecture,
+このアプローチには長所と短所があり、もう一つの重要なタイプは確立されたアーキテクチャを使用することである、
 
 01:46.830 --> 01:52.460
-something we can pull off the shelf and apply in a prescriptive manner to our projects.
+01:46.830 --> 01:52.460 既成のアーキテクチャーを使うことだ。
 
 01:52.470 --> 02:01.740
-These include MVP and VC and VM, and there's many, many more we'll look at the details of these.
+MVP、VC、VMなど、他にもたくさんあります。
 
 02:02.010 --> 02:08.700
-So while it feels quite natural to just develop as we go and do what feels right in the moment, this
+このように、その場その場で正しいと思ったことをそのまま実践していくのは、ごく自然なことだと感じている。
 
 02:08.700 --> 02:11.190
-no architecture approach has drawbacks.
+アーキテクチャのないアプローチには欠点がある。
 
 02:11.190 --> 02:16.710
-Whether you're an individual or on a small team, there will be more debate on how to add each feature
+個人であろうと、小さなチームであろうと、それぞれの機能をどのように追加するかについて、より多くの議論があるだろう。
 
 02:16.710 --> 02:22.860
-since you don't have a recipe that leads to inconsistencies over the life of one developer and across
+レシピがないため、一人の開発者の寿命が延びたり、開発者間で矛盾が生じたりする。
 
 02:22.860 --> 02:28.110
-each other developer on the team, that means applying re factors becomes more challenging because there's
+チーム内の各開発者間で矛盾が生じないということは、再要素の適用がより困難になるということだ。
 
 02:28.110 --> 02:30.570
-all subtle variations in the code base.
+02:28.110 --> 02:30.570
 
 02:30.840 --> 02:37.100
-It becomes much more difficult to read the code one day later, one week later or one year later.
+1日後、1週間後、1年後のコードを読むのはより難しくなる。
 
 02:37.110 --> 02:43.410
-Also, when you're bringing new team members on or taking team members off of the project, it's more
+また、新しいメンバーを加えたり、プロジェクトからメンバーを外したりする場合、より多くのことが必要になります。
 
 02:43.410 --> 02:44.640
-labor intensive.
+労力がかかる。
 
 02:44.670 --> 02:47.430
-You have to do more custom explanations.
+説明の手間が増える
 
 02:47.430 --> 02:52.260
-The new dev needs to spend more time to understand what's there and the code base.
+新しいデベロッパーはコードベースを理解するために多くの時間を費やす必要がある。
 
 02:52.260 --> 02:57.990
-And each time a developer departs, they have to explain and document more of their custom personal
+そして、開発者が去るたびに、その開発者の個人的なカスタムについて説明し、文書化しなければならない。
 
 02:57.990 --> 03:00.540
-flavor on how they applied that to the project.
+そのプロジェクトにどのように適用したかを説明し、文書化しなければならない。
 
 03:00.540 --> 03:06.180
-Now, to many devs, particularly beginners, this approach still might feel like the fastest way to
+さて、多くの開発者、特に初心者にとって、このアプローチはまだ最速の方法のように感じられるかもしれない。
 
 03:06.180 --> 03:07.590
-get your features across.
+03:07.590 --> 03:07.590
 
 03:07.590 --> 03:14.160
-And often we see developers in prototype phases throw these rules out the window and do the no architecture
+そして、プロトタイプの段階で開発者がこれらのルールを窓から投げ捨て、ノーアーキテクチャを行うのをよく見かける。
 
 03:14.160 --> 03:14.790
-approach.
+というアプローチをとる。
 
 03:14.790 --> 03:21.090
-However, such fast code does indeed bring more bugs and complexity to the project, and the cost of
+しかし、そのような高速なコードは確かにプロジェクトに多くのバグと複雑さをもたらす。
 
 03:21.090 --> 03:23.910
-software bugs grows exponentially over time.
+バグのコストは時間とともに指数関数的に増大する。
 
 03:24.150 --> 03:30.090
-If you can catch bugs earlier, it's quicker to fix and has less of an impact on your overall project.
+バグを早期に発見できれば、修正も早く、プロジェクト全体への影響も少なくなります。
 
 03:30.090 --> 03:35.820
-Research shows that if you catch that same bug after you've shipped the product, it can be 30 times
+調査によると、製品を出荷した後に同じバグを発見した場合、その30倍もの時間がかかるという。
 
 03:35.820 --> 03:40.950
-or more difficult to fix that bug and get that new version out.
+そのバグを修正して新バージョンをリリースするのはもっと難しい。
 
 03:40.950 --> 03:46.770
-So best practices are to create maintainable code from the beginning to increase automation and any
+だから、ベストプラクティスは、最初からメンテナンス可能なコードを作成し、自動化を促進することだ。
 
 03:46.770 --> 03:52.440
-testing around it, which we'll talk about later to catch those bugs early and often and to fix all
+テストについては後述するが、バグを早期に発見し、頻繁に修正することである。
 
 03:52.440 --> 03:56.040
-of your bugs before you move on to making new features.
+を修正することです。
 
 03:56.040 --> 04:02.550
-Software research shows that more than 80% of bugs happens with around 20% of the functionality.
+ソフトウェアの研究によると、バグの80％以上は機能の20％程度で起こるそうです。
 
 04:02.580 --> 04:08.610
-These can be the core pieces of glue or the architecture that holds everything together, working quickly
+これらは、すべてをつなぎとめる接着剤のような核となる部分や、素早く動作するアーキテクチャとなりうる。
 
 04:08.610 --> 04:14.820
-to add new features for the architecture or the no architecture approach will cause more and more problems
+アーキテクチャのために新機能を追加したり、アーキテクチャのないアプローチはますます多くの問題を引き起こす。
 
 04:14.820 --> 04:15.420
-over time.
+時間が経てば経つほど
 
 04:15.420 --> 04:23.160
-Also, quite surprising to many, over 80% of the life of developers on a software project, that 80%
+また，多くの人にとって非常に意外なことだが，ソフトウェアプロジェクトにおける開発者の人生の80%以上，その80%は
 
 04:23.160 --> 04:27.360
-is maintaining the code base, not necessarily adding new features.
+はコードベースのメンテナンスであり、必ずしも新しい機能を追加するわけではない。
 
 04:27.360 --> 04:33.630
-So while we might think that all day is adding features, it's quite a small part of the overall workload.
+だから、一日中機能追加をしていると思うかもしれないが、それは全体の仕事量のごく一部なのだ。
 
 04:33.630 --> 04:41.160
-So a key takeaway here is to do that 20% of new functionality and features in an efficient long term
+つまり、ここでの重要なポイントは、その20%の新機能と特徴を効率的に長期的に行うことである。
 
 04:41.160 --> 04:47.220
-methodology so that when we're spending the time maintaining the code base, we reap those benefits
+コードベースのメンテナンスに時間を費やすことで、その恩恵を享受することができる。
 
 04:47.220 --> 04:47.790
-together.
+一緒にね。
 
 04:47.790 --> 04:56.220
-We'll see that using an established architecture like MVC will bring us many benefits in our unity development.
+MVCのような確立されたアーキテクチャを使うことで、ユニティ開発において多くの利点が得られることがわかるだろう。
 
 04:56.580 --> 04:59.850
-One of the themes we see in this section is that often the.
+このセクションのテーマのひとつは、多くの場合
 
 05:00.040 --> 05:04.870
-Idea we have about how software development goes doesn't match the reality.
+ソフトウェア開発の進め方について私たちが抱いている考えは、現実と一致しないことが多いということです。
 
 05:04.960 --> 05:10.840
-We feel like all day is about adding new features, but actually that's a small part of the lifespan
+私たちは一日中新しい機能を追加しているように感じていますが、実はそれは寿命のほんの一部なのです。
 
 05:10.840 --> 05:11.650
-of a project.
+05:10.840 --> 05:11.650
 
 05:11.650 --> 05:17.350
-When we begin to think about long term solutions that make that maintenance easier, we place a higher
+メンテナンスがより簡単になるような長期的な解決策を考え始めたとき、私たちはより高い評価を下すことになる。
 
 05:17.350 --> 05:23.690
-value on learning good design principles, design patterns, and ultimately architectures.
+05:23.690→05:23.710→05:23.710→05:23.710
 
 05:23.710 --> 05:25.240
-That's it for this section.
+このセクションは以上です。
 
 05:25.240 --> 05:25.990
-Thank you.
+ありがとうございました。

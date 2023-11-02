@@ -1,256 +1,256 @@
 WEBVTT
 
 00:00.330 --> 00:03.630
-The mini MDC's architecture for Unity.
+ミニMDCのUnity用アーキテクチャ。
 
 00:03.630 --> 00:08.820
-After years of Unity experience, I created the mini MVCs architecture.
+Unityの長年の経験から、ミニMVCのアーキテクチャを作りました。
 
 00:08.820 --> 00:12.740
-Throughout the course, I may refer to it as mini or mini MVCs.
+このコースでは、ミニまたはミニMVCと呼ぶことがあります。
 
 00:12.750 --> 00:17.580
-When I created it, I applied the learnings I had from past architectural frameworks.
+このフレームワークを作ったとき、私は過去のアーキテクチャ・フレームワークから学んだことを応用しました。
 
 00:17.580 --> 00:23.910
-These learnings include using generics, having strong typing, using the command pattern and the observer
+ジェネリックスの使用、強力な型付け、コマンドパターンやオブザーバーの使用などです。
 
 00:23.910 --> 00:26.550
-pattern for a two tiered communication system.
+パターンを使うことです。
 
 00:26.550 --> 00:32.670
-As with other MVC based architectures, we have benefits including it is a proven solution.
+他のMVCベースのアーキテクチャと同様に、実績のあるソリューションであるという利点があります。
 
 00:32.670 --> 00:34.080
-It's language agnostic.
+言語にとらわれない。
 
 00:34.080 --> 00:39.300
-You can find materials on this type of approach in many different languages and platforms.
+00:34.080→00:39.300このようなアプローチは様々な言語やプラットフォームで見つけることができます。
 
 00:39.300 --> 00:45.300
-Using MINI provides a more testable environment which allows for faster development and more straightforward
+MINIを使用することで、よりテストしやすい環境を提供し、より迅速な開発、より分かりやすい開発を可能にする。
 
 00:45.300 --> 00:46.650
-maintenance of your projects.
+プロジェクトのメンテナンス
 
 00:46.650 --> 00:49.080
-Some features include This is lightweight.
+いくつかの特徴は以下の通りです。
 
 00:49.080 --> 00:53.310
-Part of why it's called MINI is that there's very few classes and concepts involved.
+MINIと呼ばれる理由のひとつは、クラスやコンセプトが非常に少ないことです。
 
 00:53.310 --> 00:56.820
-Also, it is specifically non money behavior.
+また、特に金銭的な行動を伴わないからです。
 
 00:56.820 --> 00:58.560
-Money behaviors are optional here.
+金銭的な行動はここではオプションです。
 
 00:58.560 --> 01:04.140
-The core concerns extend an interface and there are no amount of behaviors required.
+核となるものはインターフェイスを拡張するものであり、ビヘイビアは必要ありません。
 
 01:04.530 --> 01:09.180
-Behaviors become optional and you can use them for all four of the concerns.
+ビヘイビアはオプションとなり、4つの関心事すべてに使用することができます。
 
 01:09.180 --> 01:13.590
-None of the concerns or whichever combination works best for your project.
+どのコンサドーレも、あるいはどのコンサドーレも、あなたのプロジェクトに最適な組み合わせで使用することができます。
 
 01:13.590 --> 01:17.280
-This demonstrates another feature that this is an opinionated framework.
+これは、このフレームワークが意見を重視するフレームワークであるという別の特徴を示している。
 
 01:17.280 --> 01:22.770
-There is a suggested path, but it's also quite flexible based on the needs of your project.
+このように、提案された道筋はありますが、プロジェクトのニーズに応じて柔軟に対応することも可能です。
 
 01:22.770 --> 01:26.370
-You can massage this system and get the best results for your use case.
+このシステムをマッサージすることで、あなたのユースケースに最適な結果を得ることができます。
 
 01:26.370 --> 01:32.670
-This framework is great for production use cases in your project and moreover, it's ideal for educational
+このフレームワークは、あなたのプロジェクトにおけるプロダクションユースケースに最適です。
 
 01:32.670 --> 01:33.360
-uses.
+を使います。
 
 01:33.360 --> 01:37.650
-That's why in this course I focus on it to teach the concepts of MVC.
+そのため、このコースではMVCの概念を教えるためにMVCに焦点を当てています。
 
 01:37.650 --> 01:42.300
-Let's take a look at this high level UML diagram showing the classes involved.
+このUMLダイアグラムで、MVCに関連するクラスを説明してみましょう。
 
 01:42.300 --> 01:47.520
-Here we see the familiar major concerns of model, view, controller and service.
+ここでは、モデル、ビュー、コントローラー、サービスというおなじみの主要な関心事を見ることができます。
 
 01:47.550 --> 01:51.090
-Notice we have no direct dependencies on the unity engine.
+unityエンジンに直接依存していないことに注目してください。
 
 01:51.090 --> 01:53.220
-No more mono behavior is required.
+monoの動作はもう必要ありません。
 
 01:53.220 --> 01:55.530
-There's flexibility to how you implement it.
+実装方法に柔軟性がある。
 
 01:55.530 --> 02:01.740
-But here in this example from my code, I'm subclasses, the Mini and VCs project to get started.
+この例では、ミニとVCをサブクラスにしています。
 
 02:01.740 --> 02:07.110
-So when looking at this framework or any other unity specific framework, some of the considerations
+このフレームワークや他のunity特有のフレームワークを見るとき、考慮すべき点がいくつかある。
 
 02:07.110 --> 02:08.610
-you can ask yourselves are here.
+を自問自答することができる。
 
 02:08.610 --> 02:12.030
-Does it have any unity specific features in this case?
+unity特有の機能はありますか？
 
 02:12.030 --> 02:12.450
-No.
+いいえ。
 
 02:12.450 --> 02:16.560
-I chose not to depend and require mono behavior.
+依存せず、monoの動作を要求することにしました。
 
 02:16.560 --> 02:19.470
-For example, you can certainly add that yourself.
+例えば、自分でそれを追加することもできる。
 
 02:19.470 --> 02:25.110
-The system is flexible to use things like mono behavior and script able object, but they're not required
+モノビヘイビアやスクリプト可能なオブジェクトのようなものを使用する柔軟性はあるが、それらは必須ではない
 
 02:25.110 --> 02:26.340
-parts of the core framework.
+コアフレームワークの一部です。
 
 02:26.340 --> 02:28.170
-This was a desire to keep things light.
+これは物事を軽くしておきたいという願いからだった。
 
 02:28.170 --> 02:30.150
-So what's the role of mono behaviors?
+モノビヘイビアの役割とは？
 
 02:30.150 --> 02:31.230
-Well, they're optional.
+まあ、オプションですね。
 
 02:31.230 --> 02:33.030
-For each of your four concerns.
+4つの悩みに対して
 
 02:33.030 --> 02:35.250
-You can extend mono behavior or not.
+モノの振る舞いを拡張するかしないか。
 
 02:35.250 --> 02:39.390
-So how does it handle the concerns, the conventions in the communication?
+では、懸念事項、通信における規約をどのように扱うのでしょうか？
 
 02:39.390 --> 02:43.560
-Well, imagine within your project you could have one or more minis by default.
+プロジェクト内で、デフォルトでミニが1つ、または複数あるとします。
 
 02:43.560 --> 02:48.180
-I would assume you'd add one to the project, but you could split it up into more and have them communicate
+プロジェクトに1つ追加すると思いますが、それを分割して通信させることもできます。
 
 02:48.180 --> 02:50.280
-together for a more modular approach.
+02:50.280 --> 02:50.280 --> 02:50.280
 
 02:50.280 --> 02:54.240
-You can have zero or more of each of the major concerns.
+02:50.280→02:50.280→02:50.280
 
 02:54.240 --> 03:00.390
-I'd imagine at a minimum you'd have one mini and one controller, but then you could have multiple other
+最低でもミニ1台とコントローラー1台は必要だろうけど、それ以外にも複数の
 
 03:00.390 --> 03:05.730
-controllers, multiple views if you like, multiple models and multiple services.
+コントローラ、複数のビュー、複数のモデル、複数のサービス。
 
 03:05.730 --> 03:07.560
-So it scales for your needs.
+だから、ニーズに合わせて拡張できる。
 
 03:07.560 --> 03:10.470
-It's designed in such a way that the conventions you follow.
+|にできるようにあなたがそれをすることができますようにあなたがそれをすることができます。
 
 03:10.470 --> 03:16.860
-The suggestions are much more important than any sort of configuration or requirement.
+このような提案は、どのような設定や要件よりもはるかに重要です。
 
 03:16.860 --> 03:22.500
-This allows for flexibility, but I still encourage you to be vigilant with separating your concerns
+これはフレキシビリティを可能にするものですが、それでも私は、あなたの懸念を分離することに警戒することをお勧めします。
 
 03:22.500 --> 03:27.360
-and watching how you communicate between those concerns that will give you a more scalable project.
+しかし、私はやはり、自分の関心ごとをしっかりと分けて考えることを勧める。
 
 03:27.360 --> 03:31.650
-And speaking of communication, the system supports two tiers of communication.
+コミュニケーションといえば、システムは2層のコミュニケーションをサポートしている。
 
 03:31.650 --> 03:34.830
-It has both events as well as commands.
+イベントとコマンドの両方があります。
 
 03:34.830 --> 03:39.370
-Having both of these available as options is incredibly powerful as we'll see.
+この2つがオプションとして用意されていることは、後述するように非常に強力だ。
 
 03:39.390 --> 03:42.900
-And finally, what's the balance of rigidity versus flexibility?
+そして最後に、剛性と柔軟性のバランスとは？
 
 03:42.900 --> 03:48.900
-Well, a core philosophy behind this framework is that it is as flexible and lightweight as possible.
+このフレームワークの基本理念は、可能な限り柔軟で軽量であることだ。
 
 03:48.900 --> 03:54.210
-But to maintain a lot of the benefits we get from using an architecture, there are some rules that
+しかし、アーキテクチャを使用することで得られる多くの利点を維持するためには、いくつかのルールがある。
 
 03:54.210 --> 03:58.800
-are suggested and however you apply them, I suggest to apply them consistently.
+そして、どのように適用するにしても、一貫して適用することをお勧めする。
 
 03:58.800 --> 04:05.520
-So for the purposes of this course and our discussion on will elect Mini and VCs as our chosen unity
+だから、このコースと我々の議論の目的のために、ミニとVCを我々の選択した統一体として選出する。
 
 04:05.520 --> 04:10.590
-framework to move forward, and a key component to how this information is being delivered in the course
+そして、このコースでどのように情報を提供するかということが重要な要素となる。
 
 04:10.590 --> 04:16.440
-is regardless of which MVC framework you choose or if you choose to create your own framework.
+このコースでは、どのMVCフレームワークを選んでも、あるいは自分でフレームワークを作っても構いません。
 
 04:16.440 --> 04:23.190
-The design principles, the design patterns, using the diagramming we talked about, and the experience
+デザイン原則、デザインパターン、先ほど話したダイアグラムの使い方、そして経験。
 
 04:23.190 --> 04:28.380
-we'll see as we get deeper into this, you can bring all of these learnings to any architecture you
+そして、これらの学習はどのようなアーキテクチャにも適用することができる。
 
 04:28.380 --> 04:28.890
-choose.
+を選べばいい。
 
 04:28.890 --> 04:30.240
-So let's get started.
+さあ、始めよう。
 
 04:30.240 --> 04:34.560
-I'll give some context for how and why I chose the mini MVCs for this course.
+このコースにミニMVCを選んだ経緯と理由を説明します。
 
 04:34.560 --> 04:39.780
-After spending years learning and applying architectures to different projects and wanting to teach
+何年もかけて様々なプロジェクトでアーキテクチャーを学び、適用してきた結果、そして教えたいと思ったからです。
 
 04:39.780 --> 04:44.340
-more about those concepts, I realized it's a big subject and there's a lot to learn.
+このようなコンセプトについてもっと学びたいと思ったとき、それは大きなテーマであり、学ぶべきことがたくさんあることに気づきました。
 
 04:44.340 --> 04:51.390
-I suggest the very best way to learn is to actually use these concepts in your projects, Create sample
+私は、これらのコンセプトを実際にプロジェクトで使用することをお勧めします。
 
 04:51.390 --> 04:55.260
-projects from scratch, bring these concepts into your existing projects.
+これらのコンセプトを既存のプロジェクトに取り入れるのです。
 
 04:55.260 --> 04:59.760
-Only then will you really get the feel and learn the benefits of these solutions.
+そうして初めて、これらのソリューションのメリットを実感し、学ぶことができるのです。
 
 05:00.060 --> 05:05.400
-I looked at all the choices that are out there from a unity perspective on the best architectures.
+ユニティという観点から、最適なアーキテクチャについてあらゆる選択肢を検討しました。
 
 05:05.400 --> 05:10.200
-There's a lot of great choices out there, but they're often complex learning the idiosyncrasies of
+素晴らしい選択肢はたくさんあるが、それらはしばしば、その特異性を学ぶ複雑なものである。
 
 05:10.200 --> 05:10.950
-each framework.
+05:10.200 --> 05:10.950
 
 05:10.950 --> 05:16.410
-So I created the mini MVCs as an easy onboarding to the concepts of MVCs.
+そこで、MVCの概念を簡単に学べるミニMVCを作りました。
 
 05:16.440 --> 05:20.790
-It is indeed production ready, but it's really designed for educational purposes.
+このミニMVCは制作も可能ですが、あくまで教育用です。
 
 05:20.790 --> 05:26.340
-So enjoy as we go deeper into it, we look at samples based on it and you follow the assignments using
+そのため、より深く理解することができ、それに基づいたサンプルを見ることができます。
 
 05:26.340 --> 05:27.000
-the framework.
+05:27.000 --> 05:27.000
 
 05:27.000 --> 05:32.310
-It's my hope that at the end of the course, whether it's this particular solution or another architecture,
+コースの終わりには、この特定のソリューションであれ、他のアーキテクチャであれ、それが私の望みです、
 
 05:32.310 --> 05:37.230
-that you see the benefits of using an architecture and you have the skills to apply them.
+このコースの最後には、あるアーキテクチャを使うことの利点を理解し、それを応用するスキルを身につけていることを望みます。
 
 05:37.620 --> 05:38.460
-Thanks.
+ありがとう。

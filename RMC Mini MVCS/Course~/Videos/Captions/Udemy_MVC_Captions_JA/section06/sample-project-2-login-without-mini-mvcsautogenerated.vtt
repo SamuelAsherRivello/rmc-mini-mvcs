@@ -1,709 +1,709 @@
 WEBVTT
 
 00:03.200 --> 00:04.700
-Here we are inside Unity.
+ここはUnityの中だ。
 
 00:04.700 --> 00:10.490
-I've got a fresh project where I've installed the mini VCs framework and imported the samples.
+ミニVCフレームワークをインストールし、サンプルをインポートしました。
 
 00:10.520 --> 00:13.960
-Here's a file structure for the version that has many.
+以下は、多数あるバージョンのファイル構成です。
 
 00:13.970 --> 00:19.660
-We've got resources, including that text file we're going to load to simulate a service layer call.
+サービスレイヤーの呼び出しをシミュレートするために読み込むテキストファイルを含むリソースがあります。
 
 00:19.670 --> 00:23.750
-We've got a science folder with our one scene and then we've got runtime scripts.
+そしてランタイムスクリプトがあります。
 
 00:23.750 --> 00:29.210
-We've not yet taken a look at the structure of the MVCs code in a sample, so let's do that.
+サンプルではまだMVCsのコードの構造を見ていません。
 
 00:29.210 --> 00:34.370
-Now, starting at the bottom, we have the example file itself that's attached to a game object in the
+さて、一番下から、ゲームオブジェクトにアタッチされたサンプルファイルそのものを
 
 00:34.370 --> 00:34.880
-scene.
+シーンにあります。
 
 00:34.880 --> 00:37.010
-Then we have the log in mini class.
+そして、ミニ・クラスにログインします。
 
 00:37.010 --> 00:40.880
-This is the highest level structure of the MVCs world.
+これがMVCの世界の最上位構造です。
 
 00:40.880 --> 00:47.900
-Then, as per typical convention, I create a folder for each the model view controller and service.
+そして、典型的な慣例に従って、モデル・ビュー・コントローラーとサービスのそれぞれにフォルダを作ります。
 
 00:47.900 --> 00:50.750
-Inside the View, there's one class, the login view.
+ビューの中にはログインビューというクラスが一つあります。
 
 00:50.750 --> 00:54.140
-Inside the service, there's one class, the login service.
+サービスの内部にはログインサービスがあります。
 
 00:54.140 --> 00:55.250
-Inside the model.
+モデルの内部です。
 
 00:55.250 --> 01:02.210
-We've got two classes, a user data class, as well as the main model itself for the log in inside the
+の中にログインのためのメインモデルとユーザーデータのクラスがあります。
 
 01:02.210 --> 01:03.200
-controller folder.
+controllerフォルダにあります。
 
 01:03.200 --> 01:07.070
-I have the log in controller, which is the main controller for the project.
+プロジェクトのメインコントローラであるログインコントローラがあります。
 
 01:07.160 --> 01:12.050
-It's also appropriate to have a subfolder here for all of the commands for a project.
+サブフォルダにはプロジェクトのコマンドを保存しておくのが適切です。
 
 01:12.050 --> 01:16.970
-I'll talk a little bit more about commands since we haven't taken a look at them yet in previous code
+コマンドについては、以前のコードでまだ見ていないので、もう少し詳しく説明します。
 
 01:16.970 --> 01:17.770
-sessions.
+セッション
 
 01:17.780 --> 01:22.940
-Now, while this is a relatively simple example, it would be reasonable in a production project to
+これは比較的単純な例ですが、プロダクション・プロジェクトでは次のようにするのが妥当でしょう。
 
 01:22.940 --> 01:29.330
-follow the same folder structure and we would see each of the folders get populated with multiple models,
+同じフォルダ構造に従えば、それぞれのフォルダに複数のモデルが配置されることになります、
 
 01:29.330 --> 01:36.680
-multiple views and services, lots of controllers, probably as well as a real robust folder full of
+複数のビューとサービス、たくさんのコントローラ、そしておそらく本当に強固な
 
 01:36.680 --> 01:37.490
-commands.
+コマンドでいっぱいです。
 
 01:37.490 --> 01:44.330
-You can think of the command manager as a radio station that's able to broadcast to any of the concerns.
+コマンド・マネージャーはラジオ局のようなもので、あらゆる関係者に向けて放送することができる。
 
 01:44.330 --> 01:50.510
-So high level messages that are appropriate there, things like in this case, logging in, logging
+この場合、ログインやログのような高レベルのメッセージが適切です。
 
 01:50.510 --> 01:51.920
-out, clearing the screen.
+画面を消す
 
 01:51.920 --> 01:55.730
-If we had such a feature, those would sit here as individual commands.
+このような機能があれば、それらは個別のコマンドとしてここに置かれるでしょう。
 
 01:55.730 --> 01:58.340
-So here we are running the mini example.
+では、ミニ・サンプルを実行します。
 
 01:58.340 --> 02:01.070
-As the hint shows, there's a suggested password.
+ヒントが示すように、パスワードが提案されています。
 
 02:01.070 --> 02:03.410
-That's the only password that's acceptable here.
+パスワードはこれだけです。
 
 02:03.440 --> 02:05.570
-We're checking against a local file.
+ローカルファイルと照合しています。
 
 02:05.570 --> 02:09.170
-I have correct data there and I'll submit and we see success.
+正しいデータがあります。
 
 02:09.170 --> 02:14.090
-What's happening there is the service layer loads a local text file and it just makes sure that what
+サービス・レイヤーがローカルのテキストファイルを読み込んでいる。
 
 02:14.090 --> 02:17.990
-the user typed into the UI matches what's in that text file.
+UIに入力された内容がテキストファイルの内容と一致するかどうかを確認する。
 
 02:17.990 --> 02:23.960
-It's a very simplified substitute for some sort of complex back end interaction.
+複雑なバックエンドとのやり取りを簡略化したものだ。
 
 02:25.330 --> 02:28.260
-Let's dig into the code, starting with the high level example.
+まずは、ハイレベルな例からコードを掘り下げてみよう。
 
 02:28.270 --> 02:32.800
-Here's the example itself, which is a behavior sitting on a game object in the scene.
+これがその例で、シーンのゲームオブジェクトの上にあるビヘイビアです。
 
 02:32.830 --> 02:37.570
-Now, many MVCs does not require that any of its concerns be honored behaviors.
+多くのMVCでは、ビヘイビアを尊重する必要はありません。
 
 02:37.570 --> 02:45.070
-But in this specific example, as is probably common in your work as well, you have the view b amount
+しかし、この例では、おそらくあなたの仕事でも一般的であるように、ビューbの金額を持っています。
 
 02:45.070 --> 02:45.880
-of behavior.
+行動の
 
 02:46.000 --> 02:52.840
-So an easy way to bring that into the fold here is to have that sit as amount of behavior on a game
+だから、それをゲームに取り入れる簡単な方法は、ゲームの行動量として表示させることだ。
 
 02:52.840 --> 02:58.240
-object in the scene, drag it in as a serialized reference here, and then be able to pass it into the
+オブジェクトのビヘイビアとして配置し、シリアライズされた参照としてドラッグし、それを
 
 02:58.240 --> 03:00.260
-log in mini constructor as we see here.
+このようにミニコンストラクタに渡すことができます。
 
 03:00.280 --> 03:03.310
-Let's take a quick look at the scene just to see how that's wired up.
+どのように配線されているのか、シーンを見てみましょう。
 
 03:03.310 --> 03:05.950
-So here in the scene I have to log in View selected.
+このシーンではViewが選択されています。
 
 03:05.950 --> 03:11.360
-You can see in the Inspector window there's a login view script that's sitting on this game object.
+インスペクタ・ウィンドウを見ると、このゲーム・オブジェクトの上にログイン・ビュー・スクリプトがあるのがわかります。
 
 03:11.380 --> 03:17.110
-Now, with the example itself selected, we can see a serialized field sitting there waiting for a reference
+例題を選択した状態で、シリアライズされたフィールドが参照を待っているのがわかります。
 
 03:17.110 --> 03:18.270
-to the log in view.
+への参照を待っている。
 
 03:18.280 --> 03:22.300
-That's really the only wiring up that we need in the scene itself.
+これがシーン内で必要な唯一の配線です。
 
 03:22.570 --> 03:28.420
-There's alternative ways to do this, but it's very familiar for us to have mono behaviors like a view
+別の方法もありますが、ビューのようなモノビヘイビアを持つのはとても馴染みがあります。
 
 03:28.420 --> 03:32.230
-sit in the scene and drag a reference into a serialized field here.
+のようなmonoビヘイビアを持つことはとてもよく知られています。
 
 03:32.230 --> 03:38.080
-Back in the example here inside the start, after we create the class and pass in the view we simply
+この例に戻って、クラスを作成し、ビューを渡すと、次のようになります。
 
 03:38.080 --> 03:39.070
-initialize.
+を初期化します。
 
 03:39.070 --> 03:40.510
-That's it from this level.
+このレベルで終わりです。
 
 03:40.510 --> 03:42.340
-Let's take a look at the next class.
+次のクラスを見てみましょう。
 
 03:42.820 --> 03:45.100
-Here we are inside the log in mini class.
+ここはログインミニのクラスです。
 
 03:45.490 --> 03:51.490
-This sample is pretty conventional in that it takes a context, model, view controller and service
+このサンプルは、コンテキスト、モデル、ビューコントローラー、サービスという、ごくありふれたものです。
 
 03:51.490 --> 03:54.970
-one of each so I can take advantage of the base class here.
+を1つずつ使っているので、ここで基底クラスを利用することができる。
 
 03:54.970 --> 04:02.830
-Many NPCs extend it and pass in the strong types for each of the concerns that I want inside the constructor
+多くのNPCはこのクラスを拡張し、コンストラクタの内部で必要な懸念事項ごとに強い型を渡します。
 
 04:02.830 --> 04:07.210
-I just pass in the view and inside the initialize I do the bulk of the work.
+私はビューを渡すだけで、initializeの中で大部分を処理します。
 
 04:07.210 --> 04:10.970
-Here I create the context, model, view and controller.
+ここで、コンテキスト、モデル、ビュー、コントローラを作成します。
 
 04:10.990 --> 04:15.340
-Notice that the controller is the only constructor that takes several arguments.
+コントローラは複数の引数を取る唯一のコンストラクタであることに注意してください。
 
 04:15.340 --> 04:21.400
-This gives us a hint here that the controller is a bit more knowing and more significant in the structure.
+このことは、コントローラーが構造上、より重要であることを示すヒントになる。
 
 04:21.400 --> 04:23.880
-And finally we initialize each of its parts.
+そして最後に、それぞれのパーツを初期化します。
 
 04:23.890 --> 04:25.360
-That's it for this class.
+これでこのクラスは終わりです。
 
 04:25.360 --> 04:30.940
-Now, in previous sample code we step through each the model view controller and service.
+さて、先ほどのサンプルコードでは、モデル・ビュー・コントローラーとサービスのそれぞれについて説明しました。
 
 04:30.940 --> 04:34.510
-For the sake of brevity here, the service layer is very similar.
+ここでは簡潔にするために、サービスレイヤーは非常に似ています。
 
 04:34.510 --> 04:38.830
-Please take a look at the code if you'd like and also the model as well.
+よろしければコードとモデルもご覧ください。
 
 04:38.830 --> 04:42.670
-So the unique aspects here are the view and the controller.
+ここでのユニークな点は、ビューとコントローラーです。
 
 04:42.670 --> 04:43.900
-Let's take a look at each.
+それぞれを見てみましょう。
 
 04:44.200 --> 04:45.460
-Here's the login view.
+これがログインビューです。
 
 04:45.460 --> 04:48.790
-So remember this is sitting on a game object in the scene.
+これはシーン内のゲームオブジェクトの上に置かれています。
 
 04:48.790 --> 04:54.010
-It's not created on the fly like some of the other concerns in this particular demo.
+このデモのように、その場で作成されるわけではありません。
 
 04:54.010 --> 04:58.720
-I'll scroll down here so we can take a look at the high level of the class and then I'll step through
+ここで下にスクロールして、クラスのハイレベルな部分を見てみよう。
 
 04:58.720 --> 04:59.740
-it line by line.
+一行ずつ
 
 05:32.460 --> 05:34.990
-First, we have some custom unity events.
+まず、いくつかのカスタムユニティーイベントがあります。
 
 05:35.010 --> 05:38.960
-This is not really a specific flow to this mini MVCs.
+このミニMVCに特化したフローというわけではありません。
 
 05:38.970 --> 05:40.580
-It's a general practice.
+一般的な流れです。
 
 05:40.590 --> 05:46.800
-Any time you want to send a unity event within Unity and you want to send a long type to parameters,
+Unity内でUnityイベントを送りたいとき、パラメータにlong型を送りたいときはいつでも、
 
 05:46.800 --> 05:52.800
-you always subclass as we see here, it isn't really important that we look at the details of the classes
+このように常にサブクラス化することで、クラスの詳細を見ることはあまり重要ではありません。
 
 05:52.800 --> 05:55.140
-here because there is no implementation.
+なぜなら実装がないからだ。
 
 05:55.140 --> 06:01.610
-We just declare the class as a way to give it a name and declare what subtype it would have inside.
+このクラスには名前を付け、その中にどのようなサブタイプを持つかを宣言するだけです。
 
 06:01.620 --> 06:08.490
-For example, the log in Unity event accepts the user data whenever it's invoked and passes that info
+例えば、Unityのログインイベントは、呼び出されるたびにユーザーデータを受け取り、その情報を渡します。
 
 06:08.490 --> 06:08.970
-alone.
+のようになります。
 
 06:08.970 --> 06:12.340
-So this is the first view that we've seen that extends mono behavior.
+Monoのビヘイビアを拡張したビューはこれが初めてだ。
 
 06:12.360 --> 06:17.910
-Remember that with many MVCs, using mounted behaviors is completely optional, but probably in each
+多くのMVCでは、マウントされたビヘイビアを使うことは完全にオプションであることを覚えておいてください。
 
 06:17.910 --> 06:24.270
-sample of any complexity and certainly in a production use case, you would extend mono behavior for
+のためにmonoビヘイビアを拡張するでしょう。
 
 06:24.270 --> 06:25.190
-your views.
+ビューを拡張することになる。
 
 06:25.200 --> 06:30.600
-That's because the role of the view is to deal with user input and user interface elements.
+それは、ビューの役割はユーザー入力とユーザーインターフェイスの要素を扱うことだからです。
 
 06:30.600 --> 06:34.540
-And in unity, it just makes more sense to have mono behaviors be involved.
+そしてunityでは、モノビヘイビアが関与する方が理にかなっているのです。
 
 06:34.560 --> 06:38.040
-Next, we declare properties and here fields.
+次にプロパティとフィールドを宣言します。
 
 06:38.430 --> 06:44.610
-Now notice these UI elements are the same as the non mini MVC version we saw before.
+これらのUI要素は、前に見たミニMVCでないバージョンと同じです。
 
 06:44.640 --> 06:48.330
-The idea is that they look and behave the same each of the samples.
+どのサンプルも同じように見え、同じように動作するということです。
 
 06:48.330 --> 06:53.040
-So you're going to see a lot of familiar code here from the last section here in the initialize.
+前節のinitializeでおなじみのコードがたくさん出てきますね。
 
 06:53.040 --> 06:55.080
-We've got a couple interesting things happening.
+いくつか面白いことが起きています。
 
 06:55.080 --> 07:02.340
-So first we have a block of UI buttons and we're subscribing to the unity events that we would see in
+まず、UIボタンのブロックがあり、unityイベントを購読している。
 
 07:02.340 --> 07:03.960
-a non mini MVCs version.
+ミニMVCでないバージョン。
 
 07:03.960 --> 07:05.100
-This is pretty standard.
+これはごく普通のことだ。
 
 07:05.100 --> 07:09.630
-Any time you want to hear back from Unity's UI, you subscribe to its unity events.
+UnityのUIから返事が欲しいときは、unityイベントを購読する。
 
 07:09.630 --> 07:12.890
-But this second section is unique to this framework.
+しかし、この2番目のセクションはこのフレームワーク独自のものだ。
 
 07:12.900 --> 07:17.520
-Here we use the context which is available from any concern and access.
+ここでは、どのような関心やアクセスからも利用可能なコンテキストを使用する。
 
 07:17.520 --> 07:18.640
-The command Manager.
+コマンドマネージャー
 
 07:18.660 --> 07:24.450
-Now again, I'll talk a bit more about command manager here during this particular sample to get deeper.
+このサンプルでは、コマンドマネージャーについてもう少し詳しく説明します。
 
 07:24.540 --> 07:29.910
-The command manager sits on the context and the context is passed around to all of the concerns.
+コマンド・マネージャーはコンテキストの上に置かれ、そのコンテキストはすべての関係者に回される。
 
 07:29.910 --> 07:37.290
-One of the things you can do with the command manager is subscribe to listen to different notifications
+コマンドマネージャーでできることの一つは、様々な通知を受信するためのサブスクライブだ。
 
 07:37.290 --> 07:38.910
-that are coming in as commands.
+コマンドとして送られてくる
 
 07:39.390 --> 07:41.310
-The other is that you can invoke them.
+もう一つは、それらを呼び出すことができるということです。
 
 07:41.310 --> 07:48.240
-Now remember, none of the concerns that either adds these or invokes them needs to know who is listening
+しかし、これらのコマンドを追加したり、呼び出したりする際に、誰が聞いているのかを知る必要はない。
 
 07:48.240 --> 07:54.000
-or who else is in invoking the command manager is the middleman that sits between the two layers of
+コマンド・マネージャーは2つのレイヤーの間に位置する仲介者である。
 
 07:54.000 --> 07:55.500
-the observer and the sender.
+オブザーバーと送り手。
 
 07:55.710 --> 08:01.560
-So what's nice about that is you can blindly send out messaging something like a radio station that's
+だから、ラジオ局のようなメッセージをやみくもに送ることができる。
 
 08:01.560 --> 08:03.480
-just broadcasting out into the sky.
+空に向かって放送しているようなものだ。
 
 08:03.480 --> 08:08.910
-And anywhere that someone happens to be tuning into that frequency or that specific command, they get
+誰かがその周波数やコマンドを受信すると
 
 08:08.910 --> 08:09.690
-the message.
+メッセージ
 
 08:09.690 --> 08:15.450
-And something we see as we go down below the code lines in this class, we often use the view to ask
+そして、このクラスのコードラインの下に行くにつれて見えてくることがある。
 
 08:15.450 --> 08:15.900
-unity.
+ユニティ
 
 08:15.900 --> 08:20.880
-UI was something clicked and then we translate that into a command.
+UIがクリックされたことをコマンドに変換します。
 
 08:20.880 --> 08:22.410
-We'll see how that gets done here.
+どうなるかは見てのお楽しみ。
 
 08:22.440 --> 08:27.510
-As with the previous example, anytime the user types into the text fields or clears it out, it's just
+前の例と同じように、ユーザーがテキストフィールドに入力したり、それを消去したりする時はいつでも、ただ
 
 08:27.510 --> 08:29.410
-updates the login button.
+はログインボタンを更新します。
 
 08:29.430 --> 08:33.960
-The idea is that you would validate if the user submission is potentially correct.
+このアイデアは、ユーザーの投稿が正しい可能性があるかどうかを検証するというものです。
 
 08:33.960 --> 08:38.760
-We simply check, is the field empty or is it not empty?
+フィールドが空か、空でないかをチェックするだけだ。
 
 08:38.760 --> 08:43.920
-Whenever the login button is clicked, we translate that to a view event and we dispatch it out.
+ログインボタンがクリックされるたびに、それをビューイベントに変換し、ディスパッチします。
 
 08:43.920 --> 08:47.520
-We don't know from this scope who is listening or if anyone is listening.
+このスコープでは、誰が聞いているのか、誰が聞いているのかはわかりません。
 
 08:47.520 --> 08:51.360
-But as we get into the next section, we'll see who is the subscriber here.
+しかし、次のセクションに入れば、誰が加入者なのかがわかるだろう。
 
 08:51.900 --> 08:52.500
-Same thing.
+同じだ。
 
 08:52.500 --> 08:55.290
-When the logout button is clicked, we send that message out.
+ログアウトボタンがクリックされたら、そのメッセージを送信します。
 
 08:55.290 --> 08:59.790
-So we're translating some kind of a local unity event into a custom view event.
+つまり、ローカルユニティのイベントをカスタムビューのイベントに変換しているわけだ。
 
 09:00.640 --> 09:02.560
-As part of a general best practice.
+一般的なベストプラクティスの一環として。
 
 09:02.560 --> 09:07.210
-Whatever we subscribe to inside the destroy, here we unsubscribe.
+destroyの内部でsubscribeしたものは、ここでunsubscribeする。
 
 09:07.510 --> 09:12.820
-Now, up above in this class, we subscribe to listen to the Logout command and here the view as saying
+さて、このクラスの上の方では、ログアウトコマンドを受信するようにサブスクライブしています。
 
 09:12.820 --> 09:20.110
-Any time any concern sends the logout command, I'll capture that and I'll clear out my fields and I
+ログアウトコマンドが送信されたら、それを捕捉してフィールドを消去し、次のようにする。
 
 09:20.110 --> 09:22.360
-will update my button Click ability.
+ボタンをクリックします。
 
 09:22.630 --> 09:25.750
-And the View is also listening to log in submission.
+また、ビューはログイン投稿をリスニングしています。
 
 09:25.960 --> 09:31.660
-Whenever that happens, it gets the UI prepared for submitting and the views also listening to whenever
+そのたびに、UIは投稿の準備をし、ビューもまた投稿を待ち受けます。
 
 09:31.660 --> 09:32.950
-login is completed.
+ログインが完了する。
 
 09:33.250 --> 09:38.440
-This is the largest method I think in this particular class, but it works exactly like the non mini
+このクラスで一番大きなメソッドだと思いますが、ミニ以外のメソッドとまったく同じように動作します。
 
 09:38.440 --> 09:39.040
-version.
+バージョン
 
 09:39.040 --> 09:42.940
-So you can go look at that one and see how I describe the details here.
+だから、そちらをご覧になって、私がどのように詳細を説明したかをご覧になってください。
 
 09:42.940 --> 09:44.650
-We're really doing the same things.
+本当に同じことをしている
 
 09:45.130 --> 09:48.430
-Just for example sake, I have a bit of extra code here.
+例として、ここに少し余分なコードを書いておきます。
 
 09:48.430 --> 09:55.060
-So the highlighted portion here is showing that each command comes along with any data that's relevant.
+ハイライトされている部分は、各コマンドに関連するデータが含まれていることを示している。
 
 09:55.390 --> 10:01.870
-So when the login is completed, we have the user data and we can show that out to the UI if we like,
+ログインが完了したら、ユーザーデータをUIに表示することができます、
 
 10:02.350 --> 10:10.330
-just to demonstrate a complete alternative to that approach from any scope, including the view, we
+ビューを含むどのスコープからでも、このアプローチの完全な代替案を示すことができます。
 
 10:10.330 --> 10:14.350
-can ask the context, Hey, go get me this particular model.
+このモデルを持って来てくれ。
 
 10:14.350 --> 10:20.950
-It will get that model if it exists and we can do anything we like, including debug logging out those
+そのモデルが存在するのであれば、そのモデルを取得し、デバッグのログアウトを含め、好きなことをすることができます。
 
 10:20.950 --> 10:21.700
-values.
+その値をデバッグすることもできる。
 
 10:21.700 --> 10:25.240
-So this is another example of the flexibility.
+これも柔軟性の一例だ。
 
 10:25.240 --> 10:31.450
-The convention here is probably it's best that you send messaging along with the command.
+ここでの慣例では、コマンドと一緒にメッセージを送るのがベストだろう。
 
 10:31.450 --> 10:37.480
-So there's less coupling, there's less knowledge of this concern about the structure of another concern.
+つまり、カップリングが少なくなり、この懸念が他の懸念の構造について知ることが少なくなる。
 
 10:37.480 --> 10:43.510
-The highlighted code here is suggesting that, hey, the view knows which data to look at in which model,
+このハイライトされたコードは、ビューがどのモデルのどのデータを見るべきかを知っていることを示唆している、
 
 10:43.510 --> 10:45.790
-which could be considered overreach.
+これは行き過ぎと言えるかもしれない。
 
 10:45.790 --> 10:52.900
-But depending on the use case you have and also depending how your UI is structured, it may make perfectly
+しかし、ユースケースによっては、またUIの構造によっては、それは完璧なものになるかもしれない。
 
 10:52.900 --> 10:57.730
-good sense for your view to go into particular models for rendering that data.
+しかし、ユースケースやUIの構造によっては、そのデータをレンダリングするために特定のモデルを使用することは非常に理にかなっています。
 
 10:57.730 --> 11:00.820
-We don't want the view to directly affect the model data.
+ビューがモデルのデータに直接影響を与えることは避けたい。
 
 11:00.820 --> 11:02.470
-That would be a bad practice.
+それは悪い習慣だ。
 
 11:02.470 --> 11:04.180
-That's the end of the View class here.
+これでViewクラスは終わりです。
 
 11:04.180 --> 11:09.010
-Now, before we move on, I want to take a moment and look into the command manager and the command
+さて、次に進む前に、コマンドマネージャーとコマンドについて少し調べてみたいと思います。
 
 11:09.010 --> 11:12.550
-structure because we haven't looked at that in previous example code before.
+というのも、以前のサンプルコードでは、この構造を見ていなかったからだ。
 
 11:12.850 --> 11:19.450
-So remember here in the same class up above in the initialize, we're adding command listeners.
+上のinitializeでコマンドリスナーを追加していることを思い出してほしい。
 
 11:19.450 --> 11:22.060
-So let's take a look at what exactly that does.
+では、具体的に何をするのか見てみよう。
 
 11:22.060 --> 11:24.540
-We'll start looking at the context for review.
+まずは復習のためにコンテキストを見ていきます。
 
 11:24.550 --> 11:29.800
-So remember that the context class is important because it has the model locator and the command manager
+コンテキストクラスが重要なのは、モデルロケーターとコマンドマネージャーを持っているからだ。
 
 11:30.100 --> 11:32.830
-Relevant to this discussion is the command manager.
+この議論に関係するのはコマンド・マネージャーだ。
 
 11:32.830 --> 11:37.450
-You can think of the command manager as a list of different commands that have been registered.
+コマンド・マネージャーは、登録されている様々なコマンドのリストと考えることができる。
 
 11:37.450 --> 11:44.530
-So it's API allows you to add in listening to those commands and invoke any commands to allow for flexibility.
+そのため、APIによってこれらのコマンドのリスニングを追加したり、任意のコマンドを呼び出したりして柔軟に対応することができる。
 
 11:44.530 --> 11:49.960
-The command must be an AI command, but notice that that I command it's mostly a marker interface.
+AIコマンドでなければならないが、Iコマンドはほとんどマーカーインターフェイスであることに注意してほしい。
 
 11:49.960 --> 11:54.070
-We don't have any guaranteed implementation depending on the needs you have.
+このようなニーズに応じて、実装を保証するものではありません。
 
 11:54.070 --> 12:01.510
-You may want to have an alternative implementation here requiring some sort of execute and undo functionality.
+実行機能と取り消し機能を必要とする別の実装が必要かもしれません。
 
 12:01.510 --> 12:08.470
-But for the base use case that I have in these samples, I'm just passing it along as a dumb object
+しかし、このサンプルのような基本的な使用例では、ただ単にダムオブジェクトとして渡しているだけだ。
 
 12:08.470 --> 12:09.400
-of parameters.
+パラメータ
 
 12:09.400 --> 12:14.470
-Let's take a look at one of the examples that I use in the case of the log in submitted.
+ログインの例を見てみよう。
 
 12:14.830 --> 12:16.270
-Let's look at the structure.
+構造を見てみましょう。
 
 12:16.270 --> 12:22.360
-We can see that the log in submitted command like it's required implements the interface of I command
+提出されたログインのコマンドはIコマンドのインターフェイスを実装していることがわかる。
 
 12:22.360 --> 12:25.660
-as far as the implementation inside its custom to its own needs.
+のインターフェイスを実装していることがわかる。
 
 12:25.660 --> 12:31.060
-So all it really does is have a constructor that takes exactly the data we need in this type of operation
+つまり、コンストラクタがあり、そのコンストラクタがこのタイプの操作に必要なデータを受け取るということだ。
 
 12:31.060 --> 12:32.730
-and holds it here locally.
+そしてそれをローカルに保持する。
 
 12:32.740 --> 12:34.780
-In a moment we'll see where it gets invoked.
+そして、そのデータがどこで呼び出されるのかを見てみよう。
 
 12:34.780 --> 12:39.790
-But remember, it's the view that is listening for this command and whenever log in submitted command
+しかし、このコマンドをリッスンしているのはビューであり、ログイン時に送信されるコマンドであることを忘れてはならない。
 
 12:39.790 --> 12:45.610
-happens, it responds by updating the UI and using that user data that's passed along that we see here
+UIが更新され、渡されたユーザーデータが使われます。
 
 12:45.610 --> 12:47.200
-to help populate the UI.
+UIを更新するのに役立つ。
 
 12:47.230 --> 12:48.910
-That's it for the login view.
+ログイン画面は以上です。
 
 12:48.910 --> 12:52.780
-So back here at the high level login mini class, we've looked at the view.
+ログインのミニクラスに戻って、ビューを見てみましょう。
 
 12:52.780 --> 12:54.910
-Now finally we'll look at the controller.
+最後にコントローラを見てみましょう。
 
 12:54.910 --> 12:56.380
-That's the last piece of the puzzle.
+これがパズルの最後のピースです。
 
 12:56.380 --> 13:02.680
-The login controller extends base controller and as with any case, using the mini MVCs, extending
+ログインコントローラはベースコントローラを継承しています。
 
 13:02.680 --> 13:04.030
-the base is optional.
+ベースはオプションです。
 
 13:04.030 --> 13:08.620
-Here we're getting some free functionality, which I talked about in earlier code samples, so I'll
+ここでは、以前のコードサンプルでお話ししたような自由な機能を手に入れることができます。
 
 13:08.620 --> 13:09.690
-skip that for now.
+をスキップします。
 
 13:09.700 --> 13:13.030
-Inside the initialize, the controller has references.
+initializeの内部では、コントローラがリファレンスを持っています。
 
 13:13.030 --> 13:15.390
-Now to the other major concerns.
+次に他の主要な問題です。
 
 13:15.400 --> 13:21.790
-Notice what we do here is we wire up listening to any of those events that are interesting to us.
+ここで注目すべきは、私たちにとって興味深いイベントをリッスンするように配線していることです。
 
 13:21.790 --> 13:26.020
-We listen to the model, we listen to the view and we listen to the service.
+モデル、ビュー、サービスをリッスンします。
 
 13:26.350 --> 13:28.870
-You can begin to see that the controller is the glue.
+コントローラーが接着剤であることがわかります。
 
 13:28.870 --> 13:34.330
-It's the middle person that sits between these different layers, listens to an event of one, and as
+異なるレイヤーの間に位置する中間的な存在であり、レイヤーのイベントをリッスンし、レイヤーのイベントを処理する。
 
 13:34.330 --> 13:37.150
-we'll see in a moment, is be able to send communication out.
+13:37.150 --> 13:37.150 --> 13:37.150 --> 13:37.150 --> 13:37.150 --> 13:37.150 --> 13:37.150
 
 13:37.150 --> 13:38.560
-Here's a perfect example.
+これが完璧な例だ。
 
 13:38.560 --> 13:43.750
-We're listening to The View log in, and when that happens, we invoke a command.
+ビューのログインを聞き、その時にコマンドを実行する。
 
 13:43.750 --> 13:49.840
-So imagine kind of listening with two cups and a long string, a very coupled type of communication.
+つまり、2つのカップと長い文字列でリスニングしているようなものだ。
 
 13:49.840 --> 13:54.820
-Here the controller is listening directly to the view for a specific event to happen.
+ここでは、コントローラがビューの特定のイベントを直接リッスンしています。
 
 13:54.820 --> 13:56.140
-That's what we see here.
+これがその例です。
 
 13:56.140 --> 14:00.070
-Then it's going to translate that to a much more broad radio station type.
+そして、それをもっと幅広いラジオ局のタイプに変換するのです。
 
 14:00.130 --> 14:02.180
-Broadcast when it sends the command out?
+ブロードキャスト？
 
 14:02.200 --> 14:03.010
-Absolutely.
+もちろんです。
 
 14:03.010 --> 14:08.230
-Any concern in this whole project that has access to the same context, which all four of our tiers
+同じコンテキストにアクセスできるこのプロジェクト全体の懸念は、私たちの4つの層のすべてです。
 
 14:08.230 --> 14:14.170
-have access to the same context, we'd be able to subscribe and listen to this log in submitted command
+このプロジェクト全体の中で同じコンテキストにアクセスできるものであれば、私たちはサブスクライブすることができ、送信されたコマンドのログを聞くことができる。
 
 14:14.170 --> 14:15.460
-that gets fired here.
+ここで実行される
 
 14:15.460 --> 14:19.240
-And that consuming scope doesn't necessarily know which scope sent it.
+そして、どのスコープが送信したコマンドなのかは、受信側のスコープにはわからない。
 
 14:19.240 --> 14:22.870
-And we think of that as a good practice that is decoupled communication.
+そして、それが通信の分離というグッドプラクティスだと考えています。
 
 14:22.870 --> 14:27.970
-So again, we invoke that command and then we tell the service to start the doing the login process.
+このコマンドを実行し、ログイン処理を開始するようサービスに指示します。
 
 14:27.970 --> 14:35.590
-Whenever the log out happens, we translate that view event out into a command When the service is complete
+ログアウトが起こるたびに、そのビューイベントをコマンドに変換する サービスが完了したら
 
 14:35.590 --> 14:42.010
-and it has logged in successfully, we're able to update the model directly, which is a best practice.
+ログインに成功したら、モデルを直接更新することができます。
 
 14:42.010 --> 14:45.010
-Controllers can read and write to the model.
+コントローラーはモデルに対して読み書きできます。
 
 14:45.010 --> 14:47.020
-And finally we send out a command.
+そして最後にコマンドを送信します。
 
 14:47.020 --> 14:51.310
-Now you have lots of different ways that you can structure these communications.
+このように、様々な方法で通信を構成することができます。
 
 14:51.310 --> 14:58.000
-For example, here, instead of directly updating the model and sending the command, we could, in
+例えば、ここではモデルを直接更新してコマンドを送信するのではなく、以下のようにすることができる。
 
 14:58.000 --> 15:05.410
-theory, just update the model and any concern that wants to know when the model is updated would directly
+理論的には、モデルを更新するだけで、モデルが更新されたことを知りたがっているすべての関係者が直接
 
 15:05.410 --> 15:07.720
-subscribe to the model that's feasible.
+そのモデルを購読すればいい。
 
 15:07.720 --> 15:13.870
-Another alternative is, instead of this controller directly impacting the model by setting values,
+別の方法としては、このコントローラーが値を設定することでモデルに直接影響を与えるという方法もある、
 
 15:13.870 --> 15:20.260
-we could only send out the command, and some other concern would be responsible to listen to that command
+コマンドを送信するだけで、そのコマンドを聞くのは別の役割になります。
 
 15:20.260 --> 15:21.640
-and update the model.
+そしてモデルを更新する。
 
 15:21.640 --> 15:26.890
-Now, for a simple project where we have one model and one controller, what I'm showing here is probably
+1つのモデルと1つのコントローラがある単純なプロジェクトの場合、ここで示しているのはおそらく
 
 15:26.890 --> 15:33.610
-most appropriate, but in a much larger project, you may have a controller and model pair for different
+しかし、もっと大規模なプロジェクトでは、コントローラとモデルのペアを異なる
 
 15:33.610 --> 15:35.440
-areas of the application.
+アプリケーションの異なる領域に対してコントローラとモデルのペアを持つかもしれません。
 
 15:35.440 --> 15:42.100
-So one controller might just say, Hey, I know when I get this particular message in, I just go tell
+つまり、あるコントローラーは、「このメッセージを受け取ったら、次のように伝えよう」と言うかもしれない。
 
 15:42.100 --> 15:46.660
-with a command to the other concerns how they should be reacting.
+というような指示を出す。
 
 15:46.660 --> 15:52.450
-This allows you to decouple even the controller logic into multiple controllers.
+これにより、コントローラーのロジックさえも複数のコントローラーに切り離すことができる。
 
 15:52.450 --> 15:56.530
-And finally, any time the model changes, we send out a command.
+そして最後に、モデルが変化するたびにコマンドを送信する。
 
 15:56.530 --> 15:58.210
-That's it for this complete demo.
+今回のデモは以上です。
 
 15:58.210 --> 16:00.280
-Let's take another look at the running app.
+実行中のアプリをもう一度見てみましょう。
 
 16:00.280 --> 16:01.150
-So here we are.
+では、ここで。
 
 16:01.150 --> 16:04.150
-Finally, we'll take another look at the running example.
+最後に、実行中の例をもう一度見てみよう。
 
 16:16.350 --> 16:18.240
-I'll use the correct password here.
+ここでは正しいパスワードを使います。
 
 16:22.220 --> 16:23.720
-And we get success.
+成功です。
 
 16:24.610 --> 16:25.990
-That's it for this demo.
+今回のデモはここまで。

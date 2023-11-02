@@ -1,196 +1,196 @@
 WEBVTT
 
 00:00.520 --> 00:03.490
-The Unity MVC framework.
+Unity MVCフレームワーク。
 
 00:03.490 --> 00:10.750
-I created the Unity UMBC framework several years ago based on my learnings at the time and my architectural
+UnityのUMBCフレームワークは、数年前に当時の私の学習と私のアーキテクチャに基づいて作りました。
 
 00:10.750 --> 00:11.460
-goals.
+目標です。
 
 00:11.470 --> 00:17.140
-The benefits of using this particular framework I find are that it is proven and based on a lot of the
+この特別なフレームワークを使うことの利点は、実績があること、そしてそのフレームワークの多くに基づいていることです。
 
 00:17.140 --> 00:20.310
-principles and patterns that we've seen before in the course.
+00:20.320 --> 00:20.320 --> 00:20.320 --> 00:20.320
 
 00:20.320 --> 00:26.080
-While the version exists only for unity, in theory, the patterns there are language agnostic, so
+このバージョンはユニティ用としてのみ存在するが、理論上、そこにあるパターンは言語にとらわれない。
 
 00:26.080 --> 00:28.920
-you could bring it to different platforms if you chose.
+を選択すれば、異なるプラットフォームにも対応させることができます。
 
 00:28.930 --> 00:35.740
-It brings a more testable environment to unity because each area of your code is separated and decoupled.
+コードの各領域が分離され、デカップリングされるため、よりテストしやすい環境をユニティにもたらします。
 
 00:35.740 --> 00:39.940
-And like many of the established architectures, we've taken a look at unity.
+そして、多くの確立されたアーキテクチャのように、unityも見てきました。
 
 00:39.940 --> 00:45.010
-And this allows for faster development and much more efficient maintenance on your projects.
+これは、より迅速な開発と、プロジェクトにおけるより効率的なメンテナンスを可能にします。
 
 00:45.010 --> 00:50.860
-At the time of creation, I had a mono behavior centric flow to how I was developing in unity.
+作成当時、私はunityでの開発方法をモノビヘイビア中心の流れで行っていました。
 
 00:50.920 --> 00:53.860
-So I built this system to work in the same way.
+だから、このシステムも同じように動くように作ったんだ。
 
 00:53.860 --> 00:58.300
-So one of the key features here is that it heavily uses mono behaviors.
+このシステムの大きな特徴は、monoのビヘイビアを多用していることです。
 
 00:58.300 --> 01:01.780
-Each of the four concerns extends mono behavior.
+4つの関心事はそれぞれモノビヘイビアを拡張しています。
 
 01:01.780 --> 01:07.060
-This means that you can hang each of these concerns on a game object, which is great using all the
+つまり、それぞれの関心事をゲームオブジェクトにぶら下げることができる。
 
 01:07.060 --> 01:12.550
-familiar workflows we have in unity for game objects and components, including serializing fields on
+でのフィールドのシリアライズなど、unityでゲームオブジェクトやコンポーネントのために持っているおなじみのワークフローを使うことができます。
 
 01:12.550 --> 01:13.570
-any of the concerns.
+のフィールドのシリアライズを含む。
 
 01:13.570 --> 01:17.890
-For example, in the screenshot here you can see one of the models.
+例えば、このスクリーンショットでは、モデルの1つを見ることができます。
 
 01:17.890 --> 01:23.920
-The model is a mono behavior, so it can have serialized fields and sit nicely in your unity inspector
+このモデルはmonoビヘイビアなので、シリアライズされたフィールドを持つことができ、unityインスペクタにうまく配置することができます。
 
 01:23.920 --> 01:24.250
-view.
+ビューに表示されます。
 
 01:24.250 --> 01:27.550
-So what's the high level structure of you and VCs?
+では、あなたとVCのハイレベルな構造は？
 
 01:27.550 --> 01:34.090
-Well, we have the familiar m v from the patterns we've looked at before, where each of those four
+まあ、以前見たパターンでおなじみのm vがあります。
 
 01:34.090 --> 01:36.130
-concerns extends mono behavior.
+のようにモノの振る舞いを拡張しています。
 
 01:36.130 --> 01:42.700
-Then inside my game code, I would create an app concept, which is also amount of behavior.
+それから、ゲームコードの中にアプリのコンセプトを作る。
 
 01:42.700 --> 01:48.430
-That's the one thing in my scene under which all of this sits again, some benefits of the mono behavior
+そして、そのコンセプトの下に、モノのビヘイビアがある。
 
 01:48.430 --> 01:50.740
-approach as it feels very native to unity.
+のアプローチはunityにとてもネイティブな感じがします。
 
 01:50.740 --> 01:55.360
-Things are sitting in the scene on game objects and can be separated, as I like.
+モノはシーン内のゲームオブジェクトに置かれ、好きなように分離できる。
 
 01:55.360 --> 01:58.270
-Now in this chapter, we're just doing an overview of this.
+この章では、この概要を説明します。
 
 01:58.270 --> 02:01.000
-We're eventually going to move on to a different framework.
+いずれは別のフレームワークに移行するつもりです。
 
 02:01.000 --> 02:04.480
-Here's a snippet from how the UMBC system works.
+UMBCのシステムの一部を紹介します。
 
 02:04.480 --> 02:08.680
-There are some takeaways from this older system that I still really like.
+この古いシステムから学んだことがいくつかある。
 
 02:08.680 --> 02:13.480
-First, in a lot of the concerns, like the base controller we see here, I use generics.
+まず、ベースとなるコントローラーのように、ジェネリックを使うことだ。
 
 02:13.480 --> 02:19.450
-Generics are a fantastic way in C-sharp to create some reusable template classes.
+ジェネリックスはC-sharpで再利用可能なテンプレートクラスを作成する素晴らしい方法です。
 
 02:19.450 --> 02:25.840
-Secondly, the workflow I have here allows for strong typing, which is great in the specific instances
+第二に，このワークフローは強力な型付けを可能にする。
 
 02:25.840 --> 02:27.100
-of how my game flows.
+このワークフローは、具体的な試合の流れに即している。
 
 02:27.100 --> 02:32.770
-I'm able to get the auto completion, which shows me the properties and methods that make sense for
+自動補完機能で、プロパティーとメソッドを表示することができます。
 
 02:32.770 --> 02:37.630
-the context and the framework introduces the concepts we've learned from the design patterns.
+このフレームワークはデザインパターンで学んだ概念を導入しています。
 
 02:37.630 --> 02:45.070
-We have both the command manager for high level FA Communication in a more decoupled fashion and unity
+私たちは、より分離された形で、高レベルのFAコミュニケーションのためのコマンド・マネージャーと、ユニティーを持っています。
 
 02:45.070 --> 02:48.670
-events for local level, lower level communication.
+ローカル・レベルの通信のためのイベントです。
 
 02:48.670 --> 02:53.350
-The key difference here, as we discussed when we talked about these patterns before, is that the command
+ここでの重要な違いは、以前これらのパターンについて話したときに説明したように、コマンドが
 
 02:53.350 --> 02:58.750
-manager concept doesn't need for the sender and receiver to have references to each other, whereas
+managerの概念では送信側と受信側がお互いを参照する必要がないのに対し
 
 02:58.750 --> 03:04.420
-the Unity event concept requires that the observer have a reference to the sender.
+Unityのイベントコンセプトではオブザーバーが送信者への参照を持っている必要があります。
 
 03:04.420 --> 03:09.550
-This gives the framework two tiers of how it can communicate between the major concerns.
+これにより、フレームワークは主要な関心事の間でどのように通信できるかを2つの階層に分けることができる。
 
 03:09.550 --> 03:15.490
-So at the time that I created this particular framework, it embraced the principles in how I approached
+だから、私がこのフレームワークを作った当時は、私がこのフレームワークにどのようにアプローチするかという原則を受け入れていた。
 
 03:15.490 --> 03:16.690
-Unity projects.
+Unityのプロジェクト。
 
 03:16.690 --> 03:20.410
-As I mentioned, it was a very mono behavior centric approach.
+先ほども言ったように、非常にモノ・ビヘイビア中心のアプローチでした。
 
 03:20.410 --> 03:23.020
-The project is still alive and can be utilized.
+このプロジェクトはまだ生きており、活用することができます。
 
 03:23.020 --> 03:27.130
-For the sake of this course, I'm going to recommend we choose a different framework that I'll talk
+このコースでは、別のフレームワークを選択することをお勧めします。
 
 03:27.130 --> 03:27.880
-about next.
+03:27.880 --> 03:27.880
 
 03:27.880 --> 03:34.690
-But I'm mentioning this project as a valid example in my architectural portfolio in a place from which
+しかし、このプロジェクトは、私の建築ポートフォリオにおける有効な例として、次のような場所で紹介している。
 
 03:34.690 --> 03:38.440
-I learned a lot overall in this section, we talked about architectures.
+このセクションでは、全体的にアーキテクチャーについて多くのことを学びました。
 
 03:38.440 --> 03:42.610
-We saw the pros and cons of using any given established architecture.
+どのような確立されたアーキテクチャーを使うか、その長所と短所を見た。
 
 03:42.610 --> 03:47.440
-We talked about some of the differences in key established architectures we can choose from.
+私たちが選択できる主な確立されたアーキテクチャの違いについて話しました。
 
 03:47.440 --> 03:50.710
-We saw the drawbacks of using the no architecture approach.
+ノーアーキテクチャーの欠点について。
 
 03:50.710 --> 03:55.960
-While that feels very natural, especially as a beginner, it ultimately doesn't pay dividends.
+特に初心者のうちは、それがとても自然に感じられるが、最終的に配当は得られない。
 
 03:55.960 --> 04:01.840
-And we saw a list of some of the unity centric frameworks we can choose for doing in game architecture,
+そして、ゲームアーキテクチャを行うために選択できるunity中心のフレームワークのリストを見ました、
 
 04:01.840 --> 04:05.740
-including the you and VC's project that I created several years ago.
+私が数年前に作成したyouとVCのプロジェクトも含まれています。
 
 04:05.740 --> 04:11.770
-Next, let's discuss a different framework, the Mini and VC's framework, which I created more recently.
+次に、私が最近作った別のフレームワーク、ミニとVCのフレームワークについて説明しましょう。
 
 04:11.770 --> 04:17.260
-This is the culmination of all the lessons we have here throughout the course the design principles,
+これは、このコースで学んだ設計原則の集大成です、
 
 04:17.260 --> 04:21.400
-the design patterns, learnings from other architectures, including my own.
+デザインパターン、私自身のものも含めた他のアーキテクチャからの学び。
 
 04:21.400 --> 04:26.710
-We'll look at an overview of the system, the pros and cons of using it and how to get started.
+このような、「某有名企業」「某有名企業」「某有名企業」「某有名企業」「某有名企業」「某有名企業」「某有名企業」「某有名企業」「某有名企業
 
 04:26.710 --> 04:32.230
-This section on architectures was especially thorough and had a lot of information.
+アーキテクチャーに関するこのセクションは特に充実しており、情報量も多かった。
 
 04:32.230 --> 04:38.710
-Feel free to rewatch some sections to get those concepts a little bit more deeply ingrained and we'll
+このセクションは特に充実しており、多くの情報を得ることができた。
 
 04:38.710 --> 04:40.540
-move on together to the next section.
+そして次のセクションに進みます。
 
 04:40.540 --> 04:41.290
-Thank you.
+ありがとうございました。

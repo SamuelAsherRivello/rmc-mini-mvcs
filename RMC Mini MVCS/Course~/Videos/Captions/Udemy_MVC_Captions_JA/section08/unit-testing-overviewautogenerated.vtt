@@ -1,358 +1,358 @@
 WEBVTT
 
 00:00.210 --> 00:02.340
-The unit testing overview.
+ユニットテストの概要。
 
 00:02.340 --> 00:04.220
-First, a bit of context.
+まずは文脈を少し。
 
 00:04.230 --> 00:11.790
-As your projects grow with more scripts, more methods, more complexity, it can be difficult to ensure
+プロジェクトが大きくなり、スクリプトやメソッドが増え、複雑になってくると、ユニットテストを確実に行うことが難しくなります。
 
 00:11.790 --> 00:14.610
-that new code doesn't break any old code.
+新しいコードが古いコードを壊さないようにするのは難しいことです。
 
 00:14.640 --> 00:20.020
-Automated testing can help ensure that your code is functioning as you expect.
+自動化されたテストは、あなたのコードが期待通りに機能しているかを確認するのに役立ちます。
 
 00:20.040 --> 00:26.640
-Automated testing helps us by finding out how and where bugs occur earlier in the process instead of
+自動化されたテストは、バグがどこでどのように発生するのかをプロセスの早い段階で発見してくれます。
 
 00:26.640 --> 00:31.140
-the much more expensive option of waiting for your end users to report these bugs.
+エンドユーザーがバグを報告してくれるのを待つという、よりコストのかかる方法ではなくね。
 
 00:31.140 --> 00:37.650
-So you can use MVC architectures without testing and you can use testing without MVC architecture.
+つまり、テストなしでMVCアーキテクチャーを使うこともできるし、MVCアーキテクチャーなしでテストを使うこともできる。
 
 00:37.650 --> 00:41.140
-So why is it important to talk about these topics together?
+では、なぜこれらのトピックを一緒に話すことが重要なのでしょうか？
 
 00:41.160 --> 00:46.860
-It's because the combination of these two technologies is incredibly powerful by using an architecture
+それは、この2つの技術の組み合わせが、アーキテクチャを使うことで信じられないほど強力になるからです。
 
 00:46.860 --> 00:48.090
-like MVC.
+MVCのような。
 
 00:48.120 --> 00:54.450
-It helps ensure that your code is more decoupled, that each class has a single purpose and that solutions
+MVCのようなアーキテクチャーを使うことで、コードがより分離され、各クラスが単一の目的を持ち、解決策を提供できるようになります。
 
 00:54.450 --> 00:55.140
-are simpler.
+よりシンプルになります。
 
 00:55.140 --> 00:58.060
-All of these are traits for more testable code as well.
+これらは全て、よりテストしやすいコードの特徴でもある。
 
 00:58.080 --> 01:04.740
-Adding testing to your project will add robustness, more confidence, and it encourages simple solutions,
+プロジェクトにテストを加えることで、堅牢性と信頼性が増し、シンプルな解決策を促すことができます、
 
 01:04.740 --> 01:09.090
-especially when enabled with test driven development, which we'll discuss.
+01:04.740 --> 01:09.090 テスト駆動開発では特にそうです。
 
 01:09.090 --> 01:12.690
-Adding unit testing to your project and workflow will save time.
+プロジェクトやワークフローにユニットテストを追加することで、時間を節約することができます。
 
 01:12.690 --> 01:15.620
-It saves planning, development and maintenance.
+計画、開発、メンテナンスの手間が省けます。
 
 01:15.630 --> 01:21.450
-It adds more confidence to your code, and with that confidence you can have much more boldness in your
+コードに自信が持てるようになる。
 
 01:21.450 --> 01:22.460
-risk factors.
+01:21.450 --> 01:22.460
 
 01:22.470 --> 01:29.010
-Think about running all of your tests before a major refactor, and then after saving you time and giving
+01:21.450 --> 01:22.470 --> 01:29.010 大規模なリファクタリングの前にすべてのテストを実行することを考えてみてください。
 
 01:29.010 --> 01:31.530
-you more confidence that the refactor worked well.
+01:31.530 --> 01:31.560 --> 01:31.560
 
 01:31.560 --> 01:33.750
-Testing is both an art and a science.
+テストは芸術であり、科学でもある。
 
 01:33.750 --> 01:38.480
-With more research and more practice, each developer can develop their own art.
+もっと研究し、もっと練習することで、開発者はそれぞれ自分の芸術を開発することができる。
 
 01:38.490 --> 01:43.050
-Also low level testing that's testing things at the unit level.
+01:38.490→01:43.050低レベルテストはユニットレベルでテストすることです。
 
 01:43.620 --> 01:49.200
-Individual methods, let's say, and the practices and evolution of your software that will come from
+個々のメソッドと、そこから生まれるソフトウェアの実践と進化。
 
 01:49.200 --> 01:56.370
-that encourages higher level discussion as well about the architectural choices, dependencies or lack
+また，アーキテクチャの選択，依存関係，あるいはその欠如について，より高度な議論を促すこともできる。
 
 01:56.370 --> 02:00.840
-thereof throughout your code and how coupled or decoupled these systems are.
+また、そのようなシステムがどのように結合しているのか、あるいは結合していないのかについても。
 
 02:00.870 --> 02:06.980
-This is all part of a larger conversation which invites bringing good organization to your software.
+これはすべて、ソフトウェアに優れた組織をもたらすという、より大きな会話の一部なのです。
 
 02:06.990 --> 02:13.530
-Our first goal, especially new to testing, is to make sure that a specific method has the desired
+私たちの最初の目標は、特にテストを始めたばかりの人は、特定のメソッドが期待通りのものであることを確認することである。
 
 02:13.530 --> 02:14.300
-results.
+の結果を得ることである。
 
 02:14.310 --> 02:21.060
-Once that's done, you can now test it with unexpected conditions and corner cases that may invite discussion
+それができたら、今度は予期せぬ条件やコーナーケースを想定してテストすることができる。
 
 02:21.060 --> 02:24.390
-and analysis over the structure of the class itself.
+クラスの構造そのものを分析することができます。
 
 02:24.390 --> 02:28.230
-Then you can look at the purpose of the system that that class sits in.
+そして、そのクラスが置かれているシステムの目的に目を向けることができる。
 
 02:28.230 --> 02:35.430
-And as I mentioned, this type of analysis gives us an opportunity and a format to look at the large
+そして、このような分析は、私たちに大規模な
 
 02:35.430 --> 02:37.290
-scale solution we have before us.
+02:37.290 --> 02:37.290
 
 02:37.290 --> 02:37.980
-In software.
+ソフトウェアで
 
 02:37.980 --> 02:43.250
-There's many different types of testing and whether you know it or not, you're already doing testing.
+テストには様々な種類があり、それを知ってか知らずか、あなたはすでにテストを行っている。
 
 02:43.260 --> 02:46.980
-A few of the most common types of tests are a smoke test.
+その代表的なものがスモークテストです。
 
 02:46.980 --> 02:50.730
-This is a rather casual test of does it work For me?
+このテストは "私のために働くかどうか "という気軽なテストです。
 
 02:50.730 --> 02:55.380
-And for many of us, this may be the only type of project testing we're doing.
+私たちの多くは、これが唯一のプロジェクトテストかもしれない。
 
 02:56.030 --> 03:03.050
-Every time you do some new code, you run the app like a user or play the game like a player and you
+新しいコードを書くたびに、ユーザーのようにアプリを実行し、プレイヤーのようにゲームをプレイする。
 
 03:03.050 --> 03:08.300
-see does that particular path through the app or the game work the way I expect it to?
+アプリやゲームの特定のパスが、期待通りに動くかどうかを確認するんだ。
 
 03:08.330 --> 03:14.210
-Then there's user testing where periodically, perhaps after a weekly build, you invite some users
+そして、定期的に、おそらく毎週ビルドした後に、何人かのユーザーを招待するユーザーテストがある。
 
 03:14.210 --> 03:16.340
-or players to give the game a try.
+を招待します。
 
 03:16.370 --> 03:21.880
-Here you're looking for not just does it have any bugs, but does it meet the user's expectations?
+ここではバグがないかだけでなく、ユーザーの期待に応えられているかどうかをチェックします。
 
 03:21.890 --> 03:23.840
-Is it fun to play things like that?
+そういうプレイは楽しいか？
 
 03:23.840 --> 03:30.320
-And with the unit test, you're looking at a very small section of the experience, perhaps just a single
+そして、ユニットテストでは、体験のごく一部、おそらくはたった一部分を見ています。
 
 03:30.320 --> 03:34.790
-method call or a small series of calls as systems work together.
+メソッドの呼び出しや、システムが連動して呼び出される一連の呼び出しなどです。
 
 03:34.790 --> 03:38.120
-And you're asking, does it work as it's intended to work?
+そして、それが意図したとおりに機能するのか、ということだ。
 
 03:38.150 --> 03:43.280
-As I mentioned, we're already doing smoke testing as a fundamental way to approach projects.
+すでに申し上げたように、私たちはプロジェクトに取り組む基本的な方法としてスモークテストを行っています。
 
 03:43.280 --> 03:45.410
-So let's imagine a simple example here.
+ここで簡単な例を想像してみよう。
 
 03:45.410 --> 03:50.240
-If we had a click the button app, which has a button, and when you click it, you win.
+ボタンをクリックするアプリがあったとして、そのアプリにはボタンがあり、それをクリックすると勝利となる。
 
 03:50.360 --> 03:52.730
-We could add some code to that.
+コードを追加すればいい
 
 03:52.730 --> 03:55.040
-Compile and run the experience.
+コンパイルして実行します。
 
 03:55.040 --> 03:59.670
-Click the one button and see if it shows the victory text of you win.
+1つのボタンをクリックして、勝利のテキストが表示されるか確認してください。
 
 03:59.690 --> 04:05.120
-That would be a smoke test and you could pass that on to the user and see if it works for them.
+これはスモークテストであり、それをユーザーに伝えて、彼らがうまくいくかどうかを確認することができる。
 
 04:05.450 --> 04:11.470
-In both cases, this is a rather expensive test to perform and it's a very narrow usage of the code
+どちらの場合も、このテストは実行するにはかなりコストがかかるし、コードの使用範囲も狭い。
 
 04:11.480 --> 04:11.810
-here.
+ここで
 
 04:11.810 --> 04:17.570
-In this simple example, it may seem like we can capture all the use cases, but imagine a larger game
+この単純な例では、すべてのユースケースを捉えることができるように思えるかもしれませんが、もっと大きなゲームを想像してみてください。
 
 04:17.570 --> 04:19.940
-with core loops and metal loops.
+コア・ループとメタル・ループがある。
 
 04:20.210 --> 04:26.240
-You can't count on the developer or the user and the user testing, testing all the buttons, all the
+開発者もユーザーも、そしてユーザーも、すべてのボタン、すべてのユースケースをテストすることはできません。
 
 04:26.240 --> 04:30.200
-functionality, all the input and all the potential outcomes.
+機能性、すべての入力と潜在的な結果のすべてをテストする。
 
 04:30.200 --> 04:36.560
-When done properly, unit testing can capture more pathways through the code more quickly, and you
+単体テストが適切に行われれば、コードを通してより多くの経路をより迅速にとらえることができる。
 
 04:36.560 --> 04:40.550
-can run that suite of tests automatically more frequently over time.
+そして、そのテスト群を時間をかけてより頻繁に自動実行することができる。
 
 04:40.550 --> 04:44.690
-You're building a list of permanent tests that sit ready to be run.
+テストのリストを作成し、実行できるようにする。
 
 04:44.690 --> 04:48.050
-So you know that new code doesn't break any old functionality.
+新しいコードが古い機能を壊すことはない。
 
 04:48.050 --> 04:54.440
-Some teams operate under Agile development principles, which includes a chunk of your calendar called
+チームによっては、アジャイル開発の原則の下で運営されている。
 
 04:54.440 --> 04:55.130
-a sprint.
+スプリント
 
 04:55.130 --> 05:01.910
-For example, every two weeks the team commits to adding some new features each hour, day, week or
+例えば、2週間ごとに、1時間、1日、1週間、あるいは
 
 05:01.910 --> 05:02.540
-sprint.
+スプリント
 
 05:02.540 --> 05:05.240
-The team can run those automated tests again.
+チームは自動化されたテストを再度実行することができる。
 
 05:05.240 --> 05:07.610
-It's a great opportunity to catch any bugs.
+バグを発見する絶好の機会だ。
 
 05:07.610 --> 05:09.950
-So how are we running these tests exactly?
+では、具体的にどのようにテストを実行するのか？
 
 05:09.980 --> 05:13.730
-Well, unity has testing support within the Unity editor.
+Unityのエディターにはテスト機能があります。
 
 05:13.730 --> 05:19.660
-There's a dedicated window you can open up and manually execute those tests any time you like.
+専用のウィンドウを開いて、手動でテストを実行することができます。
 
 05:19.670 --> 05:21.220
-That's a great place to start.
+まずはそこからですね。
 
 05:21.230 --> 05:25.850
-Of course, automating this as possible to and recommended for larger projects.
+もちろん、これを自動化することは可能だし、大規模なプロジェクトでは推奨される。
 
 05:25.850 --> 05:32.150
-There's ways to tie this in with your version control so that every time you commit or commit to a certain
+バージョン管理システムと連動させることで、コミットするたびに、あるいはコミットするたびに、そのプロジェクトにコミットすることができます。
 
 05:32.150 --> 05:34.460
-branch, you can run those tests again.
+ブランチにコミットするたびにテストを実行することができます。
 
 05:34.760 --> 05:39.170
-Unity itself offers some services, including Unity Cloud build.
+Unity自身もUnity Cloud buildなどのサービスを提供しています。
 
 05:39.170 --> 05:45.170
-This mimics running those tests and building your game, but done on a server automatically doing it
+これは、テストの実行とゲームのビルドを模倣したものですが、サーバー上で自動的に実行されます。
 
 05:45.170 --> 05:47.960
-once a day or at whatever frequency makes sense.
+05:45.170 --> 05:47.960 --> 05:47.960
 
 05:47.960 --> 05:52.670
-Now, in general unity development, we're familiar with two different modes being inside the unity
+さて、一般的なunityの開発では、unityの中に2つの異なるモードがあることはよく知られています。
 
 05:52.670 --> 05:53.660
-experience.
+を経験する。
 
 05:54.020 --> 05:56.870
-Before we hit the play button, we're an edit mode.
+再生ボタンを押す前は編集モードです。
 
 05:56.870 --> 06:01.430
-Once we hit play until that scene stops, we're in play mode.
+そのシーンが止まるまで再生ボタンを押したら、プレイモードです。
 
 06:01.730 --> 06:05.780
-With unity testing, you're able to test in either of those two modes.
+unityテストでは、この2つのモードのどちらかでテストができる。
 
 06:05.780 --> 06:07.970
-Then there are several different ways to approach that.
+そして、そのアプローチにはいくつかの異なる方法がある。
 
 06:08.450 --> 06:13.580
-Some of the testing ideas that you'd have here would be to call a method and see if it gives you the
+あるメソッドを呼び出して、そのメソッドが次のような結果を出すかどうかを確認する。
 
 06:13.580 --> 06:14.720
-expected result.
+期待される結果
 
 06:14.720 --> 06:20.720
-Let's say we have a math system class with an ADD method and you just pass in known parameters and see
+例えば、ADDメソッドを持つ数学システムクラスがあるとしよう。
 
 06:20.720 --> 06:22.280
-if it matches the known result.
+その結果が既知のものと一致するかどうか。
 
 06:22.280 --> 06:27.200
-You can also have tests that ask specific questions about ED functionality.
+また、ED機能について特定の質問をするテストもできる。
 
 06:27.230 --> 06:33.920
-Did the Ed window pop up at the proper sizing where our game objects or the camera in the proper position
+ゲームオブジェクトやカメラが適切な位置にあるときに、Edウィンドウが適切なサイズでポップアップしたか？
 
 06:33.920 --> 06:35.480
-before the scene begins?
+シーンが始まる前に？
 
 06:35.480 --> 06:41.000
-Doing testing and edit mode when you can is a great place to start, so do that by default.
+できる限りテストやエディットモードを行うのがいい。
 
 06:41.000 --> 06:41.540
-Play mode.
+プレイモード
 
 06:41.570 --> 06:47.030
-Testing is incredibly useful, but it comes with the added complexity of runtime code.
+テストは非常に便利ですが、ランタイムコードの複雑さが伴います。
 
 06:47.710 --> 06:52.900
-Here, you're testing not just as a certain method return and result, but you're testing that within
+ここでは、特定のメソッドの戻り値や結果だけでなく、そのメソッドの中でテストしているのです。
 
 06:52.900 --> 06:57.100
-the larger lifecycle of game objects and other unity concepts.
+ゲームオブジェクトやその他のunityコンセプトの大きなライフサイクルの中でテストしているのです。
 
 06:57.200 --> 07:03.850
-And if it here is, you can test code that relies on a wake start update, etc. things that only execute
+もしそうなら、ウェイクスタートのアップデートに依存するコードなどをテストすることができます。
 
 07:03.850 --> 07:04.520
-at runtime.
+実行時にのみ実行されるもの
 
 07:04.540 --> 07:11.320
-Some testing ideas here are to see if a prefab once instantiated executes its start method properly.
+インスタンス化されたプレハブがそのスタートメソッドを正しく実行するかどうかをテストする。
 
 07:11.320 --> 07:12.720
-Without any exceptions.
+例外なく。
 
 07:12.730 --> 07:14.860
-You can test code over time.
+時間をかけてコードをテストできる。
 
 07:15.580 --> 07:17.890
-Does this loop execute properly?
+このループは正しく実行されていますか？
 
 07:17.890 --> 07:19.280
-After a few seconds.
+数秒後
 
 07:19.300 --> 07:21.940
-You can check runtime physics interactions.
+実行時の物理インタラクションを確認できます。
 
 07:21.940 --> 07:28.850
-How many bounces will a ball have in your 3D game before it stops testing the bouncing factor?
+3Dゲームでボールが何回バウンドしたらバウンド要素のテストをやめますか？
 
 07:28.870 --> 07:30.430
-A little bit more context here.
+もう少し詳しく
 
 07:30.430 --> 07:36.970
-So historically, unity did not offer testing built into the editor using the test run or window.
+unityは歴史的にtest runやwindowを使ったエディタに組み込まれたテストを提供していませんでした。
 
 07:36.970 --> 07:37.480
-We'll see.
+そうですね。
 
 07:37.480 --> 07:43.360
-In the many years since Unity first launched, this functionality was slowly added in and expanded.
+Unityが発売されてから長い年月の間に、この機能は徐々に追加され、拡張されていった。
 
 07:43.360 --> 07:45.220
-As of the latest version of Unity.
+Unityの最新バージョンでは
 
 07:45.220 --> 07:50.650
-We have everything we need to execute the types of tests we want in the ways we want them.
+必要なテストを必要な方法で実行するために必要なものは全て揃っている。
 
 07:50.650 --> 07:56.020
-There's never been a better time to add unit testing into your workflow, and together we'll see how
+ユニットテストをワークフローに追加する絶好の機会だ。
 
 07:56.020 --> 07:56.830
-to do that.
+07:56.020 --> 07:56.830
 
 07:57.250 --> 07:58.090
-Thanks.
+ありがとう。

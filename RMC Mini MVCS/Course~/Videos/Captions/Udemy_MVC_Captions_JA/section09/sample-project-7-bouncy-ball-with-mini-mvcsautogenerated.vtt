@@ -1,454 +1,454 @@
 WEBVTT
 
 00:00.170 --> 00:00.500
-All right.
+よし
 
 00:00.500 --> 00:03.080
-Here, let's take a look at the bouncy ball demo.
+ここで、弾むボールのデモを見てみましょう。
 
 00:03.110 --> 00:05.900
-I'm a little bit in front of the word demo, but there it is.
+デモの文字が少し前に出てしまいましたが、これです。
 
 00:05.900 --> 00:09.580
-So this is part of the mini mvc's course.
+これはミニMVCのコースの一部ですね。
 
 00:09.590 --> 00:14.330
-This is a unity architecture course that's available for purchase.
+これはunity architectureのコースで購入可能です。
 
 00:14.330 --> 00:19.970
-And all the code we're showing here, including the full code for the course, is freely available on
+また、ここで紹介しているコードは、コースのフルコードも含め、すべて
 
 00:19.970 --> 00:20.510
-GitHub.
+GitHubです。
 
 00:20.510 --> 00:21.950
-So you can take a look at that.
+ですから、そちらをご覧ください。
 
 00:21.950 --> 00:30.620
-The link below this course is about you doing architecture Inside Unity, the Model view and controller
+このコースの下のリンクは、Inside Unityのアーキテクチャ、Model view and controllerをやっているところです。
 
 00:30.620 --> 00:31.160
-in it.
+があります。
 
 00:31.160 --> 00:36.560
-We'll cover the course introduction, we'll talk about unity, we'll look at software design.
+このコースでは、コース紹介、Unityについて、ソフトウェアデザインについて説明します。
 
 00:36.560 --> 00:42.740
-Let's take a look at the next slide to go even deeper in software design, we look at design principles.
+次のスライドでは、ソフトウェア設計をさらに深く掘り下げて、設計原則について見ていきましょう。
 
 00:42.740 --> 00:44.780
-We look at design patterns.
+デザイン・パターンを見てみましょう。
 
 00:44.780 --> 00:46.160
-What are those things?
+それは何ですか？
 
 00:46.160 --> 00:49.310
-We look at ways to diagram our designs.
+デザインを図式化する方法を調べます。
 
 00:49.310 --> 00:56.090
-With UML, we look at all the different architectural options for unity, and then we land on mini MVCs,
+UMLを使い、ユニティに関する様々なアーキテクチャの選択肢を検討し、ミニMVCにたどり着きます、
 
 00:56.120 --> 01:01.170
-which is a custom free architecture as the leading solution.
+これはカスタムフリーのアーキテクチャであり、主要なソリューションである。
 
 01:01.850 --> 01:05.150
-Then there's four different sample projects included in the course.
+コースには4つのサンプルプロジェクトが含まれています。
 
 01:05.150 --> 01:07.790
-But today we're going over even more demos.
+しかし、今日はさらに多くのデモを紹介します。
 
 01:07.790 --> 01:09.920
-Besides those, I think I've added ten more.
+それ以外にも10個ほど追加したと思います。
 
 01:09.950 --> 01:13.040
-So we're going to go over the bouncy ball demo here.
+では、バウンシーボールのデモをご覧ください。
 
 01:13.040 --> 01:14.450
-So let's take a look at that.
+それではご覧ください。
 
 01:14.870 --> 01:17.240
-So here I am in the sample project.
+サンプルプロジェクトです。
 
 01:17.240 --> 01:23.540
-If you've gotten the sample project here, the mini MVCs, and followed the instructions from the Git
+ミニMVCのサンプル・プロジェクトを入手して、Gitの指示に従った場合
 
 01:23.540 --> 01:28.430
-repo, then come into the samples here and just import those samples.
+repoの指示に従って、サンプルをインポートしてください。
 
 01:28.430 --> 01:30.350
-Now I've already done that for us here.
+もうすでにインポートしました。
 
 01:30.380 --> 01:37.640
-We can see the samples and we can see here in the more folder there is the bouncy ball mini.
+サンプルを見て、moreフォルダにbouncy ball miniがあるのがわかります。
 
 01:37.640 --> 01:39.380
-So let's look at those.
+それでは見てみましょう。
 
 01:40.520 --> 01:41.810
-And here is the demo.
+そしてこれがデモです。
 
 01:41.810 --> 01:44.120
-So let's just run the demo just to start.
+まずはデモを実行してみましょう。
 
 01:46.100 --> 01:47.690
-It's a little bit of audio playing.
+音声が少し流れます。
 
 01:47.690 --> 01:49.160
-I'm not sure if you can hear that.
+聞こえますか？
 
 01:49.950 --> 01:59.220
-But all it's doing is using unity physics to bounce a ball on a surface and then it updates the UI.
+でも、やってることはunity physicsを使ってボールを表面でバウンドさせて、UIを更新してるだけです。
 
 01:59.250 --> 02:02.060
-Now, there's no interactivity in this demo.
+このデモにはインタラクティブ性はありません。
 
 02:02.070 --> 02:04.500
-Actually, I think I can hit spacebar if I remember.
+スペースキーを押せばいいんだっけ？
 
 02:05.320 --> 02:05.530
-Now.
+これで
 
 02:06.610 --> 02:08.410
-Now there's no interactivity.
+インタラクティブ機能はありません。
 
 02:08.980 --> 02:14.140
-So all it does here is run on its own and use some physics.
+物理演算を行うだけです。
 
 02:14.140 --> 02:18.400
-So you could take a look at how that physics interacts and you can see that the UI is getting updated
+物理がどのように作用しているのかを見てみると、UIが更新されているのがわかる。
 
 02:18.400 --> 02:18.690
-there.
+02:18.700 --> 02:18.690
 
 02:18.700 --> 02:20.530
-So let's take a look at how this is structured.
+では、これがどのような構造になっているのか見てみよう。
 
 02:22.980 --> 02:28.410
-So here in the scene, we've got a world game object that just hides the camera and light, which are
+このシーンでは、ワールドゲームオブジェクトがカメラとライトを隠しています。
 
 02:28.410 --> 02:29.490
-not too interesting.
+02:29.410 --> 02:29.490
 
 02:29.520 --> 02:36.630
-Then we have the bouncy ball view, which has all the graphics that we see there and also the UI.
+02:36.660 --> 02:36.660 --> 02:36.660 --> 02:36.660 --> 02:36.660 --> 02:36.660 --> 02:36.660 --> 02:36.660
 
 02:36.660 --> 02:38.760
-So let's just look at the UI elements.
+UI要素を見てみましょう。
 
 02:38.790 --> 02:42.090
-It's got the title and status there.
+タイトルとステータスが表示されています。
 
 02:42.090 --> 02:47.550
-So this is the view contains everything we see visually and The View also plays the audio.
+これがビューで、視覚的に見えるものと音声が再生されます。
 
 02:47.580 --> 02:52.770
-Now I'm not sure in the recording if you could hear the audio, but it's just going bounce, bounce,
+音声が聞こえるかどうかは録音ではわかりませんが、バウンス、バウンスしています、
 
 02:52.770 --> 02:54.760
-bounce and playing a little noise there.
+02:54.780 --> 02:54.780
 
 02:54.780 --> 02:56.760
-So that's it for there.
+02:54.780 --> 02:56.780
 
 02:57.420 --> 03:00.540
-Now let's take a look at the example itself.
+それでは例を見てみましょう。
 
 03:00.540 --> 03:04.050
-So this is a monobehaviour called the bouncy ball mini example.
+これはバウンシーボールのミニサンプルと呼ばれるモノビヘイビアです。
 
 03:04.050 --> 03:09.810
-And all I do is drag in the view as the only reference that it needs to take here.
+そして、ビューをドラッグするだけです。
 
 03:09.810 --> 03:12.540
-And then this is off and ready to go.
+これで準備完了です。
 
 03:12.540 --> 03:14.190
-So let's look at the source code here.
+ソースコードを見てみましょう。
 
 03:16.110 --> 03:17.810
-Zoom out a little bit here.
+少しズームアウトしてみましょう。
 
 03:17.820 --> 03:19.950
-So here's the example.
+これがその例です。
 
 03:20.040 --> 03:23.970
-The example is going to take the view in as a serialized field.
+この例では、ビューをシリアライズされたフィールドとして取り込みます。
 
 03:24.150 --> 03:27.840
-Then it is going to just start in the start here.
+そして、ここから開始します。
 
 03:27.840 --> 03:31.920
-It's going to create a new bouncing bouncy ball mini and pass in the view.
+新しいバウンシングボールミニを作成し、ビューに渡します。
 
 03:31.920 --> 03:37.290
-So Mini here in this terminology is the wrapper for the entire app.
+ミニはアプリ全体のラッパーです。
 
 03:37.290 --> 03:41.940
-So any time you see Mini in the source code, it's meant to be the most parent structure.
+つまり、ソースコードの中でMiniを見かけたら、それが最も親となる構造であることを意味している。
 
 03:41.940 --> 03:45.420
-And inside of it, it has several elements, including The View.
+その中にビューを含むいくつかの要素があります。
 
 03:45.870 --> 03:47.460
-Let's take a look at that next.
+次にそれを見てみよう。
 
 03:50.920 --> 03:54.250
-So opening up The view.
+ビューを開く
 
 03:56.600 --> 03:58.280
-The view is going to extend.
+景色が広がります。
 
 03:58.310 --> 03:58.860
-I'm sorry.
+ごめんなさい.
 
 03:58.880 --> 04:00.890
-I'm opening up the Mini to start with.
+まずはミニを開きます
 
 04:01.370 --> 04:04.580
-So in the Mini I take the view element.
+ミニでビューエレメントを取ります。
 
 04:04.610 --> 04:07.040
-It also has an audio controller there.
+そこにはオーディオコントローラーもあります。
 
 04:07.040 --> 04:11.180
-And here's what we do inside the mini initialize.
+そして、ミニのイニシャライズ内で行うことは以下の通りです。
 
 04:11.210 --> 04:19.700
-We're going to create a context, a model controller service, and it's going to wire them all together
+コンテキストを作成し、モデルコントローラーサービスを作成します。
 
 04:19.700 --> 04:21.400
-here in this one line.
+この一行で
 
 04:21.410 --> 04:28.040
-So any time you see the controller getting initialized in the mini world, the controller is the most,
+ミニの世界でコントローラーが初期化されるのは、コントローラーが一番多いということだ、
 
 04:28.430 --> 04:32.750
-let's say, most knowledgeable concern in the whole system.
+.430 --> 04:32.750 --> 04:32.750 --> 04:32.750 --> 04:32.750
 
 04:32.750 --> 04:36.020
-So the mini itself has four parts inside.
+ミニの内部には4つのパーツがある。
 
 04:36.020 --> 04:40.670
-One of those parts is the controller, and the controller is the most knowledgeable part.
+そのうちの1つがコントローラーで、コントローラーが最も知識のある部分です。
 
 04:40.670 --> 04:46.550
-So it takes in a reference to the other three concerns and it's what will say, Hey, data model, what's
+そのため、コントローラーは他の3つの要素への参照を持ち、「データモデルとは何か？
 
 04:46.550 --> 04:47.450
-your value?
+と言うのです。
 
 04:47.480 --> 04:50.060
-Hey view, did anybody interact with you?
+ビュー、誰かとやり取りした？
 
 04:50.090 --> 04:52.430
-Hey service, can you load something for me?
+サービス、何か読み込んでくれる？
 
 04:52.430 --> 04:54.830
-It's the controller that's going to glue all that together.
+そのために必要なのがコントローラなんだ。
 
 04:55.520 --> 04:57.780
-So let's look at the model quickly.
+では、早速モデルを見てみましょう。
 
 04:58.170 --> 05:04.650
-The model is going to hold values for how many times have we counted up and what is the maximum?
+このモデルは、何回カウントアップしたのか、最大値はいくらか、という値を保持することになる。
 
 05:04.650 --> 05:07.560
-So it's going to say one of three, two of three.
+つまり、3回中1回、3回中2回ということになる。
 
 05:07.560 --> 05:12.510
-And then when it reaches three of three, it's going to reset itself one of three, two of three.
+そして、3分の3になったら、3分の1、3分の2にリセットされる。
 
 05:12.510 --> 05:14.580
-So that's how those two values work there.
+そうやって2つの値が動くんだ。
 
 05:14.610 --> 05:17.460
-Here, notice that they're both set to zero.
+この2つの値はゼロに設定されています。
 
 05:17.460 --> 05:21.360
-So we'll take a look at what sets the max to three in a moment.
+では、最大値を3に設定する方法を見てみよう。
 
 05:22.020 --> 05:23.700
-Now let's look at the service.
+次にサービスを見てみましょう。
 
 05:23.700 --> 05:27.960
-So the service layer is what is meant to call any external data.
+サービスレイヤーは外部データを呼び出すためのものです。
 
 05:27.960 --> 05:34.620
-If your game does not need any external data from the beginning or ever, you can omit this step.
+もし、あなたのゲームが最初から外部データを必要としないのであれば、このステップは省略できます。
 
 05:34.620 --> 05:36.150
-You don't need to have a service.
+サービスは必要ありません。
 
 05:36.150 --> 05:43.080
-But typically today's games call back end services, local files that are external to the game itself,
+しかし、今日のゲームはバックエンドのサービスを呼び出すのが一般的で、ゲーム本体の外部にあるローカルファイルです、
 
 05:43.080 --> 05:49.140
-like we see here, and this service concept is a great one for that.
+このサービスコンセプトはそのための素晴らしいものです。
 
 05:49.140 --> 05:56.850
-So here all it's going to do is it's going to load a local text file and then parse that value into
+ここでは、ローカルのテキストファイルを読み込み、その値をパースして
 
 05:56.850 --> 05:58.830
-the bounce bounce count.
+バウンスカウント
 
 05:58.860 --> 06:01.530
-Max So let's look at this text file.
+Max では、このテキストファイルを見てみましょう。
 
 06:01.710 --> 06:04.200
-It's here in resources texts.
+リソースのテキストファイルです。
 
 06:04.380 --> 06:07.440
-If I open it up, it starts with the value three.
+開いてみると "3 "から始まっています。
 
 06:07.440 --> 06:11.280
-So it seems a little silly here that you would have a value.
+というわけで、ここで値を持っているのは少し馬鹿げているようだ。
 
 06:11.310 --> 06:14.010
-Why not just hard code three in C sharp?
+嬰ハ音記号で "3 "をハードコードすればいいんじゃない？
 
 06:14.040 --> 06:17.580
-This is just an arbitrary demo to show.
+これは単なるデモです。
 
 06:17.580 --> 06:21.330
-Let's put some data outside the app and go load it.
+アプリの外にデータを置いて、それを読み込んでみよう。
 
 06:21.330 --> 06:24.830
-I could have also loaded this from the back end, for example.
+例えば、バックエンドからこれを読み込むこともできた。
 
 06:24.840 --> 06:26.190
-So that's it for the service.
+これでサービスは終了。
 
 06:26.220 --> 06:29.700
-It's just going to go load that value three and pass it back to the controller.
+3つの値をロードしてコントローラに戻します。
 
 06:30.430 --> 06:31.780
-Now let's look at the controller.
+次にコントローラーを見てみよう。
 
 06:31.810 --> 06:36.010
-This is the last thing that we need to look at in the controller here.
+このコントローラーで最後に見ておく必要があるのはこれです。
 
 06:36.740 --> 06:40.820
-We inherit from base controller, as the comment says here.
+コメントにもあるようにbase controllerを継承しています。
 
 06:41.060 --> 06:44.570
-By the way, always base is optional to extend.
+ちなみに、baseを継承するのはオプションです。
 
 06:44.570 --> 06:48.950
-It's just going to give you some free functionality, but you can begin to see through these examples
+自由な機能を与えるだけですが、これらの例を通して見えてくることがあります。
 
 06:48.950 --> 06:53.590
-how few lines of code there are to get this architecture set up.
+このアーキテクチャーをセットアップするのに必要なコードがいかに少ないか。
 
 06:53.600 --> 06:59.210
-Well, I say that also someone looking at this example could say, Hey, I could bounce a ball with
+まあ、この例を見て、ボールをバウンドさせたいと思う人もいるだろう。
 
 06:59.210 --> 07:02.690
-one monobehaviour why do I need these other classes?
+って言うかもしれない。
 
 07:02.690 --> 07:08.060
-But again, the example here is you were learning fundamentals in a very simple use case.
+しかし、ここでの例は、非常にシンプルなユースケースで基礎を学んだということだ。
 
 07:08.060 --> 07:14.540
-Now imagine growing your project up to the size of Fortnite managing multiplayer metagame.
+次に、あなたのプロジェクトが、マルチプレイヤーメタゲームを管理するフォートナイトの規模にまで成長することを想像してみてください。
 
 07:14.540 --> 07:18.380
-Each of the players, all of the things you can do with your player.
+選手一人一人、選手と一緒にできること全て。
 
 07:18.380 --> 07:23.270
-We would have thousands of classes and tens of thousands of lines of code.
+何千ものクラスがあり、何万行ものコードがある。
 
 07:23.300 --> 07:29.930
-Having this best practices divided into model view controller and service really pays dividends on your
+このベストプラクティスをモデル・ビュー・コントローラー・サービスに分割することで、あなたのチームでは本当に大きな利益を得ることができる。
 
 07:29.930 --> 07:30.800
-projects.
+プロジェクトに役立ちます。
 
 07:30.800 --> 07:32.510
-That's why we're starting so simple.
+だから、シンプルに始めるんだ。
 
 07:32.510 --> 07:38.060
-So it's a common concern when people are getting into learning architectures, it feels like, Hey,
+アーキテクチャを学ぼうとするとき、よくある悩みだ、
 
 07:38.060 --> 07:42.310
-that's a lot of classes or a lot of lines of code to get simple things done.
+単純なことを成し遂げるために、たくさんのクラスやたくさんのコード行が必要なんだ。
 
 07:42.320 --> 07:48.350
-It's true, but you're paying in some investment time now to learn these fundamentals.
+確かにそうだが、基礎的なことを学ぶために投資する時間も必要だ。
 
 07:48.350 --> 07:55.610
-So as your project scale your set right, it's a wonderful thing that three months into a solo project
+だから、プロジェクトの規模が大きくなるにつれて、ソロプロジェクトが3ヶ月で完成するのは素晴らしいことだ。
 
 07:55.610 --> 08:02.000
-or two weeks into a five person project, there is not a question of where the next feature should go
+5人のプロジェクトでも2週間もすれば、次のフィーチャーがどこに行くべきかという疑問はなくなる。
 
 08:02.000 --> 08:07.850
-because you guys are all working together on the same architectural pattern and you know, hey, a button
+なぜなら、みんな同じアーキテクチャーパターンで一緒に仕事をしているからだ。
 
 08:07.850 --> 08:12.530
-click well, that's going to start in The view and that's going to then go to the controller and then
+をクリックすると、それはビューで始まり、コントローラに移動し、そして
 
 08:12.530 --> 08:13.400
-go to the model.
+モデルに移動します。
 
 08:13.430 --> 08:14.810
-You're speaking the same language.
+同じ言語を話している
 
 08:14.810 --> 08:21.560
-So the Udemy course talks about the benefits and the cost benefit analysis of bringing on new tech like
+Udemyのコースでは、次のような新しい技術を導入することの利点と費用対効果分析について話している。
 
 08:21.560 --> 08:23.120
-this many MVCs.
+これだけのMVC
 
 08:23.120 --> 08:24.800
-So back to the controller here.
+ここでコントローラーに戻る。
 
 08:24.800 --> 08:29.120
-What we do is we initialize the view with some text fields.
+ビューを初期化し、テキストフィールドを作成します。
 
 08:29.120 --> 08:31.820
-We go listen to that service here.
+そのサービスをリッスンする。
 
 08:32.680 --> 08:36.430
-And then whenever the service loads, we take that value.
+そして、サービスがロードされるたびに、その値を取得します。
 
 08:36.460 --> 08:39.670
-We loaded from the text field and we pass it to the model.
+テキストフィールドから読み込んだ値をモデルに渡す。
 
 08:39.790 --> 08:42.520
-Then we listen to the view and we say, Hey, view.
+そして、ビューを聞いて、「ヘイ、ビュー」と言う。
 
 08:42.520 --> 08:49.630
-Any time the physics detects the ball has bounced, then let's capture that here and we'll update that
+物理学がボールのバウンドを検出したら、それをここに取り込んで更新する。
 
 08:49.630 --> 08:53.490
-listening anytime that the bounce count has changed here.
+バウンスカウントが変更された場合は、いつでもこれを更新します。
 
 08:53.500 --> 08:55.630
-So there's a little bit more to look at here.
+もう少し見てみましょう。
 
 08:55.630 --> 08:56.610
-You can dig in.
+掘り下げることができます。
 
 08:56.620 --> 09:02.170
-We also have a little bit of the command pattern which we'll look at in a future example.
+また、コマンドパターンも少しあります。
 
 09:02.170 --> 09:04.060
-So let's run the demo one more time.
+では、もう一度デモを実行してみましょう。
 
 09:08.740 --> 09:11.680
-Yeah, I can see that the mic is picking up the bouncing.
+マイクがバウンドを拾っているのがわかる。
 
 09:13.350 --> 09:14.130
-So it just goes.
+そのまま
 
 09:14.130 --> 09:14.820
-One, two, three.
+ワン ツー スリー
 
 09:14.820 --> 09:15.510
-One, two, three.
+ワン ツー スリー
 
 09:15.510 --> 09:16.290
-One, two, three.
+ワン ツー スリー
 
 09:16.740 --> 09:18.420
-That's it for the count up demo.
+カウントアップデモはここまで。

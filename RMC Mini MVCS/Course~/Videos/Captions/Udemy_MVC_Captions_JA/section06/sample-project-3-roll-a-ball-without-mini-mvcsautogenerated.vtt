@@ -1,202 +1,202 @@
 WEBVTT
 
 00:00.150 --> 00:04.260
-First, let's look at the version without many, MVCs added.
+まず、MVCをあまり追加していないバージョンを見てみよう。
 
 00:05.260 --> 00:11.860
-Here we are in an empty unity project where I've added the mini MVCs framework as well as the samples.
+ここでは、空のunityプロジェクトにミニMVCフレームワークとサンプルを追加しています。
 
 00:12.070 --> 00:18.040
-Here's the folder structure for the Rollerball game without many since we've looked at the folder structure
+Rollerballゲームのフォルダ構造を見てきました。
 
 00:18.040 --> 00:19.490
-of other samples before.
+をご覧下さい。
 
 00:19.510 --> 00:20.640
-Let's jump right in.
+さっそく飛び込んでみましょう。
 
 00:20.650 --> 00:23.330
-First, let's run the scene and see how it plays.
+まずはこのシーンを再生してみましょう。
 
 00:23.350 --> 00:28.840
-The UI updates showing I have zero score and that the instructions are to use the arrow keys.
+UIが更新され、スコアが0になり、矢印キーを使うように指示されました。
 
 00:28.840 --> 00:31.510
-I also have a restart button I can click.
+リスタートボタンもあります。
 
 00:32.320 --> 00:36.430
-I'll use the four arrow keys here to move the ball around.
+矢印キーでボールを動かします。
 
 00:38.280 --> 00:42.660
-Now, you may not be able to hear it in the video, but it's playing a noise each time I collect one
+動画では聞こえないかもしれませんが、ボールを集めるたびに音が鳴ります。
 
 00:42.660 --> 00:49.170
-of these pickups, as well as reflecting it in the updated UI score, the status changed to you win.
+また、UIのスコアにも反映され、ステータスが勝利に変わりました。
 
 00:49.170 --> 00:51.900
-So the game is over and I can no longer input.
+試合は終了し、入力もできなくなった。
 
 00:51.900 --> 00:55.170
-I can no longer input with the keys, but I'll click the restart button.
+キー入力ができなくなりましたが、リスタートボタンをクリックします。
 
 00:55.170 --> 00:58.080
-The restart button shows a prompt here which I can cancel.
+再起動ボタンを押すと、プロンプトが表示されます。
 
 01:01.230 --> 01:02.520
-Or I can confirm.
+確認します。
 
 01:05.820 --> 01:10.020
-Confirming restarts the game as if I hadn't played yet and I can play again.
+確認すると、まだプレイしていなかったかのようにゲームが再開され、再びプレイできるようになる。
 
 01:10.830 --> 01:11.520
-That's it.
+以上です。
 
 01:12.000 --> 01:13.850
-Here we are in the example script.
+例のスクリプトです。
 
 01:13.860 --> 01:19.170
-As with the other examples, the high level example script extends mono behavior.
+他の例と同様に、高レベルのサンプル・スクリプトはmonoの動作を拡張しています。
 
 01:19.170 --> 01:22.170
-This way it can sit on a game object in the scene.
+こうすることで、シーン内のゲームオブジェクトの上に置くことができます。
 
 01:22.170 --> 01:28.200
-We have three serialized fields here so that this example can reach out into the scene and access a
+ここでは3つのフィールドをシリアライズしています。
 
 01:28.200 --> 01:34.020
-game object for the player, a game object for the UI and a list of all the pickup objects in the scene.
+プレイヤー用のゲームオブジェクト、UI用のゲームオブジェクト、シーン内のすべてのピックアップオブジェクトのリストにアクセスできます。
 
 01:34.020 --> 01:36.480
-We maintain some high level state for.
+また、ゲームオブジェクトの状態も管理しています。
 
 01:36.510 --> 01:38.460
-Is the game currently over?
+現在、ゲームは終了していますか？
 
 01:38.460 --> 01:42.960
-Is the game currently paused and some other scoring values?
+01:38.460→01:42.960現在ポーズ中か？
 
 01:43.740 --> 01:46.770
-And some other scoring values in the start method.
+その他、スタートメソッドでの採点値もあります。
 
 01:46.770 --> 01:53.130
-We listen from here in the main game script into the UI in the player for some key events here in the
+ゲームのメインスクリプトから、プレイヤーのUIに表示されるいくつかの重要なイベントに対して、01:46.770 --> 01:53.130
 
 01:53.130 --> 01:58.290
-update, which executes every frame as long as the scene is running, we have our core game loop.
+シーンが動いている間、毎フレーム実行されるupdateが、ゲームのコアループです。
 
 01:58.290 --> 02:04.080
-If at any time the game is over or we're paused, we exit out of the loop so nothing else happens.
+ゲームが終了したり、一時停止した場合は、ループから抜けるので、それ以降は何も起こりません。
 
 02:04.080 --> 02:07.590
-It's this script that we're in here that has control of the pickups.
+このスクリプトでピックアップを制御しています。
 
 02:07.590 --> 02:13.590
-It loops through all the pickups and calls rotate on them to give them that cosmetic rotation.
+このスクリプトは全てのピックアップをループさせ、rotateを呼び出します。
 
 02:13.590 --> 02:18.750
-The reason that it's done here and not inside the pickup, for example, is just so that when the game
+例えば、ピックアップの中ではなく、ここで回転させるのは、ゲームが
 
 02:18.750 --> 02:21.450
-pauses, we have the pickups pausing as well.
+一時停止した時にピックアップも一時停止するようにするためです。
 
 02:21.450 --> 02:27.270
-And finally here from the game scope, we capture user input and we pass it along the player so that
+そして最後に、ゲームスコープからユーザーの入力を取り込み、それをプレイヤーに伝える。
 
 02:27.270 --> 02:28.890
-the ball can roll around here.
+02:28.890 --> 02:28.890
 
 02:28.890 --> 02:34.230
-In the load method, we load from a local text file to get the maximum number of points required to
+loadメソッドでは、ローカルのテキストファイルからロードして、ボールを転がすのに必要な最大点数を求めます。
 
 02:34.230 --> 02:34.650
-win.
+勝利
 
 02:34.650 --> 02:40.380
-It loads the number three as we've seen with previous demos, this is an example, just as an excuse
+これまでのデモで見てきたように、3という数字を読み込む。
 
 02:40.380 --> 02:41.730
-to use the service layer.
+サービスレイヤーを使うための口実です。
 
 02:41.730 --> 02:43.770
-Once we look at the mini MVC version.
+ミニMVCバージョンを見てみましょう。
 
 02:43.770 --> 02:49.590
-So of course this value could be hardcoded here, but instead we load it from a script just as an example
+もちろん、この値をハードコードすることもできますが、ここでは例としてスクリプトから読み込むことにします。
 
 02:49.590 --> 02:50.520
-of external data.
+外部データの例です。
 
 02:50.520 --> 02:56.760
-Periodically, when the game here wants to update the on screen UI, we can call this method any time
+定期的にUIを更新したい場合は、このメソッドを呼び出せばよい。
 
 02:56.760 --> 03:00.990
-that the UI button for restarting is clicked, this method is executed.
+UIボタンがクリックされると、このメソッドが実行されます。
 
 03:00.990 --> 03:07.530
-We pause the game, instantiate an on screen dialog window that floats over the rest of the game, Handle
+ゲームを一時停止し、画面上にダイアログウィンドウを表示します。
 
 03:07.530 --> 03:12.570
-the consequence If the user clicks, cancel in the dialog and handle the consequence.
+ユーザーがクリックしたら、ダイアログでキャンセルし、その結果を処理する。
 
 03:12.570 --> 03:16.920
-If the user confirms to restart the game each time the player collides with the pickup.
+ピックアップに衝突するたびにゲームを再開することをユーザーが確認した場合。
 
 03:16.920 --> 03:21.630
-This method is called the pickup object is turned invisible and a sound is played.
+このメソッドが呼ばれると、ピックアップオブジェクトは見えなくなり、音が鳴ります。
 
 03:21.630 --> 03:28.800
-The score counts up from 0 to 1 to 2 to 3, and then when it reaches the required max value, which
+スコアは0→1→2→3とカウントアップされ、必要な最大値に達すると
 
 03:28.800 --> 03:32.090
-typically is three, then the game is over and you win.
+普通は3点で、その時点で試合は終了し、あなたの勝利となります。
 
 03:32.100 --> 03:34.050
-That's it for the core game logic.
+ゲームロジックは以上です。
 
 03:34.050 --> 03:35.760
-Let's look at the scene hierarchy.
+シーンの階層を見てみよう。
 
 03:35.760 --> 03:41.640
-So in the scene hierarchy here, if I select the game example itself, we see some serialized fields
+シーン階層で、ゲームの例そのものを選択すると、いくつかのシリアライズされたフィールドが表示されます。
 
 03:41.640 --> 03:47.130
-in the inspector, including a reference to the player, the UI, and each pickup in the scene.
+プレイヤー、UI、シーン内の各ピックアップへの参照を含む。
 
 03:47.130 --> 03:52.800
-The player is here with the player script, the UI is here with the UI script, and each of our pickups
+プレイヤーはプレイヤースクリプトと一緒にここにあり、UIはUIスクリプトと一緒にここにあります。
 
 03:52.800 --> 03:55.860
-is stored here all under the same parent game object.
+を同じ親ゲームオブジェクトの下に保存しています。
 
 03:55.860 --> 03:57.630
-Each has a pickup script on top.
+各ピックアップスクリプトが上にあります。
 
 03:57.630 --> 04:01.170
-Let's take a final look at the game running again so I can press play.
+最後にもう一度ゲームが動いているところを見てみましょう。
 
 04:01.170 --> 04:03.150
-I can wander around here.
+この辺をうろうろしてみよう。
 
 04:03.360 --> 04:06.780
-Notice that the pickups are rotating.
+ピックアップが回転しています。
 
 04:09.370 --> 04:14.950
-And if I click the restart button while the prompt is up here, while this dialog window is showing,
+プロンプトが表示されている状態で再起動ボタンをクリックすると......、
 
 04:14.950 --> 04:21.220
-the cubes are not rotating, It's a small visual detail, but it clues in that this game is able to
+キューブは回転していません。小さなことですが、このゲームが
 
 04:21.220 --> 04:26.710
-save the state of when we're currently paused as well as when the game is over.
+を保存しているのだ。
 
 04:26.710 --> 04:29.710
-Watch when I win the pickup, stop rotating as well.
+ピックアップに勝ったら回転も止めて見る。
 
 04:36.290 --> 04:42.290
-I've one and the pickup stop rotating managing state like is game over and is game paused seem like
+ピックアップに勝つと回転が止まり、ゲームオーバーのような状態になります。
 
 04:42.290 --> 04:48.050
-little details but having them smoothly orchestrated throughout the concerns as we see here demonstrates
+些細なことのように思えるが、このように懸念事項をスムーズにオーケストレーションすることで
 
 04:48.050 --> 04:49.850
-a good and simple game design.
+シンプルで良いゲームデザインだ。

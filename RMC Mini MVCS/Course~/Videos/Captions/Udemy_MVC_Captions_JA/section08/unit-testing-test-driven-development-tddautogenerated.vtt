@@ -1,319 +1,319 @@
 WEBVTT
 
 00:00.090 --> 00:01.360
-Test driven development.
+テスト駆動開発
 
 00:01.380 --> 00:04.920
-Here's an example of a test class with a test method.
+テストクラスとテストメソッドの例です。
 
 00:04.920 --> 00:08.450
-Already in the course, we've seen how to run an existing test.
+このコースではすでに、既存のテストを実行する方法を見てきました。
 
 00:08.460 --> 00:14.910
-We've seen how to create new tests from scratch test driven development or TDD is the practice of adding
+テスト駆動開発(TDD)とは、新しいテストをゼロから作成する方法です。
 
 00:14.910 --> 00:17.550
-tests before you add your production code.
+本番のコードを追加する前にテストを追加することです。
 
 00:17.550 --> 00:21.290
-For some, especially those new to testing, this can seem odd.
+特にテストを始めたばかりの人にとっては、これは奇妙に思えるかもしれない。
 
 00:21.300 --> 00:26.430
-We'll learn more about the technique and note that you can mix test driven development with traditional
+テスト駆動開発と伝統的な開発手法の混在が可能であることを念頭に置きながら、この手法についてさらに学んでいこう。
 
 00:26.430 --> 00:29.490
-testing however you like into your own workflows.
+テスト駆動開発と従来のテスト駆動開発を混ぜることもできる。
 
 00:29.520 --> 00:36.570
-TDD creates tests that specify and validate what code will do once it's created.
+TDDはテストを作成し、コードが一度作成されたら何をするのかを特定し、検証する。
 
 00:37.110 --> 00:38.280
-Here's the workflow.
+これがワークフローだ。
 
 00:38.280 --> 00:44.220
-You create a new test, you add just enough implementation within it so that the code compiles.
+新しいテストを作成し、コードがコンパイルされるように十分な実装を加える。
 
 00:44.220 --> 00:48.610
-Since we've added just enough production code for this code to compile.
+このコードをコンパイルするのに十分な実装を追加しました。
 
 00:48.630 --> 00:54.000
-Perhaps even having an empty implementation, we run the test and the test fails.
+おそらく空の実装でもテストを実行し、テストは失敗します。
 
 00:54.450 --> 00:55.590
-That's expected.
+予想通りですね。
 
 00:55.590 --> 01:01.950
-And it's actually a very good place to start by first seeing a failing test, we have more confidence
+テストが失敗するのを見ることで、私たちはより自信を持つことができます。
 
 01:01.950 --> 01:05.040
-that the test, once it passes, actually mean something.
+01:01.950 --> 01:05.040
 
 01:05.040 --> 01:09.420
-You then refactor your production code until the code passes and then move on.
+そして、テストがパスするまで本番コードをリファクタリングし、次に進む。
 
 01:09.420 --> 01:16.020
-TDD is not simply the order of testing first and writing your production code second.
+TDDとは、テストが先で本番コードを書くのが後という単純な順序ではありません。
 
 01:16.020 --> 01:19.140
-It's also a way of thinking about your projects.
+プロジェクトに対する考え方でもあるのです。
 
 01:19.140 --> 01:24.230
-Some of this you really need to practice and in order to feel the results.
+このうちのいくつかは、本当に実践し、結果を実感するために必要なものです。
 
 01:24.240 --> 01:31.110
-But what I find with more TDD experience is that you think about your new code differently, you're
+しかし、TDDの経験を重ねるにつれて感じるのは、新しいコードに対する考え方が変わってくるということだ。
 
 01:31.110 --> 01:38.160
-more focused in your development, you create more atomic code that does just one thing, and when you
+しかし、TDDの経験を重ねるにつれて、新しいコードに対する考え方が変わってくることがわかった。
 
 01:38.160 --> 01:42.180
-have your testing code pass, it's a more meaningful pass.
+01:38.160→01:42.180）。
 
 01:42.210 --> 01:48.840
-Another way to look at this flow is that you write a failing test, you make the test pass, and then
+このフローを別の見方をすれば、失敗するテストを書き、そのテストをパスさせ、そして次のようになります。
 
 01:48.840 --> 01:51.660
-you refactor your code to meet any other goals.
+そして他の目標を達成するためにコードをリファクタリングする。
 
 01:51.660 --> 01:58.590
-You have optimization, coding standards, etc. and then you repeat, Let's see this in action.
+最適化、コーディングの標準化などを行った上で、「実際にやってみよう」と繰り返すのです。
 
 01:58.590 --> 02:01.320
-We'll open up a unity project that's got a test already.
+すでにテストが行われているunityプロジェクトを開きます。
 
 02:01.320 --> 02:08.790
-We'll use TDD to add a new test, create just enough production code for it to compile, see a failing
+TDDを使って新しいテストを追加し、コンパイルするのに十分なプロダクションコードを作成します。
 
 02:08.790 --> 02:12.090
-result, and then refactor till we have a passing result.
+そして合格するまでリファクタリングする。
 
 02:13.020 --> 02:16.130
-Here we are in a fairly empty unity project.
+ここはかなり空のunityプロジェクトです。
 
 02:16.140 --> 02:22.560
-I've made sure that the test framework is already added in the package manager as shown earlier, and
+テストフレームワークがパッケージマネージャに追加されていることを確認しました。
 
 02:22.560 --> 02:25.590
-I've copied one test in for us to begin with.
+まずはテストを1つコピーしました。
 
 02:25.620 --> 02:28.350
-Let's take a look at that test here in edit mode.
+そのテストを編集モードで見てみましょう。
 
 02:28.350 --> 02:33.780
-I have one test providing coverage on the ADD method of a simple math class.
+単純な数学クラスのADDメソッドをカバレッジするテストがあります。
 
 02:33.780 --> 02:34.850
-Let's run the test.
+テストを実行してみましょう。
 
 02:34.860 --> 02:35.900
-It passes.
+合格です。
 
 02:35.910 --> 02:41.430
-Let's take a look at the code and here we see the one test we're familiar with from earlier in the presentation.
+コードを見てみましょう。ここでは、以前のプレゼンテーションでお馴染みのテストを見てみましょう。
 
 02:41.430 --> 02:45.330
-Now let's perform some test driven development as discussed here.
+では、ここで説明したテスト駆動開発をしてみましょう。
 
 02:45.360 --> 02:51.450
-The idea is that if we were to expand the functionality of the math system, we have a few approaches.
+数学システムの機能を拡張する場合、いくつかのアプローチがあります。
 
 02:51.450 --> 02:57.090
-We could either go create that production code without any testing and afterwards.
+本番用のコードをテストなしで作成する。
 
 02:58.260 --> 03:01.350
-And afterwards maybe we add tests or maybe we don't.
+その後にテストを追加するか、しないか。
 
 03:02.530 --> 03:08.530
-However, with test driven development, we're going to test first before we've added any production
+しかし、テスト駆動開発では、本番用のテストを追加する前に、まずテストを行います。
 
 03:08.530 --> 03:09.040
-code.
+コードを追加する。
 
 03:09.870 --> 03:11.010
-Let's see how that works.
+どう動くか見てみましょう。
 
 03:11.040 --> 03:11.700
-I'll imagine.
+想像してみる
 
 03:11.700 --> 03:11.880
-I'm.
+そうだな
 
 03:13.080 --> 03:14.040
-Let's imagine.
+想像してみる
 
 03:14.040 --> 03:16.680
-The math system needs a subtract method.
+数学システムには減算法が必要だ。
 
 03:17.980 --> 03:22.240
-Now, this abstract method doesn't exist yet, as we'll see when we look at the source code.
+ソースコードを見ればわかるように、この抽象メソッドはまだ存在しない。
 
 03:23.150 --> 03:24.830
-But let's make a test for it anyway.
+しかし、とりあえずテストしてみましょう。
 
 03:25.760 --> 03:29.060
-I'll start by adding the test attribute.
+まずはtest属性を追加します。
 
 03:29.270 --> 03:37.130
-I'll name the method with what is under test, what's the expected result and in what situation I expect
+何をテストするのか、どのような結果を期待するのか、どのような状況を想定しているのかをメソッド名にしてみます。
 
 03:37.130 --> 03:38.390
-for subtract.
+引き算の場合
 
 03:38.390 --> 03:40.130
-The result would be five.
+結果は5となる。
 
 03:40.160 --> 03:45.140
-If I pass in ten and five, ten minus five is five.
+10と5で引けば10マイナス5は5だ。
 
 03:45.170 --> 03:48.980
-To set up the test, I instantiate a new copy of my math system.
+テストをセットアップするために、数学システムの新しいコピーをインスタンス化する。
 
 03:49.220 --> 03:52.250
-I get the result by calling the subtract method.
+subtractメソッドを呼び出して結果を得る。
 
 03:52.280 --> 03:56.830
-The red text here indicates my code editor knows there's no subtract method.
+赤い文字は、私のコードエディターがsubtractメソッドがないことを知っていることを示している。
 
 03:56.840 --> 04:03.320
-And finally, we expect our method to return a value of five because I copied and pasted this from the
+そして最後に、このメソッドが5を返すことを期待しています。
 
 04:03.320 --> 04:04.100
-earlier example.
+をコピーして貼り付けたからである。
 
 04:04.100 --> 04:05.060
-It says 15.
+15と書いてある。
 
 04:05.090 --> 04:06.180
-I'll change that now.
+変更します
 
 04:06.200 --> 04:08.150
-Now it's checking the proper assumption.
+これで適切な仮定がチェックされました。
 
 04:08.840 --> 04:13.180
-Now we know this is not going to compile, but let's save and return to unity.
+コンパイルできないことは分かっていますが、保存してunityに戻りましょう。
 
 04:13.190 --> 04:14.750
-Let's note two things.
+2つのことに注意しよう。
 
 04:14.750 --> 04:19.250
-One, the console window is properly showing that there is a compiler error.
+ひとつは、コンソールウィンドウにコンパイルエラーが表示されていることです。
 
 04:19.250 --> 04:24.300
-And to notice in the test runner window, we don't yet see our new method.
+そして、テストランナーのウィンドウにはまだ新しいメソッドが表示されていない。
 
 04:24.320 --> 04:26.610
-These are good things to note in TDD.
+これらはTDDで注意すべき良い点だ。
 
 04:26.630 --> 04:30.970
-The next step is to make just enough code that it compiles.
+次のステップは、コンパイルできる程度のコードを作ることだ。
 
 04:30.980 --> 04:34.700
-It's very important we don't finish the implementation at this stage.
+この段階で実装を終わらせないことが非常に重要だ。
 
 04:34.700 --> 04:36.920
-Here's the source code for our math system.
+これが数学システムのソースコードです。
 
 04:36.920 --> 04:42.050
-Here's the very simplest implementation I can do that gets the code to compile.
+これが一番簡単な実装です。
 
 04:42.050 --> 04:45.740
-Notice that I don't finish the proper implementation.
+適切な実装が終わっていないことに注意してください。
 
 04:45.740 --> 04:52.550
-Now, in this example it seems trivial because we know all we need to do is subtract A and B.
+さて、この例ではAとBを引き算すればよいことがわかっているので、些細なことのように思える。
 
 04:52.550 --> 04:58.460
-However, normally in test driven development, the implementation of a given method would be more complex
+しかし、通常テスト駆動開発では、あるメソッドの実装はもっと複雑になる。
 
 04:58.460 --> 04:59.540
-and take more time.
+より時間がかかる。
 
 04:59.540 --> 05:03.470
-Regardless, we always stop here once we have enough to compile.
+いずれにせよ、コンパイルするのに十分な量ができたら、いつもここでストップする。
 
 05:04.230 --> 05:05.360
-Let's look at the test.
+テストを見てみよう。
 
 05:05.370 --> 05:09.150
-Our code editor properly no longer shows subtract in red.
+コード・エディターでsubtractが赤く表示されなくなりました。
 
 05:09.570 --> 05:11.340
-Let's save and check unity.
+保存してunityを確認しましょう。
 
 05:11.370 --> 05:13.710
-Now we don't see any console errors.
+コンソールエラーは出なくなりました。
 
 05:13.710 --> 05:14.280
-Great.
+素晴らしい。
 
 05:14.280 --> 05:15.540
-Everything is compiling.
+すべてコンパイルされています。
 
 05:15.540 --> 05:19.290
-And now our test runner window properly shows the new test method.
+テストランナーのウィンドウに新しいテストメソッドが表示されました。
 
 05:19.290 --> 05:20.430
-Let's run all tests.
+全てのテストを実行してみましょう。
 
 05:20.430 --> 05:26.430
-You can consider the testing of failure because one or more tests methods fail.
+1つ以上のテストメソッドが失敗したので、失敗のテストとみなすことができます。
 
 05:26.430 --> 05:31.350
-When we look at when we select the failing method, we see some small input there.
+失敗したメソッドを選択すると、小さなインプットが表示される。
 
 05:31.350 --> 05:34.200
-We see a bit of output text that shows why it failed.
+失敗した理由を示すテキストが出力されています。
 
 05:34.470 --> 05:38.490
-It's expecting five, but instead it's returning zero.
+5を期待していたのに、0を返している。
 
 05:38.490 --> 05:40.560
-Now, why did we go through the motions here?
+さて、なぜこのような動作をしたのでしょうか？
 
 05:40.560 --> 05:46.350
-It may seem trivial, but it's an important distinction that we create a test, we believe test the
+些細なことのように思えるかもしれないが、これは重要な違いである。
 
 05:46.350 --> 05:49.260
-proper functionality and we first see it fail.
+をテストすることである。
 
 05:49.260 --> 05:55.560
-That gives us a good basis to know when a proper implementation gives a pass with confidence.
+このテストは、適切な実装が自信を持って合格を与えるタイミングを知るための良い基礎となる。
 
 05:55.560 --> 05:57.420
-Let's add the proper implementation here.
+ここで適切な実装を追加しよう。
 
 05:57.420 --> 06:02.160
-We assume that the first parameter coming in would be larger than the second, and we simply return
+最初のパラメータが2番目のパラメータより大きいと仮定し、単純に次のように返します。
 
 06:02.160 --> 06:05.670
-and we simply return a minus B, let's save and run the test.
+そして、単純にマイナスBを返す。
 
 06:07.570 --> 06:12.600
-Now the test runs well and we've completed our first example of test driven development.
+これでテストはうまく実行され、テスト駆動開発の最初の例が完成した。
 
 06:12.610 --> 06:13.450
-That's it.
+これで終了。
 
 06:13.990 --> 06:20.680
-Now, I know from my own experience that it took me time and practice with testing to really feel the
+さて、私自身の経験から言うと、テスト駆動開発を本当に実感できるようになるには、時間をかけて練習する必要があった。
 
 06:20.680 --> 06:21.520
-benefits.
+ということだ。
 
 06:21.520 --> 06:29.890
-While we've had a brief overview with unit testing, creating unit tests and test driven development.
+ユニットテスト、ユニットテストの作成、テスト駆動開発について簡単に説明しました。
 
 06:30.580 --> 06:35.200
-I hope you're beginning to see some of the benefits that could work well for you.
+このように、テスト駆動開発には様々な利点があることがお分かりいただけたと思います。
 
 06:35.200 --> 06:41.350
-Combining what you've learned here about testing with MVC architecture, you have the tools to create
+ここで学んだテストとMVCアーキテクチャを組み合わせることで、あなたは以下のようなツールを手に入れることができる。
 
 06:41.350 --> 06:47.460
-projects that are more modular, scalable, optimized, robust and dependable.
+よりモジュール化され、スケーラブルで、最適化され、ロバストで、信頼できるプロジェクトを作るためのツールを手に入れることができる。
 
 06:47.470 --> 06:52.610
-The combination of testing and good architecture is really powerful.
+テストと優れたアーキテクチャーの組み合わせは本当に強力だ。
 
 06:52.630 --> 06:53.500
-Thanks.
+ありがとう。

@@ -1,361 +1,361 @@
 WEBVTT
 
 00:00.510 --> 00:03.090
-The MVC architecture overview here.
+MVCアーキテクチャの概要
 
 00:03.090 --> 00:08.430
-Continuing with just the course overview, let's look at what we'll learn from the MVC fundamentals
+コースの概要に引き続き、MVCの基礎から学ぶ内容を見てみましょう。
 
 00:08.430 --> 00:09.120
-themselves.
+を学びます。
 
 00:09.120 --> 00:14.130
-When we talk about architecture and software design, there are so many different terms.
+アーキテクチャやソフトウェア設計について語るとき、実に様々な用語がある。
 
 00:14.130 --> 00:20.100
-Some of these terms you may be familiar with already and may have a firm grasp of which of the ones
+これらの用語の中には、すでに馴染みのあるものもあるでしょうし、どれがどのようなものかをしっかりと把握しているものもあるでしょう。
 
 00:20.100 --> 00:22.080
-that you see here are new to you.
+をしっかり把握しているかもしれない。
 
 00:22.110 --> 00:25.740
-Or maybe you have some idea, but not a full definition.
+00:25.740 --> 00:25.740 --> 00:25.760
 
 00:25.740 --> 00:31.260
-You will see terms like these used throughout the course, and when I introduce a new term, I will
+コース全体を通して、このような用語が出てきます。
 
 00:31.260 --> 00:33.660
-explain what it is and give it the context.
+を説明し、その背景を説明します。
 
 00:34.080 --> 00:37.740
-By the end of this course, you'll have a firmer grasp on the vocabulary.
+このコースが終わるころには、ボキャブラリーをよりしっかりと把握していることでしょう。
 
 00:37.770 --> 00:41.440
-Imagine a ladder of your own professional growth through your career.
+自分のキャリアを通して、プロとして成長していく梯子を想像してみてください。
 
 00:41.520 --> 00:47.670
-Some of these principles come earlier in your development and would be required in junior and intermediate
+これらの原則のいくつかは、あなたの成長の早い段階で身につき、ジュニアや中級の段階で必要とされるものです。
 
 00:47.670 --> 00:48.510
-job positions.
+00:48.510 --> 00:48.510
 
 00:48.510 --> 00:52.830
-Understanding classes and object oriented programming are fundamental.
+クラスとオブジェクト指向プログラミングを理解することは基本です。
 
 00:52.830 --> 00:59.940
-Over time, expert developers work on design patterns, abstracting concepts, making their code more
+そして開発者はデザインパターンに取り組み、概念を抽象化することで、コードをより洗練されたものにしていくのです。
 
 00:59.940 --> 01:04.980
-modular and reusable, as well as learning, testing and architectures.
+モジュール化し、再利用可能にする。
 
 01:04.980 --> 01:10.620
-This course focuses on architecture, and we will also hit on a lot of these different concepts, including
+このコースではアーキテクチャに焦点を当て、以下のような様々なコンセプトについても触れていきます。
 
 01:10.620 --> 01:12.900
-testing the progression through a game.
+ゲーム進行のテスト
 
 01:12.900 --> 01:19.950
-Developers career can have many different job titles depending on the company country culture that you're
+デベロッパーのキャリアは、あなたがいる会社の国の文化によって様々な職種があります。
 
 01:19.950 --> 01:20.670
-working in.
+で働く。
 
 01:20.700 --> 01:22.440
-That growth could be quite different.
+その成長はかなり違うかもしれない。
 
 01:22.440 --> 01:27.780
-But here is a loose example of some of the different jobs that you can progress on through a long career
+しかし、長いキャリアの中で昇進できるさまざまな仕事の緩やかな例は以下の通りだ。
 
 01:27.780 --> 01:28.710
-in game development.
+01:28.710 --> 01:28.710
 
 01:28.710 --> 01:34.590
-While having experience in architectural concepts is always important in software development and game
+ソフトウェア開発やゲーム開発において、アーキテクチャの概念を経験することは常に重要である。
 
 01:34.590 --> 01:41.640
-development, it is especially crucial in the mid game of moving towards senior development positions.
+(1)アーキテクチャー・コンセプトの経験は、ソフトウェア開発やゲーム開発において常に重要であるが、シニア開発ポジションを目指す中盤戦においては特に重要である。
 
 01:41.640 --> 01:47.520
-You can even see on this specific chart there's dedicated software architect positions as well as a
+この図には、ソフトウェア・アーキテクトのポジションと
 
 01:47.520 --> 01:49.440
-place to bring your expertise.
+あなたの専門性を発揮できる場所です。
 
 01:49.440 --> 01:56.190
-Ultimately, a software's architecture is the fundamental organization of all of its parts.
+最終的に、ソフトウェアのアーキテクチャとは、そのすべてのパーツの基本的な構成である。
 
 01:56.190 --> 02:02.610
-It's built on a set of design principles and design patterns, both of which we'll discuss in the course.
+このコースで説明する設計原則と設計パターンのセットに基づいて構築されます。
 
 02:02.610 --> 02:09.060
-Some of the benefits of consciously applying an architecture to your application or game is that it's
+アプリケーションやゲームに意識的にアーキテクチャを適用することの利点は、以下の通りです。
 
 02:09.060 --> 02:10.890
-based on proven concepts.
+実績のあるコンセプトに基づいていることです。
 
 02:10.890 --> 02:14.910
-It'll be in confidence, performance and scalability to your projects.
+|にできるようにあなたがそれをすることができます本当に出くわすことあなたは、実際には私たち約束、誰でも素早くはちょうど無視これらの一見正確にどのように{}人のことを忘れることができます。
 
 02:14.910 --> 02:21.120
-Architectures are typically language agnostic, meaning the principles sit higher and more theoretical
+アーキテクチャは一般的に言語にとらわれないものであり、原理はより高く、より理論的なものである。
 
 02:21.120 --> 02:26.670
-and could be applied to various different programming languages and programming platforms like the Unity
+|にできるようにあなたがそれをすることができます本当に出くわすことあなたは、実際には私たち約束、誰でも素早くはちょうど無視これらの一見正確にどのように{}人のことを忘れることができます。
 
 02:26.670 --> 02:27.300
-Game Engine.
+ゲームエンジン
 
 02:27.300 --> 02:33.060
-Now, while there is a learning curve, teams that embrace architecture will find development to move
+現在、学習曲線はあるものの、アーキテクチャを採用したチームは、開発を次のように進めることができる。
 
 02:33.060 --> 02:37.860
-faster and especially maintenance on projects will be much faster as well.
+特にプロジェクトのメンテナンスはより速くなるだろう。
 
 02:37.860 --> 02:40.740
-In the course we'll touch on different types of architecture.
+コースでは様々なタイプのアーキテクチャについて触れていきます。
 
 02:40.740 --> 02:43.740
-There's first the no architecture approach.
+まず、アーキテクチャーなしというアプローチがあります。
 
 02:43.740 --> 02:49.860
-This is especially what beginners use in projects or even veterans use in prototypes of projects.
+これは特に初心者がプロジェクトで使うものであり、ベテランであってもプロジェクトのプロトタイプで使うものである。
 
 02:49.860 --> 02:56.580
-Here, for the sake of speed and flexibility, teams may choose no particular framework and move forward.
+ここでは、スピードと柔軟性のために、チームは特定のフレームワークを選択せず、前進することができる。
 
 02:56.790 --> 03:01.860
-Often in these examples you get yourself into trouble where scalability and adding features at the end
+このような例では、スケーラビリティや機能の追加を最後に行うという問題がしばしば発生する。
 
 03:01.860 --> 03:02.940
-becomes very difficult.
+が非常に難しくなる。
 
 03:02.940 --> 03:08.580
-Veteran teams may choose custom architectures, taking the different principles and patterns that we'll
+ベテランのチームは、これから説明するような様々な原則やパターンを取り入れて、カスタムアーキテクチャを選択するかもしれない。
 
 03:08.580 --> 03:11.460
-talk about in this course and applying them themselves.
+このコースで説明するさまざまな原則やパターンを取り入れ、自分たちで応用することもできる。
 
 03:11.460 --> 03:14.340
-There are advantages to that, particularly customization.
+特にカスタマイズできる利点がある。
 
 03:14.340 --> 03:19.800
-There are established architectures, blueprints that we can pull off of the shelf and bring into our
+確立されたアーキテクチャーや設計図がある。
 
 03:19.800 --> 03:20.640
-project.
+プロジェクトに持ち込むことができる。
 
 03:20.640 --> 03:24.840
-These include MVC, Nvme and MVP.
+MVC、Nvme、MVPなどです。
 
 03:24.870 --> 03:30.810
-This course will be focusing on the MVC or model view controller pattern, so why not proceed in our
+このコースでは、MVC（モデル・ビュー・コントローラー）パターンに焦点を当てます。
 
 03:30.810 --> 03:34.950
-projects with the no architecture approach doing what feels right in the moment?
+このコースではMVC（モデル・ビュー・コントローラー）パターンに焦点を当てます。
 
 03:34.950 --> 03:40.800
-Well, while it may be faster initially and a bit freeing and flexible in how you approach it, you'll
+まあ、最初はその方が早いかもしれないし、少し自由で柔軟なアプローチができるかもしれないけれど、そのうちに
 
 03:40.800 --> 03:45.780
-find there'll be more debate about how and where to add each features, whether you're a single person
+|にできるようにあなたがそれをすることができます本当に出くわすことあなたは、実際には私たち約束、誰でも素早くはちょうど無視これらの一見正確にどのように{}人のことを忘れることができます。
 
 03:45.780 --> 03:47.610
-team or on a larger team.
+|にできるようにあなたがそれをすることができます本当に出くわすことあなたは、実際には私たち約束、誰でも素早くはちょうど無視することができます。
 
 03:47.610 --> 03:50.400
-Each developer may approach and solve this differently.
+開発者ごとにアプローチや解決方法は異なるかもしれません。
 
 03:50.400 --> 03:56.190
-That inconsistency will make your code more difficult to read your project, more difficult to maintain.
+このような矛盾はコードを読みづらくし、プロジェクトを維持することを難しくするでしょう。
 
 03:56.190 --> 04:01.170
-And when you on board or off board talent to your project, it can be challenging bringing new people
+また、プロジェクトに才能のある人を参加させたり、参加させなかったりする場合、新しい人を連れてくるのは難しいことだ。
 
 04:01.170 --> 04:01.470
-on.
+である。
 
 04:01.470 --> 04:06.750
-There's more training to be done and when someone departs your team, there's more information custom
+トレーニングの回数も増えるし、誰かがチームを去る時には、より多くの情報が必要になる。
 
 04:06.750 --> 04:10.080
-to their particular solutions you need to get before they depart.
+|にできるようにあなたがそれをすることができます本当に出くわすこと。
 
 04:10.080 --> 04:15.300
-To many developers, the no architecture approach may feel like the best solution, but undoubtedly
+多くの開発者にとって、ノーアーキテクチャのアプローチは最良の解決策のように感じられるかもしれない。
 
 04:15.300 --> 04:17.300
-bugs and complexity will come along.
+バグや複雑さがつきまといます。
 
 04:17.310 --> 04:20.400
-I'm reminded of this quote and I'll paraphrase it.
+この言葉を思い出したので言い換えます。
 
 04:20.730 --> 04:26.280
-Every decision that we make while working on our software projects is an investment, and each investment
+ソフトウェア・プロジェクトに取り組んでいる間のすべての決断は投資であり、それぞれの投資は
 
 04:26.280 --> 04:27.420
-comes with a cost.
+にはコストがかかる。
 
 04:27.420 --> 04:33.180
-There is indeed a learning curve here, but we approach that investment, trusting that it will carry
+確かにここには学習曲線がある。しかし、私たちはその学習曲線が必ず役に立つと信じて投資に取り組んでいる。
 
 04:33.180 --> 04:34.560
-benefits along the way.
+その過程で得られる利益を信じている。
 
 04:34.560 --> 04:40.230
-That's how I suggest we look at architectures with a cost as well as long term benefits.
+そうやって、長期的なメリットだけでなく、コスト面も考慮した上でアーキテクチャーを検討することを提案したい。
 
 04:40.230 --> 04:46.350
-Many times us as developers feel like the software development and game development process is all about
+私たち開発者は、ソフトウェア開発やゲーム開発のプロセスがすべてであるかのように感じることが多々あります。
 
 04:46.350 --> 04:48.660
-adding new features and functionality.
+新機能の追加
 
 04:48.660 --> 04:51.170
-However, that's not necessarily the case.
+しかし、必ずしもそうではありません。
 
 04:51.180 --> 04:57.960
-Research shows that generally only about 20% of our production effort is adding new features and functionality
+調査によると、一般的に新機能を追加するための労力は、生産労力の20%程度に過ぎないそうです。
 
 04:57.960 --> 04:59.820
-we spend the gross majority of.
+の大半を費やしている。
 
 05:00.000 --> 05:06.090
-Our time and energy, maintaining those features, updating different tools and frameworks we use,
+私たちの時間とエネルギーは、それらの機能を維持し、私たちが使用するさまざまなツールやフレームワークを更新することです、
 
 05:06.390 --> 05:12.660
-addressing user feedback, even reducing areas of scope as well as of course addressing bugs.
+ユーザーからのフィードバックに対応し、範囲を縮小したり、もちろんバグにも対処しています。
 
 05:12.660 --> 05:19.560
-Creating maintainable code pays dividends, establishing a structure and architecture from the beginning
+メンテナンス可能なコードを作成することで、最初から構造とアーキテクチャを確立することができます。
 
 05:19.680 --> 05:26.640
-with a consistent, bespoke way to add our new functionality will help greatly during this 80% of the
+新機能を追加するための一貫したオーダーメイドの方法は、この80％の作業で大いに役立つだろう。
 
 05:26.640 --> 05:27.750
-software's life.
+ソフトウエアの寿命の80%に相当する。
 
 05:27.750 --> 05:31.800
-When we are maintaining fixing bugs and addressing feedback.
+バグを修正したり、フィードバックに対応したりするメンテナンスの時。
 
 05:31.800 --> 05:33.630
-Let's just take bugs for an example.
+バグを例に挙げてみましょう。
 
 05:33.630 --> 05:39.060
-The same bug encountered earlier in development is much, much cheaper to solve.
+開発初期に同じバグに遭遇しても、解決するのはずっとずっと安上がりだ。
 
 05:39.060 --> 05:41.850
-It requires less developer time and less testing upon it.
+その方が開発者の時間もテストも少なくて済む。
 
 05:41.850 --> 05:47.700
-It's a best practice to catch these bugs early and often, as well as fixing bugs before we add new
+このようなバグを早期かつ頻繁に発見し、新しいバグを追加する前に修正することがベストプラクティスです。
 
 05:47.700 --> 05:48.360
-features.
+05:47.700 --> 05:48.360
 
 05:48.360 --> 05:53.640
-In addition to creating maintainable code to help us accomplish these goals, we can also increase the
+これらの目標を達成するために、保守性の高いコードを作成することに加え
 
 05:53.640 --> 05:55.260
-amount of automation and testing.
+自動化とテストの量を増やすことができる。
 
 05:55.260 --> 05:56.190
-Along with the project.
+プロジェクトと共に。
 
 05:56.190 --> 06:00.030
-We'll see how architectures enable us to do testing more easily.
+アーキテクチャによって、より簡単にテストを行えるようになることを確認する。
 
 06:00.030 --> 06:06.990
-Increased automation and testing brings confidence, robustness and stability to our projects as well.
+自動化とテストの強化は、私たちのプロジェクトにも信頼性、堅牢性、安定性をもたらします。
 
 06:06.990 --> 06:12.810
-So how exactly does a framework like the model view controller architecture help us with testing?
+では、モデル・ビュー・コントローラー・アーキテクチャーのようなフレームワークは、具体的にどのようにテストに役立つのでしょうか？
 
 06:12.810 --> 06:19.380
-Well, at its core, using a framework like MVC will invite us to separate the different areas of concern
+MVCのようなフレームワークを使うことで、異なる関心領域を分離することができます。
 
 06:19.390 --> 06:27.150
-from our projects, having these aspects be separate, decoupled in how they communicate, and also
+を分離させることができる。
 
 06:27.150 --> 06:30.440
-inviting smaller responsibilities within each class.
+それぞれのクラスでより小さな責任を担うようにする。
 
 06:30.450 --> 06:36.000
-All of those qualities make for more testable code within testing, especially when we employ something
+これらの性質はすべて、テストの中でよりテストしやすいコードを作ることになる。
 
 06:36.000 --> 06:39.030
-called test driven development, which we'll cover in the course.
+テスト駆動開発と呼ばれるものだ。
 
 06:39.030 --> 06:42.870
-The testing itself will fold into how we make our solutions work.
+テストそのものが、私たちのソリューションをどのように機能させるかに組み込まれていくのです。
 
 06:42.870 --> 06:49.560
-We'll see that thinking about testing upfront helps us create projects with more simple solutions.
+テストについて前もって考えることで、よりシンプルなソリューションを持つプロジェクトを作ることができる。
 
 06:49.560 --> 06:53.370
-We can certainly create an NVQ project without adding testing.
+テストを加えなくても、NVQプロジェクトを作成することはできます。
 
 06:53.520 --> 06:58.890
-And for those of you who've done testing, you know that MVC architecture is not required.
+また、テストをやったことがある人なら、MVCアーキテクチャが必要ないことを知っているはずだ。
 
 06:58.890 --> 07:01.350
-So why do we talk about them coming together?
+では、なぜこの2つが一緒になっているのでしょうか？
 
 07:01.350 --> 07:05.430
-Because combining these two concepts is incredibly powerful together.
+この2つのコンセプトを組み合わせることで、信じられないほどの力を発揮するからです。
 
 07:05.430 --> 07:10.920
-In this course, we'll see how using an established architecture like MVC will bring many benefits to
+このコースでは、MVCのような確立されたアーキテクチャを使用することで、どのように多くの利点がもたらされるかを見ていきます。
 
 07:10.920 --> 07:12.510
-our Unity project development.
+このコースでは、MVCのような確立されたアーキテクチャを使用することで、Unityのプロジェクト開発にどのような利点があるのかを説明します。
 
 07:12.510 --> 07:17.910
-Overall, I'm incredibly excited to get these concepts and practices in the hands of more devs.
+このようなコンセプトとプラクティスがより多くの開発者の手に渡ることに、私はとても興奮しています。
 
 07:17.910 --> 07:23.370
-The Unity development audience spans an incredible amount of different types of developers.
+Unityの開発者層は驚くほど多岐にわたります。
 
 07:23.370 --> 07:28.800
-We have hobbyists creating projects for fun and professional developers of all different skill levels
+趣味でプロジェクトを作る人もいれば、プロの開発者もいます。
 
 07:28.800 --> 07:29.820
-using unity.
+unityを使っています。
 
 07:30.120 --> 07:34.910
-Unity is very flexible and that's one of the very cool benefits about using it.
+unityは非常に柔軟性があり、それがunityを使用することの非常にクールな利点の一つです。
 
 07:34.920 --> 07:39.060
-However, at times that flexibility can allow us to create bad solutions.
+しかし、時にはその柔軟性が悪い解決策を生み出すこともある。
 
 07:39.060 --> 07:44.850
-Applying the best practices that we'll cover here will really help you think new ways about approaching
+ここで取り上げるベストプラクティスを実践することで、新しいアプローチ方法を考えることができるだろう。
 
 07:44.850 --> 07:45.750
-your projects.
+プロジェクト
 
 07:45.750 --> 07:51.990
-I'm confident that the topics we talk about here will help every one of you in your project development.
+ここでお話しするトピックは、皆さんのプロジェクト開発に必ず役立つと確信しています。
 
 07:51.990 --> 07:56.760
-In summary, this course will focus on the MVC architecture for Unity.
+まとめると、このコースではUnityのMVCアーキテクチャに焦点を当てます。
 
 07:56.790 --> 07:59.220
-We covered the course contents.
+コース内容をカバーしました。
 
 07:59.490 --> 08:05.460
-We've seen a little bit about how architecture can help us create better projects, and I've also hinted
+アーキテクチャを学ぶことで、より良いプロジェクトを作ることができることを少し説明しました。
 
 08:05.460 --> 08:11.130
-that the powerful combination of testing and architecture coming together can produce exciting results.
+また、テストとアーキテクチャーの強力な組み合わせがエキサイティングな結果を生み出すことも示唆した。
 
 08:11.130 --> 08:15.750
-In this next section, we'll discuss more about Unity as a platform.
+次のセクションでは、プラットフォームとしてのUnityについて詳しく説明する。
 
 08:16.260 --> 08:22.260
-We'll do a quick recap about why you would choose Unity, what are the different features and services,
+なぜUnityを選ぶのか、どのような特徴やサービスがあるのか、簡単にまとめます、
 
 08:22.260 --> 08:25.200
-and an overview briefly of its major parts.
+そして、主なパーツの概要を簡単に説明します。
 
 08:25.380 --> 08:26.130
-Thanks.
+ありがとうございました。

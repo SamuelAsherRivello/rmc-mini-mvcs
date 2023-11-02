@@ -1,229 +1,229 @@
 WEBVTT
 
 00:02.960 --> 00:06.650
-Hello and welcome to MVC Architecture for Unity.
+UnityのMVCアーキテクチャへようこそ。
 
 00:07.460 --> 00:08.350
-Hello.
+こんにちは。
 
 00:08.360 --> 00:09.290
-I'm Sam.
+サムです
 
 00:09.320 --> 00:11.390
-I'll be leading you through this course.
+このコースを案内する
 
 00:11.720 --> 00:16.280
-I'm a unity certified developer with over 20 years of experience.
+20年以上の経験を持つunity認定デベロッパーです。
 
 00:16.310 --> 00:21.020
-My mission is to educate and entertain with interactive technology.
+unityの開発者であり、20年以上の経験を持つ。
 
 00:21.050 --> 00:25.910
-I've shipped Unity game titles for PC console and mobile platforms.
+PCやモバイル向けにUnityのゲームタイトルを出荷してきました。
 
 00:26.120 --> 00:28.820
-I'm especially excited to bring you this course.
+このコースをお届けできることをとても嬉しく思っています。
 
 00:28.820 --> 00:35.270
-It's a fantastic way for intermediate and advanced developers to level up their skill set in a way that
+このコースは、中級・上級の開発者がスキルセットをレベルアップするための素晴らしい方法です。
 
 00:35.270 --> 00:36.110
-matters.
+重要なことだ。
 
 00:36.500 --> 00:39.140
-Architecture is tremendously important.
+アーキテクチャは非常に重要です。
 
 00:39.530 --> 00:43.730
-Over my career, I've had varied experiences just within unity.
+私のキャリアの中で、ユニティの中だけでも様々な経験をしてきました。
 
 00:43.730 --> 00:49.970
-I've worked in education, teaching at universities, and making online courses like this one shipping
+大学で教えたり、このようなオンラインコースを作ったりと、教育にも携わってきました。
 
 00:49.970 --> 00:57.860
-game titles for mobile console PC, as well as working on educational materials for unity tools and
+unityツールの教材や、PC用携帯ゲーム機用のゲームタイトルの制作にも携わってきました。
 
 00:57.860 --> 01:00.170
-different Unity game development companies.
+また、unityツールの教育用教材やunityゲーム開発会社にも携わっています。
 
 01:00.530 --> 01:03.410
-Welcome to MVC Architecture for Unity.
+UnityのMVCアーキテクチャへようこそ。
 
 01:03.560 --> 01:05.670
-Unity is a versatile game engine.
+Unityは多機能なゲームエンジンです。
 
 01:05.690 --> 01:09.830
-It can be used for all sorts of projects, including, of course, games.
+もちろんゲームも含め、あらゆるプロジェクトに使えます。
 
 01:10.010 --> 01:17.840
-The MVC architecture, which stands for Model, View and controller, brings confidence, organization
+MVCアーキテクチャは、モデル、ビュー、コントローラの頭文字をとったもので、信頼性、組織性をもたらします。
 
 01:17.840 --> 01:20.060
-and scalability to your projects.
+と拡張性をもたらします。
 
 01:20.390 --> 01:26.900
-The takeaway after completing this course is the skills to be able to design and develop unity projects
+このコースを修了することで、unityプロジェクトを設計・開発できるようになります。
 
 01:26.900 --> 01:28.830
-using MVC architecture.
+MVCアーキテクチャを使用することです。
 
 01:28.850 --> 01:33.980
-Throughout the duration of this course, we're going to be focusing on three different learning tracks.
+このコースの期間中、3つの学習トラックに焦点を当てます。
 
 01:34.370 --> 01:40.100
-Whether we're talking about design fundamentals, the unity architectures will be discussing, or the
+設計の基礎、ユニティ・アーキテクチャの話、それとも
 
 01:40.100 --> 01:41.530
-Unity engine itself.
+Unityエンジンそのものについてです。
 
 01:41.540 --> 01:45.860
-We'll look at the theory, we'll look at the editor and we'll look at game code.
+01:40.100→01:45.830ユニティエンジンそのものについて説明します。
 
 01:45.860 --> 01:52.220
-With C-sharp, there will be course prerequisites, it suggested before beginning this course that you
+C-shineのコースには前提条件があります。
 
 01:52.220 --> 01:54.230
-follow along with the software.
+01:52.220 --> 01:54.230
 
 01:54.230 --> 01:59.390
-All of the software that's required is linked to in this course and the resources section, and it's
+このコースに必要なソフトはすべて、このコースとリソースセクションにリンクされています。
 
 01:59.390 --> 02:00.620
-all freely available.
+すべて自由に利用できます。
 
 02:00.620 --> 02:05.990
-That includes having your favorite web browser for searching different links that will be given using
+そのため、お気に入りのウェブブラウザを使って、様々なリンクを検索することができます。
 
 02:05.990 --> 02:10.970
-the Unity Editor, which has a free version and using your favorite C-sharp code editor.
+また、Unityエディター（無料版）やお気に入りのC-sharpコードエディターを使うこともできます。
 
 02:10.970 --> 02:14.210
-You can use the free one that is included with the unity download.
+unityのダウンロードに含まれている無料のものを使うことができます。
 
 02:14.210 --> 02:17.930
-The required knowledge for this course is not for beginners.
+必要な知識は初心者向けではありません。
 
 02:17.930 --> 02:23.230
-It suggested that you have several months or more of experience with Unity and C-sharp.
+|にできるようにあなたがそれをすることができます本当に出くわすことあなたは、実際には私たち約束、誰でも素早くはちょうど無視これらの一見正確にどのように{}人のことを忘れることができます。
 
 02:23.300 --> 02:31.070
-This includes classes, interfaces, methods and properties, how to use events, and the general paradigms
+このページでは、クラス、インターフェイス、メソッド、プロパティ、イベントの使い方、一般的なパラダイムについて説明します。
 
 02:31.070 --> 02:33.110
-of object oriented programming.
+オブジェクト指向プログラミング
 
 02:33.110 --> 02:39.140
-If you don't have a strong knowledge of those particular elements, it suggested that you go gain that
+もし、あなたがそのような特定の要素について強い知識を持っていないのであれば、それを身につけることをお勧めします。
 
 02:39.140 --> 02:41.330
-knowledge before attempting this course.
+02:39.140 --> 02:41.330
 
 02:42.280 --> 02:46.750
-Let's take a look at the course contents to see what we'll cover throughout the sections and chapters
+このコースでは、各セクションやチャプターを通して何をカバーするのか、その内容を見てみよう。
 
 02:46.750 --> 02:47.240
-here.
+ここで
 
 02:47.260 --> 02:50.820
-We'll start with the course introduction, which is this section here.
+まずはコースのイントロダクションから。
 
 02:50.830 --> 02:55.390
-Then we'll have a brief overview of unity, taking a look at how and why you would choose the Unity
+そして、ユニティについて簡単に説明し、ユニティを選ぶ理由を見ていきます。
 
 02:55.390 --> 02:59.390
-Game engine, as well as an overview of unity structure.
+ゲームエンジンとunityの構造について説明します。
 
 02:59.410 --> 03:05.560
-Now, while this course focuses on using MVC architecture, we spend some time with the fundamentals
+このコースでは、MVCアーキテクチャを使用することに重点を置いていますが、基礎的なことにも時間を費やします。
 
 03:05.560 --> 03:12.610
-here in software design will take a look at design principles, design patterns, UML diagramming,
+ここでは、ソフトウェア設計における設計原則、デザインパターン、UMLダイアグラムを取り上げます、
 
 03:12.610 --> 03:15.760
-as well as the architecture specifically for unity.
+また、unityに特化したアーキテクチャも紹介します。
 
 03:15.850 --> 03:22.240
-This section gives you a background to understand the concepts that will carry on into the architecture
+このセクションでは、アーキテクチャに引き継がれる概念を理解するための背景を説明します。
 
 03:22.240 --> 03:27.100
-section while the course will mention several different architectures compatible with unity.
+unityと互換性のあるいくつかの異なるアーキテクチャに言及します。
 
 03:27.130 --> 03:30.880
-We'll move forward using a particular framework that I created.
+私が作ったフレームワークを使って進めていきます。
 
 03:30.880 --> 03:33.790
-The mini MVC framework.
+ミニMVCフレームワークです。
 
 03:33.970 --> 03:40.900
-The mini MVCs for Unity is a great framework to use for production as well as educational purposes,
+Unity用のミニMVCは、教育目的だけでなく、制作にも使える素晴らしいフレームワークです、
 
 03:40.900 --> 03:43.630
-and it's for that reason that I focus on it here in the course.
+このコースで取り上げるのはそのためです。
 
 03:43.810 --> 03:50.170
-The fundamentals that you learn here will help you regardless of which end framework you choose or if
+このコースで学ぶ基礎は、どのフレームワークを選んでも、またどのフレームワークを選んでも、あなたの役に立つことでしょう。
 
 03:50.170 --> 03:54.910
-you choose to create your own MVC framework With the principles that we've learned here after learning
+独自のMVCフレームワークを作る場合にも役立つだろう。
 
 03:54.910 --> 04:00.910
-how and why we would choose an architecture and why MVC is a great choice we'll look at for particular
+なぜMVCが最適なのか？
 
 04:00.910 --> 04:01.690
-examples.
+の例を見てみよう。
 
 04:01.690 --> 04:07.450
-This is the section of the course where I'll share my screen and I will step through three different
+このセクションでは、私が自分の画面を共有し、3つの異なるMVCの例を順を追って説明します。
 
 04:07.450 --> 04:09.320
-projects that I've already created.
+を紹介します。
 
 04:09.340 --> 04:14.440
-These projects are available for you to download and follow along in the course, and there'll be assignments
+これらのプロジェクトはダウンロード可能で、コースに沿って進めることができます。
 
 04:14.440 --> 04:15.850
-for you to do just that.
+そして、そのための課題も用意されている。
 
 04:16.180 --> 04:24.130
-Here we'll look at a clock created with MVC, a simple login with MVC, a3d Rollerball sample game,
+ここでは、MVCで作成した時計、MVCを使った簡単なログイン、3Dローラーボールのサンプルゲームを見ていきます、
 
 04:24.130 --> 04:26.450
-as well as a custom sample project.
+そしてカスタムサンプルプロジェクトです。
 
 04:26.470 --> 04:31.540
-Now those first three will step through and look at the existing project, how we would accomplish it
+この最初の3つは、既存のプロジェクトをステップスルーして見ていきます。
 
 04:31.540 --> 04:35.290
-without MVC and then using the MVC framework.
+MVCなしで、そしてMVCフレームワークを使って。
 
 04:35.290 --> 04:39.160
-Both versions of that are available for you to inspect as well.
+この2つのバージョンも閲覧可能です。
 
 04:39.160 --> 04:40.360
-For that fourth sample.
+4つ目のサンプル
 
 04:40.360 --> 04:43.270
-It's the only section where I will code as I go.
+この部分だけは、私がコードを書きながら進めます。
 
 04:43.270 --> 04:45.040
-It will be a live coding section.
+ライブコーディングのコーナーです。
 
 04:45.040 --> 04:49.810
-I will start with the MVC framework and I will build a brand new example.
+MVCフレームワークから始めて、全く新しいサンプルを作ります。
 
 04:49.810 --> 04:54.280
-On top of that, here are all of the concepts and practices that we learned up to this point in the
+その上で、ここまでに学んだコンセプトとプラクティスのすべてを
 
 04:54.280 --> 04:57.850
-course will come together in one live coding session.
+コースで学んだすべての概念と実践が、1つのライブ・コーディング・セッションに集約されます。
 
 04:57.850 --> 05:03.280
-We'll see in the course, especially in the fundamentals, that one of the fantastic reasons to adopt
+コースの中で、特に基礎的な部分において、このコースを採用する素晴らしい理由のひとつがわかるだろう。
 
 05:03.280 --> 05:09.610
-architectures like MVC is that it separates your code up into nice organized areas.
+MVCのようなアーキテクチャを採用する素晴らしい理由のひとつは、コードを整理された領域に分けることができるということです。
 
 05:09.610 --> 05:14.290
-And a benefit of that is that you can then employ unit testing.
+そして、その利点はユニットテストを採用できることだ。
 
 05:14.290 --> 05:19.900
-So we will, as a bonus, cover some unit testing and test driven development content.
+というわけで、今回はおまけとして、ユニットテストとテスト駆動開発の内容をいくつか取り上げます。

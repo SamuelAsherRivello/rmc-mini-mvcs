@@ -1,508 +1,508 @@
 WEBVTT
 
 00:00.200 --> 00:00.620
-All right.
+よし
 
 00:00.650 --> 00:06.410
-Next, let's take a look at data binding inside Unity with a custom architecture.
+次に、Unity内部のデータバインディングをカスタムアーキテクチャで見てみましょう。
 
 00:09.280 --> 00:13.990
-So this is the data binding demo off to the side.
+これがデータバインディングのデモです。
 
 00:14.590 --> 00:22.750
-So in the data binding demo, we're going to see how in a project that has MVC as added, how would
+データバインディングのデモでは、MVCを追加したプロジェクトで、どのようにデータバインディングを行うかを見ていきます。
 
 00:22.750 --> 00:24.280
-you have data binding?
+データバインディングがあるのか？
 
 00:24.280 --> 00:33.700
-Now, data binding is meant to have an easy reusable pattern to sync values across different domains.
+データバインディングとは、異なるドメイン間で値を同期させるための、再利用しやすいパターンを意味します。
 
 00:33.700 --> 00:41.560
-So if you have two classes and they both have a message text value and you want if one of them changes
+つまり、2つのクラスがあり、どちらもメッセージテキストの値を持っていて、どちらかが変更された場合
 
 00:41.560 --> 00:46.720
-the value for the other concern to hear it, and if the first one hears it, then it changes it, then
+もし最初のクラスがそれを聞いて、それを変更したら
 
 00:46.720 --> 00:47.650
-the second one hears it.
+2番目のものがそれを聞く。
 
 00:47.650 --> 00:49.210
-So having two way binding.
+つまり双方向のバインディングがあるわけだ。
 
 00:49.210 --> 00:50.800
-So let's take a look at an example.
+では、例を見てみましょう。
 
 00:50.800 --> 00:52.780
-You can imagine how useful that would be.
+どれだけ便利か想像がつくだろう。
 
 00:53.470 --> 00:59.830
-Now this demo is part of the MVC architecture for Unity course, which you can find the link for below.
+このデモはUnityのためのMVCアーキテクチャコースの一部です。
 
 00:59.830 --> 01:07.000
-It is a paid course and it's on discount now because we're celebrating having over 6000 students already.
+このコースは有料ですが、受講生が6000人を超えたため、現在割引中です。
 
 01:07.420 --> 01:10.790
-Hopefully by the time you watch this, you'll see even more students there.
+これをご覧になる頃には、さらに多くの受講生が集まっていることを期待しています。
 
 01:13.270 --> 01:20.200
-The course itself covers all sorts of different topics unity, software, design, mini nvqs as well.
+コース自体はユニティ、ソフト、デザイン、ミニNVQなど様々なトピックをカバーしています。
 
 01:20.200 --> 01:27.220
-And in the extra content we've added ten more demos on top of what was already there.
+また、追加コンテンツとして10個のデモを追加しました。
 
 01:27.220 --> 01:28.660
-And we're going to go over one here.
+そのうちのひとつを紹介しよう。
 
 01:29.080 --> 01:31.260
-We're going to look at the data binding here.
+データバインディングを見ていきます。
 
 01:31.270 --> 01:35.830
-So let's go ahead and take a look at the data binding by jumping into unity.
+それでは、unityに飛び込んでデータバインディングを見てみましょう。
 
 01:36.370 --> 01:38.800
-So here inside Unity is the project.
+Unity内のプロジェクトです。
 
 01:38.800 --> 01:44.980
-If you follow from the git, the free git link that has the whole source code, you can bring in the
+git（ソースコード全体があるフリーのgitリンク）からたどると
 
 01:44.980 --> 01:50.190
-package with the instructions there and then you'll just go to samples and click import.
+パッケージのインストラクションを参照し、samplesからimportをクリックします。
 
 01:50.300 --> 01:53.140
-I've already done that here for the sake of this course.
+このコースのために、すでにここでやっておいた。
 
 01:54.340 --> 01:58.760
-Let's go to the more folder and look at the data binding example.
+moreフォルダに移動して、データバインディングの例を見てみましょう。
 
 01:58.780 --> 02:03.070
-So let's take a moment and look at the data, the structure of the folders here.
+このフォルダの構造を見てみましょう。
 
 02:03.070 --> 02:10.330
-So inside data binding, I have a folder for with Mini because some of the earlier demos I have a version
+データバインディングの中にwith Miniというフォルダがあります。
 
 02:10.330 --> 02:11.380
-without mini.
+ミニなし
 
 02:11.410 --> 02:17.360
-If you want to see a traditional approach in unity and then with Mini this one I only have it done with
+unityでの伝統的なアプローチとMiniでのアプローチを見たいのであれば、私はこれしか持っていません。
 
 02:17.360 --> 02:19.100
-Mini, which is what we're looking at here.
+Miniはここで見ているものです。
 
 02:19.220 --> 02:26.690
-Then in the resources folder, I've got a couple prefabs here for the two different views that are going
+resourcesフォルダに、2つの異なるビュー用のプレハブがあります。
 
 02:26.690 --> 02:27.770
-to be in the app.
+を作成しました。
 
 02:28.670 --> 02:32.230
-I've got the scene, which I'll run in a second and then I've got the source code.
+このシーンはすぐに実行されますし、ソースコードもあります。
 
 02:32.240 --> 02:40.580
-Now, as is common with these demos and best practices for many MVCs, whenever you run one demo in
+このようなデモやMVCのベストプラクティスにありがちなことですが、1つのデモを実行するたびに
 
 02:41.120 --> 02:46.600
-Unity, you want to structure it so the the source files for controller model view and service.
+Unityでは、コントローラ、モデル、ビュー、サービスのソースファイルを構造化します。
 
 02:46.610 --> 02:48.920
-If you have it, have their own dedicated folder.
+もしあれば、それぞれ専用のフォルダを用意します。
 
 02:48.920 --> 02:53.960
-That way you can easily see the different separations of concerns.
+そうすることで、懸念事項の区切りがわかりやすくなります。
 
 02:54.790 --> 02:55.330
-Cool.
+かっこいい。
 
 02:55.930 --> 02:57.250
-So let's run the demo here.
+それではデモを実行してみましょう。
 
 02:57.250 --> 02:58.450
-I'll make it nice and big.
+大きくしてみる
 
 03:00.280 --> 03:01.810
-Now, let's take a look at this.
+では、これを見てみましょう。
 
 03:01.810 --> 03:04.150
-So here we have two different views.
+ここで2つの異なる景色を見ることができます。
 
 03:04.150 --> 03:07.930
-You could think that this is part of one layout, but there are actually two prefabs.
+これは1つのレイアウトの一部だと思うかもしれませんが、実際には2つのプレハブがあります。
 
 03:07.930 --> 03:16.450
-So we put them out there and we want to be able to edit this one here and say Hello world from the left.
+そして、このプレハブを編集して、左からHello worldと表示できるようにしたいのです。
 
 03:16.450 --> 03:20.500
-And notice both text fields get updated in real time.
+そして、両方のテキストフィールドがリアルタイムで更新されることに注目してほしい。
 
 03:20.980 --> 03:25.030
-Let's go over here and then say I am on the right.
+右から見てみましょう。
 
 03:25.570 --> 03:28.270
-And you can see that both get updated.
+両方が更新されるのがわかるだろう。
 
 03:28.270 --> 03:31.050
-So we have two way binding in the MVCs.
+つまり、MVCでは双方向のバインディングが可能なのです。
 
 03:31.060 --> 03:32.580
-So let's see how that's done.
+では、その方法を見てみましょう。
 
 03:32.590 --> 03:40.270
-Now, as I may have mentioned in an earlier part of this video series, Unity did historically did not
+さて、このビデオシリーズの以前のパートでお話したかもしれませんが、Unityは歴史的に
 
 03:40.270 --> 03:41.920
-support any two way binding.
+をサポートしていませんでした。
 
 03:42.680 --> 03:49.370
-Then they've added it in the editor for editing tools, and in the future it will come to runtime,
+しかし、Unityはそのようなことはなく、編集ツールのエディタに追加され、将来的にはランタイムにも対応する予定です、
 
 03:49.520 --> 03:52.520
-especially as part of the UI toolkit.
+特にUIツールキットの一部としてね。
 
 03:52.520 --> 03:58.790
-So I'm not using UI toolkit here, and that feature for runtime two way binding by Unity is not yet
+だからここではUIツールキットは使っていないし、Unityによるランタイム双方向バインディングの機能もまだない。
 
 03:58.790 --> 04:04.010
-available at the time of this recording, so I've done a custom solution here, so let's take a look
+というわけで、カスタムソリューションを使ってみました。
 
 04:04.010 --> 04:04.520
-at that.
+を見てみましょう。
 
 04:07.820 --> 04:13.550
-So here in the scene, I have The World, which is a game object that just has the camera and lighting
+このシーンには、カメラとライティングを持つゲームオブジェクトであるThe Worldがあります。
 
 04:13.550 --> 04:14.120
-in it.
+となっている。
 
 04:14.330 --> 04:19.850
-Then I have the left view, which if I move the left.
+そして、左側のビューがあります。
 
 04:23.090 --> 04:23.930
-I can't even of that.
+それすらできない
 
 04:25.330 --> 04:25.810
-All right.
+よし
 
 04:25.810 --> 04:27.700
-And then we have the right view as well.
+そして右の景色も。
 
 04:27.730 --> 04:29.860
-And then we have the data binding example.
+データバインディングの例です。
 
 04:29.860 --> 04:33.620
-Now the data binding takes a reference from the left and the right view.
+データバインディングは左と右のビューから参照を取ります。
 
 04:33.640 --> 04:36.760
-So let's start our code journey here.
+では、ここからコードの旅を始めましょう。
 
 04:37.690 --> 04:39.400
-So here's the monobehaviour.
+これがモノビヘイバーです。
 
 04:39.400 --> 04:42.500
-That is an example running the entire scene.
+これはシーン全体を動かす例です。
 
 04:42.520 --> 04:44.530
-I have the two serialized fields.
+2つのフィールドがシリアライズされています。
 
 04:44.530 --> 04:47.790
-We just looked at the left view and the right view.
+左のビューと右のビューを見ました。
 
 04:47.800 --> 04:52.150
-And then in here in the start, I'm going to create a new context.
+そして、最初に新しいコンテキストを作成します。
 
 04:52.180 --> 04:59.080
-Now, we haven't seen this in earlier demos and in the heart of the course, we don't show this exact
+さて、これは以前のデモでは見られなかったもので、コースの中心部では、このような正確なものは表示されません。
 
 04:59.080 --> 05:02.470
-workflow, but here I'm creating.
+というワークフローがありますが、ここでは私が作成しています。
 
 05:08.140 --> 05:08.620
-Here.
+ここで
 
 05:08.620 --> 05:14.650
-I'm creating the context outside of the Mini and I'm passing that in here.
+ミニの外でコンテキストを作成し、それをここに渡しています。
 
 05:15.010 --> 05:18.520
-And then I have the left view and the right view.
+そして、左のビューと右のビューがあります。
 
 05:19.120 --> 05:25.120
-So I created outside and I pass the same value into each of the.
+それぞれ同じ値を渡します。
 
 05:26.060 --> 05:27.050
-Concerns.
+気になるところ。
 
 05:27.210 --> 05:33.200
-Oh, actually, now that I think about it, there's a different demo where we have multiple minis in
+そういえば、別のデモで複数のミニを
 
 05:33.200 --> 05:35.960
-the same project and this is borrowed from that.
+05:35.960 --> 05:35.960 --> 05:35.960 --> 05:35.960
 
 05:35.960 --> 05:40.850
-So creating the context outside of the mini is not explicitly required.
+そのため、ミニの外でコンテキストを作成することは明示的には必要ありません。
 
 05:40.850 --> 05:46.460
-Here it is for the other demo called Multiple Minis, which you can take a look at in the series.
+これはMultiple Minisと呼ばれる他のデモのもので、シリーズで見ることができる。
 
 05:46.460 --> 05:50.020
-So this comment is not necessarily required here.
+ですから、このコメントは必ずしもここでは必要ではありません。
 
 05:50.030 --> 05:51.980
-Now let's go ahead and look at the Mini.
+それではミニを見てみましょう。
 
 05:53.020 --> 06:01.150
-So here what I do is I have the data binding set up in its own mini, and the Mini here is going to
+ここではデータバインディングをミニにセットアップしています。
 
 06:01.150 --> 06:04.600
-take references for the left view and the right view and store them.
+左のビューと右のビューの参照を取って保存します。
 
 06:05.960 --> 06:10.010
-Then down here in the it's this is the initialize of the Mini.
+そして、ミニの初期化です。
 
 06:10.950 --> 06:12.660
-I'm going to set up the model.
+モデルをセットアップします。
 
 06:12.840 --> 06:15.840
-There's one model I'm going to set up The View.
+モデルを1つ設定します。
 
 06:15.870 --> 06:16.860
-There's two views.
+ビューは2つ
 
 06:16.890 --> 06:18.060
-A left one and a right one.
+左と右だ
 
 06:18.060 --> 06:24.730
-So again, notice that they're distinct separate user interfaces and then I'll have the controller here.
+そしてコントローラーがここにある。
 
 06:24.750 --> 06:31.320
-Now, the the controller is going to take a reference to the model and both views and as with all minis,
+コントローラーはモデルと両方のビューを参照します、
 
 06:31.320 --> 06:33.840
-the controller is the smartest of the concerns.
+コントローラーが一番賢い。
 
 06:33.840 --> 06:38.490
-So it takes a reference to the different parts and it's the controller that's going to be able to have
+そのため、様々なパーツを参照し、コントローラーに
 
 06:38.490 --> 06:40.290
-them working together.
+
 
 06:41.160 --> 06:42.660
-So here's the controller.
+これがコントローラーだ
 
 06:43.230 --> 06:46.560
-I think this is the only concern we'll take a look at here in this demo.
+このデモでは、この部分しか見ていません。
 
 06:46.830 --> 06:49.920
-I take the left and the right, I store them here.
+左と右をここに保存します。
 
 06:49.920 --> 06:51.210
-I store the model.
+モデルを保存します。
 
 06:51.480 --> 06:53.370
-Then down here.
+そしてこの下。
 
 06:54.400 --> 06:55.270
-Ooh.
+おおっ
 
 06:55.750 --> 06:58.100
-I was expecting there to be more logic here.
+もっとロジックがあると思ったんだけどな。
 
 06:58.120 --> 06:59.560
-Let me think about this for a second.
+ちょっと考えさせてくれ。
 
 07:01.690 --> 07:03.040
-Yeah, I guess there's.
+そうだね。
 
 07:03.190 --> 07:04.840
-I created this a bit ago.
+ちょっと前に作ったものです。
 
 07:05.800 --> 07:10.210
-Often, you know, what I'm about to show in the views is how they do the syncing.
+よくあることだが、これから紹介するのは同期を取る方法だ。
 
 07:10.210 --> 07:15.550
-But you could do the sinking of the two values for the text field on the left and the text field on
+しかし、左のテキストフィールドと右のテキストフィールドの2つの値をシンクすることができます。
 
 07:15.550 --> 07:16.990
-the right in the controller.
+右側のテキストフィールドの2つの値をコントローラの中でシンクすることができます。
 
 07:16.990 --> 07:18.940
-So I was kind of expecting to see it here.
+というわけで、ここで見ることをちょっと期待していました。
 
 07:18.940 --> 07:21.220
-But let's go take a look at the other concerns.
+しかし、他の懸念事項を見てみよう。
 
 07:21.220 --> 07:22.510
-So here's the model.
+これがそのモデルだ。
 
 07:24.060 --> 07:26.430
-And the model in MVCs.
+そしてMVCにおけるモデルです。
 
 07:28.290 --> 07:30.450
-Is the dumbest of the concerns.
+ってのが一番気になる。
 
 07:30.450 --> 07:35.670
-So if controller is kind of the smartest, the most aware, it has the context of the kind of the whole
+だから、コントローラが一番賢くて、全体のコンテキストを把握している。
 
 07:35.670 --> 07:38.790
-situation models are on the dumber end of things.
+状況モデルは愚かな方だ。
 
 07:38.790 --> 07:41.130
-It just stores data and that's it.
+ただデータを保存するだけだ。
 
 07:41.130 --> 07:44.040
-So here it's going to store a string of message.
+ここではメッセージの文字列を保存するんだ。
 
 07:45.160 --> 07:47.950
-And it's going to start with that initial value.
+この初期値からスタートします。
 
 07:47.980 --> 07:50.110
-We saw that says, edit this text.
+このテキストを編集します。
 
 07:50.110 --> 07:53.080
-We'll run the demo one more time so you can see that being set.
+もう一回デモを実行して、設定されているのを確認してください。
 
 07:54.460 --> 07:56.790
-Then let's look at the left and right view.
+次に左右の表示を見てみましょう。
 
 07:56.800 --> 07:58.600
-So here's the left view.
+左から見てみましょう。
 
 07:58.630 --> 08:05.820
-It's going to use mono behavior as we often want to do for UI related concerns.
+UI関連でよくやりがちなmonoビヘイビアを使用します。
 
 08:05.830 --> 08:10.060
-It's optional to extend mono behavior in Mini, but here we want to do it.
+Miniでmonoビヘイビアを拡張するのはオプションですが、ここでは拡張したいと思います。
 
 08:10.940 --> 08:13.820
-And then down here, here is where the binding is going to be.
+そして、この下にバインディングがあります。
 
 08:13.820 --> 08:16.310
-So let me make sure that this is on the screen in a nice spot.
+だから、これが画面上のいい場所にあることを確認しておこう。
 
 08:16.310 --> 08:18.650
-So again, we are in initialize.
+もう一度、初期化します。
 
 08:18.980 --> 08:22.970
-I just want to be able to make plenty of room here to talk about it.
+ここで余裕を持って話せるようにしたいんだ。
 
 08:22.970 --> 08:23.410
-Okay.
+オーケー
 
 08:23.420 --> 08:25.790
-So the first thing I do is I set this up.
+まず、これをセットアップします。
 
 08:25.790 --> 08:33.560
-So what I do is I have a reference to the model now in MVCs.
+MVCでモデルを参照するようにします。
 
 08:33.800 --> 08:38.330
-The controller can always access the other concerns.
+コントローラーは常に他の関心事にアクセスできる。
 
 08:38.600 --> 08:45.410
-But as a best practice, you want to limit the access from other model.
+しかし、ベストプラクティスとして、他のモデルからのアクセスを制限したい。
 
 08:45.410 --> 08:48.440
-For example, to view and view to model.
+例えば、ビューやビューからモデルへのアクセス。
 
 08:48.440 --> 08:50.360
-You want to be very aware of those.
+そのあたりはよく理解しておきたい。
 
 08:50.360 --> 08:56.270
-Here, I'm making a conscious choice to actually have the view, which is the class we're in, get a
+ここでは、今いるクラスであるビューに、意識的に
 
 08:56.270 --> 08:57.380
-reference to the model.
+モデルへの参照。
 
 08:57.380 --> 09:03.590
-And the way that you can do that is by asking the context which is implicitly available for you and
+そのためには、暗黙のうちに用意されているコンテキストに問い合わせて
 
 09:03.590 --> 09:08.630
-say, Hey, model locator, go get me a reference to the model that's in the game.
+モデルロケーター、ゲーム内のモデルへのリファレンスを取ってきてくれ。
 
 09:08.660 --> 09:15.480
-It looks a little bit like dependency injection, this particular line here, but it's not quite that
+この行は依存性注入のように見えますが、そうではありません。
 
 09:15.480 --> 09:17.100
-universal of a solution.
+普遍的な解決策ではない。
 
 09:17.130 --> 09:22.860
-The context has locators just for the models so anybody can get them if we need to.
+このコンテクストにはモデルのロケーターがあるので、必要であれば誰でも取得することができます。
 
 09:22.890 --> 09:25.650
-So here in the view, we just get a reference to that model.
+ビューでは、そのモデルへの参照を取得するだけです。
 
 09:25.800 --> 09:30.030
-Remember, that model is just holding the string of what the on screen messages.
+このモデルは、画面上のメッセージの文字列を保持しているだけです。
 
 09:30.880 --> 09:33.870
-Then we're going to do the the binding here.
+そして、バインディングを行います。
 
 09:33.880 --> 09:43.440
-So if the data model for the message changes, then we're going to listen back to that below.
+メッセージのデータモデルが変更された場合は、その内容を以下でリッスンします。
 
 09:43.450 --> 09:47.500
-So any time the data model changes, we will hear it.
+つまり、データモデルが変更されれば、いつでもそれを聞くことができる。
 
 09:47.620 --> 09:51.940
-And any time the view changes, we're going to listen to that.
+そして、ビューが変更されたら、それを聞くことになります。
 
 09:51.940 --> 09:54.430
-So down below we'll look at the method for each of them.
+それでは、それぞれのメソッドを見ていきましょう。
 
 09:54.430 --> 09:55.420
-But remember, we're listening.
+しかし、私たちが聞いていることを忘れないでください。
 
 09:55.420 --> 09:58.810
-If the model changes or if the view changes.
+モデルが変更されたり、ビューが変更された場合。
 
 09:59.230 --> 10:02.800
-So down here, let's look at this one first.
+では、まずこの下を見てみましょう。
 
 10:03.530 --> 10:10.100
-If the data model changes, then we'll update the view.
+データモデルが変更されたら、ビューを更新します。
 
 10:11.800 --> 10:18.160
-And down here, if the view changes, then we'll update the model.
+そしてこの下で、ビューが変更されたらモデルを更新します。
 
 10:18.160 --> 10:24.490
-So each of these two just do the opposite end of this two way binding and that's it.
+つまり、この2つはそれぞれ、双方向バインディングの反対側を行うだけです。
 
 10:24.760 --> 10:30.340
-So the nuts and bolts of this particular flow are not unique to Mini.
+つまり、この特殊な流れはミニに限ったことではないのだ。
 
 10:30.370 --> 10:36.070
-You could do that outside of Mini, but the classes that help it all happen are included in here.
+ミニ以外でもできることですが、それを実現するためのクラスがここに含まれています。
 
 10:36.070 --> 10:43.540
-And it's especially an interesting topic when we talk about mini MVCs because data binding is a major
+データバインディングは、ミニMVCについて話すときに特に興味深いトピックです。
 
 10:43.540 --> 10:44.850
-plus.
+さらに
 
 10:44.860 --> 10:50.440
-If you have data binding, then using something like mini MVC is even quicker and easier to set up.
+データ・バインディングがあれば、ミニMVCのようなものを使えば、さらに素早く簡単にセットアップができます。
 
 10:52.190 --> 10:54.020
-So let's run the demo one more time.
+では、もう一度デモを実行してみましょう。
 
 10:57.940 --> 10:59.470
-I think I uncommented something.
+何かコメントを外してしまったようだ。
 
 10:59.470 --> 11:00.880
-That's why we're recompiling there.
+だから再コンパイルしてるんだ
 
 11:00.910 --> 11:02.740
-So here again, we're running.
+ここでもう一度、実行します。
 
 11:02.740 --> 11:06.780
-We load from the service, the edit this text actually that was hardcoded.
+このテキストはハードコードされています。
 
 11:06.790 --> 11:11.290
-We have the hardcoded value and if I type into the left side, we get that.
+ハードコードされた値を左側に入力すると、このようになります。
 
 11:11.290 --> 11:14.260
-And if I say hi on the right side, it's synced.
+右側で「こんにちは」と言えば同期される。
 
 11:14.260 --> 11:15.040
-So that's it.
+これで完了です。
 
 11:15.040 --> 11:19.900
-That's data binding inside this Unity MVC demo.
+これがこのUnity MVCデモ内でのデータバインディングです。

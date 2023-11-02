@@ -1,664 +1,664 @@
 WEBVTT
 
 00:00.150 --> 00:06.650
-Here I am in an empty unity project set up with many NPCs framework added as well as the samples imported.
+ここでは空のunityプロジェクトで、多くのNPCのフレームワークを追加し、サンプルをインポートしています。
 
 00:06.660 --> 00:10.170
-Here's the folder structure for the version of the game with Mini.
+Miniを入れたバージョンのフォルダ構成です。
 
 00:10.770 --> 00:15.360
-Now we've seen this folder structure before in earlier samples, so I won't go into great detail.
+このフォルダ構造は以前のサンプルでも見たことがあるので、詳しくは説明しません。
 
 00:15.360 --> 00:20.400
-One thing I do want to mention is that just for demo sake, I've chosen to have the pickup component
+ひとつ言っておきたいのは、デモのためにピックアップ・コンポーネントを
 
 00:20.430 --> 00:24.750
-be outside of the mini MVC structurally and within the code.
+構造的にはミニMVCの外側にあり、コードの中にある。
 
 00:24.750 --> 00:26.880
-During the sample overview, I'll mention why.
+サンプルの概要で、その理由を述べます。
 
 00:26.880 --> 00:29.460
-Let's start by opening the main example script.
+まずはメインのサンプル・スクリプトを開きましょう。
 
 00:29.460 --> 00:34.200
-Here we are in the main sample script as we've done before, This extends mono behavior and here we
+先ほどと同じように、メインのサンプル・スクリプトを開いてみましょう。
 
 00:34.200 --> 00:40.440
-have a few serialized fields in earlier samples we've seen at maximum one serialized field used at this
+以前のサンプルでは、いくつかのシリアライズされたフィールドがありました。
 
 00:40.440 --> 00:40.980
-level.
+レベルである。
 
 00:40.980 --> 00:42.320
-But here we have three.
+しかし、ここでは3つある。
 
 00:42.330 --> 00:46.800
-This is because this version of Mini MVCs has three views.
+このバージョンのミニMVCには3つのビューがあるからだ。
 
 00:46.800 --> 00:51.780
-There's lots of ways you can integrate the views into the framework, but a nice flow I have here is
+ビューをフレームワークに統合する方法はたくさんありますが、私が持っている良い流れは以下の通りです。
 
 00:51.780 --> 00:57.480
-to serialize them on the example script and then drag in references from the related game objects of
+の関連ゲームオブジェクトからの参照をドラッグすることです。
 
 00:57.480 --> 01:01.170
-view, player and UI into the inspector window.
+ビュー、プレイヤー、UIをインスペクターウィンドウにドラッグします。
 
 01:01.170 --> 01:06.450
-Here in the start we create the mini class, pass in those references and initialize.
+ここでミニクラスを作成し、参照を渡して初期化します。
 
 01:06.450 --> 01:08.250
-Let's take a look at the scene hierarchy.
+シーンの階層構造を見てみましょう。
 
 01:08.250 --> 01:14.820
-So here in the scene hierarchy, the main example script has three serialized references where I've
+シーン階層では、メインのサンプルスクリプトが3つの参照をシリアライズしています。
 
 01:14.820 --> 01:19.080
-just dragged in references to those other three game objects sitting in the scene.
+シーンにある他の3つのゲームオブジェクトへの参照をドラッグしています。
 
 01:19.080 --> 01:24.810
-We have the player view with a script, we have the input view with a script and we have the UI view
+スクリプトを含むプレイヤービュー、スクリプトを含む入力ビュー、そしてUIビューです。
 
 01:24.810 --> 01:25.650
-with a script.
+スクリプト
 
 01:25.650 --> 01:32.460
-You can imagine with a more complex project you may want to break your UI and other view elements into
+もっと複雑なプロジェクトになると、UIやその他のビューの要素を以下のように分割したくなることは想像に難くない。
 
 01:32.460 --> 01:33.930
-several game objects.
+複数のゲームオブジェクト
 
 01:34.760 --> 01:40.460
-Each one can be handled independently or perhaps assigned to different developers with less opportunity
+各オブジェクトは独立して処理することもできるし、別の開発者に割り当てることもできる。
 
 01:40.460 --> 01:43.130
-for conflicts and work overlaps here.
+このあたりでコンフリクトや作業の重複が発生する可能性がある。
 
 01:43.160 --> 01:49.610
-The reasoning is logical that the player has a different role within the game than the UI, and the
+その理由は、プレイヤーはUIとは異なる役割をゲーム内で担っているという論理的なものであり
 
 01:49.610 --> 01:51.410
-input too is quite different.
+入力も全く異なる。
 
 01:51.440 --> 01:53.060
-Let's resume looking at the code.
+では、コードをもう一度見てみましょう。
 
 01:53.060 --> 01:54.780
-Here we are in the Rollerball mini.
+ローラーボール・ミニです。
 
 01:54.800 --> 01:57.990
-Here I'm implementing I Mini NBCs.
+ミニNBCを実装しています。
 
 01:58.010 --> 02:03.860
-In previous samples we have been sub classing the base mini MVC class.
+これまでのサンプルでは、ベースとなるミニMVCクラスをサブクラス化していました。
 
 02:04.540 --> 02:05.320
-Subclasses.
+サブクラスです。
 
 02:05.350 --> 02:10.290
-Makes sense when you want exactly one model view controller and service.
+モデル・ビュー・コントローラー・サービスを1つにまとめたい場合に有効です。
 
 02:10.300 --> 02:13.210
-Having one of each is common for simple projects.
+シンプルなプロジェクトでは、それぞれ1つずつ持つのが一般的です。
 
 02:13.210 --> 02:14.920
-So that's the default that makes sense.
+だから、それがデフォルトなんだ。
 
 02:14.920 --> 02:20.350
-However, here, because we're going to have more granularity as we scale up, we simply implement this
+しかし、ここでは、規模を拡大するにつれて、より詳細な設定が必要になるため、単純に次のように実装します。
 
 02:20.350 --> 02:25.450
-interface and it gives us more flexibility to structure things the way we'd like here in the properties.
+インターフェイスを実装することで、プロパティの構造をより柔軟に変更することができます。
 
 02:25.450 --> 02:29.560
-We set up the initialized in context as we have before and other samples.
+他のサンプルと同じようにinitialized in contextを設定します。
 
 02:29.560 --> 02:37.180
-We set up our model, we set up multiple views, we set up multiple controllers and we set up our service
+モデルをセットアップし、複数のビューをセットアップし、複数のコントローラをセットアップし、サービスをセットアップします。
 
 02:37.180 --> 02:38.500
-down here in the constructor.
+コンストラクタで設定します。
 
 02:38.500 --> 02:42.460
-We accept the three parameters corresponding to the UI's.
+UIに対応する3つのパラメータを受け取ります。
 
 02:42.460 --> 02:48.010
-Remember, those are serialized fields and for ease of use, just dragged into the scene and for ease
+これらはシリアライズされたフィールドで、使いやすくするためにシーンにドラッグするだけです。
 
 02:48.010 --> 02:49.930
-of use are passed in through here.
+02:49.930 --> 02:49.930
 
 02:49.930 --> 02:55.410
-In our initialize we set up the context, the model service and controller as we've seen before.
+initializeでは、コンテキスト、モデルサービス、コントローラを設定します。
 
 02:55.420 --> 02:59.680
-Notice here in the controller, we're taking more parameters than we've seen before.
+コントローラでは、これまでよりも多くのパラメータを受け取っています。
 
 02:59.680 --> 03:00.640
-Just like this.
+このように
 
 03:00.640 --> 03:03.310
-Mini has some additional views and controllers.
+ミニにはビューとコントローラーが追加されています。
 
 03:03.310 --> 03:06.640
-This constructor itself takes a few additional parameters.
+このコンストラクターはいくつかのパラメーターを受け取ります。
 
 03:06.640 --> 03:12.760
-The order we initialize things in here is generally not important, but often since controllers take
+ここで初期化する順番は一般的には重要ではありません。
 
 03:12.760 --> 03:20.020
-parameters in their constructor, we create the controllers last and even initialize them last that
+コンストラクタでパラメータを取るので、コントローラを最後に作成し、初期化も最後に行います。
 
 03:20.020 --> 03:21.430
-way when they're initialized.
+初期化も最後に行う。
 
 03:21.430 --> 03:26.920
-We know that the parts we'd passed into them beforehand are already initialized From all the things
+事前に渡したパーツはすでに初期化されていることが分かっている。
 
 03:26.920 --> 03:28.000
-we've initialized.
+初期化されている
 
 03:28.000 --> 03:34.960
-We've already seen examples in previous samples of the model and of the controllers and of the view.
+モデル、コントローラ、ビューの例は以前のサンプルで既に見ました。
 
 03:34.960 --> 03:38.860
-So I'm going to take a look at the controller here since it does something unique.
+そこで、ここではコントローラーを見てみようと思います。
 
 03:38.860 --> 03:42.070
-Here we are in the controller class and some previous samples.
+コントローラクラスと以前のサンプルです。
 
 03:42.070 --> 03:45.640
-We've seen our controller extend a base controller.
+このコントローラーはベースコントローラーを拡張しています。
 
 03:45.640 --> 03:52.540
-Again, the base makes the most sense when you have one model, one view, one controller and one service,
+繰り返しになりますが、1つのモデル、1つのビュー、1つのコントローラ、1つのサービスがある場合、ベースは最も理にかなっています、
 
 03:52.540 --> 03:54.010
-which is a good default.
+これは良いデフォルトです。
 
 03:54.130 --> 03:59.560
-However, any time you want to have more of these concerns, for example, multiple views.
+しかし、例えば複数のビューを持つなど、より多くの関心事を持ちたい場合はいつでもそうすることができる。
 
 04:00.400 --> 04:02.620
-We need a custom controller to manage those.
+それらを管理するカスタムコントローラーが必要です。
 
 04:02.620 --> 04:08.070
-So here we implement AI controller as we've seen before, and then we do the implementation custom below.
+ここでは、以前見たようにAIコントローラーを実装し、その下に実装カスタムを行います。
 
 04:08.080 --> 04:11.290
-We handle initialized in context as we've seen in the past.
+これまでと同じように、コンテキストの初期化を行います。
 
 04:11.290 --> 04:16.300
-Inside the constructor, we pass all the arguments in and store them, and inside the initialize we
+コンストラクタの内部では、すべての引数を渡してそれを保存し、initializeの内部では、次のようにしています。
 
 04:16.300 --> 04:21.400
-do our typical setup with initialized in context and then move on to some custom details.
+コンテキストで初期化された典型的なセットアップを行い、その後カスタムの詳細に移ります。
 
 04:21.400 --> 04:26.680
-We observe events from the model, we observe events from The View, and we set up the service kicking
+モデルからのイベントを監視し、ビューからのイベントを監視し、サービスをキックするように設定します。
 
 04:26.680 --> 04:29.650
-off the loading Any time the UI restart button is called.
+UI再起動ボタンが呼び出されたら、いつでもローディングを停止します。
 
 04:29.650 --> 04:31.330
-This method gets called as well.
+このメソッドも呼ばれる。
 
 04:31.330 --> 04:37.510
-The implementation is exactly like we've seen in the non mini MVC version where we offer the user a
+この実装は、ミニMVCでないバージョンで見たように、ユーザーに
 
 04:37.510 --> 04:44.680
-dialog window of are you sure you want to restart and then handle the OC or cancel concepts here when
+というダイアログウィンドウが表示される。
 
 04:44.680 --> 04:45.730
-the service is loaded.
+サービスがロードされます。
 
 04:45.730 --> 04:49.540
-This gets called and we set up the model values any time our input.
+これが呼び出され、入力されたモデル値を設定します。
 
 04:49.540 --> 04:51.730
-Vue dispatches an event.
+Vueがイベントをディスパッチします。
 
 04:52.450 --> 04:53.740
-This method gets called.
+このメソッドが呼び出されます。
 
 04:53.740 --> 04:55.120
-Two things of note here.
+ここで注目すべきことが2つある。
 
 04:55.120 --> 05:01.300
-First of all, we have the model storing a value for our we currently in game over or are we currently
+まず第一に、このモデルには現在ゲームオーバーなのか、それとも現在ゲームオーバーなのかという値が保存されている。
 
 05:01.300 --> 05:01.810
-paused.
+一時停止。
 
 05:01.810 --> 05:07.450
-So several places in the code here you'll see that if either of those is the case, we exit out of a
+つまり、このコードの何カ所かで、このどちらかに該当する場合、ゲームオーバーになる。
 
 05:07.450 --> 05:08.170
-method early.
+メソッドから抜ける。
 
 05:08.170 --> 05:10.120
-So essentially nothing is happening.
+つまり、本質的には何も起こっていないのだ。
 
 05:10.120 --> 05:12.190
-If we're paused or we're game over.
+一時中断かゲームオーバーなら
 
 05:12.190 --> 05:18.100
-And then as we're beginning to see a very common pattern here, here in the controller, we're listening
+そして、ごく一般的なパターンが見えてきた。
 
 05:18.100 --> 05:19.720
-to The View.
+を聞いている。
 
 05:19.720 --> 05:26.050
-When the View calls the method, this method here gets called and we translate that view event into
+ビューがメソッドを呼び出すと、このメソッドが呼び出されます。
 
 05:26.050 --> 05:26.890
-a command.
+コマンドに変換します。
 
 05:27.340 --> 05:34.570
-Again, taking the very coupled logic of a view event and broadcasting that like a radio station in
+また、ビューイベントのロジックをラジオ局のように放送することもできる。
 
 05:34.570 --> 05:35.920
-the form of a command.
+コマンドという形で。
 
 05:36.100 --> 05:42.160
-At this point, any concern that wants to listen in can listen in to this input value, which is a vector
+この時点で、この入力値（ベクトル）をリッスンすることができる。
 
 05:42.160 --> 05:48.070
-of which direction the user is hitting using the arrow keys any time the view for the player detects
+この入力値は、プレーヤーが矢印キーを使ってどの方向に移動したかを示すベクトルである。
 
 05:48.100 --> 05:49.660
-a collision with a pickup.
+ピックアップとの衝突。
 
 05:49.660 --> 05:54.700
-This method is called We set the pickup invisible since it's been collected and play a sound and then
+このメソッドが呼ばれます。 ピックアップが回収されたので不可視にし、音を鳴らしてから
 
 05:54.700 --> 05:58.780
-we count up the score value from 0 to 1, two and three.
+0点から1点、2点、3点とカウントアップしていきます。
 
 05:58.780 --> 06:02.020
-And if our score max value is three, then we call it game over.
+スコアの最大値が3ならゲームオーバー。
 
 06:02.020 --> 06:07.840
-We're beginning to see some patterns as we continue through these samples, as well as seeing flexibility
+このサンプルを続けていくうちに、いくつかのパターンが見えてきた。
 
 06:07.840 --> 06:10.690
-in how we can handle different aspects of game development.
+06:10.690 --> 06:10.690 --> 06:10.690
 
 06:10.690 --> 06:16.990
-So here we are in the controller and we're seeing this event broadcast from the model that, hey, my
+コントローラで、モデルからのイベントブロードキャストを見ている。
 
 06:16.990 --> 06:18.130
-score has been updated.
+スコアが更新されました。
 
 06:18.130 --> 06:21.280
-So let's think of a few different ways that you could handle that.
+では、それを処理する方法をいくつか考えてみよう。
 
 06:21.280 --> 06:25.360
-Different concerns might be interested in the score being updated.
+スコアが更新されることで、さまざまな関係者が関心を持つかもしれない。
 
 06:25.360 --> 06:31.990
-For example, the UI may want to update the number of the score value shown on the screen, and in theory,
+例えば、UIは画面に表示される得点の数値を更新したいかもしれない、
 
 06:31.990 --> 06:37.900
-some other concern may want to handle special effects or audio or something else that should happen
+特殊効果やオーディオなど、何か他の処理を行いたいかもしれない。
 
 06:37.900 --> 06:39.370
-every time score changes.
+得点が変わるたびに
 
 06:39.370 --> 06:45.670
-All of those concerns could get a reference to the model and subscribe to the same event and handle
+そのような懸念はすべて、モデルへの参照を取得し、同じイベントにサブスクライブして処理することができます。
 
 06:45.670 --> 06:47.500
-the consequences we're seeing here.
+ということになる。
 
 06:47.620 --> 06:49.090
-That would be one solution.
+それが一つの解決策でしょう。
 
 06:49.090 --> 06:52.480
-However, in this sample, we're doing a different solution.
+しかし、このサンプルでは別の解決策をとっている。
 
 06:52.480 --> 06:59.170
-The only concern that's listening to that model change is the controller, and the controller is translating
+モデルチェンジを聞いているのはコントローラだけで、コントローラは次のように変換している。
 
 06:59.170 --> 07:00.940
-that event into a command.
+そのイベントをコマンドに変換する。
 
 07:00.940 --> 07:07.270
-Since commands are a radio station that are being broadcast to any concern, this is an especially easy
+コマンドは無線局であり、どのような懸念に対しても放送されるため、これは特に簡単なことである。
 
 07:07.270 --> 07:12.700
-way for any concern to to listen in on this command without needing a reference to the model.
+このコマンドを聞くには、モデルを参照する必要がない。
 
 07:13.030 --> 07:14.890
-That's the key differentiator there.
+それが差別化のポイントだ。
 
 07:14.890 --> 07:18.190
-No reference to the model is needed to listen to this command.
+このコマンドを聞くのにモデルへの参照は必要ありません。
 
 07:18.190 --> 07:23.350
-And when the model changes here for this value, we see the same setup and one the model changes.
+そして、この値でモデルが変更されると、同じセットアップでモデルが変更されます。
 
 07:23.350 --> 07:25.900
-For this value, we see the same setup again.
+この値では、また同じ設定が見られます。
 
 07:25.900 --> 07:27.250
-That's it for the controller.
+コントローラーは以上です。
 
 07:27.250 --> 07:28.540
-Let's take a look at the view.
+ビューを見てみましょう。
 
 07:28.570 --> 07:30.940
-Here we are in the UI view, for example.
+例えばUIビューです。
 
 07:30.940 --> 07:37.180
-Now as we've discussed before, there's no concern in many MVCs that must be a mono behavior, but that's
+さて、前にも説明したように、多くのMVCではモノの動作でなければならないという懸念はありませんが、これは
 
 07:37.180 --> 07:37.870
-optional.
+オプションである。
 
 07:37.870 --> 07:39.370
-You can do it any time you want.
+いつでもできる
 
 07:39.370 --> 07:45.670
-And here, because this is a UI element, because Unity UI works well on mono behaviors and because
+そして、これはUI要素であり、Unity UIはmonoビヘイビアでうまく動作するからである。
 
 07:45.670 --> 07:51.700
-I like the idea of the view sitting on a game object in the scene, I extend my behavior.
+シーンのゲームオブジェクトの上にビューを置くというアイデアが気に入ったので、ビヘイビアを拡張しました。
 
 07:51.700 --> 07:57.070
-Here I create a custom event so that any time the restart button is clicked, I can broadcast an event
+再起動ボタンがクリックされたら、いつでもイベントをブロードキャストできるようにカスタムイベントを作成します。
 
 07:57.070 --> 07:57.430
-here.
+ここで
 
 07:57.430 --> 08:00.130
-I handle initializing context as we always do.
+いつものようにコンテキストの初期化を行う。
 
 08:00.130 --> 08:07.180
-I have reference to different UI text fields, buttons as well as the dialog window that gets attached
+UIのテキストフィールドやボタン、ダイアログウィンドウを参照している。
 
 08:07.180 --> 08:08.740
-when the user hits restart.
+ユーザがrestartを押したとき。
 
 08:08.740 --> 08:14.110
-Here in the initialize, we do pretty standard stuff, including subscribing to that restart button
+initializeでは、restartボタンへのサブスクライブなど、ごく標準的なことを行っています。
 
 08:14.110 --> 08:14.520
-event.
+イベント
 
 08:14.530 --> 08:16.930
-We've seen this pattern before here.
+このパターンは以前にも見たことがある。
 
 08:16.930 --> 08:22.420
-A view is interested in some commands, some of those radio stations that are going to be broadcast
+ビューはいくつかのコマンド、放送されるラジオ局に興味がある。
 
 08:22.420 --> 08:30.430
-from an unknown sender Since the UI view handles showing the values of the current score, the maximum
+UIビューは現在のスコアと最大スコアを表示する。
 
 08:30.430 --> 08:34.810
-score and the status message, it makes sense that we would subscribe to those commands.
+スコアとステータス・メッセージを表示するので、これらのコマンドをサブスクライブするのは理にかなっている。
 
 08:34.810 --> 08:35.140
-Here.
+ここで
 
 08:35.140 --> 08:39.430
-We'll be updating the score text from multiple spots so we have a method here to help here.
+複数の場所からスコアテキストを更新するので、ここで役立つメソッドがある。
 
 08:39.430 --> 08:42.760
-When the score change command happens, we update the UI here.
+得点変更コマンドが発生したら、ここでUIを更新します。
 
 08:42.760 --> 08:47.950
-When the score max command happens, we update the UI as well, and when the status command happens,
+スコアMAXコマンド発生時にはUIを更新し、ステータスコマンド発生時にはUIを更新します、
 
 08:47.950 --> 08:49.120
-we update the status.
+ステータスを更新します。
 
 08:49.120 --> 08:54.130
-So when I was talking about the controller, I mentioned there's different ways you could structure
+コントローラの話をしたときに、様々な構成方法があることを話しました。
 
 08:54.130 --> 08:55.150
-communication.
+コミュニケーション
 
 08:55.150 --> 09:02.230
-The solution I've chosen here is for the UI not to have a direct reference to the model and to listen
+私がここで選んだ解決策は、UIがモデルを直接参照することなく
 
 09:02.230 --> 09:03.010
-directly.
+を直接リッスンすることです。
 
 09:03.550 --> 09:07.720
-Instead, we're getting that information indirectly by using these commands.
+その代わりに、これらのコマンドを使って間接的に情報を取得しています。
 
 09:07.720 --> 09:14.410
-In your use of many MVC, you can choose whether you want to have events with coupling or commands with
+多くのMVCを使用する上で、イベントをカップリングにするか、コマンドをカップリングにするかを選択することができます。
 
 09:14.410 --> 09:18.700
-less coupling, and depending on your needs, there could be pros and cons to each of those solution
+そして、あなたのニーズによって、それぞれの解決策に長所と短所があるでしょう。
 
 09:18.700 --> 09:19.120
-paths.
+パス
 
 09:19.120 --> 09:24.100
-But just for sake of demo, what if we did want this view to access the model directly?
+しかし、デモのために言っておくが、もしこのビューがモデルに直接アクセスしたいとしたらどうなるだろうか？
 
 09:24.100 --> 09:29.620
-It is indeed a best practice to do that for reading data from the model, but it's not recommended that
+モデルからデータを読み込むためにそうするのは確かにベストプラクティスですが、それは推奨されません。
 
 09:29.620 --> 09:31.750
-the View writes to the model directly.
+ビューがモデルに直接書き込むことは推奨されません。
 
 09:31.750 --> 09:37.360
-So let's do an example of how to read just so we see that syntax up here in the UI views Initialize
+それでは、UIビューのInitializeの構文を見てみましょう。
 
 09:37.360 --> 09:43.270
-again, just for sake of example, we could comment out the score, changed command and instead listen
+また、例として、スコアや変更されたコマンドをコメントアウトして、代わりに次のように聞いてみることもできる。
 
 09:43.270 --> 09:44.500
-directly to the model.
+を直接聞くことができる。
 
 09:44.500 --> 09:45.610
-Let's see how we would do that.
+その方法を見てみよう。
 
 09:45.610 --> 09:51.280
-Well, I know which model we'd want to reference and I know how we can access it by using the context
+さて、どのモデルを参照したいのか、そしてコンテキストを使ってどのようにアクセスするのかはわかっています。
 
 09:51.280 --> 09:52.000
-and model local.
+とモデルローカルを使えばいい。
 
 09:52.510 --> 09:55.960
-As long as the Rollerball model has been registered, we can get it.
+ローラーボールのモデルが登録されていれば、それを取得することができます。
 
 09:55.960 --> 10:01.420
-Then I listen to the event I care about and think we're doing the score here, and whenever its value
+そして、気になるイベントを聞き、ここでスコアを出しているのだと思い、その値が出るたびに
 
 10:01.420 --> 10:03.480
-changes, we add a listener.
+リスナーを追加する。
 
 10:03.490 --> 10:07.300
-I'll make a new handler, either manually or automatically.
+手動でも自動でもいいので、新しいハンドラーを作ります。
 
 10:07.300 --> 10:10.060
-You can create the proper method for it.
+適切なメソッドを作ればいい
 
 10:10.060 --> 10:15.550
-And then I want to mimic exactly what was happening beforehand, setting the local score to the proper
+そして、ローカルスコアを適切な値に設定することで、事前に起こっていたことをそのまま真似したい。
 
 10:15.550 --> 10:16.630
-incoming value.
+入ってくる値
 
 10:16.630 --> 10:17.980
-For documentation sake.
+ドキュメントのため
 
 10:17.980 --> 10:21.010
-I can update the names of these arguments so they make more sense.
+これらの引数の名前をより意味のあるものに更新することができる。
 
 10:21.010 --> 10:21.910
-And there we have it.
+これで完成だ。
 
 10:21.910 --> 10:28.510
-I've demonstrated how instead of using a command, I get a reference to the model, subscribe to the
+コマンドを使用する代わりに、モデルへの参照を取得し、モデルをサブスクライブする方法を示しました。
 
 10:28.510 --> 10:31.390
-event and handle the event directly.
+イベントにサブスクライブし、そのイベントを直接処理します。
 
 10:31.390 --> 10:37.180
-Like many things we're seeing here, this pattern of communication from a model change to the view can
+ここで見られる多くの事柄と同様に、モデルの変更からビューへの通信のこのパターンは、次のようなことが起こり得る。
 
 10:37.180 --> 10:38.890
-be handled multiple ways.
+10:38.890 --> 10:38.890
 
 10:38.890 --> 10:43.350
-The two that I've shown here are either with a command or without.
+ここで紹介したのは、コマンドを使う方法と使わない方法です。
 
 10:43.360 --> 10:49.600
-Earlier I mentioned that for demos sake, I chose to put the pickup in a separate folder here to remind
+先ほど、デモのためにピックアップを別のフォルダに入れたと言ったが、これはそのためだ。
 
 10:49.600 --> 10:52.120
-us it's being treated a bit differently.
+を別フォルダにしました。
 
 10:52.120 --> 10:59.740
-Sometimes in a project you may want to have things that exist inside the Mini structurally and outside
+プロジェクトでは、構造的にミニの中にあるものと、ミニの外にあるものを使い分けたい場合があります。
 
 10:59.740 --> 11:00.340
-the Mini.
+ミニ
 
 11:00.340 --> 11:02.860
-This is an example of something that's outside.
+これは外側にあるものの例です。
 
 11:02.860 --> 11:07.510
-It's not part of a model view controller service, it's not part of the mini itself.
+これはモデルビューコントローラーサービスの一部ではなく、ミニ自体の一部でもありません。
 
 11:07.510 --> 11:09.790
-You could have structured things differently.
+別の構造にすればよかったのに
 
 11:09.790 --> 11:13.720
-But here, just for demo sake, again, I'm showing this sitting outside.
+しかし、ここではデモのために、外に座っているところを映しています。
 
 11:13.720 --> 11:17.770
-Each of the yellow cubes that we see in the scene has this pickup component on it.
+この黄色いキューブには、それぞれこのピックアップ・コンポーネントが付いています。
 
 11:18.070 --> 11:22.690
-Let's take a look at its contents here in the pickup component class, we extend model behavior, which
+その中身を見てみましょう。ピックアップコンポーネントのクラスでは、モデルビヘイビアを継承しています。
 
 11:22.690 --> 11:23.440
-makes sense.
+これは理にかなっている。
 
 11:23.440 --> 11:28.290
-We want to have a cube sitting in the scene and have it do things like rotate around.
+このように "キューブ "をシーンに配置し、回転などの動作をさせたいのです。
 
 11:28.300 --> 11:34.270
-Now, the three primary things that this needs to do in the role of the game is be a rotating cube,
+回転する立方体である必要がある、
 
 11:34.300 --> 11:40.480
-be available to be picked up, and then when it gets picked up, the game needs to handle its consequence
+拾われること、そして拾われたときにその結果を処理することである。
 
 11:40.480 --> 11:46.000
-here, restore some local fields so that this pick up knows is the game paused or is the game over?
+ここで、いくつかのローカルフィールドを復元し、このピックアップがゲームが一時停止しているのか、それともゲームオーバーなのかを知ることができるようにする。
 
 11:46.000 --> 11:52.840
-Yet here in the update, the cube rotates itself unless it's paused or the game is over.
+
 
 11:52.840 --> 12:00.580
-This type of high level game state being used by smaller parts like the player, the enemy, the pickups
+このような高レベルのゲーム状態は、プレイヤーや敵、ピックアップなどの小さなパーツに使用されています。
 
 12:00.580 --> 12:02.140
-in a game, it's very common.
+よくあることです。
 
 12:02.140 --> 12:05.950
-So I was exploring in this demo how to pass that information around.
+だからこのデモでは、その情報をどう受け渡すかを探っていたんだ。
 
 12:05.950 --> 12:12.880
-There's multiple different solutions, but what I'm about to show you is an experimental idea just to
+でも、これからお見せするのは、実験的なアイデアです。
 
 12:12.880 --> 12:15.610
-help broaden your mind about what's possible.
+何が可能なのか、あなたの考えを広げる手助けをするものです。
 
 12:15.610 --> 12:19.930
-This is not necessarily the best practice nor the most simple path.
+これは必ずしもベストな方法ではないし、最もシンプルな道でもない。
 
 12:19.930 --> 12:21.580
-It's a somewhat crazy idea.
+いささかクレイジーなアイデアだ。
 
 12:21.580 --> 12:22.450
-Let's take a look.
+見てみよう。
 
 12:22.450 --> 12:29.710
-Since I'm considering this pickup somewhat outside of the system, it is not a view by choice nor another
+このピックアップはシステムからやや外れたところで考えているため、選択したビューでもなければ、別のビューでもない。
 
 12:29.710 --> 12:30.340
-concern.
+気になるところだ。
 
 12:30.340 --> 12:34.030
-How can we have it access the data from inside the view?
+どうすればビューの中からデータにアクセスできるのでしょうか？
 
 12:34.030 --> 12:40.300
-Well, one time as the scene wakes up and this object awakes, we make a bridge to the Mini and here
+シーンがウェイクアップし、このオブジェクトがウェイクアップしたら、ミニへのブリッジを作成します。
 
 12:40.300 --> 12:42.070
-is the experimental solution.
+これが実験的解決策です。
 
 12:42.070 --> 12:47.380
-Now we've seen context and we've seen the context model locator.
+これでコンテキストを確認し、コンテキストモデルのロケーターを確認した。
 
 12:47.380 --> 12:51.660
-The model locator allows you to register a model and retrieve it.
+モデルロケーターはモデルを登録し、それを検索することができます。
 
 12:51.670 --> 12:53.620
-We saw that earlier in this sample.
+このサンプルでは以前にも見たことがあります。
 
 12:53.620 --> 12:58.810
-The context locator is not used anywhere in the framework except right here.
+コンテキストロケーターはフレームワークの中ではここ以外では使われていない。
 
 12:58.810 --> 13:04.690
-It's a singleton, which any context can add itself into the context locator.
+これはシングルトンで、どんなコンテキストでもコンテキストロケータに追加することができる。
 
 13:04.690 --> 13:08.620
-And any scope, including this one here, can get the context out.
+このスコープを含め、どのスコープでもコンテキストを取り出すことができる。
 
 13:08.620 --> 13:15.430
-So any time, any context gets added and any model gets added to that context, we check, Hey, is
+だから、コンテキストが追加され、そのコンテキストにモデルが追加された場合は、いつでもチェックする。
 
 13:15.430 --> 13:16.930
-that a model I care about?
+13:16.930 --> 13:16.930
 
 13:16.930 --> 13:19.450
-And then we subscribe to those changes here.
+そして、その変更をここで購読する。
 
 13:19.450 --> 13:24.610
-In the event handler, we just store a local version of those values that we care about.
+イベントハンドラでは、気になる値のローカルバージョンを保存するだけです。
 
 13:24.610 --> 13:32.200
-And now any time the game is over or not, or the game is paused or not, each pickup listens to that
+そして、ゲームが終わるか終わらないか、ゲームが一時停止されるか一時停止されないかに関わらず、各ピックアップがそのイベントをリッスンする。
 
 13:32.200 --> 13:33.560
-and properly responds.
+そして適切に対応する。
 
 13:33.580 --> 13:39.940
-Now, for this specific use case, I would not handle it this way, but I wanted it in one of the samples
+この具体的な使用例では、私はこのような処理はしませんが、サンプルの1つではこのような処理が必要でした。
 
 13:39.940 --> 13:45.070
-just to show you how to bridge non mini world with the mini world.
+非ミニワールドとミニワールドの橋渡しをする方法をお見せしましょう。
 
 13:45.070 --> 13:47.020
-And here's an example of how to do that.
+これがその例だ。
 
 13:47.020 --> 13:53.530
-Real world use cases of this could be if you decide to have a game that is currently not mini enabled
+実際の使用例としては、現在ミニワールドに対応していないゲームを持つことにした場合などが考えられます。
 
 13:53.530 --> 13:59.080
-and you want to bring the mini in to a hybrid solution, you could use the technique you've got here
+ハイブリッドソリューションにミニを導入したい場合、ここで紹介したテクニックを使うことができる。
 
 13:59.080 --> 14:03.010
-to have portions of your game that aren't yet in a mini concern.
+を使えば、まだミニになっていない部分を気にすることができる。
 
 14:03.010 --> 14:05.200
-Reach into the mini world as they need.
+|にできるようになります。
 
 14:05.200 --> 14:09.400
-So I hope to inspire some ideas, including this experimental portion here.
+だから、この実験的な部分も含めて、何かアイデアがひらめけばいいなと思っています。
 
 14:09.400 --> 14:12.490
-We've now looked at all the code we want to for this sample.
+これで、このサンプルに必要なコードをすべて見ることができました。
 
 14:12.490 --> 14:13.360
-That's it.
+以上です。
