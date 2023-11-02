@@ -1,0 +1,361 @@
+WEBVTT
+
+00:00.510 --> 00:03.090
+The MVC architecture overview here.
+
+00:03.090 --> 00:08.430
+Continuing with just the course overview, let's look at what we'll learn from the MVC fundamentals
+
+00:08.430 --> 00:09.120
+themselves.
+
+00:09.120 --> 00:14.130
+When we talk about architecture and software design, there are so many different terms.
+
+00:14.130 --> 00:20.100
+Some of these terms you may be familiar with already and may have a firm grasp of which of the ones
+
+00:20.100 --> 00:22.080
+that you see here are new to you.
+
+00:22.110 --> 00:25.740
+Or maybe you have some idea, but not a full definition.
+
+00:25.740 --> 00:31.260
+You will see terms like these used throughout the course, and when I introduce a new term, I will
+
+00:31.260 --> 00:33.660
+explain what it is and give it the context.
+
+00:34.080 --> 00:37.740
+By the end of this course, you'll have a firmer grasp on the vocabulary.
+
+00:37.770 --> 00:41.440
+Imagine a ladder of your own professional growth through your career.
+
+00:41.520 --> 00:47.670
+Some of these principles come earlier in your development and would be required in junior and intermediate
+
+00:47.670 --> 00:48.510
+job positions.
+
+00:48.510 --> 00:52.830
+Understanding classes and object oriented programming are fundamental.
+
+00:52.830 --> 00:59.940
+Over time, expert developers work on design patterns, abstracting concepts, making their code more
+
+00:59.940 --> 01:04.980
+modular and reusable, as well as learning, testing and architectures.
+
+01:04.980 --> 01:10.620
+This course focuses on architecture, and we will also hit on a lot of these different concepts, including
+
+01:10.620 --> 01:12.900
+testing the progression through a game.
+
+01:12.900 --> 01:19.950
+Developers career can have many different job titles depending on the company country culture that you're
+
+01:19.950 --> 01:20.670
+working in.
+
+01:20.700 --> 01:22.440
+That growth could be quite different.
+
+01:22.440 --> 01:27.780
+But here is a loose example of some of the different jobs that you can progress on through a long career
+
+01:27.780 --> 01:28.710
+in game development.
+
+01:28.710 --> 01:34.590
+While having experience in architectural concepts is always important in software development and game
+
+01:34.590 --> 01:41.640
+development, it is especially crucial in the mid game of moving towards senior development positions.
+
+01:41.640 --> 01:47.520
+You can even see on this specific chart there's dedicated software architect positions as well as a
+
+01:47.520 --> 01:49.440
+place to bring your expertise.
+
+01:49.440 --> 01:56.190
+Ultimately, a software's architecture is the fundamental organization of all of its parts.
+
+01:56.190 --> 02:02.610
+It's built on a set of design principles and design patterns, both of which we'll discuss in the course.
+
+02:02.610 --> 02:09.060
+Some of the benefits of consciously applying an architecture to your application or game is that it's
+
+02:09.060 --> 02:10.890
+based on proven concepts.
+
+02:10.890 --> 02:14.910
+It'll be in confidence, performance and scalability to your projects.
+
+02:14.910 --> 02:21.120
+Architectures are typically language agnostic, meaning the principles sit higher and more theoretical
+
+02:21.120 --> 02:26.670
+and could be applied to various different programming languages and programming platforms like the Unity
+
+02:26.670 --> 02:27.300
+Game Engine.
+
+02:27.300 --> 02:33.060
+Now, while there is a learning curve, teams that embrace architecture will find development to move
+
+02:33.060 --> 02:37.860
+faster and especially maintenance on projects will be much faster as well.
+
+02:37.860 --> 02:40.740
+In the course we'll touch on different types of architecture.
+
+02:40.740 --> 02:43.740
+There's first the no architecture approach.
+
+02:43.740 --> 02:49.860
+This is especially what beginners use in projects or even veterans use in prototypes of projects.
+
+02:49.860 --> 02:56.580
+Here, for the sake of speed and flexibility, teams may choose no particular framework and move forward.
+
+02:56.790 --> 03:01.860
+Often in these examples you get yourself into trouble where scalability and adding features at the end
+
+03:01.860 --> 03:02.940
+becomes very difficult.
+
+03:02.940 --> 03:08.580
+Veteran teams may choose custom architectures, taking the different principles and patterns that we'll
+
+03:08.580 --> 03:11.460
+talk about in this course and applying them themselves.
+
+03:11.460 --> 03:14.340
+There are advantages to that, particularly customization.
+
+03:14.340 --> 03:19.800
+There are established architectures, blueprints that we can pull off of the shelf and bring into our
+
+03:19.800 --> 03:20.640
+project.
+
+03:20.640 --> 03:24.840
+These include MVC, Nvme and MVP.
+
+03:24.870 --> 03:30.810
+This course will be focusing on the MVC or model view controller pattern, so why not proceed in our
+
+03:30.810 --> 03:34.950
+projects with the no architecture approach doing what feels right in the moment?
+
+03:34.950 --> 03:40.800
+Well, while it may be faster initially and a bit freeing and flexible in how you approach it, you'll
+
+03:40.800 --> 03:45.780
+find there'll be more debate about how and where to add each features, whether you're a single person
+
+03:45.780 --> 03:47.610
+team or on a larger team.
+
+03:47.610 --> 03:50.400
+Each developer may approach and solve this differently.
+
+03:50.400 --> 03:56.190
+That inconsistency will make your code more difficult to read your project, more difficult to maintain.
+
+03:56.190 --> 04:01.170
+And when you on board or off board talent to your project, it can be challenging bringing new people
+
+04:01.170 --> 04:01.470
+on.
+
+04:01.470 --> 04:06.750
+There's more training to be done and when someone departs your team, there's more information custom
+
+04:06.750 --> 04:10.080
+to their particular solutions you need to get before they depart.
+
+04:10.080 --> 04:15.300
+To many developers, the no architecture approach may feel like the best solution, but undoubtedly
+
+04:15.300 --> 04:17.300
+bugs and complexity will come along.
+
+04:17.310 --> 04:20.400
+I'm reminded of this quote and I'll paraphrase it.
+
+04:20.730 --> 04:26.280
+Every decision that we make while working on our software projects is an investment, and each investment
+
+04:26.280 --> 04:27.420
+comes with a cost.
+
+04:27.420 --> 04:33.180
+There is indeed a learning curve here, but we approach that investment, trusting that it will carry
+
+04:33.180 --> 04:34.560
+benefits along the way.
+
+04:34.560 --> 04:40.230
+That's how I suggest we look at architectures with a cost as well as long term benefits.
+
+04:40.230 --> 04:46.350
+Many times us as developers feel like the software development and game development process is all about
+
+04:46.350 --> 04:48.660
+adding new features and functionality.
+
+04:48.660 --> 04:51.170
+However, that's not necessarily the case.
+
+04:51.180 --> 04:57.960
+Research shows that generally only about 20% of our production effort is adding new features and functionality
+
+04:57.960 --> 04:59.820
+we spend the gross majority of.
+
+05:00.000 --> 05:06.090
+Our time and energy, maintaining those features, updating different tools and frameworks we use,
+
+05:06.390 --> 05:12.660
+addressing user feedback, even reducing areas of scope as well as of course addressing bugs.
+
+05:12.660 --> 05:19.560
+Creating maintainable code pays dividends, establishing a structure and architecture from the beginning
+
+05:19.680 --> 05:26.640
+with a consistent, bespoke way to add our new functionality will help greatly during this 80% of the
+
+05:26.640 --> 05:27.750
+software's life.
+
+05:27.750 --> 05:31.800
+When we are maintaining fixing bugs and addressing feedback.
+
+05:31.800 --> 05:33.630
+Let's just take bugs for an example.
+
+05:33.630 --> 05:39.060
+The same bug encountered earlier in development is much, much cheaper to solve.
+
+05:39.060 --> 05:41.850
+It requires less developer time and less testing upon it.
+
+05:41.850 --> 05:47.700
+It's a best practice to catch these bugs early and often, as well as fixing bugs before we add new
+
+05:47.700 --> 05:48.360
+features.
+
+05:48.360 --> 05:53.640
+In addition to creating maintainable code to help us accomplish these goals, we can also increase the
+
+05:53.640 --> 05:55.260
+amount of automation and testing.
+
+05:55.260 --> 05:56.190
+Along with the project.
+
+05:56.190 --> 06:00.030
+We'll see how architectures enable us to do testing more easily.
+
+06:00.030 --> 06:06.990
+Increased automation and testing brings confidence, robustness and stability to our projects as well.
+
+06:06.990 --> 06:12.810
+So how exactly does a framework like the model view controller architecture help us with testing?
+
+06:12.810 --> 06:19.380
+Well, at its core, using a framework like MVC will invite us to separate the different areas of concern
+
+06:19.390 --> 06:27.150
+from our projects, having these aspects be separate, decoupled in how they communicate, and also
+
+06:27.150 --> 06:30.440
+inviting smaller responsibilities within each class.
+
+06:30.450 --> 06:36.000
+All of those qualities make for more testable code within testing, especially when we employ something
+
+06:36.000 --> 06:39.030
+called test driven development, which we'll cover in the course.
+
+06:39.030 --> 06:42.870
+The testing itself will fold into how we make our solutions work.
+
+06:42.870 --> 06:49.560
+We'll see that thinking about testing upfront helps us create projects with more simple solutions.
+
+06:49.560 --> 06:53.370
+We can certainly create an NVQ project without adding testing.
+
+06:53.520 --> 06:58.890
+And for those of you who've done testing, you know that MVC architecture is not required.
+
+06:58.890 --> 07:01.350
+So why do we talk about them coming together?
+
+07:01.350 --> 07:05.430
+Because combining these two concepts is incredibly powerful together.
+
+07:05.430 --> 07:10.920
+In this course, we'll see how using an established architecture like MVC will bring many benefits to
+
+07:10.920 --> 07:12.510
+our Unity project development.
+
+07:12.510 --> 07:17.910
+Overall, I'm incredibly excited to get these concepts and practices in the hands of more devs.
+
+07:17.910 --> 07:23.370
+The Unity development audience spans an incredible amount of different types of developers.
+
+07:23.370 --> 07:28.800
+We have hobbyists creating projects for fun and professional developers of all different skill levels
+
+07:28.800 --> 07:29.820
+using unity.
+
+07:30.120 --> 07:34.910
+Unity is very flexible and that's one of the very cool benefits about using it.
+
+07:34.920 --> 07:39.060
+However, at times that flexibility can allow us to create bad solutions.
+
+07:39.060 --> 07:44.850
+Applying the best practices that we'll cover here will really help you think new ways about approaching
+
+07:44.850 --> 07:45.750
+your projects.
+
+07:45.750 --> 07:51.990
+I'm confident that the topics we talk about here will help every one of you in your project development.
+
+07:51.990 --> 07:56.760
+In summary, this course will focus on the MVC architecture for Unity.
+
+07:56.790 --> 07:59.220
+We covered the course contents.
+
+07:59.490 --> 08:05.460
+We've seen a little bit about how architecture can help us create better projects, and I've also hinted
+
+08:05.460 --> 08:11.130
+that the powerful combination of testing and architecture coming together can produce exciting results.
+
+08:11.130 --> 08:15.750
+In this next section, we'll discuss more about Unity as a platform.
+
+08:16.260 --> 08:22.260
+We'll do a quick recap about why you would choose Unity, what are the different features and services,
+
+08:22.260 --> 08:25.200
+and an overview briefly of its major parts.
+
+08:25.380 --> 08:26.130
+Thanks.
