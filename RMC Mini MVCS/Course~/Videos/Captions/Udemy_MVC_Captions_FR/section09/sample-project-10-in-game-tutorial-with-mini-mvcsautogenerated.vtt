@@ -1,595 +1,595 @@
 WEBVTT
 
 00:00.290 --> 00:00.740
-All right.
+Très bien.
 
 00:00.740 --> 00:04.940
-Let's talk about how you would do an in-game tutorial in something.
+Parlons de la façon dont vous feriez un tutoriel dans un jeu.
 
 00:06.730 --> 00:14.230
-First of all, why is having an in-game tutorial useful to the end user experience and why is it challenging
+Tout d'abord, pourquoi un didacticiel en jeu est-il utile à l'expérience de l'utilisateur final et pourquoi est-ce un défi ?
 
 00:14.230 --> 00:15.280
-for developers?
+pour les développeurs ?
 
 00:15.310 --> 00:25.000
-Well, often when we play video games, there's enough rules about the game world, about how to interact,
+Souvent, lorsque nous jouons à des jeux vidéo, il y a suffisamment de règles sur le monde du jeu, sur la façon d'interagir,
 
 00:25.000 --> 00:30.010
-doing the input that you have to tell the user about that explicitly.
+de faire les saisies qu'il faut le dire explicitement à l'utilisateur.
 
 00:30.370 --> 00:37.180
-A tutorial is a device that in the first one minute, ten minute, one hour of gameplay, you give the
+Un didacticiel est un dispositif qui, dans les premières minutes, dix minutes ou une heure de jeu, donne à l'utilisateur la possibilité de se familiariser avec le jeu.
 
 00:37.180 --> 00:39.490
-user additional information.
+informations supplémentaires à l'utilisateur.
 
 00:39.490 --> 00:46.720
-So as they walk up to a character, you explain how to hit a button to start the conversation.
+Ainsi, lorsqu'il s'approche d'un personnage, vous lui expliquez comment appuyer sur un bouton pour entamer la conversation.
 
 00:46.720 --> 00:51.430
-Whereas after five hours of that game you wouldn't need to show them every time.
+Alors qu'après cinq heures de jeu, vous n'auriez pas besoin de leur montrer à chaque fois.
 
 00:51.430 --> 00:57.640
-So this is something that is temporary, often done at the beginning or the first time the user encounters
+Il s'agit donc de quelque chose de temporaire, souvent fait au début ou la première fois que l'utilisateur rencontre
 
 00:57.640 --> 00:58.360
-something.
+quelque chose.
 
 00:58.540 --> 01:01.840
-So that's why we want to have it right now.
+C'est pourquoi nous voulons l'avoir maintenant.
 
 01:01.840 --> 01:03.100
-Why is it challenging?
+Pourquoi est-ce un défi ?
 
 01:03.130 --> 01:06.260
-Well, because it doesn't always happen.
+Parce que ce n'est pas toujours le cas.
 
 01:06.260 --> 01:10.370
-Like typically when we create game features, they're always available here.
+Par exemple, lorsque nous créons des fonctions de jeu, elles sont toujours disponibles ici.
 
 01:10.370 --> 01:15.460
-We want this only to happen in the first minute or 10 minutes or 1 hour, as I mentioned.
+Nous voulons que cela ne se produise qu'au cours de la première minute, des 10 premières minutes ou de la première heure, comme je l'ai dit.
 
 01:15.470 --> 01:21.530
-So you could either go through all of your game systems and have them each say, Hey, if we're in the
+Vous pouvez donc soit passer en revue tous vos systèmes de jeu et leur demander de dire : "Hé, si nous sommes dans la première minute", soit "si nous sommes dans la première heure", soit "si nous sommes dans la première minute".
 
 01:21.530 --> 01:26.030
-first ten minutes, do this extra thing, but otherwise don't do the extra thing.
+dix premières minutes, faites cette chose supplémentaire, mais sinon ne faites pas cette chose supplémentaire.
 
 01:26.030 --> 01:30.530
-But that becomes a bit of code that you have to put in a lot of different systems.
+Mais cela devient un bout de code qu'il faut intégrer dans de nombreux systèmes différents.
 
 01:30.530 --> 01:34.960
-So what we're going to see here is how to do in-game tutorials in a different way.
+Ce que nous allons voir ici, c'est comment faire des tutoriels dans le jeu d'une manière différente.
 
 01:34.970 --> 01:40.970
-We're going to have the core game logic know nothing about the tutorials and then we'll have a tutorial
+Nous allons faire en sorte que la logique de base du jeu ne sache rien des didacticiels, puis nous aurons un didacticiel
 
 01:40.970 --> 01:47.810
-entity sit off to the side and listen to what the core game is doing and it is only going to be active
+s'assoit sur le côté et écoute ce que fait le jeu principal, qui ne sera actif qu'à partir du moment où la logique du jeu principal sera active.
 
 01:47.810 --> 01:53.900
-for the first ten minutes and then if it goes away, the core game never knew about it and doesn't know
+pendant les dix premières minutes, puis si elle disparaît, le jeu principal n'en a jamais eu connaissance et ne sait pas ce qu'il en est.
 
 01:53.900 --> 01:54.920
-about it anymore.
+plus.
 
 01:54.920 --> 01:56.870
-So let's take a look at how that would work.
+Voyons donc comment cela fonctionnerait.
 
 01:57.650 --> 02:04.070
-Now, this talk and this demo scene is part of a larger course, which is the mini architecture for
+Cet exposé et cette scène de démonstration font partie d'un cours plus large, qui est la mini-architecture pour
 
 02:04.070 --> 02:06.920
-unity course that you can get linked below.
+cours sur l'unité que vous pouvez obtenir en cliquant sur le lien ci-dessous.
 
 02:06.950 --> 02:12.740
-Now, that's a paid course where you get to see samples on how this feature works.
+Il s'agit d'un cours payant qui vous permet de voir des exemples de fonctionnement de cette fonctionnalité.
 
 02:12.740 --> 02:15.110
-About the theory of software design.
+Sur la théorie de la conception de logiciels.
 
 02:15.110 --> 02:16.700
-Here's an in-depth look.
+Voici un aperçu approfondi.
 
 02:16.700 --> 02:22.430
-Looking at design patterns, looking at design principles, learning UML, diagramming, covering different
+Examiner les modèles de conception, les principes de conception, apprendre l'UML, la création de diagrammes, couvrir les différents aspects de la conception de logiciels.
 
 02:22.460 --> 02:26.360
-types of unity architectures and why you might need them.
+types d'architectures d'unité et pourquoi vous pourriez en avoir besoin.
 
 02:26.930 --> 02:33.020
-The spoiler alert here is that you want them because they help you scale projects, create more maintainable
+L'alerte spoiler ici est que vous les voulez parce qu'elles vous aident à mettre à l'échelle les projets, à créer des projets plus faciles à maintenir et à améliorer.
 
 02:33.020 --> 02:40.010
-code and have more error free workflows as you're building a project that scales.
+et d'avoir des flux de travail plus exempts d'erreurs lors de la construction d'un projet évolutif.
 
 02:40.700 --> 02:42.650
-It includes lots of different stuff.
+Il comprend beaucoup de choses différentes.
 
 02:42.680 --> 02:48.740
-One thing we've added here is a ten or more additional demos since the course was first created, and
+Nous avons ajouté une dizaine de démonstrations supplémentaires depuis la création du cours.
 
 02:48.740 --> 02:52.550
-one of them is how to do a tutorial, and that's the one we're going to look at now.
+l'une d'entre elles porte sur la réalisation d'un didacticiel, et c'est celle que nous allons examiner maintenant.
 
 02:52.910 --> 02:54.830
-So let's jump into unity here.
+Alors, passons à unity.
 
 02:55.580 --> 03:05.240
-So if you get the mini MVCs package free from Git or as part of the course, you'll download and install
+Si vous obtenez le paquetage mini MVCs gratuitement sur Git ou dans le cadre du cours, vous téléchargerez et installerez
 
 03:05.240 --> 03:07.300
-that with the git instructions.
+en suivant les instructions de Git.
 
 03:07.310 --> 03:11.840
-And then here in the samples tab, you'll import the examples.
+Ensuite, dans l'onglet samples, vous importerez les exemples.
 
 03:11.840 --> 03:14.680
-And that's what we're going to be taking a look at here on the side.
+C'est ce que nous allons voir sur le côté.
 
 03:14.840 --> 03:15.950
-I've already done that.
+Je l'ai déjà fait.
 
 03:15.950 --> 03:24.560
-So when I go more and then I open up the tutorial mini, we can see we've got some prefabs, we've got
+Donc quand je vais plus loin et que j'ouvre le mini-tutoriel, nous pouvons voir que nous avons quelques préfabriqués, nous avons
 
 03:24.560 --> 03:31.370
-the scene, we've got a bit of code here that has the tutorial view and the tutorial controller.
+la scène, nous avons un peu de code ici qui contient la vue du didacticiel et le contrôleur du didacticiel.
 
 03:31.490 --> 03:33.350
-Let's go ahead and run this.
+Lançons l'exécution.
 
 03:40.760 --> 03:45.580
-Yeah, I'm actually going to show something before we step into this, because notice the tutorial.
+Oui, je vais en fait montrer quelque chose avant d'entrer dans le vif du sujet, car remarquez le didacticiel.
 
 03:45.590 --> 03:46.640
-Well, I'll just make a nice big.
+Eh bien, je vais juste faire un beau gros.
 
 03:47.870 --> 03:56.090
-So the tutorial that is in this scene is in the box in the upper corner there it says tutorial enter
+Le tutoriel qui se trouve dans cette scène est dans la boîte dans le coin supérieur où il est écrit "tutorial enter".
 
 03:56.090 --> 03:57.770
-username and password.
+le nom d'utilisateur et le mot de passe.
 
 03:57.800 --> 04:04.010
-So here for simplicity I'm mimicking how a web experience would work.
+Par souci de simplicité, j'imite ici le fonctionnement d'une expérience Web.
 
 04:04.040 --> 04:07.130
-Often we're logging in to web experiences.
+Souvent, nous nous connectons à des expériences web.
 
 04:07.130 --> 04:14.120
-You have a username and a password that is the core real estate of the screen is the login mini example.
+Vous avez un nom d'utilisateur et un mot de passe qui constituent l'essentiel de l'écran, c'est le mini exemple de connexion.
 
 04:14.120 --> 04:21.530
-Now that example sits in a different scene to just illustrate how separate this tutorial and the core
+Cet exemple se trouve dans une scène différente pour illustrer à quel point ce tutoriel et la partie principale de l'écran sont distincts.
 
 04:21.530 --> 04:22.880
-game logic can be.
+logique du jeu.
 
 04:22.880 --> 04:29.000
-I have the login mini as a separate scene, so that's a scene you can go and look at in depth and you
+La mini-connexion fait l'objet d'une scène séparée, ce qui permet de l'examiner en profondeur et d'en tirer des enseignements.
 
 04:29.000 --> 04:35.480
-can see how many can be used to put a username, password, login button, log out button in there.
+pouvez voir combien d'éléments peuvent être utilisés pour mettre un nom d'utilisateur, un mot de passe, un bouton de connexion, un bouton de déconnexion.
 
 04:35.480 --> 04:39.920
-So it's telling me here that the password is one, two, three, four.
+Il me dit donc ici que le mot de passe est un, deux, trois, quatre.
 
 04:39.920 --> 04:46.550
-So if I go ahead here and I type in the name, I'm going to type in my name.
+Donc si je vais de l'avant et que je tape le nom, je vais taper mon nom.
 
 04:47.480 --> 04:48.200
-Like that.
+Comme ça.
 
 04:49.490 --> 04:53.660
-Then I'll start typing in the password if I type in pass.
+Ensuite, je commencerai à taper le mot de passe si je tape pass.
 
 04:55.360 --> 05:02.440
-Notice as I start typing the tutorial knows so at first tells you, hey, go put in the username and
+Remarquez que lorsque je commence à taper le mot de passe, le didacticiel le connaît et vous dit d'abord, hé, allez mettre le nom d'utilisateur et le mot de passe.
 
 05:02.440 --> 05:03.190
-the password.
+le mot de passe.
 
 05:03.190 --> 05:09.010
-But the moment you've done the username and you start typing the password, it's like, Oh, you might
+Mais dès que vous avez entré le nom d'utilisateur et que vous commencez à taper le mot de passe, il vous dit : " Oh, vous pourriez... ".
 
 05:09.010 --> 05:10.720
-be ready to click log in.
+être prêt à cliquer sur log in.
 
 05:10.720 --> 05:18.640
-So this is an arbitrary example about how the tutorial is looking into your progress through the core
+Il s'agit donc d'un exemple arbitraire de la façon dont le didacticiel examine votre progression dans le noyau.
 
 05:18.640 --> 05:22.140
-user experience and giving you some helpful hints.
+de l'utilisateur et vous donne des conseils utiles.
 
 05:22.150 --> 05:26.530
-It could say, Hey, here's a character you can interact with in the game.
+Il pourrait vous dire : " Voici un personnage avec lequel vous pouvez interagir dans le jeu ".
 
 05:26.530 --> 05:32.740
-Click A to start dialogue and after the user is familiar with that, you never want to show them the
+Cliquez sur A pour entamer le dialogue et une fois que l'utilisateur s'est familiarisé avec ce personnage, il ne faut jamais lui montrer la fenêtre de dialogue.
 
 05:32.740 --> 05:34.840
-click A to start dialogue again.
+cliquer sur A pour relancer le dialogue.
 
 05:34.840 --> 05:35.180
-Right?
+C'est ça ?
 
 05:35.260 --> 05:36.370
-Same thing here.
+Même chose ici.
 
 05:36.370 --> 05:39.700
-This is sitting off to the side showing information.
+Ceci est assis sur le côté, montrant des informations.
 
 05:39.700 --> 05:44.230
-This could be available perhaps only temporarily through the game.
+Cet élément pourrait être disponible, peut-être seulement temporairement, dans le cadre du jeu.
 
 05:44.230 --> 05:51.880
-But the core idea here is that the the game itself doesn't know about the tutorial.
+Mais l'idée centrale ici est que le jeu lui-même n'est pas au courant de l'existence du didacticiel.
 
 05:52.300 --> 05:52.870
-Right?
+C'est ça ?
 
 05:53.350 --> 05:54.700
-Then I click log in.
+Puis je clique sur log in.
 
 05:54.700 --> 05:55.730
-I get failed.
+J'obtiens un échec.
 
 05:55.730 --> 05:58.130
-It says you failed the tutorial, try again.
+Le message indique que vous avez échoué au tutoriel, essayez à nouveau.
 
 05:58.130 --> 06:01.250
-So I'll log out and then I'll use the pass.
+Je me déconnecte et j'utilise le mot de passe.
 
 06:01.250 --> 06:02.540
-One, two, three, four.
+Un, deux, trois, quatre.
 
 06:02.540 --> 06:05.600
-Which is the as the hint shows is the real answer.
+Ce qui est, comme le montre l'indice, la vraie réponse.
 
 06:05.630 --> 06:06.470
-I'll hit log in.
+Je vais me connecter.
 
 06:06.470 --> 06:10.070
-It says you completed the tutorial, so see how nice that is.
+Il est indiqué que vous avez terminé le tutoriel, voyez comme c'est agréable.
 
 06:10.070 --> 06:12.920
-That tutorial sits off to the side and gives you helpful hints.
+Ce tutoriel se trouve sur le côté et vous donne des conseils utiles.
 
 06:12.920 --> 06:15.730
-It could certainly give you much more hints than what's shown here.
+Il pourrait certainement vous donner beaucoup plus d'indications que ce qui est montré ici.
 
 06:15.740 --> 06:17.960
-Let's see how that structure works.
+Voyons comment fonctionne cette structure.
 
 06:19.050 --> 06:27.150
-So here we have the tutorial view, which is the UI here with the.
+Nous avons donc ici la vue du didacticiel, qui est l'interface utilisateur avec le...
 
 06:28.640 --> 06:29.190
-There we go.
+Nous y voilà.
 
 06:29.210 --> 06:30.520
-The title and the body.
+Le titre et le corps.
 
 06:30.530 --> 06:32.420
-So it's just sitting up there in the corner.
+C'est donc là, dans un coin, que ça se passe.
 
 06:32.420 --> 06:33.710
-Simple Unity UI.
+Interface utilisateur Unity simple.
 
 06:35.740 --> 06:42.700
-Then the Mini here is going to take in a reference of that view, which we got right here.
+Ensuite, le Mini ici va prendre une référence de cette vue, que nous avons ici.
 
 06:42.970 --> 06:45.370
-And let's take a look at how the Mini is structured.
+Voyons maintenant comment le Mini est structuré.
 
 06:47.230 --> 06:48.760
-So there's a comment here.
+Il y a donc un commentaire ici.
 
 06:48.760 --> 06:49.630
-I'll just read it.
+Je vais le lire.
 
 06:49.660 --> 06:53.170
-The example is the main entry point to the demo.
+L'exemple est le point d'entrée principal de la démo.
 
 06:53.440 --> 06:56.990
-A tutorial does not need to load a separate scene.
+Un didacticiel n'a pas besoin de charger une scène distincte.
 
 06:57.010 --> 07:03.850
-That's done here only to demonstrate that this is a completely unrelated code that can properly decorate
+Cela n'est fait ici que pour démontrer qu'il s'agit d'un code sans aucun rapport qui peut correctement décorer les images de la démo.
 
 07:03.880 --> 07:07.360
-a user experience on top of a system without knowing.
+une expérience utilisateur au dessus d'un système sans le savoir.
 
 07:07.360 --> 07:10.660
-So we could have everything be in this scene.
+Nous pourrions donc tout avoir dans cette scène.
 
 07:10.660 --> 07:16.300
-But I'm showing like, hey, if we load that login example, this can be so separate that it can be
+Mais je montre que, si nous chargeons cet exemple de connexion, il peut être tellement séparé qu'il peut être
 
 07:16.300 --> 07:17.230
-laid on top.
+posé sur le dessus.
 
 07:17.230 --> 07:21.190
-And just that illustration of separation is nice, right?
+Et cette illustration de la séparation est agréable, n'est-ce pas ?
 
 07:21.580 --> 07:23.920
-So here we'll take in The View.
+Ici, nous allons prendre The View.
 
 07:24.950 --> 07:30.510
-Now, most of the demo scenes that come in fact, all of the demo scenes except this one that come with
+La plupart des scènes de démonstration fournies - en fait, toutes les scènes de démonstration, à l'exception de celle-ci - sont fournies avec le logiciel The View.
 
 07:30.510 --> 07:32.870
-the Mini are one scene demos.
+Mini sont des démos à une scène.
 
 07:32.930 --> 07:41.990
-But here again, after I load up the mini, I go ahead and I load in that log in with mini example,
+Mais là encore, après avoir chargé la mini, je vais de l'avant et je charge cet exemple de connexion avec la mini,
 
 07:42.140 --> 07:44.600
-which is just the log in portion.
+qui n'est que la partie connexion.
 
 07:44.600 --> 07:50.630
-And it was created long before this demo and it knows nothing about the tutorial operating on top of
+Et il a été créé bien avant cette démo et il ne sait rien du didacticiel fonctionnant au-dessus de
 
 07:50.630 --> 07:50.900
-it.
+sur le tutoriel.
 
 07:50.900 --> 07:53.450
-It didn't even need to be updated for this.
+Il n'a même pas eu besoin d'être mis à jour pour cela.
 
 07:53.630 --> 07:57.620
-Then down here what I do is make a bridge to the Mini.
+Ensuite, en bas, je crée un pont vers la Mini.
 
 08:02.760 --> 08:03.840
-And then.
+Et ensuite.
 
 08:07.330 --> 08:09.040
-I do the wiring up here.
+Je fais le câblage ici.
 
 08:09.250 --> 08:15.880
-So what I do in the make a bridge is I go and get the model from the loaded scene so you can look at
+Ce que je fais dans la création d'un pont, c'est que je récupère le modèle de la scène chargée pour que vous puissiez regarder
 
 08:15.880 --> 08:17.800
-the code above to see how that's done.
+le code ci-dessus pour voir comment cela est fait.
 
 08:17.800 --> 08:24.790
-But now that I know, okay, here's the model from the loaded scene, we as the tutorial need to listen
+Mais maintenant que je sais, ok, voici le modèle de la scène chargée, nous devons, en tant que didacticiel, écouter
 
 08:24.790 --> 08:25.600
-in to that.
+dans ce modèle.
 
 08:25.840 --> 08:36.640
-So I initialize the view using the context of the core logic, and then I create a tutorial controller
+J'initialise donc la vue en utilisant le contexte de la logique de base, puis je crée un contrôleur de didacticiel
 
 08:36.640 --> 08:37.390
-here.
+ici.
 
 08:38.330 --> 08:41.570
-And I pass in the login model and the view.
+Et je passe le modèle de connexion et la vue.
 
 08:41.660 --> 08:44.930
-So here is the tutorial logic here.
+Voici donc la logique du didacticiel.
 
 08:44.930 --> 08:47.930
-Let's go ahead and take a look in the controller and see how it works.
+Jetons un coup d'oeil au contrôleur et voyons comment il fonctionne.
 
 08:52.110 --> 08:58.830
-So what I do is I update the tutorials, little window to say the word tutorial, just to kick off the
+Ce que je fais, c'est que je mets à jour les didacticiels, la petite fenêtre qui contient le mot "didacticiel", juste pour lancer le processus de création de didacticiels.
 
 08:58.830 --> 08:59.790
-clarity there.
+clarté.
 
 08:59.910 --> 09:04.230
-And then I start listening in to the login model.
+Puis je commence à écouter le modèle de connexion.
 
 09:04.470 --> 09:07.150
-So remember, I load that extra scene.
+N'oubliez pas que je charge cette scène supplémentaire.
 
 09:07.170 --> 09:14.100
-I grab the model from it because it was created using Mini, so I'm able to grab the login model from
+Je récupère le modèle car il a été créé en utilisant Mini, donc je peux récupérer le modèle de connexion à partir de
 
 09:14.100 --> 09:18.390
-it and then I listen to a value called Can I log in?
+puis j'écoute une valeur appelée Can I log in ?
 
 09:19.010 --> 09:23.180
-And then I listen to some different commands.
+Ensuite, j'écoute différentes commandes.
 
 09:23.300 --> 09:25.820
-So any time the log in.
+Ainsi, à chaque fois que l'on se connecte.
 
 09:28.030 --> 09:31.630
-Login button becomes enabled can login is true.
+Le bouton de connexion est activé si la connexion est vraie.
 
 09:31.630 --> 09:35.820
-So I'm able to listen for that so that I can step through the process.
+Je suis donc en mesure d'écouter cela afin de pouvoir suivre le processus.
 
 09:35.830 --> 09:44.020
-Then any time the log out command happens, any time the log in, submitted happens and any time the
+Ensuite, chaque fois que la commande de déconnexion se produit, chaque fois que la commande d'ouverture de session est soumise, et chaque fois que la commande d'ouverture de session est soumise.
 
 09:44.020 --> 09:45.730
-log in completed happens.
+connexion terminée.
 
 09:45.730 --> 09:48.610
-So there's four things that I've been able to listen to.
+J'ai donc pu écouter quatre choses.
 
 09:48.610 --> 09:56.500
-Now, in theory, if you're developing the tutorial and the core logic at the same time, the step would
+En théorie, si vous développez le didacticiel et la logique de base en même temps, l'étape serait la suivante
 
 09:56.500 --> 09:57.340
-be like this.
+ressemblerait à ceci.
 
 09:57.340 --> 10:03.310
-Once you get the basic structure we have here, let's say that you had introduced the idea of walking
+Une fois que vous avez compris la structure de base que nous avons ici, disons que vous avez introduit l'idée de marcher
 
 10:03.310 --> 10:06.220
-up to and talking to characters in an RPG game.
+et de parler aux personnages dans un jeu de rôle.
 
 10:06.220 --> 10:13.810
-You'd want your core login model here to expose an event like Started conversation with character equals
+Vous voudriez que votre modèle de connexion de base expose ici un événement tel que Started conversation with character equals
 
 10:13.810 --> 10:14.470
-True.
+Vrai.
 
 10:14.500 --> 10:19.960
-Or here's a new command that says the start conversation command.
+Ou voici une nouvelle commande qui dit la commande de début de conversation.
 
 10:19.990 --> 10:26.470
-Either of those, you'd want to have them as part of the core game logic and be updated and dispatched.
+Dans les deux cas, il faut que ces commandes fassent partie de la logique de base du jeu et qu'elles soient mises à jour et envoyées.
 
 10:26.500 --> 10:33.260
-Then the tutorial out here can hook into that as we see here, either through the model or through the
+Le didacticiel peut alors s'y raccorder, comme nous le voyons ici, soit par le biais du modèle, soit par le biais de l'interface de programmation.
 
 10:33.260 --> 10:37.490
-context command manager and be able to listen to those things.
+gestionnaire de commandes contextuelles et être en mesure d'écouter ces choses.
 
 10:37.640 --> 10:45.200
-So the usefulness here down here, we see that anytime the log out happens in the core logic, I will
+Donc l'utilité ici, nous voyons que chaque fois que la déconnexion se produit dans la logique de base, je vais
 
 10:45.200 --> 10:53.180
-update the tutorial text to be its first phrase of okay, it's time to enter login, enter username
+mettre à jour le texte du tutoriel pour qu'il soit la première phrase de ok, il est temps d'entrer le login, d'entrer le nom d'utilisateur
 
 10:53.180 --> 10:53.990
-and password.
+et le mot de passe.
 
 10:54.440 --> 11:01.430
-Any time can log in is changed which because the core logic knows should we be able to log in at this
+Chaque fois que l'on peut se connecter, on modifie ce qui, parce que la logique de base sait que l'on devrait pouvoir se connecter à ce moment-là...
 
 11:01.430 --> 11:02.510
-moment or not?
+moment ou non ?
 
 11:02.540 --> 11:07.340
-The tutorial updates itself again and says a little bit more information.
+Le didacticiel se met à jour à nouveau et donne un peu plus d'informations.
 
 11:07.700 --> 11:15.680
-Any time the user has submitted to log in the tutorial will say waiting for the result and any time
+Chaque fois que l'utilisateur a soumis une demande de connexion, le didacticiel indique qu'il attend le résultat et chaque fois que l'utilisateur a soumis une demande de connexion, le didacticiel indique qu'il attend le résultat.
 
 11:15.680 --> 11:21.920
-the log in is finished it listens in and says, Well, if you were successful then you're successful
+la connexion est terminée, il écoute et dit : "Si vous avez réussi, c'est que vous avez réussi".
 
 11:21.920 --> 11:25.790
-in the tutorial or if you were not successful then you failed the tutorial.
+dans le tutoriel ou si vous n'avez pas réussi, vous avez échoué dans le tutoriel.
 
 11:25.820 --> 11:29.360
-So it's an arbitrary demo here.
+Il s'agit donc d'une démonstration arbitraire.
 
 11:29.720 --> 11:32.120
-This is kind of a silly example.
+C'est un exemple un peu ridicule.
 
 11:32.780 --> 11:34.910
-To give help for a form like this.
+Pour donner de l'aide à un formulaire comme celui-ci.
 
 11:34.910 --> 11:40.520
-But you can imagine in a game there might be many different parts of the core logic that you would want
+Mais vous pouvez imaginer que dans un jeu, il pourrait y avoir de nombreuses parties différentes de la logique de base que vous voudriez
 
 11:40.520 --> 11:43.370
-to expose to the tutorial system.
+exposer au système de tutorat.
 
 11:43.580 --> 11:50.450
-So two different teams in theory, just again to illustrate the separation could work on the one could
+En théorie, deux équipes différentes, pour illustrer encore une fois la séparation, pourraient travailler l'une sur l'autre.
 
 11:50.450 --> 11:55.730
-work on the core game logic and one could work on the tutorial logic as well as other systems.
+travailler sur la logique de base du jeu et l'autre pourrait travailler sur la logique du tutoriel ainsi que sur d'autres systèmes.
 
 11:55.730 --> 12:01.490
-But I'm just showing about the separation here and they're all speaking through the login model and
+Mais je montre juste la séparation ici et ils parlent tous à travers le modèle de connexion et
 
 12:01.490 --> 12:02.270
-the commands.
+les commandes.
 
 12:02.270 --> 12:03.170
-So that's it.
+C'est donc cela.
 
 12:03.200 --> 12:05.390
-Now let's take a look at the demo running again.
+Regardons maintenant la démo fonctionner à nouveau.
 
 12:07.120 --> 12:12.220
-So again, bulk of the screen real estate is is loaded from another scene.
+Encore une fois, la plus grande partie de l'écran est chargée à partir d'une autre scène.
 
 12:12.220 --> 12:15.450
-It knows nothing that it's been loaded in the tutorial.
+Il ne sait pas qu'il a été chargé dans le tutoriel.
 
 12:15.460 --> 12:22.060
-The tutorial sits on top and has just a little bit of view in the corner there and shows well, it's
+Le didacticiel se trouve au-dessus et a juste un peu de vue dans le coin ici et montre bien qu'il s'agit d'une scène.
 
 12:22.060 --> 12:23.050
-the tutorial.
+le didacticiel.
 
 12:23.050 --> 12:25.000
-Enter the username and password.
+Entrez le nom d'utilisateur et le mot de passe.
 
 12:25.000 --> 12:27.400
-So I start typing in there and it updates.
+Je commence à taper et ça se met à jour.
 
 12:27.400 --> 12:29.860
-It says okay, click log in.
+Il me dit ok, cliquez sur log in.
 
 12:30.520 --> 12:31.800
-Now I click login.
+Je clique sur login.
 
 12:31.840 --> 12:33.610
-It said Waiting for result.
+Il est indiqué Waiting for result.
 
 12:33.610 --> 12:35.410
-And then it says, Oh, you failed.
+Puis il me dit : "Oh, you failed" (Oh, vous avez échoué).
 
 12:35.470 --> 12:37.150
-And I click log out.
+Et je clique sur Déconnexion.
 
 12:37.180 --> 12:39.310
-Notice the tutorial changes again.
+Remarquez que le tutoriel change à nouveau.
 
 12:39.340 --> 12:43.020
-Now I can type some stuff in and then I'll type the correct answer here.
+Je peux maintenant saisir quelques informations, puis je saisirai la bonne réponse ici.
 
 12:43.030 --> 12:44.080
-One, two, three, four.
+Un, deux, trois, quatre.
 
 12:44.320 --> 12:45.310
-Click, log in.
+Cliquez, connectez-vous.
 
 12:45.340 --> 12:46.720
-It says Waiting for a result.
+Il est indiqué Waiting for a result.
 
 12:46.720 --> 12:49.250
-And then it says, You completed the tutorial.
+Puis il est indiqué : Vous avez terminé le didacticiel.
 
 12:49.270 --> 12:55.960
-So it's as tightly integrated as if it was part of the core logic, but you gain the benefit of that
+L'intégration est donc aussi étroite que si elle faisait partie de la logique de base, mais vous bénéficiez des avantages suivants
 
 12:55.960 --> 12:56.920
-separation.
+séparation.
 
 12:56.920 --> 13:02.740
-So in the earlier part of this video I mentioned one of the benefits of that tutorial.
+Dans la première partie de cette vidéo, j'ai mentionné l'un des avantages de ce tutoriel.
 
 13:03.870 --> 13:09.030
-Being separate is that maybe you only want it to run for the first one minute of gameplay.
+Le fait qu'il soit séparé vous permet peut-être de ne l'exécuter que pendant la première minute de jeu.
 
 13:09.240 --> 13:14.730
-I could simply disable the tutorial up there in the corner and the core game logic doesn't need to know
+Je pourrais simplement désactiver le tutoriel dans le coin et la logique de base du jeu n'aurait pas besoin de le savoir.
 
 13:14.730 --> 13:16.020
-about the tutorial.
+du tutoriel.
 
 13:16.020 --> 13:18.290
-It doesn't need to know if it's enabled or not.
+Elle n'a pas besoin de savoir s'il est activé ou non.
 
 13:18.300 --> 13:22.020
-Or imagine that there's a settings menu and the settings has.
+Ou imaginez qu'il y ait un menu des paramètres et que les paramètres aient.
 
 13:22.020 --> 13:23.010
-Check this box.
+Cochez cette case.
 
 13:23.010 --> 13:27.470
-If you want the tutorial, check this box if you don't want the tutorial.
+Si vous voulez le tutoriel, cochez cette case si vous ne voulez pas le tutoriel.
 
 13:27.480 --> 13:33.270
-So that also could enable that little window in the corner here to be toggled on or toggled off.
+Cela permet également d'activer ou de désactiver la petite fenêtre dans le coin.
 
 13:34.360 --> 13:34.770
-Great.
+Très bien.
 
 13:34.780 --> 13:36.160
-So that's it for that demo.
+C'est tout pour cette démo.

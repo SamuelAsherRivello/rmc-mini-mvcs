@@ -1,232 +1,232 @@
 WEBVTT
 
 00:00.180 --> 00:03.870
-Now let's do a coding assignment along with the Rollerball sample.
+Faisons maintenant un exercice de codage avec l'exemple de Rollerball.
 
 00:04.960 --> 00:10.440
-So here I am in an empty project where I brought in the mini MVCs framework, as well as the samples.
+Me voici donc dans un projet vide où j'ai apporté le mini framework MVCs, ainsi que les échantillons.
 
 00:10.450 --> 00:17.050
-I'll open up the Rollerball sample with Mini and think about what I could do here as a coding assignment.
+Je vais ouvrir l'exemple Rollerball avec Mini et réfléchir à ce que je pourrais faire ici comme travail de codage.
 
 00:17.200 --> 00:22.240
-Something I thought would be interesting is that while you can currently use the arrow keys to move
+J'ai pensé qu'il serait intéressant de noter que, bien que l'on puisse actuellement utiliser les touches fléchées pour se déplacer, il n'est pas possible d'utiliser les touches fléchées pour se déplacer.
 
 00:22.240 --> 00:26.170
-around, we could have spacebar represent a jump.
+pour se déplacer, la barre d'espacement pourrait représenter un saut.
 
 00:26.350 --> 00:28.210
-So let's think about how we would do that.
+Réfléchissons à la manière de procéder.
 
 00:28.210 --> 00:34.420
-Well, taking in keyboard input is something we already do, and that's handled by the input view.
+Eh bien, la saisie au clavier est quelque chose que nous faisons déjà, et qui est géré par la vue d'entrée.
 
 00:34.540 --> 00:38.710
-So let's start by looking at the input view and seeing how that's wired up.
+Commençons donc par examiner la vue d'entrée et voyons comment elle est configurée.
 
 00:38.710 --> 00:40.540
-So here's the input view class.
+Voici donc la classe de la vue d'entrée.
 
 00:40.540 --> 00:46.060
-We have a custom event here that's going to be broadcast any time movement is detected from the Arrow
+Nous avons ici un événement personnalisé qui sera diffusé à chaque fois qu'un mouvement sera détecté par la flèche.
 
 00:46.060 --> 00:51.700
-Keys, the input view class itself, since it sits on a game object in the scene, it's a mono behavior.
+Les clés, la classe de vue d'entrée elle-même, étant donné qu'elle se trouve sur un objet de jeu dans la scène, c'est un comportement mono.
 
 00:51.700 --> 00:58.420
-And skipping down here to the highlight in the update we do capturing some of the keys and passing that
+En passant à la mise en évidence dans la mise à jour, nous capturons certaines des clés et les transmettons.
 
 00:58.420 --> 00:59.200
-out as input.
+comme entrée.
 
 00:59.200 --> 01:05.950
-Notice here, the way that this is structured is that input is passed every single update, regardless
+Remarquez ici que la structure est telle que l'entrée est transmise à chaque mise à jour, quelle qu'elle soit.
 
 01:05.950 --> 01:07.750
-if the user is hitting a key or not.
+si l'utilisateur appuie sur une touche ou non.
 
 01:07.750 --> 01:12.970
-And as per typical unity convention for arrow keys for movement, that's fine.
+Et comme le veut la convention typique d'unity pour les touches fléchées pour le mouvement, c'est très bien.
 
 01:12.970 --> 01:19.420
-One option I have would be to capture the spacebar being hit and always pass it in perhaps as a second
+Une option que j'ai serait de capturer la barre d'espacement qui est frappée et de toujours la passer en tant que seconde.
 
 01:19.420 --> 01:21.280
-parameter here to on input.
+paramètre ici à l'entrée.
 
 01:21.280 --> 01:28.360
-But just based on my intuition, I don't like the idea of every frame passing false when the spacebar
+Mais en me basant sur mon intuition, je n'aime pas l'idée que chaque image passe à faux lorsque la barre d'espacement est frappée.
 
 01:28.360 --> 01:29.320
-is not yet hit.
+n'est pas encore activée.
 
 01:29.440 --> 01:34.780
-So instead what I'll do is I'll create a new event that happens only when spacebar is hit.
+Au lieu de cela, je vais créer un nouvel événement qui ne se produit que lorsque la barre d'espacement est activée.
 
 01:34.780 --> 01:36.310
-So let's take a look at how I would do that.
+Voyons donc comment procéder.
 
 01:36.310 --> 01:39.880
-Well, first thing, to be able to get the key of spacebar, we'll do it down here.
+Tout d'abord, pour obtenir la touche de la barre d'espacement, nous allons le faire ici.
 
 01:39.880 --> 01:43.840
-We get the key down for the key code of spacebar.
+Nous obtenons la touche vers le bas pour le code de la barre d'espacement.
 
 01:43.840 --> 01:49.600
-And only if that's the case will we send a new event called on Jump.
+Ce n'est que si c'est le cas que nous enverrons un nouvel événement appelé on Jump.
 
 01:49.600 --> 01:54.520
-So by placing this an update, we know it's going to happen every frame, which is great.
+En plaçant cette mise à jour, nous savons qu'elle se produira à chaque image, ce qui est très bien.
 
 01:54.520 --> 01:56.380
-And now we just need to wire this up.
+Il ne nous reste plus qu'à câbler le tout.
 
 01:56.380 --> 02:01.960
-So I've added my own unity event here called on Jump because I'm not passing any parameters along.
+J'ai donc ajouté mon propre événement unity ici, appelé Jump, car je ne passe aucun paramètre.
 
 02:01.960 --> 02:07.330
-I'll just use the base unity event as shown here and then let's take a look at what scopes are currently
+Je vais juste utiliser l'événement unity de base comme montré ici et ensuite regardons ce que sont les scopes à l'heure actuelle
 
 02:07.330 --> 02:10.150
-listening to the existing on input.
+à l'écoute de l'événement existant sur l'entrée.
 
 02:10.150 --> 02:15.220
-Well, I can see here in the controller that we listen and the controller handles it.
+Je peux voir ici dans le contrôleur que nous écoutons et que le contrôleur s'en occupe.
 
 02:15.220 --> 02:20.710
-I like the idea of the controller also handling the consequence of jump, so I'll duplicate this code
+J'aime l'idée que le contrôleur gère également les conséquences du saut, je vais donc dupliquer ce code
 
 02:20.710 --> 02:21.550
-here and update it.
+ici et le mettre à jour.
 
 02:21.550 --> 02:23.890
-I see here is the handler for the input.
+Je vois ici le gestionnaire de l'entrée.
 
 02:23.890 --> 02:26.710
-I'll basically copy that same concept and update it.
+Je vais copier ce même concept et le mettre à jour.
 
 02:26.710 --> 02:31.570
-So here I've created a new method and all that I need to do is finish this up by making the appropriate
+J'ai donc créé une nouvelle méthode et tout ce qu'il me reste à faire est de la terminer en créant les éléments suivants
 
 02:31.570 --> 02:32.200
-command.
+commande appropriée.
 
 02:32.200 --> 02:38.620
-So again, here this is the controller listening to this UI event and translating it into a command
+Ici encore, le contrôleur écoute l'événement de l'interface utilisateur et le traduit en commande.
 
 02:38.620 --> 02:43.240
-so that like a radio station, any particular concern can tune into this?
+de manière à ce que, comme une station de radio, toute préoccupation particulière puisse être prise en compte ?
 
 02:43.240 --> 02:46.330
-I'll create the jump command from scratch to finish this up.
+Je vais créer la commande jump à partir de zéro pour terminer.
 
 02:46.330 --> 02:52.090
-Here's the existing input command that is taking a parameter for a vector three of how much input in
+Voici la commande input existante qui prend un paramètre pour un vecteur trois de la quantité d'entrée.
 
 02:52.090 --> 02:53.320
-each of the directions.
+chacune des directions.
 
 02:53.560 --> 02:57.490
-I don't really need a parameter here, so I can just extend I command instead.
+Je n'ai pas vraiment besoin d'un paramètre ici, je peux donc simplement étendre la commande I.
 
 02:57.490 --> 02:59.080
-So I've created the new command.
+J'ai donc créé la nouvelle commande.
 
 02:59.080 --> 03:01.150
-And now let's think who should observe this?
+Et maintenant, réfléchissons à la personne qui devrait observer cette commande.
 
 03:01.150 --> 03:05.680
-Well, in the case of the input command, it's the player that observes the input command.
+Dans le cas de la commande input, c'est le joueur qui observe la commande input.
 
 03:05.680 --> 03:08.560
-And now let's think which concerns should tune in to this?
+Et maintenant, réfléchissons aux préoccupations qui devraient être prises en compte ?
 
 03:08.560 --> 03:14.380
-Well, the input command I know is observed by the player so that it knows how to move.
+Je sais que la commande d'entrée est observée par le joueur pour qu'il sache comment se déplacer.
 
 03:14.380 --> 03:15.460
-That sounds like a good fit.
+Cela semble être une bonne solution.
 
 03:15.460 --> 03:17.170
-So let's go to the player and subscribe.
+Passons donc au lecteur et abonnons-nous.
 
 03:17.170 --> 03:18.790
-So here we are in the player view.
+Nous voici donc dans la vue du lecteur.
 
 03:18.790 --> 03:24.190
-Player views since it sits on a game object in the scene, it extends monarch behavior and down here
+La vue du joueur, puisqu'elle se trouve sur un objet de jeu dans la scène, étend le comportement du monarque.
 
 03:24.190 --> 03:26.920
-in the initialize, it's listening to the input command.
+dans l'initialisation, il écoute la commande d'entrée.
 
 03:26.920 --> 03:28.030
-Let's duplicate that.
+Dupliquons cela.
 
 03:28.030 --> 03:30.070
-So now we're listening to the jump command.
+Nous écoutons maintenant la commande jump.
 
 03:30.120 --> 03:31.330
-Let's handle the consequence.
+Gérons la conséquence.
 
 03:31.330 --> 03:35.500
-There we see how input command is set up and then calls the appropriate physics.
+Nous voyons ici comment la commande d'entrée est configurée et appelle ensuite la physique appropriée.
 
 03:35.500 --> 03:37.750
-So I created a handler for the jump command.
+J'ai donc créé un gestionnaire pour la commande jump.
 
 03:37.750 --> 03:39.730
-Now I just need to think about the physics.
+Il ne me reste plus qu'à penser à la physique.
 
 03:39.730 --> 03:44.080
-If I add a force upwards at the moment jump is pressed, that should handle it.
+Si j'ajoute une force vers le haut au moment où l'on appuie sur jump, cela devrait suffire.
 
 03:44.080 --> 03:48.760
-First, I have to remember to pass in the jump command as required, even though I don't need any parameters
+Tout d'abord, je dois me rappeler de passer la commande jump comme il se doit, même si je n'ai pas besoin de paramètres
 
 03:48.760 --> 03:49.570
-from that command.
+de cette commande.
 
 03:49.570 --> 03:53.050
-This is required convention with the typical setup of a unity scene.
+C'est la convention requise avec la configuration typique d'une scène unity.
 
 03:53.050 --> 03:55.480
-It's the Y component that is upwards.
+C'est la composante Y qui est ascendante.
 
 03:55.480 --> 04:00.700
-So if I apply a force here that is upwards in the Y, we should be able to get the jumping result we
+Donc, si j'applique une force ici qui est vers le haut dans la composante Y, nous devrions être en mesure d'obtenir le résultat de saut que nous avons obtenu.
 
 04:00.700 --> 04:01.240
-want.
+voulons.
 
 04:01.240 --> 04:02.860
-Let's play the scene and check it out.
+Jouons la scène pour vérifier.
 
 04:02.860 --> 04:06.310
-Here's the scene playing using the arrow keys as before.
+Voici la scène jouée en utilisant les touches fléchées comme précédemment.
 
 04:06.310 --> 04:08.320
-And now I'll try the spacebar.
+Et maintenant, je vais essayer la barre d'espacement.
 
 04:20.400 --> 04:21.360
-Here's the game running.
+Voici le jeu en cours d'exécution.
 
 04:21.360 --> 04:24.370
-I'll use the arrow keys as we have been before, and I'll try out.
+Je vais utiliser les touches fléchées comme nous l'avons fait précédemment, et je vais essayer.
 
 04:24.370 --> 04:26.430
-The new spacebar seems to work great.
+La nouvelle barre d'espacement semble très bien fonctionner.
 
 04:26.460 --> 04:32.100
-Now, in the context of this game, we don't have any enemies or obstacles to avoid, so that would
+Dans le contexte de ce jeu, nous n'avons pas d'ennemis ou d'obstacles à éviter.
 
 04:32.100 --> 04:33.300
-be something great to add.
+serait quelque chose d'intéressant à ajouter.
 
 04:33.300 --> 04:38.310
-Next, new gameplay mechanics that make sense now that we have the ability to jump.
+Ensuite, de nouveaux mécanismes de jeu qui ont un sens maintenant que nous avons la possibilité de sauter.
 
 04:38.310 --> 04:40.430
-But that's it now for this coding assignment.
+Mais c'est tout pour ce travail de codage.
 
 04:40.440 --> 04:41.190
-Thanks.
+Merci à tous.

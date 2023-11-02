@@ -1,358 +1,358 @@
 WEBVTT
 
 00:00.210 --> 00:02.340
-The unit testing overview.
+L'aperçu des tests unitaires.
 
 00:02.340 --> 00:04.220
-First, a bit of context.
+Tout d'abord, un peu de contexte.
 
 00:04.230 --> 00:11.790
-As your projects grow with more scripts, more methods, more complexity, it can be difficult to ensure
+Au fur et à mesure que vos projets s'enrichissent de scripts, de méthodes et de complexité, il peut s'avérer difficile de s'assurer de l'efficacité des tests unitaires.
 
 00:11.790 --> 00:14.610
-that new code doesn't break any old code.
+que le nouveau code ne casse pas l'ancien.
 
 00:14.640 --> 00:20.020
-Automated testing can help ensure that your code is functioning as you expect.
+Les tests automatisés peuvent vous aider à vous assurer que votre code fonctionne comme vous le souhaitez.
 
 00:20.040 --> 00:26.640
-Automated testing helps us by finding out how and where bugs occur earlier in the process instead of
+Les tests automatisés nous aident à découvrir comment et où les bogues se produisent plus tôt dans le processus au lieu de
 
 00:26.640 --> 00:31.140
-the much more expensive option of waiting for your end users to report these bugs.
+l'option beaucoup plus coûteuse d'attendre que les utilisateurs finaux signalent ces bogues.
 
 00:31.140 --> 00:37.650
-So you can use MVC architectures without testing and you can use testing without MVC architecture.
+Vous pouvez donc utiliser des architectures MVC sans tests et vous pouvez utiliser des tests sans architecture MVC.
 
 00:37.650 --> 00:41.140
-So why is it important to talk about these topics together?
+Pourquoi est-il important de parler de ces sujets ensemble ?
 
 00:41.160 --> 00:46.860
-It's because the combination of these two technologies is incredibly powerful by using an architecture
+C'est parce que la combinaison de ces deux technologies est incroyablement puissante en utilisant une architecture
 
 00:46.860 --> 00:48.090
-like MVC.
+comme MVC.
 
 00:48.120 --> 00:54.450
-It helps ensure that your code is more decoupled, that each class has a single purpose and that solutions
+Elle permet de s'assurer que votre code est plus découplé, que chaque classe a un objectif unique et que les solutions sont plus faciles à mettre en œuvre.
 
 00:54.450 --> 00:55.140
-are simpler.
+sont plus simples.
 
 00:55.140 --> 00:58.060
-All of these are traits for more testable code as well.
+Tous ces éléments sont également des caractéristiques d'un code plus facile à tester.
 
 00:58.080 --> 01:04.740
-Adding testing to your project will add robustness, more confidence, and it encourages simple solutions,
+L'ajout de tests à votre projet le rendra plus robuste, plus confiant et encouragera les solutions simples,
 
 01:04.740 --> 01:09.090
-especially when enabled with test driven development, which we'll discuss.
+surtout lorsqu'ils sont associés au développement piloté par les tests, dont nous allons parler.
 
 01:09.090 --> 01:12.690
-Adding unit testing to your project and workflow will save time.
+L'ajout de tests unitaires à votre projet et à votre flux de travail vous fera gagner du temps.
 
 01:12.690 --> 01:15.620
-It saves planning, development and maintenance.
+Cela permet de gagner du temps au niveau de la planification, du développement et de la maintenance.
 
 01:15.630 --> 01:21.450
-It adds more confidence to your code, and with that confidence you can have much more boldness in your
+Il ajoute plus de confiance à votre code et, grâce à cette confiance, vous pouvez faire preuve de plus d'audace dans vos projets.
 
 01:21.450 --> 01:22.460
-risk factors.
+facteurs de risque.
 
 01:22.470 --> 01:29.010
-Think about running all of your tests before a major refactor, and then after saving you time and giving
+Pensez à exécuter tous vos tests avant un remaniement majeur, puis après, ce qui vous fera gagner du temps et vous donnera une plus grande confiance en vous.
 
 01:29.010 --> 01:31.530
-you more confidence that the refactor worked well.
+que le remaniement a bien fonctionné.
 
 01:31.560 --> 01:33.750
-Testing is both an art and a science.
+Les tests sont à la fois un art et une science.
 
 01:33.750 --> 01:38.480
-With more research and more practice, each developer can develop their own art.
+Avec plus de recherche et de pratique, chaque développeur peut développer son propre art.
 
 01:38.490 --> 01:43.050
-Also low level testing that's testing things at the unit level.
+Les tests de bas niveau consistent également à tester les choses au niveau de l'unité.
 
 01:43.620 --> 01:49.200
-Individual methods, let's say, and the practices and evolution of your software that will come from
+Les méthodes individuelles, disons, et les pratiques et l'évolution de votre logiciel qui proviendront de
 
 01:49.200 --> 01:56.370
-that encourages higher level discussion as well about the architectural choices, dependencies or lack
+Cela encourage également les discussions à un niveau plus élevé sur les choix architecturaux, les dépendances ou l'absence de dépendances.
 
 01:56.370 --> 02:00.840
-thereof throughout your code and how coupled or decoupled these systems are.
+dans votre code et le degré de couplage ou de découplage de ces systèmes.
 
 02:00.870 --> 02:06.980
-This is all part of a larger conversation which invites bringing good organization to your software.
+Tout cela fait partie d'une conversation plus large qui invite à apporter une bonne organisation à votre logiciel.
 
 02:06.990 --> 02:13.530
-Our first goal, especially new to testing, is to make sure that a specific method has the desired
+Notre premier objectif, surtout lorsque nous sommes novices en matière de tests, est de nous assurer qu'une méthode spécifique a l'effet désiré, c'est-à-dire qu'elle n'a pas d'effet négatif.
 
 02:13.530 --> 02:14.300
-results.
+résultats souhaités.
 
 02:14.310 --> 02:21.060
-Once that's done, you can now test it with unexpected conditions and corner cases that may invite discussion
+Une fois que c'est fait, vous pouvez maintenant la tester dans des conditions inattendues et des cas particuliers qui peuvent donner lieu à des discussions
 
 02:21.060 --> 02:24.390
-and analysis over the structure of the class itself.
+et l'analyse de la structure de la classe elle-même.
 
 02:24.390 --> 02:28.230
-Then you can look at the purpose of the system that that class sits in.
+Vous pouvez ensuite examiner l'objectif du système dans lequel cette classe s'inscrit.
 
 02:28.230 --> 02:35.430
-And as I mentioned, this type of analysis gives us an opportunity and a format to look at the large
+Et comme je l'ai mentionné, ce type d'analyse nous donne l'occasion et la possibilité d'examiner les grandes catégories d'utilisateurs.
 
 02:35.430 --> 02:37.290
-scale solution we have before us.
+solution à grande échelle que nous avons devant nous.
 
 02:37.290 --> 02:37.980
-In software.
+En logiciel.
 
 02:37.980 --> 02:43.250
-There's many different types of testing and whether you know it or not, you're already doing testing.
+Il existe de nombreux types de tests et, que vous le sachiez ou non, vous en faites déjà.
 
 02:43.260 --> 02:46.980
-A few of the most common types of tests are a smoke test.
+Parmi les types de tests les plus courants, citons le test de fumée.
 
 02:46.980 --> 02:50.730
-This is a rather casual test of does it work For me?
+Il s'agit d'un test plutôt décontracté qui consiste à se demander si cela fonctionne pour moi.
 
 02:50.730 --> 02:55.380
-And for many of us, this may be the only type of project testing we're doing.
+Et pour beaucoup d'entre nous, c'est peut-être le seul type de test de projet que nous faisons.
 
 02:56.030 --> 03:03.050
-Every time you do some new code, you run the app like a user or play the game like a player and you
+Chaque fois que vous créez un nouveau code, vous exécutez l'application comme un utilisateur ou jouez au jeu comme un joueur et vous
 
 03:03.050 --> 03:08.300
-see does that particular path through the app or the game work the way I expect it to?
+voyez si ce chemin particulier à travers l'application ou le jeu fonctionne comme je l'attends ?
 
 03:08.330 --> 03:14.210
-Then there's user testing where periodically, perhaps after a weekly build, you invite some users
+Ensuite, il y a les tests utilisateurs où périodiquement, peut-être après une construction hebdomadaire, vous invitez quelques utilisateurs à participer au test.
 
 03:14.210 --> 03:16.340
-or players to give the game a try.
+ou des joueurs à essayer le jeu.
 
 03:16.370 --> 03:21.880
-Here you're looking for not just does it have any bugs, but does it meet the user's expectations?
+Vous ne cherchez pas seulement à savoir s'il y a des bogues, mais s'il répond aux attentes de l'utilisateur.
 
 03:21.890 --> 03:23.840
-Is it fun to play things like that?
+Est-ce que c'est amusant de jouer à ce genre de choses ?
 
 03:23.840 --> 03:30.320
-And with the unit test, you're looking at a very small section of the experience, perhaps just a single
+Avec le test unitaire, vous examinez une toute petite partie de l'expérience, peut-être une seule
 
 03:30.320 --> 03:34.790
-method call or a small series of calls as systems work together.
+appel de méthode ou une petite série d'appels au fur et à mesure que les systèmes fonctionnent ensemble.
 
 03:34.790 --> 03:38.120
-And you're asking, does it work as it's intended to work?
+Et vous vous demandez si cela fonctionne comme prévu.
 
 03:38.150 --> 03:43.280
-As I mentioned, we're already doing smoke testing as a fundamental way to approach projects.
+Comme je l'ai mentionné, nous effectuons déjà des tests de fumée dans le cadre d'une approche fondamentale des projets.
 
 03:43.280 --> 03:45.410
-So let's imagine a simple example here.
+Imaginons un exemple simple.
 
 03:45.410 --> 03:50.240
-If we had a click the button app, which has a button, and when you click it, you win.
+Si nous avions une application " cliquez sur le bouton ", qui a un bouton, et quand vous cliquez dessus, vous gagnez.
 
 03:50.360 --> 03:52.730
-We could add some code to that.
+Nous pourrions y ajouter du code.
 
 03:52.730 --> 03:55.040
-Compile and run the experience.
+Compilez et exécutez l'expérience.
 
 03:55.040 --> 03:59.670
-Click the one button and see if it shows the victory text of you win.
+Cliquez sur le bouton 1 et voyez si le texte de la victoire s'affiche.
 
 03:59.690 --> 04:05.120
-That would be a smoke test and you could pass that on to the user and see if it works for them.
+Il s'agirait d'un test de fumée que vous pourriez transmettre à l'utilisateur pour voir si cela fonctionne pour lui.
 
 04:05.450 --> 04:11.470
-In both cases, this is a rather expensive test to perform and it's a very narrow usage of the code
+Dans les deux cas, il s'agit d'un test assez coûteux à réaliser et d'une utilisation très restreinte du code.
 
 04:11.480 --> 04:11.810
-here.
+ici.
 
 04:11.810 --> 04:17.570
-In this simple example, it may seem like we can capture all the use cases, but imagine a larger game
+Dans cet exemple simple, il peut sembler que nous pouvons capturer tous les cas d'utilisation, mais imaginez un jeu plus grand
 
 04:17.570 --> 04:19.940
-with core loops and metal loops.
+avec des boucles de base et des boucles métalliques.
 
 04:20.210 --> 04:26.240
-You can't count on the developer or the user and the user testing, testing all the buttons, all the
+Vous ne pouvez pas compter sur le développeur ou l'utilisateur et l'utilisateur qui teste, teste tous les boutons, tous les
 
 04:26.240 --> 04:30.200
-functionality, all the input and all the potential outcomes.
+fonctionnalité, toutes les entrées et tous les résultats potentiels.
 
 04:30.200 --> 04:36.560
-When done properly, unit testing can capture more pathways through the code more quickly, and you
+Lorsqu'ils sont effectués correctement, les tests unitaires permettent d'identifier plus rapidement un plus grand nombre de chemins dans le code, et vous pouvez ainsi
 
 04:36.560 --> 04:40.550
-can run that suite of tests automatically more frequently over time.
+pouvez exécuter cette suite de tests automatiquement plus fréquemment au fil du temps.
 
 04:40.550 --> 04:44.690
-You're building a list of permanent tests that sit ready to be run.
+Vous construisez une liste de tests permanents prêts à être exécutés.
 
 04:44.690 --> 04:48.050
-So you know that new code doesn't break any old functionality.
+Vous savez ainsi que le nouveau code ne casse aucune ancienne fonctionnalité.
 
 04:48.050 --> 04:54.440
-Some teams operate under Agile development principles, which includes a chunk of your calendar called
+Certaines équipes fonctionnent selon les principes de développement Agile, ce qui inclut une partie de votre calendrier appelée
 
 04:54.440 --> 04:55.130
-a sprint.
+un sprint.
 
 04:55.130 --> 05:01.910
-For example, every two weeks the team commits to adding some new features each hour, day, week or
+Par exemple, toutes les deux semaines, l'équipe s'engage à ajouter de nouvelles fonctionnalités chaque heure, chaque jour, chaque semaine ou chaque mois.
 
 05:01.910 --> 05:02.540
 sprint.
 
 05:02.540 --> 05:05.240
-The team can run those automated tests again.
+L'équipe peut à nouveau exécuter ces tests automatisés.
 
 05:05.240 --> 05:07.610
-It's a great opportunity to catch any bugs.
+C'est une excellente occasion de détecter les bogues.
 
 05:07.610 --> 05:09.950
-So how are we running these tests exactly?
+Comment exécutons-nous ces tests exactement ?
 
 05:09.980 --> 05:13.730
-Well, unity has testing support within the Unity editor.
+Eh bien, Unity a un support de test dans l'éditeur Unity.
 
 05:13.730 --> 05:19.660
-There's a dedicated window you can open up and manually execute those tests any time you like.
+Il y a une fenêtre dédiée que vous pouvez ouvrir et exécuter manuellement ces tests quand vous le souhaitez.
 
 05:19.670 --> 05:21.220
-That's a great place to start.
+C'est un bon point de départ.
 
 05:21.230 --> 05:25.850
-Of course, automating this as possible to and recommended for larger projects.
+Bien sûr, l'automatisation est possible et recommandée pour les projets plus importants.
 
 05:25.850 --> 05:32.150
-There's ways to tie this in with your version control so that every time you commit or commit to a certain
+Il y a des moyens de lier cela à votre contrôle de version de sorte que chaque fois que vous livrez ou livrez à une certaine
 
 05:32.150 --> 05:34.460
-branch, you can run those tests again.
+branche, vous pouvez exécuter ces tests à nouveau.
 
 05:34.760 --> 05:39.170
-Unity itself offers some services, including Unity Cloud build.
+Unity lui-même offre certains services, notamment Unity Cloud build.
 
 05:39.170 --> 05:45.170
-This mimics running those tests and building your game, but done on a server automatically doing it
+Cela imite l'exécution de ces tests et la construction de votre jeu, mais sur un serveur qui le fait automatiquement
 
 05:45.170 --> 05:47.960
-once a day or at whatever frequency makes sense.
+une fois par jour ou à n'importe quelle fréquence.
 
 05:47.960 --> 05:52.670
-Now, in general unity development, we're familiar with two different modes being inside the unity
+Maintenant, dans le développement général de unity, nous sommes familiers avec deux modes différents à l'intérieur de unity
 
 05:52.670 --> 05:53.660
-experience.
+l'expérience.
 
 05:54.020 --> 05:56.870
-Before we hit the play button, we're an edit mode.
+Avant d'appuyer sur le bouton de lecture, nous sommes en mode édition.
 
 05:56.870 --> 06:01.430
-Once we hit play until that scene stops, we're in play mode.
+Une fois que nous avons appuyé sur le bouton de lecture jusqu'à ce que la scène s'arrête, nous sommes en mode lecture.
 
 06:01.730 --> 06:05.780
-With unity testing, you're able to test in either of those two modes.
+Avec unity testing, vous pouvez tester dans l'un ou l'autre de ces deux modes.
 
 06:05.780 --> 06:07.970
-Then there are several different ways to approach that.
+Il y a ensuite plusieurs façons d'aborder la question.
 
 06:08.450 --> 06:13.580
-Some of the testing ideas that you'd have here would be to call a method and see if it gives you the
+Certaines des idées de test que vous pourriez avoir ici seraient d'appeler une méthode et de voir si elle vous donne le
 
 06:13.580 --> 06:14.720
-expected result.
+résultat attendu.
 
 06:14.720 --> 06:20.720
-Let's say we have a math system class with an ADD method and you just pass in known parameters and see
+Supposons que nous ayons une classe de système mathématique avec une méthode ADD et qu'il suffise de passer des paramètres connus et de voir
 
 06:20.720 --> 06:22.280
-if it matches the known result.
+s'il correspond au résultat connu.
 
 06:22.280 --> 06:27.200
-You can also have tests that ask specific questions about ED functionality.
+Vous pouvez également avoir des tests qui posent des questions spécifiques sur la fonctionnalité de l'ED.
 
 06:27.230 --> 06:33.920
-Did the Ed window pop up at the proper sizing where our game objects or the camera in the proper position
+La fenêtre ED s'est-elle affichée à la bonne taille, avec les objets du jeu ou la caméra dans la bonne position ?
 
 06:33.920 --> 06:35.480
-before the scene begins?
+avant le début de la scène ?
 
 06:35.480 --> 06:41.000
-Doing testing and edit mode when you can is a great place to start, so do that by default.
+Faire des tests et passer en mode édition lorsque vous le pouvez est un excellent point de départ, c'est donc ce que nous faisons par défaut.
 
 06:41.000 --> 06:41.540
-Play mode.
+Mode lecture.
 
 06:41.570 --> 06:47.030
-Testing is incredibly useful, but it comes with the added complexity of runtime code.
+Les tests sont incroyablement utiles, mais ils s'accompagnent de la complexité supplémentaire du code d'exécution.
 
 06:47.710 --> 06:52.900
-Here, you're testing not just as a certain method return and result, but you're testing that within
+Ici, vous ne testez pas seulement le retour et le résultat d'une méthode, mais vous le testez au sein même de la méthode.
 
 06:52.900 --> 06:57.100
-the larger lifecycle of game objects and other unity concepts.
+le cycle de vie plus large des objets du jeu et d'autres concepts de l'unité.
 
 06:57.200 --> 07:03.850
-And if it here is, you can test code that relies on a wake start update, etc. things that only execute
+Et si c'est le cas, vous pouvez tester le code qui s'appuie sur une mise à jour de démarrage de réveil, etc. des choses qui n'exécutent que
 
 07:03.850 --> 07:04.520
-at runtime.
+au moment de l'exécution.
 
 07:04.540 --> 07:11.320
-Some testing ideas here are to see if a prefab once instantiated executes its start method properly.
+Quelques idées de tests ici sont de voir si un préfabriqué une fois instancié exécute sa méthode de démarrage correctement.
 
 07:11.320 --> 07:12.720
-Without any exceptions.
+Sans aucune exception.
 
 07:12.730 --> 07:14.860
-You can test code over time.
+Vous pouvez tester le code dans le temps.
 
 07:15.580 --> 07:17.890
-Does this loop execute properly?
+Cette boucle s'exécute-t-elle correctement ?
 
 07:17.890 --> 07:19.280
-After a few seconds.
+Après quelques secondes.
 
 07:19.300 --> 07:21.940
-You can check runtime physics interactions.
+Vous pouvez vérifier les interactions physiques en cours d'exécution.
 
 07:21.940 --> 07:28.850
-How many bounces will a ball have in your 3D game before it stops testing the bouncing factor?
+Combien de rebonds une balle aura-t-elle dans votre jeu 3D avant qu'elle ne cesse de tester le facteur de rebond ?
 
 07:28.870 --> 07:30.430
-A little bit more context here.
+Un peu plus de contexte ici.
 
 07:30.430 --> 07:36.970
-So historically, unity did not offer testing built into the editor using the test run or window.
+Historiquement, unity n'offrait pas de test intégré à l'éditeur à l'aide de la fenêtre ou de l'exécution de test.
 
 07:36.970 --> 07:37.480
-We'll see.
+Nous verrons bien.
 
 07:37.480 --> 07:43.360
-In the many years since Unity first launched, this functionality was slowly added in and expanded.
+Au cours des nombreuses années qui se sont écoulées depuis le lancement d'Unity, cette fonctionnalité a été progressivement ajoutée et étendue.
 
 07:43.360 --> 07:45.220
-As of the latest version of Unity.
+Depuis la dernière version d'Unity.
 
 07:45.220 --> 07:50.650
-We have everything we need to execute the types of tests we want in the ways we want them.
+Nous avons tout ce qu'il faut pour exécuter les types de tests que nous voulons de la manière dont nous le voulons.
 
 07:50.650 --> 07:56.020
-There's never been a better time to add unit testing into your workflow, and together we'll see how
+Il n'y a jamais eu de meilleur moment pour ajouter des tests unitaires à votre flux de travail, et nous allons voir ensemble comment...
 
 07:56.020 --> 07:56.830
-to do that.
+de le faire.
 
 07:57.250 --> 07:58.090
-Thanks.
+Merci à tous.

@@ -1,64 +1,64 @@
 WEBVTT
 
 00:00.300 --> 00:02.130
-The course philosophy.
+La philosophie du cours.
 
 00:03.410 --> 00:10.220
-This course was born out of the idea that we all start our software projects with the best of intentions,
+Ce cours est né de l'idée que nous commençons tous nos projets logiciels avec les meilleures intentions du monde,
 
 00:10.340 --> 00:15.620
-but somehow we end up with software that is difficult to scale and to maintain.
+mais d'une manière ou d'une autre, nous nous retrouvons avec des logiciels difficiles à mettre à l'échelle et à maintenir.
 
 00:16.040 --> 00:23.300
-It said that we don't rise to the level of our expectations, but instead we fall to the level of our
+Il a dit que nous ne nous élevons pas au niveau de nos attentes, mais que nous tombons au niveau de nos attentes.
 
 00:23.300 --> 00:23.860
-training.
+formation.
 
 00:23.870 --> 00:31.460
-This course is designed to give us the training to build software with confidence, performance and
+Ce cours est conçu pour nous donner la formation nécessaire pour construire des logiciels avec confiance, performance et efficacité.
 
 00:31.460 --> 00:32.470
-scalability.
+évolutivité.
 
 00:32.480 --> 00:38.780
-Completing this training and integrating it into your workflow will greatly impact the projects you
+En suivant cette formation et en l'intégrant à votre flux de travail, vous aurez un impact considérable sur les projets que vous
 
 00:38.780 --> 00:42.050
-create and the quality of life for you and your team.
+et la qualité de vie de votre équipe et de vous-même.
 
 00:42.050 --> 00:43.640
-Your team will Thank you.
+Votre équipe vous remerciera.
 
 00:44.660 --> 00:47.720
-Some advice to get the most out of this course.
+Quelques conseils pour tirer le meilleur parti de ce cours.
 
 00:47.750 --> 00:55.310
-Be active, watch the videos as well as doing the quizzes and the assignments in the moments the course
+Soyez actif, regardez les vidéos et faites les quiz et les devoirs dans les moments du cours.
 
 00:55.310 --> 01:03.290
-calls for it, Download the source code, follow along and play with the code experiment, add new features
+Téléchargez le code source, suivez-le et jouez avec le code expérimentez, ajoutez de nouvelles fonctionnalités
 
 01:03.290 --> 01:07.060
-and bring the theory from the course into practice within the code.
+et mettre en pratique la théorie du cours dans le code.
 
 01:07.070 --> 01:09.290
-This course covers a lot of topics.
+Ce cours couvre de nombreux sujets.
 
 01:09.290 --> 01:13.790
-Feel free to take breaks whenever you need so that you get the most out of the material.
+N'hésitez pas à faire des pauses chaque fois que vous en avez besoin afin de tirer le meilleur parti de la matière.
 
 01:13.820 --> 01:16.670
-Do your best to pull this information toward you.
+Faites de votre mieux pour tirer ces informations vers vous.
 
 01:16.670 --> 01:23.420
-If there's concepts, topics, APIs that are mentioned that you're not familiar with, feel free to
+Si certains concepts, sujets ou API mentionnés ne vous sont pas familiers, n'hésitez pas à les mentionner.
 
 01:23.420 --> 01:28.610
-pause the video and investigate a bit on your own and then move forward with the course.
+faire une pause dans la vidéo et chercher un peu par vous-même, puis continuer le cours.
 
 01:28.610 --> 01:31.310
-I'm really excited to share this information with you.
+Je suis très enthousiaste à l'idée de partager ces informations avec vous.
 
 01:31.310 --> 01:32.420
-Let's get started.
+Commençons.

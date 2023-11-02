@@ -1,148 +1,148 @@
 WEBVTT
 
 00:00.400 --> 00:04.360
-Next, let's talk about UML or unified modeling language.
+Ensuite, parlons d'UML ou langage de modélisation unifié.
 
 00:04.720 --> 00:11.530
-We use UML to understand and to communicate about design patterns and software solutions.
+Nous utilisons UML pour comprendre et communiquer sur les modèles de conception et les solutions logicielles.
 
 00:11.950 --> 00:17.290
-I'm mentioning it in this course because I want to discuss a few design patterns in the next section,
+Je le mentionne dans ce cours parce que je veux discuter de quelques modèles de conception dans la section suivante,
 
 00:17.290 --> 00:24.190
-and these diagrams give us a shorthand, a way to communicate these concepts more quickly and more visually.
+et ces diagrammes nous donnent un raccourci, un moyen de communiquer ces concepts plus rapidement et plus visuellement.
 
 00:24.190 --> 00:29.920
-Some benefits of using UML are It allows for faster planning and clearer communication with your team
+Voici quelques avantages de l'utilisation d'UML Il permet une planification plus rapide et une communication plus claire avec votre équipe
 
 00:29.920 --> 00:34.210
-members, and during development it helps focus you on the given solution.
+et pendant le développement, il vous aide à vous concentrer sur la solution donnée.
 
 00:34.210 --> 00:40.310
-There's many different types of diagramming and even within Usmle there's many types of usmle diagrams.
+Il existe de nombreux types de diagrammes, et même au sein de l'Usmle, il existe de nombreux types de diagrammes Usmle.
 
 00:40.330 --> 00:47.740
-Most of what I'm showing here will be class diagrams, the way that classes interact from a very high
+La plupart de ce que je montre ici sont des diagrammes de classes, la façon dont les classes interagissent d'un point de vue très élevé.
 
 00:47.740 --> 00:48.460
-level.
+niveau.
 
 00:48.490 --> 00:55.120
-I'm not spelling out the individual methods and variables as we sometimes do in these diagrams.
+Je ne détaille pas les méthodes et les variables individuelles comme nous le faisons parfois dans ces diagrammes.
 
 00:55.120 --> 01:01.630
-Instead, it's a high level relationship between the classes such that does this one class extend another
+Il s'agit plutôt d'une relation de haut niveau entre les classes, telle que cette classe en étend une autre.
 
 01:01.630 --> 01:05.470
-class using inheritance or does it compose another class?
+classe en utilisant l'héritage ou compose-t-elle une autre classe ?
 
 01:05.470 --> 01:05.740
-Here?
+Ici ?
 
 01:05.740 --> 01:10.960
-In this picture, we see the example of the white arrow indicating inheritance.
+Dans cette image, nous voyons l'exemple de la flèche blanche indiquant l'héritage.
 
 01:10.960 --> 01:16.480
-So within unity, for example, if you have a class that extends mono behavior, this would be the appropriate
+Ainsi, dans unity, par exemple, si vous avez une classe qui étend le comportement mono, voici ce qu'il faudrait faire
 
 01:16.480 --> 01:17.590
-diagram to use.
+diagramme à utiliser.
 
 01:17.590 --> 01:20.500
-So we see here a few more examples.
+Nous voyons donc ici quelques autres exemples.
 
 01:20.680 --> 01:26.620
-Just understanding the basics of this is all we need to move forward to understand further diagrams.
+Il suffit de comprendre les bases de ce diagramme pour progresser dans la compréhension d'autres diagrammes.
 
 01:26.620 --> 01:29.080
-The white Arrow indicates inheritance.
+La flèche blanche indique l'héritage.
 
 01:29.080 --> 01:34.990
-The dotted line with the white arrow means we're implementing an interface and the black diamond and
+La ligne pointillée avec la flèche blanche signifie que nous implémentons une interface et le losange noir et la flèche blanche indiquent que nous implémentons une interface.
 
 01:34.990 --> 01:39.040
-black arrow indicate composition and reference.
+flèche noire indiquent la composition et la référence.
 
 01:39.040 --> 01:41.380
-Let's have fun here with a silly example.
+Amusons-nous ici avec un exemple stupide.
 
 01:41.380 --> 01:45.820
-A Toyota car is a type of car, so that makes sense.
+Une voiture Toyota est un type de voiture, c'est donc logique.
 
 01:45.820 --> 01:51.070
-To use the inheritance if you're familiar with interfaces, you know, we often begin the type name
+Pour utiliser l'héritage, si vous êtes familier avec les interfaces, vous savez, nous commençons souvent le nom du type
 
 01:51.070 --> 01:55.660
-with an eye and we describe what sort of behavior is possible.
+par un œil et nous décrivons quel type de comportement est possible.
 
 01:55.660 --> 02:02.350
-So we could say that the wheel here is a class that implements the eye Rotatable interface composition
+Nous pourrions donc dire que la roue est une classe qui implémente la composition de l'interface Rotatable de l'oeil.
 
 02:02.350 --> 02:04.300
-and reference are quite similar.
+et la référence sont assez similaires.
 
 02:04.300 --> 02:08.470
-It's both a class using another class in some sort of way.
+Il s'agit à la fois d'une classe qui utilise une autre classe d'une manière ou d'une autre.
 
 02:08.500 --> 02:13.600
-The key difference here is that composition indicates that they have the same life cycle.
+La principale différence ici est que la composition indique qu'elles ont le même cycle de vie.
 
 02:13.600 --> 02:18.300
-In this case, if the Toyota car was to vanish, the wheels would vanish with it.
+Dans ce cas, si la voiture Toyota disparaissait, les roues disparaîtraient avec elle.
 
 02:18.310 --> 02:22.540
-We understand that wheels are part of it, connected in a shared life cycle.
+Nous comprenons que les roues en font partie, qu'elles sont liées dans un cycle de vie commun.
 
 02:22.540 --> 02:27.010
-However, that Toyota car may also use a system that uses GPS satellite.
+Cependant, cette voiture Toyota peut également utiliser un système qui utilise le satellite GPS.
 
 02:27.010 --> 02:28.600
-So it's also using this.
+Elle utilise donc également ce système.
 
 02:28.600 --> 02:34.000
-But we understand if the car were to vanish, the GPS satellite probably continues to exist.
+Mais nous comprenons que si la voiture disparaît, le satellite GPS continue probablement d'exister.
 
 02:34.000 --> 02:40.480
-And with just these four types of lines, we can create lots of software solutions and clearly explain
+Avec ces quatre types de lignes, nous pouvons créer de nombreuses solutions logicielles et expliquer clairement
 
 02:40.480 --> 02:40.810
-them.
+les expliquer clairement.
 
 02:40.810 --> 02:45.160
-Over my career, I've seen diagramming done in a variety of ways.
+Au cours de ma carrière, j'ai vu des diagrammes réalisés de différentes manières.
 
 02:45.160 --> 02:52.390
-Those who are familiar with UML and lean heavily into it can do sketches on paper or use tools online
+Ceux qui connaissent l'UML et s'y appuient fortement peuvent faire des croquis sur papier ou utiliser des outils en ligne.
 
 02:52.390 --> 02:55.030
-that help you connect up these lines and diagram them.
+qui vous aident à relier ces lignes et à les schématiser.
 
 02:55.030 --> 03:00.430
-People who are not familiar with such an official way to diagram certainly can take a piece of paper
+Les personnes qui ne sont pas familiarisées avec cette manière officielle de schématiser peuvent certainement prendre un morceau de papier
 
 03:00.430 --> 03:03.850
-or the back of a napkin and sketch out their ideas freely.
+ou le dos d'une serviette de table et esquisser librement leurs idées.
 
 03:03.850 --> 03:09.880
-But the more of us that agree on some sort of a system for the language, the more easily we can communicate.
+Mais plus nous serons nombreux à nous mettre d'accord sur une sorte de système linguistique, plus nous pourrons communiquer facilement.
 
 03:09.880 --> 03:12.520
-UML is a standard that's quite popular.
+UML est une norme très répandue.
 
 03:12.520 --> 03:16.750
-It's existed for a long time in computer science and it's worth giving a look.
+Il existe depuis longtemps dans le domaine de l'informatique et il vaut la peine de s'y intéresser.
 
 03:16.750 --> 03:23.380
-Whether you choose to learn from UML here and diagram yourself or you just learn enough to follow along
+Que vous choisissiez d'apprendre l'UML ici et de faire vos propres diagrammes ou que vous en appreniez juste assez pour suivre le mouvement
 
 03:23.380 --> 03:25.180
-in the course, that's fine with me.
+dans le cours, cela me convient parfaitement.
 
 03:25.300 --> 03:30.130
-We'll see a little bit more about how UML applies to some certain design patterns.
+Nous allons voir un peu plus en détail comment UML s'applique à certains modèles de conception.
 
 03:30.130 --> 03:30.850
-Next.
+Suivant.
 
 03:30.850 --> 03:31.660
-Thanks.
+Merci de votre attention.

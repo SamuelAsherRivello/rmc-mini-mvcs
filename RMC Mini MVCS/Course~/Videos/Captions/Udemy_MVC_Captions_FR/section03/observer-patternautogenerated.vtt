@@ -1,193 +1,193 @@
 WEBVTT
 
 00:00.150 --> 00:03.690
-Let's look at design patterns, starting with the Observer.
+Examinons les modèles de conception, en commençant par l'observateur.
 
 00:03.720 --> 00:11.100
-Now, while design principles sit very high in theory, design patterns begin a little bit more to be
+Alors que les principes de conception se situent très haut dans la théorie, les modèles de conception commencent un peu plus à être...
 
 00:11.100 --> 00:14.370
-anchored in computer science and specific solutions.
+ancrés dans l'informatique et les solutions spécifiques.
 
 00:14.400 --> 00:16.450
-Still, they are language agnostic.
+Cependant, ils ne dépendent pas de la langue.
 
 00:16.470 --> 00:22.080
-You can apply these same patterns to a variety of different programming languages and platforms.
+Vous pouvez appliquer ces mêmes modèles à une variété de langages de programmation et de plates-formes.
 
 00:22.080 --> 00:28.050
-You can think of a design pattern as a reusable type of solution for a design problem.
+Vous pouvez considérer un modèle de conception comme un type de solution réutilisable pour un problème de conception.
 
 00:28.080 --> 00:32.550
-Now, you can imagine in your project, there's a lot of things you're doing that are unique to the
+Maintenant, vous pouvez imaginer que dans votre projet, il y a beaucoup de choses que vous faites qui sont uniques au projet.
 
 00:32.550 --> 00:38.580
-needs of your game, but a lot of the different problems that will arise and how you'll need to organize.
+besoins de votre jeu, mais il y a beaucoup de problèmes différents qui vont se poser et comment vous allez devoir vous organiser.
 
 00:38.580 --> 00:41.160
-Things have been done before in software.
+Des choses ont déjà été faites dans les logiciels.
 
 00:42.090 --> 00:45.750
-Some benefits of using design patterns are that they're proven.
+Certains avantages de l'utilisation des modèles de conception sont qu'ils ont fait leurs preuves.
 
 00:46.260 --> 00:51.450
-Many of these challenges have been solved before and solved quite well, so why not learn from those?
+Nombre de ces problèmes ont déjà été résolus et très bien résolus, alors pourquoi ne pas s'en inspirer ?
 
 00:51.450 --> 00:56.530
-And they can lead to much faster development as well as easier maintenance.
+Et cela peut conduire à un développement beaucoup plus rapide ainsi qu'à une maintenance plus facile.
 
 00:56.550 --> 00:59.970
-Here we see a list of some of the most popular design patterns.
+Voici une liste des modèles de conception les plus populaires.
 
 01:00.150 --> 01:04.620
-There's certainly many more, and you can even define your own design patterns.
+Il en existe certainement beaucoup d'autres, et vous pouvez même définir vos propres modèles de conception.
 
 01:04.620 --> 01:10.380
-But being familiar with about 20 of them here gives you a nice library to begin thinking about your
+Mais le fait de connaître une vingtaine d'entre eux vous permet de disposer d'une bibliothèque intéressante pour commencer à réfléchir à vos projets de conception.
 
 01:10.380 --> 01:11.220
-projects.
+projets.
 
 01:11.220 --> 01:15.270
-There's three major types Creational patterns make new stuff.
+Il y a trois grands types de patrons Les patrons de création créent de nouvelles choses.
 
 01:15.270 --> 01:22.950
-Structural patterns organize how that stuff is set up and behavioral patterns define how these systems
+Les schémas structurels organisent la mise en place de ces éléments et les schémas comportementaux définissent la manière dont ces systèmes sont mis en œuvre.
 
 01:22.950 --> 01:24.270
-behave with each other.
+se comportent les uns avec les autres.
 
 01:24.450 --> 01:30.540
-We'll look closely at just a few of these since they relate directly to the architectures we'll look
+Nous n'en examinerons que quelques-uns, car ils sont directement liés aux architectures que nous allons étudier.
 
 01:30.540 --> 01:31.290
-at later.
+plus tard.
 
 01:31.290 --> 01:37.290
-A tremendously popular one, one that you're probably already using, especially as a unit developer,
+Une méthode extrêmement populaire, que vous utilisez probablement déjà, en particulier en tant que développeur d'unités,
 
 01:37.290 --> 01:39.030
-is the observer pattern.
+est le modèle de l'observateur.
 
 01:39.030 --> 01:44.040
-The observer pattern defines how to or more objects may communicate together.
+Le modèle d'observateur définit la manière dont deux ou plusieurs objets peuvent communiquer ensemble.
 
 01:44.040 --> 01:49.290
-Now we know a class can get a reference to a second class and call a method directly on that.
+Nous savons maintenant qu'une classe peut obtenir une référence à une seconde classe et appeler une méthode directement sur celle-ci.
 
 01:49.290 --> 01:53.480
-It needs to have that reference and it needs to know exactly which method to call.
+Elle doit avoir cette référence et savoir exactement quelle méthode appeler.
 
 01:53.490 --> 01:58.200
-That's an example of tightly connected or tightly coupled relationships.
+C'est un exemple de relations étroitement connectées ou étroitement couplées.
 
 01:58.200 --> 02:01.980
-The benefits of the observer is it's not so tightly connected.
+L'avantage de l'observateur est qu'il n'est pas aussi étroitement connecté.
 
 02:01.980 --> 02:08.760
-While a class does need a reference to that sender, it's able to more easily exchange data and isolate
+Bien qu'une classe ait besoin d'une référence à l'expéditeur, elle est en mesure d'échanger plus facilement des données et d'isoler les données de l'expéditeur.
 
 02:08.760 --> 02:12.360
-the problems that come from changing one without changing the other.
+les problèmes liés à la modification de l'un sans modifier l'autre.
 
 02:12.360 --> 02:18.840
-It also allows you to have multiple observers and easily add and remove them as we go through this pattern
+Il permet également d'avoir plusieurs observateurs et de les ajouter ou de les supprimer facilement au fur et à mesure que l'on progresse dans le modèle.
 
 02:18.840 --> 02:24.210
-and others, take a look at the diagram and apply what we've learned about UML to understand a little
+et d'autres, jetez un coup d'oeil au diagramme et appliquez ce que nous avons appris sur UML pour comprendre un peu plus ce que nous faisons.
 
 02:24.210 --> 02:24.870
-bit more.
+un peu plus.
 
 02:24.870 --> 02:29.730
-And with each of these patterns, there's an excellent opportunity to do some additional research.
+Et pour chacun de ces modèles, il y a une excellente occasion de faire des recherches supplémentaires.
 
 02:29.940 --> 02:32.520
-Here's an observer example for unity.
+Voici un exemple d'observateur pour l'unité.
 
 02:32.520 --> 02:38.190
-Now, there are several ways to solve this in unity, but a first party solution that I'm sure you're
+Il y a plusieurs façons de résoudre ce problème dans unity, mais une solution de première partie que je suis sûr que vous connaissez est la suivante.
 
 02:38.190 --> 02:41.490
-familiar with in Unity is the unity event.
+familier avec Unity, c'est l'événement unity.
 
 02:41.790 --> 02:48.510
-There's three main parts to call out here creating the event, listening to the event and invoking the
+Il y a trois parties principales à appeler ici : créer l'événement, écouter l'événement et invoquer l'événement.
 
 02:48.510 --> 02:49.230
-event.
+l'événement.
 
 02:49.260 --> 02:50.630
-All are shown here.
+Tous ces éléments sont affichés ici.
 
 02:50.640 --> 02:58.320
-Now, typically we would do this across two or more classes, but for brevity sake, I'm showing a class
+Normalement, nous ferions cela sur deux classes ou plus, mais par souci de concision, je montre une classe
 
 02:58.320 --> 03:00.540
-listening to itself, so to speak.
+s'écoutant elle-même, pour ainsi dire.
 
 03:00.540 --> 03:06.030
-Now, while the last example was built into unity, here's a custom class that you'll see later when
+Alors que le dernier exemple était intégré à unity, voici une classe personnalisée que vous verrez plus tard lorsque
 
 03:06.030 --> 03:07.230
-we get into the code.
+nous entrerons dans le code.
 
 03:07.230 --> 03:13.020
-I took some of the same concepts of the Unity event and I put them inside the observable class.
+J'ai repris certains des concepts de l'événement Unity et je les ai placés dans la classe observable.
 
 03:13.020 --> 03:13.440
-Here.
+Ici.
 
 03:13.440 --> 03:21.240
-In this example of the observable, I'm able to create an observable listen to an observable and invoke
+Dans cet exemple d'observable, je suis capable de créer un observable, d'écouter un observable et d'invoquer
 
 03:21.240 --> 03:22.380
-that observable.
+cet observable.
 
 03:23.320 --> 03:30.430
-It's such a common pattern, especially when you separate your data from the rest of your game logic
+C'est un schéma très courant, en particulier lorsque vous séparez vos données du reste de votre logique de jeu.
 
 03:30.430 --> 03:33.770
-to one to subscribe to when the data changes.
+Il n'y a pas d'autre solution que de s'abonner à un service lorsque les données changent.
 
 03:33.790 --> 03:39.420
-This observable class is a really easy way to get the observer pattern tied.
+Cette classe observable est un moyen très simple d'appliquer le modèle d'observateur.
 
 03:39.430 --> 03:41.560
-Any time value changes.
+Chaque fois qu'une valeur change.
 
 03:41.560 --> 03:43.510
-You can see that happening in the code here.
+Vous pouvez voir ce qui se passe dans le code ici.
 
 03:43.510 --> 03:45.230
-And like the last example.
+Et comme dans le dernier exemple.
 
 03:45.250 --> 03:51.640
-Typically we would use two or more classes as a full demo, but for brevity sake, I put it in one class
+En règle générale, nous devrions utiliser deux classes ou plus pour une démonstration complète, mais par souci de concision, je l'ai placée dans une seule classe
 
 03:51.640 --> 03:52.210
-file.
+fichier.
 
 03:52.540 --> 04:00.100
-The observer pattern is so fundamental and beneficial if you find that you've been using it just enough
+Le modèle de l'observateur est tellement fondamental et bénéfique si vous trouvez que vous l'avez utilisé juste ce qu'il faut
 
 04:00.100 --> 04:03.790
-but not really understanding or feeling like you're taking advantage.
+mais sans vraiment comprendre ou avoir l'impression d'en tirer profit.
 
 04:03.910 --> 04:06.180
-Definitely go check it out more.
+Il faut absolument aller voir de plus près.
 
 04:06.190 --> 04:09.610
-We'll see it in some of the examples we'll do in our samples later.
+Nous le verrons dans certains des exemples que nous ferons dans nos échantillons plus tard.
 
 04:09.610 --> 04:16.570
-But also you can see it throughout many different APIs and SDKs plugged in with your Unity projects.
+Mais vous pouvez également le voir à travers de nombreuses API et SDK différentes qui sont connectées à vos projets Unity.
 
 04:16.570 --> 04:22.360
-It's tremendously simple and powerful to start separating out the different areas of your code, which
+Il est extrêmement simple et puissant de commencer à séparer les différentes zones de votre code, ce qui vous permet d'avoir une vision claire de ce que vous faites.
 
 04:22.360 --> 04:23.580
-will bring some benefits.
+apportera quelques avantages.
 
 04:23.590 --> 04:24.340
-Thanks.
+Merci.

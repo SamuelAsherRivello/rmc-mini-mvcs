@@ -1,142 +1,142 @@
 WEBVTT
 
 00:00.120 --> 00:03.030
-The many NBC's Clock sample project.
+Le projet d'exemple de l'horloge de NBC.
 
 00:03.030 --> 00:09.630
-With each sample project, there's an opportunity to peel back more of the layers in MVCs and think
+Avec chaque exemple de projet, il est possible d'éplucher davantage de couches dans les MVC et de réfléchir à ce qui suit
 
 00:09.630 --> 00:11.460
-critically about these concepts.
+de manière critique sur ces concepts.
 
 00:11.460 --> 00:13.930
-This will dramatically increase your learning.
+Cela améliorera considérablement votre apprentissage.
 
 00:13.950 --> 00:18.750
-To kick start your thoughts, consider the pros and benefits of the framework in each sample.
+Pour amorcer votre réflexion, examinez les avantages et les inconvénients du cadre dans chaque exemple.
 
 00:18.750 --> 00:21.240
-With which aspects are you feeling more comfortable?
+Avec quels aspects vous sentez-vous plus à l'aise ?
 
 00:21.240 --> 00:24.510
-Are you beginning to see the long term benefits of choosing a framework?
+Commencez-vous à voir les avantages à long terme du choix d'un cadre ?
 
 00:24.510 --> 00:28.740
-Which parts of the framework are you excited about and want to learn more along the way?
+Quelles sont les parties du cadre qui vous enthousiasment et que vous souhaitez approfondir en cours de route ?
 
 00:28.740 --> 00:31.650
-You might identify some possible cons or drawbacks.
+Vous pourriez identifier certains inconvénients ou désavantages possibles.
 
 00:31.650 --> 00:35.040
-Which aspects of the framework may not work for your needs?
+Quels sont les aspects du cadre qui pourraient ne pas répondre à vos besoins ?
 
 00:35.040 --> 00:40.770
-Is there anything you can do to get the results that you need and which patterns and practices remain
+Y a-t-il quelque chose que vous puissiez faire pour obtenir les résultats dont vous avez besoin et quels sont les modèles et les pratiques qui subsistent ?
 
 00:40.770 --> 00:41.760
-unclear for you?
+pas clairs pour vous ?
 
 00:41.760 --> 00:43.290
-Think about these points.
+Réfléchissez à ces points.
 
 00:43.290 --> 00:48.930
-Engage in the community, take notes and reflect as we're stepping into this sample will be in a project
+Engagez-vous dans la communauté, prenez des notes et réfléchissez au moment où nous entrons dans cet échantillon.
 
 00:48.930 --> 00:52.380
-that has the source code for the framework as well as the samples.
+qui contient le code source du framework ainsi que les échantillons.
 
 00:52.500 --> 00:57.330
-Each of the samples we cover has a version with many MVCs and without.
+Chacun des exemples que nous couvrons a une version avec plusieurs MVC et sans MVC.
 
 00:57.330 --> 00:59.520
-In this sample we're looking at a simple clock.
+Dans cet exemple, nous examinons une simple horloge.
 
 00:59.520 --> 01:05.300
-It has no view and instead uses debug log statements to see some sort of output into the console window.
+Elle n'a pas de vue et utilise à la place les instructions debug log pour voir une sorte de sortie dans la fenêtre de la console.
 
 01:05.310 --> 01:07.410
-This keeps the example especially simple.
+Cet exemple est particulièrement simple.
 
 01:07.410 --> 01:10.440
-It has no mono behaviors and no input either.
+Il n'y a pas de comportement mono et pas d'entrée non plus.
 
 01:10.440 --> 01:16.230
-As we're digging into this sample, consider which of these coding assignments you'd like to take on.
+Alors que nous nous penchons sur cet exemple, réfléchissez aux tâches de codage que vous aimeriez entreprendre.
 
 01:16.230 --> 01:19.020
-There's a variety here and you could even create your own.
+Il y en a toute une variété et vous pouvez même créer la vôtre.
 
 01:19.020 --> 01:23.190
-Starting with lower difficulty is just to explain back these concepts.
+Commencer par la difficulté la plus faible permet simplement d'expliquer ces concepts.
 
 01:23.190 --> 01:27.450
-After digging into the example, are you comfortable enough to explain it to a friend?
+Après avoir creusé l'exemple, êtes-vous suffisamment à l'aise pour l'expliquer à un ami ?
 
 01:27.450 --> 01:29.310
-Each sample includes unit testing.
+Chaque exemple comprend des tests unitaires.
 
 01:29.310 --> 01:33.390
-Can you add one more unit test that makes sense in the context of the sample?
+Pouvez-vous ajouter un test unitaire supplémentaire qui ait du sens dans le contexte de l'échantillon ?
 
 01:33.390 --> 01:40.050
-You can add a new UI feature, perhaps adding text or a button to the UI and then wiring it up properly
+Vous pouvez ajouter une nouvelle fonctionnalité de l'interface utilisateur, par exemple en ajoutant du texte ou un bouton à l'interface utilisateur et en le connectant correctement.
 
 01:40.050 --> 01:41.850
-in a way that makes sense to the framework.
+d'une manière qui ait du sens pour le cadre.
 
 01:41.850 --> 01:47.640
-You could create some other type of new input, perhaps having keyboard input, do something appropriate
+Vous pourriez créer un autre type de nouvelle entrée, par exemple une entrée clavier, et faire quelque chose d'approprié.
 
 01:47.640 --> 01:48.420
-for the sample.
+pour l'échantillon.
 
 01:48.420 --> 01:49.920
-You could copy the sample.
+Vous pouvez copier l'échantillon.
 
 01:49.920 --> 01:54.990
-Perhaps the sample has some things that are interesting for a different use case copy and paste the
+Si l'exemple contient des éléments intéressants pour un autre cas d'utilisation, copiez et collez l'exemple.
 
 01:54.990 --> 02:01.200
-entire parent folder, rename each class so that it's unique or give it a new namespace and then add
+l'ensemble du dossier parent, renommez chaque classe pour qu'elle soit unique ou donnez-lui un nouvel espace de noms et ajoutez ensuite
 
 02:01.200 --> 02:03.510
-and adjust the functionality to meet your needs.
+et ajustez la fonctionnalité pour répondre à vos besoins.
 
 02:03.510 --> 02:09.210
-And perhaps the most challenging of this list would be to create a new sample yourself instead of copying
+Et peut-être que le plus difficile de cette liste serait de créer vous-même un nouvel échantillon au lieu de le copier.
 
 02:09.210 --> 02:09.960
-and pasting.
+et de coller.
 
 02:09.960 --> 02:12.750
-Here, begin with the empty canvas of a new project.
+Ici, commencez par le canevas vide d'un nouveau projet.
 
 02:12.750 --> 02:15.930
-Import the framework itself and start coding from scratch.
+Importez le framework lui-même et commencez à coder à partir de zéro.
 
 02:15.930 --> 02:19.740
-That certainly demonstrates a firm grasp of all the concepts.
+Voilà qui démontre une bonne maîtrise de tous les concepts.
 
 02:19.740 --> 02:24.600
-Doing assignments like these helps to deepen your knowledge with practical experience.
+Ce genre de mission permet d'approfondir ses connaissances grâce à l'expérience pratique.
 
 02:24.600 --> 02:27.930
-Let's see this in action You can create a new Unity project.
+Voyons cela en action Vous pouvez créer un nouveau projet Unity.
 
 02:27.930 --> 02:30.420
-Import the Mini MVCs Framework.
+Importez le Mini MVCs Framework.
 
 02:30.420 --> 02:36.810
-Import the samples, open this particular sample, explore the version within that doesn't use mini
+Importez les échantillons, ouvrez cet échantillon particulier, explorez la version qui n'utilise pas mini
 
 02:36.810 --> 02:39.780
-MVCs to gain the basic knowledge of how it operates.
+MVC pour acquérir les connaissances de base sur son fonctionnement.
 
 02:39.780 --> 02:45.360
-And then look at the version with many MVCs and with each sample, I'll do some live coding with one
+Ensuite, je regarderai la version avec plusieurs MVC et, pour chaque échantillon, je ferai du codage en direct avec l'un d'entre eux.
 
 02:45.360 --> 02:46.680
-of the sample assignments.
+des affectations de l'échantillon.
 
 02:46.680 --> 02:47.910
-Let's get started.
+Commençons.
