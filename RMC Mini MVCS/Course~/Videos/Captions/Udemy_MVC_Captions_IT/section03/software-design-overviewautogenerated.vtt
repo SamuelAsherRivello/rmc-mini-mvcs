@@ -1,133 +1,133 @@
 WEBVTT
 
 00:00.240 --> 00:02.490
-Software Design Overview.
+Panoramica sulla progettazione del software.
 
 00:02.670 --> 00:06.000
-Let's start with theory of design principles.
+Iniziamo con la teoria dei principi di progettazione.
 
 00:06.180 --> 00:10.710
-Veteran developers can make it look easy, but clean code is not written by chance.
+Gli sviluppatori esperti possono farlo sembrare facile, ma il codice pulito non si scrive per caso.
 
 00:10.740 --> 00:17.430
-Creating good projects comes from using sound principles, good workflows, and productive patterns
+La creazione di buoni progetti deriva dall'utilizzo di principi solidi, buoni flussi di lavoro e modelli produttivi.
 
 00:17.430 --> 00:18.670
-in your process.
+nel vostro processo.
 
 00:18.690 --> 00:21.440
-First, let's discuss design principles.
+Per prima cosa, parliamo dei principi di progettazione.
 
 00:21.450 --> 00:25.040
-These are the philosophies that lead to productive software development.
+Sono le filosofie che portano a uno sviluppo produttivo del software.
 
 00:25.050 --> 00:32.490
-Benefits include faster planning, clear communication and focus during your development.
+I vantaggi includono una pianificazione più rapida, una comunicazione chiara e la concentrazione durante lo sviluppo.
 
 00:32.700 --> 00:37.350
-The history of computer science is full of these design principles.
+La storia dell'informatica è piena di questi principi di progettazione.
 
 00:37.470 --> 00:39.850
-I'll go over some of the most popular.
+Ne illustrerò alcuni tra i più noti.
 
 00:39.870 --> 00:46.410
-This is an excellent opportunity for you to do your own research on any that are new to you and to dig
+Questa è un'ottima occasione per fare le vostre ricerche su quelli che vi sono nuovi e per scavare
 
 00:46.410 --> 00:49.370
-in deeper on the ones that you have some familiarity with.
+approfondire quelli con cui avete una certa familiarità.
 
 00:49.380 --> 00:56.220
-Let's start with the solid principles where each letter in solid corresponds to a design principle.
+Cominciamo con i principi solidi, dove ogni lettera di solid corrisponde a un principio di progettazione.
 
 00:56.490 --> 01:04.530
-The single responsibility principle is the general desire for each of your classes and structures to
+Il principio della singola responsabilità è il desiderio generale che ciascuna delle vostre classi e strutture
 
 01:04.530 --> 01:06.050
-do just one thing.
+faccia una sola cosa.
 
 01:06.060 --> 01:14.010
-The open closed principle means that each class should be open for extension but closed for modification.
+Il principio aperto e chiuso significa che ogni classe dovrebbe essere aperta all'estensione ma chiusa alla modifica.
 
 01:14.010 --> 01:19.290
-With object oriented programming, you have inheritance and interfaces.
+La programmazione orientata agli oggetti prevede l'ereditarietà e le interfacce.
 
 01:19.290 --> 01:27.840
-The list of substitution principle discusses that any subtype should be able to be cast as the parent
+Il principio della lista di sostituzione stabilisce che ogni sottotipo deve poter essere lanciato come genitore.
 
 01:27.870 --> 01:29.220
-type and interface.
+tipo e interfaccia.
 
 01:29.220 --> 01:36.030
-Segregation means that we should not apply more interfaces to a given type than is needed.
+La segregazione significa che non dobbiamo applicare a un dato tipo più interfacce di quante siano necessarie.
 
 01:36.030 --> 01:41.970
-And finally, dependency inversion indicates that when you're dealing with high code and low code in
+Infine, l'inversione di dipendenza indica che quando si ha a che fare con codice alto e basso in
 
 01:41.970 --> 01:49.280
-a system, the high level code should not depend on concrete implementations of the lower level code.
+un sistema, il codice di alto livello non dovrebbe dipendere da implementazioni concrete del codice di livello inferiore.
 
 01:49.290 --> 01:55.140
-It instead should use something like interfaces to abstract that some other popular concepts include.
+Dovrebbe invece utilizzare qualcosa come le interfacce per astrarre che alcuni altri concetti popolari includono.
 
 01:55.140 --> 01:56.520
-Don't repeat yourself.
+Non ripetersi.
 
 01:56.520 --> 02:02.940
-This is a reminder that we use as developers that if you find yourself copying, pasting, literal code
+Questo è un promemoria che usiamo come sviluppatori per ricordare che se ci si trova a copiare, incollare, letteralizzare il codice
 
 02:02.940 --> 02:08.910
-or concepts, there may be a systematic approach that helps us reuse that code more efficiently.
+o concetti, potrebbe esserci un approccio sistematico che ci aiuta a riutilizzare quel codice in modo più efficiente.
 
 02:08.940 --> 02:15.540
-Keep it simple reminds us not to overcomplicate our solutions and you ain't going to need it.
+Keep it simple ci ricorda di non complicare eccessivamente le nostre soluzioni e non ne avrete bisogno.
 
 02:15.540 --> 02:19.500
-Reminds us not to build tomorrow's solutions today.
+Ci ricorda di non costruire oggi le soluzioni di domani.
 
 02:20.310 --> 02:21.870
-In iterative development.
+Nello sviluppo iterativo.
 
 02:21.870 --> 02:28.080
-We want to solve the challenges before us now with sound principles and not engineer something that
+Vogliamo risolvere le sfide che abbiamo di fronte ora con principi solidi e non ingegnerizzare qualcosa che
 
 02:28.080 --> 02:30.180
-is necessarily future proof.
+necessariamente a prova di futuro.
 
 02:30.210 --> 02:36.630
-Often we don't know what the future will hold, and designing for tomorrow is an unnecessary complication.
+Spesso non sappiamo cosa ci riserverà il futuro e progettare per il domani è una complicazione inutile.
 
 02:36.630 --> 02:42.870
-Just practicing the principles here and applying them into your project will automatically give you
+Basta mettere in pratica i principi qui esposti e applicarli al vostro progetto per ottenere automaticamente
 
 02:42.870 --> 02:49.150
-more scalability, maintainability and quality of life as a developer.
+più scalabilità, manutenibilità e qualità della vita come sviluppatore.
 
 02:49.170 --> 02:54.900
-When we think of these software design principles in this particular section, we start from a high
+Quando pensiamo a questi principi di progettazione del software in questa particolare sezione, partiamo da un alto
 
 02:54.900 --> 03:00.720
-theoretical level things that can be more universal across different programming platforms.
+livello teorico che può essere più universale tra le diverse piattaforme di programmazione.
 
 03:00.720 --> 03:06.450
-Then we'll get down into more the nuts and bolts of how it applies, particularly within unity.
+Poi entreremo nel vivo dell'applicazione, in particolare all'interno di unity.
 
 03:06.600 --> 03:13.890
-But you'll notice this difference where we talk high level and then concretely in low level and throughout
+Ma noterete questa differenza: parliamo ad alto livello e poi concretamente a basso livello e per tutta la durata del progetto.
 
 03:13.890 --> 03:19.890
-that you can develop your own personal style of which of these principles impact your daily work life
+che potete sviluppare il vostro stile personale su quali di questi principi hanno un impatto sulla vostra vita lavorativa quotidiana
 
 03:19.890 --> 03:21.020
-more than others.
+più di altri.
 
 03:21.030 --> 03:27.180
-We'll also come to recognize some of these principles throughout the architectures that we use and ultimately
+Riconosceremo alcuni di questi principi anche nelle architetture che utilizziamo e infine
 
 03:27.180 --> 03:30.030
-the code that we do together in the coding sections.
+il codice che realizziamo insieme nelle sezioni di codifica.
 
 03:30.150 --> 03:31.260
-That's it for now.
+Per ora è tutto.
 
 03:31.260 --> 03:31.980
-Thanks.
+Grazie.

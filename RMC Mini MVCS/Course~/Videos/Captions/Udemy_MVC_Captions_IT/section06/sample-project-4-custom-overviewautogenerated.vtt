@@ -1,256 +1,256 @@
 WEBVTT
 
 00:00.120 --> 00:03.570
-The mini NBC's Custom Sample Project.
+Il mini progetto di esempio personalizzato della NBC.
 
 00:03.570 --> 00:05.010
-Congratulations.
+Congratulazioni.
 
 00:05.010 --> 00:09.180
-You've successfully completed all the theory in this course together.
+Avete completato con successo tutta la teoria di questo corso.
 
 00:09.180 --> 00:11.010
-We've gone over the course introduction.
+Abbiamo ripassato l'introduzione al corso.
 
 00:11.010 --> 00:14.850
-We've looked at an overview of unity, including unity structure.
+Abbiamo visto una panoramica dell'unità, compresa la struttura dell'unità.
 
 00:14.850 --> 00:22.770
-We looked at software design from a high level covering design principles, design patterns, UML diagramming,
+Abbiamo esaminato la progettazione del software da un livello elevato, coprendo i principi di progettazione, i modelli di progettazione, il diagramma UML,
 
 00:22.770 --> 00:24.840
-as well as architectures themselves.
+così come le architetture stesse.
 
 00:24.840 --> 00:29.340
-And then together we dove deep into the MINI and VCs architecture for Unity.
+E poi insieme abbiamo approfondito l'architettura di MINI e VC per Unity.
 
 00:29.340 --> 00:35.460
-Let's put all of this theory together into practice and create a new project from scratch.
+Mettiamo in pratica tutta questa teoria e creiamo un nuovo progetto da zero.
 
 00:35.460 --> 00:41.190
-Now, with each sample project we've covered and with this new one as well, we continue to peel back
+Ora, con ogni progetto di esempio che abbiamo trattato e anche con questo nuovo, continuiamo a fare il punto della situazione
 
 00:41.190 --> 00:46.770
-more layers in MVCs concepts and think critically about how we're applying it.
+altri livelli dei concetti MVC e a riflettere criticamente su come li stiamo applicando.
 
 00:46.770 --> 00:48.600
-As we go through this next section.
+Mentre affrontiamo la prossima sezione.
 
 00:48.600 --> 00:55.170
-Think for yourself about which aspects of architecture and this framework are you feeling most comfortable
+Pensate da soli a quali aspetti dell'architettura e di questo framework vi sentite più a vostro agio.
 
 00:55.170 --> 00:55.410
-with?
+con cui vi sentite più a vostro agio?
 
 00:55.420 --> 01:00.150
-Are you starting to see the long term benefits when you apply architecture to your projects?
+Iniziate a vedere i benefici a lungo termine dell'applicazione dell'architettura ai vostri progetti?
 
 01:00.150 --> 01:02.660
-Which parts of the framework do you want to explore more?
+Quali parti del framework volete approfondire?
 
 01:02.670 --> 01:06.390
-Also, consider which aspects may not work for your needs.
+Considerate anche quali aspetti potrebbero non funzionare per le vostre esigenze.
 
 01:06.390 --> 01:12.120
-What can you do to get the results that you want in a project in which design principles, patterns
+Che cosa si può fare per ottenere i risultati desiderati in un progetto in cui i principi di progettazione, i modelli
 
 01:12.120 --> 01:14.580
-and other concepts remain unclear?
+e altri concetti rimangono poco chiari?
 
 01:14.580 --> 01:19.440
-Well, up to this point we've seen several samples of MVCs in action.
+Finora abbiamo visto diversi esempi di MVC in azione.
 
 01:19.440 --> 01:22.270
-In each case, we reviewed something that already existed.
+In ogni caso, abbiamo esaminato qualcosa che già esisteva.
 
 01:22.290 --> 01:24.510
-Now we'll create a new project from scratch.
+Ora creeremo un nuovo progetto da zero.
 
 01:24.510 --> 01:26.550
-Here's the high level process we'll do together.
+Ecco il processo di alto livello che faremo insieme.
 
 01:26.550 --> 01:29.370
-Well, what is our concept and what are the functional requirements?
+Qual è il nostro concetto e quali sono i requisiti funzionali?
 
 01:29.370 --> 01:30.690
-What does it need to do?
+Cosa deve fare?
 
 01:30.720 --> 01:32.490
-What's the user experience?
+Qual è l'esperienza dell'utente?
 
 01:32.490 --> 01:35.550
-What do they see, and what kind of input do they use?
+Cosa vedono e che tipo di input usano?
 
 01:35.550 --> 01:38.620
-Which architectural concerns will we need?
+Di quali aspetti architettonici avremo bisogno?
 
 01:38.640 --> 01:42.960
-Model view controller service, perhaps multiple.
+Servizio di controllo della vista del modello, forse multiplo.
 
 01:42.960 --> 01:47.730
-And for which of those concerns can we use the base functionality and for which ones do we need?
+E per quali di questi problemi possiamo usare le funzionalità di base e per quali abbiamo bisogno?
 
 01:47.730 --> 01:49.260
-Some custom functionality?
+Alcune funzionalità personalizzate?
 
 01:49.260 --> 01:54.690
-So let's make a simple math app, a calculator using many MVCs.
+Realizziamo una semplice applicazione matematica, una calcolatrice, utilizzando molti MVC.
 
 01:54.690 --> 01:56.070
-Here's the requirements.
+Ecco i requisiti.
 
 01:56.340 --> 01:59.370
-We'll have some input text fields on the screen.
+Avremo alcuni campi di testo sullo schermo.
 
 01:59.880 --> 02:06.750
-The user will type in two integer numbers and then click an add button to add them together mathematically
+L'utente digiterà due numeri interi e poi farà clic su un pulsante di aggiunta per sommarli matematicamente.
 
 02:06.750 --> 02:07.650
-and show the result.
+e mostrare il risultato.
 
 02:07.650 --> 02:09.930
-So how do we break this down into concerns?
+Come facciamo a suddividere il tutto in preoccupazioni?
 
 02:09.930 --> 02:11.430
-Well, the model stores the data.
+Il modello memorizza i dati.
 
 02:11.430 --> 02:14.220
-So what type of data would we need to make this happen?
+Di che tipo di dati avremmo bisogno per realizzare tutto questo?
 
 02:14.220 --> 02:19.590
-Well, starting just from the view and thinking about the data that way, we know we've got some text
+Partendo dalla vista e pensando ai dati in questo modo, sappiamo che abbiamo un testo
 
 02:19.590 --> 02:22.620
-fields of the users entering and we need to store them somehow.
+degli utenti e dobbiamo memorizzarli in qualche modo.
 
 02:22.620 --> 02:28.290
-So we'll have an integer for the first text field, an integer for the second, and an integer for the
+Quindi avremo un numero intero per il primo campo di testo, un numero intero per il secondo e un numero intero per il secondo campo di testo.
 
 02:28.290 --> 02:28.860
-result.
+risultato.
 
 02:28.860 --> 02:35.400
-In the view, we'll have some sort of text for A, for B, and also for showing the result in the controller,
+Nella vista, avremo una sorta di testo per A, per B e anche per mostrare il risultato nel controllore,
 
 02:35.400 --> 02:41.460
-which is going to handle the logic would need something to do the add operation as well as a way to
+che gestirà la logica avrà bisogno di qualcosa per eseguire l'operazione di aggiunta e di un modo per
 
 02:41.460 --> 02:43.290
-clear or reset the app.
+cancellare o resettare l'applicazione.
 
 02:43.290 --> 02:49.290
-And while in earlier samples we used a service layer to load some external data, we don't need that
+Mentre negli esempi precedenti abbiamo utilizzato un livello di servizio per caricare alcuni dati esterni, ora non ne abbiamo bisogno.
 
 02:49.290 --> 02:51.480
-for this example, so we won't have a service.
+per questo esempio, quindi non avremo un servizio.
 
 02:51.480 --> 02:55.020
-So which of the so what base functionality will we use here?
+Quindi, quale funzionalità di base utilizzeremo?
 
 02:55.020 --> 03:00.240
-Here we're thinking about for which concerns do we want standard functionality and for which do we want
+Qui stiamo pensando a quali aspetti vogliamo che siano standard e a quali invece vogliamo che siano
 
 03:00.240 --> 03:01.290
-custom functionality?
+funzionalità personalizzate?
 
 03:01.290 --> 03:05.400
-Well, as is typically the case for the model, we want some basic functionality.
+Come di solito accade per il modello, vogliamo alcune funzionalità di base.
 
 03:05.400 --> 03:08.610
-There usually isn't a need to stray from the base model.
+Di solito non è necessario allontanarsi dal modello di base.
 
 03:08.610 --> 03:11.580
-So here we'll be extending base model for the view.
+Quindi qui estenderemo il modello di base per la vista.
 
 03:11.580 --> 03:16.230
-We will implement the eye view interface as well as extend mono behavior.
+Implementeremo l'interfaccia della vista e estenderemo il comportamento di mono.
 
 03:16.230 --> 03:18.110
-Now we've seen this pattern before.
+Abbiamo già visto questo schema.
 
 03:18.120 --> 03:20.400
-Any time you want to use Unity's UI.
+Ogni volta che si vuole usare l'interfaccia utente di Unity.
 
 03:20.400 --> 03:23.340
-Unity's UI plays very nice with mono behaviors.
+L'interfaccia utente di Unity funziona molto bene con i comportamenti mono.
 
 03:23.340 --> 03:28.470
-So we'll lean into that and we'll use a mono behavior for our view for the controller.
+Quindi ci appoggeremo a questo e useremo un comportamento mono per la nostra vista per il controllore.
 
 03:28.470 --> 03:32.970
-While a base controller class exists that works best when we want one.
+Sebbene esista una classe base per il controllore che funziona meglio quando ne vogliamo una.
 
 03:32.970 --> 03:38.340
-Each of a model view controller and service here because we don't need the service.
+Ciascuno dei due controllori model view e service, perché il servizio non ci serve.
 
 03:38.340 --> 03:43.890
-We've got a few options of how to move forward, but quite simply will implement AI controller and create
+Abbiamo alcune opzioni su come procedere, ma molto semplicemente implementeremo il controllore AI e creeremo
 
 03:43.890 --> 03:46.560
-custom functionality that doesn't use the service.
+funzionalità personalizzate che non utilizzano il servizio.
 
 03:46.560 --> 03:50.790
-And again, on the service layer, we won't use a service, so we'll skip that part.
+E ancora, per quanto riguarda il livello di servizio, non useremo un servizio, quindi salteremo questa parte.
 
 03:50.790 --> 03:53.700
-This is because the app calls for no external data.
+Questo perché l'applicazione non richiede dati esterni.
 
 03:53.700 --> 03:59.430
-So at this stage of the brainstorm, it's a great spot to think about diagramming, using UML.
+In questa fase del brainstorming, è opportuno pensare alla creazione di diagrammi, utilizzando l'UML.
 
 03:59.460 --> 04:05.430
-This helps you think out where the dependencies lie, which interfaces would be implemented, which
+Questo aiuta a capire dove si trovano le dipendenze, quali interfacce devono essere implementate, quali sono le interfacce che devono essere implementate, quali sono le interfacce che devono essere implementate.
 
 04:05.430 --> 04:10.320
-classes would be extended, whether you're working on a project by yourself or together with the team,
+classi da estendere, sia che si lavori a un progetto da soli sia che si lavori insieme al team,
 
 04:10.320 --> 04:14.310
-UML is a great way to communicate and to focus for development.
+UML è un ottimo modo per comunicare e concentrarsi sullo sviluppo.
 
 04:14.310 --> 04:20.100
-So taking those same brainstorms we've had in the last few steps, we just articulate that visually.
+Quindi, prendendo gli stessi brainstorming che abbiamo avuto nelle ultime fasi, li articoliamo visivamente.
 
 04:20.100 --> 04:25.530
-We'll have a calculator mini class that represents the whole structure inside.
+Avremo una mini-classe di calcolatori che rappresenta l'intera struttura all'interno.
 
 04:25.530 --> 04:30.060
-We'll have a calculator model, a calculator controller and the calculator view.
+Avremo un modello di calcolatrice, un controller di calcolatrice e la vista della calcolatrice.
 
 04:30.060 --> 04:33.270
-Throughout the course there's been several coding challenge assignments.
+Nel corso del corso sono state assegnate diverse sfide di codifica.
 
 04:33.270 --> 04:38.070
-If you're ready for the ultimate coding challenge assignment, you can pause the video here.
+Se siete pronti per l'ultimo compito di coding challenge, potete mettere in pausa il video qui.
 
 04:38.070 --> 04:43.950
-Use just the information we talked about in this section and start coding from scratch once you complete
+Utilizzate solo le informazioni di cui abbiamo parlato in questa sezione e iniziate a codificare da zero una volta completata l'attività.
 
 04:43.950 --> 04:49.110
-the assignment or if you find yourself getting stuck, you can return to this and see how we solved
+o se vi trovate bloccati, potete tornare a questa sezione e vedere come abbiamo risolto il problema.
 
 04:49.110 --> 04:49.650
-it together.
+insieme.
 
 04:49.650 --> 04:50.850
-Let's see this in action.
+Vediamolo in azione.
 
 04:50.850 --> 04:57.840
-I'm going to show from the very beginning getting unity, installing it, creating a new project, adding
+Mostrerò sin dall'inizio come ottenere unity, installarlo, creare un nuovo progetto, aggiungere
 
 04:57.840 --> 04:59.910
-the mini and VC's framework and.
+il framework mini e VC.
 
 04:59.960 --> 05:03.470
-Doing live coding for this calculator Sample project.
+Eseguire la codifica dal vivo per questo progetto di esempio di calcolatrice.
 
 05:03.470 --> 05:08.690
-This sample project will feel a bit different than the ones we've done before because I'm coding it
+Questo progetto di esempio sarà un po' diverso da quelli che abbiamo fatto in precedenza, perché lo sto codificando io.
 
 05:08.690 --> 05:14.030
-as I go, so there'll be less editing and if we're lucky, I'll make some mistakes along the way, which
+quindi ci sarà meno editing e, se saremo fortunati, commetterò qualche errore lungo il percorso, cosa che
 
 05:14.030 --> 05:15.100
-we can solve together.
+possiamo risolvere insieme.
 
 05:15.110 --> 05:16.280
-Let's get started.
+Iniziamo.

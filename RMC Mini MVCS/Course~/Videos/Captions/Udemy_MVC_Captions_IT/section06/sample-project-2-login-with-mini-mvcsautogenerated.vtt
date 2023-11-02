@@ -1,169 +1,169 @@
 WEBVTT
 
 00:00.150 --> 00:04.260
-First, let's look at the version without many, MVCs added.
+Per prima cosa, diamo un'occhiata alla versione senza l'aggiunta di molti MVC.
 
 00:05.180 --> 00:08.070
-Here we are inside of an empty unity project.
+Qui siamo all'interno di un progetto unity vuoto.
 
 00:08.090 --> 00:13.370
-I have already added the mini NPCs framework and imported the samples.
+Ho già aggiunto il framework dei mini PNG e importato i campioni.
 
 00:13.670 --> 00:15.650
-Let's open up the login sample.
+Apriamo il campione di login.
 
 00:16.830 --> 00:22.710
-Here's the file structure for the version of this sample that does not have the mini MVC added.
+Ecco la struttura dei file per la versione di questo esempio che non ha aggiunto il mini MVC.
 
 00:23.280 --> 00:29.820
-In the resources section, I have the prefab that's used for the UI as well as the text file that gets
+Nella sezione risorse, ho il prefabbricato usato per l'interfaccia utente e il file di testo che riceve
 
 00:29.820 --> 00:32.550
-loaded simulating the service layer.
+caricato simulando il livello di servizio.
 
 00:33.180 --> 00:38.700
-I've got one scene and in that scene we have the one example file that kicks it all off.
+Abbiamo una scena e in questa scena abbiamo il file di esempio che dà il via a tutto.
 
 00:39.090 --> 00:40.920
-Let's start by running the example.
+Cominciamo con l'esecuzione dell'esempio.
 
 00:41.220 --> 00:44.550
-This example is an offline simulation of login.
+Questo esempio è una simulazione offline del login.
 
 00:45.030 --> 00:50.460
-We use the familiar pattern of inputting a username and a password.
+Utilizziamo il consueto schema di immissione di un nome utente e di una password.
 
 00:50.940 --> 00:52.560
-Clicking the login button.
+Clicchiamo sul pulsante di login.
 
 00:52.560 --> 00:57.330
-Typically, a back end service would validate if these fields match up correctly.
+In genere, un servizio di back end convalida la corretta corrispondenza di questi campi.
 
 00:58.290 --> 01:03.300
-In this case, I'm loading a local file and just checking that the local password matches what I've
+In questo caso, sto caricando un file locale e sto solo controllando che la password locale corrisponda a quella che ho inserito nel file.
 
 01:03.330 --> 01:04.260
-typed in here.
+digitato qui.
 
 01:04.710 --> 01:07.890
-Let's go ahead and do a working example.
+Procediamo con un esempio di lavoro.
 
 01:19.820 --> 01:23.960
-As the onscreen text hints there, the password is evident.
+Come suggerisce il testo sullo schermo, la password è evidente.
 
 01:30.490 --> 01:35.890
-When I hit log in, there's a short delay and then we have success that I've properly logged in.
+Quando premo "accedi", c'è un breve ritardo e poi viene confermato che l'accesso è avvenuto correttamente.
 
 01:53.070 --> 01:57.540
-Now I've logged out and I'll now log in using an obviously wrong password.
+Ora mi sono disconnesso e mi connetterò usando una password evidentemente sbagliata.
 
 02:00.680 --> 02:02.640
-And we see the message failed.
+E vediamo il messaggio di errore.
 
 02:02.660 --> 02:04.410
-So everything is working great here.
+Quindi tutto funziona alla perfezione.
 
 02:04.430 --> 02:06.950
-Let's look at all the code to get this to happen.
+Diamo un'occhiata a tutto il codice per ottenere questo risultato.
 
 02:06.950 --> 02:09.500
-And we'll start with the high level example file.
+Cominciamo con il file di esempio di alto livello.
 
 02:10.380 --> 02:12.380
-Here's the code for the example file.
+Ecco il codice del file di esempio.
 
 02:12.390 --> 02:17.310
-I'll start by doing a scroll down through it and then I'll go check it out line by line.
+Inizierò a scorrerlo e poi lo controllerò riga per riga.
 
 02:44.380 --> 02:49.690
-We start not with the main example class file itself, but with a helper data object.
+Non iniziamo con il file di classe principale dell'esempio, ma con un oggetto dati di aiuto.
 
 02:51.310 --> 02:56.260
-This user data object holds the username and password as it's about to be submitted.
+Questo oggetto dati utente contiene il nome utente e la password che stanno per essere inviati.
 
 02:56.530 --> 03:01.780
-Here's the example itself, and as with all examples, we extend mount of behavior so we can attach
+Ecco l'esempio vero e proprio e, come per tutti gli esempi, estendiamo il montaggio del comportamento in modo da poter collegare
 
 03:01.780 --> 03:03.080
-it to a game object.
+a un oggetto di gioco.
 
 03:03.100 --> 03:07.990
-Then we see serialized fields for all the different UI elements inside the start.
+Poi vediamo i campi serializzati per tutti i diversi elementi dell'interfaccia utente all'interno dell'avvio.
 
 03:07.990 --> 03:14.380
-Here we subscribe to some built in unity events for the UI, and then we mimic the clicking of the logout
+Qui sottoscriviamo alcuni eventi di unity per l'interfaccia utente e poi imitiamo il clic del logout
 
 03:14.380 --> 03:17.160
-button just by calling the logout function there.
+chiamando la funzione logout.
 
 03:17.170 --> 03:19.870
-That just clears out the UI as we start fresh.
+In questo modo si cancella l'interfaccia utente e si ricomincia da capo.
 
 03:19.900 --> 03:26.890
-Next, any time those two input fields are edited, this gets called and we simply update.
+Poi, ogni volta che i due campi di input vengono modificati, viene richiamata questa funzione e si aggiorna semplicemente.
 
 03:26.890 --> 03:28.840
-Are you allowed to submit yet?
+Si può già inviare?
 
 03:28.840 --> 03:33.670
-This is a very simple check, but I'm just saying if the fields are empty, you can't submit.
+Si tratta di un controllo molto semplice, ma se i campi sono vuoti, non si può inviare.
 
 03:33.670 --> 03:36.610
-If there's anything in the fields you can submit.
+Se c'è qualcosa nei campi, si può inviare.
 
 03:36.760 --> 03:40.510
-Here's what happens when we click log in and there's quite a bit here.
+Ecco cosa succede quando facciamo clic su Accedi e qui c'è un bel po' di roba.
 
 03:40.510 --> 03:44.200
-This is the most significant method, so I'll step through it by section.
+Questo è il metodo più significativo, quindi lo analizzerò per sezioni.
 
 03:44.350 --> 03:48.430
-First, I create a new user data based on what the user has typed into the fields.
+Per prima cosa, creo un nuovo dato utente in base a ciò che l'utente ha digitato nei campi.
 
 03:48.430 --> 03:54.500
-Then I toggle the intractability, see, or if it's disabled or not for each of the UI elements.
+Poi modifico l'intrattabilità, ovvero se è disabilitata o meno per ciascuno degli elementi dell'interfaccia utente.
 
 03:54.520 --> 04:00.820
-Now, as we've seen with the previous sample, we simulate an online back end call by just loading a
+Ora, come abbiamo visto con l'esempio precedente, simuliamo una chiamata al back end online caricando semplicemente un file
 
 04:00.820 --> 04:02.080
-local text file.
+file di testo locale.
 
 04:02.200 --> 04:05.320
-This does some asynchronous operation.
+Questo esegue alcune operazioni asincrone.
 
 04:05.320 --> 04:12.190
-It is external data, so once we discuss service layers, this makes sense for a service layer component
+Si tratta di dati esterni, quindi quando si parla di livelli di servizio, questo ha senso per un componente di livello servizio.
 
 04:12.250 --> 04:17.950
-and we can see at the end there what we're getting is the text representation of the valid password
+e possiamo vedere che alla fine ciò che stiamo ottenendo è la rappresentazione testuale della password valida
 
 04:17.950 --> 04:20.710
-and we're just checking it against what the user submitted.
+e la stiamo confrontando con quella inviata dall'utente.
 
 04:21.970 --> 04:23.050
-Assuming there's a match.
+Supponendo che ci sia una corrispondenza.
 
 04:23.050 --> 04:25.180
-We call this a successful login.
+Questo è un login riuscito.
 
 04:25.420 --> 04:31.570
-We update the UI to be enabled again as appropriate, and then we show a success or failure message
+Aggiorniamo l'interfaccia utente in modo che sia nuovamente abilitata e mostriamo un messaggio di successo o di fallimento.
 
 04:31.570 --> 04:32.380
-on the screen.
+sullo schermo.
 
 04:32.410 --> 04:38.770
-Lastly, at any time if the user hits the logout button and then also we mimic this in the start method
+Infine, in qualsiasi momento, se l'utente preme il pulsante di logout, lo imitiamo anche nel metodo di avvio
 
 04:38.770 --> 04:39.560
-by calling this form.
+chiamando questo modulo.
 
 04:39.580 --> 04:42.280
-Initially, this just clears out the UI.
+Inizialmente, questo metodo cancella l'interfaccia utente.
 
 04:42.310 --> 04:43.890
-Let's run the example again.
+Eseguiamo di nuovo l'esempio.
 
 04:43.900 --> 04:48.790
-I'll populate it with working info that works successfully and the demo is complete.
+Se l'esempio viene popolato con informazioni che funzionano correttamente, la dimostrazione è completa.

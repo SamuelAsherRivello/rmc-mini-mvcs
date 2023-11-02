@@ -1,463 +1,463 @@
 WEBVTT
 
 00:00.750 --> 00:01.050
-All right.
+Va bene.
 
 00:01.080 --> 00:03.900
-Now let's take a look at the count up demo.
+Ora diamo un'occhiata al demo del conteggio.
 
 00:03.930 --> 00:09.600
-So this is a demo created using the mini MVC architecture for unity.
+Questa è una demo creata utilizzando la mini architettura MVC di unity.
 
 00:09.630 --> 00:16.860
-You can check out the Udemy course if you want to see all of the teachings about how and why architecture
+Potete dare un'occhiata al corso Udemy se volete vedere tutti gli insegnamenti su come e perché l'architettura
 
 00:16.860 --> 00:22.700
-and unity is challenging and why the mini MVC is a great community driven solution.
+e unity è impegnativa e perché il mini MVC è un'ottima soluzione guidata dalla comunità.
 
 00:22.710 --> 00:27.870
-Then also the framework itself is freely available, so you can check out the link and you can just
+Inoltre, il framework stesso è liberamente disponibile, per cui potete consultare il link e
 
 00:27.870 --> 00:30.000
-play with the source code if you want.
+giocare con il codice sorgente, se volete.
 
 00:30.630 --> 00:34.890
-So this is built on the MVC architecture concepts.
+Si tratta di un'architettura basata sui concetti dell'architettura MVC.
 
 00:34.890 --> 00:38.790
-There's a Udemy course which goes over the following content.
+Esiste un corso Udemy che tratta i seguenti contenuti.
 
 00:38.820 --> 00:40.290
-The course Introduction.
+Introduzione al corso.
 
 00:40.290 --> 00:46.890
-I talk about unity, I talk about software design and the mini MVC framework for unity.
+Parlo di unity, della progettazione del software e del mini framework MVC per unity.
 
 00:47.040 --> 00:50.730
-Then deeper, more information about each of those topics.
+Poi approfondimenti e informazioni su ciascuno di questi argomenti.
 
 00:50.730 --> 00:56.040
-Here you can see that there are sample projects included, but today we're going to go over some more
+Qui potete vedere che sono inclusi dei progetti di esempio, ma oggi ne analizzeremo altri
 
 00:56.040 --> 00:56.760
-demos.
+demo.
 
 00:56.760 --> 01:00.430
-In particular, we're going to look at the count up demo.
+In particolare, esamineremo la demo del count up.
 
 01:00.430 --> 01:02.680
-So let's go ahead and take a look at that.
+Andiamo quindi a dare un'occhiata.
 
 01:04.210 --> 01:07.510
-Here I am in the mini Max project.
+Eccomi nel progetto mini Max.
 
 01:07.510 --> 01:13.330
-When you download and install that, you can go here and click samples.
+Quando lo scaricate e lo installate, potete andare qui e cliccare su samples.
 
 01:13.330 --> 01:17.710
-So mini max and then samples and import those samples.
+Quindi mini max e poi samples e importare questi campioni.
 
 01:17.710 --> 01:24.910
-I've already done that here so we can look at more and let's look at count up.
+L'ho già fatto qui, per cui possiamo vedere di più e vedere il conteggio.
 
 01:25.480 --> 01:28.660
-So I will start by running the demo.
+Inizierò con l'esecuzione della demo.
 
 01:32.550 --> 01:35.430
-So here on the screen, it's a little small.
+Qui sullo schermo è un po' piccolo.
 
 01:35.430 --> 01:38.220
-Let's see if we can go like that.
+Vediamo se riusciamo ad andare avanti così.
 
 01:38.250 --> 01:38.700
-There we go.
+Ecco fatto.
 
 01:38.710 --> 01:39.560
-It's a little bit bigger.
+È un po' più grande.
 
 01:39.570 --> 01:44.550
-So this is meant to be the simplest demo included in the course.
+Questa dovrebbe essere la demo più semplice inclusa nel corso.
 
 01:44.550 --> 01:49.530
-So we have some view here that says text count up mini example.
+Abbiamo qui una vista che dice: "Conteggio del testo in miniatura".
 
 01:49.530 --> 01:53.360
-And then there's a counter button that shows number 23.
+E poi c'è un pulsante di conteggio che mostra il numero 23.
 
 01:53.370 --> 01:58.770
-I think I start at a non-zero value just because I load from a service.
+Penso di partire da un valore non nullo solo perché carico da un servizio.
 
 01:58.800 --> 02:03.540
-Then we can click here and if I click anywhere on the screen, it goes up.
+Poi possiamo fare clic qui e se clicco in un punto qualsiasi dello schermo, il valore sale.
 
 02:03.540 --> 02:06.750
-As I click it, let's stop and start the scene again.
+Quando clicco, fermiamo e facciamo ripartire la scena.
 
 02:07.600 --> 02:10.600
-It always starts at 23 and then we'll click up.
+Inizia sempre a 23 e poi clicchiamo su.
 
 02:10.600 --> 02:11.620
-So we'll look in the code.
+Quindi guardiamo nel codice.
 
 02:11.620 --> 02:13.330
-Why does it start at 23?
+Perché inizia a 23?
 
 02:14.670 --> 02:15.660
-So that's it.
+Ecco fatto.
 
 02:15.690 --> 02:17.910
-Taking a click, showing it on the screen.
+Fare un clic, mostrarlo sullo schermo.
 
 02:17.910 --> 02:22.610
-Now, you don't necessarily need a complex architecture for this example.
+Ora, per questo esempio non è necessariamente necessaria un'architettura complessa.
 
 02:22.620 --> 02:28.110
-You could probably get away with one monobehaviour then and make this whole example work.
+Probabilmente si può fare a meno di un solo comportamento e far funzionare l'intero esempio.
 
 02:28.110 --> 02:31.980
-But it's meant to be an easy way to onboard and understand the fundamentals.
+Ma è stato pensato per essere un modo semplice di entrare a far parte del sistema e di comprenderne i fondamenti.
 
 02:33.390 --> 02:36.510
-And then imagine bringing them to a game like Fortnite, right?
+E poi immaginate di portarli in un gioco come Fortnite, giusto?
 
 02:36.630 --> 02:38.310
-That's much more complex.
+È molto più complesso.
 
 02:38.310 --> 02:40.460
-And you'd want to learn these basics here.
+E qui è meglio imparare le nozioni di base.
 
 02:40.470 --> 02:43.380
-So let's take a look at how the scene is set up.
+Diamo quindi un'occhiata a come è impostata la scena.
 
 02:44.790 --> 02:48.870
-So we've got a world game object that just has the camera and the directional light.
+Abbiamo un oggetto di gioco mondo che contiene solo la telecamera e la luce direzionale.
 
 02:48.900 --> 02:50.670
-Nothing interesting happening there.
+Non succede nulla di interessante.
 
 02:50.700 --> 02:58.290
-Then we have a unity UI canvas here with our title text and our status text here.
+Abbiamo poi un canvas unity UI con il testo del titolo e il testo di stato.
 
 02:59.010 --> 03:01.110
-Let's zoom in on those a little bit.
+Zoomiamo un po' su questi elementi.
 
 03:01.140 --> 03:02.160
-There we go.
+Ecco fatto.
 
 03:04.730 --> 03:05.660
-There we are.
+Eccoci qui.
 
 03:06.170 --> 03:10.550
-Then we have the mini example itself.
+Poi abbiamo il mini esempio vero e proprio.
 
 03:10.550 --> 03:14.000
-So this is the monobehaviour that kicks off the demo.
+Questo è il mono-comportamento che dà il via alla dimostrazione.
 
 03:14.150 --> 03:20.240
-It creates the mini itself and it brings in the view and the controller concept.
+Crea il mini e introduce il concetto di vista e di controllore.
 
 03:20.240 --> 03:21.260
-So let's take a look at it.
+Diamo quindi un'occhiata.
 
 03:21.260 --> 03:23.120
-Let's open up that source code here.
+Apriamo il codice sorgente.
 
 03:25.700 --> 03:27.870
-Um, just make sure we have.
+Assicuriamoci di avere.
 
 03:30.310 --> 03:34.870
-And unlike earlier demos, I'll make sure that I'm not covering up the interesting code here.
+A differenza delle precedenti dimostrazioni, mi assicurerò di non coprire il codice interessante.
 
 03:35.640 --> 03:36.290
-There we go.
+Ecco fatto.
 
 03:36.300 --> 03:37.770
-So here we are at the top.
+Eccoci in cima.
 
 03:37.770 --> 03:40.820
-This is the mini example that's kicking everything off.
+Questo è il mini esempio che dà il via a tutto.
 
 03:40.830 --> 03:43.680
-I take in a serialized field of The View.
+Accedo a un campo serializzato di The View.
 
 03:43.680 --> 03:44.850
-So let's look here.
+Guardiamo qui.
 
 03:45.180 --> 03:52.620
-We have a serialized field of The View and we drag in The view just like this, and then it's in there
+Abbiamo un campo serializzato della vista e trasciniamo la vista in questo modo, per poi inserirla
 
 03:52.770 --> 03:53.790
-back to the code.
+nel codice.
 
 03:53.790 --> 03:59.700
-All I do is create the count up mini, which you could think of as the app itself.
+Tutto ciò che faccio è creare il mini conteggio, che potremmo considerare come l'app stessa.
 
 03:59.700 --> 04:01.800
-This is the most parent structure here.
+Questa è la struttura principale.
 
 04:01.800 --> 04:03.950
-And I pass in the view, right?
+E passo la vista, giusto?
 
 04:03.960 --> 04:11.010
-So any time we want to have a a view in the scene, we usually do this pattern, serialize it, pass
+Quindi, ogni volta che vogliamo avere una vista nella scena, di solito seguiamo questo schema, serializziamo, passiamo
 
 04:11.010 --> 04:11.940
-it in this way.
+in questo modo.
 
 04:12.090 --> 04:15.030
-Then let's take a look at the count up mini code.
+Diamo poi un'occhiata al mini-codice del conteggio.
 
 04:18.550 --> 04:19.150
-All right.
+Bene...
 
 04:19.330 --> 04:27.400
-So the count up mini is going to extend the mini MVCs, which is going to have these parts in it.
+Il mini conto alla rovescia estenderà il mini MVC, che conterrà queste parti.
 
 04:27.400 --> 04:32.200
-It's going to have a context, which is the communication between the four tiers.
+Avrà un contesto, che è la comunicazione tra i quattro livelli.
 
 04:32.230 --> 04:34.420
-It has the model, which is the data storage.
+Ha un modello, che è l'archiviazione dei dati.
 
 04:34.420 --> 04:41.320
-It has the view, which is what renders to the user UI and what takes input back from the user.
+Ha la vista, che è ciò che rende l'interfaccia utente e che riceve gli input dall'utente.
 
 04:41.350 --> 04:47.590
-The controller, which is going to handle any business logic, the the meat and potatoes, the bulk
+Il controllore, che gestisce la logica di business, la carne e le patate, la parte più consistente del sistema.
 
 04:47.590 --> 04:52.750
-of your code would probably be in the controller and then the service service is optional and it's only
+del codice sarà probabilmente nel controllore e poi il servizio di assistenza è opzionale ed è solo
 
 04:52.750 --> 04:55.450
-needed if you want to call any external data.
+necessario se si vogliono richiamare dati esterni.
 
 04:55.480 --> 05:01.300
-Loading a file from your local machine, calling an online backend service.
+Caricare un file dalla macchina locale, chiamando un servizio di backend online.
 
 05:01.300 --> 05:05.950
-For example, down here in the constructor I just take the view and store it.
+Per esempio, qui sotto, nel costruttore, prendo la vista e la memorizzo.
 
 05:06.250 --> 05:10.090
-Then in the initialization I create a new const context.
+Poi, nell'inizializzazione, creo un nuovo contesto const.
 
 05:10.150 --> 05:14.560
-Context again is just a low level object that's required part of this.
+Anche in questo caso, il contesto è solo un oggetto di basso livello, necessario per questo scopo.
 
 05:14.740 --> 05:17.650
-Then I build the model, the service and the controller.
+Poi costruisco il modello, il servizio e il controllore.
 
 05:17.650 --> 05:24.680
-Now, as quite common in these examples, the controller will take the other three tiers inside and
+Ora, come è abbastanza comune in questi esempi, il controllore prenderà gli altri tre livelli al suo interno e
 
 05:24.680 --> 05:27.830
-it's really the controller that does most of the work.
+è proprio il controllore a fare la maggior parte del lavoro.
 
 05:27.830 --> 05:34.010
-So what we're looking at here is the Mini, but the Mini just really prepares and feeds the controller
+Quindi, quello che stiamo osservando è il Mini, ma il Mini si limita a preparare e ad alimentare il controllore.
 
 05:34.010 --> 05:36.040
-and the controller is going to do most of the work.
+e il controllore farà la maggior parte del lavoro.
 
 05:36.050 --> 05:41.840
-Now a common question is, well, do you always have exactly one model view and service controller in
+Ora, una domanda comune è: "Ma avete sempre esattamente un modello di vista e un controllore di servizio?
 
 05:41.840 --> 05:42.560
-your project?
+nel vostro progetto?
 
 05:42.560 --> 05:44.270
-And you could have many, many more.
+Potreste averne molti, molti di più.
 
 05:44.270 --> 05:51.290
-So imagine this mini here setting up the player model, player, service player controller and that
+Immaginiamo quindi questo mini progetto che configura il modello del giocatore, il giocatore, il controller del giocatore di servizio e che
 
 05:51.290 --> 05:57.680
-working on its own and then having the like meta game model, meta game service and meta game controller
+e poi avere il modello di meta-gioco, il servizio di meta-gioco e il controllore di meta-gioco.
 
 05:57.680 --> 06:04.100
-meta game is often where you have your game services connecting things to the back end, allowing the
+meta gioco è spesso il luogo in cui i servizi di gioco collegano le cose al back end, consentendo al
 
 06:04.100 --> 06:09.890
-user to store their progress, connect with friends, all those social features, being able to share
+all'utente di memorizzare i propri progressi, connettersi con gli amici, tutte quelle funzionalità sociali, poter condividere
 
 06:09.890 --> 06:16.700
-things that way so you can have each of those areas of your project be separate minis or separate controllers.
+in questo modo, in modo che ognuna di queste aree del progetto possa essere un modulo separato o un controllore separato.
 
 06:16.700 --> 06:19.580
-So then you see they all get initialized here.
+Quindi vedete che vengono tutti inizializzati qui.
 
 06:19.580 --> 06:22.520
-So now let's just step through and look at each of these three.
+Ora esaminiamo ciascuno di questi tre controllori.
 
 06:22.520 --> 06:24.080
-So in the model.
+Quindi nel modello.
 
 06:25.540 --> 06:26.080
-Member.
+Membro.
 
 06:26.080 --> 06:31.450
-All we're doing here is clicking the screen and seeing a number count up 23, 24, 25.
+Tutto ciò che stiamo facendo è cliccare sullo schermo e vedere un numero che sale di 23, 24, 25.
 
 06:31.480 --> 06:35.950
-So we just need to store this int you could store them as a simple int.
+Abbiamo quindi bisogno di memorizzare questo int, che può essere memorizzato come un semplice int.
 
 06:35.950 --> 06:43.870
-I use something in all of my demos called the observable int, which is an int that also dispatches
+In tutte le mie dimostrazioni uso un oggetto chiamato observable int, che è un int che esegue anche un dispatch
 
 06:43.870 --> 06:45.780
-an event any time it changes.
+un evento ogni volta che cambia.
 
 06:45.790 --> 06:47.620
-Very useful for data binding.
+Molto utile per il data binding.
 
 06:47.950 --> 06:50.730
-In here all I do is set the value to zero.
+Qui tutto ciò che faccio è impostare il valore a zero.
 
 06:50.740 --> 06:55.720
-Now remember when we run the demo, it starts at the value of 23, so we still haven't seen why it starts
+Ora ricordate che quando eseguiamo la demo, essa parte dal valore 23, quindi non abbiamo ancora capito perché parte
 
 06:55.720 --> 06:59.260
-at 23 because here it looks like it's going to start at zero.
+a 23 perché qui sembra che parta da zero.
 
 06:59.650 --> 07:01.570
-So then let's look at the service.
+Diamo quindi un'occhiata al servizio.
 
 07:02.270 --> 07:07.070
-The service is going to inherit from base service, which is optional.
+Il servizio erediterà dal servizio base, che è opzionale.
 
 07:07.310 --> 07:10.850
-Any time you extend from the base classes, it is optional.
+Ogni volta che si estende dalle classi base, è facoltativo.
 
 07:10.850 --> 07:16.460
-But what we want to do here is use the base service because this is going to kick off some some interesting
+Ma quello che vogliamo fare qui è utilizzare il servizio di base, perché questo darà il via ad alcune interessanti
 
 07:16.730 --> 07:17.800
-stuff for us.
+cose interessanti per noi.
 
 07:17.810 --> 07:20.510
-Very lightweight, but it's convenient.
+Molto leggero, ma comodo.
 
 07:20.660 --> 07:25.510
-Then down here we store a value and it's here that we get that value.
+Poi, qui sotto, memorizziamo un valore ed è qui che lo otteniamo.
 
 07:25.520 --> 07:26.340
 23.
 
 07:26.360 --> 07:33.110
-So we're going to load a local text file and then whatever the value is that we load from that local
+Quindi caricheremo un file di testo locale e qualsiasi sia il valore caricato da quel file locale
 
 07:33.110 --> 07:37.330
-text file, we're going to dispatch it to the model.
+file di testo, lo invieremo al modello.
 
 07:37.340 --> 07:42.380
-And if I was to go look at this text file, let's go do that right now.
+E se dovessi dare un'occhiata a questo file di testo, lo farei subito.
 
 07:42.380 --> 07:44.870
-Resources, text, count of text.
+Risorse, testo, conteggio del testo.
 
 07:44.900 --> 07:47.150
-We can see it starts at 22.
+Possiamo vedere che inizia a 22.
 
 07:47.180 --> 07:49.790
-So I was saying 23 before, but it starts with 22.
+Quindi prima dicevo 23, ma inizia con 22.
 
 07:50.660 --> 07:53.030
-So that's why it starts at 22.
+Ecco perché inizia con 22.
 
 07:53.040 --> 07:54.190
-If we tweak this value.
+Se modifichiamo questo valore.
 
 07:54.200 --> 07:56.000
-Now, this is a silly example.
+Questo è un esempio stupido.
 
 07:56.000 --> 07:59.960
-Why would your data model, why not just hardcode the value in C sharp?
+Perché il modello di dati non dovrebbe codificare il valore in Do diesis?
 
 07:59.990 --> 08:00.920
-You certainly could.
+Certamente.
 
 08:00.950 --> 08:04.730
-But here I wanted to show an example of what a service is.
+Ma qui volevo mostrare un esempio di cosa sia un servizio.
 
 08:04.760 --> 08:09.950
-A service loads any external data from local files or from back end services.
+Un servizio carica qualsiasi dato esterno da file locali o da servizi di back end.
 
 08:10.280 --> 08:11.720
-So that's it there.
+Quindi è tutto qui.
 
 08:11.720 --> 08:12.740
-That's the service.
+Questo è il servizio.
 
 08:12.740 --> 08:13.880
-Now let's look at controller.
+Ora diamo un'occhiata al controllore.
 
 08:13.880 --> 08:15.350
-This is the most complex part.
+Questa è la parte più complessa.
 
 08:16.310 --> 08:19.720
-So the controller is going to extend from base controller.
+Il controllore si estenderà dal controllore di base.
 
 08:19.730 --> 08:23.600
-As the comment says, extending from base is always optional.
+Come dice il commento, l'estensione dalla base è sempre facoltativa.
 
 08:23.960 --> 08:29.990
-We do it here again because there's a little bit of common boilerplate code that's done for you.
+Lo facciamo di nuovo qui, perché c'è un po' di codice boilerplate comune che viene fatto per voi.
 
 08:30.080 --> 08:35.330
-Then the controller here in the initialize is going to set the UI text.
+Poi il controllore qui, nell'inizializzazione, imposterà il testo dell'interfaccia utente.
 
 08:36.000 --> 08:39.510
-Then it's going to load that service that we just looked at.
+Poi caricherà il servizio che abbiamo appena visto.
 
 08:40.450 --> 08:42.790
-Then when the service gets loaded.
+Quando il servizio viene caricato.
 
 08:43.910 --> 08:49.160
-It's going to set the model counter value to whatever the service just loaded.
+imposterà il valore del contatore del modello a quello del servizio appena caricato.
 
 08:49.160 --> 08:50.890
-So the service goes and gets the value.
+Quindi il servizio va a prendere il valore.
 
 08:50.900 --> 08:51.860
 22.
 
 08:51.890 --> 08:56.870
-It passes it to the model and now the model has that value as its initial one.
+Lo passa al modello e ora il modello ha quel valore come valore iniziale.
 
 08:56.870 --> 08:59.850
-That's why it starts at 22 and not at zero.
+Ecco perché parte da 22 e non da zero.
 
 08:59.930 --> 09:03.920
-Then we listen for any time, anywhere on the screen is clicked.
+Poi ascoltiamo ogni volta che viene cliccato un punto qualsiasi dello schermo.
 
 09:03.920 --> 09:06.970
-And if the screen is clicked, let's go down here.
+E se lo schermo viene cliccato, scendiamo qui.
 
 09:06.980 --> 09:09.680
-It just increments the model by one.
+Incrementa il modello di uno.
 
 09:09.800 --> 09:11.570
-And that's that's really it.
+Ed è tutto qui.
 
 09:11.600 --> 09:13.640
-So let's run the demo one more time.
+Eseguiamo ancora una volta la demo.
 
 09:14.940 --> 09:20.880
-So it's still, I guess somewhere I'm adding, Oh, wait, actually, when I clicked on the screen.
+Quindi è ancora, credo, da qualche parte che sto aggiungendo, Oh, aspetta, in realtà, quando ho fatto clic sullo schermo.
 
 09:20.880 --> 09:21.720
-Exactly.
+Esattamente.
 
 09:21.990 --> 09:24.060
-Just to to load the scene up here.
+Solo per caricare la scena qui.
 
 09:24.060 --> 09:26.000
-That's why it's loading one more.
+Ecco perché ne sta caricando un'altra.
 
 09:26.010 --> 09:27.390
-So it loads 22.
+Quindi ne carica 22.
 
 09:27.390 --> 09:30.450
-I click the screen, it shows 23 and that's the demo.
+Faccio clic sullo schermo, mostra il 23 e questa è la demo.
 
 09:30.900 --> 09:32.460
-That's it for this demo.
+È tutto per questa demo.

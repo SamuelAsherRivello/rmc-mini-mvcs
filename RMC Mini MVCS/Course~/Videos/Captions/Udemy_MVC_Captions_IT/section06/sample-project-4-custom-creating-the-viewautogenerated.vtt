@@ -1,406 +1,406 @@
 WEBVTT
 
 00:00.090 --> 00:01.410
-Let's set up our view.
+Impostiamo la nostra vista.
 
 00:01.920 --> 00:05.040
-I'll create a new game object and place it in the scene hierarchy.
+Creo un nuovo oggetto di gioco e lo inserisco nella gerarchia della scena.
 
 00:05.400 --> 00:09.360
-I'm doing that because we know the View is going to use some unity UI.
+Lo faccio perché sappiamo che la vista utilizzerà un'interfaccia utente di unity.
 
 00:09.540 --> 00:13.850
-Unity UI plays nice by having mono behaviors in use.
+L'interfaccia Unity si comporta bene avendo in uso i comportamenti mono.
 
 00:13.860 --> 00:16.080
-I'll start by creating a unity canvas.
+Inizierò creando un canvas unity.
 
 00:16.080 --> 00:20.730
-I can right click in the scene hierarchy and choose to create the canvas itself and then within the
+Posso fare clic con il tasto destro del mouse nella gerarchia della scena e scegliere di creare il canvas stesso e poi all'interno del canvas
 
 00:20.730 --> 00:24.330
-canvas we know I'll need some input fields and a button.
+canvas avremo bisogno di alcuni campi di input e di un pulsante.
 
 00:24.780 --> 00:26.310
-So all of that stuff now.
+Quindi tutte queste cose ora.
 
 00:27.320 --> 00:28.340
-Within the canvas.
+All'interno del canvas.
 
 00:28.340 --> 00:33.680
-I created a panel which gives us the floating gray square that occupies most of the game view.
+Ho creato un pannello che ci dà il quadrato grigio fluttuante che occupa la maggior parte della visuale di gioco.
 
 00:33.710 --> 00:41.270
-Then I added three input fields and two buttons so we can have the input for A, for B for the result,
+Poi ho aggiunto tre campi di input e due pulsanti, in modo da avere l'input per A, per B e per il risultato,
 
 00:41.570 --> 00:45.470
-and then the buttons for adding as well as clearing and resetting the app.
+e poi i pulsanti per aggiungere, cancellare e resettare l'applicazione.
 
 00:45.500 --> 00:47.930
-Currently, all these UI elements have the same position.
+Attualmente, tutti questi elementi dell'interfaccia utente hanno la stessa posizione.
 
 00:47.930 --> 00:49.190
-They're centered on the screen.
+Sono centrati sullo schermo.
 
 00:49.640 --> 00:51.020
-So I'll fix that now.
+Ora lo aggiusterò.
 
 00:51.880 --> 00:52.060
-Here.
+Qui.
 
 00:52.060 --> 00:56.410
-I positioned each of the UI elements and gave them a name in the scene hierarchy.
+Ho posizionato ogni elemento dell'interfaccia utente e gli ho dato un nome nella gerarchia della scena.
 
 00:56.410 --> 01:00.760
-So we have an input field for A, B and the result?
+Quindi abbiamo un campo di input per A, B e il risultato?
 
 01:01.460 --> 01:04.730
-As well as a button for adding and resetting.
+Oltre a un pulsante per l'aggiunta e l'azzeramento.
 
 01:04.730 --> 01:06.990
-Now the base of this structure is canvas.
+Ora la base di questa struttura è il canvas.
 
 01:07.010 --> 01:13.210
-What I like to do is rename canvas to match the name of my view and add the custom class.
+Mi piace rinominare canvas in modo che corrisponda al nome della mia vista e aggiungere la classe personalizzata.
 
 01:13.220 --> 01:18.560
-Here, I'll add the class of calculator view and move on to set up that code because the calculator
+Qui, aggiungo la classe della vista calcolatrice e passo a impostare il codice perché la calcolatrice
 
 01:18.560 --> 01:20.280
-view is using Unity UI.
+utilizza l'interfaccia utente Unity.
 
 01:20.300 --> 01:23.180
-We've extended mono behavior that part set up.
+Abbiamo esteso il comportamento mono di questa parte.
 
 01:23.180 --> 01:27.170
-We will implement the eye view and we'll implement the missing members.
+Implementeremo la vista oculare e i membri mancanti.
 
 01:27.170 --> 01:28.510
-We'll use all the defaults.
+Utilizzeremo tutti i valori predefiniti.
 
 01:28.520 --> 01:30.020
-Let's set up our initialize.
+Impostiamo la nostra inizializzazione.
 
 01:30.030 --> 01:31.950
-That's a good start for the initialize.
+Questo è un buon inizio per l'inizializzazione.
 
 01:31.970 --> 01:38.330
-Now we'll serialize all the UI fields that we need and observe events as needed for each of them.
+Ora serializzeremo tutti i campi dell'interfaccia utente di cui abbiamo bisogno e osserveremo gli eventi necessari per ciascuno di essi.
 
 01:38.330 --> 01:43.610
-So here in the fields we've created serialized fields for each of the UI elements we need and in the
+Quindi qui, nei campi, abbiamo creato campi serializzati per ciascuno degli elementi dell'interfaccia utente di cui abbiamo bisogno e nel file
 
 01:43.610 --> 01:46.040
-initialize we're listening to some key events.
+inizializzazione stiamo ascoltando alcuni eventi chiave.
 
 01:46.040 --> 01:52.880
-Any time the user is editing the input fields for A or B, we'll do something here and a bit later we
+Ogni volta che l'utente modifica i campi di input per A o B, faremo qualcosa qui e un po' più tardi
 
 01:52.880 --> 01:57.310
-will implement the consequence of clicking add or clicking reset.
+implementeremo la conseguenza di un clic su Aggiungi o di un clic su Reset.
 
 01:57.320 --> 02:00.160
-Let's go back to the scene hierarchy and wire up the view.
+Torniamo alla gerarchia della scena e colleghiamo la vista.
 
 02:00.170 --> 02:05.270
-So here on the calculator view, we'll wire up the serialized fields to the UI elements.
+Quindi, nella vista calcolatrice, colleghiamo i campi serializzati agli elementi dell'interfaccia utente.
 
 02:05.270 --> 02:07.730
-We'll start with the A input field.
+Inizieremo con il campo di input A.
 
 02:09.110 --> 02:12.830
-To be input field the result.
+Per essere il campo di input il risultato.
 
 02:14.280 --> 02:15.570
-You add button.
+Si aggiunge il pulsante.
 
 02:16.840 --> 02:17.980
-And the reset button.
+E il pulsante di reset.
 
 02:17.980 --> 02:20.720
-So our scene hierarchy is nearly complete.
+La gerarchia della scena è quasi completa.
 
 02:20.740 --> 02:26.020
-One more thing we need to do, though, is to pass the calculator view into the mini itself here.
+Un'ultima cosa da fare, però, è passare la vista della calcolatrice nel mini stesso.
 
 02:26.020 --> 02:30.280
-In the example file we'll serialize a field and pass it into the calculator mini.
+Nel file di esempio serializzeremo un campo e lo passeremo nella mini calcolatrice.
 
 02:30.280 --> 02:33.610
-So we've created the field and we passed it into the constructor.
+Abbiamo creato il campo e lo abbiamo passato nel costruttore.
 
 02:33.610 --> 02:34.720
-Let's update that class.
+Aggiorniamo la classe.
 
 02:34.720 --> 02:37.270
-So it's expecting it to come in to the constructor.
+Quindi si aspetta che venga inserito nel costruttore.
 
 02:37.270 --> 02:42.160
-We didn't have a constructor before, so let's create one here, accept the calculator view and store
+Non avevamo un costruttore prima, quindi creiamone uno, accettiamo la vista della calcolatrice e memorizziamola.
 
 02:42.160 --> 02:44.470
-the calculator view back in the queue hierarchy.
+la vista calcolatrice nella gerarchia delle code.
 
 02:44.470 --> 02:49.390
-Let's wire this up so we'll drag a reference from the calculator view into the new serialized field.
+Trasciniamo un riferimento dalla vista Calcolatrice al nuovo campo serializzato.
 
 02:49.390 --> 02:52.810
-Now most everything we need for the scene is set up.
+Ora quasi tutto ciò che serve per la scena è pronto.
 
 02:52.810 --> 02:55.030
-We'll save the scene and go back to the code.
+Salviamo la scena e torniamo al codice.
 
 02:55.030 --> 02:58.090
-At this point, we've got a project that's pretty well set up.
+A questo punto, abbiamo un progetto abbastanza ben impostato.
 
 02:58.090 --> 03:05.920
-We have at least some form of the implementation for the mini class, the model, the view and the controller.
+Abbiamo almeno una forma di implementazione per la mini-classe, il modello, la vista e il controllore.
 
 03:05.920 --> 03:11.140
-We're not done yet, but we've got a pretty good scene set up as well as compiling code from here in
+Non abbiamo ancora finito, ma abbiamo una scena abbastanza buona e abbiamo compilato il codice da qui in poi.
 
 03:11.140 --> 03:12.460
-the calculator mini class.
+la mini-classe della calcolatrice.
 
 03:12.460 --> 03:19.030
-Let's think about what comes next here in the initialize, we see we've got the context set up the model.
+Pensiamo a ciò che viene dopo qui nell'inizializzazione, vediamo che abbiamo impostato il contesto e il modello.
 
 03:19.150 --> 03:23.500
-We're not doing something with the view right here, but we know we've got it wired up pretty good.
+Non stiamo facendo qualcosa con la vista, ma sappiamo di averla collegata bene.
 
 03:23.500 --> 03:28.840
-We've got the controller, which definitely needs implementation and we're doing some of the initialization.
+Abbiamo il controllore, che ha bisogno di essere implementato, e stiamo facendo un po' di inizializzazione.
 
 03:28.840 --> 03:31.720
-Let's return to our use case to help us brainstorm.
+Torniamo al nostro caso d'uso per aiutarci a fare un brainstorming.
 
 03:31.720 --> 03:39.190
-So remember we wanted to accept two int values, do some addition and display the result.
+Ricordiamo che volevamo accettare due valori int, fare un'addizione e visualizzare il risultato.
 
 03:39.190 --> 03:40.570
-Here's our progress so far.
+Ecco i nostri progressi finora.
 
 03:40.570 --> 03:45.340
-We've got our view set up with the requirements here, but we don't have the model or the controller.
+Abbiamo impostato la nostra vista con i requisiti, ma non abbiamo il modello o il controllore.
 
 03:45.340 --> 03:47.980
-We could freely choose which of those we want to go to next.
+Possiamo scegliere liberamente a quale di questi vogliamo dedicarci.
 
 03:47.980 --> 03:52.780
-Since I feel like the model implementation is going to be more straightforward, let's finish up the
+Dal momento che ritengo che l'implementazione del modello sarà più semplice, concludiamo il
 
 03:52.780 --> 03:55.840
-model and end all of our coding by working on the controller.
+e terminiamo la nostra codifica lavorando sul controllore.
 
 03:55.840 --> 03:59.680
-So here in the model we know we want to store some ints Now, while optional.
+Nel modello sappiamo che vogliamo memorizzare alcuni ints Ora, anche se opzionali.
 
 03:59.680 --> 04:04.600
-So far in our samples, we've used the observable class, which gives us not just the functionality
+Finora, nei nostri esempi, abbiamo usato la classe observable, che ci fornisce non solo la funzionalità
 
 04:04.600 --> 04:09.940
-of an INT for storage, but also a nice way to listen to any changes to that stored value.
+di un INT per la memorizzazione, ma anche un modo simpatico per ascoltare qualsiasi modifica al valore memorizzato.
 
 04:09.940 --> 04:11.140
-So let's use that now.
+Utilizziamolo ora.
 
 04:11.140 --> 04:15.130
-So we create A property for a, B and the result as well as a field.
+Creiamo una proprietà A per a, B e il risultato e un campo.
 
 04:15.130 --> 04:20.950
-Now it's my approach for all project X to have a public property with a private value underneath it
+Ora il mio approccio è che tutti i progetti X abbiano una proprietà pubblica con un valore privato sotto di essa.
 
 04:20.950 --> 04:21.850
-that's optional.
+che è opzionale.
 
 04:21.850 --> 04:24.040
-You could instead just have a public field.
+Si può invece avere solo un campo pubblico.
 
 04:24.040 --> 04:29.110
-As with other examples we've seen, we'll use the initialize of the model to set some default values
+Come per gli altri esempi visti, useremo l'initialize del modello per impostare alcuni valori predefiniti
 
 04:29.110 --> 04:31.360
-depending exactly what your default values are.
+a seconda di quali siano i valori predefiniti.
 
 04:31.390 --> 04:34.150
-This may not be necessary, but I think it's a great practice.
+Potrebbe non essere necessario, ma credo sia un'ottima pratica.
 
 04:34.150 --> 04:39.910
-So because calculator model extends base model base models already handling initialization.
+Poiché il modello di calcolatore estende il modello di base, i modelli di base gestiscono già l'inizializzazione.
 
 04:39.910 --> 04:45.160
-So just like general object oriented programming, we can override a parent method.
+Quindi, proprio come nella programmazione orientata agli oggetti, possiamo sovrascrivere un metodo genitore.
 
 04:45.160 --> 04:49.390
-Call the base method to get the base functionality and set our defaults this way.
+Richiamiamo il metodo base per ottenere la funzionalità di base e impostare in questo modo i nostri valori predefiniti.
 
 04:49.390 --> 04:51.580
-With that complete, let's look at the controller.
+Completato questo, diamo un'occhiata al controllore.
 
 04:51.580 --> 04:54.520
-The controller implementation is our last piece of the puzzle.
+L'implementazione del controllore è il nostro ultimo pezzo del puzzle.
 
 04:54.520 --> 04:56.950
-We've got a view setup and a model setup.
+Abbiamo impostato una vista e un modello.
 
 04:56.950 --> 04:59.920
-Now the controller needs to be the glue that brings it all together.
+Ora il controllore deve essere il collante che riunisce tutto.
 
 04:59.920 --> 05:04.360
-First, I created a constructor to take in all the concerns we want to care for.
+Per prima cosa, ho creato un costruttore per accogliere tutte le preoccupazioni di cui vogliamo occuparci.
 
 05:04.360 --> 05:09.190
-In this case, the controller is going to care for the other concerns, which is the calculator model
+In questo caso, il controllore si occuperà delle altre preoccupazioni, ovvero del modello di calcolatrice
 
 05:09.190 --> 05:10.060
-and calculator view.
+e la vista della calcolatrice.
 
 05:10.060 --> 05:15.400
-I'll store those as fields, then I update the initialize to do the very common steps of checking if
+Li memorizzerò come campi, quindi aggiornerò l'inizializzazione per eseguire i passaggi più comuni, come il controllo se
 
 05:15.400 --> 05:17.680
-you're initialized and storing the context.
+se si è inizializzati e memorizzare il contesto.
 
 05:17.680 --> 05:20.530
-So what are some things we're going to need to do here in the controller?
+Quali sono le cose che dobbiamo fare qui nel controllore?
 
 05:20.740 --> 05:25.990
-Well, one, now that we have a reference to the model, we want to observe any changes to that model
+Primo, ora che abbiamo un riferimento al modello, vogliamo osservare qualsiasi modifica a tale modello
 
 05:25.990 --> 05:30.970
-and to now that we have a reference to the calculator view, we want to observe any of the important
+e ora che abbiamo un riferimento alla vista della calcolatrice, vogliamo osservare qualsiasi cambiamento importante
 
 05:30.970 --> 05:32.290
-events that come from The View.
+eventi che provengono dalla vista.
 
 05:32.290 --> 05:33.490
-Let's set that up now.
+Configuriamolo ora.
 
 05:34.200 --> 05:40.770
-So here in the initialize, I'm going to want to listen to the reset event and the ADD event coming
+Quindi qui, nell'inizializzazione, voglio ascoltare l'evento reset e l'evento ADD in arrivo
 
 05:40.770 --> 05:41.640
-from The View.
+dalla vista.
 
 05:41.940 --> 05:43.440
-Let's create those events now.
+Creiamo ora questi eventi.
 
 05:44.410 --> 05:47.410
-Here at the top of The View, we'll create those two events.
+Qui, nella parte superiore di The View, creiamo questi due eventi.
 
 05:47.440 --> 05:50.470
-Neither of them need to send any information along.
+Nessuno dei due deve inviare informazioni.
 
 05:50.740 --> 05:53.230
-So we can just use basic unity events.
+Quindi possiamo usare gli eventi unitari di base.
 
 05:53.970 --> 06:00.120
-So here I've created the on add and on reset events and below in the same class.
+Ho creato gli eventi on add e on reset nella stessa classe.
 
 06:00.120 --> 06:06.360
-When we listen to the UI and capture one of the buttons being clicked, we send out this custom event.
+Quando ascoltiamo l'interfaccia utente e catturiamo il clic su uno dei pulsanti, inviamo questo evento personalizzato.
 
 06:07.990 --> 06:14.650
-Now as a side point, because the controller has a reference to the view and these view elements are
+A titolo di esempio, poiché il controllore ha un riferimento alla vista e questi elementi della vista sono
 
 06:14.650 --> 06:16.750
-public in this particular case.
+pubblici in questo caso particolare.
 
 06:16.960 --> 06:22.810
-We could instead just have the controller directly listen to the UI events instead of creating this
+Potremmo invece fare in modo che il controllore ascolti direttamente gli eventi dell'interfaccia utente, anziché creare questo
 
 06:22.810 --> 06:24.330
-step with custom events.
+con eventi personalizzati.
 
 06:24.340 --> 06:29.620
-What we're showing here is a more decoupled approach and you can decide in your project which works
+Quello che mostriamo qui è un approccio più disaccoppiato e potete decidere nel vostro progetto quale sia il migliore
 
 06:29.620 --> 06:30.220
-best for you.
+meglio per voi.
 
 06:30.220 --> 06:35.200
-So here in the controller, I wired up those two events, setting up a handler for each of them.
+Quindi, nel controllore, ho collegato questi due eventi, impostando un gestore per ciascuno di essi.
 
 06:35.380 --> 06:39.670
-So let's think for a moment what do we want the consequence of each of these to be?
+Pensiamo per un attimo a quale conseguenza vogliamo che abbia ciascuno di questi eventi.
 
 06:39.940 --> 06:46.030
-Well, whenever you click the reset button, it should clear out any fields from the A field, from
+Ogni volta che si fa clic sul pulsante di reset, si dovrebbe cancellare ogni campo dal campo A, da
 
 06:46.030 --> 06:48.490
-the B field, and from the results field.
+campo B e dal campo dei risultati.
 
 06:48.490 --> 06:50.260
-And what do we want to happen when we add?
+E cosa vogliamo che accada quando aggiungiamo?
 
 06:50.260 --> 06:56.080
-Well, we want to set the result field to be the addition of the A field and the B field.
+Vogliamo che il campo dei risultati sia la somma del campo A e del campo B.
 
 06:56.080 --> 06:58.720
-With many MVCs, there's flexibility.
+In molti MVC c'è flessibilità.
 
 06:58.720 --> 07:01.120
-So let's talk about some different ways we could do that.
+Parliamo quindi di alcuni modi diversi per farlo.
 
 07:01.120 --> 07:07.210
-Probably the most direct way would be for the controller to change the fields directly in the view.
+Probabilmente il modo più diretto è che il controllore modifichi i campi direttamente nella vista.
 
 07:07.240 --> 07:08.560
-Let's see what that would look like.
+Vediamo come si presenterebbe.
 
 07:08.560 --> 07:14.800
-So starting with the most direct approach here in the Reset, we reach into the View and we set those
+Quindi, iniziando con l'approccio più diretto qui in Reset, entriamo nella vista e impostiamo i campi
 
 07:14.800 --> 07:16.900
-UI values back to empty string.
+valori dell'interfaccia utente a stringa vuota.
 
 07:16.900 --> 07:22.630
-And then in the on ADD, we fetch those values, add them together and update the view directly.
+Poi, in ADD, recuperiamo questi valori, li sommiamo e aggiorniamo direttamente la vista.
 
 07:22.630 --> 07:24.430
-Let's run the scene and see how this behaves.
+Eseguiamo la scena e vediamo come si comporta.
 
 07:24.430 --> 07:26.290
-So here we are in the running scene.
+Eccoci nella scena in esecuzione.
 
 07:26.290 --> 07:28.960
-Add a few sample values and click reset.
+Aggiungiamo alcuni valori di esempio e facciamo clic su reset.
 
 07:28.960 --> 07:30.610
-Looks like it properly resets.
+Sembra che il reset avvenga correttamente.
 
 07:30.610 --> 07:33.550
-Let's add a few values again and click the add button.
+Aggiungiamo di nuovo alcuni valori e facciamo clic sul pulsante Aggiungi.
 
 07:37.620 --> 07:38.330
-Looks good.
+Sembra tutto a posto.
 
 07:38.340 --> 07:41.220
-Let's think about this and reflect on our structure.
+Pensiamo a questo e riflettiamo sulla nostra struttura.
 
 07:41.220 --> 07:47.520
-At this point, we have the controller directly accessing the view within the suggested boundaries of
+A questo punto, abbiamo il controllore che accede direttamente alla vista entro i confini suggeriti da
 
 07:47.520 --> 07:48.860
-how we behave here.
+come ci comportiamo qui.
 
 07:48.870 --> 07:49.880
-That's okay.
+Non c'è problema.
 
 07:49.890 --> 07:55.140
-It's okay for the controller to have a reference, to view and to directly update it when the controller
+Va bene che il controllore abbia un riferimento, che lo visualizzi e che lo aggiorni direttamente quando il controllore
 
 07:55.140 --> 07:56.940
-directly updates the view.
+aggiorna direttamente la vista.
 
 07:56.970 --> 07:58.620
-We're bypassing the model.
+Stiamo bypassando il modello.
 
 07:58.620 --> 08:03.480
-Essentially, we're storing the model data directly on The View.
+In sostanza, stiamo memorizzando i dati del modello direttamente nella vista.
 
 08:03.480 --> 08:09.510
-And from a fundamental standpoint, we're slipping out of MVC separation of concerns.
+Da un punto di vista fondamentale, stiamo uscendo dalla separazione delle preoccupazioni MVC.
 
 08:09.510 --> 08:14.880
-Let's iterate on this and bring a bit more sound principles to the code.
+Cerchiamo di iterare su questo punto e di portare nel codice un po' di principi più solidi.

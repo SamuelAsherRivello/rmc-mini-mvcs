@@ -1,715 +1,715 @@
 WEBVTT
 
 00:00.180 --> 00:03.600
-The clock sample with many MVCs.
+The clock example with many MVCs.
 
 00:04.290 --> 00:06.390
 Here we are inside an empty project.
 
 00:06.390 --> 00:10.800
-I've added the Mini and VCs framework and imported the samples.
+I added the Mini and VC framework and imported the examples.
 
 00:11.010 --> 00:15.690
-Here, let's take a look at the version of the clock with many MVCs.
+Let's take a look at the clock version with many MVCs.
 
 00:15.930 --> 00:17.760
-I'll start by running the sample.
+I will start with the sample execution.
 
 00:21.160 --> 00:21.460
 Here.
 
 00:21.460 --> 00:27.820
-We've got no real UI happening, but in the debug log console we have some debug log statements and
+There is no real user interface, but there are some debug log statements in the debug log console and
 
 00:27.820 --> 00:32.020
-they're showing the elapsed time as long as the scene has been open.
+show the elapsed time since the scene is open.
 
 00:32.440 --> 00:33.130
-That's it.
+This is.
 
 00:33.130 --> 00:36.090
-There's no UI, no functionality for input either.
+There is no user interface, no input functionality.
 
 00:36.100 --> 00:38.650
-This is the first time we've seen the file structure.
+This is the first time we see the file structure.
 
 00:38.650 --> 00:42.760
-I have the example script itself which sits on a game object in the scene.
+I have the example script that is on a game object in the scene.
 
 00:42.760 --> 00:48.130
-I have the clock mini class which gets created and contains all the concerns.
+I have the clock mini-class that is created and contains all the concerns.
 
 00:48.130 --> 00:54.940
-Then I have classes related to each of the concerns, model, view, controller and service.
+Then I have the classes related to each concern, model, view, controller and service.
 
 00:54.940 --> 00:58.900
-One additional concept we haven't discussed yet is the context.
+An additional concept that we haven't discussed yet is context.
 
 00:58.900 --> 01:02.690
-As we take a look at this code, look at the role of the context.
+As we take a look at this code, let's look at the role of context.
 
 01:02.710 --> 01:04.750
-Here's the mini example itself.
+Here is the mini example itself.
 
 01:08.980 --> 01:10.210
-It's a of behavior.
+This is about behavior.
 
 01:10.210 --> 01:15.090
-And on its start we instantiate the mini class object and we call initialize.
+At startup, we instantiate the mini-class object and call initialize.
 
 01:15.100 --> 01:16.830
-Here's the clock mini class.
+Here is the clock mini-class.
 
 01:16.840 --> 01:20.200
-This extends the mini and VCs framework class.
+This extends the mini framework class and VCs.
 
 01:20.410 --> 01:24.990
-You can think of this as the parent object that holds all of the four concerns.
+You can think of this object as a parent object that contains all four concerns.
 
 01:25.000 --> 01:31.990
-This is a generic class into which we pass the strong type of the context model, view, controller
+This is a generic class in which we pass the strong type of the context model, view, controller.
 
 01:31.990 --> 01:32.830
 and service.
 
 01:32.830 --> 01:37.240
-Here's the initialize with the structure of mini MVCs.
+Here is the initialization with the mini MVC structure.
 
 01:37.240 --> 01:41.980
-All the major parts involved all have an explicit initialized call.
+All the main parts involved have an explicit initialization call.
 
 01:41.980 --> 01:47.530
-This is a great place for you to put any code that should happen exactly once as the systems wake up.
+This is a great place to enter the code that needs to happen exactly once when the system wakes up.
 
 01:47.530 --> 01:49.110
-So what do we do in here?
+What do we do here?
 
 01:49.120 --> 01:55.900
-First, we just make sure we have it initialized yet then we create the context model, view, controller
+First, we make sure it is already initialized and then we create the context model, view and controller.
 
 01:55.900 --> 01:56.770
-and service.
+And the service.
 
 01:56.800 --> 02:01.810
-Notice that the constructors for each don't take any arguments except the controller.
+Note that the constructors of each accept no parameters except the controller.
 
 02:01.960 --> 02:09.940
-This is one of our first examples in code where we see the controller is the most powerful and capable
+This is one of the first code examples where we see that the controller is the most powerful and capable.
 
 02:09.940 --> 02:15.820
-of the concerns because the controller serves to be the glue that holds together the model view and
+Of the concerns, because the controller is the glue that holds the view and the model together
 
 02:15.820 --> 02:20.350
-service we pass in those references so it knows how to manage and deal with them.
+let's pass these references so that it knows how to handle and treat them.
 
 02:20.350 --> 02:25.150
-And finally, we follow the best practice where each of the concerns gets initialized.
+Finally, we follow the best practice: each concern is initialized.
 
 02:25.180 --> 02:29.790
-Notice that everything takes the context and we haven't talked about the context yet.
+Notice that everything takes context and we haven't talked about context yet.
 
 02:29.800 --> 02:30.970
 Let's take a look.
 
 02:31.000 --> 02:33.340
-Context is a framework class.
+Context is a class in the framework.
 
 02:33.340 --> 02:39.100
-It implements the interface of AI context, and the rest of the system looks for that interface.
+It implements the AI context interface and the rest of the system looks for that interface.
 
 02:39.100 --> 02:45.190
-So you're free to create your own alternative to context simply by implementing that interface.
+Then you are free to create your own alternative to the context by simply implementing that interface.
 
 02:45.190 --> 02:49.900
-But I find for my uses, this base implementation usually serves my needs.
+But for my uses, I find that this basic implementation usually serves my needs.
 
 02:49.900 --> 02:52.000
-It has just two things within it.
+It has only two things in it.
 
 02:52.000 --> 02:58.150
-It has a model locator and a command manager, both of which are publicly available from outside, and
+It has a model locator and a command manager, both of which are publicly available from the outside, and
 
 02:58.150 --> 02:59.950
-they're created upon instantiation.
+are created at instantiation time.
 
 02:59.950 --> 03:01.600
-So what's the role of the contact?
+What is the role of the contact?
 
 03:01.600 --> 03:08.590
-You can think of the context as the messaging system that all of the four concerns have reference to.
+You can think of the context as the messaging system that all four concerns refer to.
 
 03:08.620 --> 03:10.720
-What are the things any concern can do with it?
+What are the things that each concern can do with it?
 
 03:10.720 --> 03:16.150
-Well, by using the command manager, they can listen to any commands and invoke any commands.
+Using the command manager, they can listen and invoke any command.
 
 03:16.150 --> 03:18.880
-That's the messaging portion and model locator.
+This is the messaging part and the model locator.
 
 03:18.880 --> 03:25.390
-While a more advanced concept optionally allows you to register any model and retrieve that model.
+While a more advanced concept allows any model to be registered and retrieved.
 
 03:25.390 --> 03:31.690
-So any one of the concerns could register a model or listen to model events.
+So any of the problems could register a pattern or listen for pattern events.
 
 03:31.690 --> 03:37.480
-Down here in the constructor, we see that those two parts get instantiated, and as an experimental
+Below, in the constructor, we see that these two parts are instantiated and, as an experiment
 
 03:37.480 --> 03:40.300
-feature, I have a context locator.
+experimental, I have a context locator.
 
 03:40.690 --> 03:48.430
-This allows any scope to add a context like we see here, and any other concern can get that context
+This allows any scope to add a context like the one we see here, and any other scope can get that context
 
 03:48.430 --> 03:49.000
-if needed.
+if necessary.
 
 03:49.000 --> 03:51.160
-In more complex examples, we'll see.
+In more complex examples, we will see.
 
 03:51.160 --> 03:57.130
-This could be useful if your project has two different mini MV axes and you want to communicate between
+This might be useful if your project has two different mini MV axes and you want to communicate between
 
 03:57.130 --> 04:01.570
-them for this first sample, we won't get into that complexity so you can ignore this detail.
+For this first example, we will not deal with this complexity, so you can ignore this detail.
 
 04:01.570 --> 04:05.920
-So that ends the high level discussion of this entire example.
+This concludes the high-level discussion of the entire example.
 
 04:05.920 --> 04:12.490
-We see that we have the mini parent object which has the four concerns within, and each of them has
+We see that we have the parent mini-object that has the four concerns within it, and each of them has
 
 04:12.490 --> 04:14.890
-a reference to the context from a high level.
+A reference to the high-level context.
 
 04:14.890 --> 04:17.800
-It's important that we understand those basic concepts.
+It is important to understand these basic concepts.
 
 04:17.800 --> 04:22.330
-Feel free to rewatch this portion of the course to gain a clearer understanding.
+Review this part of the course for better understanding.
 
 04:22.330 --> 04:25.720
-Now let's go through each of the concerns and see how they operate.
+Now let's look at each of the problems and see how they work.
 
 04:25.720 --> 04:28.600
-We already looked at the context, so let's look at the model.
+We've already seen the context, so let's look at the model.
 
 04:28.600 --> 04:31.030
-This is the first concern we've seen in code.
+This is the first concern we saw in the code.
 
 04:31.030 --> 04:36.910
-So we'll take a deeper look at how it's constructed and we'll see that all other concerns in this sample
+Let us then take a closer look at how it is constructed and see that all the other concerns in this sample
 
 04:36.910 --> 04:41.080
-and most of the other concerns in the other sample follow a similar pattern.
+and most of the other problems in the other sample follow a similar pattern.
 
 04:41.080 --> 04:44.630
-So in future discussions, we will not cover this as deeply.
+So in future discussions, we will not cover this in such detail.
 
 04:44.650 --> 04:47.790
-Notice here that the clock model extends the base model.
+Note that the clock model extends the basic model.
 
 04:47.800 --> 04:51.760
-Now extending any of the base classes is optional.
+Now, the extension of any base class is optional.
 
 04:51.760 --> 04:56.620
-It comes with some free functionality, but you're free to approach it in an alternative way if you'd
+It comes with some free functionality, but you are free to approach it in an alternative way if you wish
 
 04:56.620 --> 04:57.700
-like more flexibility.
+you desire more flexibility.
 
 04:57.700 --> 05:03.160
-So here we have a convention suggested, but there's flexibility for you to do your own solutions.
+So we have suggested a convention, but there is the possibility of finding your own solutions.
 
 05:03.160 --> 05:04.660
-Let's take a look at the base model.
+Let's take a look at the basic model.
 
 05:04.660 --> 05:08.920
-Base model implements I model, I model implements, I concern.
+The base model implements the I model, the I model implements the I model.
 
 05:08.920 --> 05:14.770
-It's possible in future versions of the framework, we might do something custom here to model, but
+It is possible that future versions of the framework will do something custom for the model, but
 
 05:14.770 --> 05:18.670
-for right now it just mimics what any other concern is able to do.
+for now merely mimics what any other concern is capable of doing.
 
 05:18.670 --> 05:25.570
-The I concern is able to initialize and accept a context so any class that implements this interface
+The I concern is able to initialize and accept a context, so any class that implements this interface
 
 05:25.570 --> 05:32.080
-is able to initialize accepting a context in the initialized method, and then it's able to store and
+is able to initialize itself by accepting a context in the initialized method, and thus is able to store and
 
 05:32.080 --> 05:35.620
 maintain a public property to that context.
 
 05:35.620 --> 05:42.070
-So this is what all four of the concerns are able to do Now while the suggested usage patterns of how
+This is what all four concerns are able to do Now, while the suggested usage patterns of how to
 
 05:42.070 --> 05:47.560
-we use a model is different than how we use a controller, know that under the hood they're equally
+of usage pattern is different from that of a controller, know that under the hood they are equally
 
 05:47.560 --> 05:48.130
 capable.
 
 05:48.130 --> 05:50.350
-Again, this allows for ultimate flexibility.
+Again, there is maximum flexibility.
 
 05:50.350 --> 05:55.720
-Stepping back here as we see clock model extends base model, which we just explored, let's look at
+Taking a step back, we see that the clock model extends the basic model, which we have just explored.
 
 05:55.720 --> 05:57.640
-the rest of how clock model operates.
+The rest of the operation of the clock model.
 
 05:57.640 --> 06:01.600
-You can think of the model as the data store for all runtime data.
+You can think of the model as the repository of all runtime data.
 
 06:01.600 --> 06:03.640
-Well, what does the clock example need?
+What does the clock example need?
 
 06:03.640 --> 06:05.440
-Well, it needs the current time.
+It needs the current time.
 
 06:05.440 --> 06:08.200
-And then in our example, it maintains the delay.
+And then, in our example, it keeps the delay.
 
 06:08.300 --> 06:10.280
 Between each tick of the clock.
 
 06:10.280 --> 06:17.160
-For us, it's going to be one second, so we'll see it display one second, then 2 seconds, then 3
+For us it will be one second, so we will see that one second is displayed, then 2 seconds, then 3
 
 06:17.160 --> 06:18.110
 seconds and so on.
 
 06:18.110 --> 06:24.410
-The model, like any concern, has the initialize and the only custom functionality we do here is initialize
+The model, like any concern, has initialization and the only custom functionality we do here is initialize
 
 06:24.410 --> 06:26.960
-the value of our observable variables.
+The value of our observable variables.
 
 06:26.960 --> 06:28.280
 That's it for the clock model.
 
 06:28.280 --> 06:30.050
-Next, let's look at the clock view.
+Let us now look at the clock view.
 
 06:30.050 --> 06:38.720
-The clock view implements eye view and just like we saw before, the eye view is able to have a initialize
+The clock view implements the eye view, and just as we saw earlier, the eye view is able to have an initialization
 
 06:38.720 --> 06:41.060
-and take a context that's about it.
+And take a context, that's all.
 
 06:41.060 --> 06:42.530
 So we won't explore that further.
 
 06:42.530 --> 06:46.310
-We don't need any base functionality, so we don't use any base class here.
+We don't need any base functionality, so we don't use any base class.
 
 06:46.310 --> 06:48.110
-We just implement the view ourselves.
+We implement the view on our own.
 
 06:48.110 --> 06:52.730
-So we have some properties, some fields and we handle the initialization.
+We have some properties, some fields, and we handle the initialization.
 
 06:52.730 --> 06:56.450
-This is boilerplate stuff for any of the concerns.
+This is basic material for any problems.
 
 06:56.450 --> 06:59.720
-The only thing custom we do here is we use the context.
+The only custom thing we do here is to use context.
 
 06:59.720 --> 07:05.150
-This is our first use of seeing that we access the command manager within and we listen to a custom
+This is our first use of seeing that we access the command handler inside and listen to a custom context
 
 07:05.150 --> 07:07.910
-command called the time changed command.
+called the "time changed" command.
 
 07:07.910 --> 07:12.800
-Any time the command manager invokes that command, we'll be able to listen to it here.
+Whenever the command handler invokes this command, we will be able to listen to it here.
 
 07:12.800 --> 07:15.590
-Now, this is the first chance to see Command manager in action.
+This is the first opportunity to see Command Manager in action.
 
 07:15.590 --> 07:20.300
-So remember the key difference between commands and events with commands.
+Recall the basic difference between commands and events with commands.
 
 07:20.300 --> 07:24.260
-We don't need to know who will send this type of message.
+We do not need to know who will send this type of message.
 
 07:24.260 --> 07:28.460
-We only subscribe to the middleman of the command manager and handle it that way.
+We subscribe only to the command handler intermediary and handle it that way.
 
 07:28.520 --> 07:30.230
-It's a decoupled solution.
+It is a decoupled solution.
 
 07:30.230 --> 07:31.640
-Each concern implements.
+Every concern implements.
 
 07:31.640 --> 07:33.800
-The required is initialized.
+The request is initialized.
 
 07:33.800 --> 07:40.700
-This is more of a best practice that I use instead of something specific to MVC frameworks, but I just
+This is more of a best practice that I use, rather than something specific to MVC frameworks, but I limit myself to
 
 07:40.700 --> 07:46.070
-make a method that easily checks if we're initialized, and if we're not, it throws an exception.
+a method that easily checks to see if we are initialized and if not, throws an exception.
 
 07:46.070 --> 07:50.690
-We'll see that used at the top of pretty much every method in every concern.
+We will see this used at the beginning of almost every method of every concern.
 
 07:50.690 --> 07:55.250
-It's a simple grade to gate check that your public methods aren't called too early.
+This is a simple method to check that public methods are not called too early.
 
 07:55.250 --> 08:00.860
-Now, each time the command manager dispatches that related event, we're handling that here, we can
+Now, whenever the command handler sends the related event, we are handling it here, we can
 
 08:00.860 --> 08:04.760
-see that the first thing we do is ensure that we are indeed initialized.
+we can see that the first thing we do is make sure that we are actually initialized.
 
 08:04.760 --> 08:08.600
-We expect every time the scene runs will be initialized, fine.
+We expect every time the scene is executed to be initialized, good.
 
 08:08.600 --> 08:13.460
-This is just an additional gate check that ensures that the lifecycles are operating properly.
+This is just an additional check that ensures that the lifecycles are running correctly.
 
 08:13.460 --> 08:17.000
-Then the only real custom piece of functionality we do here is debug.
+The only real custom functionality is debugging.
 
 08:17.000 --> 08:17.600
-Log out.
+Disconnect.
 
 08:17.600 --> 08:22.430
-Remember, we don't have any on screen UI, we're not using any monte behaviors.
+Remember that we don't have an on-screen UI and we're not using any Mount behavior.
 
 08:22.430 --> 08:26.960
-So our way to speak out through the View is just using a debug log statement.
+So our way to talk through the View is to use a debug log statement.
 
 08:26.960 --> 08:31.760
-This doesn't mean you would need to walk through these steps every time you debug log in your projects.
+This does not mean that you need to perform these steps every time you debug log in your projects.
 
 08:31.760 --> 08:35.600
-You do that as freely as you would in any typical project.
+You do this as freely as in any typical project.
 
 08:35.600 --> 08:43.070
-This is just a contrived, created example to show some sort of user feedback without any mono behaviors
+This is just a contrived example, created to show some sort of user feedback without any mono behavior.
 
 08:43.070 --> 08:46.070
-or UI that keeps this example quite simple.
+or user interface, so the example is quite simple.
 
 08:46.070 --> 08:47.900
-Next, let's look at the clock service.
+Let's next take a look at the clock service.
 
 08:47.900 --> 08:50.330
-The clock service extends base service.
+The clock service extends the basic service.
 
 08:50.330 --> 08:57.380
-As with all concerns that extend a base class that's optional, all it does is do the initialization
+As with all problems that extend an optional base class, all it does is initialize
 
 08:57.380 --> 09:01.280
-and context set up that we've seen in other concerns.
+and the context setting that we have seen in other problems.
 
 09:01.280 --> 09:06.890
-This service is designed to load something and then notify the system when that's loaded.
+This service is designed to load something and then notify the system when it has been loaded.
 
 09:06.890 --> 09:08.960
-So we have a custom unity event here.
+We then have a custom unity event.
 
 09:08.960 --> 09:12.650
-The actual data that gets loaded from this service is the time delay.
+The actual data that is loaded by this service is the time delay.
 
 09:12.650 --> 09:14.120
-So that's made available here.
+This is made available here.
 
 09:14.120 --> 09:17.930
-Inside the initialize, we do the basic concern setup.
+Within initialize, we do the basic configuration of concerns.
 
 09:17.930 --> 09:23.120
-The only thing really custom we do here is initialize that time delay from somewhere outside of this
+The only really custom thing we do here is initialize the time delay somewhere outside of this
 
 09:23.120 --> 09:24.830
-scope load will be called.
+Will be called the scope load.
 
 09:24.830 --> 09:31.310
-And what we see here is very similar to the functionality of the non mini MVCs version we looked at
+What we see here is very similar to the functionality of the non-mini MVC version that we saw
 
 09:31.310 --> 09:32.060
 before.
 
 09:32.240 --> 09:36.470
-It just loads a local text file, grabs the string value out of it types.
+It simply loads a local text file, extracts the string value and types it in.
 
 09:36.470 --> 09:38.300
-It is int and stores it for us.
+It is an int and stores it for us.
 
 09:38.300 --> 09:43.100
-Something of note here is that once the data is loaded, that loaded event is fired.
+One thing to note is that once the data is loaded, the loaded event is triggered.
 
 09:43.100 --> 09:46.370
-We haven't yet seen which scope is going to consume that event.
+We have not yet seen what scope this event will consume.
 
 09:46.370 --> 09:46.670
 Next.
 
 09:46.670 --> 09:47.900
-Let's look at the controller.
+Let's take a look at the controller.
 
 09:47.900 --> 09:53.510
-This is going to be the most complex concern of this sample and in most samples to controllers where
+This will be the most complex aspect of this example and most controller examples where
 
 09:53.510 --> 09:58.100
-we'll see the bulk of the code, the clock controller extends base controller in this case.
+we will see most of the code, the clock controller extends the basic controller in this case.
 
 09:58.100 --> 10:01.640
-And in all cases where you see a base class used, it's optional.
+In all cases where a base class is used, this is optional.
 
 10:01.640 --> 10:05.360
-You can, of course create your own class that implements the controller.
+Of course, you can create your own class that implements the controller.
 
 10:05.360 --> 10:11.180
-But here we get some base functionality which is going to be handling the initialization and taking
+But here we have a basic functionality that will take care of initialization and data acquisition.
 
 10:11.180 --> 10:11.870
-in the context.
+In context.
 
 10:11.870 --> 10:17.090
-Because clock controller deals with some specific arguments, I've decided that base controller is a
+Since the clock controller deals with some specific topics, I decided that the basic controller is a
 
 10:17.090 --> 10:22.670
-generic and you pass in the strongly type values for the model view and service.
+generic and you pass the strong type values for the view and model service.
 
 10:22.670 --> 10:26.870
 In the constructor, we pass the model view and service to the base class.
 
 10:26.870 --> 10:32.450
-In the initialize, we do the typical thing that all concerns do, which is handle the initialize and
+In the initializer, we do the typical thing that all concerns do, that is, we handle the initialization and the
 
 10:32.450 --> 10:34.250
-take in the context and store it.
+And take the context and store it.
 
 10:34.430 --> 10:40.220
-The only real custom stuff we're doing here is listening to the model, subscribing to one of the observable
+The only really custom thing we are doing here is listening to the model, subscribing to one of the observables
 
 10:40.220 --> 10:44.150
-events and listening to the service so that we know when the service is loaded.
+and listening to the service, so we know when the service is loaded.
 
 10:44.150 --> 10:49.040
-Now, while we've talked about the observable concept and we've seen the model source code, this is
+Now, as we talked about the concept of observables and saw the source code of the model, this is
 
 10:49.040 --> 10:55.220
-the first place we've seen subscribing to the Unity event from one of the observable classes.
+the first place where we saw Unity event subscribing from one of the observable classes.
 
 10:55.220 --> 11:03.140
-So any time model time value is set from any scope, this on value change would get fired.
+So whenever the value of the time model is set by any scope, this event on changing the value is triggered.
 
 11:03.410 --> 11:08.180
-And again, the use of observables is optional but recommended for all.
+Once again, the use of observables is optional but recommended for everyone.
 
 11:08.510 --> 11:15.710
-Properties within the model, you get this automatic paradigm of being able to set the value and being
+With properties within the model, you get this automatic paradigm of being able to set the value and be
 
 11:15.710 --> 11:18.560
-able to listen to when that value has been set and changed.
+able to listen when that value has been set and changed.
 
 11:18.560 --> 11:25.310
-So when that service is loaded, we update the model based on what the service got from its external
+So when the service is loaded, we update the model based on what the service got from its external server.
 
 11:25.310 --> 11:25.700
 data.
 
 11:25.700 --> 11:27.530
-And then we start the ticking of the clock.
+And then we start the clock ticking.
 
 11:27.530 --> 11:32.960
-The ticking of the clock operates very similar to how we saw the non mini NBC's version do it.
+The clock ticking works in a very similar way to how we have seen it do in the non-mini version of NBC.
 
 11:32.990 --> 11:34.700
-However, there's a key distinction.
+However, there is a key distinction.
 
 11:34.700 --> 11:40.730
-Earlier I talked about how unity collapses model view controller in several areas of the unity engine,
+Earlier I talked about how unity collapses the model view controller in different areas of the unity engine,
 
 11:40.730 --> 11:45.590
-one of which is that mono behavior itself is quite powerful and spans many concerns.
+one of which is the behavior of mono itself, which is quite powerful and spans many aspects.
 
 11:45.590 --> 11:52.070
-Now in the non mini MVCs example, I used a CO routine in order to call repeatable code because this
+Now, in the non-mini MVC example, I used a CO routine to call repeatable code, because this
 
 11:52.070 --> 11:54.200
-example uses no mono behaviors.
+example does not use mono behaviors.
 
 11:54.200 --> 11:58.040
-I don't have the same access to CO routine now.
+I no longer have the same access to the CO routine.
 
 11:58.040 --> 12:00.140
-There's lots of ways that I could fake it.
+There are many ways I could fake it.
 
 12:00.140 --> 12:05.600
-What I've chosen to do here is have a separate class which you're free to dig into if you like, and
+I chose to have a separate class, in which you can go into more detail if you like, and
 
 12:05.600 --> 12:08.060
 all it does is call repeatable code.
 
 12:08.060 --> 12:10.430
-I call that for this example Clock Helper.
+For this example I call it Clock Helper.
 
 12:10.430 --> 12:15.110
-How it works is outside the scope of this example, but just know it's a workaround for how to call
+The operation is outside the scope of this example, but know that this is a workaround for calling the code
 
 12:15.110 --> 12:15.950
 repeatable code.
 
 12:15.950 --> 12:17.900
-And it was one of the solutions that I went with.
+And that was one of the workarounds I chose.
 
 12:17.900 --> 12:23.210
-Something key to note here is here in the controller, every time the time delay happens, which is
+One key thing to note is that here in the controller, whenever the delay occurs, which is
 
 12:23.210 --> 12:26.030
-every second, I'm setting the model data.
+every second, I am setting the pattern data.
 
 12:26.030 --> 12:29.210
-So we have the controller setting a value on the model.
+So the controller sets a value on the model.
 
 12:29.210 --> 12:34.760
-And because we've listened to the unity event for any time, that model value changes, we get this
+And since we listened to the unity event for each time the value of the model changes, we get this
 
 12:34.760 --> 12:35.270
 callback.
 
 12:35.270 --> 12:41.180
-So here we are in the controller, subscribe to model changes and handling them, turning them into
+So here we are in the controller, subscribing to the model changes and handling them, turning them into
 
 12:41.180 --> 12:42.050
 commands.
 
 12:42.050 --> 12:45.860
-That's a very common pattern that we'll see throughout MVC.
+This is a very common pattern that we will see throughout MVC.
 
 12:45.860 --> 12:52.910
-We take an event which is somewhat decoupled and we translate it into a command which is highly decoupled.
+We take a somewhat decoupled event and translate it into a highly decoupled command.
 
 12:53.030 --> 12:59.570
-Remember, commands are able to be observed and listened to by any of the concerns as long as they have
+Recall that commands can be observed and heard from any concern, as long as they have a single function.
 
 12:59.570 --> 13:02.570
-access to the context, which all of our concerns do.
+access to context, which all our concerns do.
 
 13:02.570 --> 13:10.190
-So any time you see invoke command, you can think that's a message like a radio station that any concern
+So whenever you see a command invoked, you can think of it as a message like a radio station that any concern
 
 13:10.190 --> 13:11.030
 can listen to.
 
 13:11.030 --> 13:13.340
-This is a very powerful concept.
+It is a very powerful concept.
 
 13:13.340 --> 13:18.620
-It offers you flexibility to communicate to and from any concern.
+It provides the flexibility to communicate to and from any interest.
 
 13:18.620 --> 13:25.040
-Now, while that's very flexible, we want to follow the basic conventions where controller is the main
+Now, although this is very flexible, we want to follow the basic conventions, where the controller is the main part
 
 13:25.040 --> 13:30.110
-concern that will be sending and receiving these commands, there will be exceptions and we'll see them
+that will send and receive these commands, there will be exceptions and we will see them
 
 13:30.110 --> 13:35.900
-in the examples deciding exactly how you use unity events and how you use commands in your project is
+in the examples, deciding exactly how to use unity events and how to use commands in your project is
 
 13:35.900 --> 13:38.510
 part of the art of using MVC.
 
 13:38.510 --> 13:41.180
-In earlier slides, I suggested conventions.
+In the previous slides I suggested conventions.
 
 13:41.180 --> 13:42.770
-You're free to follow those.
+You are free to follow them.
 
 13:42.770 --> 13:46.490
-I just recommend being consistent if you do apply any exceptions.
+I just recommend being consistent if exceptions apply.
 
 13:46.490 --> 13:47.210
 So that's it.
 
 13:47.210 --> 13:52.730
-We've covered the creation of the context, the model, the view, the controller and the service.
+We have addressed the creation of the context, model, view, controller and service.
 
 13:53.000 --> 13:55.910
-Then we just initialize all of them.
+Then we initialize them all.
 
 13:56.180 --> 14:02.240
-So now from a timeline perspective, we did have a monarch behavior in the scene and on its start it
+So from the timeline point of view, we have a monarch behavior in the scene and on its initialization
 
 14:02.240 --> 14:05.630
-created the mini inside the minis initialize.
+created the minis within the minis initialize.
 
 14:05.630 --> 14:11.660
-It created what we're seeing here, wiring up all of these different pieces and then initialize in this
+It created what we're seeing here, connecting all these different pieces and then initializing like this
 
 14:11.660 --> 14:17.450
-particular example, because I'm familiar with how it works, I know that when the controller gets initialized,
+particular example, because I'm familiar with how it works, I know that when the controller is initialized,
 
 14:17.450 --> 14:22.190
-that's what starts the ticking and really gets this example going.
+that's what starts the ticking and starts the example.
 
 14:22.190 --> 14:23.960
 That's it for the code overview.
 
 14:23.960 --> 14:27.740
-This is probably the most dense code sample.
+This is probably the densest code example.
 
 14:27.740 --> 14:32.000
-Despite being a simple sample, we've got a lot of concepts here.
+Although it is a simple example, there are many concepts here.
 
 14:32.000 --> 14:36.770
-We're taking all of the theory we've seen in the past slides and bringing it all together.
+We are taking all the theory that we have seen in the previous slides and putting it together.
 
 14:36.770 --> 14:39.950
-Let's take a look at the sample running one more time here in the scene.
+Let's take another look at the sample running here in the scene.
 
 14:39.950 --> 14:46.700
-I've selected a game object we can see in the inspector that game object just has the example and I'll
+I selected a game object, as we can see in the inspector, which contains the sample.
 
 14:46.700 --> 14:47.660
-run the sample.
+run the example.
 
 14:51.590 --> 14:59.960
-As it's running every time delay, which is 1000 milliseconds, means that we get one tick per second.
+Execution occurs at each time delay, which is 1000 milliseconds, which means you get one tick per second.
 
 15:00.710 --> 15:03.770
-And our debug log statement shows up in the console.
+Our debug log statement is displayed in the console.
 
 15:04.540 --> 15:06.430
-That's the complete example.
+This is the complete example.
 
 15:06.610 --> 15:11.020
-We've seen all of the concepts of model view controller service.
+We have seen all the concepts of model view controller service.
 
 15:11.680 --> 15:17.230
-How they get initialized, how the context is the glue that helps message all between them.
+How they are initialized, how the context is the glue that helps the messages to each other.
 
 15:17.230 --> 15:23.770
-And you have an excellent foundation for seeing the theory we've learned applied in real C-sharp code.
+And you have a very good basis for seeing the theory we learned applied in real C-sharp code.
 
 15:24.100 --> 15:26.740
-So that's our first complete sample.
+This is our first complete example.
 
 15:26.740 --> 15:29.710
-Seeing code running with mini MVCs.
+See the code running with mini MVCs.
 
 15:29.710 --> 15:36.520
-While the use case is very simple, all we're doing is every second doing a debug log statement.
+Although the use case is very simple, all we are doing is running a debug log statement every second.
 
 15:36.520 --> 15:39.730
-We see that we've got a lot of concepts to make that happen.
+We see that we have many concepts to do this.
 
 15:39.730 --> 15:46.240
-Now, this is the first example you'll see where when using a bespoke architecture, like many MVCs,
+This is the first example you see when you use a tailored architecture, like many MVCs,
 
 15:46.270 --> 15:47.860
-it feels verbose.
+looks verbose.
 
 15:47.860 --> 15:54.160
-It feels like, Hey, couldn't we have done that in just one class like we did with the non mini MVC
+It feels like we can't do it in one class, like we did with the non-mini MVC.
 
 15:54.160 --> 15:54.670
 version?
@@ -718,16 +718,16 @@ version?
 But remember, we want to invest in our software.
 
 15:58.060 --> 16:04.360
-We want to use these best practices and it won't be in a ten minute example that we really understand
+We want to use these best practices, and it won't be in a ten-minute example that we really understand
 
 16:04.360 --> 16:11.140
-the full power ten days into a project, ten months into a project, having that proper code separation
+full power ten days into a project, ten months into a project, having the correct code separation
 
 16:11.140 --> 16:15.780
-that comes with a bespoke framework is incredibly powerful and pays dividends.
+that you get with a tailored framework is incredibly powerful and pays off.
 
 16:15.790 --> 16:16.930
 That's it for now.
 
 16:16.930 --> 16:17.650
-Thanks.
+Thank you.

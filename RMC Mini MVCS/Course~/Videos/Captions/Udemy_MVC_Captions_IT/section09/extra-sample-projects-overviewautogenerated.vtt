@@ -1,94 +1,94 @@
 WEBVTT
 
 00:00.080 --> 00:01.490
-Hello and welcome.
+Ciao e benvenuto.
 
 00:01.490 --> 00:05.940
-I've spent some time to add even more content and I'm going to go over it today.
+Ho speso un po' di tempo per aggiungere ancora più contenuti e oggi ne parlerò.
 
 00:05.960 --> 00:06.620
-Great.
+Ottimo.
 
 00:06.650 --> 00:13.520
-What I wanted to do in this talk is go through some advanced topics and advanced demos that I've created.
+In questo intervento voglio illustrare alcuni argomenti avanzati e demo avanzate che ho creato.
 
 00:14.090 --> 00:17.150
-So we'll go through them one by one and let's see what we got here.
+Quindi li esamineremo uno per uno e vedremo cosa abbiamo qui.
 
 00:17.150 --> 00:24.140
-If you're using unity for 2 or 3 years full time, even on production projects, you'll find that even
+Se si utilizza unity per 2 o 3 anni a tempo pieno, anche su progetti di produzione, si scoprirà che persino
 
 00:24.140 --> 00:30.500
-as the best minds come together and work on projects bringing some best practices to it, it still becomes
+quando le migliori menti si riuniscono e lavorano a progetti che portano con sé le migliori pratiche, diventa comunque
 
 00:30.500 --> 00:37.160
-a challenge to organize your projects in a way that can scale, that can be testable, that can be maintainable.
+una sfida organizzare i progetti in modo che siano scalabili, testabili e mantenibili.
 
 00:37.160 --> 00:42.380
-Even if you're kind of new to the concepts of MVC, you'll be able to start seeing the patterns.
+Anche se non conoscete i concetti di MVC, potrete iniziare a vedere gli schemi.
 
 00:42.380 --> 00:44.840
-As I go through each of these examples.
+Man mano che passo in rassegna ciascuno di questi esempi.
 
 00:44.840 --> 00:48.890
-UI Toolkit How to build an in-game tutorial.
+UI Toolkit Come costruire un tutorial di gioco.
 
 00:48.890 --> 00:53.840
-You know, when you want the player to be guided through their first five minutes, learning the keys,
+Quando si vuole che il giocatore sia guidato nei suoi primi cinque minuti di gioco, per imparare i tasti,
 
 00:53.840 --> 00:59.480
-etcetera, you know, how do you exactly add that into a game then an approach of multiple minis.
+eccetera, come si fa a inserirlo in un gioco con un approccio a più miniature.
 
 00:59.480 --> 01:04.890
-So once you get used to the MVC architectural concept, we usually think of having one of those in the
+Quindi, una volta abituati al concetto architettonico MVC, di solito pensiamo di avere uno di questi nel gioco.
 
 01:04.890 --> 01:06.300
-entire project.
+progetto.
 
 01:06.300 --> 01:10.590
-But what if you actually want to break your project and have more than one mini in it, which you definitely
+Ma cosa succede se si vuole spezzare il progetto e avere più di un mini in esso, cosa che è sicuramente
 
 01:10.590 --> 01:11.160
-can?
+può farlo?
 
 01:11.700 --> 01:13.710
-I'll talk about data binding as well.
+Parlerò anche del data binding.
 
 01:13.710 --> 01:19.740
-So if you want to have a text field in your UI and then map that to where your data is stored and any
+Quindi, se volete avere un campo di testo nella vostra interfaccia utente e poi mapparlo su dove sono memorizzati i vostri dati e qualsiasi
 
 01:19.740 --> 01:26.910
-time you have the user update that text, it'll automatically update the data model and the reverse.
+ogni volta che l'utente aggiorna il testo, aggiorna automaticamente il modello di dati e l'inverso.
 
 01:26.910 --> 01:29.880
-Anytime the data model updates, it'll update the UI.
+Ogni volta che il modello di dati si aggiorna, si aggiorna anche l'interfaccia utente.
 
 01:30.060 --> 01:33.990
-So looking at data binding, unity doesn't natively support that.
+Quindi, per quanto riguarda il data binding, unity non lo supporta in modo nativo.
 
 01:33.990 --> 01:40.680
-Quite excitingly, that is available in UI toolkit for editor now and in the future.
+È interessante notare che questo è disponibile nel toolkit dell'interfaccia utente per l'editor ora e in futuro.
 
 01:40.680 --> 01:43.500
-It's coming in Unity for runtime.
+È in arrivo in Unity per il runtime.
 
 01:43.500 --> 01:44.910
-I'm very excited about that.
+Sono molto entusiasta di questo.
 
 01:44.910 --> 01:48.810
-This is a custom approach that does some data binding.
+Questo è un approccio personalizzato che esegue alcuni binding di dati.
 
 01:48.930 --> 01:55.260
-Then we'll look at a simple game, this bouncy ball game, and then starting from the top we'll look
+Poi guarderemo un semplice gioco, questo gioco di palline rimbalzanti, e partendo dall'alto guarderemo
 
 01:55.260 --> 01:56.130
-at a calculator.
+una calcolatrice.
 
 01:56.130 --> 01:59.790
-And this count up example is very introductory ways to take a look.
+Questo esempio di conteggio è molto introduttivo.
 
 01:59.790 --> 02:03.450
-So we'll start from the top there with the calculator.
+Cominciamo dall'inizio con la calcolatrice.
 
 02:03.450 --> 02:05.130
-So let's jump into unity here.
+Quindi passiamo all'unità.

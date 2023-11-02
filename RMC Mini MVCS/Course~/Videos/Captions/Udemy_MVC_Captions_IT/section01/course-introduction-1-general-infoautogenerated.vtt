@@ -1,229 +1,229 @@
 WEBVTT
 
 00:02.960 --> 00:06.650
-Hello and welcome to MVC Architecture for Unity.
+Salve e benvenuti all'architettura MVC per Unity.
 
 00:07.460 --> 00:08.350
-Hello.
+Salve.
 
 00:08.360 --> 00:09.290
-I'm Sam.
+Io sono Sam.
 
 00:09.320 --> 00:11.390
-I'll be leading you through this course.
+Vi guiderò in questo corso.
 
 00:11.720 --> 00:16.280
-I'm a unity certified developer with over 20 years of experience.
+Sono uno sviluppatore certificato unity con oltre 20 anni di esperienza.
 
 00:16.310 --> 00:21.020
-My mission is to educate and entertain with interactive technology.
+La mia missione è educare e intrattenere con la tecnologia interattiva.
 
 00:21.050 --> 00:25.910
-I've shipped Unity game titles for PC console and mobile platforms.
+Ho realizzato titoli di gioco Unity per console PC e piattaforme mobili.
 
 00:26.120 --> 00:28.820
-I'm especially excited to bring you this course.
+Sono particolarmente entusiasta di proporre questo corso.
 
 00:28.820 --> 00:35.270
-It's a fantastic way for intermediate and advanced developers to level up their skill set in a way that
+È un modo fantastico per gli sviluppatori di livello intermedio e avanzato di aumentare le proprie competenze in modo che
 
 00:35.270 --> 00:36.110
-matters.
+importante.
 
 00:36.500 --> 00:39.140
-Architecture is tremendously important.
+L'architettura è estremamente importante.
 
 00:39.530 --> 00:43.730
-Over my career, I've had varied experiences just within unity.
+Nel corso della mia carriera, ho avuto diverse esperienze proprio all'interno dell'unità.
 
 00:43.730 --> 00:49.970
-I've worked in education, teaching at universities, and making online courses like this one shipping
+Ho lavorato nel campo dell'istruzione, insegnando nelle università e realizzando corsi online come questo.
 
 00:49.970 --> 00:57.860
-game titles for mobile console PC, as well as working on educational materials for unity tools and
+titoli di gioco per console mobile e PC, oltre a lavorare su materiali didattici per strumenti unity e
 
 00:57.860 --> 01:00.170
-different Unity game development companies.
+diverse aziende di sviluppo di giochi Unity.
 
 01:00.530 --> 01:03.410
-Welcome to MVC Architecture for Unity.
+Benvenuti all'architettura MVC per Unity.
 
 01:03.560 --> 01:05.670
-Unity is a versatile game engine.
+Unity è un motore di gioco versatile.
 
 01:05.690 --> 01:09.830
-It can be used for all sorts of projects, including, of course, games.
+Può essere utilizzato per ogni tipo di progetto, compresi, ovviamente, i giochi.
 
 01:10.010 --> 01:17.840
-The MVC architecture, which stands for Model, View and controller, brings confidence, organization
+L'architettura MVC, acronimo di Model, View e Controller, garantisce sicurezza e organizzazione.
 
 01:17.840 --> 01:20.060
-and scalability to your projects.
+e scalabilità ai vostri progetti.
 
 01:20.390 --> 01:26.900
-The takeaway after completing this course is the skills to be able to design and develop unity projects
+Dopo aver completato questo corso, si acquisiscono le competenze necessarie per progettare e sviluppare progetti unitari.
 
 01:26.900 --> 01:28.830
-using MVC architecture.
+utilizzando l'architettura MVC.
 
 01:28.850 --> 01:33.980
-Throughout the duration of this course, we're going to be focusing on three different learning tracks.
+Per tutta la durata di questo corso, ci concentreremo su tre diversi percorsi di apprendimento.
 
 01:34.370 --> 01:40.100
-Whether we're talking about design fundamentals, the unity architectures will be discussing, or the
+Sia che si parli di fondamenti di progettazione, sia che si discuta delle architetture unity, sia che si parli di
 
 01:40.100 --> 01:41.530
-Unity engine itself.
+motore Unity stesso.
 
 01:41.540 --> 01:45.860
-We'll look at the theory, we'll look at the editor and we'll look at game code.
+Analizzeremo la teoria, l'editor e il codice di gioco.
 
 01:45.860 --> 01:52.220
-With C-sharp, there will be course prerequisites, it suggested before beginning this course that you
+Con C-sharp, ci saranno dei prerequisiti per il corso; prima di iniziare questo corso si suggerisce di
 
 01:52.220 --> 01:54.230
-follow along with the software.
+seguire il software.
 
 01:54.230 --> 01:59.390
-All of the software that's required is linked to in this course and the resources section, and it's
+Tutti i software richiesti sono collegati a questo corso e alla sezione risorse, e sono
 
 01:59.390 --> 02:00.620
-all freely available.
+tutti liberamente disponibili.
 
 02:00.620 --> 02:05.990
-That includes having your favorite web browser for searching different links that will be given using
+Questo include il vostro browser web preferito per cercare i diversi link che vi verranno forniti usando
 
 02:05.990 --> 02:10.970
-the Unity Editor, which has a free version and using your favorite C-sharp code editor.
+Unity Editor, che ha una versione gratuita, e utilizzando il vostro editor di codice C-sharp preferito.
 
 02:10.970 --> 02:14.210
-You can use the free one that is included with the unity download.
+È possibile utilizzare quello gratuito incluso nel download di Unity.
 
 02:14.210 --> 02:17.930
-The required knowledge for this course is not for beginners.
+Le conoscenze richieste per questo corso non sono per principianti.
 
 02:17.930 --> 02:23.230
-It suggested that you have several months or more of experience with Unity and C-sharp.
+Si suggerisce di avere alcuni mesi o più di esperienza con Unity e C-sharp.
 
 02:23.300 --> 02:31.070
-This includes classes, interfaces, methods and properties, how to use events, and the general paradigms
+Questo include classi, interfacce, metodi e proprietà, come usare gli eventi e i paradigmi generali.
 
 02:31.070 --> 02:33.110
-of object oriented programming.
+della programmazione orientata agli oggetti.
 
 02:33.110 --> 02:39.140
-If you don't have a strong knowledge of those particular elements, it suggested that you go gain that
+Se non si ha una conoscenza approfondita di questi elementi particolari, si suggerisce di acquisirla
 
 02:39.140 --> 02:41.330
-knowledge before attempting this course.
+conoscenza prima di tentare questo corso.
 
 02:42.280 --> 02:46.750
-Let's take a look at the course contents to see what we'll cover throughout the sections and chapters
+Diamo un'occhiata ai contenuti del corso per vedere che cosa tratteremo nelle sezioni e nei capitoli
 
 02:46.750 --> 02:47.240
-here.
+qui.
 
 02:47.260 --> 02:50.820
-We'll start with the course introduction, which is this section here.
+Inizieremo con l'introduzione al corso, che è questa sezione qui.
 
 02:50.830 --> 02:55.390
-Then we'll have a brief overview of unity, taking a look at how and why you would choose the Unity
+Poi faremo una breve panoramica di Unity, dando un'occhiata a come e perché scegliere Unity.
 
 02:55.390 --> 02:59.390
-Game engine, as well as an overview of unity structure.
+motore di gioco, oltre a una panoramica della struttura di Unity.
 
 02:59.410 --> 03:05.560
-Now, while this course focuses on using MVC architecture, we spend some time with the fundamentals
+Ora, anche se questo corso si concentra sull'utilizzo dell'architettura MVC, dedichiamo un po' di tempo alle nozioni fondamentali
 
 03:05.560 --> 03:12.610
-here in software design will take a look at design principles, design patterns, UML diagramming,
+Qui, nell'ambito della progettazione del software, daremo un'occhiata ai principi di progettazione, ai modelli di progettazione, al diagramma UML,
 
 03:12.610 --> 03:15.760
-as well as the architecture specifically for unity.
+così come l'architettura specifica per unity.
 
 03:15.850 --> 03:22.240
-This section gives you a background to understand the concepts that will carry on into the architecture
+Questa sezione fornisce un background per comprendere i concetti che verranno portati avanti nell'architettura.
 
 03:22.240 --> 03:27.100
-section while the course will mention several different architectures compatible with unity.
+mentre nel corso si parlerà di diverse architetture compatibili con unity.
 
 03:27.130 --> 03:30.880
-We'll move forward using a particular framework that I created.
+Andremo avanti utilizzando un particolare framework che ho creato.
 
 03:30.880 --> 03:33.790
-The mini MVC framework.
+Il mini framework MVC.
 
 03:33.970 --> 03:40.900
-The mini MVCs for Unity is a great framework to use for production as well as educational purposes,
+Il mini MVC per Unity è un ottimo framework da utilizzare sia per la produzione che per scopi didattici,
 
 03:40.900 --> 03:43.630
-and it's for that reason that I focus on it here in the course.
+ed è per questo motivo che mi concentro su di esso in questo corso.
 
 03:43.810 --> 03:50.170
-The fundamentals that you learn here will help you regardless of which end framework you choose or if
+Le nozioni fondamentali che imparerete qui vi aiuteranno a prescindere dal framework finale che sceglierete o se
 
 03:50.170 --> 03:54.910
-you choose to create your own MVC framework With the principles that we've learned here after learning
+di creare il proprio framework MVC Con i principi che abbiamo imparato qui, dopo aver appreso
 
 03:54.910 --> 04:00.910
-how and why we would choose an architecture and why MVC is a great choice we'll look at for particular
+come e perché scegliere un'architettura e perché MVC è un'ottima scelta, analizzeremo in particolare
 
 04:00.910 --> 04:01.690
-examples.
+esempi.
 
 04:01.690 --> 04:07.450
-This is the section of the course where I'll share my screen and I will step through three different
+Questa è la sezione del corso in cui condividerò il mio schermo e passerò in rassegna tre differenti
 
 04:07.450 --> 04:09.320
-projects that I've already created.
+progetti che ho già creato.
 
 04:09.340 --> 04:14.440
-These projects are available for you to download and follow along in the course, and there'll be assignments
+Questi progetti sono disponibili per essere scaricati e seguiti durante il corso, e ci saranno degli incarichi
 
 04:14.440 --> 04:15.850
-for you to do just that.
+per fare proprio questo.
 
 04:16.180 --> 04:24.130
-Here we'll look at a clock created with MVC, a simple login with MVC, a3d Rollerball sample game,
+Qui vedremo un orologio creato con MVC, un semplice login con MVC, un esempio di gioco Rollerball in 3D,
 
 04:24.130 --> 04:26.450
-as well as a custom sample project.
+e un progetto campione personalizzato.
 
 04:26.470 --> 04:31.540
-Now those first three will step through and look at the existing project, how we would accomplish it
+Ora, i primi tre progetti sono stati studiati per analizzare il progetto esistente e per capire come realizzarlo.
 
 04:31.540 --> 04:35.290
-without MVC and then using the MVC framework.
+senza MVC e poi utilizzando il framework MVC.
 
 04:35.290 --> 04:39.160
-Both versions of that are available for you to inspect as well.
+Entrambe le versioni sono disponibili per la consultazione.
 
 04:39.160 --> 04:40.360
-For that fourth sample.
+Per il quarto esempio.
 
 04:40.360 --> 04:43.270
-It's the only section where I will code as I go.
+È l'unica sezione in cui codificherò man mano.
 
 04:43.270 --> 04:45.040
-It will be a live coding section.
+Sarà una sezione di codifica dal vivo.
 
 04:45.040 --> 04:49.810
-I will start with the MVC framework and I will build a brand new example.
+Inizierò con il framework MVC e costruirò un nuovo esempio.
 
 04:49.810 --> 04:54.280
-On top of that, here are all of the concepts and practices that we learned up to this point in the
+Inoltre, ecco tutti i concetti e le pratiche che abbiamo appreso fino a questo punto del corso.
 
 04:54.280 --> 04:57.850
-course will come together in one live coding session.
+corso si riuniranno in un'unica sessione di codifica dal vivo.
 
 04:57.850 --> 05:03.280
-We'll see in the course, especially in the fundamentals, that one of the fantastic reasons to adopt
+Vedremo nel corso, soprattutto nei fondamenti, che uno dei fantastici motivi per adottare
 
 05:03.280 --> 05:09.610
-architectures like MVC is that it separates your code up into nice organized areas.
+architetture come MVC è che separa il codice in aree ben organizzate.
 
 05:09.610 --> 05:14.290
-And a benefit of that is that you can then employ unit testing.
+Il vantaggio è che si possono utilizzare i test unitari.
 
 05:14.290 --> 05:19.900
-So we will, as a bonus, cover some unit testing and test driven development content.
+Quindi, come bonus, tratteremo alcuni contenuti relativi ai test unitari e allo sviluppo guidato dai test.

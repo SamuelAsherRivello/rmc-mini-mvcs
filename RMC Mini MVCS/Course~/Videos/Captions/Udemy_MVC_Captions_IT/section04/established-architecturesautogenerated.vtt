@@ -1,811 +1,811 @@
 WEBVTT
 
 00:00.360 --> 00:07.050
-Let's take a closer look at some of the established architectures we can choose from and see the benefits
+Diamo un'occhiata più da vicino ad alcune delle architetture consolidate tra cui possiamo scegliere e vediamone i vantaggi
 
 00:07.050 --> 00:08.190
-of MVC.
+di MVC.
 
 00:09.330 --> 00:15.960
-Several different approaches are possible when making a unity game as part of an exploration on this
+Sono possibili diversi approcci quando si realizza un gioco unity come parte di un'esplorazione su questo tema
 
 00:15.960 --> 00:16.750
-topic.
+argomento.
 
 00:16.770 --> 00:26.160
-I created a simple three D unity bowling game from scratch using six different styles, each style focused
+Ho creato un semplice gioco di bowling in unity a tre D partendo da zero, utilizzando sei stili diversi, ognuno dei quali focalizzato su
 
 00:26.160 --> 00:27.760
-on a particular architecture.
+su una particolare architettura.
 
 00:27.780 --> 00:29.650
-We see some of them listed here.
+Ne vediamo alcuni elencati qui.
 
 00:29.670 --> 00:34.620
-Starting from the top, it's more of what feels natural to a beginning developer.
+Partendo dall'alto, si tratta di ciò che risulta più naturale a uno sviluppatore principiante.
 
 00:34.770 --> 00:41.220
-I call this the no architecture approach, and the flavor you see in unity is when you put code local
+Lo chiamo l'approccio senza architettura, e il sapore che si vede in unity è quando si mette il codice in locale
 
 00:41.220 --> 00:43.530
-to the three D object it relates to.
+all'oggetto tre D a cui si riferisce.
 
 00:43.530 --> 00:49.980
-So you'd put bowling ball code on the bowling ball, you'd put pin code on the pin when learning unity.
+Quindi si mette il codice della palla da bowling sulla palla da bowling, il codice del birillo sul birillo quando si impara unity.
 
 00:49.980 --> 00:51.830
-This feels like a natural way to do it.
+Questo sembra un modo naturale di farlo.
 
 00:51.840 --> 00:57.240
-One of the problems that arises is how do you get those different three D objects with their separate
+Uno dei problemi che si presentano è come ottenere questi diversi oggetti a tre D con i loro oggetti separati.
 
 00:57.240 --> 00:59.220
-code to talk well together?
+codice separati per dialogare bene insieme?
 
 00:59.220 --> 01:05.430
-Moving forward, probably someone with a little bit more experience would realize that having most of
+Andando avanti, probabilmente qualcuno con un po' di esperienza in più si renderebbe conto che avere la maggior parte di
 
 01:05.430 --> 01:13.200
-their code off on a separate empty game object somewhere with references to the pins and references
+del proprio codice su un oggetto di gioco vuoto e separato, con riferimenti ai perni e riferimenti
 
 01:13.200 --> 01:16.350
-to the bowling ball would be a next step up.
+alla palla da bowling sarebbe un passo successivo.
 
 01:16.350 --> 01:22.530
-This smooths out some of the communication because that empty go or empty game object can facilitate
+In questo modo si semplifica la comunicazione, perché l'oggetto di gioco vuoto può facilitare la comunicazione tra le due parti.
 
 01:22.650 --> 01:23.940
-a possible problem.
+un possibile problema.
 
 01:23.940 --> 01:30.450
-Here with this is that that empty game object doesn't know the exact lifecycle of each of the objects.
+In questo caso, l'oggetto gioco vuoto non conosce l'esatto ciclo di vita di ciascuno degli oggetti.
 
 01:30.450 --> 01:36.570
-It may have problems starting up the world, pausing and pausing gameplay and knowing when elements
+Potrebbe avere problemi nell'avviare il mondo, nel mettere in pausa il gameplay e nel sapere quando gli elementi
 
 01:36.570 --> 01:37.580
-have been destroyed.
+sono stati distrutti.
 
 01:37.590 --> 01:43.260
-A veteran developer or small team making this game may try a custom architecture.
+Uno sviluppatore veterano o un piccolo team che realizza questo gioco può provare un'architettura personalizzata.
 
 01:43.260 --> 01:48.870
-They'll use the good design principles and design patterns that they've learned and apply them to some
+Utilizzeranno i buoni principi di progettazione e i modelli di progettazione che hanno imparato e li applicheranno ad alcuni
 
 01:48.870 --> 01:50.060
-custom solution.
+soluzione personalizzata.
 
 01:50.070 --> 01:54.840
-In my experience, the majority of teams sit here using custom architectures.
+Secondo la mia esperienza, la maggior parte dei team che siedono qui utilizza architetture personalizzate.
 
 01:54.840 --> 01:57.210
-The benefits are that it's very flexible.
+I vantaggi sono che è molto flessibile.
 
 01:57.210 --> 02:02.730
-It does require a lot more knowledge and experience to be able to create such a solution.
+Per creare una soluzione di questo tipo sono necessarie molte più conoscenze ed esperienze.
 
 02:02.820 --> 02:08.000
-And problems that arise there include that you're reinventing the wheel for every project.
+I problemi che si presentano sono quelli di dover reinventare la ruota per ogni progetto.
 
 02:08.010 --> 02:08.940
-Fair enough.
+Mi sembra giusto.
 
 02:08.940 --> 02:13.560
-That we'll is customized to each solution, but if you're maintaining multiple projects, it can be
+La soluzione è personalizzata per ogni soluzione, ma se si gestiscono più progetti, può essere
 
 02:13.560 --> 02:16.980
-a bit more difficult to step in and out of each one of them.
+un po' più difficile entrare e uscire da ciascuno di essi.
 
 02:16.980 --> 02:23.040
-Also, when hiring new staff, you need to educate them on your particular flavor of architectural solution
+Inoltre, quando si assumono nuovi collaboratori, è necessario istruirli sulle soluzioni architettoniche che si vogliono adottare.
 
 02:23.040 --> 02:23.760
-per project.
+per progetto.
 
 02:23.760 --> 02:26.340
-Finally, there's using an established solution.
+Infine, c'è l'utilizzo di una soluzione consolidata.
 
 02:26.340 --> 02:31.260
-Taking a solution off the shelf and applying it to the project has a lot of benefits.
+Prendere una soluzione già pronta e applicarla al progetto ha molti vantaggi.
 
 02:31.260 --> 02:32.820
-We know it's been proven.
+Sappiamo che è stata provata.
 
 02:32.820 --> 02:36.900
-We know it's built on top of principles and patterns that work.
+Sappiamo che è costruito sulla base di principi e modelli che funzionano.
 
 02:36.900 --> 02:42.840
-However, it is less flexible and can be seen as verbose, maybe needing to add multiple classes or
+Tuttavia, è meno flessibile e può essere visto come prolisso, magari dovendo aggiungere più classi o
 
 02:42.840 --> 02:47.790
-quite a bit of code to accomplish simple things, especially in the early days of development.
+un bel po' di codice per realizzare cose semplici, soprattutto nei primi giorni di sviluppo.
 
 02:47.790 --> 02:53.280
-Also, each member of your team and anybody new that joins needs to know that particular framework.
+Inoltre, ogni membro del team e ogni nuovo arrivato deve conoscere quel particolare framework.
 
 02:53.280 --> 02:56.280
-Now, in one way that's easier because there's existing materials.
+Da un certo punto di vista è più facile, perché ci sono materiali già esistenti.
 
 02:56.280 --> 03:00.900
-They may already have the skills for a particular established framework that you choose, but that learning
+I ragazzi possono già possedere le competenze per un particolare quadro di riferimento che avete scelto, ma l'apprendimento
 
 03:00.900 --> 03:01.980
-curve is notable.
+curva di apprendimento è notevole.
 
 03:01.980 --> 03:07.980
-Now after decades of software development, many of the architectures that we see today have stood the
+Ora, dopo decenni di sviluppo del software, molte delle architetture che vediamo oggi hanno resistito alla
 
 03:07.980 --> 03:08.880
-test of time.
+prova del tempo.
 
 03:08.880 --> 03:16.110
-Some very popular ones include breaking the core functionality into three or four separate pieces and
+Alcune molto diffuse includono la suddivisione della funzionalità principale in tre o quattro parti separate e
 
 03:16.110 --> 03:17.850
-having those pieces communicate.
+far comunicare questi pezzi.
 
 03:17.970 --> 03:24.180
-The general idea is that each of them solves challenges that have specific needs, so it makes sense
+L'idea generale è che ciascuno di essi risolva sfide che hanno esigenze specifiche, quindi ha senso
 
 03:24.180 --> 03:30.570
-to group them some of the established architectures we know about our model view presenter Model, view,
+di raggruppare alcune delle architetture consolidate che conosciamo per il nostro presentatore Modello, vista,
 
 03:30.570 --> 03:38.280
-view, model and model view controller or MVC model View presenter organizes the code into three distinct
+view, model e model view controller o MVC model view presenter organizza il codice in tre distinti
 
 03:38.280 --> 03:38.940
-units.
+unità.
 
 03:38.940 --> 03:44.400
-The presenter sits in the middle and organizes and coordinates the other tiers.
+Il presentatore si colloca al centro e organizza e coordina gli altri livelli.
 
 03:44.670 --> 03:47.730
-In this case, the presenter receives input from the user.
+In questo caso, il presentatore riceve gli input dall'utente.
 
 03:47.730 --> 03:51.930
-Primarily, the presenter will coordinate the rendering out with the view.
+In primo luogo, il presentatore coordina il rendering con la vista.
 
 03:51.930 --> 03:57.540
-And when you have a high amount of user interaction and frequently updated views, this is one great
+Quando l'interazione con l'utente è elevata e le visualizzazioni vengono aggiornate di frequente, questa è un'ottima soluzione.
 
 03:57.540 --> 03:58.230
-solution.
+soluzione.
 
 03:58.230 --> 04:01.350
-The model view view model is quite similar.
+Il modello vista modello è abbastanza simile.
 
 04:01.350 --> 04:07.680
-It's separated into three concerns or three areas of code, and here the view model sits in the middle.
+È separato in tre preoccupazioni o tre aree di codice, e qui il modello di vista si trova nel mezzo.
 
 04:07.680 --> 04:12.180
-The view model handles the input and coordinate the rendering with the view.
+Il modello di vista gestisce l'input e coordina il rendering con la vista.
 
 04:12.180 --> 04:17.370
-And it's also ideal when there's user interaction and frequent updates to the View.
+È ideale anche quando c'è interazione con l'utente e frequenti aggiornamenti della vista.
 
 04:17.370 --> 04:19.530
-And MVC looks quite similar.
+L'aspetto di MVC è molto simile.
 
 04:19.530 --> 04:22.620
-Here we have a controller as the middle object.
+Qui abbiamo un controllore come oggetto centrale.
 
 04:22.620 --> 04:26.070
-In strict MVC, it's the controller that handles the input.
+In MVC strict, è il controllore a gestire l'input.
 
 04:26.070 --> 04:32.190
-It coordinates pulling data from the model, passing on what is needed to render out the view.
+Coordina l'estrazione dei dati dal modello, passando ciò che è necessario per il rendering della vista.
 
 04:32.190 --> 04:37.740
-And it's ideal when you have multiple models and multiple views to coordinate that complexity.
+È ideale quando si hanno più modelli e più viste per coordinare questa complessità.
 
 04:37.740 --> 04:42.060
-Ultimately, this set of established architectures are quite similar.
+In definitiva, questo insieme di architetture consolidate sono abbastanza simili.
 
 04:42.060 --> 04:48.210
-They all seek out to separate the concerns of your project to help improve the overall quality of life
+Tutte cercano di separare le preoccupazioni del progetto per contribuire a migliorare la qualità della vita complessiva.
 
 04:48.210 --> 04:50.580
-while working and maintaining on the project.
+durante il lavoro e la manutenzione del progetto.
 
 04:50.580 --> 04:55.740
-Quite crucially, they separate out the UI or view from the data.
+È fondamentale separare l'interfaccia utente o la vista dai dati.
 
 04:55.740 --> 04:57.810
-Now the differences here are quite subtle.
+Le differenze sono piuttosto sottili.
 
 04:57.810 --> 05:03.270
-Of course we have the naming is a bit different, but also the behaviours which we'd only really see
+Naturalmente la denominazione è un po' diversa, ma anche i comportamenti che si possono vedere solo in realtà
 
 05:03.270 --> 05:06.590
-at the implementation level are unique to each of them as well.
+a livello di implementazione sono unici per ciascuno di essi.
 
 05:06.600 --> 05:08.790
-For now, let's take a deeper look at MVC.
+Per ora, diamo uno sguardo più approfondito a MVC.
 
 05:09.110 --> 05:12.440
-We'll choose that as our favorite of these patterns and move forward.
+Lo sceglieremo come modello preferito e andremo avanti.
 
 05:12.470 --> 05:18.980
-Model View Controller is an architecture that separates your code out into those three primary concerns.
+Model View Controller è un'architettura che separa il codice da questi tre aspetti principali.
 
 05:18.980 --> 05:26.420
-To recap, the model handles the runtime data, the view handles the UI and the input from the user.
+Ricapitolando, il modello gestisce i dati di runtime, la vista gestisce l'interfaccia utente e gli input dell'utente.
 
 05:26.450 --> 05:30.260
-Also rendering out audio visuals to the user as well.
+Inoltre, rende all'utente anche le immagini audio.
 
 05:30.260 --> 05:31.880
-And the controller is the glue.
+Il controller è il collante.
 
 05:31.880 --> 05:36.530
-It sits between everything, coordinates things and has the high level game logic.
+Si colloca tra tutto, coordina le cose e ha la logica di gioco di alto livello.
 
 05:36.530 --> 05:43.460
-Now, special note here is that MVC typically has the controller manage the input from the user.
+Una nota particolare è che in genere MVC fa sì che il controllore gestisca l'input dell'utente.
 
 05:43.460 --> 05:49.880
-In my approach with MVC and many others that use unity, we have the view handle the input.
+Nel mio approccio con MVC e in molti altri che utilizzano unity, è la vista a gestire l'input.
 
 05:49.880 --> 05:55.690
-That's a subtle difference that has to do with how unity relates with input in a traditional sense.
+È una differenza sottile che ha a che fare con il modo in cui unity si relaziona con gli input in senso tradizionale.
 
 05:55.700 --> 06:01.970
-Often we think of the view being mono behaviors, monitor behaviors, help handle input, so it's a
+Spesso pensiamo che la vista sia un comportamento mono, che monitorizzi i comportamenti, che aiuti a gestire l'input, quindi è una
 
 06:01.970 --> 06:02.600
-good fit.
+buona misura.
 
 06:02.600 --> 06:09.470
-So a slight variation here is that we'll have the view, handle the input and pass that on to the controller
+Una piccola variazione è che la vista gestisce gli input e li passa al controllore.
 
 06:09.470 --> 06:12.080
-to actually process and decide what that means.
+per elaborare e decidere cosa significa.
 
 06:12.080 --> 06:18.290
-Today's modern games are often connected to back end services or even multiplayer with other players
+I giochi moderni sono spesso collegati a servizi di back end o addirittura al multiplayer con altri giocatori.
 
 06:18.290 --> 06:19.010
-live.
+in diretta.
 
 06:19.160 --> 06:21.260
-This introduces a service layer.
+Questo introduce un livello di servizio.
 
 06:21.260 --> 06:27.470
-So let's take what we've discussed with MVC and add one more layer, a dedicated service layer that
+Prendiamo quindi ciò che abbiamo discusso con MVC e aggiungiamo un ulteriore livello, un livello di servizio dedicato che
 
 06:27.470 --> 06:30.860
-will deal with external data that's different than the model.
+si occuperà di dati esterni diversi da quelli del modello.
 
 06:30.860 --> 06:36.260
-Now, during the rest of the course, I may use MVC and MVCs interchangeably.
+Nel resto del corso, potrò usare MVC e MVC in modo intercambiabile.
 
 06:36.260 --> 06:43.070
-I mean them to be the same solution, the same basic plan with maybe there's a service layer or maybe
+Intendo dire che si tratta della stessa soluzione, dello stesso progetto di base con magari un livello di servizio o forse
 
 06:43.070 --> 06:43.640
-there's not.
+non c'è.
 
 06:43.640 --> 06:47.150
-Depending if your game needs it, you can consider that layer optional.
+A seconda che il vostro gioco ne abbia bisogno, potete considerare questo livello opzionale.
 
 06:47.150 --> 06:53.540
-Overall, using an MVC established architecture has many features and benefits.
+Nel complesso, l'utilizzo di un'architettura MVC ha molte caratteristiche e vantaggi.
 
 06:53.540 --> 06:59.180
-Established architectures are proven built on those principles and patterns we've seen with success.
+Le architetture consolidate sono costruite su principi e schemi che abbiamo visto con successo.
 
 06:59.180 --> 07:04.160
-They're language agnostic, so in theory you could port them to different languages and platforms if
+Sono agnostiche rispetto ai linguaggi, quindi in teoria è possibile portarle su linguaggi e piattaforme diverse se
 
 07:04.160 --> 07:06.650
-your workload expands to different technologies.
+il carico di lavoro si espande a diverse tecnologie.
 
 07:06.650 --> 07:12.350
-Now, while there is a learning curve, ultimately using an architecture like this leads to faster development.
+Sebbene ci sia una curva di apprendimento, l'utilizzo di un'architettura di questo tipo porta a uno sviluppo più rapido.
 
 07:12.350 --> 07:17.300
-And because we've seen the gross majority of the lifespan of a project is spent in maintenance, we
+E poiché abbiamo visto che la maggior parte della durata di vita di un progetto viene spesa per la manutenzione, noi
 
 07:17.300 --> 07:22.010
-will really be able to do that maintenance more quickly and more efficiently within architecture.
+saremo in grado di eseguire la manutenzione in modo più rapido ed efficiente all'interno dell'architettura.
 
 07:22.010 --> 07:30.320
-Furthermore, an MVCs project is more readable, more testable, more decoupled in how these different
+Inoltre, un progetto MVC è più leggibile, più testabile, più disaccoppiato per quanto riguarda il modo in cui questi diversi
 
 07:30.320 --> 07:31.850
-concerns communicate.
+comunicano.
 
 07:31.850 --> 07:37.550
-We have that dedicated service layer if we need it on our project, which quite often we do, and there's
+Abbiamo un livello di servizio dedicato, se ne abbiamo bisogno nel nostro progetto, cosa che accade spesso, e c'è
 
 07:37.550 --> 07:44.060
-workflow benefits as well as our projects all sit on version control and we collaborate by committing
+vantaggi del flusso di lavoro e i nostri progetti si trovano tutti sul controllo di versione e collaboriamo facendo il commit
 
 07:44.060 --> 07:50.330
-to version control, we'll see less friction of commits when we use an established architecture purely
+al controllo di versione, vedremo meno attrito nei commit quando usiamo un'architettura consolidata puramente
 
 07:50.330 --> 07:56.960
-because it separates our code base out into smaller snippets, and that means that there's less probability
+perché separa la nostra base di codice in frammenti più piccoli, e questo significa che c'è meno probabilità
 
 07:56.960 --> 07:57.890
-of conflicts.
+di conflitti.
 
 07:57.890 --> 08:03.080
-Now it's worth noting that there is healthy debate, particularly in game development and the unity
+Vale la pena notare che c'è un sano dibattito, in particolare nello sviluppo di videogiochi e nell'unità di misura.
 
 08:03.080 --> 08:06.470
-community, against using something like MVC.
+contro l'uso di qualcosa come MVC.
 
 08:06.500 --> 08:13.100
-A few popular arguments are that it's too rigid, that this is challenging to follow and apply and have
+Alcune delle argomentazioni più diffuse sono che è troppo rigido, che è difficile da seguire e da applicare e che ha
 
 08:13.100 --> 08:14.930
-the discipline into your project.
+la disciplina nel vostro progetto.
 
 08:14.930 --> 08:19.490
-Now, a response in defense of MVC is that that learning curve is worth the effort.
+Ora, una risposta in difesa di MVC è che la curva di apprendimento vale lo sforzo.
 
 08:19.490 --> 08:24.410
-Furthermore, I mentioned that in the mind of developers, we often think that life is all about adding
+Inoltre, ho accennato al fatto che nella mente degli sviluppatori spesso si pensa che la vita sia tutta una questione di aggiunte.
 
 08:24.410 --> 08:28.580
-features and we forget that real significant stage of maintenance.
+funzionalità e dimentichiamo che la vera fase importante è la manutenzione.
 
 08:28.670 --> 08:34.850
-So here it may feel easier to use something else, but MVC ultimately creates better workflow.
+In questo caso può sembrare più facile usare qualcos'altro, ma MVC in definitiva crea un flusso di lavoro migliore.
 
 08:34.850 --> 08:41.600
-Another argument is that unity itself doesn't feature data binding, and without data binding, we can't
+Un'altra argomentazione è che unity non è dotato di data binding, e senza data binding non si può
 
 08:41.600 --> 08:45.020
-establish the patterns of architecture that are meant for MVC.
+stabilire i modelli di architettura che sono destinati a MVC.
 
 08:45.020 --> 08:50.870
-While certainly using data binding can make it easier to apply this, there's alternative solutions
+Sebbene l'uso del data binding possa rendere più facile l'applicazione di questi schemi, esistono soluzioni alternative.
 
 08:50.870 --> 08:52.250
-and we'll see some of those.
+e ne vedremo alcune.
 
 08:52.340 --> 08:57.980
-In particular, the observable class which I talked about in an earlier section, is how we're going
+In particolare, la classe osservabile, di cui ho parlato in una sezione precedente, è il modo in cui
 
 08:57.980 --> 08:59.870
-to solve that within our architecture.
+per risolvere questo problema all'interno della nostra architettura.
 
 08:59.870 --> 09:03.830
-Here we get something like binding pretty easy off the shelf.
+Qui otteniamo qualcosa di simile al binding in modo piuttosto semplice.
 
 09:03.830 --> 09:10.580
-Another comment is that because the communication is decoupled and passes through more steps that using
+Un'altra osservazione è che, poiché la comunicazione è disaccoppiata e passa attraverso più passaggi, l'uso di
 
 09:10.580 --> 09:14.000
-an established architecture like MVC is not optimized.
+un'architettura consolidata come MVC non è ottimizzato.
 
 09:14.000 --> 09:18.110
-And we know that gaming is a type of software that needs optimization.
+E sappiamo che il gioco è un tipo di software che necessita di ottimizzazione.
 
 09:18.110 --> 09:20.660
-I could not agree more with this assessment.
+Non potrei essere più d'accordo con questa valutazione.
 
 09:20.660 --> 09:27.530
-However, I would say that the bulk of your work as a team is not necessarily on the narrow parts of
+Tuttavia, direi che il grosso del vostro lavoro come team non è necessariamente sulle parti più ristrette del software.
 
 09:27.530 --> 09:29.840
-capturing input and rendering graphics.
+catturare gli input e renderizzare la grafica.
 
 09:29.840 --> 09:36.980
-One simple way to address this is to have the larger metagame of your menus, your social features,
+Un modo semplice per risolvere questo problema è quello di avere un metagame più ampio dei vostri menu, le vostre funzioni sociali,
 
 09:36.980 --> 09:44.240
-high score tables, inventory management, all the complexity to UI have that sit within an established
+le tabelle dei punteggi più alti, la gestione dell'inventario, tutta la complessità dell'interfaccia utente, all'interno di un sistema di
 
 09:44.240 --> 09:50.060
-framework and your core gameplay which needs the benefits of a highly optimized pipeline that could
+e il vostro gameplay di base che ha bisogno dei benefici di una pipeline altamente ottimizzata che possa
 
 09:50.060 --> 09:54.560
-sit outside of MVC communicating in a more coupled and more quick fashion.
+al di fuori dell'MVC, comunicando in modo più rapido e accoppiato.
 
 09:54.560 --> 09:56.360
-That's an excellent hybrid solution.
+È un'ottima soluzione ibrida.
 
 09:56.360 --> 10:01.940
-And finally, there's a criticism that using an established architecture means that every new button
+Infine, si critica il fatto che l'utilizzo di un'architettura consolidata significhi che ogni nuovo pulsante
 
 10:01.940 --> 10:07.940
-you add that you have to wire up, it's too verbose, there's too many steps involved, too many classes.
+che si aggiunge e che si deve cablare, è troppo prolisso, ci sono troppi passaggi, troppe classi.
 
 10:07.970 --> 10:08.980
-Crisis to create.
+Crisi da creare.
 
 10:08.980 --> 10:11.560
-We'll see a little bit more on that in a future slide.
+Vedremo un po' di più su questo aspetto in una prossima diapositiva.
 
 10:11.560 --> 10:12.870
-I'd say that's true.
+Direi che è vero.
 
 10:12.880 --> 10:19.540
-You need to have around four or five steps instead of two or three steps to wire UI into your game.
+Per inserire l'interfaccia utente nel gioco è necessario effettuare circa quattro o cinque passaggi invece di due o tre.
 
 10:19.540 --> 10:24.940
-In that specific example, especially in the beginning, doing a couple extra steps can feel tedious,
+In questo esempio specifico, soprattutto all'inizio, fare un paio di passaggi in più può risultare noioso,
 
 10:24.940 --> 10:30.070
-but ultimately this is a symptom of the benefit of separating your concerns out.
+ma alla fine questo è un sintomo del vantaggio di separare le preoccupazioni.
 
 10:30.070 --> 10:32.980
-During the initial 20% of adding features.
+Durante il 20% iniziale di aggiunta di funzionalità.
 
 10:32.980 --> 10:38.680
-You will feel this and it takes some getting used to, but the benefits really apply to that larger
+Lo sentirete e ci vorrà un po' di tempo per abituarsi, ma i vantaggi si applicano davvero a questo periodo più ampio.
 
 10:38.680 --> 10:40.780
-80% of maintaining that code base.
+80% del mantenimento della base di codice.
 
 10:40.780 --> 10:45.580
-Now that things are laid out quite separately, you'll find that refactor does happen with more confidence.
+Ora che le cose sono disposte in modo separato, scoprirete che il refactor avviene con maggiore sicurezza.
 
 10:45.580 --> 10:50.770
-Bugs are less likely to occur and when they occur, solving them is more easy and straightforward.
+È meno probabile che si verifichino bug e, quando si verificano, la loro risoluzione è più semplice e diretta.
 
 10:50.770 --> 10:52.900
-Some reference links will be included here.
+Qui saranno inclusi alcuni link di riferimento.
 
 10:52.900 --> 10:57.550
-If you want to learn a bit more about the perspective, you can take a look and I encourage you to do
+Se volete saperne un po' di più sulla prospettiva, potete dare un'occhiata e vi invito a farlo
 
 10:57.550 --> 10:57.940
-so.
+quindi.
 
 10:57.940 --> 11:01.780
-Overall, each software development tool has pros and cons.
+Nel complesso, ogni strumento di sviluppo software ha pro e contro.
 
 11:01.780 --> 11:08.650
-I demonstrate in this course that learning and established architecture like MVC has benefits that outweigh
+In questo corso dimostro che l'apprendimento di un'architettura consolidata come MVC presenta vantaggi che superano
 
 11:08.650 --> 11:09.520
-those drawbacks.
+gli svantaggi.
 
 11:09.520 --> 11:13.900
-Let's learn more and VC's starts with the separation of concerns.
+Impariamo di più e il VC inizia con la separazione delle preoccupazioni.
 
 11:13.900 --> 11:15.160
-Let's recap.
+Ricapitoliamo.
 
 11:15.160 --> 11:21.100
-The model handles the runtime data, the controller sits in the middle and coordinates communication.
+Il modello gestisce i dati di runtime, il controllore sta nel mezzo e coordina la comunicazione.
 
 11:21.100 --> 11:23.710
-It also contains most of the game logic.
+Contiene anche la maggior parte della logica di gioco.
 
 11:23.710 --> 11:29.410
-The view handles the UI and input from the user, as well as rendering out graphics and audio.
+La vista gestisce l'interfaccia utente e gli input dell'utente, oltre a renderizzare la grafica e l'audio.
 
 11:29.560 --> 11:33.510
-And the service layer handles any external data calls.
+Il livello di servizio gestisce le chiamate ai dati esterni.
 
 11:33.520 --> 11:39.640
-For example, if your game collaborates with a back end system for submitting high scores, the conventions
+Ad esempio, se il gioco collabora con un sistema di back end per l'invio dei punteggi più alti, le convenzioni
 
 11:39.640 --> 11:45.490
-of using MVCs are to be vigilant with the references and communication between your concerns.
+dell'uso di MVC è di essere attenti ai riferimenti e alla comunicazione tra i vari progetti.
 
 11:45.490 --> 11:47.850
-You want to keep those concerns separate.
+Si vogliono tenere separati i problemi.
 
 11:47.860 --> 11:52.720
-The idea is that each concern is basically meant to do very different things.
+L'idea è che ogni preoccupazione sia destinata a fare cose molto diverse.
 
 11:52.720 --> 11:55.360
-And so you want to isolate those changes.
+E quindi si vogliono isolare queste modifiche.
 
 11:55.360 --> 11:57.520
-Take a look at this communication table.
+Date un'occhiata a questa tabella di comunicazione.
 
 11:57.520 --> 12:03.670
-There's a lot of information there, but the main takeaway is that the controller sends and receives
+Ci sono molte informazioni, ma la cosa più importante è che il controllore invia e riceve
 
 12:03.670 --> 12:05.380
-most of the communication.
+la maggior parte delle comunicazioni.
 
 12:05.380 --> 12:09.760
-We want the model to be pretty dumb knowing only about data stuff.
+Vogliamo che il modello sia piuttosto stupido e che conosca solo i dati.
 
 12:09.760 --> 12:14.740
-We want the view itself to be pretty dumb handling only UI and input stuff.
+Vogliamo che la vista stessa sia piuttosto stupida, gestendo solo l'interfaccia utente e gli input.
 
 12:14.740 --> 12:19.870
-The fact that they don't openly communicate directly with each other is a plus.
+Il fatto che non comunichino apertamente tra loro è un vantaggio.
 
 12:19.870 --> 12:24.820
-And for most communications we see that the service behaves like the model.
+E per la maggior parte delle comunicazioni vediamo che il servizio si comporta come il modello.
 
 12:24.820 --> 12:28.180
-It too is meant to be dumb and handle just its own data.
+Anch'esso è pensato per essere muto e gestire solo i propri dati.
 
 12:28.180 --> 12:33.280
-Now, when getting new into one of these now, when beginning to learn any established architecture
+Ora, quando si entra per la prima volta in una di queste, quando si inizia a imparare una qualsiasi architettura consolidata
 
 12:33.280 --> 12:39.790
-like MVCs and VCs offers some flexibility in how you communicate with the different concerns.
+come gli MVC e i VC offre una certa flessibilità nel modo in cui si comunica con i diversi problemi.
 
 12:39.790 --> 12:44.590
-A first reaction when people are getting into an established framework is, Wow, it's verbose.
+La prima reazione di chi si avvicina a un framework consolidato è: "Wow, è prolisso".
 
 12:44.590 --> 12:49.690
-I need to do quite a bit of steps in order to accomplish something as simple as a UI button.
+Devo fare un bel po' di passi per realizzare qualcosa di semplice come un pulsante dell'interfaccia utente.
 
 12:49.690 --> 12:50.140
-Click.
+Clic.
 
 12:50.140 --> 12:52.990
-Let's see the range of complexity here first.
+Vediamo prima la gamma di complessità.
 
 12:52.990 --> 12:59.100
-If we had a no architecture approach and we were not using MVCs, how would we listen to a button?
+Se avessimo un approccio senza architettura e non usassimo MVC, come ascolteremmo un pulsante?
 
 12:59.110 --> 13:05.440
-Imagine if we have a click the button game and by clicking the button the text updates to you win.
+Immaginiamo di avere un gioco "click the button" e che cliccando sul pulsante il testo si aggiorni su "hai vinto".
 
 13:05.470 --> 13:06.940
-This is a very simple game.
+Questo è un gioco molto semplice.
 
 13:06.940 --> 13:09.960
-We could get away with two steps to the process.
+Potremmo fare a meno di due fasi del processo.
 
 13:09.970 --> 13:16.480
-Assuming we're using Unity UI, we would listen to the on click event on that UI and we would handle
+Supponendo di utilizzare Unity UI, ascolteremmo l'evento on-click su tale interfaccia e gestiremmo
 
 13:16.480 --> 13:18.040
-that with some custom code.
+con del codice personalizzato.
 
 13:18.040 --> 13:19.290
-That's two steps.
+Sono due passi.
 
 13:19.300 --> 13:25.720
-Now using an established architecture like MVCs, we see that it's going to take some more steps.
+Ora, utilizzando un'architettura consolidata come gli MVC, vediamo che ci vorranno altri passi.
 
 13:25.720 --> 13:30.760
-This is because these concerns have been separated out in the most verbose flavor.
+Questo perché queste preoccupazioni sono state separate nel modo più verboso.
 
 13:30.760 --> 13:33.370
-We'll see about five steps to handle that button.
+Vedremo circa cinque passaggi per gestire questo pulsante.
 
 13:33.370 --> 13:33.880
-Click.
+Fare clic.
 
 13:33.880 --> 13:41.140
-That's the view button sending out a message, the controller handling it, updating the model, the
+Il pulsante della vista invia un messaggio, il controllore lo gestisce, aggiorna il modello, il controllore
 
 13:41.140 --> 13:42.820
-model passing out a message.
+modello che invia un messaggio.
 
 13:42.820 --> 13:49.000
-Hey, I've been updated and the view getting that information so that it can update the view itself.
+Ehi, sono stato aggiornato e la vista riceve queste informazioni per poter aggiornare la vista stessa.
 
 13:49.000 --> 13:54.130
-You'll also see in this list I interchange whether an event is used or a command.
+Vedrete anche che in questo elenco cambio se viene utilizzato un evento o un comando.
 
 13:54.130 --> 13:56.970
-That distinction will see a bit more in the code.
+Questa distinzione si vedrà un po' di più nel codice.
 
 13:56.980 --> 14:02.740
-Ultimately, what I'd recommend to teams is to choose one of these flavors and just go with it.
+In definitiva, quello che raccomando ai team è di scegliere una di queste varianti e di seguirla.
 
 14:02.740 --> 14:09.610
-For example, consistently applying the number five for the beginning of your development, get a feel
+Ad esempio, applicando coerentemente il numero cinque all'inizio dello sviluppo, si può avere un'impressione
 
 14:09.610 --> 14:10.330
-for that.
+per questo.
 
 14:10.330 --> 14:16.630
-If you do want to shorten the process from 5 to 4 or some other amount of steps, that's up to you to
+Se volete accorciare il processo da 5 a 4 o a un altro numero di passi, sta a voi decidere di farlo.
 
 14:16.630 --> 14:17.290
-decide.
+decidere.
 
 14:17.290 --> 14:23.020
-But remember being consistent in your approach and more decoupled in your approach pays dividends.
+Ma ricordate che essere coerenti nel vostro approccio e più disaccoppiati nel vostro approccio paga.
 
 14:23.050 --> 14:28.540
-Now, it can be a little confusing that we have some parts of this process are prescriptive that we
+Ora, può essere un po' confuso il fatto che alcune parti di questo processo siano prescrittive e che noi
 
 14:28.540 --> 14:32.500
-must follow, and there's also flexibility like these different choices.
+che dobbiamo seguire, e ci sono anche parti flessibili, come queste scelte diverse.
 
 14:32.500 --> 14:38.380
-As you're getting used to using MVCs, I'd say don't worry too much about getting it perfect.
+Visto che ci si sta abituando a usare gli MVC, direi di non preoccuparsi troppo di renderli perfetti.
 
 14:38.560 --> 14:44.550
-It's all a learning process and along the way you'll see which flavor works best for you.
+Si tratta di un processo di apprendimento e, strada facendo, capirete qual è la soluzione migliore per voi.
 
 14:44.560 --> 14:47.470
-Another bonus about this is later in the project.
+Un altro bonus a questo proposito si trova più avanti nel progetto.
 
 14:47.470 --> 14:54.040
-If you decide that you want to change your approach, it's going to be much easier to refactor within
+Se decidete di cambiare il vostro approccio, sarà molto più facile rifattorizzare all'interno di
 
 14:54.040 --> 14:55.840
-MVCs than prior.
+MVC rispetto a quelli precedenti.
 
 14:55.840 --> 15:01.270
-Even if you have some subtle differences to how you've applied it, the patterns themselves provide
+Anche se ci sono delle sottili differenze nel modo in cui sono stati applicati, gli schemi stessi forniscono
 
 15:01.270 --> 15:07.750
-a consistency that was maybe missing from your previous approaches for the purposes of our discussion.
+una coerenza che forse mancava agli approcci precedenti ai fini della nostra discussione.
 
 15:07.810 --> 15:14.890
-We're going to elect the MVC or MVC as our favorite framework to move forward and see how this applies
+Sceglieremo l'MVC o MVC come framework preferito per andare avanti e vedere come questo si applica
 
 15:14.890 --> 15:17.020
-to unity to get a good feel for it.
+all'unità per avere una buona percezione.
 
 15:17.020 --> 15:22.630
-So let's choose a framework as part of research For this course, I looked at a lot of different unity
+Scegliamo un framework come parte della ricerca Per questo corso, ho esaminato molti diversi modelli di unity.
 
 15:22.630 --> 15:23.410
-approaches.
+approcci.
 
 15:23.410 --> 15:29.530
-Some of them live in a description in a blog post from a development team, but don't have any code
+Alcuni di essi sono descritti in un post sul blog di un team di sviluppo, ma non hanno alcun codice.
 
 15:29.530 --> 15:31.340
-that we can get and hang on to.
+che possiamo ottenere e a cui possiamo aggrapparci.
 
 15:31.360 --> 15:37.870
-However, there are many bespoke, established architectures that we can take advantage of specifically
+Tuttavia, ci sono molte architetture su misura e consolidate di cui possiamo approfittare specificamente
 
 15:37.870 --> 15:38.680
-for unity.
+per l'unità.
 
 15:38.800 --> 15:41.710
-Some of the ones that I used and played with are here.
+Alcune di quelle che ho usato e con cui ho giocato sono qui.
 
 15:41.710 --> 15:47.530
-If, after completing this entire course you want to go back and try one of these frameworks, I invite
+Se dopo aver completato l'intero corso volete tornare indietro e provare uno di questi framework, vi invito a
 
 15:47.530 --> 15:48.450
-you to do that.
+a farlo.
 
 15:48.460 --> 15:53.980
-The principles will learn in the rest of the course here we'll apply to whatever MVC approach you'd
+I principi che apprenderete nel resto del corso saranno applicati a qualsiasi approccio MVC vogliate adottare.
 
 15:53.980 --> 15:54.790
-like to do.
+vorrete fare.
 
 15:54.820 --> 15:57.880
-Two of them on the list I created here myself.
+Due di questi sono nell'elenco che ho creato io stesso.
 
 15:57.880 --> 16:08.230
-The You MVC is by RC I created years ago and the mini MVCs I created just for the purposes of this course.
+L'MVC You è un RC che ho creato anni fa, mentre i mini MVC li ho creati solo per questo corso.
 
 16:08.230 --> 16:11.170
-And we'll learn much more about how and why I recommend that.
+E scopriremo molto di più su come e perché lo consiglio.
 
 16:11.170 --> 16:17.950
-Now a special note about why MVC solutions need to be massaged a bit when you bring them into the unity
+Ora una nota speciale sul perché le soluzioni MVC devono essere un po' massificate quando le si porta in unity
 
 16:17.950 --> 16:21.460
-world is that unity already has a bespoke structure.
+è che unity ha già una struttura su misura.
 
 16:21.460 --> 16:24.520
-We talked a little bit about that in an earlier section.
+Ne abbiamo parlato un po' in una sezione precedente.
 
 16:24.520 --> 16:30.310
-That unity is based on scenes and game objects and that there's a way that the communication between
+Che unity è basato su scene e oggetti di gioco e che c'è un modo in cui la comunicazione fra
 
 16:30.310 --> 16:34.180
-components and game objects happens with inside Unity.
+componenti e oggetti di gioco avvenga all'interno di Unity.
 
 16:34.180 --> 16:39.700
-It's important to note that unity itself is not built on an MVC structure.
+È importante notare che Unity stesso non è costruito su una struttura MVC.
 
 16:39.880 --> 16:45.220
-Unity has areas of concern that collapse these three into one area.
+Unity ha delle aree di interesse che fanno collassare queste tre in un'unica area.
 
 16:45.220 --> 16:52.420
-For example, probably the single most important class that you'll utilize in any unity project is mono
+Per esempio, probabilmente la classe più importante che utilizzerete in qualsiasi progetto unity è mono
 
 16:52.420 --> 16:53.200
-behavior.
+comportamento.
 
 16:53.200 --> 16:55.660
-Particularly as a beginning developer.
+Soprattutto se si è uno sviluppatore principiante.
 
 16:55.660 --> 16:59.290
-Everything you do sits on a subclass of mono behavior.
+Tutto ciò che si fa poggia su una sottoclasse di mono behavior.
 
 16:59.290 --> 17:03.400
-Just using mono behavior and example, we can see that unity collapses.
+Usando solo mono behavior e un esempio, possiamo vedere che unity collassa.
 
 17:03.400 --> 17:05.260
-Lots of different concerns there.
+Ci sono molte preoccupazioni diverse.
 
 17:05.260 --> 17:10.870
-It behaves somewhat like a model having properties like enabled tag and transform.
+Si comporta in qualche modo come un modello, con proprietà come tag enabled e transform.
 
 17:10.870 --> 17:17.320
-It behaves something like a view doing all sorts of input loops and graphics rendering from withinside
+Si comporta come una vista che esegue ogni sorta di loop di input e rendering grafico dall'interno.
 
 17:17.320 --> 17:21.220
-the mono behavior lifecycle and it behaves something like a controller.
+del ciclo di vita del comportamento mono e si comporta come un controllore.
 
 17:21.220 --> 17:26.950
-It has moments you can captur predictably for a Wake Start update many, many more.
+Ha momenti che si possono catturare in modo prevedibile per un aggiornamento di Wake Start e molti altri.
 
 17:26.980 --> 17:32.440
-It has the concept of serialized reference which helps you address and reach different concerns you
+Ha il concetto di riferimento serializzato che aiuta ad affrontare e raggiungere diversi problemi.
 
 17:32.440 --> 17:34.480
-may have outside of the monarch behavior.
+che si possono avere al di fuori del comportamento del monarca.
 
 17:34.480 --> 17:39.880
-And as we go through the rest of the course and you see bringing MVC concepts into unity, this is something
+E man mano che si procede con il resto del corso e che si introducono i concetti di MVC nell'unità, questo è qualcosa di
 
 17:39.880 --> 17:40.900
-to keep in mind.
+da tenere a mente.
 
 17:40.900 --> 17:47.440
-Unity, like any specific platform, has unique features, and we have to bring these theoretical concepts
+Unity, come ogni piattaforma specifica, ha caratteristiche uniche, e dobbiamo portare questi concetti teorici in un'unica piattaforma.
 
 17:47.440 --> 17:49.870
-of architecture into the real world of unity.
+di architettura nel mondo reale di Unity.
 
 17:49.870 --> 17:55.510
-Some resources you can take a look at here and they'll be linked below include the execution order of
+Alcune risorse che potete consultare qui e che saranno linkate di seguito includono l'ordine di esecuzione di
 
 17:55.510 --> 18:00.340
-all the different events amount of behavior has, and then of course, the documentation script reference
+tutti i diversi eventi che caratterizzano il comportamento e, naturalmente, il riferimento allo script di documentazione
 
 18:00.340 --> 18:01.690
-form on the behavior itself.
+sul comportamento stesso.
 
 18:01.690 --> 18:06.880
-Now, as we're thinking of any architecture and bring it into unity, or if we're creating a custom
+Ora, se pensiamo a qualsiasi architettura e la portiamo in unity, o se creiamo un comportamento personalizzato
 
 18:06.880 --> 18:09.880
-solution ourselves, there are some considerations.
+soluzione personalizzata, ci sono alcune considerazioni da fare.
 
 18:09.880 --> 18:13.930
-Does the framework or architecture have unity specific features?
+Il framework o l'architettura hanno caratteristiche specifiche per l'unità?
 
 18:13.930 --> 18:16.060
-What's the role of monarch behaviors?
+Qual è il ruolo dei comportamenti del monarca?
 
 18:16.060 --> 18:19.840
-They're so important in the unity world, but come with some pros and cons.
+Sono molto importanti nel mondo di unity, ma hanno alcuni pro e contro.
 
 18:19.840 --> 18:22.570
-Does the architecture use monarch behaviors?
+L'architettura utilizza i comportamenti del monarca?
 
 18:22.570 --> 18:28.270
-How does the architecture handle different concerns and communication between those concerns?
+Come gestisce l'architettura i diversi problemi e la comunicazione tra di essi?
 
 18:28.270 --> 18:33.370
-And speaking of that, what's the level of rigidity versus flexibility overall?
+A questo proposito, qual è il livello di rigidità rispetto alla flessibilità?
 
 18:33.370 --> 18:36.520
-In this section, we've got a lot of new info.
+In questa sezione abbiamo molte nuove informazioni.
 
 18:36.520 --> 18:42.820
-We've seen how the foundation of design principles and design patterns comes into the larger world of
+Abbiamo visto come le basi dei principi di progettazione e dei modelli di progettazione entrino nel mondo più ampio di
 
 18:42.820 --> 18:43.900
-architectures.
+architetture.
 
 18:44.140 --> 18:49.660
-We've seen some of the unique challenges with bringing an established architecture into your team and
+Abbiamo visto alcune delle sfide uniche che si presentano quando si porta un'architettura consolidata all'interno del proprio team e
 
 18:49.660 --> 18:51.610
-also some of the benefits as well.
+anche alcuni dei vantaggi.
 
 18:51.610 --> 18:57.820
-And we've seen that unity, like any platform, has its own idiosyncrasies, its own specific features
+E abbiamo visto che unity, come ogni piattaforma, ha le sue idiosincrasie, le sue caratteristiche specifiche e i suoi vantaggi.
 
 18:57.820 --> 19:03.520
-and limitations and whatever architectural choice we want, we want it to fit well in the unity world.
+e limitazioni e qualsiasi scelta architetturale vogliamo, vogliamo che si adatti bene al mondo unity.
 
 19:03.610 --> 19:04.720
-That's it for now.
+Per ora è tutto.
 
 19:04.720 --> 19:05.470
-Thanks.
+Grazie.
