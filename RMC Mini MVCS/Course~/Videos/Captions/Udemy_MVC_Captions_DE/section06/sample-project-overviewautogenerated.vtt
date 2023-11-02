@@ -1,0 +1,181 @@
+WEBVTT
+
+00:00.560 --> 00:03.770
+The mini MVCs sample projects.
+
+00:04.190 --> 00:11.210
+The sample code for learning more about mini MVCs is included in the package for the framework itself.
+
+00:11.480 --> 00:14.690
+It's available freely on Git for download and unity.
+
+00:15.110 --> 00:21.410
+To import those samples, open the package manager, select the mini MVCs package and you'll see the
+
+00:21.410 --> 00:23.580
+samples shown which you can import.
+
+00:23.600 --> 00:25.460
+You can see that in the screenshot here.
+
+00:25.460 --> 00:32.000
+When you bring in the mini MVCs package itself that populates the source in your packages folder.
+
+00:32.000 --> 00:34.000
+That is everything you need to get started.
+
+00:34.010 --> 00:39.260
+The samples we're discussing here are optional and a great way to learn more about the framework.
+
+00:39.260 --> 00:44.570
+If your needs are also similar to one of the sample projects, you can use the sample project to get
+
+00:44.570 --> 00:47.810
+started copying or modifying whatever's there.
+
+00:47.810 --> 00:50.720
+In this course, we'll take a look at several samples.
+
+00:50.720 --> 00:58.160
+Each of them shows the exact same end result With and without the mini MVCs, I find this especially
+
+00:58.160 --> 00:58.800
+helpful.
+
+00:58.820 --> 01:02.330
+Begin with the version that does not feature many MVCs.
+
+01:02.660 --> 01:07.700
+You can see the full functionality of solving the use case without any framework.
+
+01:07.700 --> 01:14.120
+Once you're familiar there, open up the version with many MVCs and you can see how those same use cases
+
+01:14.120 --> 01:16.050
+are solved using the framework.
+
+01:16.070 --> 01:21.860
+Feel free to bounce back and forth between those two examples so you have a thorough understanding.
+
+01:21.860 --> 01:24.110
+In this course we'll look at several samples.
+
+01:24.110 --> 01:26.270
+Here's a high level overview of each.
+
+01:26.270 --> 01:29.060
+The clock sample is a great place to get started.
+
+01:29.060 --> 01:31.310
+It's the most simple of the samples.
+
+01:31.310 --> 01:37.790
+It features no mono behaviors, and the only view, so to speak, is debug logging out to the console
+
+01:37.790 --> 01:38.330
+window.
+
+01:38.330 --> 01:43.870
+There's no input here, it just ticks like a clock and the audience is designed for beginners.
+
+01:43.880 --> 01:46.280
+Next we have a user login sample.
+
+01:46.280 --> 01:51.530
+While still quite simple, this example does use a mono behavior, one of them for the view.
+
+01:51.530 --> 01:58.670
+It uses unity's UI and captures user input in the form of button clicks while we're mimicking the login.
+
+01:58.670 --> 02:03.560
+It's an offline only project, so the service layer loads a local file.
+
+02:03.560 --> 02:08.030
+This helps keep things easy to understand and requires no internet to use.
+
+02:08.030 --> 02:10.160
+The audience here is for beginners.
+
+02:10.160 --> 02:15.560
+Next is a Rollerball sample inspired by one of Unity's built in learn projects.
+
+02:15.560 --> 02:22.280
+We're able to use the four arrow keys, roll a ball with physics around a tabletop and collect yellow
+
+02:22.280 --> 02:23.510
+rotating pickups.
+
+02:23.510 --> 02:29.300
+This is the most complex of our examples will show, and it captures all the features of a simple but
+
+02:29.300 --> 02:34.940
+complete three D game, including audio input, UI and physics.
+
+02:34.940 --> 02:38.570
+To illustrate the scalability of many MVCs.
+
+02:38.570 --> 02:43.070
+This project includes multiple views and multiple controllers.
+
+02:43.070 --> 02:48.860
+While still relatively simple, this project is appropriate for intermediate developers when deciding
+
+02:48.860 --> 02:50.780
+how best to teach architecture.
+
+02:50.780 --> 02:56.570
+The value of coding and getting your hands dirty in some samples became evident, wanting to express
+
+02:56.570 --> 03:00.050
+a variety of teaching principles throughout the concepts here.
+
+03:00.170 --> 03:02.810
+I broke it up into several projects.
+
+03:02.810 --> 03:09.950
+We have one project that uses no money behaviors and has no view that represents the most simple sample
+
+03:09.950 --> 03:13.870
+all the way up to something with three d physics input, audio and more.
+
+03:13.880 --> 03:20.210
+Now, while all the samples are relatively simple to the complexity you'd have in a triple A unity game,
+
+03:20.210 --> 03:25.910
+it's an appropriate playground to learn the concepts of MVC and see how they scale up for your needs.
+
+03:25.910 --> 03:29.420
+In this section we talked about the Mini and VC's sample projects.
+
+03:29.420 --> 03:34.730
+We went over the installation, what features each of them have and some of the learning principles
+
+03:34.730 --> 03:35.270
+behind it.
+
+03:35.270 --> 03:39.590
+Next, we'll dig even deeper by looking at the specific samples.
+
+03:39.590 --> 03:44.900
+We'll see how to take all the theory that we've gone over in the course so far from design principles,
+
+03:44.900 --> 03:49.100
+design patterns, philosophies and bring it all into functional code.
+
+03:49.100 --> 03:54.590
+I'll screen, share and do a review of each sample, and within each of them I'll do a short coding
+
+03:54.590 --> 03:59.030
+assignment live and encourage you to follow up with some other assignments that will be given.
+
+03:59.030 --> 04:04.400
+These assignments are optional, but it's a fantastic way for you to get your hands dirty and understand
+
+04:04.400 --> 04:05.360
+these principles.
+
+04:05.360 --> 04:09.970
+I highly encourage you to follow up on these assignments as it's the best way to learn.
+
+04:09.980 --> 04:10.760
+Thanks.

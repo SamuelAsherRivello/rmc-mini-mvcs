@@ -1,0 +1,229 @@
+WEBVTT
+
+00:02.960 --> 00:06.650
+Hello and welcome to MVC Architecture for Unity.
+
+00:07.460 --> 00:08.350
+Hello.
+
+00:08.360 --> 00:09.290
+I'm Sam.
+
+00:09.320 --> 00:11.390
+I'll be leading you through this course.
+
+00:11.720 --> 00:16.280
+I'm a unity certified developer with over 20 years of experience.
+
+00:16.310 --> 00:21.020
+My mission is to educate and entertain with interactive technology.
+
+00:21.050 --> 00:25.910
+I've shipped Unity game titles for PC console and mobile platforms.
+
+00:26.120 --> 00:28.820
+I'm especially excited to bring you this course.
+
+00:28.820 --> 00:35.270
+It's a fantastic way for intermediate and advanced developers to level up their skill set in a way that
+
+00:35.270 --> 00:36.110
+matters.
+
+00:36.500 --> 00:39.140
+Architecture is tremendously important.
+
+00:39.530 --> 00:43.730
+Over my career, I've had varied experiences just within unity.
+
+00:43.730 --> 00:49.970
+I've worked in education, teaching at universities, and making online courses like this one shipping
+
+00:49.970 --> 00:57.860
+game titles for mobile console PC, as well as working on educational materials for unity tools and
+
+00:57.860 --> 01:00.170
+different Unity game development companies.
+
+01:00.530 --> 01:03.410
+Welcome to MVC Architecture for Unity.
+
+01:03.560 --> 01:05.670
+Unity is a versatile game engine.
+
+01:05.690 --> 01:09.830
+It can be used for all sorts of projects, including, of course, games.
+
+01:10.010 --> 01:17.840
+The MVC architecture, which stands for Model, View and controller, brings confidence, organization
+
+01:17.840 --> 01:20.060
+and scalability to your projects.
+
+01:20.390 --> 01:26.900
+The takeaway after completing this course is the skills to be able to design and develop unity projects
+
+01:26.900 --> 01:28.830
+using MVC architecture.
+
+01:28.850 --> 01:33.980
+Throughout the duration of this course, we're going to be focusing on three different learning tracks.
+
+01:34.370 --> 01:40.100
+Whether we're talking about design fundamentals, the unity architectures will be discussing, or the
+
+01:40.100 --> 01:41.530
+Unity engine itself.
+
+01:41.540 --> 01:45.860
+We'll look at the theory, we'll look at the editor and we'll look at game code.
+
+01:45.860 --> 01:52.220
+With C-sharp, there will be course prerequisites, it suggested before beginning this course that you
+
+01:52.220 --> 01:54.230
+follow along with the software.
+
+01:54.230 --> 01:59.390
+All of the software that's required is linked to in this course and the resources section, and it's
+
+01:59.390 --> 02:00.620
+all freely available.
+
+02:00.620 --> 02:05.990
+That includes having your favorite web browser for searching different links that will be given using
+
+02:05.990 --> 02:10.970
+the Unity Editor, which has a free version and using your favorite C-sharp code editor.
+
+02:10.970 --> 02:14.210
+You can use the free one that is included with the unity download.
+
+02:14.210 --> 02:17.930
+The required knowledge for this course is not for beginners.
+
+02:17.930 --> 02:23.230
+It suggested that you have several months or more of experience with Unity and C-sharp.
+
+02:23.300 --> 02:31.070
+This includes classes, interfaces, methods and properties, how to use events, and the general paradigms
+
+02:31.070 --> 02:33.110
+of object oriented programming.
+
+02:33.110 --> 02:39.140
+If you don't have a strong knowledge of those particular elements, it suggested that you go gain that
+
+02:39.140 --> 02:41.330
+knowledge before attempting this course.
+
+02:42.280 --> 02:46.750
+Let's take a look at the course contents to see what we'll cover throughout the sections and chapters
+
+02:46.750 --> 02:47.240
+here.
+
+02:47.260 --> 02:50.820
+We'll start with the course introduction, which is this section here.
+
+02:50.830 --> 02:55.390
+Then we'll have a brief overview of unity, taking a look at how and why you would choose the Unity
+
+02:55.390 --> 02:59.390
+Game engine, as well as an overview of unity structure.
+
+02:59.410 --> 03:05.560
+Now, while this course focuses on using MVC architecture, we spend some time with the fundamentals
+
+03:05.560 --> 03:12.610
+here in software design will take a look at design principles, design patterns, UML diagramming,
+
+03:12.610 --> 03:15.760
+as well as the architecture specifically for unity.
+
+03:15.850 --> 03:22.240
+This section gives you a background to understand the concepts that will carry on into the architecture
+
+03:22.240 --> 03:27.100
+section while the course will mention several different architectures compatible with unity.
+
+03:27.130 --> 03:30.880
+We'll move forward using a particular framework that I created.
+
+03:30.880 --> 03:33.790
+The mini MVC framework.
+
+03:33.970 --> 03:40.900
+The mini MVCs for Unity is a great framework to use for production as well as educational purposes,
+
+03:40.900 --> 03:43.630
+and it's for that reason that I focus on it here in the course.
+
+03:43.810 --> 03:50.170
+The fundamentals that you learn here will help you regardless of which end framework you choose or if
+
+03:50.170 --> 03:54.910
+you choose to create your own MVC framework With the principles that we've learned here after learning
+
+03:54.910 --> 04:00.910
+how and why we would choose an architecture and why MVC is a great choice we'll look at for particular
+
+04:00.910 --> 04:01.690
+examples.
+
+04:01.690 --> 04:07.450
+This is the section of the course where I'll share my screen and I will step through three different
+
+04:07.450 --> 04:09.320
+projects that I've already created.
+
+04:09.340 --> 04:14.440
+These projects are available for you to download and follow along in the course, and there'll be assignments
+
+04:14.440 --> 04:15.850
+for you to do just that.
+
+04:16.180 --> 04:24.130
+Here we'll look at a clock created with MVC, a simple login with MVC, a3d Rollerball sample game,
+
+04:24.130 --> 04:26.450
+as well as a custom sample project.
+
+04:26.470 --> 04:31.540
+Now those first three will step through and look at the existing project, how we would accomplish it
+
+04:31.540 --> 04:35.290
+without MVC and then using the MVC framework.
+
+04:35.290 --> 04:39.160
+Both versions of that are available for you to inspect as well.
+
+04:39.160 --> 04:40.360
+For that fourth sample.
+
+04:40.360 --> 04:43.270
+It's the only section where I will code as I go.
+
+04:43.270 --> 04:45.040
+It will be a live coding section.
+
+04:45.040 --> 04:49.810
+I will start with the MVC framework and I will build a brand new example.
+
+04:49.810 --> 04:54.280
+On top of that, here are all of the concepts and practices that we learned up to this point in the
+
+04:54.280 --> 04:57.850
+course will come together in one live coding session.
+
+04:57.850 --> 05:03.280
+We'll see in the course, especially in the fundamentals, that one of the fantastic reasons to adopt
+
+05:03.280 --> 05:09.610
+architectures like MVC is that it separates your code up into nice organized areas.
+
+05:09.610 --> 05:14.290
+And a benefit of that is that you can then employ unit testing.
+
+05:14.290 --> 05:19.900
+So we will, as a bonus, cover some unit testing and test driven development content.

@@ -1,0 +1,145 @@
+WEBVTT
+
+00:00.700 --> 00:04.180
+The mini NBC's Sample Login project.
+
+00:04.540 --> 00:11.290
+With each sample project, there's an opportunity to peel back more of the layers in MVCs and think
+
+00:11.290 --> 00:13.090
+critically about these concepts.
+
+00:13.090 --> 00:15.580
+This will dramatically increase your learning.
+
+00:15.610 --> 00:20.410
+To kick start your thoughts, consider the pros and benefits of the framework in each sample.
+
+00:20.410 --> 00:22.900
+With which aspects are you feeling more comfortable?
+
+00:22.900 --> 00:26.170
+Are you beginning to see the long term benefits of choosing a framework?
+
+00:26.170 --> 00:30.400
+Which parts of the framework are you excited about and want to learn more along the way?
+
+00:30.400 --> 00:33.310
+You might identify some possible cons or drawbacks.
+
+00:33.310 --> 00:36.670
+Which aspects of the framework may not work for your needs?
+
+00:36.670 --> 00:42.430
+Is there anything you can do to get the results that you need and which patterns and practices remain
+
+00:42.430 --> 00:43.420
+unclear for you?
+
+00:43.420 --> 00:44.920
+Think about these points.
+
+00:44.920 --> 00:50.590
+Engage in the community, take notes and reflect as we're stepping into this sample will be in a project
+
+00:50.590 --> 00:54.010
+that has the source code for the framework as well as the samples.
+
+00:54.130 --> 01:01.330
+Each of the samples we cover has a version with many MVCs and without the user login sample project
+
+01:01.330 --> 01:05.520
+levels up the complexity a little bit from the previous sample.
+
+01:05.530 --> 01:11.260
+Here we have a view rendering unity UI and we're also capturing user input.
+
+01:11.260 --> 01:18.670
+This sample also introduces one mono behavior used in the view, while still relatively simple and targeting
+
+01:18.670 --> 01:20.050
+an audience of beginners.
+
+01:20.050 --> 01:22.000
+We'll see some new concepts here.
+
+01:22.830 --> 01:28.510
+As we're digging into this sample, consider which of these coding assignments you'd like to take on.
+
+01:28.530 --> 01:31.320
+There's a variety here, and you could even create your own.
+
+01:31.320 --> 01:35.490
+Starting with lower difficulty is just to explain back these concepts.
+
+01:35.490 --> 01:39.730
+After digging into the example, are you comfortable enough to explain it to a friend?
+
+01:39.750 --> 01:41.610
+Each sample includes unit testing.
+
+01:41.610 --> 01:45.690
+Can you add one more unit test that makes sense in the context of the sample?
+
+01:45.690 --> 01:52.350
+You can add a new UI feature, perhaps adding text or a button to the UI and then wiring it up properly
+
+01:52.350 --> 01:54.150
+in a way that makes sense to the framework.
+
+01:54.150 --> 01:59.940
+You could create some other type of new input, perhaps having keyboard input, do something appropriate
+
+01:59.940 --> 02:00.720
+for the sample.
+
+02:00.720 --> 02:02.220
+You could copy the sample.
+
+02:02.220 --> 02:07.290
+Perhaps the sample has some things that are interesting for a different use case copy and paste the
+
+02:07.290 --> 02:13.500
+entire parent folder, rename each class so that it's unique or give it a new namespace and then add
+
+02:13.500 --> 02:15.810
+and adjust the functionality to meet your needs.
+
+02:15.810 --> 02:21.510
+And perhaps the most challenging of this list would be to create a new sample yourself instead of copying
+
+02:21.510 --> 02:22.290
+and pasting.
+
+02:22.290 --> 02:25.080
+Here, begin with the empty canvas of a new project.
+
+02:25.080 --> 02:28.230
+Import the framework itself and start coding from scratch.
+
+02:28.230 --> 02:32.040
+That certainly demonstrates a firm grasp of all the concepts.
+
+02:32.040 --> 02:36.900
+Doing assignments like these helps to deepen your knowledge with practical experience.
+
+02:36.900 --> 02:38.250
+Let's see this in action.
+
+02:38.250 --> 02:44.730
+You can create a new Unity project, import the Mini NPCs Framework, import the samples, open this
+
+02:44.730 --> 02:51.120
+particular sample, explore the version within that doesn't use mini MVCs to gain the basic knowledge
+
+02:51.120 --> 02:52.080
+of how it operates.
+
+02:52.080 --> 02:55.890
+And then look at the version with many MVCs and with each sample.
+
+02:55.890 --> 02:58.980
+I'll do some live coding with one of the sample assignments.
+
+02:58.980 --> 03:00.180
+Let's get started.

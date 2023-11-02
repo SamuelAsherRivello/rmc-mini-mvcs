@@ -1,0 +1,142 @@
+WEBVTT
+
+00:00.390 --> 00:03.270
+Installation of the mini MVCs.
+
+00:04.310 --> 00:06.980
+The full source code is available free on git.
+
+00:07.010 --> 00:08.870
+The link will be included below.
+
+00:08.870 --> 00:11.880
+The steps for installation is to follow that link.
+
+00:11.900 --> 00:13.850
+Create a new unity project.
+
+00:13.850 --> 00:19.610
+I suggest the latest loads of unity and then you import this package into your project.
+
+00:19.610 --> 00:27.410
+Within Unity's top menu you navigate Window Package Manager Add package from git URL and you use the
+
+00:27.410 --> 00:29.120
+URL atop the git page.
+
+00:29.300 --> 00:31.640
+Here we are in our favorite web browser.
+
+00:31.640 --> 00:37.460
+Looking at the project repo In GitHub, we click code and we can see the full git URL.
+
+00:37.490 --> 00:39.950
+You want to copy that and bring that into unity.
+
+00:39.980 --> 00:44.840
+Here we are in an empty unity project using the latest version of unity.
+
+00:45.690 --> 00:47.490
+We'll open up the package manager.
+
+00:58.370 --> 01:03.970
+The package manager shows all of the current dependencies and allows you to add more.
+
+01:03.980 --> 01:07.500
+We hit the plus button and choose to add a new git URL.
+
+01:07.520 --> 01:13.970
+We paste in the URL we got from the github repo and now the mini MVCs is successfully added into your
+
+01:13.970 --> 01:14.540
+project.
+
+01:14.540 --> 01:20.000
+Notice in the project window that we have nothing in assets in this particular example because it's
+
+01:20.000 --> 01:24.440
+an empty project and under packages we can see many MVCs.
+
+01:26.280 --> 01:30.780
+So it's a bit off the subject, but I'll talk a little bit about unity and packages.
+
+01:30.780 --> 01:34.590
+Historically, Unity offered assets through the asset store.
+
+01:34.620 --> 01:40.470
+These assets were downloaded in something like a zip file that you would unzip in your project and be
+
+01:40.470 --> 01:41.510
+able to use them.
+
+01:41.520 --> 01:43.270
+The system worked fairly well.
+
+01:43.290 --> 01:47.750
+A few years back, unity greatly expanded in how this system would be delivered.
+
+01:47.760 --> 01:53.880
+The asset store still very much exists as a concept, but now when you download things from third parties,
+
+01:53.880 --> 01:58.290
+including this package that I'm offering here, it comes through the Unity Package manager.
+
+01:58.290 --> 02:03.120
+Some benefits include you have another pathway that's very easy to add things to your project.
+
+02:03.120 --> 02:04.050
+As we've seen.
+
+02:04.350 --> 02:08.370
+You can also include as a developer samples to share with others.
+
+02:08.370 --> 02:12.000
+We'll take a look at some samples for many MVCs in later sections.
+
+02:12.000 --> 02:17.040
+Periodically as you're using this package or any others, check back into the package manager to see
+
+02:17.040 --> 02:22.110
+if a new version has been released to make sure you're always running the most updated code In this
+
+02:22.110 --> 02:25.380
+section, we've taken a look at the mini MVCs.
+
+02:25.380 --> 02:31.980
+We had an overview, talked about some of the pros and cons, some features, benefits and see that
+
+02:31.980 --> 02:34.620
+it's a lighter alternative to some other frameworks.
+
+02:34.620 --> 02:38.540
+We saw how to install it into your projects and are ready to explore more.
+
+02:38.550 --> 02:40.020
+Next, we'll dig deeper.
+
+02:40.020 --> 02:45.420
+This is going to be the first look at the real code of this framework, Learning the fundamentals through
+
+02:45.420 --> 02:46.290
+examples.
+
+02:46.290 --> 02:52.530
+We're going to see sample projects, how to take all the theory in this course and apply it to C-sharp
+
+02:52.530 --> 02:53.120
+code.
+
+02:53.130 --> 02:59.370
+Now, I know we've talked about a lot of principles, patterns, concepts, philosophies up to this
+
+02:59.370 --> 02:59.940
+point.
+
+02:59.940 --> 03:04.230
+It's all going to come together when we start to see it in the sample code.
+
+03:04.230 --> 03:06.180
+I look forward to seeing it with you.
+
+03:06.180 --> 03:07.050
+Thanks.
