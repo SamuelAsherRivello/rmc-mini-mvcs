@@ -169,6 +169,7 @@ Some packages include optional samples with clear use cases. To import and run t
 
 1. Open Unity 
 1. Complete the package installation (See above)
+1. Click Unity Menu Option: `Tutorials → Reset PackageInstalled Switch` to validate dependencies
 1. Open the [Package Manager Window](https://docs.unity3d.com/Manual/upm-ui.html)
 1. Select this package 
 1. Select samples
