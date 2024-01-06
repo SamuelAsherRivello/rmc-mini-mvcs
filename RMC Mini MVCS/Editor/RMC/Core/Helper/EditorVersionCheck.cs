@@ -9,32 +9,31 @@ using PackageInfo = UnityEditor.PackageManager.PackageInfo;
 
 namespace RMC_Mini_MVCS.Editor.RMC.Core.Helper
 {
+    /// <summary>
+    /// Editor Helper method that checks for the Unity Editor version and installs input engine
+    /// if the version is >= 2019.4+
+    /// </summary>
     public static class EditorVersionCheck
     {
-        private const string Menu = "Tutorials";
-        private const string MenuPath = Menu + "/";
-        private const string ShowTutorials = "Reset PackageInstalled Switch";
-        
         private const string Packagename = "com.unity.inputsystem";
+        private const string packageInstalledKey = "PackageInstalled";
+        
         private static PackageInfo packageInfo;
+        
         private static bool _packagePresent = false;
         private static bool _packageInstalled = false;
+        
         private static AddRequest AddRequest;
         private static ListRequest ListRequest;
-
-
-        [MenuItem(MenuPath + ShowTutorials, priority = -99)]
-        private static void ResetPackageInstalledSwitch()
-        {
-            EditorPrefs.SetBool("PackageInstalled", false);
-            EditorUtility.RequestScriptReload();
-            EditorApplication.Step();
-        }
+        
         
         [InitializeOnLoadMethod]
         private static void CheckVersionDependency()
         {
-            _packageInstalled = EditorPrefs.GetBool("PackageInstalled");
+            if (EditorPrefs.HasKey(packageInstalledKey))
+                EditorPrefs.SetBool(packageInstalledKey, false);
+            
+            _packageInstalled = EditorPrefs.GetBool(packageInstalledKey);
             if (!_packageInstalled)
             {
                 Debug.Log($"It seems like the package: '{Packagename}' is not installed." 
@@ -79,7 +78,7 @@ namespace RMC_Mini_MVCS.Editor.RMC.Core.Helper
             }
             else
             {
-                EditorPrefs.SetBool("PackageInstalled", true);
+                EditorPrefs.SetBool(packageInstalledKey, true);
             }
         }
         
@@ -102,7 +101,7 @@ namespace RMC_Mini_MVCS.Editor.RMC.Core.Helper
             EditorApplication.update -= AddProgress;
             EditorUtility.RequestScriptReload();
             EditorApplication.Step();
-            EditorPrefs.SetBool("PackageInstalled", true);
+            EditorPrefs.SetBool(packageInstalledKey, true);
         }
     }
 }
