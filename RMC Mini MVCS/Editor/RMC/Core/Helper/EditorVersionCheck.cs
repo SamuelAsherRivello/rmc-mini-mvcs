@@ -15,8 +15,14 @@ namespace RMC_Mini_MVCS.Editor.RMC.Core.Helper
     /// </summary>
     public static class EditorVersionCheck
     {
+        
+        /// <summary>
+        /// Set to true during package development. Set to false for production.
+        /// </summary>
+        private static bool IsLoggingVerbose = false;
+
         private const string Packagename = "com.unity.inputsystem";
-        private const string packageInstalledKey = "PackageInstalled";
+        private const string packageInstalledKey = "EditorVersionCheck_PackageInstalled_From_mvcs";
         
         private static PackageInfo packageInfo;
         
@@ -26,21 +32,24 @@ namespace RMC_Mini_MVCS.Editor.RMC.Core.Helper
         private static AddRequest AddRequest;
         private static ListRequest ListRequest;
         
-        
         [InitializeOnLoadMethod]
         private static void CheckVersionDependency()
         {
-            if (EditorPrefs.HasKey(packageInstalledKey))
+            if (!EditorPrefs.HasKey(packageInstalledKey))
                 EditorPrefs.SetBool(packageInstalledKey, false);
             
             _packageInstalled = EditorPrefs.GetBool(packageInstalledKey);
             if (!_packageInstalled)
             {
-                Debug.Log($"It seems like the package: '{Packagename}' is not installed." 
-                          + $"\nBut it is needed on Unity Editor versions higher then: 2019.4.+");
+                Debug.Log($"Checking for required package(s) '{Packagename}' ...");
                 ListRequest = Client.List();
                 EditorApplication.update += ListProgress;
-                Debug.Log($"Searching for Package: '{Packagename}'...");
+                
+                if (IsLoggingVerbose)
+                {
+                    Debug.Log($"Searching for package: '{Packagename}' ...");
+                }
+                
             }
         }
         
@@ -59,9 +68,17 @@ namespace RMC_Mini_MVCS.Editor.RMC.Core.Helper
                             break;
                     }
 
-                    Debug.Log(_packagePresent
-                        ? $"Package: '{Packagename}' is already installed. No need to import it."
-                        : $"Package: '{Packagename}' not installed. Importing it...");
+                    if (_packagePresent)
+                    {
+                        if (IsLoggingVerbose)
+                        {
+                            Debug.Log($"Package: '{Packagename}' is already installed. No need to import it.");
+                        }
+                    }
+                    else
+                    {
+                        Debug.Log($"Package: '{Packagename}' not installed. Importing it...");
+                    }
                     break;
                 }
                 case >= StatusCode.Failure:
