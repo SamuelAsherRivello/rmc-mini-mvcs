@@ -1,0 +1,433 @@
+WEBVTT
+
+00:04.590 --> 00:06.900
+Hier sind wir in unserem Lieblingsbrowser bei Unity.
+
+00:07.620 --> 00:10.220
+Hier laden wir den Unity-Editor herunter und fangen an.
+
+00:10.230 --> 00:13.380
+Der Get started hat hier verschiedene Preispläne.
+
+00:13.380 --> 00:18.870
+Unity, Personal oder Unity Student eignen sich hervorragend für den kostenlosen Einstieg in die professionelle Nutzung.
+
+00:18.870 --> 00:20.640
+Es sind auch andere Pläne verfügbar.
+
+00:20.640 --> 00:23.430
+Ich arbeite mit einem Windows-Rechner, also lade ich es für Windows herunter.
+
+00:23.730 --> 00:29.730
+Ich habe Unity heruntergeladen, öffne das Installationsprogramm und wir fahren mit der Einrichtung fort.
+
+00:29.730 --> 00:32.610
+Sobald die Einrichtung abgeschlossen ist, öffne ich den Unity Hub.
+
+00:32.610 --> 00:39.600
+Der Unity Hub hilft uns, den Unity-Editor in verschiedenen Versionen zu installieren, wenn wir möchten, sowie eine offene
+
+00:39.600 --> 00:40.350
+Projekte zu erstellen.
+
+00:40.350 --> 00:41.880
+Ich werde ein neues Projekt erstellen.
+
+00:41.880 --> 00:44.250
+Unity bietet viele verschiedene Vorlagen an.
+
+00:45.130 --> 00:51.340
+Der Schlüssel hier ist, dass wir die neueste Unity-Version namens ELTs verwenden wollen.
+
+00:51.370 --> 00:57.340
+Diese ändert sich mit der Zeit, aber Unity zeigt deutlich, dass dies die Version ist, die langfristig unterstützt wird.
+
+00:57.340 --> 00:59.890
+Und es ist normalerweise die letzte öffentliche Version.
+
+00:59.890 --> 01:01.870
+Die Standardvorlage, die Unity anzeigt.
+
+01:01.870 --> 01:03.910
+Hier ist der Drei-D-Kern.
+
+01:03.940 --> 01:09.100
+Viele MVCs sind mit vielen dieser verschiedenen Vorlagen kompatibel, so dass wir frei wählen können.
+
+01:09.220 --> 01:10.690
+Aber ich werde hier die Standardvorlage verwenden.
+
+01:10.690 --> 01:14.950
+Ich nenne das Projekt calculator mini und installiere es in meinem Lieblingsordner.
+
+01:14.950 --> 01:20.140
+Jedes Mal, wenn du ein neues Projekt erstellst, wird Unity alle Installationsdateien und Abhängigkeiten setzen
+
+01:20.140 --> 01:24.820
+für Sie einrichten, indem Sie der URL folgen, die Sie im Kurs im Abschnitt Ressourcen finden.
+
+01:25.240 --> 01:28.190
+Wir kommen hier zu GitHub und klicken auf die Schaltfläche Code.
+
+01:28.210 --> 01:34.390
+Wir wollen diese Git-URL erfassen, die wir verwenden werden, um die Mini- und VCs in Unity zu importieren.
+
+01:34.390 --> 01:38.600
+Sobald das Projekt erstellt ist, öffnet sich Unity und zeigt uns die Standardanzeige.
+
+01:38.620 --> 01:42.040
+Diese Vorlage wird mit einer Beispielszene geliefert, die ein guter Anfang ist.
+
+01:42.040 --> 01:45.810
+Als nächstes öffnen wir den Paketmanager und installieren Mini und VCs.
+
+01:45.820 --> 01:50.110
+Wir fügen ein Paket aus der Get-URL hinzu und fügen die URL ein, die wir von GitHub erhalten haben.
+
+01:50.110 --> 01:56.350
+Sobald mini NBC's installiert ist, kannst du optional auch die Beispiele installieren, besonders wenn du
+
+01:56.350 --> 01:56.790
+beginnen.
+
+01:56.800 --> 01:58.420
+Ich empfehle das sehr.
+
+01:58.420 --> 02:03.880
+Vielleicht finden Sie heraus, dass eine der Proben Ihren Zielen ähnlich genug ist und Sie können beginnen mit
+
+02:03.880 --> 02:07.380
+entweder kopieren und einfügen oder als Referenz verwenden.
+
+02:07.390 --> 02:11.380
+In unserem Fall werden wir die Proben nicht importieren, sondern von Grund auf neu arbeiten.
+
+02:11.380 --> 02:12.400
+Mit einer Ausnahme.
+
+02:12.400 --> 02:18.070
+Ich werde eine Vorlagendatei verwenden, die ich kopieren und einfügen kann, damit unsere Klassen einheitlich aussehen und
+
+02:18.070 --> 02:18.580
+lesbar zu halten.
+
+02:18.580 --> 02:21.790
+Das Mini-NBC-Paket wird mit einer Vorlage geliefert.
+
+02:21.790 --> 02:28.090
+Ich kopiere es in den Ordner "Assets" und öffne es unter Verwendung einheitlicher Kodierungsstandards oder einer Kodierungsvorlage
+
+02:28.090 --> 02:29.650
+wie dies ist optional.
+
+02:29.650 --> 02:32.800
+Ich empfehle jedem Team, dies auf der Grundlage seiner eigenen Ziele zu erwägen.
+
+02:32.800 --> 02:38.110
+Für die Zwecke dieser Diskussion verwende ich es nur, um meinen Code konsistent zu halten und um ihn besser zu machen.
+
+02:38.110 --> 02:39.010
+für Sie lesbar zu machen.
+
+02:39.010 --> 02:41.530
+Ich werde das kopieren und einfügen, um neue Klassen zu beginnen.
+
+02:41.530 --> 02:46.540
+Es enthält die Klassendefinition, ein Beispiel für eine Eigenschaft, ein Beispiel für ein Feld und mehr.
+
+02:46.540 --> 02:48.940
+Lassen Sie uns über die Struktur unserer Projektdatei nachdenken.
+
+02:48.940 --> 02:50.140
+Ich mag den Szenenordner.
+
+02:50.140 --> 02:51.580
+Ich werde unsere Szene einfach umbenennen.
+
+02:51.580 --> 02:58.450
+Meine Konvention ist, dass ich einen Skript-Ordner in den Assets anlege und einen Runtime-Editor und einen Test-Ordner erstelle
+
+02:58.450 --> 02:58.930
+innerhalb.
+
+02:58.930 --> 03:03.940
+Da wir mit vielen Dateien arbeiten, erstelle ich gerne spezielle Ordner für die Ministruktur als
+
+03:03.940 --> 03:07.210
+sowie einen Ordner für den Model-View-Controller und den Service.
+
+03:07.210 --> 03:11.590
+In diesem Fall werden wir keinen Service erstellen, aber ich lasse den Ordner dort, für den Fall, dass in
+
+03:11.590 --> 03:12.340
+der Zukunft.
+
+03:12.340 --> 03:14.060
+Das Hinzufügen eines Dienstes ist jetzt sinnvoll.
+
+03:14.060 --> 03:16.540
+Ich werde die Szenenhierarchie einrichten und unser erstes Skript erstellen.
+
+03:16.540 --> 03:21.670
+Die Standard-Szenenstruktur von Unity ist eine Hauptkamera und ein gerichtetes Licht.
+
+03:21.700 --> 03:27.310
+Meine persönliche Vorliebe ist es, diese in ein Welt-Spielobjekt zu packen, damit ich die Komplexität dort verstecken kann.
+
+03:27.310 --> 03:30.010
+Erstellen Sie nun ein Spielobjekt für das Beispiel selbst.
+
+03:30.010 --> 03:33.370
+Das ist das eine Mono-Verhalten, das den Prozess in Gang setzt.
+
+03:33.370 --> 03:37.900
+Ich gebe ihm den Namen calculator, mini example und ich gebe ihm ein Skript mit demselben Namen.
+
+03:37.900 --> 03:39.790
+Hier ist der Startpunkt für die neue Datei.
+
+03:39.790 --> 03:43.680
+Wenn Unity die Datei erstellt, fügen wir die Klassenvorlage ein und aktualisieren sie entsprechend.
+
+03:43.690 --> 03:44.710
+Hier ist die aktualisierte Datei.
+
+03:44.710 --> 03:45.460
+Schauen wir uns das mal an.
+
+03:45.460 --> 03:48.310
+Ich habe einen Namespace speziell für dieses Beispielprojekt erstellt.
+
+03:48.310 --> 03:53.290
+Ich passe den Klassennamen an den Dateinamen an und überlege mir, welchen Code ich brauche, um hier loszulegen.
+
+03:53.290 --> 03:56.830
+Wir brauchen nur eine Start-Methode, in der wir die Miniatur erstellen werden.
+
+03:56.830 --> 03:59.380
+Erstellen wir die Klassendatei für den Mini und kommen wir zurück.
+
+03:59.380 --> 04:03.370
+Ich dupliziere die Klassenvorlage und erstelle die Taschenrechner-Miniklasse.
+
+04:03.370 --> 04:05.350
+Hier sind wir in der Taschenrechner-Miniklasse.
+
+04:05.350 --> 04:08.170
+Jetzt verwenden wir die ersten Klassen aus unserem Framework.
+
+04:08.170 --> 04:16.690
+Wir haben hier eine Option für die main mini, ob wir die Basisklasse der mini MVCs erweitern oder eine Schnittstelle verwenden wollen.
+
+04:17.510 --> 04:22.580
+Da wir keine Serviceschicht verwenden, ist es sinnvoll, eine Schnittstelle zu verwenden, die uns mehr Möglichkeiten bietet
+
+04:22.580 --> 04:23.330
+Flexibilität bietet.
+
+04:23.330 --> 04:26.430
+Hier werden wir also AI Mini und VCs implementieren.
+
+04:26.450 --> 04:29.060
+Jeder Code-Editor drückt es auf eine andere Weise aus.
+
+04:29.090 --> 04:32.740
+Hier in meinem Editor zeigt ein roter Schnörkel an, dass etwas falsch ist.
+
+04:32.750 --> 04:37.760
+Ich überprüfe das Kontextmenü, weil ich mich entschieden habe, eine Schnittstelle zu implementieren, aber ich habe es nicht wirklich getan
+
+04:37.760 --> 04:39.160
+die Implementierung noch nicht gemacht.
+
+04:39.170 --> 04:44.120
+Der Code-Editor bietet mir an, das für mich zu tun, und wenn wir weitermachen, werde ich diesen Arbeitsablauf durchführen.
+
+04:44.120 --> 04:46.340
+Ich entscheide mich für die Implementierung der fehlenden Elemente.
+
+04:46.340 --> 04:48.200
+Ich lasse alle standardmäßig markiert.
+
+04:48.200 --> 04:49.580
+Schauen wir uns das Ergebnis an.
+
+04:49.580 --> 04:54.140
+Wir haben eine initialisierte Eigenschaft und einige initialisierungsbezogene Methoden.
+
+04:54.140 --> 04:58.850
+Wir haben jetzt genug Code im Mini-Rechner, um zum Beispiel zurückzukehren und es zu beenden.
+
+04:58.850 --> 05:03.290
+Hier im Beispiel des Mini-Rechners, in seiner Startmethode, beenden wir die Codierung.
+
+05:03.290 --> 05:03.530
+Hier.
+
+05:03.530 --> 05:06.890
+Wir haben eine Instanz des Taschenrechners mini erstellt und initialize aufgerufen.
+
+05:06.890 --> 05:07.940
+Das ist alles, was wir hier brauchen.
+
+05:07.940 --> 05:12.110
+In dieser Beispieldatei gehen wir in der Klasse calculator mini selbst weiter.
+
+05:12.110 --> 05:17.180
+Wenn Sie sich mit dem Mini und dem VCs-Framework vertraut gemacht haben, ist dies eine gute Gelegenheit, um
+
+05:17.180 --> 05:21.590
+einen Blick auf andere Beispielprojekte zu werfen, um zu sehen, wie die Struktur ist.
+
+05:21.590 --> 05:22.760
+Aber ich werde laut denken.
+
+05:22.760 --> 05:26.900
+Was wir vom Mini brauchen, ist, um welche Anliegen er sich kümmern wird.
+
+05:27.050 --> 05:32.330
+Also müssen wir diese deklarieren, wir initialisieren sie und wenn nötig, verkabeln wir sie
+
+05:32.330 --> 05:32.840
+zusammen.
+
+05:32.840 --> 05:34.070
+Ich fahre fort und mache das jetzt.
+
+05:34.070 --> 05:37.130
+Also, wenn wir nicht schon initialisiert sind, werden wir initialisieren.
+
+05:37.130 --> 05:42.050
+Und dann habe ich ein paar temporäre Kommentare eingefügt, wo der Code hinkommen soll.
+
+05:42.290 --> 05:45.470
+Wir erstellen das Modell, den Controller und initialisieren sie.
+
+05:46.570 --> 05:52.930
+Du erinnerst dich vielleicht an frühere Beispielprojekte, weil unsere Ansicht das Mono-Verhalten erweitern wird
+
+05:52.930 --> 05:56.600
+und in der Szenenhierarchie sitzt, werden wir das auf eine andere Weise einrichten.
+
+05:56.620 --> 06:01.660
+Hier zeigt mein Code-Editor rot an, was bedeutet, hey, diese Klassen existieren nicht, also lass uns gehen
+
+06:01.660 --> 06:02.050
+sie erstellen.
+
+06:02.050 --> 06:02.370
+jetzt.
+
+06:02.380 --> 06:06.110
+Ich kopiere die Klassenvorlage für die Grundstruktur dessen, was wir brauchen.
+
+06:06.130 --> 06:09.420
+Ich habe die Klassen für den Model-View und den Controller erstellt.
+
+06:09.430 --> 06:10.270
+Schauen wir uns das mal an.
+
+06:10.270 --> 06:11.470
+Hier ist die Modellklasse.
+
+06:11.470 --> 06:16.300
+Ich habe ihr einen Namespace gegeben und den Klassentitel aktualisiert, aber die Implementierung noch nicht hinzugefügt.
+
+06:16.300 --> 06:20.190
+Hier ist die View-Klasse des Taschenrechners und hier ist die Controller-Klasse des Taschenrechners.
+
+06:20.200 --> 06:23.680
+Nun, da wir zumindest die Grundlagen dieser Klassen aufgebaut haben.
+
+06:24.370 --> 06:29.180
+Gehen wir zurück und beheben alle Compilerfehler hier in der calculator-Miniklasse.
+
+06:29.200 --> 06:32.200
+Wir haben ein paar Fehler zu beheben, während wir diese Klassen erstellt haben.
+
+06:32.200 --> 06:34.030
+Jetzt kann sie noch nicht gefunden werden.
+
+06:34.030 --> 06:38.860
+Wir klicken mit der rechten Maustaste und sehen, dass der Editor sie erkennt, aber eine using-Anweisung benötigt.
+
+06:38.860 --> 06:42.700
+Diese Klassen funktionieren jetzt richtig, aber ihnen fehlt das Initialize.
+
+06:42.700 --> 06:47.350
+Fangen wir an, echten Code in jede dieser Klassendateien einzufügen, denn das Taschenrechnermodell hat base
+
+06:47.350 --> 06:48.400
+Funktionalität.
+
+06:48.760 --> 06:50.020
+Wir werden das Basismodell erweitern.
+
+06:50.020 --> 06:51.760
+Das Basismodell kommt mit initialize.
+
+06:51.760 --> 06:53.140
+Das ist alles, was wir hier tun müssen.
+
+06:53.140 --> 06:58.210
+Für den Calculator-Controller brauchen wir wieder eine eigene Funktionalität, denn
+
+06:58.210 --> 06:59.680
+wir keinen Dienst verwenden.
+
+06:59.680 --> 07:05.470
+Nebenbei könnten wir natürlich den Basis-Controller verwenden und einen leeren Service erstellen
+
+07:05.470 --> 07:06.640
+und wir brauchen ihn nicht wirklich.
+
+07:06.640 --> 07:10.210
+Wenn Sie denken, dass Sie in der Zukunft auf jeden Fall einen Dienst brauchen werden.
+
+07:10.210 --> 07:11.470
+Das ist keine schlechte Lösung.
+
+07:11.470 --> 07:16.360
+Aber für dieses Projekt, weil wir wissen, dass wir im Moment keinen Dienst brauchen, werde ich eine Schnittstelle verwenden
+
+07:16.360 --> 07:20.620
+stattdessen implementieren wir meinen Controller, um die fehlenden Mitglieder zu implementieren.
+
+07:20.620 --> 07:24.310
+Ich lasse die Standardeinstellungen hier und schaue mir die Ergebnisse an, die wir erhalten.
+
+07:24.310 --> 07:27.970
+Initialisiere den Kontext und einige Initialisierungsmethoden.
+
+07:27.970 --> 07:29.080
+Das ist alles, was wir im Moment brauchen.
+
+07:29.080 --> 07:34.810
+Im weiteren Verlauf fügen wir schrittweise gerade genug Implementierung hinzu und kehren immer wieder zum
+
+07:34.810 --> 07:40.990
+übergeordneten Konzept zurück, dem Taschenrechner Mini, und sehen, was der nächste logische Schritt für die Implementierung ist.
+
+07:40.990 --> 07:46.000
+Ein alternativer Ansatz wäre die vollständige Entwicklung des Modells und dann die vollständige Entwicklung der Ansicht
+
+07:46.000 --> 07:49.870
+im Controller und dann die Mini-MVCs als letzten Schritt zu machen.
+
+07:49.870 --> 07:54.250
+Sie können so vorgehen, wie es für Sie sinnvoll ist, aber für die Zwecke dieser Diskussion, werden wir
+
+07:54.250 --> 07:57.400
+immer wieder zu dieser Klasse hier zurückkehren und die auftauchenden Herausforderungen lösen.
+
+07:57.400 --> 08:02.350
+Sowohl das Modell als auch der Controller erwarten einen Kontext, also erstellen wir diesen jetzt durch die Übergabe von
+
+08:02.350 --> 08:06.070
+Ich denke, wir haben alle Compilerfehler gelöst.
+
+08:06.070 --> 08:09.070
+Kehren wir nun zu Unity zurück und überprüfen unseren Fortschritt.
+
+08:09.070 --> 08:12.190
+Hier sind wir in Unity ohne Kompilierungsfehler.

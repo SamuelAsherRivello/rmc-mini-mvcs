@@ -1,0 +1,196 @@
+WEBVTT
+
+00:00.520 --> 00:03.490
+The Unity MVC framework.
+
+00:03.490 --> 00:10.750
+I created the Unity UMBC framework several years ago based on my learnings at the time and my architectural
+
+00:10.750 --> 00:11.460
+goals.
+
+00:11.470 --> 00:17.140
+The benefits of using this particular framework I find are that it is proven and based on a lot of the
+
+00:17.140 --> 00:20.310
+principles and patterns that we've seen before in the course.
+
+00:20.320 --> 00:26.080
+While the version exists only for unity, in theory, the patterns there are language agnostic, so
+
+00:26.080 --> 00:28.920
+you could bring it to different platforms if you chose.
+
+00:28.930 --> 00:35.740
+It brings a more testable environment to unity because each area of your code is separated and decoupled.
+
+00:35.740 --> 00:39.940
+And like many of the established architectures, we've taken a look at unity.
+
+00:39.940 --> 00:45.010
+And this allows for faster development and much more efficient maintenance on your projects.
+
+00:45.010 --> 00:50.860
+At the time of creation, I had a mono behavior centric flow to how I was developing in unity.
+
+00:50.920 --> 00:53.860
+So I built this system to work in the same way.
+
+00:53.860 --> 00:58.300
+So one of the key features here is that it heavily uses mono behaviors.
+
+00:58.300 --> 01:01.780
+Each of the four concerns extends mono behavior.
+
+01:01.780 --> 01:07.060
+This means that you can hang each of these concerns on a game object, which is great using all the
+
+01:07.060 --> 01:12.550
+familiar workflows we have in unity for game objects and components, including serializing fields on
+
+01:12.550 --> 01:13.570
+any of the concerns.
+
+01:13.570 --> 01:17.890
+For example, in the screenshot here you can see one of the models.
+
+01:17.890 --> 01:23.920
+The model is a mono behavior, so it can have serialized fields and sit nicely in your unity inspector
+
+01:23.920 --> 01:24.250
+view.
+
+01:24.250 --> 01:27.550
+So what's the high level structure of you and VCs?
+
+01:27.550 --> 01:34.090
+Well, we have the familiar m v from the patterns we've looked at before, where each of those four
+
+01:34.090 --> 01:36.130
+concerns extends mono behavior.
+
+01:36.130 --> 01:42.700
+Then inside my game code, I would create an app concept, which is also amount of behavior.
+
+01:42.700 --> 01:48.430
+That's the one thing in my scene under which all of this sits again, some benefits of the mono behavior
+
+01:48.430 --> 01:50.740
+approach as it feels very native to unity.
+
+01:50.740 --> 01:55.360
+Things are sitting in the scene on game objects and can be separated, as I like.
+
+01:55.360 --> 01:58.270
+Now in this chapter, we're just doing an overview of this.
+
+01:58.270 --> 02:01.000
+We're eventually going to move on to a different framework.
+
+02:01.000 --> 02:04.480
+Here's a snippet from how the UMBC system works.
+
+02:04.480 --> 02:08.680
+There are some takeaways from this older system that I still really like.
+
+02:08.680 --> 02:13.480
+First, in a lot of the concerns, like the base controller we see here, I use generics.
+
+02:13.480 --> 02:19.450
+Generics are a fantastic way in C-sharp to create some reusable template classes.
+
+02:19.450 --> 02:25.840
+Secondly, the workflow I have here allows for strong typing, which is great in the specific instances
+
+02:25.840 --> 02:27.100
+of how my game flows.
+
+02:27.100 --> 02:32.770
+I'm able to get the auto completion, which shows me the properties and methods that make sense for
+
+02:32.770 --> 02:37.630
+the context and the framework introduces the concepts we've learned from the design patterns.
+
+02:37.630 --> 02:45.070
+We have both the command manager for high level FA Communication in a more decoupled fashion and unity
+
+02:45.070 --> 02:48.670
+events for local level, lower level communication.
+
+02:48.670 --> 02:53.350
+The key difference here, as we discussed when we talked about these patterns before, is that the command
+
+02:53.350 --> 02:58.750
+manager concept doesn't need for the sender and receiver to have references to each other, whereas
+
+02:58.750 --> 03:04.420
+the Unity event concept requires that the observer have a reference to the sender.
+
+03:04.420 --> 03:09.550
+This gives the framework two tiers of how it can communicate between the major concerns.
+
+03:09.550 --> 03:15.490
+So at the time that I created this particular framework, it embraced the principles in how I approached
+
+03:15.490 --> 03:16.690
+Unity projects.
+
+03:16.690 --> 03:20.410
+As I mentioned, it was a very mono behavior centric approach.
+
+03:20.410 --> 03:23.020
+The project is still alive and can be utilized.
+
+03:23.020 --> 03:27.130
+For the sake of this course, I'm going to recommend we choose a different framework that I'll talk
+
+03:27.130 --> 03:27.880
+about next.
+
+03:27.880 --> 03:34.690
+But I'm mentioning this project as a valid example in my architectural portfolio in a place from which
+
+03:34.690 --> 03:38.440
+I learned a lot overall in this section, we talked about architectures.
+
+03:38.440 --> 03:42.610
+We saw the pros and cons of using any given established architecture.
+
+03:42.610 --> 03:47.440
+We talked about some of the differences in key established architectures we can choose from.
+
+03:47.440 --> 03:50.710
+We saw the drawbacks of using the no architecture approach.
+
+03:50.710 --> 03:55.960
+While that feels very natural, especially as a beginner, it ultimately doesn't pay dividends.
+
+03:55.960 --> 04:01.840
+And we saw a list of some of the unity centric frameworks we can choose for doing in game architecture,
+
+04:01.840 --> 04:05.740
+including the you and VC's project that I created several years ago.
+
+04:05.740 --> 04:11.770
+Next, let's discuss a different framework, the Mini and VC's framework, which I created more recently.
+
+04:11.770 --> 04:17.260
+This is the culmination of all the lessons we have here throughout the course the design principles,
+
+04:17.260 --> 04:21.400
+the design patterns, learnings from other architectures, including my own.
+
+04:21.400 --> 04:26.710
+We'll look at an overview of the system, the pros and cons of using it and how to get started.
+
+04:26.710 --> 04:32.230
+This section on architectures was especially thorough and had a lot of information.
+
+04:32.230 --> 04:38.710
+Feel free to rewatch some sections to get those concepts a little bit more deeply ingrained and we'll
+
+04:38.710 --> 04:40.540
+move on together to the next section.
+
+04:40.540 --> 04:41.290
+Thank you.

@@ -1,0 +1,361 @@
+WEBVTT
+
+00:00.510 --> 00:03.090
+Die MVC Architektur Übersicht hier.
+
+00:03.090 --> 00:08.430
+Fahren wir mit dem Kursüberblick fort und schauen wir uns an, was wir in den MVC-Grundlagen lernen werden
+
+00:08.430 --> 00:09.120
+selbst.
+
+00:09.120 --> 00:14.130
+Wenn wir über Architektur und Softwaredesign sprechen, gibt es so viele verschiedene Begriffe.
+
+00:14.130 --> 00:20.100
+Einige dieser Begriffe sind Ihnen vielleicht schon bekannt, und Sie wissen vielleicht, welche der Begriffe
+
+00:20.100 --> 00:22.080
+die Sie hier sehen, für Sie neu sind.
+
+00:22.110 --> 00:25.740
+Oder vielleicht haben Sie eine Vorstellung, aber keine vollständige Definition.
+
+00:25.740 --> 00:31.260
+Sie werden im Laufe des Kurses immer wieder auf solche Begriffe stoßen, und wenn ich einen neuen Begriff einführe, werde ich
+
+00:31.260 --> 00:33.660
+erklären, worum es sich dabei handelt, und den Kontext erläutern.
+
+00:34.080 --> 00:37.740
+Am Ende dieses Kurses werden Sie das Vokabular besser beherrschen.
+
+00:37.770 --> 00:41.440
+Stellen Sie sich eine Leiter Ihrer eigenen beruflichen Entwicklung vor.
+
+00:41.520 --> 00:47.670
+Einige dieser Grundsätze sind bereits in einer früheren Phase Ihrer Entwicklung zu finden und werden in der Unter- und Mittelstufe benötigt
+
+00:47.670 --> 00:48.510
+Berufspositionen.
+
+00:48.510 --> 00:52.830
+Das Verständnis von Klassen und objektorientierter Programmierung ist grundlegend.
+
+00:52.830 --> 00:59.940
+Mit der Zeit arbeiten erfahrene Entwickler an Entwurfsmustern, abstrahieren Konzepte und machen ihren Code
+
+00:59.940 --> 01:04.980
+modular und wiederverwendbar zu machen, sowie mit Lernen, Testen und Architekturen.
+
+01:04.980 --> 01:10.620
+Dieser Kurs konzentriert sich auf die Architektur, und wir werden auch auf viele dieser verschiedenen Konzepte eingehen, einschließlich
+
+01:10.620 --> 01:12.900
+das Testen des Verlaufs eines Spiels.
+
+01:12.900 --> 01:19.950
+Die Karriere eines Entwicklers kann viele verschiedene Berufsbezeichnungen haben, je nach der Kultur des Unternehmens, in dem man tätig ist.
+
+01:19.950 --> 01:20.670
+arbeiten.
+
+01:20.700 --> 01:22.440
+Dieses Wachstum kann sehr unterschiedlich sein.
+
+01:22.440 --> 01:27.780
+Hier ist ein loses Beispiel für einige der verschiedenen Berufe, die man im Laufe einer langen Karriere ausüben kann
+
+01:27.780 --> 01:28.710
+in der Spieleentwicklung.
+
+01:28.710 --> 01:34.590
+Erfahrung mit architektonischen Konzepten ist in der Softwareentwicklung und in der Spieleentwicklung immer wichtig.
+
+01:34.590 --> 01:41.640
+Entwicklung wichtig ist, ist sie vor allem in der Mitte des Spiels entscheidend, wenn es darum geht, eine höhere Entwicklungsposition zu erreichen.
+
+01:41.640 --> 01:47.520
+Sie können in diesem Diagramm sogar sehen, dass es spezielle Positionen für Softwarearchitekten gibt, sowie eine
+
+01:47.520 --> 01:49.440
+Ort, an dem Sie Ihr Fachwissen einbringen können.
+
+01:49.440 --> 01:56.190
+Letztlich ist die Architektur einer Software die grundlegende Organisation aller ihrer Teile.
+
+01:56.190 --> 02:02.610
+Sie basiert auf einer Reihe von Entwurfsprinzipien und Entwurfsmustern, die wir in diesem Kurs besprechen werden.
+
+02:02.610 --> 02:09.060
+Einige der Vorteile der bewussten Anwendung einer Architektur auf Ihre Anwendung oder Ihr Spiel ist, dass es
+
+02:09.060 --> 02:10.890
+auf bewährten Konzepten basiert.
+
+02:10.890 --> 02:14.910
+Es wird in Vertrauen, Leistung und Skalierbarkeit für Ihre Projekte sein.
+
+02:14.910 --> 02:21.120
+Architekturen sind in der Regel sprachunabhängig, d.h. die Prinzipien sind höher angesiedelt und eher theoretisch
+
+02:21.120 --> 02:26.670
+und können auf verschiedene Programmiersprachen und Programmierplattformen wie Unity angewendet werden
+
+02:26.670 --> 02:27.300
+Spiel-Engine.
+
+02:27.300 --> 02:33.060
+Auch wenn es eine Lernkurve gibt, werden Teams, die sich die Architektur zu eigen machen, feststellen, dass die Entwicklung schneller voranschreitet
+
+02:33.060 --> 02:37.860
+und vor allem die Wartung von Projekten wird ebenfalls viel schneller vonstatten gehen.
+
+02:37.860 --> 02:40.740
+Im Kurs werden wir auf verschiedene Arten von Architektur eingehen.
+
+02:40.740 --> 02:43.740
+Da ist zunächst der Ansatz ohne Architektur.
+
+02:43.740 --> 02:49.860
+Dieser Ansatz wird vor allem von Anfängern in Projekten oder sogar von Veteranen in Prototypen von Projekten verwendet.
+
+02:49.860 --> 02:56.580
+Aus Gründen der Schnelligkeit und Flexibilität können sich die Teams hier für kein bestimmtes Framework entscheiden und vorwärts gehen.
+
+02:56.790 --> 03:01.860
+In diesen Beispielen gerät man oft in Schwierigkeiten, wenn Skalierbarkeit und das Hinzufügen von Funktionen am Ende
+
+03:01.860 --> 03:02.940
+sehr schwierig wird.
+
+03:02.940 --> 03:08.580
+Erfahrene Teams können individuelle Architekturen wählen, die die verschiedenen Prinzipien und Muster, die wir
+
+03:08.580 --> 03:11.460
+in diesem Kurs besprechen, und sie selbst anwenden.
+
+03:11.460 --> 03:14.340
+Das hat Vorteile, insbesondere bei der Anpassung.
+
+03:14.340 --> 03:19.800
+Es gibt etablierte Architekturen, Blaupausen, die wir aus dem Regal nehmen und in unser System integrieren können.
+
+03:19.800 --> 03:20.640
+Projekt einbringen können.
+
+03:20.640 --> 03:24.840
+Dazu gehören MVC, Nvme und MVP.
+
+03:24.870 --> 03:30.810
+Dieser Kurs wird sich auf das MVC oder Model-View-Controller-Muster konzentrieren, warum also nicht in unserem
+
+03:30.810 --> 03:34.950
+Projekten mit dem No-Architecture-Ansatz vorgehen und das tun, was sich im Moment richtig anfühlt?
+
+03:34.950 --> 03:40.800
+Nun, auch wenn es anfangs vielleicht schneller geht und etwas freier und flexibler in der Herangehensweise ist, werden Sie
+
+03:40.800 --> 03:45.780
+Sie werden feststellen, dass es mehr Debatten darüber geben wird, wie und wo man die einzelnen Funktionen hinzufügt, egal ob Sie eine einzelne Person sind
+
+03:45.780 --> 03:47.610
+Team oder in einem größeren Team.
+
+03:47.610 --> 03:50.400
+Jeder Entwickler kann dies anders angehen und lösen.
+
+03:50.400 --> 03:56.190
+Diese Inkonsistenz macht Ihren Code schwieriger zu lesen, Ihr Projekt schwieriger zu warten.
+
+03:56.190 --> 04:01.170
+Und wenn Sie Talente in Ihr Projekt ein- oder aussteigen lassen, kann es eine Herausforderung sein, neue Leute einzubinden
+
+04:01.170 --> 04:01.470
+an.
+
+04:01.470 --> 04:06.750
+Es müssen mehr Schulungen durchgeführt werden, und wenn jemand Ihr Team verlässt, müssen mehr Informationen angepasst werden
+
+04:06.750 --> 04:10.080
+für die jeweiligen Lösungen, die Sie brauchen, bevor sie das Team verlassen.
+
+04:10.080 --> 04:15.300
+Für viele Entwickler mag sich der Ansatz ohne Architektur wie die beste Lösung anfühlen, aber zweifelsohne
+
+04:15.300 --> 04:17.300
+werden Bugs und Komplexität auftreten.
+
+04:17.310 --> 04:20.400
+Das erinnert mich an dieses Zitat, das ich hier paraphrasieren möchte.
+
+04:20.730 --> 04:26.280
+Jede Entscheidung, die wir bei der Arbeit an unseren Softwareprojekten treffen, ist eine Investition, und jede Investition
+
+04:26.280 --> 04:27.420
+ist mit Kosten verbunden.
+
+04:27.420 --> 04:33.180
+Es gibt in der Tat eine Lernkurve, aber wir gehen diese Investition im Vertrauen darauf an, dass sie sich auszahlt
+
+04:33.180 --> 04:34.560
+Vorteile mit sich bringen wird.
+
+04:34.560 --> 04:40.230
+So schlage ich vor, dass wir Architekturen betrachten, die sowohl Kosten als auch langfristige Vorteile mit sich bringen.
+
+04:40.230 --> 04:46.350
+Oft haben wir als Entwickler das Gefühl, dass es bei der Softwareentwicklung und der Entwicklung von Spielen nur um
+
+04:46.350 --> 04:48.660
+neue Features und Funktionen hinzuzufügen.
+
+04:48.660 --> 04:51.170
+Das ist aber nicht unbedingt der Fall.
+
+04:51.180 --> 04:57.960
+Untersuchungen zeigen, dass im Allgemeinen nur etwa 20 % unserer Produktionsanstrengungen dem Hinzufügen neuer Merkmale und Funktionen dienen
+
+04:57.960 --> 04:59.820
+wir verbringen den größten Teil davon.
+
+05:00.000 --> 05:06.090
+Zeit und Energie auf die Pflege dieser Funktionen, die Aktualisierung der verschiedenen Tools und Frameworks, die wir verwenden,
+
+05:06.390 --> 05:12.660
+auf das Feedback der Benutzer einzugehen, sogar Bereiche des Umfangs zu reduzieren und natürlich Fehler zu beheben.
+
+05:12.660 --> 05:19.560
+Die Erstellung von wartbarem Code zahlt sich aus, indem man von Anfang an eine Struktur und Architektur aufbaut
+
+05:19.680 --> 05:26.640
+mit einer konsistenten, maßgeschneiderten Art und Weise, unsere neuen Funktionen hinzuzufügen, wird in diesen 80% der Arbeit sehr hilfreich sein.
+
+05:26.640 --> 05:27.750
+Lebensdauer der Software.
+
+05:27.750 --> 05:31.800
+Wenn wir die Software pflegen, Fehler beheben und auf Rückmeldungen reagieren.
+
+05:31.800 --> 05:33.630
+Nehmen wir als Beispiel Bugs.
+
+05:33.630 --> 05:39.060
+Derselbe Fehler, der zu einem früheren Zeitpunkt in der Entwicklung auftritt, ist viel, viel billiger zu lösen.
+
+05:39.060 --> 05:41.850
+Er erfordert weniger Entwicklungszeit und weniger Tests.
+
+05:41.850 --> 05:47.700
+Es ist eine bewährte Praxis, diese Fehler früh und oft zu finden, sowie Fehler zu beheben, bevor wir neue hinzufügen.
+
+05:47.700 --> 05:48.360
+Funktionen hinzufügen.
+
+05:48.360 --> 05:53.640
+Neben der Erstellung von wartbarem Code, der uns hilft, diese Ziele zu erreichen, können wir auch die
+
+05:53.640 --> 05:55.260
+Umfang der Automatisierung und der Tests erhöhen.
+
+05:55.260 --> 05:56.190
+Zusammen mit dem Projekt.
+
+05:56.190 --> 06:00.030
+Wir werden sehen, wie Architekturen es uns ermöglichen, Tests einfacher durchzuführen.
+
+06:00.030 --> 06:06.990
+Die verstärkte Automatisierung und das Testen bringen auch Vertrauen, Robustheit und Stabilität in unsere Projekte.
+
+06:06.990 --> 06:12.810
+Wie genau hilft uns also ein Framework wie die Model-View-Controller-Architektur beim Testen?
+
+06:12.810 --> 06:19.380
+Nun, im Kern lädt uns die Verwendung eines Frameworks wie MVC dazu ein, die verschiedenen Bereiche zu trennen
+
+06:19.390 --> 06:27.150
+von unseren Projekten zu trennen, wobei diese Aspekte getrennt sind, entkoppelt in der Art und Weise wie sie kommunizieren, und auch
+
+06:27.150 --> 06:30.440
+kleinere Verantwortungsbereiche innerhalb jeder Klasse einladen.
+
+06:30.450 --> 06:36.000
+All diese Eigenschaften führen zu besser testbarem Code, insbesondere wenn wir etwas verwenden, das
+
+06:36.000 --> 06:39.030
+genannt testgetriebene Entwicklung, die wir in diesem Kurs behandeln werden.
+
+06:39.030 --> 06:42.870
+Das Testen selbst wird sich in die Art und Weise einfügen, wie wir unsere Lösungen zum Laufen bringen.
+
+06:42.870 --> 06:49.560
+Wir werden sehen, dass es uns hilft, Projekte mit einfacheren Lösungen zu entwickeln, wenn wir im Vorfeld über das Testen nachdenken.
+
+06:49.560 --> 06:53.370
+Wir können durchaus ein NVQ-Projekt erstellen, ohne Tests hinzuzufügen.
+
+06:53.520 --> 06:58.890
+Und diejenigen unter Ihnen, die schon einmal getestet haben, wissen, dass eine MVC-Architektur nicht erforderlich ist.
+
+06:58.890 --> 07:01.350
+Warum sprechen wir also davon, dass sie zusammenkommen?
+
+07:01.350 --> 07:05.430
+Weil die Kombination dieser beiden Konzepte zusammen unglaublich leistungsfähig ist.
+
+07:05.430 --> 07:10.920
+In diesem Kurs werden wir sehen, wie die Verwendung einer etablierten Architektur wie MVC viele Vorteile bringt für
+
+07:10.920 --> 07:12.510
+für die Entwicklung von Unity-Projekten bringt.
+
+07:12.510 --> 07:17.910
+Alles in allem bin ich unglaublich begeistert, diese Konzepte und Praktiken in die Hände von mehr Entwicklern zu bekommen.
+
+07:17.910 --> 07:23.370
+Das Unity-Entwicklerpublikum besteht aus einer unglaublichen Anzahl verschiedener Entwicklertypen.
+
+07:23.370 --> 07:28.800
+Wir haben Hobbyisten, die Projekte zum Spaß entwickeln, und professionelle Entwickler mit den unterschiedlichsten Fähigkeiten
+
+07:28.800 --> 07:29.820
+die Unity verwenden.
+
+07:30.120 --> 07:34.910
+Unity ist sehr flexibel, und das ist einer der großen Vorteile, wenn man es benutzt.
+
+07:34.920 --> 07:39.060
+Manchmal kann diese Flexibilität aber auch dazu führen, dass wir schlechte Lösungen erstellen.
+
+07:39.060 --> 07:44.850
+Die Anwendung der bewährten Praktiken, die wir hier behandeln, wird Ihnen wirklich helfen, neue Wege zu finden, wie Sie an
+
+07:44.850 --> 07:45.750
+Ihre Projekte anzugehen.
+
+07:45.750 --> 07:51.990
+Ich bin zuversichtlich, dass die Themen, über die wir hier sprechen, jedem von Ihnen bei der Projektentwicklung helfen werden.
+
+07:51.990 --> 07:56.760
+Zusammenfassend lässt sich sagen, dass sich dieser Kurs auf die MVC-Architektur für Unity konzentrieren wird.
+
+07:56.790 --> 07:59.220
+Wir haben die Kursinhalte behandelt.
+
+07:59.490 --> 08:05.460
+Wir haben ein wenig darüber gesehen, wie die Architektur uns helfen kann, bessere Projekte zu erstellen, und ich habe auch angedeutet
+
+08:05.460 --> 08:11.130
+dass die leistungsstarke Kombination von Tests und Architektur spannende Ergebnisse hervorbringen kann.
+
+08:11.130 --> 08:15.750
+Im nächsten Abschnitt werden wir mehr über Unity als Plattform erfahren.
+
+08:16.260 --> 08:22.260
+Wir fassen kurz zusammen, warum man sich für Unity entscheiden sollte und was die verschiedenen Funktionen und Dienste sind,
+
+08:22.260 --> 08:25.200
+und einen kurzen Überblick über die wichtigsten Bestandteile.
+
+08:25.380 --> 08:26.130
+Vielen Dank!

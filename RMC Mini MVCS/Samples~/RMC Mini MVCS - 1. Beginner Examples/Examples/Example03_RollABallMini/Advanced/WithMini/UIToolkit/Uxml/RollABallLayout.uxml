@@ -1,0 +1,25 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Samples/RMC%20Mini%20MVCS/1.2.6/RMC%20Mini%20MVCS%20Examples/Examples/Example03_RollABallMini/Advanced/WithMini/UIToolkit/Uss/RollABallStyles.uss?fileID=7433441132597879392&amp;guid=3b602a5b224b9184aab28f428174ee3b&amp;type=3#RollABallStyles" />
+    <ui:VisualElement name="Screen" class="screen">
+        <ui:VisualElement name="Content" class="content">
+            <ui:VisualElement name="Score" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); position: absolute; left: 0; top: 0;">
+                <ui:Label tabindex="-1" text="Score" display-tooltip-when-elided="true" name="ScoreLabel" />
+            </ui:VisualElement>
+            <ui:VisualElement name="Status" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); right: 0; top: 0; position: absolute;">
+                <ui:Label tabindex="-1" text="Status" display-tooltip-when-elided="true" name="StatusLabel" style="-unity-text-align: upper-right;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="Restart" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); right: 0; position: absolute; bottom: 0;">
+                <ui:Button text="Restart" display-tooltip-when-elided="true" name="RestartButton" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="DialogView" class="dialog-view IsVisibleFalse">
+        <ui:VisualElement name="DialogViewWindow" class="dialog-view-window">
+            <ui:Label tabindex="-1" text="Are You Sure?" display-tooltip-when-elided="true" name="BodyLabel" style="-unity-text-align: middle-center; flex-basis: 50%; font-size: 60px;" />
+            <ui:VisualElement name="Buttons" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row; justify-content: center; align-self: stretch; align-items: center; flex-basis: 50%; margin-left: 30px; margin-right: 30px; margin-top: 10px; margin-bottom: 10px;">
+                <ui:Button text="Cancel" display-tooltip-when-elided="true" name="CancelButton" style="align-items: auto; width: 50%; height: 80%;" />
+                <ui:Button text="Confirm" display-tooltip-when-elided="true" name="ConfirmButton" style="align-items: auto; width: 50%; height: 80%;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

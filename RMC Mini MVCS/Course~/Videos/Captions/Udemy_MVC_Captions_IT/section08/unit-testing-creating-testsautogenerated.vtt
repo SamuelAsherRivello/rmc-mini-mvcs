@@ -1,0 +1,196 @@
+WEBVTT
+
+00:00.090 --> 00:01.510
+Creazione di test unitari.
+
+00:01.530 --> 00:03.600
+Classe di test e metodi di test.
+
+00:03.600 --> 00:07.260
+Ecco il codice di una classe di test contenente un metodo di test.
+
+00:07.260 --> 00:12.510
+All'interno, seguiamo il paradigma opzionale di arrange, act e assert.
+
+00:12.510 --> 00:14.970
+Questa è la convenzione che uso per tutti i miei test.
+
+00:14.970 --> 00:19.120
+Abbiamo visto come si presenta un test e come si esegue un test esistente.
+
+00:19.140 --> 00:20.750
+Ora creiamo il nostro test.
+
+00:20.760 --> 00:27.780
+Apriamo un progetto vuoto, apriamo la finestra di esecuzione del test, creiamo una cartella di test, una classe di test,
+
+00:27.780 --> 00:29.760
+e un metodo all'interno del test.
+
+00:29.910 --> 00:31.740
+Poi eseguiamo il test e vediamo il risultato.
+
+00:31.740 --> 00:34.020
+Siamo in un progetto abbastanza vuoto.
+
+00:34.020 --> 00:37.410
+Ho già aggiunto il framework unity test.
+
+00:37.410 --> 00:43.920
+Apriamo la finestra del test runner, dato che il progetto non ha test in modalità edit e play,
+
+00:43.920 --> 00:47.670
+ciascuna di queste schede offre alcune opzioni per iniziare.
+
+00:47.670 --> 00:53.610
+Per prima cosa, creeremo una cartella di assemblaggio per i test in modalità di modifica, facendo clic sul pulsante che crea una nuova cartella.
+
+00:53.610 --> 00:59.430
+nella finestra del progetto, che comprende un assieme impostato per il test, gli assiemi unity e l'assieme
+
+00:59.430 --> 01:07.110
+non rientrano nell'ambito di questo corso, ma in breve questo segnala a unity che le cose all'interno di
+
+01:07.110 --> 01:11.700
+questa cartella devono essere compilate, devono essere compilate in un modo unico.
+
+01:11.700 --> 01:16.470
+Ora che la cartella degli assembly di test è stata creata, possiamo creare la nostra prima classe di test.
+
+01:16.470 --> 01:21.390
+Ognuno di questi passaggi può essere eseguito manualmente senza utilizzare la finestra, ma continuerò facendo clic sul pulsante
+
+01:21.390 --> 01:26.610
+per creare uno script di test nella cartella corrente della finestra del progetto che crei un
+
+01:26.610 --> 01:29.600
+nuova classe di test e ci fornisce due metodi di test.
+
+01:29.610 --> 01:32.430
+Notate che nella finestra di esecuzione del test, tutto viene visualizzato.
+
+01:32.550 --> 01:33.930
+Eseguo tutti i test.
+
+01:33.930 --> 01:35.150
+Tutti i test passano.
+
+01:35.160 --> 01:37.230
+Diamo un'occhiata al codice generato.
+
+01:37.230 --> 01:42.090
+A questo punto, siete liberi di rinominare la classe e i metodi come meglio credete.
+
+01:42.090 --> 01:45.660
+E poi, naturalmente, copiare e incollare per aggiungere altri metodi all'interno.
+
+01:45.660 --> 01:50.940
+Non c'è limite al numero di metodi di test che si possono avere in una classe di test, ma generalmente si usa
+
+01:50.940 --> 01:57.990
+la classe per organizzare certi argomenti, magari una classe di test per ogni classe di produzione e poi una
+
+01:57.990 --> 02:01.170
+metodo di test per ogni metodo in produzione.
+
+02:01.170 --> 02:03.420
+Si vuole testare qualcosa di simile.
+
+02:03.420 --> 02:07.110
+Questi commenti sono generati automaticamente da unity e sono molto utili.
+
+02:07.650 --> 02:09.120
+Riporto qui i punti salienti.
+
+02:09.120 --> 02:10.380
+Utilizzo del test.
+
+02:10.920 --> 02:19.290
+L'utilizzo dell'attributo test ci predispone a un normale test in modalità di modifica L'utilizzo dell'attributo test dell'unità consente
+
+02:19.290 --> 02:22.250
+di eseguire un test su più fotogrammi.
+
+02:22.260 --> 02:26.790
+Ho già detto che l'uso di unity test è più adatto alla modalità play.
+
+02:26.790 --> 02:31.320
+Si hanno molte più opzioni per quanto riguarda il tipo di funzionalità asincrone che si possono realizzare.
+
+02:31.320 --> 02:38.160
+In effetti è possibile e, come suggerisce il commento, si può usare yield return null per saltare un frame.
+
+02:38.160 --> 02:43.020
+Ad esempio, eseguendo il setup, aspettando poi un frame ed eseguendo il test.
+
+02:43.020 --> 02:44.010
+Qualcosa del genere.
+
+02:44.010 --> 02:47.730
+Per esempio, eseguire il codice di impostazione, attendere un fotogramma.
+
+02:48.380 --> 02:51.080
+E poi fare l'asserzione, qualcosa del genere.
+
+02:51.080 --> 02:54.620
+Qui, tornando a Unity, passerò alla scheda.
+
+02:55.350 --> 02:57.840
+modalità Play e seguirò gli stessi passi.
+
+02:57.840 --> 03:04.020
+Per prima cosa, creeremo una cartella di assemblaggio per il test della modalità Play e poi creeremo uno script di test.
+
+03:04.020 --> 03:09.900
+In questa cartella possiamo vedere nel test runner che abbiamo una classe di test che contiene due metodi di test.
+
+03:10.500 --> 03:13.370
+Eseguo tutto e vediamo che tutto passa.
+
+03:13.380 --> 03:15.350
+Diamo un'occhiata al codice generato.
+
+03:15.360 --> 03:21.960
+Il codice generato è identico sia in modalità play che in modalità edit.
+
+03:21.960 --> 03:24.240
+I punti di partenza sono molto simili.
+
+03:24.240 --> 03:25.110
+Questo è tutto.
+
+03:26.480 --> 03:31.700
+Stiamo iniziando a vedere che con la finestra del test runner e un po' di C-sharp aggiunto.
+
+03:31.700 --> 03:35.250
+Possiamo fare più cose con i nostri progetti unity rispetto a prima.
+
+03:35.270 --> 03:41.420
+Chi è alle prime armi con i test unitari, ha già familiarità con l'uso di unity per creare codice a runtime, ma il testing
+
+03:41.420 --> 03:42.800
+codice è qualcosa di diverso.
+
+03:43.480 --> 03:46.750
+Non viene mai sperimentato direttamente dagli utenti finali.
+
+03:47.200 --> 03:49.770
+Questo codice viene eseguito solo in modalità di test.
+
+03:49.790 --> 03:52.320
+Non è nemmeno inserito nella build finale.
+
+03:52.330 --> 03:59.470
+Ora iniziamo a considerare i test come una piccola finestra su momenti e tempi di test di un'applicazione più ampia.
+
+03:59.470 --> 04:03.030
+con un focus ristretto per assicurarci di ottenere risultati coerenti.
+
+04:03.040 --> 04:08.320
+Finora abbiamo parlato soprattutto di aggiungere nuovi test al codice esistente.
+
+04:08.350 --> 04:13.420
+Ora vedremo come aggiungere test mentre si sviluppa il codice con lo sviluppo guidato dai test.
+
+04:13.420 --> 04:14.200
+Grazie.

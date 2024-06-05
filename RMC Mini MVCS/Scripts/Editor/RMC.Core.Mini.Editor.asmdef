@@ -1,0 +1,22 @@
+{
+    "name": "RMC.Core.Mini.Editor",
+    "rootNamespace": "",
+    "references": [],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "Unity",
+            "expression": "2019.4.0",
+            "define": "EDITOR_VERSION_CHECK"
+        }
+    ],
+    "noEngineReferences": false
+}

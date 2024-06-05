@@ -1,0 +1,199 @@
+WEBVTT
+
+00:00.720 --> 00:02.340
+La structure de l'unité.
+
+00:02.340 --> 00:05.260
+Ce cours a été divisé en différentes pistes d'apprentissage.
+
+00:05.280 --> 00:10.770
+En théorie, nous prendrons du recul et examinerons certains des principes fondamentaux de la conception de logiciels et de jeux.
+
+00:10.770 --> 00:17.070
+En ce qui concerne l'ED, nous examinerons Unity, l'outil d'ED lui-même, qui est ce que nous, en tant que développeurs, faisons.
+
+00:17.070 --> 00:19.170
+ouvrons et utilisons comme logiciel.
+
+00:19.170 --> 00:24.450
+Dans les sections de code, nous examinerons le langage de programmation C-sharp et la façon dont il s'applique au jeu unity.
+
+00:24.450 --> 00:25.230
+développement.
+
+00:25.290 --> 00:26.910
+Commençons par la théorie.
+
+00:26.910 --> 00:34.200
+Le cycle de vie du développement d'un logiciel comprend de nombreuses étapes, nous menant d'une idée à un produit fini.
+
+00:34.200 --> 00:40.470
+Cela comprend les exigences, l'analyse, la planification du projet, la conception du concept, etc.
+
+00:40.470 --> 00:43.710
+au développement, aux tests et au déploiement.
+
+00:43.710 --> 00:51.180
+Bien que unity soit un outil puissant pour toutes ces étapes, nous nous concentrons sur l'utilisation de unity dans le développement,
+
+00:51.180 --> 00:53.370
+les phases de test et de déploiement.
+
+00:53.370 --> 00:55.350
+Dans le monde de unity.
+
+00:55.350 --> 01:02.970
+Les concepts sont structurés comme suit Dans un projet, vous avez une ou plusieurs scènes à l'intérieur de chaque scène.
+
+01:02.970 --> 01:06.570
+Vous avez des objets de jeu auxquels sont attachés des composants.
+
+01:06.570 --> 01:14.100
+Ces composants peuvent gérer des éléments tels que le moteur de rendu de maillage, le collisionneur, l'audio, le corps rigide pour la physique,
+
+01:14.100 --> 01:17.520
+les systèmes de particules et, bien sûr, les scripts personnalisés.
+
+01:17.520 --> 01:21.960
+L'objet de jeu est une pièce fondamentale du puzzle dans unity.
+
+01:21.960 --> 01:28.950
+C'est tout ce qui est visuel et non visuel sur lequel nous accrochons nos composants personnalisés et le système de gestion de Unity.
+
+01:28.950 --> 01:30.520
+d'Unity.
+
+01:30.540 --> 01:33.750
+Prenons l'exemple de cette capture d'écran de jeu.
+
+01:34.440 --> 01:39.870
+Nous avons ici une scène de jeu qui est décomposée en plusieurs préfabriqués différents.
+
+01:39.870 --> 01:46.070
+Vous pouvez considérer un prefab comme un objet de jeu avec un ou plusieurs composants qui est stocké pour être réutilisé.
+
+01:46.080 --> 01:51.540
+Par exemple, nous voyons ici plusieurs pièces de monnaie, chacune ayant une position et une rotation uniques.
+
+01:51.540 --> 01:59.070
+Cependant, la pièce présente certaines caractéristiques communes, comme par exemple la fonctionnalité, la détection des collisions, le mode de fonctionnement, etc.
+
+01:59.070 --> 02:06.180
+Ces caractéristiques communes sont conservées dans le préfabriqué lors de l'organisation du projet et de la prise de décision.
+
+02:06.180 --> 02:07.290
+de la structure.
+
+02:08.080 --> 02:14.100
+Les équipes choisissent souvent entre les scènes et les préfabriqués pour l'organisation de haut niveau.
+
+02:14.110 --> 02:17.830
+L'objet de jeu est le concept fondamental de toute scène.
+
+02:17.830 --> 02:23.470
+Bien qu'il puisse y avoir de nombreux composants différents sur un objet de jeu, le composant de transformation est toujours présent.
+
+02:23.470 --> 02:30.250
+Le composant de transformation stocke et manipule les aspects de la façon dont l'objet se situe dans le monde.
+
+02:30.250 --> 02:34.750
+Que l'objet soit graphique ou non, il possède un objet de transformation.
+
+02:34.750 --> 02:38.710
+Le code que nous utilisons est le langage d'instructions du logiciel.
+
+02:38.710 --> 02:43.480
+Les racines historiques d'Unity sont liées au projet mono.
+
+02:43.480 --> 02:47.140
+Il s'agissait d'une version open source du framework DOT net.
+
+02:47.350 --> 02:53.860
+Vous verrez encore le terme mono utilisé dans l'API Unity, y compris le comportement mono.
+
+02:53.860 --> 02:57.490
+Dans le passé, Unity proposait plusieurs langages de programmation différents.
+
+02:57.490 --> 03:03.760
+C-sharp est désormais le seul choix de programmation, et bien qu'Unity supporte C-sharp, il ne dépend pas de C-sharp.
+
+03:03.760 --> 03:04.920
+du framework DOT net.
+
+03:04.930 --> 03:12.370
+La version de C-sharp d'Unity est assez robuste et propose un grand nombre de données, de concepts et de structures différents.
+
+03:12.370 --> 03:18.550
+Le principal espace de noms que nous utilisons dans Unity est le moteur Unity pour le code d'exécution.
+
+03:18.550 --> 03:26.560
+L'éditeur Unity pour l'Edit Time Code et l'espace de noms System, qui comprend de nombreuses fonctionnalités différentes.
+
+03:26.560 --> 03:32.290
+pas spécifiquement liées à Unity, mais très utiles, y compris les mathématiques, les bibliothèques, etc.
+
+03:32.290 --> 03:36.610
+Voici un exemple de script personnalisé en C-sharp à utiliser dans unity.
+
+03:36.610 --> 03:39.280
+En commençant par le haut, nous voyons des déclarations d'utilisation.
+
+03:39.280 --> 03:43.990
+Celles-ci apportent les espaces de noms que nous devons utiliser dans ce fichier de classe particulier.
+
+03:44.590 --> 03:50.950
+Nous voyons ensuite un espace de noms qui nous aide à déclarer et à organiser l'emplacement de ce code dans notre projet.
+
+03:50.950 --> 03:55.810
+Ensuite, nous déclarons la classe publique ou l'interface qui définit ce type.
+
+03:55.810 --> 03:59.200
+Remarquez que nous étendons ou héritons du comportement du monarque.
+
+03:59.200 --> 04:04.630
+Maintenant, à partir de cette portée, nous pouvons également accéder à toutes les fonctionnalités du comportement monarch.
+
+04:04.630 --> 04:07.360
+Quelques caractéristiques spécifiques de l'unité à noter ici.
+
+04:07.360 --> 04:11.470
+Possibilité de sérialiser un champ à l'aide de l'attribut de champ sérialisé.
+
+04:11.470 --> 04:18.310
+Cet attribut peut prendre une valeur publique ou privée et la rendre dans l'inspecteur d'unité de sorte que pendant que
+
+04:18.310 --> 04:21.570
+le jeu se déroule en direct, nous pouvons modifier ce paramètre.
+
+04:21.580 --> 04:24.730
+Cela facilite le prototypage et la conception du jeu.
+
+04:24.730 --> 04:30.040
+Le comportement du moniteur s'accompagne de nombreux événements clés que vous pouvez exploiter en nommant l'une de vos méthodes.
+
+04:30.040 --> 04:30.670
+Réveillé.
+
+04:30.670 --> 04:36.460
+Vous capturez l'événement du premier réveil de cet objet dans le monde.
+
+04:36.460 --> 04:39.160
+Cet événement ne se produit qu'une seule fois par la suite.
+
+04:39.160 --> 04:40.930
+La méthode start est appelée ici.
+
+04:40.930 --> 04:46.210
+Il est bon d'établir des dépendances avec d'autres objets, puis la méthode update est appelée à chaque fois.
+
+04:46.210 --> 04:47.500
+trame suivante.
+
+04:47.500 --> 04:52.210
+Il s'agit d'un endroit idéal pour la saisie, la logique et la mise à jour des graphiques.
+
+04:52.930 --> 04:58.690
+Il ne s'agit là que de quelques-uns des événements ou des substitutions de méthodes dont vous pouvez tirer parti, mais il ne fait aucun doute que ces événements et ces substitutions de méthodes sont les suivants
+
+04:58.690 --> 05:00.970
+sont parmi les plus importants.

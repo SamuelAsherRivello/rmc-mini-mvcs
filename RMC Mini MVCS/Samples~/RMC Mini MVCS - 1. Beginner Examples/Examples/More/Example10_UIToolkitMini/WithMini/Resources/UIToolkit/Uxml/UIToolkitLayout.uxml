@@ -1,0 +1,23 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/Incomplete%20Samples/Example09_UIToolkitMini/WithMini/Resources/UIToolkit/Uss/UIToolkitStyles.uss?fileID=7433441132597879392&amp;guid=7072132ac8c4c2941841ebc96ca944e2&amp;type=3#UIToolkitStyles" />
+    <ui:VisualElement name="MainContent" class="main-content" style="height: 100%; width: 100%; flex-direction: row;">
+        <ui:VisualElement name="LeftColumn" class="column" style="height: 100%; width: 100%; justify-content: center;">
+            <ui:Button text="Hair" display-tooltip-when-elided="true" name="HairButton" />
+            <ui:Button text="Face" display-tooltip-when-elided="true" name="FaceButton" />
+            <ui:Button text="Shirt" display-tooltip-when-elided="true" name="ShirtButton" />
+            <ui:Button text="Body" display-tooltip-when-elided="true" name="BodyButton" />
+            <ui:GroupBox name="Buttons" style="flex-direction: row; align-items: stretch; justify-content: space-around; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; flex-grow: 0; flex-shrink: 1;">
+                <ui:Button text="Randomize" display-tooltip-when-elided="true" name="RandomizeButton" />
+                <ui:Button text="Reset" display-tooltip-when-elided="true" name="ResetButton" />
+            </ui:GroupBox>
+        </ui:VisualElement>
+        <ui:VisualElement name="RightColumn" class="column" style="height: 100%; width: 100%; justify-content: center; align-items: center;">
+            <ui:GroupBox name="Images" style="width: 286px; height: 549px; align-items: center; justify-content: flex-end; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; position: relative; flex-shrink: 1;">
+                <ui:VisualElement name="BodyVisualElement" class="unity-image" style="background-image: url(&apos;project://database/Assets/Incomplete%20Samples/Example09_UIToolkitMini/WithMini/3rdParty/UnrulyGames/Faces/Faces/Bodies/Body_3.png?fileID=21300000&amp;guid=5de03d0e91829474daaf0a916af221e6&amp;type=3#Body_3&apos;);" />
+                <ui:VisualElement name="HairVisualElement" class="unity-image" style="background-image: url(&apos;project://database/Assets/Incomplete%20Samples/Example09_UIToolkitMini/WithMini/3rdParty/UnrulyGames/Faces/Faces/Hairs/Hair_2.png?fileID=2800000&amp;guid=c501879b455744ca29be92cb4c24c7fd&amp;type=3#Hair_2&apos;);" />
+                <ui:VisualElement name="FaceVisualElement" class="unity-image" style="background-image: url(&apos;project://database/Assets/Incomplete%20Samples/Example09_UIToolkitMini/WithMini/3rdParty/UnrulyGames/Faces/Faces/Faces/Face_2.png?fileID=2800000&amp;guid=81ed306d4da7b40a79b119636e9a8a0f&amp;type=3#Face_2&apos;);" />
+                <ui:VisualElement name="ShirtVisualElement" class="unity-image" style="background-image: url(&apos;project://database/Assets/Incomplete%20Samples/Example09_UIToolkitMini/WithMini/3rdParty/UnrulyGames/Faces/Faces/Shirts/Shirt_2.png?fileID=2800000&amp;guid=995cd007e07a845eba5988ad7cf64917&amp;type=3#Shirt_2&apos;);" />
+            </ui:GroupBox>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

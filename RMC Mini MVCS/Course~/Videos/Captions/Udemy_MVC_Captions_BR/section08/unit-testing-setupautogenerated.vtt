@@ -1,0 +1,400 @@
+WEBVTT
+
+00:00.150 --> 00:03.750
+Configuração da janela do executor de teste e das classes de teste.
+
+00:03.750 --> 00:07.380
+O código-fonte da estrutura de teste está disponível no gerenciador de pacotes.
+
+00:07.380 --> 00:14.580
+Você pode adicionar o pacote que procura a estrutura de teste, importar a estrutura de teste e, opcionalmente, importar
+
+00:14.580 --> 00:15.270
+cobertura de código.
+
+00:15.270 --> 00:19.980
+Ferramentas A estrutura de teste do Unity inclui todas as bibliotecas necessárias para testar seu código CE.
+
+00:19.980 --> 00:25.830
+Agora, como indivíduo ou equipe, se você for novo em testes, não precisa testar todo o seu código
+
+00:25.830 --> 00:26.670
+de uma só vez.
+
+00:26.670 --> 00:32.550
+Pode começar a testar lentamente, ao longo do tempo, quanto mais do seu código estiver coberto por testes, melhor
+
+00:32.550 --> 00:37.740
+você terá mais confiança em algumas maneiras de integrá-lo à sua equipe de forma fácil e agradável.
+
+00:37.860 --> 00:44.670
+Você está adicionando testes apenas para novos recursos ou adicionando testes aos sistemas principais antes de uma grande refatoração.
+
+00:44.670 --> 00:48.780
+E uma ótima maneira de começar é testar apenas durante a correção de bugs.
+
+00:48.780 --> 00:55.200
+Se um usuário relata um bug, você primeiro replica a existência do bug com um teste de falha.
+
+00:55.200 --> 00:57.930
+Em seguida, você corrige o código e o teste é aprovado.
+
+00:57.930 --> 01:00.690
+Você pode deixar esse teste para trás como um legado.
+
+01:00.690 --> 01:03.420
+Então você tem certeza de que esse bug não voltará no futuro?
+
+01:03.420 --> 01:08.880
+O conceito de cobertura de código refere-se a quanto da sua base de código está coberta por testes.
+
+01:09.150 --> 01:16.680
+Se você tiver uma classe e três métodos em todo o seu projeto e todos os três tiverem testes, então
+
+01:16.680 --> 01:18.390
+você tem 100% de cobertura.
+
+01:18.390 --> 01:21.120
+De modo geral, quanto maior a cobertura, melhor.
+
+01:21.120 --> 01:27.390
+Você pode abrir essa janela de cobertura de código, executar seus testes e obter resultados robustos que mostram
+
+01:27.390 --> 01:32.280
+não apenas a porcentagem por classe e sistema, mas dentro de cada classe.
+
+01:32.280 --> 01:36.900
+Você obtém uma leitura linha a linha de quais métodos têm cobertura e quais não têm.
+
+01:37.320 --> 01:38.430
+É muito útil.
+
+01:38.430 --> 01:43.770
+Você pode acompanhar quanto do seu código está sendo testado, localizar quaisquer vulnerabilidades que você tenha durante o seu teste.
+
+01:43.770 --> 01:48.840
+processo de teste e também monitorar o aumento da cobertura ao longo do tempo.
+
+01:48.840 --> 01:54.930
+Com essas bibliotecas instaladas, você pode criar o seu primeiro teste, abrir a janela de execução de teste, criar
+
+01:54.930 --> 02:00.510
+uma pasta de teste, e seus ativos criam sua primeira classe e seu primeiro método nessa classe.
+
+02:00.510 --> 02:05.820
+Nesse ponto, esses testes aparecerão na execução ou janela de teste, onde você pode clicar, executar e ver
+
+02:05.820 --> 02:06.450
+eles serem executados.
+
+02:06.450 --> 02:09.180
+Aqui está um exemplo de uma classe de teste com um método de teste.
+
+02:09.300 --> 02:11.100
+Observe que ele parece bastante normal.
+
+02:11.100 --> 02:16.980
+C Sharpe O atributo de teste mostrado entre colchetes é o molho secreto.
+
+02:16.980 --> 02:22.380
+Aqui, o sistema procura por qualquer método marcado com esse atributo para considerá-lo um teste.
+
+02:22.380 --> 02:26.730
+Como mencionei, o teste é uma forma de arte e há muitas maneiras diferentes de abordá-lo.
+
+02:26.730 --> 02:32.040
+Um dispositivo interessante que uso é dividir cada método em três seções.
+
+02:32.610 --> 02:35.310
+Organizar, agir e afirmar.
+
+02:35.460 --> 02:39.960
+Em arrange você faz uma ou mais linhas que são necessárias para configurar o teste.
+
+02:39.960 --> 02:45.750
+Na parte act, você executa o que quer que seja especificamente relacionado ao teste e, em seguida
+
+02:45.750 --> 02:46.560
+faz a afirmação.
+
+02:46.560 --> 02:49.530
+Assertar significa assumir que algo é verdadeiro.
+
+02:49.530 --> 02:52.410
+Portanto, a estrutura de testes vem na biblioteca assert.
+
+02:52.410 --> 02:55.920
+Imagine que temos um sistema matemático personalizado que lhe permite adicionar dois números.
+
+02:55.920 --> 02:56.550
+Juntos.
+
+02:56.550 --> 03:03.930
+Poderíamos afirmar que a soma de cinco mais dez é igual a 15 e consideraríamos isso um teste bem-sucedido.
+
+03:04.050 --> 03:06.200
+Nós o executaríamos e veríamos que ele foi aprovado.
+
+03:06.210 --> 03:07.650
+Vamos ver isso em ação.
+
+03:07.650 --> 03:10.620
+Vou abrir um projeto unity que já tem um teste pronto.
+
+03:10.710 --> 03:14.010
+Vamos dar uma olhada em como ele funciona e executar o teste.
+
+03:15.110 --> 03:17.630
+Aqui estamos em um projeto unity vazio.
+
+03:17.630 --> 03:20.360
+Vou começar configurando a estrutura de teste.
+
+03:20.510 --> 03:22.370
+Então, vou abrir o gerenciador de pacotes.
+
+03:26.970 --> 03:30.980
+O gerenciador de pacotes mostra quais pacotes já estão instalados.
+
+03:30.990 --> 03:36.660
+É possível que o projeto com o qual você começou já tenha a estrutura de teste adicionada.
+
+03:37.390 --> 03:40.070
+Mas se não tiver, veja como você mesmo pode adicioná-la.
+
+03:40.090 --> 03:44.890
+Procure no Registro do Unity pela estrutura de teste e instale a versão mais recente.
+
+03:44.890 --> 03:52.630
+Em seguida, para recursos adicionais opcionais, pesquise no Registro do Unity por cobertura de código e instale o código
+
+03:52.630 --> 03:54.400
+A cobertura de código tem algumas amostras opcionais.
+
+03:54.400 --> 03:55.870
+Não vou instalá-las aqui.
+
+03:56.760 --> 04:02.160
+Agora, analisando os pacotes que temos no projeto, vemos a estrutura de teste e, opcionalmente, se
+
+04:02.160 --> 04:04.160
+você optou por instalar a cobertura de codificação de TI.
+
+04:04.170 --> 04:07.290
+Agora este projeto é totalmente compatível com os testes unitários.
+
+04:09.140 --> 04:09.860
+Para começar.
+
+04:09.860 --> 04:11.630
+Vamos abrir a janela do executor de testes.
+
+04:12.050 --> 04:16.340
+A janela do executor de teste tem duas guias, modo de edição e modo de reprodução.
+
+04:16.580 --> 04:18.200
+Porque não temos nenhum teste adicionado.
+
+04:18.230 --> 04:23.210
+A janela é muito útil e oferece algumas opções de criação clicáveis para fazer testes para nós.
+
+04:23.240 --> 04:26.690
+Em uma demonstração posterior, mostrarei como criar testes a partir do zero.
+
+04:27.050 --> 04:30.260
+Por enquanto, vou apenas colar um que já preparei.
+
+04:31.220 --> 04:35.960
+O teste mostrado aqui foi colado a partir do projeto de amostra Mini MVCs.
+
+04:35.960 --> 04:36.920
+Para o curso.
+
+04:36.920 --> 04:40.450
+Para nos ajudar a nos concentrarmos, removi tudo, exceto o teste que queremos examinar.
+
+04:40.460 --> 04:45.130
+Vamos explorar o teste, executar as nossas janelas, começando com o modo de edição aqui na aba do modo de edição.
+
+04:45.140 --> 04:49.580
+Por padrão, todos os testes do projeto estão listados aqui na guia do modo de edição.
+
+04:49.580 --> 04:55.820
+Por padrão, todos os testes disponíveis em qualquer lugar na pasta assets e na pasta packages são exibidos.
+
+04:55.820 --> 04:59.780
+Você pode filtrar por categoria para ver apenas alguns dos testes.
+
+04:59.780 --> 05:04.880
+Não temos muitos testes aqui, mas só para fins de demonstração, vou escolher a categoria para nossas amostras.
+
+05:04.880 --> 05:08.720
+Agora a janela mostra uma hierarquia de todos os testes organizados por namespace.
+
+05:08.720 --> 05:15.470
+Quando eu expando todos os níveis inferiores, vejo a classe de teste e, em seguida, um método de teste abaixo.
+
+05:15.470 --> 05:18.470
+Podemos executar todos os testes e ver que eles foram aprovados.
+
+05:18.650 --> 05:22.130
+Podemos selecionar um teste individual e executar o teste selecionado.
+
+05:22.130 --> 05:26.960
+Independentemente de o teste ser aprovado ou reprovado, temos uma maneira fácil de acessar o código-fonte com um clique no botão direito do mouse
+
+05:26.960 --> 05:27.560
+menu.
+
+05:30.280 --> 05:31.930
+Aqui está o código de teste completo.
+
+05:32.290 --> 05:35.120
+Este é o mesmo que vimos anteriormente na apresentação.
+
+05:35.140 --> 05:36.360
+Vamos ver os destaques.
+
+05:36.370 --> 05:40.990
+Temos um atributo de categoria opcional que ajuda a organizar nossos testes.
+
+05:41.290 --> 05:46.930
+O menu suspenso que mostrei filtra com base nesse valor, você pode ter muitas classes de teste que são
+
+05:46.930 --> 05:48.040
+na mesma categoria.
+
+05:48.040 --> 05:50.950
+Você pode ter muitas classes de teste que estão na mesma categoria.
+
+05:50.950 --> 05:52.450
+Em seguida, temos o atributo de teste.
+
+05:52.450 --> 05:57.190
+É isso que informa à estrutura de teste que esse método é de fato um método de teste.
+
+05:57.990 --> 06:00.740
+Sem isso, ele não aparecerá na janela do executor de teste.
+
+06:00.750 --> 06:07.710
+Em seguida, usamos o paradigma familiar, mas opcional, de um ato de intervalo e afirmamos que esta é apenas uma maneira que eu uso
+
+06:07.710 --> 06:10.170
+como uma convenção para organizar minha lógica de teste.
+
+06:10.170 --> 06:16.350
+Além disso, quando nomeio meus testes, opto por nomeá-los com base no que está sendo testado, qual é a expectativa
+
+06:16.350 --> 06:17.640
+e qual é a situação.
+
+06:17.640 --> 06:24.120
+Então, aqui estou testando o método ADD para saber se o resultado será 15 quando eu passar cinco e dez como operandos.
+
+06:24.120 --> 06:25.890
+Vamos passar para o modo play.
+
+06:25.890 --> 06:31.410
+A guia do modo de reprodução é muito semelhante e parece que está mostrando exatamente o mesmo teste, mas não está.
+
+06:31.410 --> 06:32.370
+Vou abrir a fonte.
+
+06:32.370 --> 06:34.350
+Aqui está o código-fonte para um teste de modo de reprodução.
+
+06:34.350 --> 06:35.610
+Como isso é diferente?
+
+06:35.610 --> 06:40.320
+A principal diferença é onde ele está localizado na janela do projeto.
+
+06:40.440 --> 06:41.640
+Vou mostrar isso daqui a pouco.
+
+06:41.640 --> 06:47.610
+Uma diferença opcional que escolhi é que, para os meus testes no modo play, eu acrescento a classe com o modo play
+
+06:47.610 --> 06:53.010
+test, enquanto no modo ed eu apenas acrescento test, o que me ajuda a organizar.
+
+06:53.010 --> 06:58.980
+Agora, para fins de demonstração, estou testando exatamente o mesmo comportamento uma vez no modo de edição e outra no modo de reprodução.
+
+06:58.980 --> 07:01.290
+Isso provavelmente não é necessário para você.
+
+07:01.290 --> 07:08.280
+Em vez disso, você testa por padrão no modo de edição e só usa o teste no modo de reprodução quando precisa capturar a reprodução
+
+07:08.280 --> 07:15.690
+eventos do modo de jogo, como o despertar inicial ou a funcionalidade do objeto de jogo, detecção de colisão e outras coisas que
+
+07:15.690 --> 07:16.980
+só acontecem em tempo de execução.
+
+07:16.980 --> 07:21.180
+Conforme discutido no curso, eu uso a mesma convenção de nomenclatura de métodos que vimos anteriormente.
+
+07:21.180 --> 07:22.170
+Vamos observar dois.
+
+07:22.320 --> 07:24.330
+Vamos observar duas diferenças importantes aqui.
+
+07:24.330 --> 07:31.320
+Utilizamos um atributo de teste de unidade e não um atributo de teste, como vimos anteriormente, e para além de um intervalo
+
+07:31.320 --> 07:34.470
+act e assert, há um paradigma de peso opcional.
+
+07:34.470 --> 07:41.160
+Isso é usado aqui apenas para demonstrar o fato de que enquanto os testes do modo de edição são executados de forma síncrona
+
+07:41.160 --> 07:44.670
+podem ser executados de forma assíncrona.
+
+07:44.670 --> 07:49.860
+Portanto, se você tiver algum código que exija testes assíncronos, o modo play é uma ótima opção.
+
+07:49.860 --> 07:52.620
+Vamos dar uma olhada na janela do projeto para ver a organização.
+
+07:52.620 --> 07:58.080
+Observe que o teste do modo de edição está em uma pasta do editor e observe que o teste do modo de reprodução está em um tempo de execução
+
+07:58.080 --> 07:58.500
+pasta.
+
+07:58.500 --> 08:05.310
+Essa diferença, juntamente com as diferenças nos arquivos de definição de montagem adjacentes a esses testes
+
+08:05.310 --> 08:09.870
+é como o sistema sabe que um é um teste de editor e o outro é um teste de modo de reprodução.
+
+08:09.870 --> 08:11.370
+Vou executar os testes do modo de jogo.
+
+08:11.370 --> 08:13.460
+Finalmente, executarei o teste do modo de jogo.
+
+08:13.470 --> 08:18.840
+A janela do executor de teste se comporta da mesma forma, com uma exceção, porque esses são testes de modo de reprodução.
+
+08:18.840 --> 08:25.710
+O Unity criará uma cena anônima, executará o teste isoladamente e, em seguida, destruirá a cena.
+
+08:25.740 --> 08:31.710
+Embora tudo isso aconteça muito rapidamente, você notará que está acontecendo aqui como um plus, como uma execução de imprensa
+
+08:31.710 --> 08:34.680
+em vez de executar todos os testes em um milissegundo.
+
+08:34.680 --> 08:39.600
+Por exemplo, como o modo de edição pode fazer aqui, leva vários milissegundos para ser executado.
+
+08:39.600 --> 08:46.220
+Aqui temos a chance de ver um teste em execução, ver a janela do executor de teste e ver o básico.
+
+08:46.230 --> 08:48.990
+A seguir, vamos dar uma olhada em como criar nossos próprios testes.

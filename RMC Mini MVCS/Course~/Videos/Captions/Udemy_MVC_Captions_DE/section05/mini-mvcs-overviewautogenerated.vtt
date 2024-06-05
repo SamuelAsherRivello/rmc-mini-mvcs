@@ -1,0 +1,256 @@
+WEBVTT
+
+00:00.330 --> 00:03.630
+Die Architektur des Mini-MDC für Unity.
+
+00:03.630 --> 00:08.820
+Nach jahrelanger Erfahrung mit Unity habe ich die Mini-MVCs-Architektur entwickelt.
+
+00:08.820 --> 00:12.740
+Im Laufe des Kurses werde ich sie als Mini oder Mini-MVCs bezeichnen.
+
+00:12.750 --> 00:17.580
+Bei der Entwicklung habe ich die Erfahrungen aus früheren Architektur-Frameworks genutzt.
+
+00:17.580 --> 00:23.910
+Zu diesen Erkenntnissen gehören die Verwendung von Generika, starke Typisierung, das Befehlsmuster und der Beobachter
+
+00:23.910 --> 00:26.550
+Muster für ein zweistufiges Kommunikationssystem.
+
+00:26.550 --> 00:32.670
+Wie bei anderen MVC-basierten Architekturen haben wir Vorteile, einschließlich der Tatsache, dass es eine bewährte Lösung ist.
+
+00:32.670 --> 00:34.080
+Sie ist sprachunabhängig.
+
+00:34.080 --> 00:39.300
+Sie können Materialien zu dieser Art von Ansatz in vielen verschiedenen Sprachen und Plattformen finden.
+
+00:39.300 --> 00:45.300
+Die Verwendung von MINI bietet eine besser testbare Umgebung, die eine schnellere Entwicklung und eine einfachere
+
+00:45.300 --> 00:46.650
+Wartung Ihrer Projekte.
+
+00:46.650 --> 00:49.080
+Einige Funktionen umfassen Dies ist leichtgewichtig.
+
+00:49.080 --> 00:53.310
+Ein Grund, warum es MINI heißt, ist, dass es nur sehr wenige Klassen und Konzepte gibt.
+
+00:53.310 --> 00:56.820
+Außerdem geht es speziell um Nicht-Geld-Verhalten.
+
+00:56.820 --> 00:58.560
+Geldbezogene Verhaltensweisen sind hier optional.
+
+00:58.560 --> 01:04.140
+Die Kernanliegen erweitern eine Schnittstelle, und es sind nicht viele Verhaltensweisen erforderlich.
+
+01:04.530 --> 01:09.180
+Verhaltensweisen werden optional und man kann sie für alle vier Anliegen verwenden.
+
+01:09.180 --> 01:13.590
+Keines der Anliegen oder eine beliebige Kombination, die für Ihr Projekt am besten geeignet ist.
+
+01:13.590 --> 01:17.280
+Dies zeigt ein weiteres Merkmal, dass es sich um einen meinungsbildenden Rahmen handelt.
+
+01:17.280 --> 01:22.770
+Es gibt einen vorgeschlagenen Pfad, aber er ist auch ziemlich flexibel, je nach den Bedürfnissen Ihres Projekts.
+
+01:22.770 --> 01:26.370
+Sie können dieses System massieren und die besten Ergebnisse für Ihren Anwendungsfall erzielen.
+
+01:26.370 --> 01:32.670
+Dieses Framework eignet sich hervorragend für produktive Anwendungsfälle in Ihrem Projekt und darüber hinaus ist es ideal für die Ausbildung
+
+01:32.670 --> 01:33.360
+Anwendungen.
+
+01:33.360 --> 01:37.650
+Deshalb konzentriere ich mich in diesem Kurs darauf, um die Konzepte von MVC zu vermitteln.
+
+01:37.650 --> 01:42.300
+Schauen wir uns dieses UML-Diagramm auf hoher Ebene an, das die beteiligten Klassen zeigt.
+
+01:42.300 --> 01:47.520
+Hier sehen wir die bekannten Hauptaspekte von Model, View, Controller und Service.
+
+01:47.550 --> 01:51.090
+Beachten Sie, dass wir keine direkten Abhängigkeiten von der Unity-Engine haben.
+
+01:51.090 --> 01:53.220
+Es wird kein Mono-Verhalten mehr benötigt.
+
+01:53.220 --> 01:55.530
+Es gibt Flexibilität, wie man es implementiert.
+
+01:55.530 --> 02:01.740
+Aber hier in diesem Beispiel aus meinem Code, bin ich Unterklassen, die Mini und VCs Projekt, um loszulegen.
+
+02:01.740 --> 02:07.110
+Wenn man sich also dieses Framework oder ein anderes Unity-spezifisches Framework ansieht, sollte man einige der folgenden Punkte beachten
+
+02:07.110 --> 02:08.610
+die Sie sich stellen können, finden Sie hier.
+
+02:08.610 --> 02:12.030
+Hat es in diesem Fall irgendwelche Unity-spezifischen Features?
+
+02:12.030 --> 02:12.450
+Nein.
+
+02:12.450 --> 02:16.560
+Ich habe mich entschieden, nicht von Unity abhängig zu sein und das Verhalten von Unity vorauszusetzen.
+
+02:16.560 --> 02:19.470
+Zum Beispiel können Sie das sicherlich selbst hinzufügen.
+
+02:19.470 --> 02:25.110
+Das System ist flexibel, um Dinge wie Mono Behaviour und Scriptable Object zu verwenden, aber sie sind nicht erforderlich
+
+02:25.110 --> 02:26.340
+Teile des Kern-Frameworks.
+
+02:26.340 --> 02:28.170
+Das war der Wunsch, die Dinge einfach zu halten.
+
+02:28.170 --> 02:30.150
+Was ist die Rolle von Mono-Verhaltensweisen?
+
+02:30.150 --> 02:31.230
+Nun, sie sind optional.
+
+02:31.230 --> 02:33.030
+Für jedes Ihrer vier Anliegen.
+
+02:33.030 --> 02:35.250
+Sie können das Mono-Verhalten erweitern oder nicht.
+
+02:35.250 --> 02:39.390
+Wie werden also die Anliegen, die Konventionen in der Kommunikation behandelt?
+
+02:39.390 --> 02:43.560
+Nun, stellen Sie sich vor, dass Sie in Ihrem Projekt standardmäßig einen oder mehrere Minis haben könnten.
+
+02:43.560 --> 02:48.180
+Ich würde davon ausgehen, dass man einen zum Projekt hinzufügt, aber man könnte ihn in mehrere aufteilen und sie kommunizieren lassen
+
+02:48.180 --> 02:50.280
+miteinander kommunizieren, um einen modulareren Ansatz zu verfolgen.
+
+02:50.280 --> 02:54.240
+Man kann null oder mehr von jedem der Hauptanliegen haben.
+
+02:54.240 --> 03:00.390
+Ich könnte mir vorstellen, dass man mindestens einen Mini und einen Controller hat, aber dann könnte man mehrere andere
+
+03:00.390 --> 03:05.730
+Controller, mehrere Ansichten, wenn Sie wollen, mehrere Modelle und mehrere Dienste.
+
+03:05.730 --> 03:07.560
+Es passt sich also Ihren Bedürfnissen an.
+
+03:07.560 --> 03:10.470
+Es ist so konzipiert, dass Sie den Konventionen folgen können.
+
+03:10.470 --> 03:16.860
+Die Vorschläge sind viel wichtiger als jede Art von Konfiguration oder Anforderung.
+
+03:16.860 --> 03:22.500
+Dies ermöglicht Flexibilität, aber ich ermutige Sie dennoch, Ihre Anliegen sorgfältig zu trennen
+
+03:22.500 --> 03:27.360
+und darauf zu achten, wie Sie zwischen diesen Bereichen kommunizieren, damit Sie ein besser skalierbares Projekt erhalten.
+
+03:27.360 --> 03:31.650
+Apropos Kommunikation: Das System unterstützt zwei Ebenen der Kommunikation.
+
+03:31.650 --> 03:34.830
+Es gibt sowohl Ereignisse als auch Befehle.
+
+03:34.830 --> 03:39.370
+Beides als Optionen zur Verfügung zu haben, ist unglaublich mächtig, wie wir sehen werden.
+
+03:39.390 --> 03:42.900
+Und schließlich, wie ist das Verhältnis zwischen Starrheit und Flexibilität?
+
+03:42.900 --> 03:48.900
+Nun, eine Kernphilosophie hinter diesem Rahmenwerk ist, dass es so flexibel und leichtgewichtig wie möglich ist.
+
+03:48.900 --> 03:54.210
+Aber um viele der Vorteile zu erhalten, die wir durch die Verwendung einer Architektur erhalten, gibt es einige Regeln, die
+
+03:54.210 --> 03:58.800
+vorgeschlagen werden, und wie auch immer man sie anwendet, ich schlage vor, sie konsequent anzuwenden.
+
+03:58.800 --> 04:05.520
+Für die Zwecke dieses Kurses und unserer Diskussion werden wir also Mini und VCs als unsere gewählte Einheit wählen
+
+04:05.520 --> 04:10.590
+Rahmen, um voranzukommen, und eine Schlüsselkomponente für die Art und Weise, wie diese Informationen in diesem Kurs vermittelt werden
+
+04:10.590 --> 04:16.440
+ist unabhängig davon, welches MVC-Framework Sie wählen oder ob Sie sich entscheiden, Ihr eigenes Framework zu erstellen.
+
+04:16.440 --> 04:23.190
+Die Entwurfsprinzipien, die Entwurfsmuster, die Verwendung des Diagramms, über das wir gesprochen haben, und die Erfahrung
+
+04:23.190 --> 04:28.380
+wir werden sehen, wenn wir tiefer in die Materie einsteigen, können Sie all diese Erkenntnisse in jede Architektur einbringen, die Sie
+
+04:28.380 --> 04:28.890
+wählen.
+
+04:28.890 --> 04:30.240
+Fangen wir also an.
+
+04:30.240 --> 04:34.560
+Ich werde ein wenig erläutern, wie und warum ich die Mini-MVCs für diesen Kurs ausgewählt habe.
+
+04:34.560 --> 04:39.780
+Nachdem ich Jahre damit verbracht habe, Architekturen zu lernen und auf verschiedene Projekte anzuwenden, und ich wollte unterrichten
+
+04:39.780 --> 04:44.340
+mehr über diese Konzepte zu lehren, habe ich gemerkt, dass es ein großes Thema ist und es viel zu lernen gibt.
+
+04:44.340 --> 04:51.390
+Ich schlage vor, dass man am besten lernt, indem man diese Konzepte in seinen Projekten anwendet, Beispiele erstellt
+
+04:51.390 --> 04:55.260
+Projekte von Grund auf neu, bringen Sie diese Konzepte in Ihre bestehenden Projekte.
+
+04:55.260 --> 04:59.760
+Nur so bekommen Sie ein Gefühl für die Vorteile dieser Lösungen und lernen sie kennen.
+
+05:00.060 --> 05:05.400
+Ich habe mir alle Möglichkeiten angesehen, die es aus Sicht der Einheit für die besten Architekturen gibt.
+
+05:05.400 --> 05:10.200
+Es gibt eine Menge großartiger Möglichkeiten, aber sie sind oft komplex, wenn man die Eigenheiten von
+
+05:10.200 --> 05:10.950
+jedes Frameworks.
+
+05:10.950 --> 05:16.410
+Deshalb habe ich die Mini-MVCs als einfachen Einstieg in die Konzepte der MVCs entwickelt.
+
+05:16.440 --> 05:20.790
+Es ist in der Tat produktionsreif, aber es ist wirklich für Ausbildungszwecke gedacht.
+
+05:20.790 --> 05:26.340
+Also genießen Sie es, wenn wir tiefer in die Materie eindringen, wir schauen uns Beispiele an, die darauf basieren, und Sie folgen den Aufgaben mit
+
+05:26.340 --> 05:27.000
+den Rahmen.
+
+05:27.000 --> 05:32.310
+Ich hoffe, dass am Ende des Kurses, egal ob es sich um diese spezielle Lösung oder eine andere Architektur handelt,
+
+05:32.310 --> 05:37.230
+dass Sie die Vorteile einer Architektur erkennen und die Fähigkeit haben, sie anzuwenden.
+
+05:37.620 --> 05:38.460
+Ich danke Ihnen.

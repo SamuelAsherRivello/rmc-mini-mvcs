@@ -1,0 +1,454 @@
+WEBVTT
+
+00:00.170 --> 00:00.500
+Tudo certo.
+
+00:00.500 --> 00:03.080
+Aqui, vamos dar uma olhada na demonstração da bola saltitante.
+
+00:03.110 --> 00:05.900
+Estou um pouco à frente da palavra demo, mas aqui está.
+
+00:05.900 --> 00:09.580
+Portanto, isto faz parte do curso de mini mvc's.
+
+00:09.590 --> 00:14.330
+Este é um curso de arquitetura unity que está disponível para compra.
+
+00:14.330 --> 00:19.970
+E todo o código que estamos mostrando aqui, incluindo o código completo do curso, está disponível gratuitamente em
+
+00:19.970 --> 00:20.510
+GitHub.
+
+00:20.510 --> 00:21.950
+Então, você pode dar uma olhada nisso.
+
+00:21.950 --> 00:30.620
+O link abaixo deste curso é sobre você fazer arquitetura dentro do Unity, o Model view e o controller
+
+00:30.620 --> 00:31.160
+nele.
+
+00:31.160 --> 00:36.560
+Cobriremos a introdução do curso, falaremos sobre o Unity e daremos uma olhada no design de software.
+
+00:36.560 --> 00:42.740
+Vamos dar uma olhada no próximo slide para nos aprofundarmos ainda mais no design de software, veremos os princípios de design.
+
+00:42.740 --> 00:44.780
+Analisamos os padrões de design.
+
+00:44.780 --> 00:46.160
+O que são essas coisas?
+
+00:46.160 --> 00:49.310
+Analisamos formas de diagramar nossos projetos.
+
+00:49.310 --> 00:56.090
+Com a UML, examinamos todas as diferentes opções de arquitetura para a unidade e, então, chegamos aos mini MVCs,
+
+00:56.120 --> 01:01.170
+que é uma arquitetura livre de personalização como a solução principal.
+
+01:01.850 --> 01:05.150
+Depois, há quatro projetos de amostra diferentes incluídos no curso.
+
+01:05.150 --> 01:07.790
+Mas hoje vamos ver ainda mais demonstrações.
+
+01:07.790 --> 01:09.920
+Além dessas, acho que acrescentei mais dez.
+
+01:09.950 --> 01:13.040
+Então, vamos ver a demonstração da bola saltitante aqui.
+
+01:13.040 --> 01:14.450
+Vamos dar uma olhada nisso.
+
+01:14.870 --> 01:17.240
+Então, aqui estou eu no projeto de amostra.
+
+01:17.240 --> 01:23.540
+Se você obteve o projeto de exemplo aqui, o mini MVCs, e seguiu as instruções do Git
+
+01:23.540 --> 01:28.430
+então vá para as amostras aqui e importe essas amostras.
+
+01:28.430 --> 01:30.350
+Eu já fiz isso para nós aqui.
+
+01:30.380 --> 01:37.640
+Podemos ver as amostras e podemos ver aqui, na pasta more, o bouncy ball mini.
+
+01:37.640 --> 01:39.380
+Então vamos dar uma olhada nelas.
+
+01:40.520 --> 01:41.810
+E aqui está a demonstração.
+
+01:41.810 --> 01:44.120
+Então, vamos executar a demonstração só para começar.
+
+01:46.100 --> 01:47.690
+Está tocando um pouco de áudio.
+
+01:47.690 --> 01:49.160
+Não tenho certeza se você pode ouvir isso.
+
+01:49.950 --> 01:59.220
+Mas tudo o que ele está fazendo é usar a física da unidade para rebater uma bola em uma superfície e, em seguida, atualizar a interface do usuário.
+
+01:59.250 --> 02:02.060
+Agora, não há interatividade nessa demonstração.
+
+02:02.070 --> 02:04.500
+Na verdade, acho que posso apertar a barra de espaço se eu me lembrar.
+
+02:05.320 --> 02:05.530
+Agora.
+
+02:06.610 --> 02:08.410
+Agora não há interatividade.
+
+02:08.980 --> 02:14.140
+Portanto, tudo o que ele faz aqui é rodar por conta própria e usar um pouco de física.
+
+02:14.140 --> 02:18.400
+Então, você pode dar uma olhada em como a física interage e pode ver que a interface do usuário está sendo atualizada
+
+02:18.400 --> 02:18.690
+ali.
+
+02:18.700 --> 02:20.530
+Então vamos dar uma olhada em como isso está estruturado.
+
+02:22.980 --> 02:28.410
+Então, aqui na cena, temos um objeto de jogo mundial que apenas esconde a câmera e a luz, que são
+
+02:28.410 --> 02:29.490
+não são muito interessantes.
+
+02:29.520 --> 02:36.630
+Em seguida, temos a visualização da bola saltitante, que tem todos os gráficos que vemos ali e também a interface do usuário.
+
+02:36.660 --> 02:38.760
+Então, vamos dar uma olhada nos elementos da IU.
+
+02:38.790 --> 02:42.090
+Ele tem o título e o status.
+
+02:42.090 --> 02:47.550
+Portanto, esta é a visualização que contém tudo o que vemos visualmente e a visualização também reproduz o áudio.
+
+02:47.580 --> 02:52.770
+Não tenho certeza se, na gravação, você pode ouvir o áudio, mas ele está apenas saltando, saltando,
+
+02:52.770 --> 02:54.760
+e reproduzindo um pequeno ruído.
+
+02:54.780 --> 02:56.760
+Então é isso aí.
+
+02:57.420 --> 03:00.540
+Agora vamos dar uma olhada no exemplo em si.
+
+03:00.540 --> 03:04.050
+Este é um monocomportamento chamado mini exemplo da bola saltitante.
+
+03:04.050 --> 03:09.810
+E tudo o que faço é arrastar a visualização como a única referência que ela precisa ter aqui.
+
+03:09.810 --> 03:12.540
+E, então, isso está pronto e pronto para ser usado.
+
+03:12.540 --> 03:14.190
+Então, vamos dar uma olhada no código fonte aqui.
+
+03:16.110 --> 03:17.810
+Diminua um pouco o zoom aqui.
+
+03:17.820 --> 03:19.950
+Aqui está o exemplo.
+
+03:20.040 --> 03:23.970
+O exemplo vai receber a visualização como um campo serializado.
+
+03:24.150 --> 03:27.840
+Em seguida, vai apenas começar no início aqui.
+
+03:27.840 --> 03:31.920
+Vai criar uma nova mini bola saltitante e passar para a vista.
+
+03:31.920 --> 03:37.290
+Portanto, Mini aqui, nesta terminologia, é o invólucro de todo o aplicativo.
+
+03:37.290 --> 03:41.940
+Portanto, sempre que você vir o Mini no código-fonte, ele deve ser a estrutura mais primária.
+
+03:41.940 --> 03:45.420
+E dentro dela, há vários elementos, incluindo The View.
+
+03:45.870 --> 03:47.460
+Vamos dar uma olhada nisso a seguir.
+
+03:50.920 --> 03:54.250
+Então, abrindo o The View.
+
+03:56.600 --> 03:58.280
+A visualização vai se estender.
+
+03:58.310 --> 03:58.860
+Desculpe-me.
+
+03:58.880 --> 04:00.890
+Estou abrindo o Mini para começar.
+
+04:01.370 --> 04:04.580
+Então, no Mini, eu pego o elemento view.
+
+04:04.610 --> 04:07.040
+Ele também tem um controlador de áudio.
+
+04:07.040 --> 04:11.180
+E aqui está o que fazemos dentro do mini initialize.
+
+04:11.210 --> 04:19.700
+Vamos criar um contexto, um serviço de controlador de modelo e vamos conectá-los todos juntos
+
+04:19.700 --> 04:21.400
+aqui nesta única linha.
+
+04:21.410 --> 04:28.040
+Portanto, sempre que você vir o controlador sendo inicializado no mini mundo, o controlador é o mais,
+
+04:28.430 --> 04:32.750
+digamos, a preocupação mais bem informada em todo o sistema.
+
+04:32.750 --> 04:36.020
+Portanto, o próprio mini tem quatro partes em seu interior.
+
+04:36.020 --> 04:40.670
+Uma dessas partes é o controlador, e o controlador é a parte mais bem informada.
+
+04:40.670 --> 04:46.550
+Portanto, ele recebe uma referência para as outras três partes e é o que dirá: "Ei, modelo de dados, o que é?
+
+04:46.550 --> 04:47.450
+seu valor?
+
+04:47.480 --> 04:50.060
+Ei, visualização, alguém interagiu com você?
+
+04:50.090 --> 04:52.430
+Ei, serviço, você pode carregar algo para mim?
+
+04:52.430 --> 04:54.830
+É o controlador que vai unir tudo isso.
+
+04:55.520 --> 04:57.780
+Então, vamos dar uma olhada rápida no modelo.
+
+04:58.170 --> 05:04.650
+O modelo manterá os valores de quantas vezes contamos para cima e qual é o máximo?
+
+05:04.650 --> 05:07.560
+Portanto, ele vai dizer um de três, dois de três.
+
+05:07.560 --> 05:12.510
+E então, quando chegar a três de três, ele se redefinirá para um de três, dois de três.
+
+05:12.510 --> 05:14.580
+É assim que esses dois valores funcionam.
+
+05:14.610 --> 05:17.460
+Aqui, observe que ambos estão definidos como zero.
+
+05:17.460 --> 05:21.360
+Então, vamos dar uma olhada no que define o máximo como três daqui a pouco.
+
+05:22.020 --> 05:23.700
+Agora vamos dar uma olhada no serviço.
+
+05:23.700 --> 05:27.960
+Portanto, a camada de serviço é o que se destina a chamar qualquer dado externo.
+
+05:27.960 --> 05:34.620
+Se o seu jogo não precisar de dados externos desde o início ou nunca, você pode omitir essa etapa.
+
+05:34.620 --> 05:36.150
+Você não precisa ter um serviço.
+
+05:36.150 --> 05:43.080
+Mas, normalmente, os jogos atuais chamam serviços de back-end, arquivos locais que são externos ao próprio jogo,
+
+05:43.080 --> 05:49.140
+como vemos aqui, e esse conceito de serviço é excelente para isso.
+
+05:49.140 --> 05:56.850
+Portanto, aqui tudo o que ele vai fazer é carregar um arquivo de texto local e depois analisar esse valor em
+
+05:56.850 --> 05:58.830
+a contagem de bounce bounce.
+
+05:58.860 --> 06:01.530
+Max Então, vamos dar uma olhada nesse arquivo de texto.
+
+06:01.710 --> 06:04.200
+Ele está aqui nos textos de recursos.
+
+06:04.380 --> 06:07.440
+Se eu o abrir, ele começa com o valor três.
+
+06:07.440 --> 06:11.280
+Portanto, parece um pouco bobo aqui que você tenha um valor.
+
+06:11.310 --> 06:14.010
+Por que não codificar três em dó sustenido?
+
+06:14.040 --> 06:17.580
+Esta é apenas uma demonstração arbitrária para mostrar.
+
+06:17.580 --> 06:21.330
+Vamos colocar alguns dados fora do aplicativo e carregá-los.
+
+06:21.330 --> 06:24.830
+Eu também poderia ter carregado isso do back-end, por exemplo.
+
+06:24.840 --> 06:26.190
+Então é isso para o serviço.
+
+06:26.220 --> 06:29.700
+Ele simplesmente carregará o valor três e o passará de volta para o controlador.
+
+06:30.430 --> 06:31.780
+Agora vamos dar uma olhada no controlador.
+
+06:31.810 --> 06:36.010
+Esta é a última coisa que precisamos examinar no controlador aqui.
+
+06:36.740 --> 06:40.820
+Nós herdamos do controlador base, como diz o comentário aqui.
+
+06:41.060 --> 06:44.570
+A propósito, a base é sempre opcional para estender.
+
+06:44.570 --> 06:48.950
+Isso só vai lhe dar alguma funcionalidade gratuita, mas você pode começar a ver através desses exemplos
+
+06:48.950 --> 06:53.590
+como há poucas linhas de código para configurar essa arquitetura.
+
+06:53.600 --> 06:59.210
+Bem, eu digo que também alguém que estivesse olhando para esse exemplo poderia dizer: "Ei, eu poderia rebater uma bola com
+
+06:59.210 --> 07:02.690
+um monocomportamento, por que preciso dessas outras classes?
+
+07:02.690 --> 07:08.060
+Mas, novamente, o exemplo aqui é que você estava aprendendo os fundamentos em um caso de uso muito simples.
+
+07:08.060 --> 07:14.540
+Agora imagine o crescimento do seu projeto até o tamanho do Fortnite gerenciando o metagame multijogador.
+
+07:14.540 --> 07:18.380
+Cada um dos jogadores, todas as coisas que você pode fazer com seu jogador.
+
+07:18.380 --> 07:23.270
+Teríamos milhares de classes e dezenas de milhares de linhas de código.
+
+07:23.300 --> 07:29.930
+Ter essas práticas recomendadas divididas em model view controller e service realmente paga dividendos em seu
+
+07:29.930 --> 07:30.800
+projetos.
+
+07:30.800 --> 07:32.510
+É por isso que estamos começando de forma tão simples.
+
+07:32.510 --> 07:38.060
+Portanto, é uma preocupação comum quando as pessoas estão começando a aprender arquiteturas, parece que, Ei,
+
+07:38.060 --> 07:42.310
+são muitas classes ou muitas linhas de código para fazer coisas simples.
+
+07:42.320 --> 07:48.350
+É verdade, mas você está investindo algum tempo agora para aprender esses fundamentos.
+
+07:48.350 --> 07:55.610
+Portanto, à medida que o seu projeto for se ajustando, é maravilhoso que três meses de projeto solo
+
+07:55.610 --> 08:02.000
+ou duas semanas em um projeto de cinco pessoas, não há dúvida de onde o próximo recurso deve ir
+
+08:02.000 --> 08:07.850
+porque vocês estão todos trabalhando juntos no mesmo padrão arquitetônico e sabem, ei, um botão
+
+08:07.850 --> 08:12.530
+clique bem, isso vai começar na visualização e depois vai para o controlador e então
+
+08:12.530 --> 08:13.400
+vai para o modelo.
+
+08:13.430 --> 08:14.810
+Você está falando a mesma língua.
+
+08:14.810 --> 08:21.560
+Portanto, o curso da Udemy fala sobre os benefícios e a análise de custo-benefício da introdução de novas tecnologias como
+
+08:21.560 --> 08:23.120
+tantos MVCs.
+
+08:23.120 --> 08:24.800
+Então, de volta ao controlador aqui.
+
+08:24.800 --> 08:29.120
+O que fazemos é inicializar a visualização com alguns campos de texto.
+
+08:29.120 --> 08:31.820
+Vamos ouvir esse serviço aqui.
+
+08:32.680 --> 08:36.430
+E sempre que o serviço é carregado, obtemos esse valor.
+
+08:36.460 --> 08:39.670
+Carregamos do campo de texto e o passamos para o modelo.
+
+08:39.790 --> 08:42.520
+Em seguida, ouvimos a visualização e dizemos: "Ei, visualização".
+
+08:42.520 --> 08:49.630
+Sempre que a física detectar que a bola quicou, vamos capturar isso aqui e atualizá-lo
+
+08:49.630 --> 08:53.490
+ouvindo sempre que a contagem de quiques for alterada aqui.
+
+08:53.500 --> 08:55.630
+Portanto, há um pouco mais para ver aqui.
+
+08:55.630 --> 08:56.610
+Você pode se aprofundar.
+
+08:56.620 --> 09:02.170
+Também temos um pouco do padrão de comando que veremos em um exemplo futuro.
+
+09:02.170 --> 09:04.060
+Então, vamos executar a demonstração mais uma vez.
+
+09:08.740 --> 09:11.680
+Sim, posso ver que o microfone está captando o salto.
+
+09:13.350 --> 09:14.130
+Então, ele simplesmente funciona.
+
+09:14.130 --> 09:14.820
+Um, dois, três.
+
+09:14.820 --> 09:15.510
+Um, dois, três.
+
+09:15.510 --> 09:16.290
+Um, dois, três.
+
+09:16.740 --> 09:18.420
+Isso é tudo para a demonstração da contagem regressiva.

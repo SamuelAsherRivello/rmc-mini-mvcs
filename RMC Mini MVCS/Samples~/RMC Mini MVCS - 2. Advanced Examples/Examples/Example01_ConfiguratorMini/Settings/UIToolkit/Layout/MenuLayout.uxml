@@ -1,0 +1,25 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/_WIP%20Samples/RMC%20Mini%20MVCS%20-%202.%20Advanced%20Examples/Examples/Example01_ConfiguratorMini/Settings/UIToolkit/Styles/ConfiguratorStyles.uss?fileID=7433441132597879392&amp;guid=0ecd92e44ebe29f44863b959e7a5114f&amp;type=3#ConfiguratorStyles" />
+    <ui:VisualElement name="Screen" class="screen">
+        <ui:VisualElement name="Header" class="header att-visibility-false" />
+        <ui:VisualElement name="Content" class="content">
+            <ui:VisualElement name="Body" class="body">
+                <ui:VisualElement name="Top" style="flex-grow: 1; flex-direction: row;">
+                    <ui:VisualElement name="TopLeft" class="body-quadrant" />
+                    <ui:VisualElement name="TopRight" class="body-quadrant">
+                        <ui:Label tabindex="-1" text="[Status]" parse-escape-sequences="true" display-tooltip-when-elided="true" name="StatusLabel" class="title-label" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="Bottom" style="flex-grow: 1; flex-direction: row;">
+                    <ui:VisualElement name="BottomLeft" class="body-quadrant" />
+                    <ui:VisualElement name="BottomRight" class="body-quadrant" style="justify-content: flex-end;">
+                        <ui:Button text="&lt;b&gt;Play&lt;/b&gt; Game" parse-escape-sequences="true" display-tooltip-when-elided="true" name="PlayGameButton" />
+                        <ui:Button text="&lt;b&gt;Customize&lt;/b&gt; Character" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CustomizeCharacterButton" />
+                        <ui:Button text="&lt;b&gt;Customize&lt;/b&gt; Environment" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CustomizeEnvironmentButton" />
+                        <ui:Button text="(Debug Console)" parse-escape-sequences="true" display-tooltip-when-elided="true" name="DebugConsoleButton" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

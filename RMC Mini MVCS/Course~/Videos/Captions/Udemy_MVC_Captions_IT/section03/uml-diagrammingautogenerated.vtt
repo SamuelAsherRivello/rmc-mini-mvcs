@@ -1,0 +1,148 @@
+WEBVTT
+
+00:00.400 --> 00:04.360
+Parliamo poi di UML o linguaggio di modellazione unificato.
+
+00:04.720 --> 00:11.530
+Usiamo UML per capire e comunicare i modelli di progettazione e le soluzioni software.
+
+00:11.950 --> 00:17.290
+Ne parlo in questo corso perché voglio discutere alcuni design pattern nella prossima sezione,
+
+00:17.290 --> 00:24.190
+e questi diagrammi ci forniscono una stenografia, un modo per comunicare questi concetti in modo più rapido e visivo.
+
+00:24.190 --> 00:29.920
+Alcuni vantaggi dell'uso di UML sono: consente una pianificazione più rapida e una comunicazione più chiara con il team.
+
+00:29.920 --> 00:34.210
+e durante lo sviluppo aiuta a focalizzare l'attenzione sulla soluzione data.
+
+00:34.210 --> 00:40.310
+Esistono diversi tipi di diagrammi e anche all'interno dell'Usmle ci sono molti tipi di diagrammi Usmle.
+
+00:40.330 --> 00:47.740
+La maggior parte di ciò che mostrerò qui saranno diagrammi di classe, il modo in cui le classi interagiscono da un punto di vista molto alto.
+
+00:47.740 --> 00:48.460
+livello.
+
+00:48.490 --> 00:55.120
+Non sto scrivendo i singoli metodi e le variabili come a volte facciamo in questi diagrammi.
+
+00:55.120 --> 01:01.630
+Invece, si tratta di una relazione di alto livello tra le classi, per cui questa classe ne estende un'altra
+
+01:01.630 --> 01:05.470
+classe usando l'ereditarietà o compone un'altra classe?
+
+01:05.470 --> 01:05.740
+Qui?
+
+01:05.740 --> 01:10.960
+In questa immagine, vediamo l'esempio della freccia bianca che indica l'ereditarietà.
+
+01:10.960 --> 01:16.480
+Quindi, all'interno di unity, per esempio, se si ha una classe che estende il comportamento mono, questo sarebbe il comportamento appropriato
+
+01:16.480 --> 01:17.590
+diagramma da utilizzare.
+
+01:17.590 --> 01:20.500
+Vediamo quindi alcuni altri esempi.
+
+01:20.680 --> 01:26.620
+La comprensione delle basi è tutto ciò di cui abbiamo bisogno per andare avanti nella comprensione di altri diagrammi.
+
+01:26.620 --> 01:29.080
+La freccia bianca indica l'ereditarietà.
+
+01:29.080 --> 01:34.990
+La linea tratteggiata con la freccia bianca indica che stiamo implementando un'interfaccia, mentre il diamante nero e la freccia bianca indicano che stiamo implementando un'interfaccia.
+
+01:34.990 --> 01:39.040
+freccia nera indicano la composizione e il riferimento.
+
+01:39.040 --> 01:41.380
+Divertiamoci con un esempio sciocco.
+
+01:41.380 --> 01:45.820
+Un'auto Toyota è un tipo di auto, quindi ha senso.
+
+01:45.820 --> 01:51.070
+Per utilizzare l'ereditarietà, se avete familiarità con le interfacce, spesso iniziamo con il nome del tipo
+
+01:51.070 --> 01:55.660
+con un occhio e descriviamo il tipo di comportamento possibile.
+
+01:55.660 --> 02:02.350
+Quindi potremmo dire che la ruota è una classe che implementa la composizione dell'interfaccia Rotatable dell'occhio
+
+02:02.350 --> 02:04.300
+e riferimento sono abbastanza simili.
+
+02:04.300 --> 02:08.470
+Sono entrambe classi che utilizzano in qualche modo un'altra classe.
+
+02:08.500 --> 02:13.600
+La differenza fondamentale è che la composizione indica che hanno lo stesso ciclo di vita.
+
+02:13.600 --> 02:18.300
+In questo caso, se l'auto Toyota dovesse scomparire, le ruote scomparirebbero con lei.
+
+02:18.310 --> 02:22.540
+Capiamo che le ruote sono parte di essa, collegate in un ciclo di vita condiviso.
+
+02:22.540 --> 02:27.010
+Tuttavia, quell'auto Toyota potrebbe anche utilizzare un sistema che sfrutta il satellite GPS.
+
+02:27.010 --> 02:28.600
+Quindi utilizza anche questo.
+
+02:28.600 --> 02:34.000
+Ma sappiamo che se l'auto dovesse scomparire, il satellite GPS probabilmente continuerebbe a esistere.
+
+02:34.000 --> 02:40.480
+Con questi quattro tipi di linee, possiamo creare un sacco di soluzioni software e spiegare in modo chiaro
+
+02:40.480 --> 02:40.810
+le soluzioni.
+
+02:40.810 --> 02:45.160
+Nel corso della mia carriera, ho visto fare diagrammi in diversi modi.
+
+02:45.160 --> 02:52.390
+Chi ha familiarità con l'UML e si appoggia molto ad esso può fare schizzi su carta o usare strumenti online.
+
+02:52.390 --> 02:55.030
+che aiutano a collegare queste linee e a tracciarle.
+
+02:55.030 --> 03:00.430
+Le persone che non hanno familiarità con questo modo ufficiale di fare diagrammi possono certamente prendere un pezzo di carta
+
+03:00.430 --> 03:03.850
+o il retro di un tovagliolo e abbozzare liberamente le proprie idee.
+
+03:03.850 --> 03:09.880
+Ma più siamo d'accordo su una sorta di sistema per il linguaggio, più facilmente possiamo comunicare.
+
+03:09.880 --> 03:12.520
+UML è uno standard piuttosto diffuso.
+
+03:12.520 --> 03:16.750
+Esiste da molto tempo in informatica e vale la pena dargli un'occhiata.
+
+03:16.750 --> 03:23.380
+Sia che si scelga di imparare da UML qui e di creare un diagramma da soli, sia che si impari solo quanto basta per seguirlo.
+
+03:23.380 --> 03:25.180
+nel corso, per me va bene.
+
+03:25.300 --> 03:30.130
+Vedremo un po' di più come l'UML si applica ad alcuni pattern di progettazione.
+
+03:30.130 --> 03:30.850
+Avanti.
+
+03:30.850 --> 03:31.660
+Grazie.

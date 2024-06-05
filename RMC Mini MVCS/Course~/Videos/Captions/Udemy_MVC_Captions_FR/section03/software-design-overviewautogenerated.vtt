@@ -1,0 +1,133 @@
+WEBVTT
+
+00:00.240 --> 00:02.490
+Aperçu de la conception du logiciel.
+
+00:02.670 --> 00:06.000
+Commençons par la théorie des principes de conception.
+
+00:06.180 --> 00:10.710
+Les développeurs chevronnés peuvent donner l'impression que c'est facile, mais un code propre n'est pas écrit par hasard.
+
+00:10.740 --> 00:17.430
+La création de bons projets repose sur l'utilisation de principes solides, de bons flux de travail et de modèles productifs.
+
+00:17.430 --> 00:18.670
+dans votre processus.
+
+00:18.690 --> 00:21.440
+Tout d'abord, parlons des principes de conception.
+
+00:21.450 --> 00:25.040
+Il s'agit des philosophies qui conduisent à un développement logiciel productif.
+
+00:25.050 --> 00:32.490
+Les avantages comprennent une planification plus rapide, une communication claire et une concentration pendant le développement.
+
+00:32.700 --> 00:37.350
+L'histoire de l'informatique regorge de ces principes de conception.
+
+00:37.470 --> 00:39.850
+Je vais passer en revue quelques-uns des plus populaires.
+
+00:39.870 --> 00:46.410
+C'est une excellente occasion pour vous de faire vos propres recherches sur ceux qui vous sont inconnus et de creuser la question.
+
+00:46.410 --> 00:49.370
+sur celles qui vous sont familières.
+
+00:49.380 --> 00:56.220
+Commençons par les principes de solidité, où chaque lettre de solidité correspond à un principe de conception.
+
+00:56.490 --> 01:04.530
+Le principe de responsabilité unique est le désir général pour chacune de vos classes et structures de
+
+01:04.530 --> 01:06.050
+ne fasse qu'une seule chose.
+
+01:06.060 --> 01:14.010
+Le principe ouvert-fermé signifie que chaque classe doit être ouverte à l'extension mais fermée à la modification.
+
+01:14.010 --> 01:19.290
+Avec la programmation orientée objet, vous disposez de l'héritage et des interfaces.
+
+01:19.290 --> 01:27.840
+Le principe de la liste de substitution stipule que tout sous-type doit pouvoir être transformé en parent.
+
+01:27.870 --> 01:29.220
+type et interface.
+
+01:29.220 --> 01:36.030
+La ségrégation signifie que nous ne devons pas appliquer à un type donné plus d'interfaces que nécessaire.
+
+01:36.030 --> 01:41.970
+Enfin, l'inversion de dépendance indique que lorsqu'on a affaire à un code élevé et à un code faible en
+
+01:41.970 --> 01:49.280
+un système, le code de haut niveau ne doit pas dépendre des implémentations concrètes du code de bas niveau.
+
+01:49.290 --> 01:55.140
+Il devrait plutôt utiliser quelque chose comme les interfaces pour abstraire que certains autres concepts populaires incluent.
+
+01:55.140 --> 01:56.520
+Ne vous répétez pas.
+
+01:56.520 --> 02:02.940
+Il s'agit d'un rappel que nous utilisons en tant que développeurs : si vous vous retrouvez à copier, coller, du code littéral
+
+02:02.940 --> 02:08.910
+ou des concepts, il peut y avoir une approche systématique qui nous aide à réutiliser ce code plus efficacement.
+
+02:08.940 --> 02:15.540
+Keep it simple nous rappelle qu'il ne faut pas trop compliquer nos solutions et que vous n'en aurez pas besoin.
+
+02:15.540 --> 02:19.500
+Nous rappelle qu'il ne faut pas construire aujourd'hui les solutions de demain.
+
+02:20.310 --> 02:21.870
+Dans le cadre d'un développement itératif.
+
+02:21.870 --> 02:28.080
+Nous voulons résoudre les défis qui se présentent à nous aujourd'hui en nous appuyant sur des principes solides et non pas concevoir quelque chose qui
+
+02:28.080 --> 02:30.180
+est nécessairement à l'épreuve du temps.
+
+02:30.210 --> 02:36.630
+Souvent, nous ne savons pas de quoi l'avenir sera fait, et concevoir pour demain est une complication inutile.
+
+02:36.630 --> 02:42.870
+Le simple fait de mettre en pratique les principes énoncés ici et de les appliquer à votre projet vous permettra automatiquement d'atteindre les objectifs suivants
+
+02:42.870 --> 02:49.150
+plus d'évolutivité, de maintenabilité et de qualité de vie en tant que développeur.
+
+02:49.170 --> 02:54.900
+Lorsque nous réfléchissons à ces principes de conception de logiciels dans cette section particulière, nous partons d'un point de vue élevé.
+
+02:54.900 --> 03:00.720
+théoriques qui peuvent être plus universels sur les différentes plates-formes de programmation.
+
+03:00.720 --> 03:06.450
+Ensuite, nous nous pencherons davantage sur les rouages de l'application, en particulier au sein d'unity.
+
+03:06.600 --> 03:13.890
+Mais vous remarquerez cette différence entre ce que nous disons à haut niveau et ce que nous faisons concrètement à bas niveau et tout au long du processus.
+
+03:13.890 --> 03:19.890
+que vous pouvez développer votre propre style personnel pour déterminer lesquels de ces principes ont un impact sur votre vie professionnelle quotidienne.
+
+03:19.890 --> 03:21.020
+plus que d'autres.
+
+03:21.030 --> 03:27.180
+Nous en viendrons également à reconnaître certains de ces principes dans les architectures que nous utilisons et, en fin de compte, dans les systèmes d'information que nous utilisons.
+
+03:27.180 --> 03:30.030
+le code que nous réalisons ensemble dans les sections de codage.
+
+03:30.150 --> 03:31.260
+C'est tout pour l'instant.
+
+03:31.260 --> 03:31.980
+Merci.

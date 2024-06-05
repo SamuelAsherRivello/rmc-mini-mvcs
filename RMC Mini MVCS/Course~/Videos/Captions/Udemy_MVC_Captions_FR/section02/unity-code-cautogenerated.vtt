@@ -1,0 +1,244 @@
+WEBVTT
+
+00:00.240 --> 00:06.180
+Les éditeurs sont quelques-uns des principaux outils que nous utilisons dans le développement de logiciels lorsque nous développons des jeux avec unity.
+
+00:06.180 --> 00:12.840
+L'éditeur Unity proprement dit est l'endroit où nous effectuons la majeure partie de notre travail, tandis qu'un éditeur de code distinct nous permet d'effectuer les tâches suivantes
+
+00:12.840 --> 00:13.590
+ajoutons le code.
+
+00:13.620 --> 00:19.380
+L'éditeur Unity se compose d'un concept de disposition, qui est un groupe de différents onglets et ancrages.
+
+00:19.380 --> 00:20.220
+fenêtres.
+
+00:21.280 --> 00:26.920
+Chacune de ces fenêtres remplit des fonctions et nous donne plus d'informations sur le jeu et le projet
+
+00:26.920 --> 00:27.700
+que nous sommes en train de créer.
+
+00:27.730 --> 00:31.910
+Voici une présentation assez courante avec les fenêtres les plus populaires et les plus utiles.
+
+00:31.930 --> 00:35.070
+La fenêtre de hiérarchie nous montre les objets du monde.
+
+00:35.080 --> 00:38.860
+La vue de la scène nous donne une représentation 3D de ce monde.
+
+00:38.950 --> 00:42.100
+Elle peut également être basculée en 2D pour un jeu en 2D.
+
+00:42.130 --> 00:48.130
+La fenêtre de projet représente la bibliothèque de tous les actifs et codes possibles que nous pouvons introduire dans cette scène.
+
+00:48.130 --> 00:54.550
+Lorsque nous sélectionnons différents éléments et fonctionnalités dans ces fenêtres, la fenêtre de l'inspecteur donne les informations suivantes
+
+00:54.550 --> 00:58.480
+plus de détails et des champs sérialisés de notre code.
+
+00:58.480 --> 01:02.320
+Ils s'affichent ici pour faciliter l'édition et l'exécution.
+
+01:02.350 --> 01:05.200
+Voyons cela en action dans l'éditeur Unity.
+
+01:05.200 --> 01:06.580
+Je vais créer une nouvelle scène.
+
+01:06.580 --> 01:08.340
+Je vais créer un objet de jeu.
+
+01:08.350 --> 01:11.530
+Je vais ajouter un script personnalisé à cet objet de jeu.
+
+01:11.530 --> 01:15.970
+Je vais appuyer sur play dans unity et nous verrons comment ce script se traduit en temps d'exécution.
+
+01:15.970 --> 01:21.460
+Je vais ensuite jouer avec les champs sérialisés dans l'inspecteur pour montrer comment cela fonctionne.
+
+01:21.580 --> 01:25.780
+Les prérequis pour ce cours incluent un logiciel libre.
+
+01:25.960 --> 01:29.350
+Tout d'abord, utilisez votre navigateur web préféré.
+
+01:30.270 --> 01:35.280
+Cela vous sera utile pour effectuer toute recherche supplémentaire nécessaire dans le cadre du cours.
+
+01:35.850 --> 01:38.460
+Par exemple, vous pouvez obtenir Chrome de Google.
+
+01:38.490 --> 01:41.070
+Ensuite, nous aurons besoin de l'éditeur Unity lui-même.
+
+01:41.400 --> 01:44.790
+L'éditeur Unity est également accompagné d'un éditeur de code.
+
+01:45.180 --> 01:50.760
+Vous pouvez également utiliser l'éditeur de code de votre choix en cliquant sur le bouton "Getting started" en haut de la barre de navigation.
+
+01:50.790 --> 01:55.350
+Nous trouvons différents choix et prix pour le logiciel Unity.
+
+01:55.350 --> 02:02.040
+Les options comprennent Unity, personal et Unity student, qui sont tous deux gratuits et recommandés pour les utilisateurs du logiciel Unity.
+
+02:02.040 --> 02:03.220
+l'utilisation dans ce cours.
+
+02:03.240 --> 02:08.340
+Ils comprennent toutes les caractéristiques et fonctionnalités dont nous avons parlé et tout ce dont vous aurez besoin pour
+
+02:08.340 --> 02:09.950
+apprendre dans le cadre de ce cours.
+
+02:09.960 --> 02:16.680
+Lorsque nous téléchargeons et lançons Unity pour la première fois dans un projet ouvert et vide, nous retrouvons la mise en page familière et l'interface de l'application.
+
+02:16.680 --> 02:19.280
+série de fenêtres que nous avons vues précédemment.
+
+02:19.290 --> 02:20.760
+Créons une nouvelle scène.
+
+02:20.760 --> 02:24.690
+Nous pouvons le faire de plusieurs façons, mais il suffit de créer une nouvelle scène.
+
+02:24.690 --> 02:28.260
+Nous choisirons la scène de base construite dans la scène et dans la hiérarchie.
+
+02:28.260 --> 02:32.850
+Nous pouvons voir que la scène de base est configurée avec la caméra et l'éclairage par défaut.
+
+02:32.850 --> 02:34.410
+Créons un nouvel objet de jeu.
+
+02:34.410 --> 02:39.000
+Nous allons choisir le cube et y ajouter des scripts personnalisés.
+
+02:39.030 --> 02:44.240
+Il y a plusieurs façons de procéder, mais nous allons choisir Game Object, 3D Object et Cube.
+
+02:44.250 --> 02:47.760
+Nous pouvons maintenant voir le rendu du cube dans la vue du jeu.
+
+02:47.790 --> 02:52.050
+La vue du jeu représente ce que les utilisateurs finaux verront depuis la caméra du jeu.
+
+02:52.050 --> 02:58.410
+Avec ce cube sélectionné dans la hiérarchie, nous pouvons voir dans la fenêtre de l'inspecteur tous les composants actuels
+
+02:58.410 --> 02:59.190
+attachés.
+
+02:59.490 --> 03:01.590
+Nous allons ajouter un nouveau composant personnalisé.
+
+03:06.400 --> 03:10.270
+Dans notre fenêtre de projet, nous voyons maintenant le premier élément que nous avons créé.
+
+03:11.010 --> 03:15.000
+Nous pouvons double-cliquer sur ce script et l'ouvrir dans l'éditeur de code par défaut.
+
+03:15.700 --> 03:21.190
+Lorsque nous créons un nouveau script et que nous l'ouvrons, l'éditeur de code par défaut s'ouvre pour nous.
+
+03:21.400 --> 03:25.480
+Et pour commencer, unity inclut un petit bout de code modèle.
+
+03:25.630 --> 03:30.550
+Vous êtes libre de supprimer les parties dont vous ne voulez pas ou dont vous n'avez pas besoin et de commencer à coder à partir de zéro.
+
+03:31.030 --> 03:35.240
+Copiez tous les éléments de notre diapositive sur les scripts et collez-les dans unity.
+
+03:35.260 --> 03:40.990
+Nous avons la méthode de réveil, la méthode de démarrage et la méthode de mise à jour qui va s'exécuter à chaque image.
+
+03:41.830 --> 03:45.100
+Ici, j'utilise le composant transform pour faire pivoter l'objet.
+
+03:45.100 --> 03:48.680
+Nous sauvegardons notre script ici et retournons dans unity pour lancer la scène.
+
+03:48.700 --> 03:56.150
+Vous pouvez voir à l'exécution que le code de transformation et de rotation à l'intérieur de la méthode de mise à jour fait tourner le cube.
+
+03:56.170 --> 04:02.890
+De plus, lorsque Unity s'exécute ici avec le cube sélectionné, je vois le champ sérialisé de la vitesse et de la vitesse de rotation.
+
+04:02.890 --> 04:04.030
+Je peux le manipuler.
+
+04:12.970 --> 04:15.490
+Maintenant, il tourne beaucoup, beaucoup plus vite.
+
+04:24.390 --> 04:25.800
+Ou beaucoup plus lentement.
+
+04:28.760 --> 04:35.840
+Nous sommes en mesure d'apporter ces modifications à n'importe quel champ sérialisé afin d'améliorer la sensation de jeu ou le jeu.
+
+04:35.840 --> 04:38.420
+sans arrêter unity.
+
+04:39.360 --> 04:43.480
+Il s'agit d'une fonctionnalité incroyablement puissante du moteur unity.
+
+04:43.500 --> 04:47.670
+L'éditeur Unity nous montre une approximation de notre jeu et de notre développement.
+
+04:48.270 --> 04:52.650
+Il est préférable de le tester dans un build complet pour voir les résultats réels.
+
+04:52.680 --> 04:56.360
+Il y a plusieurs façons de le faire, mais j'utiliserai file, build et run.
+
+04:56.370 --> 05:00.510
+Et maintenant, nous voyons notre projet s'exécuter dans une compilation autonome.
+
+05:00.540 --> 05:03.660
+Dans mon cas, c'est défini pour Windows.
+
+05:03.690 --> 05:09.360
+C'est tout pour une brève présentation de Unity, l'ajout de scripts et la construction du projet.
+
+05:10.920 --> 05:19.110
+Avec ce rapide aperçu de unity, de unity ed et des scripts, nous pouvons commencer à voir à quel point unity est puissant.
+
+05:19.110 --> 05:19.600
+est puissante.
+
+05:19.620 --> 05:22.820
+Nous ne faisons qu'effleurer la surface de ce qui est possible.
+
+05:22.830 --> 05:27.120
+Nous avons passé en revue l'éditeur théorique et Coding Inside Unity.
+
+05:27.120 --> 05:33.210
+Nous avons vu que l'objet de jeu est un concept fondamental que les préfabriqués et les scènes sont utilisés pour le haut niveau.
+
+05:33.210 --> 05:38.970
+de haut niveau dans votre projet et qu'en créant une classe et en étendant le comportement mono, nous obtenons beaucoup
+
+05:38.970 --> 05:40.810
+de fonctionnalités.
+
+05:40.830 --> 05:47.130
+Ensuite, nous allons prendre du recul par rapport aux spécificités de l'unité et examiner quelques concepts de conception de logiciels.
+
+05:47.130 --> 05:56.040
+Nous examinerons les principes de conception, les modèles de conception et le langage de modélisation unifié (UML) pour la création de diagrammes.
+
+05:56.040 --> 05:57.630
+nos concepts et nos plans.
+
+05:58.300 --> 05:59.170
+Nous vous remercions.

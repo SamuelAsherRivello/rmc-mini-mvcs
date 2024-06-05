@@ -1,0 +1,493 @@
+WEBVTT
+
+00:00.880 --> 00:01.390
+All right.
+
+00:01.390 --> 00:02.830
+So welcome back.
+
+00:04.350 --> 00:04.860
+Here.
+
+00:04.860 --> 00:13.140
+We're going to take a look at a demo of using mini MVCs, which is an architecture for unity and using
+
+00:13.140 --> 00:15.540
+it along with UI toolkit.
+
+00:18.380 --> 00:24.890
+So this is part of a course that's available for pay MVC architecture for unity.
+
+00:24.920 --> 00:28.170
+It covers model view controller and the link is below.
+
+00:28.190 --> 00:30.410
+You can find out more about the course.
+
+00:30.440 --> 00:31.820
+See if it's for you.
+
+00:31.850 --> 00:33.860
+Watch the trailer for it as well.
+
+00:33.890 --> 00:39.080
+Here we're going to be talking about more content that's added on top of the experience.
+
+00:39.080 --> 00:45.020
+So in the core course we cover Unity software design, all different aspects.
+
+00:45.020 --> 00:51.170
+Mini MVC for Unity, which is one particular framework that I recommend and all the different sample
+
+00:51.170 --> 00:52.550
+projects along with it.
+
+00:53.030 --> 00:57.590
+What I've done, what I've done here is added even more demos.
+
+00:57.590 --> 01:03.680
+The course recently reached 6 or 7000 students, which I'm super excited about, so I've added lots
+
+01:03.680 --> 01:05.360
+of new content on top of it.
+
+01:05.360 --> 01:09.940
+And what we've got here is one demo about using UI toolkit.
+
+01:09.950 --> 01:17.210
+So UI toolkit, if you don't know it is the newest, it is now in Unity 2022 and beyond.
+
+01:17.240 --> 01:22.830
+The default UI that comes in not in a package but built in.
+
+01:22.830 --> 01:25.140
+And it's not the most popular yet.
+
+01:25.170 --> 01:27.690
+Unity UI continues to be pretty popular.
+
+01:27.690 --> 01:34.770
+It's been around for 5 or 6 years, but UI Toolkit is an incredibly powerful new system for doing all
+
+01:34.770 --> 01:35.550
+your UI.
+
+01:35.580 --> 01:42.930
+So we're just going to take a look at an example here of using UI toolkit in the mini MVC project.
+
+01:44.870 --> 01:46.370
+So let's take a look here.
+
+01:46.370 --> 01:55.040
+Here we are inside the project, and this is the mini MVCs free repo that is available on Git.
+
+01:55.070 --> 01:58.190
+There's a link in the chat link below that you can take a look at.
+
+01:58.190 --> 02:03.820
+And in it you can click the samples and import the samples here and follow along.
+
+02:03.830 --> 02:07.250
+Now, that's already been done here for the sake of this demo.
+
+02:07.250 --> 02:12.650
+And we can see here in the more folder, we've got all sorts of different stuff and the very last,
+
+02:12.650 --> 02:20.990
+the 10th one that we're going to have covered in the series is the Mini Mini Incorporated with UI toolkit.
+
+02:21.900 --> 02:25.800
+So here I've got let's look at all the different stuff we've got.
+
+02:25.830 --> 02:29.010
+We've got a resources folder that's got some stuff inside of it.
+
+02:29.040 --> 02:32.900
+We've got the scene, which I'll run in a moment and then we've got the source code.
+
+02:32.910 --> 02:35.640
+Notice the source code in best practices.
+
+02:35.640 --> 02:42.090
+For many, it is divided into controller model service and view.
+
+02:42.450 --> 02:45.120
+So let's go ahead and run the Mini.
+
+02:47.420 --> 02:51.860
+Load that up and let's take a look at playing this example.
+
+02:52.310 --> 02:55.100
+So here we have UI.
+
+02:55.130 --> 03:01.610
+If you're not familiar with UI toolkit, you may think, Oh, this is created in the normal use unity
+
+03:01.640 --> 03:04.090
+UI, but let's take a look at how it's structured.
+
+03:04.100 --> 03:10.580
+So each of these elements here is a button and notice that they have a consistent mouse over.
+
+03:12.200 --> 03:12.920
+Really nice.
+
+03:12.920 --> 03:16.160
+And I'll click a hare button and it changes his hair.
+
+03:18.560 --> 03:19.820
+Click the face button.
+
+03:21.890 --> 03:23.540
+The shirt button.
+
+03:24.080 --> 03:26.450
+It's just stepping through some different graphics.
+
+03:27.770 --> 03:29.590
+The body itself can change.
+
+03:29.600 --> 03:31.310
+You can randomize.
+
+03:32.130 --> 03:33.900
+And you can reset to the original.
+
+03:34.500 --> 03:41.160
+Now, the entire UI here is created in UI toolkit, so we'll take a moment and look at that and then
+
+03:41.160 --> 03:45.060
+we'll jump in and we'll focus on the the mini experience.
+
+03:46.710 --> 03:48.810
+So let's look at the scene structure here.
+
+03:49.110 --> 03:52.470
+So here in the world, let me close this up.
+
+03:56.820 --> 03:57.150
+Yeah.
+
+03:57.480 --> 04:01.860
+So here in the world, we just have the main camera and the light.
+
+04:01.890 --> 04:03.210
+Nothing too exciting there.
+
+04:03.210 --> 04:05.700
+So I just put them in that empty world object.
+
+04:05.730 --> 04:09.390
+Then we have the view here, which is the UI toolkit view.
+
+04:09.420 --> 04:10.740
+We'll look at that in a moment.
+
+04:10.740 --> 04:14.220
+And then we have the example for the Mini itself.
+
+04:14.220 --> 04:17.670
+So there's two parts to showing this demo here in this video.
+
+04:17.700 --> 04:21.060
+There's the UI toolkit part and then the mini part.
+
+04:21.090 --> 04:28.500
+Now actually, if you're familiar with Mini, there's really nothing new happening here as far as how
+
+04:28.500 --> 04:29.430
+that structures work.
+
+04:29.430 --> 04:30.900
+So we will take a dip in there.
+
+04:30.900 --> 04:36.300
+But the interesting thing here that's kind of new for a lot of unity users is just how the UI is set
+
+04:36.300 --> 04:36.750
+up.
+
+04:36.780 --> 04:46.320
+So what I do here is I have a UI document which is right here and UI document is a core unity class.
+
+04:47.580 --> 04:49.140
+Let me pop myself over here for a second.
+
+04:49.170 --> 04:56.380
+The unity UI is a core class part of UI toolkit and it takes a visual tree asset.
+
+04:56.500 --> 04:58.930
+So if we look at our project here.
+
+05:02.550 --> 05:05.340
+I'm already lost where I click that.
+
+05:05.340 --> 05:08.790
+Click, click.
+
+05:09.720 --> 05:10.290
+Here we go.
+
+05:10.500 --> 05:18.250
+So in this UI toolkit mini demo, there is a UI toolkit folder and it has some settings in it.
+
+05:18.270 --> 05:22.470
+It has the cascading style sheets which are called us.
+
+05:22.500 --> 05:25.080
+It has the UI toolkit layout.
+
+05:25.110 --> 05:28.260
+Now it's the layout that determines what's on the screen.
+
+05:28.290 --> 05:34.410
+Now I have other videos linked below and you can take a look at how UI toolkit works, how and why it's
+
+05:34.410 --> 05:39.870
+super cool, how it's based on web standards like CSS, HTML and JavaScript.
+
+05:39.870 --> 05:42.690
+But let's just open this up so you can take a quick look.
+
+05:43.540 --> 05:44.920
+Make it full screen here.
+
+05:44.920 --> 05:46.320
+I'll click this.
+
+05:46.330 --> 05:47.140
+There we go.
+
+05:47.740 --> 05:51.580
+So we can see here we see which side is better for me to be on.
+
+05:51.580 --> 05:58.030
+I'll pop back over here so you can see here it looks kind of like the whole unity editor here and what
+
+05:58.030 --> 05:58.600
+we're looking at.
+
+05:58.600 --> 06:05.080
+But this is actually one layout window inside Unity because the UI toolkit system and its UI builder
+
+06:05.080 --> 06:07.980
+window here has lots of information.
+
+06:07.990 --> 06:11.440
+We've got all the different styles represented on the left.
+
+06:11.470 --> 06:16.780
+We've got a hierarchy of the structure here that is just the hierarchy of the view.
+
+06:16.810 --> 06:19.390
+You can see we can click across all the different items.
+
+06:20.430 --> 06:20.970
+Member.
+
+06:20.970 --> 06:25.600
+If I click preview here, I can see the different mouse over states.
+
+06:25.620 --> 06:30.380
+Let's just take a quick peek at one of the benefits of using us.
+
+06:30.420 --> 06:37.380
+If I wanted to change this from getting bigger and turning blue as we mouse over, what if we wanted
+
+06:37.380 --> 06:39.210
+it to go smaller and green?
+
+06:39.300 --> 06:44.010
+Just for an arbitrary example, I've got a style here for when the button hovers.
+
+06:47.270 --> 06:53.600
+And if I go down here to color, I'll change it green.
+
+06:53.840 --> 06:59.540
+And then I go down to the transform and I'll change it to 0.98 and 0.98.
+
+06:59.540 --> 07:02.560
+So now I'm going green and smaller.
+
+07:02.570 --> 07:05.270
+Now let's do the preview again and mouse over.
+
+07:05.270 --> 07:10.190
+Now look, all of those consistently change their over states.
+
+07:10.220 --> 07:16.850
+Now doing the same thing in the traditional unity UI system is very possible, but it has never been
+
+07:16.850 --> 07:24.320
+more easy to have templated effects that go over the pseudo states of mouse hover.
+
+07:24.320 --> 07:24.860
+Selected.
+
+07:24.860 --> 07:25.610
+ET cetera.
+
+07:25.640 --> 07:26.180
+Built in.
+
+07:26.180 --> 07:27.380
+Very, very nice.
+
+07:27.380 --> 07:32.930
+So the point there is that that system is super cool, but we're not going to go into depth with that.
+
+07:32.930 --> 07:36.350
+Let's now take a look at we pop back over here.
+
+07:39.200 --> 07:41.510
+Pop back over here.
+
+07:43.230 --> 07:48.810
+We'll take just a minute here and go through how the Mini is set up.
+
+07:49.020 --> 07:54.390
+So in that scene, we create some of the mini concerns.
+
+07:54.390 --> 07:58.530
+We create the context, the model, the service and the controller.
+
+07:58.560 --> 08:03.990
+Now, as we've seen in a lot of other demos in the course and you can watch different videos on YouTube
+
+08:03.990 --> 08:08.820
+about this that I've covered, the controller is really the glue that brings it all together.
+
+08:08.820 --> 08:10.620
+So let's take a look at how that works.
+
+08:11.750 --> 08:20.720
+So here what we do is we initialize and we say, Hey, model, maintain an int that represents the index
+
+08:20.720 --> 08:26.720
+of which hair we've got on and it'll be zero one, two, three, four, depending on the hair for the
+
+08:26.720 --> 08:29.180
+face, for the shirt, for the body.
+
+08:29.180 --> 08:32.960
+So all of those different elements are stored in the model and we listen to them here.
+
+08:32.960 --> 08:40.880
+And any time the model says, Oh, the user has advanced which body to to use, we just grab the next
+
+08:40.880 --> 08:43.160
+reference to a sprite and we use that there.
+
+08:43.670 --> 08:48.080
+Then down here, any time the view changes.
+
+08:48.080 --> 08:52.040
+So if we click the hair button, then we're going to handle that.
+
+08:52.040 --> 08:53.470
+The hair button has been clicked.
+
+08:53.480 --> 08:56.990
+Anytime the face button gets clicked, we'll handle that stuff here.
+
+08:56.990 --> 09:03.530
+So we're handling changing things, affecting the rendering of the view and also listening back then
+
+09:03.530 --> 09:04.490
+down here.
+
+09:04.490 --> 09:06.470
+Let's just see what happens.
+
+09:06.470 --> 09:16.920
+Anytime we click any of the buttons here, we go down here and we change the different value that is
+
+09:16.920 --> 09:18.960
+stored inside the data model.
+
+09:18.960 --> 09:24.390
+So if you click next hair, please, then it updates that inside the model.
+
+09:24.940 --> 09:25.450
+All right.
+
+09:25.450 --> 09:26.210
+So that's it.
+
+09:26.260 --> 09:31.390
+There's one thing that I did want to look at here, which if I go back here and I see that when I create
+
+09:31.390 --> 09:32.890
+The view.
+
+09:34.280 --> 09:36.290
+Uh, don't create it here.
+
+09:36.290 --> 09:37.450
+Actually, yeah.
+
+09:37.730 --> 09:38.480
+I took a you.
+
+09:40.970 --> 09:48.320
+So here we have a public property for each of the buttons in that UI.
+
+09:48.350 --> 09:54.520
+Now, typically you would have these be serialized fields for each button in Unity UI.
+
+09:54.530 --> 09:59.270
+But we're going to do something uniquely different here because we're using UI toolkit.
+
+09:59.420 --> 10:08.390
+UI Toolkit has a query language where you can type Q and get any named element, and if you want it
+
+10:08.390 --> 10:13.790
+strongly typed, you can do Q button and then give it the name you want.
+
+10:13.820 --> 10:19.270
+So you can see here in that syntax that I'm able to get at the Hare button.
+
+10:19.280 --> 10:23.720
+Now let's just look double check where that's named, that's named in the layout itself.
+
+10:23.720 --> 10:26.150
+So when I brought up that big window and showed.
+
+10:27.080 --> 10:29.150
+How everything is designed there.
+
+10:29.180 --> 10:34.160
+Then they you give them your own custom name and here I use it.
+
+10:34.190 --> 10:38.540
+Now sometimes you'll see them named like hair button like that.
+
+10:38.540 --> 10:42.890
+Borrowing from kind of a web world web standards way.
+
+10:42.890 --> 10:51.860
+But I continue to use the unity naming that I like like that so that's really the only other thing I
+
+10:51.860 --> 10:52.580
+want to show.
+
+10:52.610 --> 10:53.780
+Let's run the scene again.
+
+10:54.950 --> 10:55.590
+There we go.
+
+10:55.610 --> 11:04.460
+So I click here, I click face neck shirt, put body, click the reset button, and everything works
+
+11:04.460 --> 11:04.950
+there.
+
+11:05.000 --> 11:08.900
+So it looked a little bit jittery there, but I think it's working really great.
+
+11:08.900 --> 11:11.720
+So thanks very much for watching this video.
+
+11:11.720 --> 11:12.680
+And that's it.

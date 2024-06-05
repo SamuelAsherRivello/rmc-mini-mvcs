@@ -1,0 +1,244 @@
+WEBVTT
+
+00:00.240 --> 00:06.180
+Editoren sind einige der wichtigsten Werkzeuge, die wir in der Softwareentwicklung verwenden, wenn wir Spiele mit Unity entwickeln.
+
+00:06.180 --> 00:12.840
+Der Unity-Editor selbst ist der Ort, an dem wir den größten Teil unserer Arbeit erledigen, und ein separater Code-Editor ist der Ort, an dem wir
+
+00:12.840 --> 00:13.590
+den Code hinzufügen.
+
+00:13.620 --> 00:19.380
+Der Unity-Editor besteht aus dem Konzept eines Layouts, das eine Gruppe von verschiedenen Registerkarten und angedockten Elementen ist
+
+00:19.380 --> 00:20.220
+Fenstern.
+
+00:21.280 --> 00:26.920
+Jedes dieser Fenster führt Funktionen aus und gibt uns weitere Informationen über das Spiel und das Projekt
+
+00:26.920 --> 00:27.700
+das wir gerade erstellen.
+
+00:27.730 --> 00:31.910
+Hier ist ein ziemlich übliches Layout mit den beliebtesten und nützlichsten Fenstern.
+
+00:31.930 --> 00:35.070
+Das Hierarchiefenster zeigt uns die Objekte in der Welt.
+
+00:35.080 --> 00:38.860
+Die Szenenansicht zeigt uns eine 3D-Darstellung dieser Welt.
+
+00:38.950 --> 00:42.100
+Sie kann auch auf 2D umgeschaltet werden, um das Spiel in 2D zu spielen.
+
+00:42.130 --> 00:48.130
+Das Projektfenster stellt die Bibliothek aller möglichen Assets und Codes dar, die wir in diese Szene einbringen können.
+
+00:48.130 --> 00:54.550
+Und wenn wir verschiedene Elemente und Funktionen in diesen Fenstern auswählen, zeigt das Inspektorfenster
+
+00:54.550 --> 00:58.480
+mehr Details und serialisierte Felder aus unserem Code.
+
+00:58.480 --> 01:02.320
+Hier werden sie zur einfachen Bearbeitung und zur Laufzeit angezeigt.
+
+01:02.350 --> 01:05.200
+Sehen wir uns das in Aktion im Unity-Editor an.
+
+01:05.200 --> 01:06.580
+Ich werde eine neue Szene erstellen.
+
+01:06.580 --> 01:08.340
+Ich werde ein Spielobjekt erstellen.
+
+01:08.350 --> 01:11.530
+Ich füge ein benutzerdefiniertes Skript zu diesem Spielobjekt hinzu.
+
+01:11.530 --> 01:15.970
+Ich drücke in Unity auf "Play" und wir werden sehen, wie sich das Skript zur Laufzeit auswirkt.
+
+01:15.970 --> 01:21.460
+Und dann werde ich mit den serialisierten Feldern im Inspektor spielen, um zu zeigen, wie das funktioniert.
+
+01:21.580 --> 01:25.780
+Zu den Voraussetzungen für diesen Kurs gehören einige freie Software.
+
+01:25.960 --> 01:29.350
+Verwenden Sie zunächst Ihren Lieblings-Webbrowser.
+
+01:30.270 --> 01:35.280
+Das ist hilfreich, um zusätzliche Nachforschungen anzustellen, die Sie während des Kurses machen müssen.
+
+01:35.850 --> 01:38.460
+Sie können zum Beispiel Chrome von Google bekommen.
+
+01:38.490 --> 01:41.070
+Als nächstes brauchen wir den Unity-Editor selbst.
+
+01:41.400 --> 01:44.790
+Der Unity-Editor verfügt auch über einen Code-Editor.
+
+01:45.180 --> 01:50.760
+Sie können aber auch einen beliebigen Code-Editor verwenden, den Sie über die Schaltfläche "Erste Schritte" in der oberen Navigationsleiste aufrufen können.
+
+01:50.790 --> 01:55.350
+Es gibt verschiedene Auswahlmöglichkeiten und Preise für das Unity-Softwarepaket.
+
+01:55.350 --> 02:02.040
+Die Optionen umfassen Unity, Personal und Unity Student, die beide kostenlos sind und empfohlen werden für
+
+02:02.040 --> 02:03.220
+Verwendung in diesem Kurs.
+
+02:03.240 --> 02:08.340
+Sie enthalten alle Features und Funktionen, über die wir gesprochen haben, und alles, was Sie brauchen, um
+
+02:08.340 --> 02:09.950
+auch in diesem Kurs lernen.
+
+02:09.960 --> 02:16.680
+Wenn wir Unity zum ersten Mal herunterladen und in einem offenen, leeren Projekt starten, haben wir das vertraute Layout und
+
+02:16.680 --> 02:19.280
+Reihe von Fenstern, die wir zuvor gesehen haben.
+
+02:19.290 --> 02:20.760
+Lassen Sie uns eine neue Szene erstellen.
+
+02:20.760 --> 02:24.690
+Wir können dies auf viele Arten tun, aber einfach eine neue Szene anlegen.
+
+02:24.690 --> 02:28.260
+Wir wählen die grundlegende eingebaute Szene und in der Hierarchie.
+
+02:28.260 --> 02:32.850
+Wir sehen, dass wir die Basisszene mit der Standardkamera und -beleuchtung eingerichtet haben.
+
+02:32.850 --> 02:34.410
+Lass uns ein neues Spielobjekt erstellen.
+
+02:34.410 --> 02:39.000
+Wir wählen den Würfel aus und fügen dem Würfel ein benutzerdefiniertes Skript hinzu.
+
+02:39.030 --> 02:44.240
+Es gibt viele Möglichkeiten, das zu tun, aber wir wählen Game Object, 3D Object und Cube.
+
+02:44.250 --> 02:47.760
+Jetzt können wir sehen, wie der Würfel in der Spielansicht gerendert wird.
+
+02:47.790 --> 02:52.050
+Die Spielansicht stellt das dar, was die Endbenutzer von der Spielkamera aus sehen werden.
+
+02:52.050 --> 02:58.410
+Wenn dieser Würfel in der Hierarchie ausgewählt ist, können wir im Inspektorfenster alle aktuellen Komponenten sehen
+
+02:58.410 --> 02:59.190
+angehängt.
+
+02:59.490 --> 03:01.590
+Wir fügen eine neue benutzerdefinierte Komponente hinzu.
+
+03:06.400 --> 03:10.270
+In unserem Projektfenster sehen wir nun das erste Asset, das wir erstellt haben.
+
+03:11.010 --> 03:15.000
+Wir können auf dieses Skript doppelklicken und es im Standard-Code-Editor öffnen.
+
+03:15.700 --> 03:21.190
+Wenn wir ein neues Skript erstellen und es öffnen, wird der Standard-Code-Editor für uns geöffnet.
+
+03:21.400 --> 03:25.480
+Und um den Einstieg zu erleichtern, enthält Unity einen kleinen Teil des Vorlagencodes.
+
+03:25.630 --> 03:30.550
+Es steht dir frei, die Teile, die du nicht willst oder brauchst, zu entfernen und von Grund auf neu zu programmieren.
+
+03:31.030 --> 03:35.240
+Kopiere alles von unserer Skriptfolie und füge es in Unity ein.
+
+03:35.260 --> 03:40.990
+Wir haben die "awake"-Methode, die "start"-Methode und die "update"-Methode, die in jedem Frame ausgeführt wird.
+
+03:41.830 --> 03:45.100
+Hier benutze ich die Transformationskomponente, um das Objekt zu drehen.
+
+03:45.100 --> 03:48.680
+Wir speichern unser Skript hier und kehren zu Unity zurück, um die Szene ablaufen zu lassen.
+
+03:48.700 --> 03:56.150
+Man kann zur Laufzeit sehen, dass der transform rotate Code in der update Methode den Würfel dreht.
+
+03:56.170 --> 04:02.890
+Während Unity hier läuft und der Würfel ausgewählt ist, sehe ich auch das serialisierte Feld der Geschwindigkeit und
+
+04:02.890 --> 04:04.030
+Ich kann es manipulieren.
+
+04:12.970 --> 04:15.490
+Jetzt dreht es sich viel, viel schneller.
+
+04:24.390 --> 04:25.800
+Oder viel langsamer.
+
+04:28.760 --> 04:35.840
+Wir können diese Änderungen an allen seriellen Feldern vornehmen, so dass wir das Spielgefühl oder das Spiel optimieren können
+
+04:35.840 --> 04:38.420
+ohne Unity zu stoppen.
+
+04:39.360 --> 04:43.480
+Dies ist ein unglaublich mächtiges Feature der Unity-Engine.
+
+04:43.500 --> 04:47.670
+Der Unity-Editor zeigt uns eine Annäherung an unser Spiel und unsere Entwicklung.
+
+04:48.270 --> 04:52.650
+Es ist am besten, es in einem vollständigen Build zu testen, um die echten Ergebnisse zu sehen.
+
+04:52.680 --> 04:56.360
+Es gibt viele Möglichkeiten, das zu tun, aber ich werde file, build und run benutzen.
+
+04:56.370 --> 05:00.510
+Und jetzt sehen wir unser Projekt in einem eigenständigen Build laufen.
+
+05:00.540 --> 05:03.660
+In meinem Fall ist das für Windows eingestellt.
+
+05:03.690 --> 05:09.360
+Das war's für einen kurzen Überblick über Unity, das Hinzufügen von Skripten und das Erstellen des Projekts.
+
+05:10.920 --> 05:19.110
+Mit diesem kurzen Überblick über Unity, die Unity-Ed und das Skripting, können wir beginnen zu sehen, wie mächtig Unity ist
+
+05:19.110 --> 05:19.600
+ist.
+
+05:19.620 --> 05:22.820
+Wir kratzen nur an der Oberfläche dessen, was möglich ist.
+
+05:22.830 --> 05:27.120
+Wir haben uns den Theorie-Editor und Coding Inside Unity angesehen.
+
+05:27.120 --> 05:33.210
+Wir haben gesehen, dass das Spielobjekt ein grundlegendes Konzept ist, dass Prefabs und Szenen für hohe Level verwendet werden
+
+05:33.210 --> 05:38.970
+Organisation in Ihrem Projekt verwendet werden und dass wir durch das Erstellen einer Klasse und der Erweiterung von Mono Behavior eine Menge
+
+05:38.970 --> 05:40.810
+an Funktionalität aus der Box heraus.
+
+05:40.830 --> 05:47.130
+Als Nächstes werden wir uns von den Besonderheiten von Unity entfernen und uns einige Software-Design-Konzepte ansehen.
+
+05:47.130 --> 05:56.040
+Wir werden uns Entwurfsprinzipien, Entwurfsmuster und die UML (Unified Modeling Language) zur Erstellung von Diagrammen ansehen.
+
+05:56.040 --> 05:57.630
+unsere Konzepte und Pläne.
+
+05:58.300 --> 05:59.170
+Ich danke Ihnen.

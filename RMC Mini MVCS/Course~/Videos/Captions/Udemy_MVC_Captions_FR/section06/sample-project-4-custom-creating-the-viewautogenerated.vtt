@@ -1,0 +1,406 @@
+WEBVTT
+
+00:00.090 --> 00:01.410
+Configurons notre vue.
+
+00:01.920 --> 00:05.040
+Je vais créer un nouvel objet de jeu et le placer dans la hiérarchie de la scène.
+
+00:05.400 --> 00:09.360
+Je fais cela parce que nous savons que la vue va utiliser une interface utilisateur unity.
+
+00:09.540 --> 00:13.850
+L'interface Unity est agréable à utiliser car elle utilise des comportements mono.
+
+00:13.860 --> 00:16.080
+Je vais commencer par créer un canvas Unity.
+
+00:16.080 --> 00:20.730
+Je peux faire un clic droit dans la hiérarchie de la scène et choisir de créer le canevas lui-même, puis à l'intérieur de la hiérarchie de la scène.
+
+00:20.730 --> 00:24.330
+nous savons que j'aurai besoin de quelques champs de saisie et d'un bouton.
+
+00:24.780 --> 00:26.310
+Donc tout cela maintenant.
+
+00:27.320 --> 00:28.340
+Dans le canevas.
+
+00:28.340 --> 00:33.680
+J'ai créé un panneau qui nous donne le carré gris flottant qui occupe la majeure partie de la vue du jeu.
+
+00:33.710 --> 00:41.270
+J'ai ensuite ajouté trois champs de saisie et deux boutons pour que nous puissions saisir A et B pour le résultat,
+
+00:41.570 --> 00:45.470
+puis les boutons pour ajouter, effacer et réinitialiser l'application.
+
+00:45.500 --> 00:47.930
+Actuellement, tous ces éléments de l'interface utilisateur ont la même position.
+
+00:47.930 --> 00:49.190
+Ils sont centrés sur l'écran.
+
+00:49.640 --> 00:51.020
+Je vais donc corriger cela maintenant.
+
+00:51.880 --> 00:52.060
+Voilà.
+
+00:52.060 --> 00:56.410
+J'ai positionné chacun des éléments de l'interface utilisateur et je leur ai donné un nom dans la hiérarchie de la scène.
+
+00:56.410 --> 01:00.760
+Nous avons donc un champ de saisie pour A, B et le résultat ?
+
+01:01.460 --> 01:04.730
+Ainsi qu'un bouton pour l'ajout et la réinitialisation.
+
+01:04.730 --> 01:06.990
+La base de cette structure est un canevas.
+
+01:07.010 --> 01:13.210
+Ce que j'aime faire, c'est renommer canvas pour qu'il corresponde au nom de ma vue et ajouter la classe personnalisée.
+
+01:13.220 --> 01:18.560
+Ici, je vais ajouter la classe de vue calculatrice et passer à la mise en place du code parce que la calculatrice
+
+01:18.560 --> 01:20.280
+utilise Unity UI.
+
+01:20.300 --> 01:23.180
+Nous avons étendu le comportement mono cette partie mis en place.
+
+01:23.180 --> 01:27.170
+Nous allons implémenter la vue des yeux et les membres manquants.
+
+01:27.170 --> 01:28.510
+Nous utiliserons tous les paramètres par défaut.
+
+01:28.520 --> 01:30.020
+Mettons en place notre initialisation.
+
+01:30.030 --> 01:31.950
+C'est un bon début pour l'initialisation.
+
+01:31.970 --> 01:38.330
+Maintenant, nous allons sérialiser tous les champs de l'interface utilisateur dont nous avons besoin et observer les événements nécessaires pour chacun d'entre eux.
+
+01:38.330 --> 01:43.610
+Dans les champs, nous avons donc créé des champs sérialisés pour chacun des éléments de l'interface utilisateur dont nous avons besoin, et dans les champs de l'interface utilisateur, nous avons créé des champs sérialisés pour chacun des éléments de l'interface utilisateur.
+
+01:43.610 --> 01:46.040
+initialize, nous écoutons certains événements clés.
+
+01:46.040 --> 01:52.880
+Chaque fois que l'utilisateur modifie les champs de saisie pour A ou B, nous faisons quelque chose ici et un peu plus tard nous
+
+01:52.880 --> 01:57.310
+nous mettrons en œuvre les conséquences d'un clic sur l'ajout ou la réinitialisation.
+
+01:57.320 --> 02:00.160
+Revenons à la hiérarchie de la scène et câblons la vue.
+
+02:00.170 --> 02:05.270
+Ici, dans la vue de la calculatrice, nous allons relier les champs sérialisés aux éléments de l'interface utilisateur.
+
+02:05.270 --> 02:07.730
+Commençons par le champ de saisie A.
+
+02:09.110 --> 02:12.830
+Champ de saisie du résultat.
+
+02:14.280 --> 02:15.570
+Vous ajoutez un bouton.
+
+02:16.840 --> 02:17.980
+Et le bouton de réinitialisation.
+
+02:17.980 --> 02:20.720
+Notre hiérarchie de scènes est donc presque complète.
+
+02:20.740 --> 02:26.020
+Il nous reste à passer la vue de la calculatrice dans la mini elle-même.
+
+02:26.020 --> 02:30.280
+Dans le fichier d'exemple, nous sérialiserons un champ et le transmettrons à la mini-calculatrice.
+
+02:30.280 --> 02:33.610
+Nous avons donc créé le champ et nous l'avons passé dans le constructeur.
+
+02:33.610 --> 02:34.720
+Mettons à jour cette classe.
+
+02:34.720 --> 02:37.270
+Elle s'attend donc à ce qu'il entre dans le constructeur.
+
+02:37.270 --> 02:42.160
+Nous n'avions pas de constructeur auparavant, alors créons-en un ici, acceptons la vue de la calculatrice et stockons les éléments suivants
+
+02:42.160 --> 02:44.470
+la vue de la calculatrice dans la hiérarchie de la file d'attente.
+
+02:44.470 --> 02:49.390
+Câblons ceci pour faire glisser une référence de la vue de la calculatrice dans le nouveau champ sérialisé.
+
+02:49.390 --> 02:52.810
+Maintenant, presque tout ce dont nous avons besoin pour la scène est prêt.
+
+02:52.810 --> 02:55.030
+Nous allons enregistrer la scène et revenir au code.
+
+02:55.030 --> 02:58.090
+À ce stade, nous avons un projet assez bien ficelé.
+
+02:58.090 --> 03:05.920
+Nous avons au moins une forme d'implémentation pour la classe mini, le modèle, la vue et le contrôleur.
+
+03:05.920 --> 03:11.140
+Nous n'avons pas encore terminé, mais nous avons mis en place une bonne scène et compilé le code à partir d'ici.
+
+03:11.140 --> 03:12.460
+la mini classe de calculatrice.
+
+03:12.460 --> 03:19.030
+Réfléchissons à ce qui va suivre ici dans l'initialisation, nous voyons que nous avons configuré le contexte, le modèle.
+
+03:19.150 --> 03:23.500
+Nous ne faisons rien avec la vue ici, mais nous savons que nous l'avons bien câblée.
+
+03:23.500 --> 03:28.840
+Nous avons le contrôleur, qui a besoin d'être implémenté et nous faisons une partie de l'initialisation.
+
+03:28.840 --> 03:31.720
+Revenons à notre cas d'utilisation pour nous aider à réfléchir.
+
+03:31.720 --> 03:39.190
+Souvenez-vous que nous voulions accepter deux valeurs int, effectuer une addition et afficher le résultat.
+
+03:39.190 --> 03:40.570
+Voici notre progression jusqu'à présent.
+
+03:40.570 --> 03:45.340
+Nous avons mis en place notre vue avec les exigences ici, mais nous n'avons pas le modèle ou le contrôleur.
+
+03:45.340 --> 03:47.980
+Nous pourrions choisir librement ce que nous voulons faire ensuite.
+
+03:47.980 --> 03:52.780
+Puisque j'ai l'impression que l'implémentation du modèle sera plus simple, finissons-en avec la section
+
+03:52.780 --> 03:55.840
+modèle et terminons notre codage en travaillant sur le contrôleur.
+
+03:55.840 --> 03:59.680
+Ici, dans le modèle, nous savons que nous voulons stocker des ints Now, bien qu'ils soient optionnels.
+
+03:59.680 --> 04:04.600
+Jusqu'à présent, dans nos exemples, nous avons utilisé la classe observable, qui nous donne non seulement la fonctionnalité
+
+04:04.600 --> 04:09.940
+d'un INT pour le stockage, mais aussi une bonne façon d'écouter les changements apportés à cette valeur stockée.
+
+04:09.940 --> 04:11.140
+Utilisons-le maintenant.
+
+04:11.140 --> 04:15.130
+Nous créons donc une propriété A pour a, B et le résultat ainsi qu'un champ.
+
+04:15.130 --> 04:20.950
+J'ai l'intention de faire en sorte que tous les projets X aient une propriété publique avec une valeur privée en dessous.
+
+04:20.950 --> 04:21.850
+qui est optionnelle.
+
+04:21.850 --> 04:24.040
+Vous pouvez aussi vous contenter d'un champ public.
+
+04:24.040 --> 04:29.110
+Comme dans les autres exemples que nous avons vus, nous utiliserons l'initialisation du modèle pour définir des valeurs par défaut.
+
+04:29.110 --> 04:31.360
+en fonction de ce que sont exactement vos valeurs par défaut.
+
+04:31.390 --> 04:34.150
+Ce n'est peut-être pas nécessaire, mais je pense que c'est une bonne pratique.
+
+04:34.150 --> 04:39.910
+Donc, comme le modèle de calculatrice étend le modèle de base, les modèles de base gèrent déjà l'initialisation.
+
+04:39.910 --> 04:45.160
+Ainsi, tout comme la programmation orientée objet, nous pouvons surcharger une méthode parent.
+
+04:45.160 --> 04:49.390
+Appeler la méthode de base pour obtenir la fonctionnalité de base et définir nos valeurs par défaut de cette manière.
+
+04:49.390 --> 04:51.580
+Ceci étant fait, regardons le contrôleur.
+
+04:51.580 --> 04:54.520
+L'implémentation du contrôleur est la dernière pièce du puzzle.
+
+04:54.520 --> 04:56.950
+Nous avons une configuration de vue et une configuration de modèle.
+
+04:56.950 --> 04:59.920
+Le contrôleur doit maintenant être la colle qui rassemble le tout.
+
+04:59.920 --> 05:04.360
+Tout d'abord, j'ai créé un constructeur pour prendre en compte toutes les préoccupations dont nous voulons nous occuper.
+
+05:04.360 --> 05:09.190
+Dans ce cas, le contrôleur va s'occuper des autres préoccupations, c'est-à-dire du modèle de calculatrice.
+
+05:09.190 --> 05:10.060
+et la vue de la calculatrice.
+
+05:10.060 --> 05:15.400
+Je les stocke en tant que champs, puis je mets à jour l'initialisation pour effectuer les étapes très courantes de vérification de l'existence d'un modèle de calculateur.
+
+05:15.400 --> 05:17.680
+vous êtes initialisé et de stocker le contexte.
+
+05:17.680 --> 05:20.530
+Alors, quelles sont les choses que nous allons devoir faire ici dans le contrôleur ?
+
+05:20.740 --> 05:25.990
+Premièrement, maintenant que nous avons une référence au modèle, nous voulons observer tout changement apporté à ce modèle.
+
+05:25.990 --> 05:30.970
+et d'autre part, maintenant que nous avons une référence à la vue de la calculatrice, nous voulons observer toute modification importante de la vue de la calculatrice.
+
+05:30.970 --> 05:32.290
+événements importants provenant de la vue.
+
+05:32.290 --> 05:33.490
+Mettons cela en place maintenant.
+
+05:34.200 --> 05:40.770
+Donc ici, dans l'initialisation, je vais vouloir écouter l'événement de réinitialisation et l'événement ADD qui arrivent.
+
+05:40.770 --> 05:41.640
+de The View.
+
+05:41.940 --> 05:43.440
+Créons ces événements maintenant.
+
+05:44.410 --> 05:47.410
+Ici, en haut de The View, nous allons créer ces deux événements.
+
+05:47.440 --> 05:50.470
+Aucun d'entre eux n'a besoin d'envoyer d'informations.
+
+05:50.740 --> 05:53.230
+Nous pouvons donc nous contenter d'utiliser des événements d'unité de base.
+
+05:53.970 --> 06:00.120
+Ici, j'ai créé les événements on add et on reset et ci-dessous dans la même classe.
+
+06:00.120 --> 06:06.360
+Lorsque nous écoutons l'interface utilisateur et que nous capturons l'un des boutons cliqués, nous envoyons cet événement personnalisé.
+
+06:07.990 --> 06:14.650
+Par ailleurs, étant donné que le contrôleur fait référence à la vue et que les éléments de la vue sont
+
+06:14.650 --> 06:16.750
+publics dans ce cas particulier.
+
+06:16.960 --> 06:22.810
+Nous pourrions simplement faire en sorte que le contrôleur écoute directement les événements de l'interface utilisateur au lieu de créer cette référence.
+
+06:22.810 --> 06:24.330
+étape avec des événements personnalisés.
+
+06:24.340 --> 06:29.620
+Ce que nous montrons ici est une approche plus découplée et vous pouvez décider dans votre projet ce qui fonctionne.
+
+06:29.620 --> 06:30.220
+le mieux pour vous.
+
+06:30.220 --> 06:35.200
+Ici, dans le contrôleur, j'ai connecté ces deux événements, en mettant en place un gestionnaire pour chacun d'entre eux.
+
+06:35.380 --> 06:39.670
+Réfléchissons un instant à la conséquence de chacun de ces événements.
+
+06:39.940 --> 06:46.030
+Chaque fois que vous cliquez sur le bouton de réinitialisation, tous les champs du champ A doivent être effacés.
+
+06:46.030 --> 06:48.490
+du champ B et du champ des résultats.
+
+06:48.490 --> 06:50.260
+Et que voulons-nous qu'il se passe lorsque nous ajoutons ?
+
+06:50.260 --> 06:56.080
+Eh bien, nous voulons que le champ de résultat soit l'addition du champ A et du champ B.
+
+06:56.080 --> 06:58.720
+Avec de nombreux MVC, il y a de la flexibilité.
+
+06:58.720 --> 07:01.120
+Parlons donc des différentes façons de procéder.
+
+07:01.120 --> 07:07.210
+La façon la plus directe serait probablement que le contrôleur modifie les champs directement dans la vue.
+
+07:07.240 --> 07:08.560
+Voyons ce que cela donnerait.
+
+07:08.560 --> 07:14.800
+En commençant par l'approche la plus directe dans la réinitialisation, nous accédons à la vue et nous définissons ces champs.
+
+07:14.800 --> 07:16.900
+valeurs de l'interface utilisateur à la chaîne vide.
+
+07:16.900 --> 07:22.630
+Ensuite, dans la fonction on ADD, nous récupérons ces valeurs, nous les additionnons et nous mettons à jour la vue directement.
+
+07:22.630 --> 07:24.430
+Exécutons la scène et voyons comment cela se passe.
+
+07:24.430 --> 07:26.290
+Nous voici donc dans la scène en cours d'exécution.
+
+07:26.290 --> 07:28.960
+Ajoutez quelques valeurs d'échantillon et cliquez sur reset.
+
+07:28.960 --> 07:30.610
+La réinitialisation semble correcte.
+
+07:30.610 --> 07:33.550
+Ajoutons à nouveau quelques valeurs et cliquons sur le bouton d'ajout.
+
+07:37.620 --> 07:38.330
+Tout se passe bien.
+
+07:38.340 --> 07:41.220
+Pensons-y et réfléchissons à notre structure.
+
+07:41.220 --> 07:47.520
+À ce stade, le contrôleur accède directement à la vue dans les limites suggérées de
+
+07:47.520 --> 07:48.860
+comment nous nous comportons ici.
+
+07:48.870 --> 07:49.880
+Ce n'est pas grave.
+
+07:49.890 --> 07:55.140
+Il est normal que le contrôleur ait une référence, qu'il la visualise et la mette directement à jour lorsque le contrôleur
+
+07:55.140 --> 07:56.940
+met directement à jour la vue.
+
+07:56.970 --> 07:58.620
+Nous contournons le modèle.
+
+07:58.620 --> 08:03.480
+Essentiellement, nous stockons les données du modèle directement dans la vue.
+
+08:03.480 --> 08:09.510
+Et d'un point de vue fondamental, nous sortons de la séparation des préoccupations MVC.
+
+08:09.510 --> 08:14.880
+Itérons sur ce point et apportons un peu plus de principes solides au code.

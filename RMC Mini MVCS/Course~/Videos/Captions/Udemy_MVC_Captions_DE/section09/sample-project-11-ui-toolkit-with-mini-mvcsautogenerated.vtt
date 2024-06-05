@@ -1,0 +1,493 @@
+WEBVTT
+
+00:00.880 --> 00:01.390
+Also gut.
+
+00:01.390 --> 00:02.830
+Also willkommen zurück.
+
+00:04.350 --> 00:04.860
+hier.
+
+00:04.860 --> 00:13.140
+Wir werden uns eine Demo ansehen, wie man Mini-MVCs benutzt, das ist eine Architektur für Unity und die Verwendung von
+
+00:13.140 --> 00:15.540
+zusammen mit dem UI-Toolkit.
+
+00:18.380 --> 00:24.890
+Dies ist also Teil eines Kurses, der für die MVC-Architektur für Unity verfügbar ist.
+
+00:24.920 --> 00:28.170
+Er behandelt Model-View-Controller und der Link ist unten.
+
+00:28.190 --> 00:30.410
+Sie können mehr über den Kurs herausfinden.
+
+00:30.440 --> 00:31.820
+Sehen Sie, ob es etwas für Sie ist.
+
+00:31.850 --> 00:33.860
+Sieh dir auch den Trailer dazu an.
+
+00:33.890 --> 00:39.080
+Hier werden wir über weitere Inhalte sprechen, die dem Erlebnis hinzugefügt werden.
+
+00:39.080 --> 00:45.020
+Im Grundkurs behandeln wir also das Design von Unity-Software, alle verschiedenen Aspekte.
+
+00:45.020 --> 00:51.170
+Mini MVC für Unity, das ist ein bestimmtes Framework, das ich empfehle, und all die verschiedenen Beispiele
+
+00:51.170 --> 00:52.550
+Projekte zusammen mit ihm.
+
+00:53.030 --> 00:57.590
+Was ich hier gemacht habe, ist, noch mehr Demos hinzuzufügen.
+
+00:57.590 --> 01:03.680
+Der Kurs hat vor kurzem 6 oder 7000 Studenten erreicht, worüber ich mich sehr freue, also habe ich eine Menge hinzugefügt
+
+01:03.680 --> 01:05.360
+an neuen Inhalten hinzugefügt.
+
+01:05.360 --> 01:09.940
+Und hier haben wir eine Demo über die Verwendung des UI-Toolkits.
+
+01:09.950 --> 01:17.210
+Also UI Toolkit, falls ihr es nicht kennt, es ist das Neueste, es ist jetzt in Unity 2022 und darüber hinaus.
+
+01:17.240 --> 01:22.830
+Die Standard-UI, die nicht in einem Paket kommt, sondern eingebaut ist.
+
+01:22.830 --> 01:25.140
+Und sie ist noch nicht die beliebteste.
+
+01:25.170 --> 01:27.690
+Unity UI ist weiterhin sehr beliebt.
+
+01:27.690 --> 01:34.770
+Es gibt es schon seit 5 oder 6 Jahren, aber das UI Toolkit ist ein unglaublich leistungsfähiges neues System für alle
+
+01:34.770 --> 01:35.550
+Ihr UI.
+
+01:35.580 --> 01:42.930
+Wir werden uns also ein Beispiel für die Verwendung von UI Toolkit in einem Mini-MVC-Projekt ansehen.
+
+01:44.870 --> 01:46.370
+Schauen wir uns das mal an.
+
+01:46.370 --> 01:55.040
+Hier sind wir innerhalb des Projekts, und dies ist das freie Mini-MVC-Repositorium, das auf Git verfügbar ist.
+
+01:55.070 --> 01:58.190
+Es gibt einen Link im Chat-Link unten, den Sie sich ansehen können.
+
+01:58.190 --> 02:03.820
+Und dort kannst du die Beispiele anklicken und die Beispiele hierher importieren und mitmachen.
+
+02:03.830 --> 02:07.250
+Für diese Demo ist das bereits geschehen.
+
+02:07.250 --> 02:12.650
+Und wir können hier im Ordner "More" sehen, dass wir alles Mögliche haben, und das Allerletzte,
+
+02:12.650 --> 02:20.990
+der 10., den wir in dieser Serie behandeln werden, ist der Mini Mini Incorporated mit UI Toolkit.
+
+02:21.900 --> 02:25.800
+Hier habe ich also all die verschiedenen Sachen, die wir haben.
+
+02:25.830 --> 02:29.010
+Wir haben einen Ressourcen-Ordner, in dem sich einige Sachen befinden.
+
+02:29.040 --> 02:32.900
+Wir haben die Szene, die ich gleich starten werde und dann haben wir den Quellcode.
+
+02:32.910 --> 02:35.640
+Beachte den Quellcode in Best Practices.
+
+02:35.640 --> 02:42.090
+Für viele ist er in Controller, Model, Service und View unterteilt.
+
+02:42.450 --> 02:45.120
+Machen wir also weiter und führen den Mini aus.
+
+02:47.420 --> 02:51.860
+Laden Sie ihn und lassen Sie uns einen Blick auf dieses Beispiel werfen.
+
+02:52.310 --> 02:55.100
+Hier haben wir also UI.
+
+02:55.130 --> 03:01.610
+Wenn du nicht mit dem UI-Toolkit vertraut bist, denkst du vielleicht: Oh, das wird in der normalen Verwendung von Unity erstellt
+
+03:01.640 --> 03:04.090
+UI, aber sehen wir uns mal an, wie es aufgebaut ist.
+
+03:04.100 --> 03:10.580
+Jedes dieser Elemente hier ist eine Schaltfläche, und es fällt auf, dass sie einen einheitlichen Mauszeiger haben.
+
+03:12.200 --> 03:12.920
+Sehr schön.
+
+03:12.920 --> 03:16.160
+Und wenn ich auf einen Hasen klicke, ändert sich sein Haar.
+
+03:18.560 --> 03:19.820
+Ich klicke auf die Schaltfläche "Gesicht".
+
+03:21.890 --> 03:23.540
+Die Schaltfläche mit dem Hemd.
+
+03:24.080 --> 03:26.450
+Es werden nur verschiedene Grafiken durchlaufen.
+
+03:27.770 --> 03:29.590
+Der Körper selbst kann sich verändern.
+
+03:29.600 --> 03:31.310
+Man kann zufällig wählen.
+
+03:32.130 --> 03:33.900
+Und man kann den ursprünglichen Zustand wiederherstellen.
+
+03:34.500 --> 03:41.160
+Die gesamte Benutzeroberfläche wurde mit dem UI-Toolkit erstellt, also schauen wir uns das kurz an und dann
+
+03:41.160 --> 03:45.060
+konzentrieren wir uns auf die Mini-Erfahrung.
+
+03:46.710 --> 03:48.810
+Schauen wir uns also die Struktur der Szene an.
+
+03:49.110 --> 03:52.470
+Also hier in der Welt, lassen Sie mich das schließen.
+
+03:56.820 --> 03:57.150
+Ja, genau.
+
+03:57.480 --> 04:01.860
+Hier in der Welt haben wir also nur die Hauptkamera und das Licht.
+
+04:01.890 --> 04:03.210
+Nichts allzu Aufregendes.
+
+04:03.210 --> 04:05.700
+Also füge ich sie einfach in das leere Weltobjekt ein.
+
+04:05.730 --> 04:09.390
+Dann haben wir hier die Ansicht, die die UI-Toolkit-Ansicht ist.
+
+04:09.420 --> 04:10.740
+Wir werden uns das gleich ansehen.
+
+04:10.740 --> 04:14.220
+Und dann haben wir das Beispiel für den Mini selbst.
+
+04:14.220 --> 04:17.670
+Die Demo in diesem Video besteht also aus zwei Teilen.
+
+04:17.700 --> 04:21.060
+Es gibt den Teil mit dem UI-Toolkit und dann den Mini-Teil.
+
+04:21.090 --> 04:28.500
+Wenn Sie mit Mini vertraut sind, gibt es hier eigentlich nichts Neues, was die Art und Weise angeht, wie
+
+04:28.500 --> 04:29.430
+diese Strukturen funktionieren.
+
+04:29.430 --> 04:30.900
+Wir werden also einen Sprung dorthin machen.
+
+04:30.900 --> 04:36.300
+Aber die interessante Sache hier, die für viele Unity-Benutzer neu ist, ist die Art und Weise, wie die Benutzeroberfläche eingestellt ist
+
+04:36.300 --> 04:36.750
+aufbaut.
+
+04:36.780 --> 04:46.320
+Was ich hier mache ist, dass ich ein UI Dokument habe, welches genau hier ist und UI Dokument ist eine Kern Unity Klasse.
+
+04:47.580 --> 04:49.140
+Lass mich mal kurz hier rübergehen.
+
+04:49.170 --> 04:56.380
+Die Unity UI ist eine Kernklasse des UI-Toolkits und benötigt ein visuelles Baum-Asset.
+
+04:56.500 --> 04:58.930
+Wenn wir uns also unser Projekt hier anschauen.
+
+05:02.550 --> 05:05.340
+Ich weiß schon nicht mehr, wo ich das anklicken soll.
+
+05:05.340 --> 05:08.790
+Klick, klick.
+
+05:09.720 --> 05:10.290
+Jetzt geht's los.
+
+05:10.500 --> 05:18.250
+In dieser UI-Toolkit-Mini-Demo gibt es einen UI-Toolkit-Ordner, der einige Einstellungen enthält.
+
+05:18.270 --> 05:22.470
+Er enthält die Cascading Style Sheets, die uns genannt werden.
+
+05:22.500 --> 05:25.080
+Es hat das UI-Toolkit-Layout.
+
+05:25.110 --> 05:28.260
+Jetzt bestimmt das Layout, was auf dem Bildschirm zu sehen ist.
+
+05:28.290 --> 05:34.410
+Unten habe ich noch weitere Videos verlinkt, in denen ihr euch ansehen könnt, wie das UI-Toolkit funktioniert, wie und warum es
+
+05:34.410 --> 05:39.870
+super cool ist, wie es auf Webstandards wie CSS, HTML und JavaScript basiert.
+
+05:39.870 --> 05:42.690
+Aber lasst uns das einfach öffnen, damit ihr einen kurzen Blick darauf werfen könnt.
+
+05:43.540 --> 05:44.920
+Machen Sie es hier zum Vollbild.
+
+05:44.920 --> 05:46.320
+Ich werde darauf klicken.
+
+05:46.330 --> 05:47.140
+Und los geht's.
+
+05:47.740 --> 05:51.580
+Hier können wir sehen, auf welcher Seite ich besser aufgehoben bin.
+
+05:51.580 --> 05:58.030
+Ich gehe hier rüber, damit ihr sehen könnt, wie der ganze Unity-Editor hier aussieht und was
+
+05:58.030 --> 05:58.600
+wir hier sehen.
+
+05:58.600 --> 06:05.080
+Aber das ist eigentlich ein Layout-Fenster innerhalb von Unity, weil das UI-Toolkit-System und sein UI-Builder
+
+06:05.080 --> 06:07.980
+Fenster hier eine Menge Informationen enthält.
+
+06:07.990 --> 06:11.440
+Wir haben alle verschiedenen Stile auf der linken Seite dargestellt.
+
+06:11.470 --> 06:16.780
+Wir haben hier eine Hierarchie der Struktur, die einfach die Hierarchie der Ansicht ist.
+
+06:16.810 --> 06:19.390
+Sie können sehen, dass wir durch alle verschiedenen Elemente klicken können.
+
+06:20.430 --> 06:20.970
+Mitglied.
+
+06:20.970 --> 06:25.600
+Wenn ich hier auf die Vorschau klicke, kann ich die verschiedenen Zustände beim Überfahren mit der Maus sehen.
+
+06:25.620 --> 06:30.380
+Lassen Sie uns einen kurzen Blick auf einen der Vorteile werfen, die Sie haben, wenn Sie uns nutzen.
+
+06:30.420 --> 06:37.380
+Wenn ich das ändern möchte, damit es nicht größer wird und sich blau färbt, wenn wir mit der Maus darüber fahren, was wäre, wenn wir wollen
+
+06:37.380 --> 06:39.210
+dass es kleiner und grün wird?
+
+06:39.300 --> 06:44.010
+Als willkürliches Beispiel habe ich hier eine Formatvorlage für den Fall, dass die Schaltfläche schwebt.
+
+06:47.270 --> 06:53.600
+Und wenn ich hier unten zur Farbe gehe, ändere ich sie in grün.
+
+06:53.840 --> 06:59.540
+Und dann gehe ich runter zur Transformation und ändere sie in 0,98 und 0,98.
+
+06:59.540 --> 07:02.560
+Jetzt werde ich also grün und kleiner.
+
+07:02.570 --> 07:05.270
+Jetzt machen wir wieder die Vorschau und fahren mit der Maus darüber.
+
+07:05.270 --> 07:10.190
+Schauen Sie, alle diese Elemente ändern ständig ihren Status.
+
+07:10.220 --> 07:16.850
+Das Gleiche mit dem traditionellen Unity UI System zu machen ist sehr gut möglich, aber es war noch nie
+
+07:16.850 --> 07:24.320
+Es war noch nie so einfach, Vorlagen für Effekte zu haben, die über die Pseudo-Zustände des Mausschwebens gehen.
+
+07:24.320 --> 07:24.860
+Ausgewählt.
+
+07:24.860 --> 07:25.610
+et cetera.
+
+07:25.640 --> 07:26.180
+Eingebaut.
+
+07:26.180 --> 07:27.380
+Sehr, sehr schön.
+
+07:27.380 --> 07:32.930
+Der Punkt ist also, dass dieses System super cool ist, aber wir werden das nicht weiter vertiefen.
+
+07:32.930 --> 07:36.350
+Schauen wir uns jetzt an, wie wir hierher zurückkommen.
+
+07:39.200 --> 07:41.510
+Hierher zurückspringen.
+
+07:43.230 --> 07:48.810
+Wir nehmen uns eine Minute Zeit und gehen durch, wie der Mini aufgebaut ist.
+
+07:49.020 --> 07:54.390
+In dieser Szene schaffen wir also einige der Mini-Belange.
+
+07:54.390 --> 07:58.530
+Wir erstellen den Kontext, das Modell, den Dienst und den Controller.
+
+07:58.560 --> 08:03.990
+Nun, wie wir in vielen anderen Demos im Kurs gesehen haben und Sie können verschiedene Videos auf YouTube ansehen
+
+08:03.990 --> 08:08.820
+gesehen haben, ist der Controller wirklich der Klebstoff, der alles zusammenhält.
+
+08:08.820 --> 08:10.620
+Schauen wir uns also an, wie das funktioniert.
+
+08:11.750 --> 08:20.720
+Hier initialisieren wir also und sagen: "Hey, model, maintain an int that represents the index
+
+08:20.720 --> 08:26.720
+welches Haar wir an haben und es wird Null eins, zwei, drei, vier sein, je nach Haar für das
+
+08:26.720 --> 08:29.180
+Gesicht, für das Hemd, für den Körper.
+
+08:29.180 --> 08:32.960
+All diese verschiedenen Elemente sind also im Modell gespeichert und wir hören sie hier ab.
+
+08:32.960 --> 08:40.880
+Und jedes Mal, wenn das Modell sagt: "Oh, der Benutzer hat den zu verwendenden Körper erweitert", nehmen wir einfach den nächsten
+
+08:40.880 --> 08:43.160
+Referenz zu einem Sprite und verwenden das dort.
+
+08:43.670 --> 08:48.080
+Dann hier unten, jedes Mal wenn sich die Ansicht ändert.
+
+08:48.080 --> 08:52.040
+Wenn wir also auf die Haar-Schaltfläche klicken, dann werden wir das behandeln.
+
+08:52.040 --> 08:53.470
+Die Schaltfläche "Haare" wurde angeklickt.
+
+08:53.480 --> 08:56.990
+Jedes Mal, wenn die Gesichtsschaltfläche angeklickt wird, werden wir das hier behandeln.
+
+08:56.990 --> 09:03.530
+Wir behandeln also Dinge, die sich ändern, beeinflussen das Rendering der Ansicht und hören dann auch wieder zu
+
+09:03.530 --> 09:04.490
+hier unten.
+
+09:04.490 --> 09:06.470
+Schauen wir einfach, was passiert.
+
+09:06.470 --> 09:16.920
+Jedes Mal, wenn wir auf eine der Schaltflächen hier klicken, gehen wir hier runter und ändern den verschiedenen Wert, der
+
+09:16.920 --> 09:18.960
+im Datenmodell gespeichert ist.
+
+09:18.960 --> 09:24.390
+Wenn Sie also bitte auf das nächste Haar klicken, wird der Wert innerhalb des Modells aktualisiert.
+
+09:24.940 --> 09:25.450
+Also gut.
+
+09:25.450 --> 09:26.210
+Das war's also.
+
+09:26.260 --> 09:31.390
+Es gibt eine Sache, die ich mir hier ansehen wollte. Wenn ich hier zurück gehe und sehe, dass ich beim Erstellen
+
+09:31.390 --> 09:32.890
+Die Ansicht.
+
+09:34.280 --> 09:36.290
+Äh, nicht hier erstellen.
+
+09:36.290 --> 09:37.450
+Eigentlich, ja.
+
+09:37.730 --> 09:38.480
+Ich habe ein Du genommen.
+
+09:40.970 --> 09:48.320
+Hier haben wir also eine öffentliche Eigenschaft für jede der Schaltflächen in dieser Benutzeroberfläche.
+
+09:48.350 --> 09:54.520
+Normalerweise würde man diese Felder für jede Schaltfläche in der Unity-Benutzeroberfläche serialisieren lassen.
+
+09:54.530 --> 09:59.270
+Aber wir werden hier etwas ganz anderes machen, weil wir das UI Toolkit verwenden.
+
+09:59.420 --> 10:08.390
+UI Toolkit hat eine Abfragesprache, in der man Q eingeben kann und jedes benannte Element bekommt, und wenn man es will
+
+10:08.390 --> 10:13.790
+stark getippt wird, kann man Q button eingeben und dann den gewünschten Namen.
+
+10:13.820 --> 10:19.270
+Sie sehen hier in der Syntax, dass ich auf die Schaltfläche Hare zugreifen kann.
+
+10:19.280 --> 10:23.720
+Schauen wir noch einmal nach, wo der Name steht, der im Layout selbst steht.
+
+10:23.720 --> 10:26.150
+Wenn ich also dieses große Fenster aufrufe und zeige.
+
+10:27.080 --> 10:29.150
+Wie alles dort gestaltet ist.
+
+10:29.180 --> 10:34.160
+Dann gibt man ihnen einen eigenen Namen und den benutze ich hier.
+
+10:34.190 --> 10:38.540
+Manchmal sieht man sie auch so benannt, wie den Haarknopf.
+
+10:38.540 --> 10:42.890
+In Anlehnung an eine Art Web World Web Standards.
+
+10:42.890 --> 10:51.860
+Aber ich verwende weiterhin die einheitliche Namensgebung, die ich so mag, also ist das wirklich die einzige Sache, die ich
+
+10:51.860 --> 10:52.580
+zeigen möchte.
+
+10:52.610 --> 10:53.780
+Lassen wir die Szene noch einmal laufen.
+
+10:54.950 --> 10:55.590
+Das war's.
+
+10:55.610 --> 11:04.460
+Also klicke ich hier, klicke auf Gesicht, Hals, Hemd, Körper, klicke auf den Reset-Knopf, und alles funktioniert
+
+11:04.460 --> 11:04.950
+da.
+
+11:05.000 --> 11:08.900
+Es sah also ein bisschen zittrig aus, aber ich denke, es funktioniert wirklich gut.
+
+11:08.900 --> 11:11.720
+Vielen Dank, dass Sie sich dieses Video angesehen haben.
+
+11:11.720 --> 11:12.680
+Und das war's.

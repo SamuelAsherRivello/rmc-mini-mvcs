@@ -1,0 +1,358 @@
+WEBVTT
+
+00:00.210 --> 00:02.340
+Die Übersicht über die Einheitstests.
+
+00:02.340 --> 00:04.220
+Zuerst ein wenig Kontext.
+
+00:04.230 --> 00:11.790
+Wenn Ihre Projekte mit mehr Skripten, mehr Methoden, mehr Komplexität wachsen, kann es schwierig sein, sicherzustellen
+
+00:11.790 --> 00:14.610
+dass neuer Code keinen alten Code kaputt macht.
+
+00:14.640 --> 00:20.020
+Automatisierte Tests können helfen, sicherzustellen, dass Ihr Code so funktioniert, wie Sie es erwarten.
+
+00:20.040 --> 00:26.640
+Automatisierte Tests helfen uns, indem sie herausfinden, wie und wo Fehler in einem früheren Stadium des Prozesses auftreten, anstatt
+
+00:26.640 --> 00:31.140
+die viel teurere Option, darauf zu warten, dass die Endbenutzer diese Fehler melden.
+
+00:31.140 --> 00:37.650
+Sie können also MVC-Architekturen ohne Tests verwenden und Sie können Tests ohne MVC-Architektur verwenden.
+
+00:37.650 --> 00:41.140
+Warum ist es also wichtig, über diese Themen gemeinsam zu sprechen?
+
+00:41.160 --> 00:46.860
+Weil die Kombination dieser beiden Technologien unglaublich leistungsfähig ist, wenn man eine Architektur verwendet
+
+00:46.860 --> 00:48.090
+wie MVC.
+
+00:48.120 --> 00:54.450
+Es hilft sicherzustellen, dass Ihr Code besser entkoppelt ist, dass jede Klasse einen einzigen Zweck hat und dass Lösungen
+
+00:54.450 --> 00:55.140
+einfacher sind.
+
+00:55.140 --> 00:58.060
+All dies sind auch Merkmale für besser testbaren Code.
+
+00:58.080 --> 01:04.740
+Das Hinzufügen von Tests zu Ihrem Projekt sorgt für mehr Robustheit, mehr Vertrauen und fördert einfache Lösungen,
+
+01:04.740 --> 01:09.090
+vor allem, wenn sie mit testgetriebener Entwicklung aktiviert werden, die wir besprechen werden.
+
+01:09.090 --> 01:12.690
+Das Hinzufügen von Unit-Tests zu Ihrem Projekt und Arbeitsablauf spart Zeit.
+
+01:12.690 --> 01:15.620
+Es spart Planung, Entwicklung und Wartung.
+
+01:15.630 --> 01:21.450
+Es verleiht Ihrem Code mehr Vertrauen, und mit diesem Vertrauen können Sie viel mutiger sein in Ihren
+
+01:21.450 --> 01:22.460
+Risikofaktoren.
+
+01:22.470 --> 01:29.010
+Stellen Sie sich vor, dass Sie alle Ihre Tests vor einem größeren Refactoring durchführen, und dann, nachdem Sie Zeit gespart haben und
+
+01:29.010 --> 01:31.530
+Sie können sich darauf verlassen, dass der Refactor gut funktioniert hat.
+
+01:31.560 --> 01:33.750
+Testen ist sowohl eine Kunst als auch eine Wissenschaft.
+
+01:33.750 --> 01:38.480
+Mit mehr Forschung und mehr Praxis kann jeder Entwickler seine eigene Kunst entwickeln.
+
+01:38.490 --> 01:43.050
+Auch Low-Level-Tests, d.h. Tests auf Unit-Ebene.
+
+01:43.620 --> 01:49.200
+Individuelle Methoden, sagen wir mal, und die Praktiken und die Entwicklung Ihrer Software, die sich aus
+
+01:49.200 --> 01:56.370
+die auch eine Diskussion auf höherer Ebene über die architektonischen Entscheidungen, Abhängigkeiten oder das Fehlen von
+
+01:56.370 --> 02:00.840
+in Ihrem Code und wie gekoppelt oder entkoppelt diese Systeme sind.
+
+02:00.870 --> 02:06.980
+Dies alles ist Teil einer größeren Konversation, die dazu einlädt, eine gute Organisation in Ihre Software zu bringen.
+
+02:06.990 --> 02:13.530
+Unser erstes Ziel, vor allem wenn wir neu im Testen sind, ist es, sicherzustellen, dass eine bestimmte Methode die gewünschte Wirkung hat.
+
+02:13.530 --> 02:14.300
+Ergebnisse hat.
+
+02:14.310 --> 02:21.060
+Wenn das geschehen ist, können Sie die Methode unter unerwarteten Bedingungen und Eckfällen testen, die zu Diskussionen führen können
+
+02:21.060 --> 02:24.390
+und Analyse über die Struktur der Klasse selbst.
+
+02:24.390 --> 02:28.230
+Dann kann man sich den Zweck des Systems ansehen, in dem die Klasse angesiedelt ist.
+
+02:28.230 --> 02:35.430
+Und wie ich bereits erwähnt habe, gibt uns diese Art der Analyse die Möglichkeit und das Format, die großen
+
+02:35.430 --> 02:37.290
+Lösung zu betrachten, die wir vor uns haben.
+
+02:37.290 --> 02:37.980
+In Software.
+
+02:37.980 --> 02:43.250
+Es gibt viele verschiedene Arten von Tests, und ob Sie es wissen oder nicht, Sie führen bereits Tests durch.
+
+02:43.260 --> 02:46.980
+Einige der gängigsten Testarten sind ein Rauchtest.
+
+02:46.980 --> 02:50.730
+Dies ist ein eher beiläufiger Test: Funktioniert es für mich?
+
+02:50.730 --> 02:55.380
+Und für viele von uns ist dies vielleicht die einzige Art von Projekttest, die wir durchführen.
+
+02:56.030 --> 03:03.050
+Jedes Mal, wenn Sie einen neuen Code erstellen, führen Sie die Anwendung wie ein Benutzer aus oder spielen das Spiel wie ein Spieler und Sie
+
+03:03.050 --> 03:08.300
+sehen, ob dieser bestimmte Pfad durch die Anwendung oder das Spiel so funktioniert, wie ich es erwarte?
+
+03:08.330 --> 03:14.210
+Dann gibt es noch die Benutzertests, bei denen man regelmäßig, vielleicht nach einem wöchentlichen Build, einige Benutzer einlädt
+
+03:14.210 --> 03:16.340
+oder Spieler ein, um das Spiel auszuprobieren.
+
+03:16.370 --> 03:21.880
+Hier geht es nicht nur darum, ob es Fehler hat, sondern ob es die Erwartungen der Benutzer erfüllt.
+
+03:21.890 --> 03:23.840
+Macht es Spaß, so etwas zu spielen?
+
+03:23.840 --> 03:30.320
+Und mit dem Unit-Test schaut man sich einen sehr kleinen Teil der Erfahrung an, vielleicht nur einen einzigen
+
+03:30.320 --> 03:34.790
+Methodenaufruf oder eine kleine Reihe von Aufrufen, wenn Systeme zusammenarbeiten.
+
+03:34.790 --> 03:38.120
+Und Sie fragen, ob es so funktioniert, wie es funktionieren soll?
+
+03:38.150 --> 03:43.280
+Wie ich bereits erwähnt habe, führen wir bereits Smoke-Tests durch, die eine grundlegende Methode sind, um Projekte anzugehen.
+
+03:43.280 --> 03:45.410
+Stellen wir uns also ein einfaches Beispiel vor.
+
+03:45.410 --> 03:50.240
+Wenn wir eine Klick-die-Schaltfläche-App hätten, die eine Schaltfläche hat, und wenn man darauf klickt, gewinnt man.
+
+03:50.360 --> 03:52.730
+Wir könnten etwas Code dazu hinzufügen.
+
+03:52.730 --> 03:55.040
+Kompiliere und führe das Erlebnis aus.
+
+03:55.040 --> 03:59.670
+Klicke auf den einen Button und sieh nach, ob der Sieg-Text angezeigt wird, wenn du gewonnen hast.
+
+03:59.690 --> 04:05.120
+Das wäre ein Rauchtest, den man an den Benutzer weitergeben könnte, um zu sehen, ob es bei ihm funktioniert.
+
+04:05.450 --> 04:11.470
+In beiden Fällen handelt es sich um einen ziemlich kostspieligen Test, der den Code nur sehr eingeschränkt nutzt
+
+04:11.480 --> 04:11.810
+hier.
+
+04:11.810 --> 04:17.570
+In diesem einfachen Beispiel mag es so aussehen, als ob wir alle Anwendungsfälle erfassen können, aber stellen Sie sich ein größeres Spiel vor
+
+04:17.570 --> 04:19.940
+mit Kernschleifen und Metallschleifen.
+
+04:20.210 --> 04:26.240
+Man kann sich nicht darauf verlassen, dass der Entwickler oder der Benutzer und der Benutzer alle Knöpfe testen, alle
+
+04:26.240 --> 04:30.200
+Funktionalität, alle Eingaben und alle möglichen Ergebnisse.
+
+04:30.200 --> 04:36.560
+Wenn man es richtig macht, kann man mit Unit-Tests mehr Wege durch den Code schneller erfassen, und man
+
+04:36.560 --> 04:40.550
+kann diese Testreihe im Laufe der Zeit automatisch häufiger ausgeführt werden.
+
+04:40.550 --> 04:44.690
+Sie erstellen eine Liste von permanenten Tests, die zur Ausführung bereitstehen.
+
+04:44.690 --> 04:48.050
+So wissen Sie, dass neuer Code keine alten Funktionen kaputt macht.
+
+04:48.050 --> 04:54.440
+Einige Teams arbeiten nach den Grundsätzen der agilen Entwicklung, was einen Teil des Kalenders einschließt, der
+
+04:54.440 --> 04:55.130
+ein Sprint.
+
+04:55.130 --> 05:01.910
+Zum Beispiel verpflichtet sich das Team alle zwei Wochen, jede Stunde, jeden Tag, jede Woche oder jede Woche ein paar neue Funktionen hinzuzufügen.
+
+05:01.910 --> 05:02.540
+Sprint.
+
+05:02.540 --> 05:05.240
+Das Team kann diese automatisierten Tests erneut durchführen.
+
+05:05.240 --> 05:07.610
+Das ist eine gute Gelegenheit, um Fehler zu finden.
+
+05:07.610 --> 05:09.950
+Wie führen wir diese Tests nun genau durch?
+
+05:09.980 --> 05:13.730
+Nun, Unity hat Testunterstützung im Unity-Editor.
+
+05:13.730 --> 05:19.660
+Es gibt ein spezielles Fenster, das man öffnen kann und in dem man die Tests manuell ausführen kann, wann immer man will.
+
+05:19.670 --> 05:21.220
+Das ist ein guter Startpunkt.
+
+05:21.230 --> 05:25.850
+Natürlich ist es möglich und bei größeren Projekten auch empfehlenswert, dies zu automatisieren.
+
+05:25.850 --> 05:32.150
+Es gibt Möglichkeiten, dies mit Ihrer Versionskontrolle zu verbinden, so dass jedes Mal, wenn Sie eine bestimmte
+
+05:32.150 --> 05:34.460
+Zweig, diese Tests erneut durchführen können.
+
+05:34.760 --> 05:39.170
+Unity selbst bietet einige Dienste an, darunter Unity Cloud build.
+
+05:39.170 --> 05:45.170
+Dies imitiert das Ausführen dieser Tests und das Erstellen des Spiels, aber auf einem Server, der dies automatisch tut
+
+05:45.170 --> 05:47.960
+einmal am Tag oder wie oft es sinnvoll ist.
+
+05:47.960 --> 05:52.670
+In der allgemeinen Unity-Entwicklung sind wir mit zwei verschiedenen Modi innerhalb von Unity vertraut
+
+05:52.670 --> 05:53.660
+Erfahrung.
+
+05:54.020 --> 05:56.870
+Bevor wir den Abspielknopf drücken, sind wir im Bearbeitungsmodus.
+
+05:56.870 --> 06:01.430
+Sobald wir die Play-Taste drücken, bis die Szene stoppt, sind wir im Play-Modus.
+
+06:01.730 --> 06:05.780
+Mit Unity Testing kann man in jedem dieser beiden Modi testen.
+
+06:05.780 --> 06:07.970
+Dann gibt es verschiedene Möglichkeiten, dies zu tun.
+
+06:08.450 --> 06:13.580
+Einige der Testideen, die man hier hätte, wären, eine Methode aufzurufen und zu sehen, ob sie einem die
+
+06:13.580 --> 06:14.720
+erwartete Ergebnis liefert.
+
+06:14.720 --> 06:20.720
+Nehmen wir an, wir haben eine mathematische Systemklasse mit einer ADD-Methode und du gibst einfach bekannte Parameter ein und siehst
+
+06:20.720 --> 06:22.280
+ob es mit dem bekannten Ergebnis übereinstimmt.
+
+06:22.280 --> 06:27.200
+Man kann auch Tests haben, die spezifische Fragen zur ED-Funktionalität stellen.
+
+06:27.230 --> 06:33.920
+Wurde das ED-Fenster in der richtigen Größe angezeigt, so dass unsere Spielobjekte oder die Kamera in der richtigen Position waren?
+
+06:33.920 --> 06:35.480
+bevor die Szene beginnt?
+
+06:35.480 --> 06:41.000
+Der Test- und Bearbeitungsmodus ist ein guter Anfang, wenn man kann, also machen Sie das standardmäßig.
+
+06:41.000 --> 06:41.540
+Spielmodus.
+
+06:41.570 --> 06:47.030
+Testen ist unglaublich nützlich, aber es kommt mit der zusätzlichen Komplexität des Laufzeitcodes.
+
+06:47.710 --> 06:52.900
+Hier testet man nicht nur eine bestimmte Methodenrückgabe und ein bestimmtes Ergebnis, sondern man testet das innerhalb
+
+06:52.900 --> 06:57.100
+den größeren Lebenszyklus von Spielobjekten und anderen Unity-Konzepten.
+
+06:57.200 --> 07:03.850
+Und wenn es hier ist, kannst du Code testen, der sich auf ein Wake-Start-Update verlässt, usw. Dinge, die nur ausgeführt werden
+
+07:03.850 --> 07:04.520
+zur Laufzeit.
+
+07:04.540 --> 07:11.320
+Einige Testideen sind hier, um zu sehen, ob ein Prefab, sobald es instanziiert ist, seine Startmethode richtig ausführt.
+
+07:11.320 --> 07:12.720
+Ohne irgendwelche Ausnahmen.
+
+07:12.730 --> 07:14.860
+Sie können den Code im Laufe der Zeit testen.
+
+07:15.580 --> 07:17.890
+Wird diese Schleife richtig ausgeführt?
+
+07:17.890 --> 07:19.280
+Nach ein paar Sekunden.
+
+07:19.300 --> 07:21.940
+Sie können die physikalischen Interaktionen zur Laufzeit überprüfen.
+
+07:21.940 --> 07:28.850
+Wie viele Sprünge macht ein Ball in deinem 3D-Spiel, bevor er aufhört, den Sprungfaktor zu testen?
+
+07:28.870 --> 07:30.430
+Ein wenig mehr Kontext hier.
+
+07:30.430 --> 07:36.970
+In der Vergangenheit bot Unity keine in den Editor integrierten Tests mit Hilfe des Testlaufs oder Fensters an.
+
+07:36.970 --> 07:37.480
+Wir werden sehen.
+
+07:37.480 --> 07:43.360
+In den vielen Jahren seit dem Start von Unity wurde diese Funktionalität langsam hinzugefügt und erweitert.
+
+07:43.360 --> 07:45.220
+Ab der neuesten Version von Unity.
+
+07:45.220 --> 07:50.650
+Wir haben alles, was wir brauchen, um die von uns gewünschten Tests auf die von uns gewünschte Weise auszuführen.
+
+07:50.650 --> 07:56.020
+Es gab noch nie einen besseren Zeitpunkt, um Unit-Tests in Ihre Arbeitsabläufe einzubauen, und gemeinsam werden wir sehen, wie
+
+07:56.020 --> 07:56.830
+das zu tun.
+
+07:57.250 --> 07:58.090
+Vielen Dank!

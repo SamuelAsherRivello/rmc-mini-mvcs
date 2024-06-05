@@ -1,0 +1,433 @@
+WEBVTT
+
+00:04.590 --> 00:06.900
+Eccoci nel nostro browser preferito di Unity.
+
+00:07.620 --> 00:10.220
+Scarichiamo l'editor di Unity e iniziamo.
+
+00:10.230 --> 00:13.380
+Get started prevede diversi piani tariffari.
+
+00:13.380 --> 00:18.870
+Unity, personal o Unity student sono ottimi per iniziare gratuitamente per uso professionale.
+
+00:18.870 --> 00:20.640
+Sono disponibili anche altri piani.
+
+00:20.640 --> 00:23.430
+Ho un computer Windows, quindi scaricherò il programma per Windows.
+
+00:23.730 --> 00:29.730
+Ho scaricato Unity, apriamo il programma di installazione e proseguiamo con la configurazione.
+
+00:29.730 --> 00:32.610
+Una volta completata la configurazione, aprirò Unity Hub.
+
+00:32.610 --> 00:39.600
+Unity Hub ci aiuta a installare l'editor di Unity in diverse versioni, se lo desideriamo, e a creare un'area aperta per l'editor di Unity.
+
+00:39.600 --> 00:40.350
+progetti.
+
+00:40.350 --> 00:41.880
+Creerò un nuovo progetto.
+
+00:41.880 --> 00:44.250
+Unity offre molti modelli diversi.
+
+00:45.130 --> 00:51.340
+La chiave è che vogliamo usare l'ultima versione di Unity chiamata ELTs.
+
+00:51.370 --> 00:57.340
+Questo cambia nel tempo, ma unity mostra chiaramente che questa è la versione che riceve un supporto a lungo termine.
+
+00:57.340 --> 00:59.890
+E di solito è l'ultima versione pubblica.
+
+00:59.890 --> 01:01.870
+Il modello predefinito che unity mostra.
+
+01:01.870 --> 01:03.910
+Ecco il nucleo delle tre D.
+
+01:03.940 --> 01:09.100
+Molti MVC sono compatibili con molti di questi template, quindi possiamo scegliere liberamente.
+
+01:09.220 --> 01:10.690
+Ma io sceglierò quello di default.
+
+01:10.690 --> 01:14.950
+Chiamerò il progetto calcolatrice mini e lo installerò nella mia cartella preferita.
+
+01:14.950 --> 01:20.140
+Ogni volta che si crea un nuovo progetto, Unity crea tutti i file di installazione e le dipendenze.
+
+01:20.140 --> 01:24.820
+seguendo l'URL fornito nel corso nella sezione Risorse.
+
+01:25.240 --> 01:28.190
+Veniamo a GitHub e facciamo clic sul pulsante del codice.
+
+01:28.210 --> 01:34.390
+Vogliamo catturare questo URL git che useremo per importare i mini e i VC in unity.
+
+01:34.390 --> 01:38.600
+Una volta creato il progetto, Unity si apre e ci offre la visualizzazione di default.
+
+01:38.620 --> 01:42.040
+Questo modello viene fornito con una scena di esempio, che è un ottimo punto di partenza.
+
+01:42.040 --> 01:45.810
+Apriamo quindi il gestore dei pacchetti e installiamo Mini e VC.
+
+01:45.820 --> 01:50.110
+Aggiungiamo un pacchetto dall'URL get incollando l'URL ottenuto da GitHub.
+
+01:50.110 --> 01:56.350
+Una volta installato mini NBC, è possibile installare facoltativamente anche i campioni, in particolare quando si ottiene
+
+01:56.350 --> 01:56.790
+iniziato.
+
+01:56.800 --> 01:58.420
+Consiglio vivamente di farlo.
+
+01:58.420 --> 02:03.880
+Potreste scoprire che uno dei campioni è sufficientemente simile agli obiettivi che intendete raggiungere e potete iniziare con
+
+02:03.880 --> 02:07.380
+copiarlo e incollarlo o usarlo come riferimento.
+
+02:07.390 --> 02:11.380
+Nel nostro caso, non importeremo i campioni, ma lavoreremo da zero.
+
+02:11.380 --> 02:12.400
+Con un'eccezione.
+
+02:12.400 --> 02:18.070
+Utilizzerò un file modello che potrò copiare e incollare solo per mantenere l'aspetto delle nostre classi coerente e
+
+02:18.070 --> 02:18.580
+leggibile.
+
+02:18.580 --> 02:21.790
+Il pacchetto della mini NBC viene fornito con un modello.
+
+02:21.790 --> 02:28.090
+Lo copierò nella nostra cartella degli asset e lo aprirò utilizzando standard di codifica coerenti o un modello di codifica
+
+02:28.090 --> 02:29.650
+come questo è opzionale.
+
+02:29.650 --> 02:32.800
+Raccomando a ogni team di considerarlo in base ai propri obiettivi.
+
+02:32.800 --> 02:38.110
+Per gli scopi di questa discussione, lo uso solo per mantenere il mio codice coerente e per renderlo più
+
+02:38.110 --> 02:39.010
+leggibile per voi.
+
+02:39.010 --> 02:41.530
+Copio e incollo questo per iniziare le nuove classi.
+
+02:41.530 --> 02:46.540
+Contiene la definizione della classe, un esempio di proprietà, un esempio di campo e altro ancora.
+
+02:46.540 --> 02:48.940
+Pensiamo alla struttura dei file del nostro progetto.
+
+02:48.940 --> 02:50.140
+Mi piace la cartella delle scene.
+
+02:50.140 --> 02:51.580
+Rinominiamo la nostra scena.
+
+02:51.580 --> 02:58.450
+Per mia abitudine, creo una cartella di script nelle risorse e creo un editor di runtime e una cartella di test.
+
+02:58.450 --> 02:58.930
+all'interno.
+
+02:58.930 --> 03:03.940
+Poi, dato che lavoriamo in molti, mi piace creare cartelle dedicate per la mini-struttura come
+
+03:03.940 --> 03:07.210
+e una cartella per il modello, il controllore della vista e il servizio.
+
+03:07.210 --> 03:11.590
+In questo caso, non creeremo un servizio, ma lascerò la cartella in caso di necessità.
+
+03:11.590 --> 03:12.340
+futuro.
+
+03:12.340 --> 03:14.060
+L'aggiunta di un servizio ha senso ora.
+
+03:14.060 --> 03:16.540
+Configuro la gerarchia della scena e creo il nostro primo script.
+
+03:16.540 --> 03:21.670
+La struttura predefinita della scena fornita da Unity prevede una telecamera principale e una luce direzionale.
+
+03:21.700 --> 03:27.310
+Personalmente preferisco inserirli in un oggetto di gioco del mondo, in modo da nascondere la complessità.
+
+03:27.310 --> 03:30.010
+Ora creiamo un oggetto di gioco per l'esempio stesso.
+
+03:30.010 --> 03:33.370
+Questo è il comportamento mono che dà il via al processo.
+
+03:33.370 --> 03:37.900
+Gli darò il nome di calcolatrice, mini esempio e gli darò uno script con lo stesso nome.
+
+03:37.900 --> 03:39.790
+Ecco il punto di partenza per il nuovo file.
+
+03:39.790 --> 03:43.680
+Quando Unity lo creerà, incolleremo il modello di classe e lo aggiorneremo correttamente.
+
+03:43.690 --> 03:44.710
+Ecco il file aggiornato.
+
+03:44.710 --> 03:45.460
+Diamo un'occhiata.
+
+03:45.460 --> 03:48.310
+Gli ho dato uno spazio dei nomi specifico per questo progetto di esempio.
+
+03:48.310 --> 03:53.290
+Faccio corrispondere il nome della classe al nome del file e penso al codice necessario per iniziare.
+
+03:53.290 --> 03:56.830
+Abbiamo bisogno di un metodo di avvio in cui creare il mini.
+
+03:56.830 --> 03:59.380
+Creiamo il file di classe per il Mini e torniamo indietro.
+
+03:59.380 --> 04:03.370
+Duplicherò il modello di classe e creerò la classe della calcolatrice mini.
+
+04:03.370 --> 04:05.350
+Eccoci nella mini-classe della calcolatrice.
+
+04:05.350 --> 04:08.170
+Ora utilizzeremo le prime classi del nostro framework.
+
+04:08.170 --> 04:16.690
+Abbiamo la possibilità di scegliere se estendere la classe base del mini MVC o utilizzare un'interfaccia.
+
+04:17.510 --> 04:22.580
+Ora, dato che non stiamo utilizzando alcun livello di servizio, ha senso utilizzare un'interfaccia che ci dia più
+
+04:22.580 --> 04:23.330
+flessibilità.
+
+04:23.330 --> 04:26.430
+Qui implementeremo AI Mini e VC.
+
+04:26.450 --> 04:29.060
+Ogni editor di codice lo esprime in modo diverso.
+
+04:29.090 --> 04:32.740
+Qui, nel mio editor, appare un ghirigoro rosso che indica che qualcosa non va.
+
+04:32.750 --> 04:37.760
+Controllo il menu contestuale perché ho scelto di implementare un'interfaccia, ma non l'ho ancora fatto.
+
+04:37.760 --> 04:39.160
+l'implementazione.
+
+04:39.170 --> 04:44.120
+L'editor di codice si offre di farlo per me e, man mano che andremo avanti, seguirò questo flusso di lavoro.
+
+04:44.120 --> 04:46.340
+Sceglierò di implementare i membri mancanti.
+
+04:46.340 --> 04:48.200
+Lascerò tutti selezionati per impostazione predefinita.
+
+04:48.200 --> 04:49.580
+Diamo un'occhiata al risultato.
+
+04:49.580 --> 04:54.140
+Abbiamo una proprietà inizializzata e alcuni metodi di inizializzazione.
+
+04:54.140 --> 04:58.850
+Ora abbiamo abbastanza codice nella calcolatrice mini per tornare all'esempio e completarlo.
+
+04:58.850 --> 05:03.290
+Quindi, nell'esempio della calcolatrice mini, nel suo metodo di avvio, termineremo la codifica.
+
+05:03.290 --> 05:03.530
+Qui.
+
+05:03.530 --> 05:06.890
+Abbiamo creato un'istanza della calcolatrice mini e abbiamo chiamato initialize.
+
+05:06.890 --> 05:07.940
+È tutto ciò di cui abbiamo bisogno.
+
+05:07.940 --> 05:12.110
+In questo file di esempio, proseguiamo nella classe della calcolatrice mini.
+
+05:12.110 --> 05:17.180
+Quindi, dato che vi state abituando a usare il framework mini e VCs, questa è una grande opportunità per prendere
+
+05:17.180 --> 05:21.590
+di dare un'occhiata ad altri progetti di esempio per seguire e vedere come è strutturata la struttura.
+
+05:21.590 --> 05:22.760
+Ma penserò ad alta voce.
+
+05:22.760 --> 05:26.900
+Quello che ci serve dal Mini è sapere di quali preoccupazioni si occuperà.
+
+05:27.050 --> 05:32.330
+Quindi dovremo dichiararli, inizializzarli e, se necessario, cablarli.
+
+05:32.330 --> 05:32.840
+insieme.
+
+05:32.840 --> 05:34.070
+Ora procedo e lo faccio.
+
+05:34.070 --> 05:37.130
+Quindi, se non siamo già inizializzati, inizializziamo.
+
+05:37.130 --> 05:42.050
+E poi ho inserito alcuni commenti temporanei dove andrà il codice.
+
+05:42.290 --> 05:45.470
+Creiamo il modello e il controllore e li inizializziamo.
+
+05:46.570 --> 05:52.930
+Forse ricorderete dai progetti di esempio precedenti che, poiché la nostra vista estenderà il comportamento mono
+
+05:52.930 --> 05:56.600
+e si troverà nella gerarchia della scena, la imposteremo in modo diverso.
+
+05:56.620 --> 06:01.660
+Qui il mio editor di codice indica il colore rosso, il che significa che quelle classi non esistono, quindi andiamo
+
+06:01.660 --> 06:02.050
+a crearle.
+
+06:02.050 --> 06:02.370
+Ora.
+
+06:02.380 --> 06:06.110
+Copio il modello di classe per la struttura di base di ciò che ci serve.
+
+06:06.130 --> 06:09.420
+Ho creato le classi per la vista e il controllore del modello.
+
+06:09.430 --> 06:10.270
+Diamo un'occhiata.
+
+06:10.270 --> 06:11.470
+Ecco la classe del modello.
+
+06:11.470 --> 06:16.300
+Ho dato uno spazio dei nomi e aggiornato il titolo della classe, ma non ho ancora aggiunto l'implementazione.
+
+06:16.300 --> 06:20.190
+Ecco la classe di visualizzazione della calcolatrice ed ecco la classe del controllore della calcolatrice.
+
+06:20.200 --> 06:23.680
+Ora che abbiamo costruito almeno le basi di queste classi.
+
+06:24.370 --> 06:29.180
+Torniamo indietro e correggiamo gli errori del compilatore nella mini-classe della calcolatrice.
+
+06:29.200 --> 06:32.200
+Abbiamo alcuni errori da risolvere durante la creazione di queste classi.
+
+06:32.200 --> 06:34.030
+Ora non può ancora essere localizzato.
+
+06:34.030 --> 06:38.860
+Facciamo clic con il pulsante destro del mouse e vediamo che l'editor le riconosce, ma ha bisogno di una dichiarazione using.
+
+06:38.860 --> 06:42.700
+Queste classi ora funzionano correttamente, ma mancano di initialize.
+
+06:42.700 --> 06:47.350
+Iniziamo a inserire un po' di codice reale in ciascuno di questi file di classe, perché il modello di calcolatrice ha la base
+
+06:47.350 --> 06:48.400
+funzionalità.
+
+06:48.760 --> 06:50.020
+Estenderemo il modello di base.
+
+06:50.020 --> 06:51.760
+Il modello base è dotato di initialize.
+
+06:51.760 --> 06:53.140
+Questo è tutto ciò che dobbiamo fare.
+
+06:53.140 --> 06:58.210
+Per ora, per il controllore della calcolatrice, vorremo di nuovo qualche funzionalità personalizzata, perché
+
+06:58.210 --> 06:59.680
+non stiamo usando un servizio.
+
+06:59.680 --> 07:05.470
+A titolo di esempio, potremmo utilizzare il controllore di base e creare un servizio vuoto.
+
+07:05.470 --> 07:06.640
+e non ne abbiamo bisogno.
+
+07:06.640 --> 07:10.210
+Se si pensa che in futuro si avrà sicuramente bisogno di un servizio a un certo punto.
+
+07:10.210 --> 07:11.470
+Non è una cattiva soluzione.
+
+07:11.470 --> 07:16.360
+Ma per il bene di questo progetto, poiché sappiamo che non abbiamo bisogno di un servizio in questo momento, utilizzerò un'interfaccia
+
+07:16.360 --> 07:20.620
+invece di implementare il mio controllore, scegliendo di implementare i membri mancanti.
+
+07:20.620 --> 07:24.310
+Lasciamo le impostazioni predefinite e diamo un'occhiata ai risultati ottenuti.
+
+07:24.310 --> 07:27.970
+Inizializza il contesto e alcuni metodi di inizializzazione.
+
+07:27.970 --> 07:29.080
+È tutto quello che ci serve per ora.
+
+07:29.080 --> 07:34.810
+Man mano che si procede, si aggiungono le implementazioni necessarie, tornando sempre al punto
+
+07:34.810 --> 07:40.990
+concetto principale, la calcolatrice Mini, e vedremo qual è il prossimo passo logico per l'implementazione.
+
+07:40.990 --> 07:46.000
+Un approccio alternativo potrebbe essere quello di sviluppare completamente il modello e poi la vista.
+
+07:46.000 --> 07:49.870
+nel controllore e poi realizzare i mini MVC come passo finale.
+
+07:49.870 --> 07:54.250
+Potete procedere in qualsiasi modo vi sembri più sensato, ma per lo scopo di questa discussione, noi
+
+07:54.250 --> 07:57.400
+torneremo a questa classe e risolveremo le sfide che si presenteranno.
+
+07:57.400 --> 08:02.350
+Sia il modello che il controllore si aspettano un contesto, quindi creiamolo ora passando il codice
+
+08:02.350 --> 08:06.070
+questi valori di contesto, credo che abbiamo risolto tutti gli errori del compilatore.
+
+08:06.070 --> 08:09.070
+Per ora, torniamo a unity e controlliamo i nostri progressi.
+
+08:09.070 --> 08:12.190
+Eccoci in unity senza errori di compilazione.

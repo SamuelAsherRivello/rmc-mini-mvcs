@@ -1,0 +1,232 @@
+WEBVTT
+
+00:00.180 --> 00:03.870
+Agora vamos fazer uma tarefa de codificação junto com a amostra Rollerball.
+
+00:04.960 --> 00:10.440
+Então, aqui estou eu em um projeto vazio onde trouxe a estrutura mini MVCs, bem como as amostras.
+
+00:10.450 --> 00:17.050
+Abrirei a amostra Rollerball com o Mini e pensarei no que poderia fazer aqui como um trabalho de codificação.
+
+00:17.200 --> 00:22.240
+Algo que achei interessante é que, embora atualmente você possa usar as teclas de seta para mover
+
+00:22.240 --> 00:26.170
+poderíamos fazer com que a barra de espaço representasse um salto.
+
+00:26.350 --> 00:28.210
+Então, vamos pensar em como fazer isso.
+
+00:28.210 --> 00:34.420
+Bem, receber a entrada do teclado é algo que já fazemos, e isso é tratado pela visualização de entrada.
+
+00:34.540 --> 00:38.710
+Então, vamos começar examinando a visualização de entrada e vendo como ela está conectada.
+
+00:38.710 --> 00:40.540
+Aqui está a classe de visualização de entrada.
+
+00:40.540 --> 00:46.060
+Temos aqui um evento personalizado que será transmitido sempre que for detectado movimento a partir da seta
+
+00:46.060 --> 00:51.700
+Chaves, a classe de visualização de entrada em si, já que fica em um objeto de jogo na cena, é um comportamento mono.
+
+00:51.700 --> 00:58.420
+E saltando aqui para baixo para o destaque na atualização, capturamos algumas das chaves e passamos isso
+
+00:58.420 --> 00:59.200
+como entrada.
+
+00:59.200 --> 01:05.950
+Observe aqui que a forma como isso está estruturado é que a entrada é passada a cada atualização, independentemente
+
+01:05.950 --> 01:07.750
+se o usuário está pressionando uma tecla ou não.
+
+01:07.750 --> 01:12.970
+E de acordo com a convenção típica da unidade para teclas de seta para movimento, tudo bem.
+
+01:12.970 --> 01:19.420
+Uma opção que eu tenho seria capturar a barra de espaço sendo pressionada e sempre passá-la, talvez como um segundo
+
+01:19.420 --> 01:21.280
+parâmetro aqui para a entrada.
+
+01:21.280 --> 01:28.360
+Mas, apenas com base em minha intuição, não gosto da ideia de que cada quadro passe a ser falso quando a barra de espaço
+
+01:28.360 --> 01:29.320
+ainda não foi pressionada.
+
+01:29.440 --> 01:34.780
+Portanto, em vez disso, criarei um novo evento que ocorrerá somente quando a barra de espaço for pressionada.
+
+01:34.780 --> 01:36.310
+Então, vamos dar uma olhada em como eu faria isso.
+
+01:36.310 --> 01:39.880
+Bem, a primeira coisa a fazer é pegar a tecla da barra de espaço, vamos fazer isso aqui embaixo.
+
+01:39.880 --> 01:43.840
+Obtemos a tecla abaixo para o código de tecla da barra de espaço.
+
+01:43.840 --> 01:49.600
+E somente se esse for o caso, enviaremos um novo evento chamado Jump.
+
+01:49.600 --> 01:54.520
+Portanto, ao colocar essa atualização, sabemos que ela ocorrerá a cada quadro, o que é ótimo.
+
+01:54.520 --> 01:56.380
+E agora só precisamos conectar isso.
+
+01:56.380 --> 02:01.960
+Então, adicionei meu próprio evento de unidade aqui chamado de Jump porque não estou passando nenhum parâmetro.
+
+02:01.960 --> 02:07.330
+Vou usar o evento base do unity como mostrado aqui e depois vamos dar uma olhada nos escopos atuais
+
+02:07.330 --> 02:10.150
+ouvindo o evento existente na entrada.
+
+02:10.150 --> 02:15.220
+Bem, posso ver aqui no controlador que ouvimos e o controlador trata disso.
+
+02:15.220 --> 02:20.710
+Gosto da ideia de o controlador também lidar com as conseqüências do salto, portanto, vou duplicar este código
+
+02:20.710 --> 02:21.550
+aqui e atualizá-lo.
+
+02:21.550 --> 02:23.890
+Vejo que aqui está o manipulador para a entrada.
+
+02:23.890 --> 02:26.710
+Basicamente, copiarei esse mesmo conceito e o atualizarei.
+
+02:26.710 --> 02:31.570
+Portanto, aqui criei um novo método e tudo o que preciso fazer é finalizar o processo fazendo o
+
+02:31.570 --> 02:32.200
+comando.
+
+02:32.200 --> 02:38.620
+Novamente, aqui está o controlador ouvindo esse evento da interface do usuário e traduzindo-o em um comando
+
+02:38.620 --> 02:43.240
+de modo que, como em uma estação de rádio, qualquer preocupação específica possa se sintonizar com isso?
+
+02:43.240 --> 02:46.330
+Vou criar o comando jump a partir do zero para concluir isso.
+
+02:46.330 --> 02:52.090
+Aqui está o comando de entrada existente que está recebendo um parâmetro para um vetor três de quanta entrada em
+
+02:52.090 --> 02:53.320
+cada uma das direções.
+
+02:53.560 --> 02:57.490
+Na verdade, não preciso de um parâmetro aqui, então posso simplesmente estender o comando I.
+
+02:57.490 --> 02:59.080
+Então, criei o novo comando.
+
+02:59.080 --> 03:01.150
+E agora vamos pensar em quem deve observar isso?
+
+03:01.150 --> 03:05.680
+Bem, no caso do comando de entrada, é o jogador que observa o comando de entrada.
+
+03:05.680 --> 03:08.560
+E agora vamos pensar em quais preocupações devem se sintonizar com isso?
+
+03:08.560 --> 03:14.380
+Bem, o comando de entrada que eu conheço é observado pelo jogador para que ele saiba como se mover.
+
+03:14.380 --> 03:15.460
+Isso parece ser uma boa opção.
+
+03:15.460 --> 03:17.170
+Então vamos ao player e nos inscrevemos.
+
+03:17.170 --> 03:18.790
+Aqui estamos na visualização do player.
+
+03:18.790 --> 03:24.190
+A visualização do jogador, uma vez que está em um objeto de jogo na cena, estende o comportamento monarca e aqui embaixo
+
+03:24.190 --> 03:26.920
+na inicialização, ele está ouvindo o comando de entrada.
+
+03:26.920 --> 03:28.030
+Vamos duplicar isso.
+
+03:28.030 --> 03:30.070
+Então agora estamos ouvindo o comando jump.
+
+03:30.120 --> 03:31.330
+Vamos lidar com a consequência.
+
+03:31.330 --> 03:35.500
+Aqui vemos como o comando de entrada é configurado e, em seguida, chama a física apropriada.
+
+03:35.500 --> 03:37.750
+Então, criei um manipulador para o comando de salto.
+
+03:37.750 --> 03:39.730
+Agora só preciso pensar na física.
+
+03:39.730 --> 03:44.080
+Se eu adicionar uma força para cima no momento em que o salto for pressionado, isso deve resolver o problema.
+
+03:44.080 --> 03:48.760
+Primeiro, tenho de me lembrar de passar o comando jump conforme necessário, embora não precise de nenhum parâmetro
+
+03:48.760 --> 03:49.570
+desse comando.
+
+03:49.570 --> 03:53.050
+Esta é uma convenção necessária com a configuração típica de uma cena de unidade.
+
+03:53.050 --> 03:55.480
+É o componente Y que está para cima.
+
+03:55.480 --> 04:00.700
+Portanto, se eu aplicar uma força aqui que seja para cima no Y, devemos conseguir obter o resultado de salto que
+
+04:00.700 --> 04:01.240
+que queremos.
+
+04:01.240 --> 04:02.860
+Vamos reproduzir a cena e dar uma olhada.
+
+04:02.860 --> 04:06.310
+Aqui está a cena sendo reproduzida usando as teclas de seta como antes.
+
+04:06.310 --> 04:08.320
+E agora vou tentar usar a barra de espaço.
+
+04:20.400 --> 04:21.360
+Aqui está o jogo em execução.
+
+04:21.360 --> 04:24.370
+Vou usar as teclas de seta como fizemos antes e vou experimentar.
+
+04:24.370 --> 04:26.430
+A nova barra de espaço parece funcionar muito bem.
+
+04:26.460 --> 04:32.100
+Agora, no contexto deste jogo, não temos nenhum inimigo ou obstáculo a ser evitado, portanto, isso seria
+
+04:32.100 --> 04:33.300
+seria algo ótimo para acrescentar.
+
+04:33.300 --> 04:38.310
+Em seguida, novas mecânicas de jogo que fazem sentido agora que temos a capacidade de pular.
+
+04:38.310 --> 04:40.430
+Mas agora é só isso para esse trabalho de codificação.
+
+04:40.440 --> 04:41.190
+Obrigado.

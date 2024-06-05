@@ -1,0 +1,208 @@
+WEBVTT
+
+00:00.330 --> 00:02.580
+Ora diamo un'occhiata alle architetture.
+
+00:03.000 --> 00:08.190
+Un'architettura software è l'organizzazione fondamentale di tutte le sue parti.
+
+00:08.190 --> 00:13.880
+Vedremo che le architetture sono costruite sulla base di principi e modelli di progettazione.
+
+00:13.890 --> 00:18.210
+I vantaggi includono il fatto che si tratta di soluzioni collaudate a problemi ripetibili.
+
+00:18.210 --> 00:25.080
+Organizzando il nostro progetto in modo personalizzato, possiamo portare fiducia, scalabilità, prestazioni e sicurezza.
+
+00:25.080 --> 00:26.490
+ai nostri progetti.
+
+00:26.490 --> 00:32.670
+Le architetture software sono tipicamente di alto livello e possono essere applicate a vari linguaggi o piattaforme,
+
+00:32.670 --> 00:39.420
+e inoltre, utilizzandole, possiamo avere uno sviluppo più rapido e una maggiore facilità nelle fasi di manutenzione.
+
+00:39.420 --> 00:40.560
+dei nostri progetti.
+
+00:40.560 --> 00:46.140
+Ora, anche se spesso come sviluppatori pensiamo che il nostro lavoro consista nell'aggiungere nuove funzionalità e che questa sia la maggior parte del lavoro.
+
+00:46.140 --> 00:53.880
+della nostra esperienza, le ricerche dimostrano che l'80% del tempo in un progetto software è dedicato alla manutenzione del codice.
+
+00:54.000 --> 01:00.660
+Quindi, scegliendo le architetture, i principi di progettazione e i modelli in anticipo e applicandoli per tutto il tempo
+
+01:00.660 --> 01:06.960
+progetto, quando si aggiungono funzionalità, la fase di manutenzione può essere più semplice e aumentare il nostro
+
+01:06.960 --> 01:09.180
+qualità della vita da un livello elevato.
+
+01:09.180 --> 01:15.960
+Alcuni tipi di architetture sono l'approccio "no architecture", in genere team giovani o individui
+
+01:15.960 --> 01:17.550
+che si avvicinano al software.
+
+01:17.550 --> 01:23.550
+Facciamo quello che ci sembra giusto al momento, senza una prospettiva o una visione più ampia del progetto.
+
+01:23.550 --> 01:25.080
+Ma alla fine vedremo.
+
+01:25.080 --> 01:26.400
+Abbiamo bisogno di qualcos'altro.
+
+01:26.400 --> 01:32.790
+I team veterani possono utilizzare soluzioni architettoniche personalizzate che considerano le esigenze uniche di un team e
+
+01:32.790 --> 01:39.420
+del prodotto che stanno creando, impiegando una libreria di principi e schemi e creando un'architettura personalizzata.
+
+01:39.420 --> 01:40.710
+la propria soluzione.
+
+01:40.710 --> 01:46.830
+Ci sono pro e contro in questo approccio, e un altro tipo di chiave è l'utilizzo di un'architettura consolidata,
+
+01:46.830 --> 01:52.460
+qualcosa che possiamo prendere dallo scaffale e applicare in modo prescrittivo ai nostri progetti.
+
+01:52.470 --> 02:01.740
+Questi includono MVP, VC e VM, e ce ne sono molti altri di cui vedremo i dettagli.
+
+02:02.010 --> 02:08.700
+Quindi, anche se ci sembra abbastanza naturale sviluppare man mano e fare ciò che ci sembra giusto al momento, questo
+
+02:08.700 --> 02:11.190
+approccio senza architettura presenta degli svantaggi.
+
+02:11.190 --> 02:16.710
+Sia che si tratti di un singolo individuo o di un piccolo gruppo di lavoro, ci saranno più discussioni su come aggiungere ogni caratteristica
+
+02:16.710 --> 02:22.860
+poiché non si dispone di una ricetta che porta a incoerenze nel corso della vita di uno sviluppatore e in tutti gli altri
+
+02:22.860 --> 02:28.110
+ogni altro sviluppatore del team, ciò significa che l'applicazione dei fattori di rischio diventa più impegnativa perché c'è
+
+02:28.110 --> 02:30.570
+tutte le sottili variazioni nel codice di base.
+
+02:30.840 --> 02:37.100
+Diventa molto più difficile leggere il codice un giorno dopo, una settimana dopo o un anno dopo.
+
+02:37.110 --> 02:43.410
+Inoltre, quando si inseriscono nuovi membri del team o si tolgono membri del team dal progetto, è più
+
+02:43.410 --> 02:44.640
+lavoro intensivo.
+
+02:44.670 --> 02:47.430
+Si devono fare più spiegazioni personalizzate.
+
+02:47.430 --> 02:52.260
+Il nuovo sviluppatore deve dedicare più tempo a capire cosa c'è e il codice base.
+
+02:52.260 --> 02:57.990
+E ogni volta che uno sviluppatore se ne va, deve spiegare e documentare di più le sue personalizzazioni.
+
+02:57.990 --> 03:00.540
+su come l'hanno applicato al progetto.
+
+03:00.540 --> 03:06.180
+Ora, per molti sviluppatori, in particolare per i principianti, questo approccio potrebbe sembrare il modo più rapido per
+
+03:06.180 --> 03:07.590
+per far conoscere le proprie caratteristiche.
+
+03:07.590 --> 03:14.160
+E spesso vediamo sviluppatori che, nelle fasi di prototipo, buttano via queste regole e fanno l'architettura no
+
+03:14.160 --> 03:14.790
+approccio.
+
+03:14.790 --> 03:21.090
+Tuttavia, un codice così veloce porta effettivamente più bug e complessità nel progetto, e il costo di
+
+03:21.090 --> 03:23.910
+bug del software cresce esponenzialmente nel tempo.
+
+03:24.150 --> 03:30.090
+Se si riesce a individuare i bug prima, la loro correzione è più rapida e ha un impatto minore sull'intero progetto.
+
+03:30.090 --> 03:35.820
+Le ricerche dimostrano che se lo stesso bug viene individuato dopo che il prodotto è stato spedito, può essere 30 volte più costoso.
+
+03:35.820 --> 03:40.950
+o più difficile correggere il bug e far uscire la nuova versione.
+
+03:40.950 --> 03:46.770
+Quindi le migliori pratiche sono quelle di creare codice manutenibile fin dall'inizio per aumentare l'automazione e qualsiasi
+
+03:46.770 --> 03:52.440
+test, di cui parleremo più avanti, per catturare i bug prima e spesso e per risolvere tutti i problemi.
+
+03:52.440 --> 03:56.040
+bug prima di passare alla creazione di nuove funzionalità.
+
+03:56.040 --> 04:02.550
+Le ricerche sul software dimostrano che oltre l'80% dei bug si verifica con circa il 20% delle funzionalità.
+
+04:02.580 --> 04:08.610
+Questi possono essere i pezzi principali di colla o l'architettura che tiene tutto insieme, lavorando rapidamente.
+
+04:08.610 --> 04:14.820
+per aggiungere nuove funzionalità per l'architettura o l'approccio senza architettura causerà sempre più problemi
+
+04:14.820 --> 04:15.420
+nel tempo.
+
+04:15.420 --> 04:23.160
+Inoltre, cosa abbastanza sorprendente per molti, nell'80% della vita degli sviluppatori di un progetto software, quell'80%
+
+04:23.160 --> 04:27.360
+è la manutenzione del codice di base, non necessariamente l'aggiunta di nuove funzionalità.
+
+04:27.360 --> 04:33.630
+Quindi, anche se possiamo pensare che tutto il giorno sia dedicato all'aggiunta di funzionalità, si tratta di una parte piuttosto piccola del carico di lavoro complessivo.
+
+04:33.630 --> 04:41.160
+La chiave di lettura è quindi quella di realizzare quel 20% di nuove funzionalità e caratteristiche in modo efficiente e a lungo termine.
+
+04:41.160 --> 04:47.220
+metodologia, in modo che quando dedichiamo il nostro tempo alla manutenzione del codice di base, raccogliamo questi benefici
+
+04:47.220 --> 04:47.790
+insieme.
+
+04:47.790 --> 04:56.220
+Vedremo che l'utilizzo di un'architettura consolidata come MVC ci porterà molti vantaggi nello sviluppo dell'unità.
+
+04:56.580 --> 04:59.850
+Uno dei temi che vediamo in questa sezione è che spesso la.
+
+05:00.040 --> 05:04.870
+idea che abbiamo di come avviene lo sviluppo del software non corrisponde alla realtà.
+
+05:04.960 --> 05:10.840
+Pensiamo che tutto il giorno sia dedicato all'aggiunta di nuove funzionalità, ma in realtà questa è una piccola parte del ciclo di vita.
+
+05:10.840 --> 05:11.650
+di un progetto.
+
+05:11.650 --> 05:17.350
+Quando iniziamo a pensare a soluzioni a lungo termine che rendano più facile la manutenzione, diamo un'importanza maggiore alla manutenzione.
+
+05:17.350 --> 05:23.690
+valore all'apprendimento di buoni principi di progettazione, schemi di progettazione e, infine, architetture.
+
+05:23.710 --> 05:25.240
+È tutto per questa sezione.
+
+05:25.240 --> 05:25.990
+Grazie.

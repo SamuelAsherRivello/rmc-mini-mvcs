@@ -1,0 +1,232 @@
+WEBVTT
+
+00:00.180 --> 00:03.870
+Nun wollen wir eine Codierungsaufgabe mit dem Rollerball-Beispiel durchführen.
+
+00:04.960 --> 00:10.440
+Hier bin ich also in einem leeren Projekt, in das ich das Mini-MVC-Framework und die Beispiele eingefügt habe.
+
+00:10.450 --> 00:17.050
+Ich öffne das Rollerball-Beispiel mit Mini und überlege, was ich hier als Programmieraufgabe machen könnte.
+
+00:17.200 --> 00:22.240
+Ich dachte, es wäre interessant, dass man sich mit den Pfeiltasten bewegen kann, aber
+
+00:22.240 --> 00:26.170
+bewegen kann, könnten wir die Leertaste für einen Sprung verwenden.
+
+00:26.350 --> 00:28.210
+Überlegen wir also, wie wir das machen würden.
+
+00:28.210 --> 00:34.420
+Nun, die Tastatureingabe ist etwas, was wir bereits tun, und das wird von der Eingabeansicht gehandhabt.
+
+00:34.540 --> 00:38.710
+Schauen wir uns also zunächst die Eingabeansicht an und sehen uns an, wie sie verdrahtet ist.
+
+00:38.710 --> 00:40.540
+Hier ist also die Klasse der Eingabeansicht.
+
+00:40.540 --> 00:46.060
+Wir haben hier ein benutzerdefiniertes Ereignis, das jedes Mal gesendet wird, wenn eine Bewegung vom Pfeil erkannt wird
+
+00:46.060 --> 00:51.700
+Keys, die Input View Klasse selbst, da sie auf einem Spielobjekt in der Szene sitzt, ist es ein Mono-Verhalten.
+
+00:51.700 --> 00:58.420
+Und wenn man hier runter zum Highlight in der Aktualisierung springt, fangen wir einige der Schlüssel ein und übergeben sie
+
+00:58.420 --> 00:59.200
+als Eingabe weiter.
+
+00:59.200 --> 01:05.950
+Beachten Sie hier, dass die Eingaben bei jeder Aktualisierung weitergegeben werden, unabhängig davon, wie sie strukturiert sind
+
+01:05.950 --> 01:07.750
+ob der Benutzer eine Taste drückt oder nicht.
+
+01:07.750 --> 01:12.970
+Und wie in Unity typisch für Pfeiltasten zur Bewegung, ist das in Ordnung.
+
+01:12.970 --> 01:19.420
+Eine Option, die ich habe, wäre, die Leertaste zu erfassen, wenn sie gedrückt wird, und sie vielleicht immer als eine zweite zu übergeben
+
+01:19.420 --> 01:21.280
+Parameter hier bei der Eingabe.
+
+01:21.280 --> 01:28.360
+Aber nur aufgrund meiner Intuition gefällt mir die Idee nicht, dass jeder Frame falsch übergeben wird, wenn die Leertaste
+
+01:28.360 --> 01:29.320
+noch nicht gedrückt ist.
+
+01:29.440 --> 01:34.780
+Also werde ich stattdessen ein neues Ereignis erstellen, das nur dann eintritt, wenn die Leertaste gedrückt wird.
+
+01:34.780 --> 01:36.310
+Schauen wir uns also an, wie ich das machen würde.
+
+01:36.310 --> 01:39.880
+Nun, als erstes, um die Leertaste zu bekommen, werden wir es hier unten machen.
+
+01:39.880 --> 01:43.840
+Wir erhalten die Taste unten für den Tastencode der Leertaste.
+
+01:43.840 --> 01:49.600
+Und nur wenn das der Fall ist, senden wir ein neues Ereignis mit dem Namen on Jump.
+
+01:49.600 --> 01:54.520
+Indem wir dies als Update platzieren, wissen wir, dass es bei jedem Frame passieren wird, was großartig ist.
+
+01:54.520 --> 01:56.380
+Und jetzt müssen wir das nur noch verdrahten.
+
+01:56.380 --> 02:01.960
+Ich habe hier mein eigenes Unity-Ereignis mit dem Namen "Jump" eingefügt, weil ich keine Parameter übergebe.
+
+02:01.960 --> 02:07.330
+Ich verwende einfach das Basis-Unity-Ereignis, wie hier gezeigt, und dann schauen wir uns mal an, welche Bereiche es derzeit gibt
+
+02:07.330 --> 02:10.150
+auf die existierende Eingabe hören.
+
+02:10.150 --> 02:15.220
+Nun, ich kann hier im Controller sehen, dass wir zuhören und der Controller es behandelt.
+
+02:15.220 --> 02:20.710
+Mir gefällt die Idee, dass der Controller auch die Folgen eines Sprungs behandelt, also dupliziere ich diesen Code
+
+02:20.710 --> 02:21.550
+hier und aktualisiere ihn.
+
+02:21.550 --> 02:23.890
+Ich sehe, hier ist der Handler für die Eingabe.
+
+02:23.890 --> 02:26.710
+Ich kopiere im Grunde dasselbe Konzept und aktualisiere es.
+
+02:26.710 --> 02:31.570
+Hier habe ich also eine neue Methode erstellt, und alles, was ich noch tun muss, ist, das Ganze zu beenden, indem ich die entsprechenden
+
+02:31.570 --> 02:32.200
+Befehl.
+
+02:32.200 --> 02:38.620
+Hier ist also wieder der Controller, der auf dieses UI-Ereignis hört und es in einen Befehl umwandelt
+
+02:38.620 --> 02:43.240
+so dass, wie bei einem Radiosender, ein bestimmtes Unternehmen dies hören kann?
+
+02:43.240 --> 02:46.330
+Ich werde den Sprungbefehl von Grund auf neu erstellen, um dies zu beenden.
+
+02:46.330 --> 02:52.090
+Hier ist der existierende Eingabebefehl, der einen Parameter für einen Vektor mit drei Werten für die Eingaben benötigt
+
+02:52.090 --> 02:53.320
+jede der Richtungen.
+
+02:53.560 --> 02:57.490
+Ich brauche hier nicht wirklich einen Parameter, also kann ich stattdessen einfach den Befehl I erweitern.
+
+02:57.490 --> 02:59.080
+Ich habe also den neuen Befehl erstellt.
+
+02:59.080 --> 03:01.150
+Und jetzt überlegen wir mal, wer das beobachten soll?
+
+03:01.150 --> 03:05.680
+Nun, im Fall des Eingabebefehls ist es der Spieler, der den Eingabebefehl beobachtet.
+
+03:05.680 --> 03:08.560
+Und nun überlegen wir, welche Konzerne sollten sich darauf einstellen?
+
+03:08.560 --> 03:14.380
+Nun, der Eingabebefehl, den ich kenne, wird vom Spieler beobachtet, damit er weiß, wie er sich bewegen soll.
+
+03:14.380 --> 03:15.460
+Das klingt nach einer guten Lösung.
+
+03:15.460 --> 03:17.170
+Gehen wir also zum Player und abonnieren ihn.
+
+03:17.170 --> 03:18.790
+Hier sind wir also in der Ansicht des Players.
+
+03:18.790 --> 03:24.190
+Die Spieleransicht, da sie auf einem Spielobjekt in der Szene sitzt, erweitert das Monarchverhalten und hier unten
+
+03:24.190 --> 03:26.920
+in der Initialisierung, hört es auf den Eingabebefehl.
+
+03:26.920 --> 03:28.030
+Lass uns das duplizieren.
+
+03:28.030 --> 03:30.070
+Jetzt hören wir also auf den Sprungbefehl.
+
+03:30.120 --> 03:31.330
+Kümmern wir uns um die Folgen.
+
+03:31.330 --> 03:35.500
+Hier sehen wir, wie der Eingabebefehl eingerichtet wird und dann die entsprechende Physik aufruft.
+
+03:35.500 --> 03:37.750
+Ich habe also einen Handler für den Sprungbefehl erstellt.
+
+03:37.750 --> 03:39.730
+Jetzt muss ich nur noch an die Physik denken.
+
+03:39.730 --> 03:44.080
+Wenn ich in dem Moment, in dem der Sprung gedrückt wird, eine Kraft nach oben hinzufüge, sollte das reichen.
+
+03:44.080 --> 03:48.760
+Zuerst muss ich daran denken, den Sprungbefehl wie erforderlich zu übergeben, obwohl ich keine Parameter brauche
+
+03:48.760 --> 03:49.570
+von diesem Befehl.
+
+03:49.570 --> 03:53.050
+Dies ist eine notwendige Konvention beim typischen Aufbau einer Unity-Szene.
+
+03:53.050 --> 03:55.480
+Es ist die Y-Komponente, die nach oben zeigt.
+
+03:55.480 --> 04:00.700
+Wenn ich hier also eine Kraft einsetze, die in Y nach oben gerichtet ist, sollten wir in der Lage sein, das Sprungergebnis zu erhalten, das wir
+
+04:00.700 --> 04:01.240
+wollen.
+
+04:01.240 --> 04:02.860
+Spielen wir die Szene ab und überprüfen wir sie.
+
+04:02.860 --> 04:06.310
+Hier ist die Szene, die mit den Pfeiltasten wie zuvor abgespielt wird.
+
+04:06.310 --> 04:08.320
+Und jetzt versuche ich es mit der Leertaste.
+
+04:20.400 --> 04:21.360
+Hier ist das Spiel am Laufen.
+
+04:21.360 --> 04:24.370
+Ich benutze die Pfeiltasten, wie wir es vorher gemacht haben, und ich probiere es aus.
+
+04:24.370 --> 04:26.430
+Die neue Leertaste scheint gut zu funktionieren.
+
+04:26.460 --> 04:32.100
+In diesem Spiel haben wir keine Feinde oder Hindernisse, denen wir ausweichen müssen, also würde das
+
+04:32.100 --> 04:33.300
+etwas Großartiges hinzufügen.
+
+04:33.300 --> 04:38.310
+Als Nächstes: neue Spielmechaniken, die Sinn machen, da wir jetzt die Möglichkeit haben zu springen.
+
+04:38.310 --> 04:40.430
+Aber das war's dann auch schon mit der Codierung.
+
+04:40.440 --> 04:41.190
+Danke!

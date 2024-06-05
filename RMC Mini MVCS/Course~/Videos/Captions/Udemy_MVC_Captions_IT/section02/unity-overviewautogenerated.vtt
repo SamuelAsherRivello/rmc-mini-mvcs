@@ -1,0 +1,136 @@
+WEBVTT
+
+00:00.450 --> 00:02.370
+La panoramica dell'unità.
+
+00:02.850 --> 00:09.180
+L'industria dei giochi è grande e sta diventando sempre più grande tra le attività del tempo libero.
+
+00:09.180 --> 00:15.210
+Le esperienze interattive come i videogiochi sono diventate sempre più popolari.
+
+00:15.450 --> 00:20.220
+Su base settimanale, rappresenta la maggior parte di queste attività.
+
+00:20.490 --> 00:26.150
+Le dimensioni dell'industria globale dello sviluppo di videogiochi sono enormi.
+
+00:26.160 --> 00:30.990
+È possibile vedere nei diversi continenti le dimensioni del mercato globale dei videogiochi.
+
+00:30.990 --> 00:36.720
+Ci sono molti modi in cui i team di sviluppo possono risolvere le sfide dello sviluppo dei giochi.
+
+00:36.720 --> 00:42.810
+La scelta di un middleware, un motore in tempo reale come Unity, apporta molte funzionalità e servizi a un gioco.
+
+00:42.810 --> 00:46.480
+e consente di creare contenuti più rapidamente.
+
+00:46.500 --> 00:52.320
+Unity è una scelta leader del settore da oltre un decennio, ed è possibile creare contenuti in 2D tre volte.
+
+00:52.320 --> 00:56.550
+D, VR AR in tutti i tipi di settori.
+
+00:56.580 --> 01:01.940
+Gioco, ovviamente, ma anche architettura, simulazione, azione e lungometraggi.
+
+01:01.950 --> 01:09.830
+Unity è il nome dell'azienda, dei suoi servizi, della piattaforma su cui si costruisce e del motore di runtime stesso.
+
+01:09.840 --> 01:14.520
+Unity è solo una delle piattaforme di sviluppo che si possono scegliere, ma è molto popolare.
+
+01:14.520 --> 01:20.340
+Dei 1000 giochi mobile più performanti, oltre il 70% è stato creato con Unity.
+
+01:20.610 --> 01:23.040
+Unity è stato creato pensando a tutti.
+
+01:23.040 --> 01:24.150
+Vediamo di più.
+
+02:17.100 --> 02:20.070
+Ecco una schermata di un gioco molto popolare.
+
+02:20.070 --> 02:24.090
+Qui possiamo vedere alcuni degli elementi essenziali dello sviluppo dei videogiochi.
+
+02:24.090 --> 02:28.810
+C'è l'interfaccia utente, questi elementi su schermo, il testo e la minimappa.
+
+02:28.830 --> 02:31.200
+Questi elementi costituiscono l'interfaccia utente.
+
+02:31.560 --> 02:38.850
+C'è poi l'input, che prende spunto dalle strisciate delle dita su un dispositivo mobile, dai controller del gamepad su una console.
+
+02:38.850 --> 02:40.800
+mouse e tastiera su PC.
+
+02:40.830 --> 02:44.970
+Il rendering dell'audio e della grafica, ovviamente, è a disposizione dell'utente.
+
+02:45.120 --> 02:49.240
+Questi elementi possono essere a due o tre D e possono essere animati.
+
+02:49.260 --> 02:55.110
+Nello sviluppo dei videogiochi esistono diversi tipi di animazioni, come la dissolvenza in entrata e in uscita dello schermo
+
+02:55.110 --> 02:57.410
+al modo in cui il personaggio cammina nel mondo.
+
+02:57.420 --> 03:00.600
+E infine c'è lo scripting o la codifica che si fa.
+
+03:00.690 --> 03:03.330
+In Unity, questo è il linguaggio di programmazione C-sharp.
+
+03:03.330 --> 03:06.700
+Quando pensiamo a Unity, quali sono le funzionalità integrate?
+
+03:06.720 --> 03:11.820
+Scegliendo Unity come soluzione middleware, si ottengono molte funzioni già pronte.
+
+03:11.820 --> 03:14.610
+Tutte quelle di cui ho appena parlato e molte altre ancora.
+
+03:14.610 --> 03:18.630
+Oltre a queste funzioni, ci sono anche servizi opzionali.
+
+03:19.050 --> 03:26.280
+Unity offre diversi servizi per l'acquisizione e la misurazione degli utenti, per la fornitura di funzionalità di backend e per la gestione dei dati.
+
+03:26.280 --> 03:27.870
+e il multiplayer.
+
+03:28.440 --> 03:33.300
+In generale, i team di gioco possono scegliere gli strumenti e le piattaforme che fanno al caso loro.
+
+03:34.060 --> 03:39.730
+Creare un proprio motore di gioco è possibile, ma richiede risorse enormi in un team più grande.
+
+03:39.970 --> 03:42.670
+Il risultato finale può essere più personalizzabile.
+
+03:42.880 --> 03:49.450
+Tuttavia, la scelta di qualcosa di pronto all'uso come Unity, che offre queste funzionalità e questi servizi, consente
+
+03:49.450 --> 03:55.460
+ai team di offrire agli utenti finali molti più contenuti in modo più rapido e di scegliere tra le varie opzioni disponibili.
+
+03:55.480 --> 03:58.990
+Unity è una delle opzioni più potenti e popolari.
+
+03:58.990 --> 04:02.410
+Abbiamo visto che l'industria dei giochi è grande e in crescita.
+
+04:02.650 --> 04:08.650
+Unity è un'opzione potente da scegliere e include funzionalità e servizi già pronti.
+
+04:08.680 --> 04:14.110
+Continueremo a esaminare Unity, in particolare la sua struttura e organizzazione.
+
+04:14.110 --> 04:14.980
+Grazie.

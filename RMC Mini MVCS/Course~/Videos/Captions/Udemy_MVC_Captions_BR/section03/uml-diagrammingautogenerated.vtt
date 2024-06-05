@@ -1,0 +1,148 @@
+WEBVTT
+
+00:00.400 --> 00:04.360
+A seguir, vamos falar sobre UML ou linguagem de modelagem unificada.
+
+00:04.720 --> 00:11.530
+Usamos a UML para entender e comunicar padrões de design e soluções de software.
+
+00:11.950 --> 00:17.290
+Estou mencionando-a neste curso porque quero discutir alguns padrões de projeto na próxima seção,
+
+00:17.290 --> 00:24.190
+e esses diagramas nos dão uma abreviação, uma maneira de comunicar esses conceitos de forma mais rápida e visual.
+
+00:24.190 --> 00:29.920
+Alguns benefícios do uso da UML são Permite um planejamento mais rápido e uma comunicação mais clara com a sua equipe
+
+00:29.920 --> 00:34.210
+e, durante o desenvolvimento, ajuda a focar na solução dada.
+
+00:34.210 --> 00:40.310
+Há muitos tipos diferentes de diagramação e, mesmo dentro da Usmle, há muitos tipos de diagramas Usmle.
+
+00:40.330 --> 00:47.740
+A maior parte do que estou mostrando aqui serão diagramas de classe, a maneira como as classes interagem a partir de um nível muito alto
+
+00:47.740 --> 00:48.460
+nível.
+
+00:48.490 --> 00:55.120
+Não estou explicando os métodos e variáveis individuais como às vezes fazemos nesses diagramas.
+
+00:55.120 --> 01:01.630
+Em vez disso, trata-se de uma relação de alto nível entre as classes, de modo que esta classe estende outra
+
+01:01.630 --> 01:05.470
+classe usando herança ou ela compõe outra classe?
+
+01:05.470 --> 01:05.740
+Aqui?
+
+01:05.740 --> 01:10.960
+Nesta figura, vemos o exemplo da seta branca indicando herança.
+
+01:10.960 --> 01:16.480
+Portanto, dentro do unity, por exemplo, se você tiver uma classe que estende o comportamento mono, este seria o comportamento apropriado
+
+01:16.480 --> 01:17.590
+diagrama a ser usado.
+
+01:17.590 --> 01:20.500
+Então, vemos aqui mais alguns exemplos.
+
+01:20.680 --> 01:26.620
+Basta entender o básico disso para avançar e entender outros diagramas.
+
+01:26.620 --> 01:29.080
+A seta branca indica herança.
+
+01:29.080 --> 01:34.990
+A linha pontilhada com a seta branca significa que estamos implementando uma interface e o diamante preto e
+
+01:34.990 --> 01:39.040
+seta preta indicam composição e referência.
+
+01:39.040 --> 01:41.380
+Vamos nos divertir aqui com um exemplo bobo.
+
+01:41.380 --> 01:45.820
+Um carro Toyota é um tipo de carro, portanto, faz sentido.
+
+01:45.820 --> 01:51.070
+Para usar a herança, se você estiver familiarizado com interfaces, sabe, geralmente começamos o nome do tipo
+
+01:51.070 --> 01:55.660
+com um olho e descrevemos que tipo de comportamento é possível.
+
+01:55.660 --> 02:02.350
+Assim, poderíamos dizer que a roda aqui é uma classe que implementa a composição da interface Rotatable do olho
+
+02:02.350 --> 02:04.300
+e referência são bastante semelhantes.
+
+02:04.300 --> 02:08.470
+Ambas são uma classe que usa outra classe de alguma forma.
+
+02:08.500 --> 02:13.600
+A principal diferença aqui é que a composição indica que elas têm o mesmo ciclo de vida.
+
+02:13.600 --> 02:18.300
+Nesse caso, se o carro da Toyota desaparecesse, as rodas desapareceriam com ele.
+
+02:18.310 --> 02:22.540
+Entendemos que as rodas são parte dele, conectadas em um ciclo de vida compartilhado.
+
+02:22.540 --> 02:27.010
+No entanto, esse carro da Toyota também pode usar um sistema que utiliza o satélite GPS.
+
+02:27.010 --> 02:28.600
+Portanto, ele também está usando isso.
+
+02:28.600 --> 02:34.000
+Mas entendemos que, se o carro desaparecer, o satélite GPS provavelmente continuará existindo.
+
+02:34.000 --> 02:40.480
+E com apenas esses quatro tipos de linhas, podemos criar muitas soluções de software e explicar claramente
+
+02:40.480 --> 02:40.810
+elas.
+
+02:40.810 --> 02:45.160
+Ao longo de minha carreira, vi a diagramação ser feita de várias maneiras.
+
+02:45.160 --> 02:52.390
+Aqueles que estão familiarizados com a UML e se apóiam fortemente nela podem fazer esboços em papel ou usar ferramentas on-line
+
+02:52.390 --> 02:55.030
+que o ajudam a conectar essas linhas e diagramá-las.
+
+02:55.030 --> 03:00.430
+As pessoas que não estão familiarizadas com essa forma oficial de diagramação certamente podem pegar um pedaço de papel
+
+03:00.430 --> 03:03.850
+ou a parte de trás de um guardanapo e esboçar suas idéias livremente.
+
+03:03.850 --> 03:09.880
+Mas quanto mais pessoas concordarem com algum tipo de sistema para a linguagem, mais facilmente poderemos nos comunicar.
+
+03:09.880 --> 03:12.520
+A UML é um padrão bastante popular.
+
+03:12.520 --> 03:16.750
+Ele existe há muito tempo na ciência da computação e vale a pena dar uma olhada.
+
+03:16.750 --> 03:23.380
+Se você optar por aprender com a UML aqui e fazer seu próprio diagrama ou se aprender apenas o suficiente para acompanhar o processo
+
+03:23.380 --> 03:25.180
+no curso, por mim tudo bem.
+
+03:25.300 --> 03:30.130
+Veremos um pouco mais sobre como a UML se aplica a alguns padrões de projeto específicos.
+
+03:30.130 --> 03:30.850
+Próximo.
+
+03:30.850 --> 03:31.660
+Obrigado.

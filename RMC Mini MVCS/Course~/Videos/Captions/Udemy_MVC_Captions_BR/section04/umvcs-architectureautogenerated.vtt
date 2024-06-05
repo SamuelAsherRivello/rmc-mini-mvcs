@@ -1,0 +1,196 @@
+WEBVTT
+
+00:00.520 --> 00:03.490
+O framework Unity MVC.
+
+00:03.490 --> 00:10.750
+Criei a estrutura Unity UMBC há vários anos com base no que aprendi na época e na minha arquitetura
+
+00:10.750 --> 00:11.460
+arquitetônicos.
+
+00:11.470 --> 00:17.140
+As vantagens de usar essa estrutura específica são que ela é comprovada e baseada em muitos dos
+
+00:17.140 --> 00:20.310
+princípios e padrões que já vimos antes no curso.
+
+00:20.320 --> 00:26.080
+Embora a versão exista apenas para a unidade, em teoria, os padrões são independentes de idioma, portanto
+
+00:26.080 --> 00:28.920
+você poderia levá-lo a diferentes plataformas, se quisesse.
+
+00:28.930 --> 00:35.740
+Ele traz um ambiente mais testável para a unidade porque cada área do seu código é separada e desacoplada.
+
+00:35.740 --> 00:39.940
+E como muitas das arquiteturas estabelecidas, demos uma olhada na unidade.
+
+00:39.940 --> 00:45.010
+E isso permite um desenvolvimento mais rápido e uma manutenção muito mais eficiente em seus projetos.
+
+00:45.010 --> 00:50.860
+No momento da criação, eu tinha um fluxo centrado no comportamento mono para a forma como estava desenvolvendo na unidade.
+
+00:50.920 --> 00:53.860
+Então, construí esse sistema para funcionar da mesma forma.
+
+00:53.860 --> 00:58.300
+Assim, uma das principais características aqui é o fato de que ele utiliza fortemente comportamentos mono.
+
+00:58.300 --> 01:01.780
+Cada uma das quatro preocupações estende o comportamento mono.
+
+01:01.780 --> 01:07.060
+Isso significa que você pode pendurar cada uma dessas preocupações em um objeto de jogo, o que é ótimo usando todos os
+
+01:07.060 --> 01:12.550
+fluxos de trabalho familiares que temos na unidade para objetos e componentes de jogos, incluindo a serialização de campos em
+
+01:12.550 --> 01:13.570
+qualquer uma das preocupações.
+
+01:13.570 --> 01:17.890
+Por exemplo, na captura de tela aqui, você pode ver um dos modelos.
+
+01:17.890 --> 01:23.920
+O modelo é um comportamento mono, portanto, pode ter campos serializados e ficar bem no inspetor de unidade
+
+01:23.920 --> 01:24.250
+visualizar.
+
+01:24.250 --> 01:27.550
+Então, qual é a estrutura de alto nível de você e dos VCs?
+
+01:27.550 --> 01:34.090
+Bem, temos o conhecido m v dos padrões que vimos antes, em que cada um desses quatro
+
+01:34.090 --> 01:36.130
+preocupações estende o comportamento mono.
+
+01:36.130 --> 01:42.700
+Então, dentro do código do meu jogo, eu criaria um conceito de aplicativo, que também é uma quantidade de comportamento.
+
+01:42.700 --> 01:48.430
+Essa é a única coisa em minha cena sob a qual tudo isso se assenta novamente, alguns benefícios do comportamento mono
+
+01:48.430 --> 01:50.740
+pois ele parece muito nativo da unidade.
+
+01:50.740 --> 01:55.360
+As coisas estão na cena em objetos de jogo e podem ser separadas, como eu gosto.
+
+01:55.360 --> 01:58.270
+Neste capítulo, estamos apenas fazendo uma visão geral disso.
+
+01:58.270 --> 02:01.000
+Eventualmente, passaremos para uma estrutura diferente.
+
+02:01.000 --> 02:04.480
+Aqui está um trecho de como o sistema UMBC funciona.
+
+02:04.480 --> 02:08.680
+Há algumas conclusões desse sistema mais antigo que ainda me agradam muito.
+
+02:08.680 --> 02:13.480
+Primeiro, em muitas das preocupações, como o controlador básico que vemos aqui, eu uso genéricos.
+
+02:13.480 --> 02:19.450
+Os genéricos são uma maneira fantástica em C-sharp de criar algumas classes de modelo reutilizáveis.
+
+02:19.450 --> 02:25.840
+Em segundo lugar, o fluxo de trabalho que tenho aqui permite uma tipagem forte, o que é ótimo em instâncias específicas
+
+02:25.840 --> 02:27.100
+de como meu jogo flui.
+
+02:27.100 --> 02:32.770
+Consigo obter o preenchimento automático, que me mostra as propriedades e os métodos que fazem sentido para
+
+02:32.770 --> 02:37.630
+O contexto e a estrutura introduzem os conceitos que aprendemos com os padrões de design.
+
+02:37.630 --> 02:45.070
+Temos tanto o gerenciador de comando para comunicação FA de alto nível de uma forma mais desacoplada quanto a unidade
+
+02:45.070 --> 02:48.670
+para comunicação em nível local e inferior.
+
+02:48.670 --> 02:53.350
+A principal diferença aqui, conforme discutimos quando falamos sobre esses padrões anteriormente, é que o comando
+
+02:53.350 --> 02:58.750
+não precisa que o emissor e o receptor tenham referências um ao outro, enquanto que
+
+02:58.750 --> 03:04.420
+o conceito de evento do Unity exige que o observador tenha uma referência ao remetente.
+
+03:04.420 --> 03:09.550
+Isso dá à estrutura dois níveis de como ela pode se comunicar entre as principais preocupações.
+
+03:09.550 --> 03:15.490
+Portanto, na época em que criei essa estrutura específica, ela adotou os princípios de como eu abordava
+
+03:15.490 --> 03:16.690
+projetos Unity.
+
+03:16.690 --> 03:20.410
+Como mencionei, era uma abordagem muito centrada no comportamento mono.
+
+03:20.410 --> 03:23.020
+O projeto ainda está vivo e pode ser utilizado.
+
+03:23.020 --> 03:27.130
+Para o bem deste curso, vou recomendar que escolhamos uma estrutura diferente da qual falarei
+
+03:27.130 --> 03:27.880
+a seguir.
+
+03:27.880 --> 03:34.690
+Mas estou mencionando esse projeto como um exemplo válido no meu portfólio de arquitetura em um lugar do qual
+
+03:34.690 --> 03:38.440
+Aprendi muito, em geral, nesta seção, falamos sobre arquiteturas.
+
+03:38.440 --> 03:42.610
+Vimos os prós e os contras de usar uma determinada arquitetura estabelecida.
+
+03:42.610 --> 03:47.440
+Falamos sobre algumas das diferenças entre as principais arquiteturas estabelecidas que podemos escolher.
+
+03:47.440 --> 03:50.710
+Vimos as desvantagens de usar a abordagem sem arquitetura.
+
+03:50.710 --> 03:55.960
+Embora essa abordagem pareça muito natural, especialmente para um iniciante, ela acaba não rendendo dividendos.
+
+03:55.960 --> 04:01.840
+E vimos uma lista de alguns dos frameworks centrados na unidade que podemos escolher para fazer a arquitetura do jogo,
+
+04:01.840 --> 04:05.740
+incluindo o projeto de você e VC que criei há vários anos.
+
+04:05.740 --> 04:11.770
+Em seguida, vamos discutir uma estrutura diferente, a estrutura do Mini e do VC, que criei mais recentemente.
+
+04:11.770 --> 04:17.260
+Esse é o ponto culminante de todas as lições que tivemos aqui ao longo do curso sobre os princípios de design,
+
+04:17.260 --> 04:21.400
+os padrões de design, os aprendizados de outras arquiteturas, inclusive a minha.
+
+04:21.400 --> 04:26.710
+Veremos uma visão geral do sistema, os prós e contras de usá-lo e como começar.
+
+04:26.710 --> 04:32.230
+Esta seção sobre arquiteturas foi especialmente completa e continha muitas informações.
+
+04:32.230 --> 04:38.710
+Sinta-se à vontade para assistir novamente a algumas seções para aprofundar um pouco mais esses conceitos e nós
+
+04:38.710 --> 04:40.540
+passaremos juntos para a próxima seção.
+
+04:40.540 --> 04:41.290
+Muito obrigado.

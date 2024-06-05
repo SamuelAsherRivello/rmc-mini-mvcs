@@ -1,0 +1,184 @@
+WEBVTT
+
+00:00.180 --> 00:02.800
+Examinons le modèle de commande.
+
+00:02.820 --> 00:05.390
+Command est un modèle de conception comportemental.
+
+00:05.400 --> 00:09.210
+Il est quelque peu similaire à l'observateur, mais suffisamment différent.
+
+00:09.210 --> 00:11.340
+Il peut être considéré comme un modèle à part entière.
+
+00:11.430 --> 00:17.730
+Parmi les avantages de son utilisation, citons la possibilité d'exécuter et d'annuler des fonctionnalités.
+
+00:17.730 --> 00:23.360
+C'est souvent à ce moment-là que de nombreuses équipes l'adoptent pour disposer d'une fonctionnalité d'annulation dans leur interface utilisateur.
+
+00:23.370 --> 00:30.600
+Mais même sans ce paradigme, il est encore extrêmement efficace pour vous donner les avantages de l'observateur.
+
+00:30.600 --> 00:37.530
+avec un peu plus de découplage et d'abstraction par rapport au modèle d'observateur ici, nous n'avons pas besoin d'une référence
+
+00:37.530 --> 00:40.020
+à l'expéditeur du message.
+
+00:40.020 --> 00:47.790
+Au lieu de cela, l'expéditeur et l'observateur connaissent tous deux une sorte de système de messagerie qui se trouve entre
+
+00:47.790 --> 00:48.240
+entre eux.
+
+00:48.480 --> 00:51.510
+Dans la suite du code, nous l'appellerons le gestionnaire de commandes.
+
+00:51.510 --> 00:57.780
+Tant que ces scopes peuvent atteindre ce gestionnaire de commandes, il joue le rôle d'intermédiaire entre eux et la communication.
+
+00:57.780 --> 01:03.990
+Et comme l'observateur, il permet l'échange de données et la communication, qui est isolée de..,
+
+01:03.990 --> 01:07.410
+si l'un change, l'autre doit-il nécessairement changer ?
+
+01:07.410 --> 01:11.720
+Il est tout à fait possible d'ajouter et de supprimer facilement plusieurs observateurs.
+
+01:11.730 --> 01:12.270
+Nous verrons bien.
+
+01:12.270 --> 01:15.600
+Un parallèle avec l'exemple de l'observateur que nous avons vu plus tôt ici.
+
+01:15.600 --> 01:22.640
+Les trois parties clés sont la création du système de commande, l'ajout d'un listener et l'invocation de ce dernier.
+
+01:22.650 --> 01:28.230
+En général, nous envoyons des commandes entre deux classes ou plus, mais par souci de concision, j'ai inclus les éléments suivants
+
+01:28.230 --> 01:29.760
+dans un seul fichier de classe.
+
+01:29.760 --> 01:33.380
+De cette façon, nous pouvons voir un exemple fonctionnel complet assez rapidement.
+
+01:33.390 --> 01:37.710
+Je vais maintenant mentionner quelques autres modèles, mais je vais aller un peu plus vite.
+
+01:37.860 --> 01:44.730
+Les deux prochains que je vais montrer sont des choses que nous verrons dans l'esprit de la façon dont les architectures MVC
+
+01:44.730 --> 01:45.570
+sont organisées.
+
+01:45.570 --> 01:48.960
+L'un d'entre eux vous est peut-être déjà familier : le modèle singleton.
+
+01:48.960 --> 01:55.710
+Chaque fois que vous voulez avoir un système créé exactement une fois dans votre code et avoir un accès global à celui-ci,
+
+01:55.710 --> 01:57.990
+c'est un endroit idéal pour le modèle Singleton.
+
+01:57.990 --> 02:05.010
+Les récentes mises à jour de Unity proposent des solutions natives pour cela, mais traditionnellement, nous avons utilisé la communauté
+
+02:05.010 --> 02:13.440
+qui nous permettent d'accéder globalement à un comportement mono donné ou à un certain nombre d'autres comportements mono.
+
+02:13.440 --> 02:14.420
+autre type de données.
+
+02:14.430 --> 02:21.450
+Deuxièmement, le modèle de façade nous aide à réduire la complexité perçue d'une série de sous-systèmes.
+
+02:21.540 --> 02:28.050
+Supposons que vous disposiez d'un système d'entrée, d'un système de rendu et d'un système physique, tous créés pour votre projet.
+
+02:28.050 --> 02:29.790
+jeu au lieu de votre joueur.
+
+02:29.790 --> 02:35.940
+Connaissant les détails de ces systèmes, votre joueur pourrait interagir avec une façade qui, à son tour, appellerait ces systèmes.
+
+02:35.940 --> 02:39.960
+systèmes individuels ou des sous-sections sélectionnées de ce qu'ils peuvent faire.
+
+02:39.960 --> 02:43.890
+Souvent, dans le jargon des développeurs, nous appelons cela la fonctionnalité d'enveloppement.
+
+02:43.890 --> 02:49.560
+On pourrait donc dire que j'ai regroupé trois systèmes dans une seule classe pour en faciliter l'utilisation.
+
+02:49.560 --> 02:53.010
+Le médiateur et le proxy sont deux modèles supplémentaires.
+
+02:53.010 --> 02:59.700
+Ils sont en effet distincts, mais je peux utiliser les termes de façon interchangeable pour la médiation et la procuration.
+
+02:59.700 --> 03:05.130
+Je veux dire que le fait d'avoir une sorte d'intermédiaire qui se tient entre la communication, certains des avantages
+
+03:05.130 --> 03:09.330
+sont que vous pouvez facilement apporter des modifications à l'une ou l'autre des deux classes.
+
+03:09.330 --> 03:15.150
+Dans cet exemple, si vous modifiez l'intermédiaire, vous n'avez pas besoin de remanier massivement le système.
+
+03:15.150 --> 03:17.070
+C'est donc un moyen d'atténuer le changement.
+
+03:17.070 --> 03:19.980
+Nous verrons plus tard certains de ces concepts dans les architectures.
+
+03:19.980 --> 03:26.280
+Un bref aperçu des modèles de conception nous permet de constater qu'il s'agit de solutions réutilisables qui
+
+03:26.280 --> 03:30.540
+nous aident à résoudre les problèmes de conception qui se posent souvent dans le développement de nos jeux.
+
+03:30.540 --> 03:36.030
+Si Singleton vous est peut-être le plus familier dans Unity, l'observateur, comme on en parle souvent, est un élément essentiel de l'architecture.
+
+03:36.030 --> 03:42.840
+est probablement le plus utile pour un développeur débutant afin d'élever un peu son niveau de jeu et d'améliorer ses performances.
+
+03:42.840 --> 03:47.820
+certains de ces autres modèles que j'ai mentionnés spécifiquement parce que plus tard, lorsque nous examinerons les architectures,
+
+03:47.820 --> 03:51.600
+Je pourrai utiliser ces termes et vous serez un peu plus familier.
+
+03:51.900 --> 03:57.150
+Pour résumer cette section, nous avons examiné certains concepts de conception de logiciels de haut niveau.
+
+03:57.150 --> 04:04.470
+Nous avons examiné les principes de conception en tant que philosophies pour résoudre les problèmes, l'UML en tant que méthode de diagramme et de communication.
+
+04:04.470 --> 04:05.790
+nos idées.
+
+04:05.790 --> 04:11.580
+Et nous avons examiné certains modèles de conception, en particulier l'observateur et la commande, sur lesquels nous reviendrons.
+
+04:11.580 --> 04:12.180
+plus tard.
+
+04:12.180 --> 04:15.640
+Ils constituent un excellent moyen de découpler la communication au sein de votre projet.
+
+04:15.660 --> 04:17.880
+Parlons maintenant de l'architecture.
+
+04:17.880 --> 04:23.430
+Nous examinerons quelques-unes des solutions disponibles, les avantages et les inconvénients de chacune d'entre elles, et nous restreindrons le champ d'application de l'architecture.
+
+04:23.430 --> 04:28.290
+Nous allons examiner les solutions disponibles, les avantages et les inconvénients de chacune d'entre elles, et nous limiter à certains cadres populaires que nous pouvons utiliser spécifiquement pour l'unité.
+
+04:28.440 --> 04:29.370
+Merci.

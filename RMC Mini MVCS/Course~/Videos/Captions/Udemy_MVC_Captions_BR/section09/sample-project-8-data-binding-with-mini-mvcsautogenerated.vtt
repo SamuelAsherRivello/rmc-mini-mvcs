@@ -1,0 +1,508 @@
+WEBVTT
+
+00:00.200 --> 00:00.620
+Tudo certo.
+
+00:00.650 --> 00:06.410
+A seguir, vamos dar uma olhada na vinculação de dados dentro do Unity com uma arquitetura personalizada.
+
+00:09.280 --> 00:13.990
+Esta é a demonstração da vinculação de dados ao lado.
+
+00:14.590 --> 00:22.750
+Assim, na demonstração de ligação de dados, veremos como, em um projeto que tem MVC como adicionado, como seria
+
+00:22.750 --> 00:24.280
+você tem vinculação de dados?
+
+00:24.280 --> 00:33.700
+Agora, a ligação de dados destina-se a ter um padrão reutilizável fácil para sincronizar valores em diferentes domínios.
+
+00:33.700 --> 00:41.560
+Portanto, se você tiver duas classes e ambas tiverem um valor de texto de mensagem e você quiser que uma delas mude
+
+00:41.560 --> 00:46.720
+o valor para que a outra classe o ouça, e se a primeira o ouvir, então ele o altera, então
+
+00:46.720 --> 00:47.650
+a segunda ouve.
+
+00:47.650 --> 00:49.210
+Portanto, há uma ligação de duas vias.
+
+00:49.210 --> 00:50.800
+Vamos então dar uma olhada em um exemplo.
+
+00:50.800 --> 00:52.780
+Você pode imaginar como isso seria útil.
+
+00:53.470 --> 00:59.830
+Esta demonstração faz parte do curso de arquitetura MVC para Unity, cujo link você pode encontrar abaixo.
+
+00:59.830 --> 01:07.000
+É um curso pago e está com desconto agora porque estamos comemorando o fato de já termos mais de 6.000 alunos.
+
+01:07.420 --> 01:10.790
+Esperamos que, quando você assistir a este vídeo, veja ainda mais alunos lá.
+
+01:13.270 --> 01:20.200
+O curso em si abrange todos os tipos de tópicos diferentes: unidade, software, design, mini nvqs também.
+
+01:20.200 --> 01:27.220
+E no conteúdo extra, adicionamos mais dez demonstrações além das que já estavam lá.
+
+01:27.220 --> 01:28.660
+E vamos examinar uma delas aqui.
+
+01:29.080 --> 01:31.260
+Vamos dar uma olhada na vinculação de dados aqui.
+
+01:31.270 --> 01:35.830
+Então, vamos dar uma olhada na vinculação de dados saltando para a unidade.
+
+01:36.370 --> 01:38.800
+Então, aqui dentro do Unity está o projeto.
+
+01:38.800 --> 01:44.980
+Se você seguir a partir do git, o link gratuito do git que tem todo o código-fonte, você pode trazer o
+
+01:44.980 --> 01:50.190
+pacote com as instruções lá e, em seguida, basta ir para amostras e clicar em importar.
+
+01:50.300 --> 01:53.140
+Já fiz isso aqui para o propósito deste curso.
+
+01:54.340 --> 01:58.760
+Vamos para a pasta more e dar uma olhada no exemplo de vinculação de dados.
+
+01:58.780 --> 02:03.070
+Então, vamos dar uma olhada nos dados, na estrutura das pastas aqui.
+
+02:03.070 --> 02:10.330
+Portanto, dentro da vinculação de dados, tenho uma pasta para o Mini porque algumas das demonstrações anteriores têm uma versão
+
+02:10.330 --> 02:11.380
+sem o Mini.
+
+02:11.410 --> 02:17.360
+Se você quiser ver uma abordagem tradicional no Unity e depois com o Mini, esta aqui só foi feita com o
+
+02:17.360 --> 02:19.100
+Mini, que é o que estamos vendo aqui.
+
+02:19.220 --> 02:26.690
+Em seguida, na pasta de recursos, tenho alguns pré-fabricados aqui para as duas visualizações diferentes que estão acontecendo
+
+02:26.690 --> 02:27.770
+que estarão no aplicativo.
+
+02:28.670 --> 02:32.230
+Tenho a cena, que será executada em um segundo, e depois tenho o código-fonte.
+
+02:32.240 --> 02:40.580
+Agora, como é comum nessas demonstrações e nas melhores práticas para muitos MVCs, sempre que você executar uma demonstração em
+
+02:41.120 --> 02:46.600
+Unity, você quer estruturá-la de modo que os arquivos de origem para o controlador, modelo, visão e serviço.
+
+02:46.610 --> 02:48.920
+Se houver, tenham sua própria pasta dedicada.
+
+02:48.920 --> 02:53.960
+Dessa forma, você pode ver facilmente as diferentes separações de preocupações.
+
+02:54.790 --> 02:55.330
+Legal.
+
+02:55.930 --> 02:57.250
+Então, vamos executar a demonstração aqui.
+
+02:57.250 --> 02:58.450
+Vou deixá-la bonita e grande.
+
+03:00.280 --> 03:01.810
+Agora, vamos dar uma olhada nisso.
+
+03:01.810 --> 03:04.150
+Aqui temos dois pontos de vista diferentes.
+
+03:04.150 --> 03:07.930
+Você poderia pensar que isso faz parte de um layout, mas na verdade há dois pré-fabricados.
+
+03:07.930 --> 03:16.450
+Então, nós os colocamos lá fora e queremos ser capazes de editar este aqui e dizer "Hello world" a partir da esquerda.
+
+03:16.450 --> 03:20.500
+E observe que ambos os campos de texto são atualizados em tempo real.
+
+03:20.980 --> 03:25.030
+Vamos para cá e digamos que eu esteja à direita.
+
+03:25.570 --> 03:28.270
+E você pode ver que ambos são atualizados.
+
+03:28.270 --> 03:31.050
+Portanto, temos uma ligação bidireccional nos MVCs.
+
+03:31.060 --> 03:32.580
+Então vamos ver como isso é feito.
+
+03:32.590 --> 03:40.270
+Agora, como posso ter mencionado em uma parte anterior desta série de vídeos, o Unity historicamente não fez
+
+03:40.270 --> 03:41.920
+suportava qualquer ligação de duas vias.
+
+03:42.680 --> 03:49.370
+Então, eles a adicionaram no editor para ferramentas de edição e, no futuro, ela chegará ao tempo de execução,
+
+03:49.520 --> 03:52.520
+especialmente como parte do kit de ferramentas UI.
+
+03:52.520 --> 03:58.790
+Portanto, não estou usando o kit de ferramentas UI aqui, e esse recurso de vinculação bidirecional em tempo de execução pela Unity ainda não está disponível.
+
+03:58.790 --> 04:04.010
+disponível no momento desta gravação, então eu fiz uma solução personalizada aqui, então vamos dar uma olhada
+
+04:04.010 --> 04:04.520
+isso.
+
+04:07.820 --> 04:13.550
+Então, aqui na cena, eu tenho o The World, que é um objeto de jogo que tem apenas a câmera e a iluminação
+
+04:13.550 --> 04:14.120
+nele.
+
+04:14.330 --> 04:19.850
+Depois, tenho a vista esquerda, que se eu mover para a esquerda.
+
+04:23.090 --> 04:23.930
+Eu não posso nem mesmo fazer isso.
+
+04:25.330 --> 04:25.810
+Muito bem.
+
+04:25.810 --> 04:27.700
+E então temos a visão correta também.
+
+04:27.730 --> 04:29.860
+E então temos o exemplo de vinculação de dados.
+
+04:29.860 --> 04:33.620
+Agora, a vinculação de dados recebe uma referência da visualização esquerda e direita.
+
+04:33.640 --> 04:36.760
+Então, vamos começar a nossa jornada de código aqui.
+
+04:37.690 --> 04:39.400
+Aqui está o monobehaviour.
+
+04:39.400 --> 04:42.500
+Este é um exemplo de execução de toda a cena.
+
+04:42.520 --> 04:44.530
+Tenho os dois campos serializados.
+
+04:44.530 --> 04:47.790
+Acabamos de ver a vista esquerda e a vista direita.
+
+04:47.800 --> 04:52.150
+E depois, aqui no início, vou criar um novo contexto.
+
+04:52.180 --> 04:59.080
+Agora, não vimos isso em demonstrações anteriores e, no centro do curso, não mostramos exatamente isso
+
+04:59.080 --> 05:02.470
+fluxo de trabalho, mas aqui estou criando.
+
+05:08.140 --> 05:08.620
+Aqui.
+
+05:08.620 --> 05:14.650
+Estou criando o contexto fora do Mini e estou passando-o para cá.
+
+05:15.010 --> 05:18.520
+E então eu tenho a visão esquerda e a visão direita.
+
+05:19.120 --> 05:25.120
+Então, eu criei fora e passei o mesmo valor para cada uma delas.
+
+05:26.060 --> 05:27.050
+Preocupações.
+
+05:27.210 --> 05:33.200
+Ah, na verdade, agora que penso nisso, há uma demonstração diferente em que temos vários minis em
+
+05:33.200 --> 05:35.960
+no mesmo projeto e isso foi emprestado dele.
+
+05:35.960 --> 05:40.850
+Portanto, criar o contexto fora da mini não é explicitamente necessário.
+
+05:40.850 --> 05:46.460
+Aqui está para a outra demonstração chamada Multiple Minis, que você pode dar uma olhada na série.
+
+05:46.460 --> 05:50.020
+Portanto, este comentário não é necessariamente necessário aqui.
+
+05:50.030 --> 05:51.980
+Agora vamos dar uma olhada no Mini.
+
+05:53.020 --> 06:01.150
+Aqui, o que eu faço é configurar a ligação de dados em seu próprio mini e o Mini aqui vai
+
+06:01.150 --> 06:04.600
+pegar as referências para a visão esquerda e a visão direita e armazená-las.
+
+06:05.960 --> 06:10.010
+Em seguida, aqui embaixo, no it's, é a inicialização do Mini.
+
+06:10.950 --> 06:12.660
+Vou configurar o modelo.
+
+06:12.840 --> 06:15.840
+Há um modelo que vou configurar: The View.
+
+06:15.870 --> 06:16.860
+Há duas visualizações.
+
+06:16.890 --> 06:18.060
+Uma à esquerda e outra à direita.
+
+06:18.060 --> 06:24.730
+Mais uma vez, observe que são interfaces de usuário distintas e separadas e, em seguida, terei o controlador aqui.
+
+06:24.750 --> 06:31.320
+Agora, o controlador vai pegar uma referência ao modelo e a ambas as visualizações, como em todos os minis,
+
+06:31.320 --> 06:33.840
+o controlador é a mais inteligente das preocupações.
+
+06:33.840 --> 06:38.490
+Portanto, ele usa uma referência para as diferentes partes e é o controlador que será capaz de ter
+
+06:38.490 --> 06:40.290
+que eles trabalhem juntos.
+
+06:41.160 --> 06:42.660
+Aqui está o controlador.
+
+06:43.230 --> 06:46.560
+Acho que esta é a única preocupação que veremos nesta demonstração.
+
+06:46.830 --> 06:49.920
+Eu pego a esquerda e a direita e as armazeno aqui.
+
+06:49.920 --> 06:51.210
+Armazeno o modelo.
+
+06:51.480 --> 06:53.370
+Depois, aqui embaixo.
+
+06:54.400 --> 06:55.270
+Ooh.
+
+06:55.750 --> 06:58.100
+Eu estava esperando que houvesse mais lógica aqui.
+
+06:58.120 --> 06:59.560
+Deixe-me pensar sobre isso por um segundo.
+
+07:01.690 --> 07:03.040
+Sim, acho que há.
+
+07:03.190 --> 07:04.840
+Eu criei isso um pouco atrás.
+
+07:05.800 --> 07:10.210
+Muitas vezes, você sabe, o que estou prestes a mostrar nas visualizações é como eles fazem a sincronização.
+
+07:10.210 --> 07:15.550
+Mas você poderia fazer o afundamento dos dois valores para o campo de texto à esquerda e o campo de texto à direita.
+
+07:15.550 --> 07:16.990
+à direita no controlador.
+
+07:16.990 --> 07:18.940
+Portanto, eu estava esperando ver isso aqui.
+
+07:18.940 --> 07:21.220
+Mas vamos dar uma olhada nas outras preocupações.
+
+07:21.220 --> 07:22.510
+Aqui está o modelo.
+
+07:24.060 --> 07:26.430
+E o modelo em MVCs.
+
+07:28.290 --> 07:30.450
+É a mais estúpida das preocupações.
+
+07:30.450 --> 07:35.670
+Portanto, se o controlador é o mais inteligente, o mais consciente, ele tem o contexto de todo o tipo de
+
+07:35.670 --> 07:38.790
+Os modelos de situação estão na parte mais burra das coisas.
+
+07:38.790 --> 07:41.130
+Ele apenas armazena dados e é isso.
+
+07:41.130 --> 07:44.040
+Portanto, aqui ele vai armazenar uma cadeia de mensagens.
+
+07:45.160 --> 07:47.950
+E vai começar com esse valor inicial.
+
+07:47.980 --> 07:50.110
+Vimos que diz, edite este texto.
+
+07:50.110 --> 07:53.080
+Vamos executar a demonstração mais uma vez para que você possa ver a configuração.
+
+07:54.460 --> 07:56.790
+Em seguida, vamos dar uma olhada na visualização esquerda e direita.
+
+07:56.800 --> 07:58.600
+Aqui está a visualização à esquerda.
+
+07:58.630 --> 08:05.820
+Ela usará o comportamento mono, como sempre queremos fazer para questões relacionadas à interface do usuário.
+
+08:05.830 --> 08:10.060
+É opcional estender o comportamento mono no Mini, mas aqui queremos fazer isso.
+
+08:10.940 --> 08:13.820
+E então, aqui embaixo, é onde a ligação será feita.
+
+08:13.820 --> 08:16.310
+Então, deixe-me ter certeza de que isso está na tela em um bom lugar.
+
+08:16.310 --> 08:18.650
+Então, novamente, estamos em initialize.
+
+08:18.980 --> 08:22.970
+Eu só quero ter bastante espaço aqui para falar sobre isso.
+
+08:22.970 --> 08:23.410
+Está bem.
+
+08:23.420 --> 08:25.790
+Então, a primeira coisa que faço é configurar isso.
+
+08:25.790 --> 08:33.560
+Então, o que eu faço é ter uma referência ao modelo agora no MVCs.
+
+08:33.800 --> 08:38.330
+O controlador sempre pode acessar as outras preocupações.
+
+08:38.600 --> 08:45.410
+Mas, como prática recomendada, você deseja limitar o acesso de outro modelo.
+
+08:45.410 --> 08:48.440
+Por exemplo, para visualizar e visualizar para o modelo.
+
+08:48.440 --> 08:50.360
+Você deve estar muito atento a isso.
+
+08:50.360 --> 08:56.270
+Aqui, estou fazendo uma escolha consciente para que a visualização, que é a classe em que estamos, receba um
+
+08:56.270 --> 08:57.380
+referência ao modelo.
+
+08:57.380 --> 09:03.590
+E a maneira de fazer isso é perguntando ao contexto que está implicitamente disponível para você e
+
+09:03.590 --> 09:08.630
+diga: "Ei, localizador de modelos, me dê uma referência ao modelo que está no jogo".
+
+09:08.660 --> 09:15.480
+Parece um pouco com a injeção de dependência, essa linha específica aqui, mas não é bem isso
+
+09:15.480 --> 09:17.100
+universal de uma solução.
+
+09:17.130 --> 09:22.860
+O contexto tem localizadores apenas para os modelos, de modo que qualquer pessoa pode obtê-los, se necessário.
+
+09:22.890 --> 09:25.650
+Portanto, aqui na visualização, apenas obtemos uma referência a esse modelo.
+
+09:25.800 --> 09:30.030
+Lembre-se de que esse modelo contém apenas a cadeia de caracteres das mensagens na tela.
+
+09:30.880 --> 09:33.870
+Em seguida, faremos a vinculação aqui.
+
+09:33.880 --> 09:43.440
+Portanto, se o modelo de dados da mensagem for alterado, ouviremos a mensagem abaixo.
+
+09:43.450 --> 09:47.500
+Portanto, sempre que o modelo de dados for alterado, nós o ouviremos.
+
+09:47.620 --> 09:51.940
+E sempre que a visualização for alterada, vamos ouvi-la.
+
+09:51.940 --> 09:54.430
+Então, abaixo, veremos o método para cada um deles.
+
+09:54.430 --> 09:55.420
+Mas lembre-se, estamos ouvindo.
+
+09:55.420 --> 09:58.810
+Se o modelo mudar ou se a visualização mudar.
+
+09:59.230 --> 10:02.800
+Então, aqui embaixo, vamos dar uma olhada neste primeiro.
+
+10:03.530 --> 10:10.100
+Se o modelo de dados for alterado, então atualizaremos a visualização.
+
+10:11.800 --> 10:18.160
+E aqui embaixo, se a visualização for alterada, atualizaremos o modelo.
+
+10:18.160 --> 10:24.490
+Portanto, cada um desses dois faz o lado oposto dessa ligação bidirecional e pronto.
+
+10:24.760 --> 10:30.340
+Portanto, as porcas e os parafusos desse fluxo específico não são exclusivos do Mini.
+
+10:30.370 --> 10:36.070
+Você poderia fazer isso fora do Mini, mas as classes que ajudam tudo a acontecer estão incluídas aqui.
+
+10:36.070 --> 10:43.540
+E é um tópico especialmente interessante quando falamos de mini MVCs porque a vinculação de dados é uma das principais
+
+10:43.540 --> 10:44.850
+mais.
+
+10:44.860 --> 10:50.440
+Se você tiver vinculação de dados, usar algo como o mini MVC é ainda mais rápido e fácil de configurar.
+
+10:52.190 --> 10:54.020
+Então, vamos executar a demonstração mais uma vez.
+
+10:57.940 --> 10:59.470
+Acho que descomentei alguma coisa.
+
+10:59.470 --> 11:00.880
+É por isso que estamos recompilando aqui.
+
+11:00.910 --> 11:02.740
+Então, aqui novamente, estamos executando.
+
+11:02.740 --> 11:06.780
+Carregamos do serviço, editamos este texto que, na verdade, foi codificado.
+
+11:06.790 --> 11:11.290
+Temos o valor codificado e se eu digitar no lado esquerdo, obtemos isso.
+
+11:11.290 --> 11:14.260
+E se eu disser "oi" no lado direito, ele será sincronizado.
+
+11:14.260 --> 11:15.040
+Então é isso.
+
+11:15.040 --> 11:19.900
+Essa é a vinculação de dados dentro dessa demonstração do Unity MVC.

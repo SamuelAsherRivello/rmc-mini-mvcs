@@ -1,0 +1,232 @@
+WEBVTT
+
+00:00.180 --> 00:03.870
+Ora facciamo un compito di codifica con l'esempio di Rollerball.
+
+00:04.960 --> 00:10.440
+Eccomi in un progetto vuoto in cui ho inserito il mini framework MVC e gli esempi.
+
+00:10.450 --> 00:17.050
+Apro l'esempio di Rollerball con Mini e penso a cosa potrei fare qui come compito di codifica.
+
+00:17.200 --> 00:22.240
+Una cosa che mi è sembrata interessante è che mentre attualmente si possono usare i tasti freccia per muoversi
+
+00:22.240 --> 00:26.170
+si potrebbe far sì che la barra spaziatrice rappresenti un salto.
+
+00:26.350 --> 00:28.210
+Pensiamo quindi a come farlo.
+
+00:28.210 --> 00:34.420
+La ricezione di input da tastiera è qualcosa che già facciamo, ed è gestita dalla vista di input.
+
+00:34.540 --> 00:38.710
+Cominciamo quindi a vedere la vista di input e a capire come è collegata.
+
+00:38.710 --> 00:40.540
+Ecco la classe della vista di input.
+
+00:40.540 --> 00:46.060
+Abbiamo un evento personalizzato che verrà trasmesso ogni volta che viene rilevato un movimento dalla freccia.
+
+00:46.060 --> 00:51.700
+I tasti, la classe input view stessa, poiché si trova su un oggetto di gioco nella scena, è un comportamento mono.
+
+00:51.700 --> 00:58.420
+E saltando qui in basso fino all'evidenziazione dell'aggiornamento, catturiamo alcune delle chiavi e le passiamo
+
+00:58.420 --> 00:59.200
+come input.
+
+00:59.200 --> 01:05.950
+Si noti che il modo in cui è strutturato è che l'input viene passato a ogni singolo aggiornamento, a prescindere
+
+01:05.950 --> 01:07.750
+se l'utente sta premendo un tasto o meno.
+
+01:07.750 --> 01:12.970
+E come da convenzione tipica di unity per i tasti freccia per il movimento, va bene.
+
+01:12.970 --> 01:19.420
+Un'opzione che ho sarebbe quella di catturare la barra spaziatrice che viene premuta e passarla sempre magari come secondo
+
+01:19.420 --> 01:21.280
+parametro qui per l'input.
+
+01:21.280 --> 01:28.360
+Ma basandomi solo sulla mia intuizione, non mi piace l'idea che ogni fotogramma passi falso quando la barra spaziatrice
+
+01:28.360 --> 01:29.320
+non è ancora stata premuta.
+
+01:29.440 --> 01:34.780
+Quindi creerò un nuovo evento che si verifichi solo quando viene premuta la barra spaziatrice.
+
+01:34.780 --> 01:36.310
+Vediamo come fare.
+
+01:36.310 --> 01:39.880
+Per prima cosa, per ottenere il tasto della barra spaziatrice, lo faremo qui sotto.
+
+01:39.880 --> 01:43.840
+Otteniamo il codice della barra spaziatrice.
+
+01:43.840 --> 01:49.600
+E solo in questo caso invieremo un nuovo evento chiamato Jump.
+
+01:49.600 --> 01:54.520
+Quindi, inserendo questo aggiornamento, sappiamo che avverrà ogni fotogramma, il che è ottimo.
+
+01:54.520 --> 01:56.380
+Ora dobbiamo solo collegare il tutto.
+
+01:56.380 --> 02:01.960
+Ho aggiunto il mio evento unity chiamato Jump, perché non sto passando alcun parametro.
+
+02:01.960 --> 02:07.330
+Utilizzerò l'evento unity di base, come mostrato qui, e darò un'occhiata a quali sono gli ambiti di applicazione attuali
+
+02:07.330 --> 02:10.150
+in ascolto dell'evento esistente in ingresso.
+
+02:10.150 --> 02:15.220
+Qui nel controllore possiamo vedere che ascoltiamo e il controllore gestisce il tutto.
+
+02:15.220 --> 02:20.710
+Mi piace l'idea che il controllore gestisca anche le conseguenze del salto, quindi duplicherò questo codice
+
+02:20.710 --> 02:21.550
+qui e lo aggiornerò.
+
+02:21.550 --> 02:23.890
+Qui c'è il gestore per l'input.
+
+02:23.890 --> 02:26.710
+Copio lo stesso concetto e lo aggiorno.
+
+02:26.710 --> 02:31.570
+Ho creato un nuovo metodo e non mi resta che completarlo con le opportune modifiche.
+
+02:31.570 --> 02:32.200
+comando.
+
+02:32.200 --> 02:38.620
+Quindi, ancora una volta, questo è il controllore che ascolta questo evento dell'interfaccia utente e lo traduce in un comando
+
+02:38.620 --> 02:43.240
+in modo che, come una stazione radio, ogni particolare interesse possa sintonizzarsi su questo?
+
+02:43.240 --> 02:46.330
+Creerò il comando di salto da zero per finire.
+
+02:46.330 --> 02:52.090
+Ecco il comando di input esistente che prende un parametro per un vettore tre di quanto inputato
+
+02:52.090 --> 02:53.320
+ciascuna delle direzioni.
+
+02:53.560 --> 02:57.490
+Non ho bisogno di un parametro qui, quindi posso semplicemente estendere il comando I.
+
+02:57.490 --> 02:59.080
+Ho quindi creato il nuovo comando.
+
+02:59.080 --> 03:01.150
+E ora pensiamo a chi dovrebbe osservarlo?
+
+03:01.150 --> 03:05.680
+Nel caso del comando di input, è il giocatore che osserva il comando di input.
+
+03:05.680 --> 03:08.560
+E ora pensiamo a quali preoccupazioni dovrebbero sintonizzarsi su questo?
+
+03:08.560 --> 03:14.380
+Beh, il comando di input so che viene osservato dal giocatore in modo che sappia come muoversi.
+
+03:14.380 --> 03:15.460
+Mi sembra una buona soluzione.
+
+03:15.460 --> 03:17.170
+Andiamo quindi al giocatore e sottoscriviamo.
+
+03:17.170 --> 03:18.790
+Eccoci nella vista del lettore.
+
+03:18.790 --> 03:24.190
+La vista giocatore, dal momento che si trova su un oggetto di gioco nella scena, estende il comportamento del monarca e qui in basso
+
+03:24.190 --> 03:26.920
+nell'inizializzazione, ascolta il comando di input.
+
+03:26.920 --> 03:28.030
+Duplichiamolo.
+
+03:28.030 --> 03:30.070
+Ora siamo in ascolto del comando di salto.
+
+03:30.120 --> 03:31.330
+Gestiamo la conseguenza.
+
+03:31.330 --> 03:35.500
+Vediamo come il comando di ingresso viene impostato e poi chiama la fisica appropriata.
+
+03:35.500 --> 03:37.750
+Ho creato un gestore per il comando di salto.
+
+03:37.750 --> 03:39.730
+Ora devo solo pensare alla fisica.
+
+03:39.730 --> 03:44.080
+Se aggiungo una forza verso l'alto nel momento in cui si preme il comando di salto, questo dovrebbe funzionare.
+
+03:44.080 --> 03:48.760
+Per prima cosa, devo ricordarmi di passare il comando di salto come richiesto, anche se non ho bisogno di alcun parametro
+
+03:48.760 --> 03:49.570
+da quel comando.
+
+03:49.570 --> 03:53.050
+Questa è una convenzione necessaria con la tipica impostazione di una scena unity.
+
+03:53.050 --> 03:55.480
+La componente Y è rivolta verso l'alto.
+
+03:55.480 --> 04:00.700
+Quindi, se applico una forza verso l'alto in Y, dovremmo essere in grado di ottenere il risultato del salto che abbiamo ottenuto.
+
+04:00.700 --> 04:01.240
+desideriamo.
+
+04:01.240 --> 04:02.860
+Riproduciamo la scena e verifichiamola.
+
+04:02.860 --> 04:06.310
+Ecco la scena riprodotta usando i tasti freccia come prima.
+
+04:06.310 --> 04:08.320
+Ora provo con la barra spaziatrice.
+
+04:20.400 --> 04:21.360
+Ecco il gioco in esecuzione.
+
+04:21.360 --> 04:24.370
+Uso i tasti freccia come abbiamo fatto finora e provo.
+
+04:24.370 --> 04:26.430
+La nuova barra spaziatrice sembra funzionare bene.
+
+04:26.460 --> 04:32.100
+Ora, nel contesto di questo gioco, non ci sono nemici o ostacoli da evitare, quindi questo sarebbe
+
+04:32.100 --> 04:33.300
+sarebbe un'ottima cosa da aggiungere.
+
+04:33.300 --> 04:38.310
+Poi, nuove meccaniche di gioco che abbiano senso ora che abbiamo la possibilità di saltare.
+
+04:38.310 --> 04:40.430
+Ma questo è tutto per questo compito di codifica.
+
+04:40.440 --> 04:41.190
+Grazie.

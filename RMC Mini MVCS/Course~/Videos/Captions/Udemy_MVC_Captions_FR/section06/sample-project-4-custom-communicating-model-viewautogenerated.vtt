@@ -1,0 +1,352 @@
+WEBVTT
+
+00:00.090 --> 00:04.620
+Lorsque le contrôleur met directement à jour la vue, nous contournons le modèle.
+
+00:04.620 --> 00:09.620
+Essentiellement, nous stockons les données du modèle directement dans la vue.
+
+00:09.630 --> 00:15.900
+Et d'un point de vue fondamental, nous nous éloignons de la séparation des préoccupations du MVC.
+
+00:16.020 --> 00:21.870
+Itérons sur ce point et apportons un peu plus de principes solides au code.
+
+00:22.630 --> 00:29.440
+Au lieu de cela, nous pourrions faire en sorte que lorsque l'utilisateur clique sur le bouton d'ajout, le contrôleur traduise les éléments suivants
+
+00:29.440 --> 00:32.500
+valeurs de l'interface utilisateur de la vue vers le modèle.
+
+00:32.530 --> 00:33.580
+C'est ce que nous allons faire maintenant.
+
+00:33.580 --> 00:35.530
+Voyons ce que nous avons fait différemment ici.
+
+00:35.740 --> 00:41.830
+Nous avons mis à jour chacun de ces gestionnaires pour qu'ils soient un peu plus conventionnels dans les pratiques des MVC.
+
+00:41.860 --> 00:47.920
+Maintenant, lorsque nous ajoutons, nous prenons ces valeurs de vue et les plaçons directement dans le modèle, puis dans la réinitialisation,
+
+00:47.920 --> 00:53.860
+nous faisons quelque chose d'un peu redondant, mais nous effaçons la vue, puis nous effaçons le modèle.
+
+00:53.860 --> 00:54.470
+le modèle.
+
+00:54.490 --> 00:59.800
+Ce n'est pas mal, mais cette redondance n'atteint pas l'objectif de simplicité.
+
+00:59.830 --> 01:05.620
+Nous avons maintenant quelques options pour créer une meilleure liaison entre la vue et le modèle,
+
+01:05.620 --> 01:12.160
+nous pouvons soit aller dans la vue et faire en sorte que la vue écoute directement le modèle pour les opérations en lecture seule.
+
+01:12.160 --> 01:13.660
+C'est une bonne pratique.
+
+01:13.660 --> 01:21.580
+Une alternative serait ici, dans le contrôleur, d'envoyer une commande disant : "Hey, view go reset yourself" (Hé, la vue se réinitialise).
+
+01:21.580 --> 01:24.370
+ou de dire Hey, view le modèle a changé.
+
+01:24.370 --> 01:24.910
+Dans le passé.
+
+01:24.910 --> 01:25.930
+Exemples de projets.
+
+01:25.930 --> 01:31.660
+Nous avons déjà utilisé des commandes à ce niveau, mais pour essayer quelque chose de nouveau, allons dans The View et faisons-le observer
+
+01:31.660 --> 01:34.360
+directement au modèle pour tout changement.
+
+01:34.360 --> 01:42.580
+Dans l'initialisation, nous utiliserons le contexte et le localisateur de modèle pour obtenir une référence à la calculatrice.
+
+01:42.580 --> 01:43.030
+modèle.
+
+01:43.030 --> 01:49.660
+Les meilleures pratiques préconisent que la vue lise à partir du modèle, mais ce serait un dépassement du rôle
+
+01:49.660 --> 01:52.870
+de la vue pour qu'elle définisse directement des valeurs ici.
+
+01:53.020 --> 02:00.090
+Tout ce que je fais, c'est d'écouter les valeurs modifiées sur A, B et le résultat en raccourci.
+
+02:00.100 --> 02:05.680
+J'utilise ce que l'on appelle une expression lambda, et c'est une manière rapide et agréable d'observer un événement dans ce cas.
+
+02:05.680 --> 02:07.720
+et d'en gérer les conséquences.
+
+02:07.720 --> 02:15.010
+L'observable on value changed passe la p valeur précédente et voit la valeur actuelle.
+
+02:15.010 --> 02:21.400
+Ainsi, à chaque fois qu'une de ces observables change, je mets à jour la vue avec la valeur actuelle avec seulement ces observables
+
+02:21.400 --> 02:22.090
+quelques lignes.
+
+02:22.090 --> 02:27.280
+Nous avons maintenant la vue liée au modèle en utilisant les meilleures pratiques.
+
+02:27.280 --> 02:32.670
+Dans le contrôleur de la calculatrice, nous reprenons nos gestionnaires d'événements tels qu'ils étaient auparavant.
+
+02:32.680 --> 02:38.620
+Maintenant, parce que nous avons ajouté la liaison de la vue directement au modèle, le contrôleur n'a plus à se préoccuper de la gestion des événements.
+
+02:38.620 --> 02:44.500
+n'a plus besoin de définir manuellement des valeurs sur la vue, nous pouvons donc nous débarrasser de ces lignes et nous pouvons nous débarrasser de
+
+02:44.500 --> 02:45.200
+de cela aussi.
+
+02:45.220 --> 02:47.770
+Exécutons la scène et voyons comment elle se comporte.
+
+02:47.770 --> 02:49.330
+Nous voici dans la scène en cours d'exécution.
+
+02:49.330 --> 02:52.270
+Je vais entrer quelques valeurs et appuyer sur reset, ça a l'air bon.
+
+02:52.270 --> 02:59.260
+Nous constatons que lors de la réinitialisation, des zéros sont ajoutés à ces champs qui n'existaient pas à l'origine.
+
+02:59.260 --> 03:01.120
+C'est un petit détail, mais nous allons nous en occuper.
+
+03:01.120 --> 03:02.740
+Essayons maintenant l'opération publicitaire.
+
+03:02.740 --> 03:06.040
+L'opération publicitaire fonctionne bien dans le contrôleur de la calculatrice.
+
+03:06.040 --> 03:11.170
+Remettons les choses à zéro avant que l'utilisateur n'effectue une quelconque saisie dans initialize.
+
+03:11.170 --> 03:17.290
+Après avoir fait les auditeurs publicitaires existants, je vais imiter la conséquence de l'appui sur le bouton de réinitialisation.
+
+03:17.980 --> 03:19.820
+Exécutons la scène et voyons le résultat.
+
+03:19.840 --> 03:25.410
+Lorsque nous lançons l'application pour la première fois, avant toute saisie de la part de l'utilisateur, nous voyons apparaître les zéros habituels.
+
+03:25.420 --> 03:31.370
+C'est un excellent moyen d'avoir une apparence cohérente avant et après que l'utilisateur commence à interagir.
+
+03:31.390 --> 03:33.160
+L'application est maintenant terminée.
+
+03:33.160 --> 03:39.250
+Nous sommes en mesure de saisir A, de saisir B, d'additionner les résultats et de réinitialiser tous les champs.
+
+03:39.250 --> 03:46.780
+Jusqu'à présent, dans cet exemple personnalisé, nous avons utilisé le contrôleur de vue du modèle, nous avons observé les événements et nous avons obtenu
+
+03:46.780 --> 03:48.070
+notre application fonctionne bien.
+
+03:48.370 --> 03:53.170
+Nous n'avons pas utilisé de commandes et, dans une application suffisamment petite, cela ne pose pas de problème.
+
+03:53.170 --> 03:56.560
+Mais je veux montrer comment une commande pourrait apporter une valeur ajoutée.
+
+03:56.560 --> 04:02.440
+Je vais laisser en place tous les liens que nous avons maintenant, mais je vais remplacer ces lignes ici par la commande
+
+04:02.440 --> 04:05.320
+pour que la vue sache comment se réinitialiser.
+
+04:05.320 --> 04:06.940
+Commençons par appeler la commande.
+
+04:06.940 --> 04:10.960
+Nous utilisons le contexte et le gestionnaire de commandes pour invoquer une nouvelle commande.
+
+04:10.960 --> 04:12.990
+Je l'appellerai la commande de réinitialisation.
+
+04:13.000 --> 04:16.090
+Créons maintenant cette classe dans sa forme la plus basique.
+
+04:16.090 --> 04:20.020
+Je vais dupliquer le modèle de classe et le placer au bon endroit.
+
+04:20.020 --> 04:26.110
+Ici, dans le dossier controller, j'ai créé un dossier command et ajouté notre commande reset.
+
+04:26.110 --> 04:30.660
+Jusqu'à présent, je lui ai donné un espace de noms et j'ai mis à jour le nom de la classe à partir du modèle.
+
+04:30.670 --> 04:36.520
+Tout ce qu'il nous reste à faire ici est d'implémenter la commande I et revenons au code où nous utilisons cette commande.
+
+04:36.520 --> 04:38.140
+dans le contrôleur de la calculatrice.
+
+04:38.140 --> 04:39.490
+Le code se présente bien.
+
+04:39.490 --> 04:41.550
+Nous invoquons maintenant une commande.
+
+04:41.560 --> 04:43.390
+Qui doit écouter cela ?
+
+04:43.390 --> 04:48.210
+Eh bien, n'importe qui pourrait s'abonner et écouter quand la réinitialisation se produit.
+
+04:48.220 --> 04:53.470
+Dans notre cas, nous irons sur The View, nous écouterons cette commande et nous réinitialiserons ces trois champs.
+
+04:53.470 --> 05:00.070
+Ici, dans la vue de la calculatrice, à l'intérieur de l'initialisation, nous utilisons le contexte et le gestionnaire de commandes pour ajouter
+
+05:00.070 --> 05:01.270
+un auditeur de commandes.
+
+05:01.270 --> 05:06.940
+Chaque fois que la commande de réinitialisation est appelée, ce code s'exécute et réinitialise ces champs.
+
+05:06.940 --> 05:11.860
+Dans cet exemple précis, ce code est un peu problématique et redondant.
+
+05:11.860 --> 05:18.640
+Nous avions déjà la liaison qui fonctionnait, mais je voulais montrer comment câbler une commande au cas où.
+
+05:18.640 --> 05:19.840
+Exécutons cet exemple.
+
+05:19.840 --> 05:20.980
+Voici tout ce qui s'exécute.
+
+05:20.980 --> 05:23.710
+Voici la fonctionnalité de réinitialisation qui fonctionne bien.
+
+05:23.710 --> 05:26.530
+Voici la fonctionnalité de publicité qui fonctionne également bien.
+
+05:26.530 --> 05:32.500
+Dans ce cas précis, je vais supprimer la commande avant de terminer le projet.
+
+05:32.800 --> 05:39.460
+Je suis retourné dans le contrôleur et j'ai commenté ce code, puis je suis retourné dans la vue et j'ai commenté
+
+05:39.460 --> 05:42.490
+ce code et le code connexe.
+
+05:43.850 --> 05:45.020
+Lançons la démo.
+
+05:45.050 --> 05:45.620
+Nous y sommes.
+
+05:45.620 --> 05:46.670
+Exécution de la démo.
+
+05:46.700 --> 05:48.230
+Effectuer l'opération publicitaire.
+
+05:49.610 --> 05:50.630
+Fonctionne très bien.
+
+05:50.660 --> 05:51.590
+Réinitialisation.
+
+05:53.910 --> 05:55.140
+Fonctionne aussi très bien.
+
+05:55.170 --> 05:59.890
+Je vais inclure cet exemple de calculatrice dans la base de code pour que vous puissiez le vérifier également.
+
+05:59.910 --> 06:05.730
+Pour ceux d'entre vous qui ont relevé le défi du codage et qui ont terminé ce travail avant de regarder la vidéo
+
+06:05.730 --> 06:09.150
+la vidéo, j'espère que vous avez beaucoup appris en faisant cette activité.
+
+06:09.510 --> 06:15.420
+Dans l'ensemble, le processus que nous avons utilisé ici est quelque chose que vous pouvez utiliser pour des projets plus importants et des projets de capital-risque comme
+
+06:15.420 --> 06:15.960
+et des projets de capital-risque.
+
+06:15.990 --> 06:21.330
+Vous réfléchissez d'abord à vos besoins, à l'expérience de l'utilisateur, puis vous décomposez...
+
+06:21.330 --> 06:27.060
+en fonction des préoccupations, du modèle, de la vue, du contrôleur et du service.
+
+06:27.060 --> 06:31.500
+Réfléchissez ensuite à la fonctionnalité de base dont vous avez besoin, le cas échéant, pour les préoccupations.
+
+06:31.530 --> 06:37.740
+Bien que cet exemple soit assez petit et ne nécessite qu'un modèle, une vue et un contrôleur pour une préoccupation simple, il n'en reste pas moins qu'il n'y a pas de fonctionnalité de base.
+
+06:37.740 --> 06:44.730
+heure, vous verrez probablement que pour un projet typique d'un mois ou d'un an, vous en aurez beaucoup,
+
+06:44.730 --> 06:49.710
+beaucoup de vues, beaucoup de modèles et beaucoup de contrôleurs.
+
+06:49.710 --> 06:53.490
+Même avec un projet de cette envergure, vous suivriez toujours ces étapes.
+
+06:53.490 --> 06:59.880
+Et le temps que nous avons passé ensemble à lancer ce projet est le même que celui que vous passeriez à lancer un projet beaucoup plus important.
+
+06:59.880 --> 07:00.990
+projet beaucoup plus vaste.
+
+07:01.740 --> 07:07.620
+Au fil du temps, vous verrez que chacune de ces préoccupations sera mise à l'échelle, avec peut-être un point de vue qui devient un peu plus complexe.
+
+07:07.620 --> 07:08.520
+trop grande.
+
+07:08.520 --> 07:10.860
+Vous l'avez donc divisé en deux vues.
+
+07:10.860 --> 07:16.360
+Vous disposerez également d'une longue bibliothèque de commandes que vous pourrez utiliser et réutiliser tout au long de votre projet.
+
+07:16.380 --> 07:18.450
+Imaginez les prochaines étapes pour cette calculatrice.
+
+07:18.450 --> 07:24.450
+Un travail de codage facultatif pourrait consister à ajouter, soustraire des fonctions
+
+07:24.870 --> 07:27.480
+ou d'ajouter des tests unitaires au projet.
+
+07:27.480 --> 07:30.600
+Vous pouvez tester le modèle, la vue, le contrôleur.
+
+07:30.600 --> 07:35.220
+Vous pouvez prendre la logique d'addition et la séparer dans sa propre classe.
+
+07:35.370 --> 07:41.220
+Quelque chose comme mon système mathématique avec une méthode ADD et une autre méthode subtract.
+
+07:41.950 --> 07:46.360
+Ce serait un excellent moyen d'accroître votre apprentissage à partir de cet échantillon et d'aller de l'avant.
+
+07:46.810 --> 07:48.680
+C'est tout pour la calculatrice Mini.
+
+07:48.700 --> 07:49.600
+Merci de votre compréhension.

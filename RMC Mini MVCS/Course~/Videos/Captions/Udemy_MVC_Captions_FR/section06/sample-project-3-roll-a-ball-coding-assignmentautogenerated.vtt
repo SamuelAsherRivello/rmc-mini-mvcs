@@ -1,0 +1,232 @@
+WEBVTT
+
+00:00.180 --> 00:03.870
+Faisons maintenant un exercice de codage avec l'exemple de Rollerball.
+
+00:04.960 --> 00:10.440
+Me voici donc dans un projet vide où j'ai apporté le mini framework MVCs, ainsi que les échantillons.
+
+00:10.450 --> 00:17.050
+Je vais ouvrir l'exemple Rollerball avec Mini et réfléchir à ce que je pourrais faire ici comme travail de codage.
+
+00:17.200 --> 00:22.240
+J'ai pensé qu'il serait intéressant de noter que, bien que l'on puisse actuellement utiliser les touches fléchées pour se déplacer, il n'est pas possible d'utiliser les touches fléchées pour se déplacer.
+
+00:22.240 --> 00:26.170
+pour se déplacer, la barre d'espacement pourrait représenter un saut.
+
+00:26.350 --> 00:28.210
+Réfléchissons à la manière de procéder.
+
+00:28.210 --> 00:34.420
+Eh bien, la saisie au clavier est quelque chose que nous faisons déjà, et qui est géré par la vue d'entrée.
+
+00:34.540 --> 00:38.710
+Commençons donc par examiner la vue d'entrée et voyons comment elle est configurée.
+
+00:38.710 --> 00:40.540
+Voici donc la classe de la vue d'entrée.
+
+00:40.540 --> 00:46.060
+Nous avons ici un événement personnalisé qui sera diffusé à chaque fois qu'un mouvement sera détecté par la flèche.
+
+00:46.060 --> 00:51.700
+Les clés, la classe de vue d'entrée elle-même, étant donné qu'elle se trouve sur un objet de jeu dans la scène, c'est un comportement mono.
+
+00:51.700 --> 00:58.420
+En passant à la mise en évidence dans la mise à jour, nous capturons certaines des clés et les transmettons.
+
+00:58.420 --> 00:59.200
+comme entrée.
+
+00:59.200 --> 01:05.950
+Remarquez ici que la structure est telle que l'entrée est transmise à chaque mise à jour, quelle qu'elle soit.
+
+01:05.950 --> 01:07.750
+si l'utilisateur appuie sur une touche ou non.
+
+01:07.750 --> 01:12.970
+Et comme le veut la convention typique d'unity pour les touches fléchées pour le mouvement, c'est très bien.
+
+01:12.970 --> 01:19.420
+Une option que j'ai serait de capturer la barre d'espacement qui est frappée et de toujours la passer en tant que seconde.
+
+01:19.420 --> 01:21.280
+paramètre ici à l'entrée.
+
+01:21.280 --> 01:28.360
+Mais en me basant sur mon intuition, je n'aime pas l'idée que chaque image passe à faux lorsque la barre d'espacement est frappée.
+
+01:28.360 --> 01:29.320
+n'est pas encore activée.
+
+01:29.440 --> 01:34.780
+Au lieu de cela, je vais créer un nouvel événement qui ne se produit que lorsque la barre d'espacement est activée.
+
+01:34.780 --> 01:36.310
+Voyons donc comment procéder.
+
+01:36.310 --> 01:39.880
+Tout d'abord, pour obtenir la touche de la barre d'espacement, nous allons le faire ici.
+
+01:39.880 --> 01:43.840
+Nous obtenons la touche vers le bas pour le code de la barre d'espacement.
+
+01:43.840 --> 01:49.600
+Ce n'est que si c'est le cas que nous enverrons un nouvel événement appelé on Jump.
+
+01:49.600 --> 01:54.520
+En plaçant cette mise à jour, nous savons qu'elle se produira à chaque image, ce qui est très bien.
+
+01:54.520 --> 01:56.380
+Il ne nous reste plus qu'à câbler le tout.
+
+01:56.380 --> 02:01.960
+J'ai donc ajouté mon propre événement unity ici, appelé Jump, car je ne passe aucun paramètre.
+
+02:01.960 --> 02:07.330
+Je vais juste utiliser l'événement unity de base comme montré ici et ensuite regardons ce que sont les scopes à l'heure actuelle
+
+02:07.330 --> 02:10.150
+à l'écoute de l'événement existant sur l'entrée.
+
+02:10.150 --> 02:15.220
+Je peux voir ici dans le contrôleur que nous écoutons et que le contrôleur s'en occupe.
+
+02:15.220 --> 02:20.710
+J'aime l'idée que le contrôleur gère également les conséquences du saut, je vais donc dupliquer ce code
+
+02:20.710 --> 02:21.550
+ici et le mettre à jour.
+
+02:21.550 --> 02:23.890
+Je vois ici le gestionnaire de l'entrée.
+
+02:23.890 --> 02:26.710
+Je vais copier ce même concept et le mettre à jour.
+
+02:26.710 --> 02:31.570
+J'ai donc créé une nouvelle méthode et tout ce qu'il me reste à faire est de la terminer en créant les éléments suivants
+
+02:31.570 --> 02:32.200
+commande appropriée.
+
+02:32.200 --> 02:38.620
+Ici encore, le contrôleur écoute l'événement de l'interface utilisateur et le traduit en commande.
+
+02:38.620 --> 02:43.240
+de manière à ce que, comme une station de radio, toute préoccupation particulière puisse être prise en compte ?
+
+02:43.240 --> 02:46.330
+Je vais créer la commande jump à partir de zéro pour terminer.
+
+02:46.330 --> 02:52.090
+Voici la commande input existante qui prend un paramètre pour un vecteur trois de la quantité d'entrée.
+
+02:52.090 --> 02:53.320
+chacune des directions.
+
+02:53.560 --> 02:57.490
+Je n'ai pas vraiment besoin d'un paramètre ici, je peux donc simplement étendre la commande I.
+
+02:57.490 --> 02:59.080
+J'ai donc créé la nouvelle commande.
+
+02:59.080 --> 03:01.150
+Et maintenant, réfléchissons à la personne qui devrait observer cette commande.
+
+03:01.150 --> 03:05.680
+Dans le cas de la commande input, c'est le joueur qui observe la commande input.
+
+03:05.680 --> 03:08.560
+Et maintenant, réfléchissons aux préoccupations qui devraient être prises en compte ?
+
+03:08.560 --> 03:14.380
+Je sais que la commande d'entrée est observée par le joueur pour qu'il sache comment se déplacer.
+
+03:14.380 --> 03:15.460
+Cela semble être une bonne solution.
+
+03:15.460 --> 03:17.170
+Passons donc au lecteur et abonnons-nous.
+
+03:17.170 --> 03:18.790
+Nous voici donc dans la vue du lecteur.
+
+03:18.790 --> 03:24.190
+La vue du joueur, puisqu'elle se trouve sur un objet de jeu dans la scène, étend le comportement du monarque.
+
+03:24.190 --> 03:26.920
+dans l'initialisation, il écoute la commande d'entrée.
+
+03:26.920 --> 03:28.030
+Dupliquons cela.
+
+03:28.030 --> 03:30.070
+Nous écoutons maintenant la commande jump.
+
+03:30.120 --> 03:31.330
+Gérons la conséquence.
+
+03:31.330 --> 03:35.500
+Nous voyons ici comment la commande d'entrée est configurée et appelle ensuite la physique appropriée.
+
+03:35.500 --> 03:37.750
+J'ai donc créé un gestionnaire pour la commande jump.
+
+03:37.750 --> 03:39.730
+Il ne me reste plus qu'à penser à la physique.
+
+03:39.730 --> 03:44.080
+Si j'ajoute une force vers le haut au moment où l'on appuie sur jump, cela devrait suffire.
+
+03:44.080 --> 03:48.760
+Tout d'abord, je dois me rappeler de passer la commande jump comme il se doit, même si je n'ai pas besoin de paramètres
+
+03:48.760 --> 03:49.570
+de cette commande.
+
+03:49.570 --> 03:53.050
+C'est la convention requise avec la configuration typique d'une scène unity.
+
+03:53.050 --> 03:55.480
+C'est la composante Y qui est ascendante.
+
+03:55.480 --> 04:00.700
+Donc, si j'applique une force ici qui est vers le haut dans la composante Y, nous devrions être en mesure d'obtenir le résultat de saut que nous avons obtenu.
+
+04:00.700 --> 04:01.240
+voulons.
+
+04:01.240 --> 04:02.860
+Jouons la scène pour vérifier.
+
+04:02.860 --> 04:06.310
+Voici la scène jouée en utilisant les touches fléchées comme précédemment.
+
+04:06.310 --> 04:08.320
+Et maintenant, je vais essayer la barre d'espacement.
+
+04:20.400 --> 04:21.360
+Voici le jeu en cours d'exécution.
+
+04:21.360 --> 04:24.370
+Je vais utiliser les touches fléchées comme nous l'avons fait précédemment, et je vais essayer.
+
+04:24.370 --> 04:26.430
+La nouvelle barre d'espacement semble très bien fonctionner.
+
+04:26.460 --> 04:32.100
+Dans le contexte de ce jeu, nous n'avons pas d'ennemis ou d'obstacles à éviter.
+
+04:32.100 --> 04:33.300
+serait quelque chose d'intéressant à ajouter.
+
+04:33.300 --> 04:38.310
+Ensuite, de nouveaux mécanismes de jeu qui ont un sens maintenant que nous avons la possibilité de sauter.
+
+04:38.310 --> 04:40.430
+Mais c'est tout pour ce travail de codage.
+
+04:40.440 --> 04:41.190
+Merci à tous.

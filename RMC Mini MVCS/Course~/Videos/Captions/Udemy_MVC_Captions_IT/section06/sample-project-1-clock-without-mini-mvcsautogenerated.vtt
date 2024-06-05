@@ -1,0 +1,244 @@
+WEBVTT
+
+00:00.120 --> 00:04.320
+Diamo un'occhiata all'esempio dell'orologio senza molti MVC.
+
+00:04.620 --> 00:06.670
+Qui siamo all'interno di Unity.
+
+00:06.690 --> 00:13.170
+Abbiamo creato un nuovo progetto Unity utilizzando l'ultima versione TFS dell'editor Unity.
+
+00:13.170 --> 00:18.930
+Seguendo le istruzioni fornite all'inizio del corso, abbiamo aggiunto il pacchetto mini MVCs e abbiamo importato
+
+00:18.930 --> 00:19.840
+gli esempi.
+
+00:19.860 --> 00:25.290
+Daremo un'occhiata al campione dell'orologio e inizieremo con la versione che non ne ha molti,
+
+00:25.290 --> 00:26.580
+MVC aggiunti.
+
+00:26.610 --> 00:31.440
+Ci si aspetta che questo sia un ripasso delle conoscenze di base di unity.
+
+00:31.470 --> 00:32.770
+Eseguiamo la scena.
+
+00:32.790 --> 00:34.650
+Eccoci qui con la scena in esecuzione.
+
+00:34.650 --> 00:41.010
+Non abbiamo una vera e propria interfaccia utente, ma nella finestra della console abbiamo alcune dichiarazioni di log di debug che funzionano
+
+00:41.010 --> 00:42.870
+qualcosa di simile all'interfaccia utente.
+
+00:42.870 --> 00:47.160
+Non c'è alcun input da parte dell'utente, ma ogni secondo riceviamo una dichiarazione di log di debug.
+
+00:47.310 --> 00:48.770
+Questo è l'intero esempio.
+
+00:48.780 --> 00:51.620
+Diamo un'occhiata al codice nella vista gerarchica.
+
+00:51.630 --> 00:56.760
+Vediamo che abbiamo un oggetto di gioco mondo vuoto, con telecamera e illuminazione predefinite.
+
+00:56.760 --> 01:01.770
+In realtà non stiamo usando la telecamera nell'illuminazione, ma per coerenza la inserisco in ogni oggetto di gioco
+
+01:01.770 --> 01:02.400
+scena.
+
+01:02.610 --> 01:06.450
+Poi abbiamo un oggetto di gioco con il nostro script di esempio.
+
+01:06.450 --> 01:08.190
+Apriamo lo script di esempio.
+
+01:08.190 --> 01:11.940
+Questo è l'unico script che gestisce l'intera scena.
+
+01:12.210 --> 01:13.410
+Ecco l'esempio.
+
+01:13.410 --> 01:15.840
+Si può vedere che estende il comportamento di mono.
+
+01:16.350 --> 01:20.280
+Esaminerò rapidamente il codice e poi lo analizzerò riga per riga.
+
+01:40.730 --> 01:43.810
+Per questo primo esempio, analizzerò alcune nozioni fondamentali.
+
+01:43.820 --> 01:48.350
+Abbiamo la nostra istruzione using che dice a questa classe a quali altre classi può fare riferimento.
+
+01:48.350 --> 01:51.350
+Abbiamo uno spazio dei nomi appropriato per questa classe di esempio.
+
+01:51.350 --> 01:53.060
+Abbiamo la definizione della classe.
+
+01:53.060 --> 01:54.650
+Stiamo estendendo il comportamento di mono.
+
+01:54.650 --> 01:56.240
+Abbiamo alcuni campi privati.
+
+01:56.240 --> 01:59.240
+Sono variabili che useremo in questo esempio.
+
+01:59.240 --> 02:05.000
+Notate che invece di usare direttamente INT e float, usiamo la classe observable.
+
+02:05.000 --> 02:07.490
+Questo argomento è trattato in una sezione precedente del corso.
+
+02:07.490 --> 02:11.570
+Ma ricordate che la classe observable ci fornisce alcune funzionalità aggiuntive.
+
+02:11.570 --> 02:17.870
+Nel caso del ritardo temporale, stiamo memorizzando un INT, ma siamo anche in grado di ottenere un evento inviato ogni
+
+02:17.870 --> 02:19.760
+ogni volta che il valore dell'int cambia.
+
+02:19.760 --> 02:26.330
+In questo modo, lo schema dell'osservatore viene applicato a una semplice porzione di dati, che utilizziamo in tutti gli esempi.
+
+02:26.360 --> 02:32.810
+È opzionale quando si usa il mini MVC, ma altamente raccomandato all'interno del metodo Unity Start, che si chiama
+
+02:32.810 --> 02:33.230
+una volta.
+
+02:33.230 --> 02:39.800
+Quando la scena si risveglia, iniziamo a caricare questo esempio e tutti gli esempi che andremo a realizzare.
+
+02:39.800 --> 02:41.570
+caricare un file locale.
+
+02:41.570 --> 02:48.740
+Nel mondo MVC, una volta visto l'esempio, questo è il nostro modo di imitare la chiamata a un server back end.
+
+02:48.740 --> 02:54.950
+Caricare un file locale è abbastanza facile, ma è asincrono e si tratta di dati esterni, quindi è appropriato
+
+02:54.950 --> 02:56.600
+per l'ambito del servizio.
+
+02:56.600 --> 03:02.870
+È un esempio un po' artificioso e sciocco, perché naturalmente potremmo codificare il valore dell'ora
+
+03:02.870 --> 03:04.100
+ritardo qui in Do diesis.
+
+03:04.100 --> 03:07.520
+Ma ancora una volta, questo è stato fatto a titolo di esempio nella finestra del progetto.
+
+03:07.520 --> 03:13.160
+Possiamo vedere la posizione del file di testo locale e il suo contenuto.
+
+03:13.280 --> 03:17.000
+È semplicemente una stringa che digiteremo.
+
+03:17.000 --> 03:23.360
+INT Ora, naturalmente, questo valore 1000 potrebbe essere codificato in C-sharp, ma lo stiamo solo illustrando.
+
+03:23.360 --> 03:24.890
+come caricare dati esterni.
+
+03:24.890 --> 03:29.930
+Carichiamo il testo, aspettiamo mezzo secondo per simulare un ritardo.
+
+03:29.930 --> 03:36.350
+Questo è utile per sapere che in esempi più complessi, in cui è necessario tenere conto di una latenza sottile, il tempo di attesa è dimezzato.
+
+03:36.350 --> 03:41.360
+che si otterrebbe chiamando un vero servizio di backend, assumendo che il caricamento sia andato a buon fine, si
+
+03:41.360 --> 03:47.120
+prendiamo il valore della stringa e lo digitiamo come int, ricordando che il ritardo è un tipo osservabile.
+
+03:47.120 --> 03:51.590
+Quindi, quando impostiamo il valore, dobbiamo impostare la proprietà dot value all'interno.
+
+03:51.590 --> 03:56.960
+Anche in questo caso, il vantaggio di farlo in questo modo è che otterremo un evento automatico ogni volta che il valore viene impostato.
+
+03:56.960 --> 03:57.710
+cambia.
+
+03:57.710 --> 04:03.260
+In questo semplice esempio non ne stiamo approfittando, ma lo vedremo nel codice successivo.
+
+04:03.260 --> 04:05.870
+Ora che il caricamento è avvenuto con successo, iniziamo il ticchettio.
+
+04:05.870 --> 04:07.430
+Questo è l'orologio vero e proprio.
+
+04:07.430 --> 04:12.350
+Per far sì che il codice venga chiamato ripetutamente, ci sono molte cose che si possono fare all'interno di unity.
+
+04:12.350 --> 04:17.240
+La più semplice e comune è quella di utilizzare una routine di codice.
+
+04:17.390 --> 04:20.270
+Tutto ciò che facciamo qui è avviare una routine di codice.
+
+04:20.270 --> 04:21.890
+Questa verrà chiamata ripetutamente.
+
+04:21.890 --> 04:23.960
+Questo è un esempio artificioso.
+
+04:23.960 --> 04:30.380
+Ma in realtà volevo solo fare un ticchettio usando i secondi del mondo reale da uno all'infinito.
+
+04:30.380 --> 04:35.350
+Finché la scena è aperta, usiamo il tempo, il tempo per prenderlo da unity.
+
+04:35.360 --> 04:42.650
+Ogni volta che aggiorno la nostra variabile tempo e chiamo un gestore separato per gestire la conseguenza, come
+
+04:42.650 --> 04:44.240
+gestiamo la conseguenza qui.
+
+04:44.240 --> 04:49.220
+E semplicemente, volevo avere un esempio che non avesse una vista esplicita.
+
+04:49.220 --> 04:57.130
+Quindi qui abbiamo solo un log di debug che simula una sorta di feedback dell'utente senza alcuna complessità aggiuntiva.
+
+04:57.140 --> 04:59.030
+Eseguiamo la scena un'altra volta.
+
+05:05.720 --> 05:07.310
+E vediamo il ticchettio dell'orologio.
+
+05:07.430 --> 05:08.240
+Ecco fatto.
+
+05:09.440 --> 05:13.450
+Quindi l'orologio funziona senza molti MVC.
+
+05:13.460 --> 05:16.430
+Mi aspetto che per tutto ciò che abbiamo trattato ci sia una revisione.
+
+05:16.460 --> 05:23.630
+Abbiamo visto classi, metodi, variabili, proprietà, eventi, campi serializzati e altro ancora.
+
+05:23.660 --> 05:29.720
+Questa è una buona base di unità per avere una comprensione comune prima di passare alla miniatura
+
+05:29.720 --> 05:31.040
+esempio di MVC.
+
+05:31.820 --> 05:32.540
+Grazie.

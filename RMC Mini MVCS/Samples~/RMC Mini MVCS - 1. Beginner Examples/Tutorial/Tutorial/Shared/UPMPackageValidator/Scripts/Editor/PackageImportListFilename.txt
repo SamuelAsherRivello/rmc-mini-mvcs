@@ -1,0 +1,6 @@
+﻿// List any Unity UPM Package Dependencies here 
+// Max one dependency per line in the format of ...
+// com.unity.packagename@0.0.0
+
+com.unity.inputsystem@1.7.0
+com.unity.learn.iet-framework@3.1.3

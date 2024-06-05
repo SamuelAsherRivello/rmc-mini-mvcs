@@ -1,0 +1,433 @@
+WEBVTT
+
+00:00.180 --> 00:04.080
+Así que voy a hacer codificación en vivo aquí para asumir uno de los retos de codificación.
+
+00:04.080 --> 00:11.250
+Esto va a ser para añadir un botón claro a la interfaz de usuario por lo que no es para iniciar sesión y no es para cerrar la sesión,
+
+00:11.250 --> 00:14.510
+pero es sólo para borrar los campos de nombre de usuario y contraseña.
+
+00:14.520 --> 00:19.440
+Ahora, es un poco de un ejemplo artificial aquí porque nuestro botón de cierre de sesión hace algo similar, pero
+
+00:19.440 --> 00:26.220
+Quiero mostrar un ejemplo de cómo podemos añadir algo nuevo a La Vista y que se propague correctamente
+
+00:26.220 --> 00:27.330
+a través de las preocupaciones.
+
+00:27.330 --> 00:30.270
+Así que vamos a empezar con la propia vista y añadir nuestro nuevo botón.
+
+00:30.270 --> 00:37.650
+Así que voy a este objeto de juego aquí, que es un prefabricado y voy a añadir un nuevo botón y voy a
+
+00:37.650 --> 00:39.450
+llamarlo el botón de borrar.
+
+00:40.650 --> 00:42.300
+Le daré un nombre.
+
+00:44.190 --> 00:52.350
+También le daré el texto adecuado para decir claro, y luego vuelvo aquí a la vista de inicio de sesión y
+
+00:52.350 --> 00:56.190
+que es donde el botón de inicio de sesión y el botón de cierre de sesión se declaran.
+
+00:56.190 --> 00:59.490
+Así que abro esa clase.
+
+01:00.820 --> 01:06.730
+Y voy a tratar de mantener el orden correcto para que este botón se encuentra en el centro visualmente.
+
+01:07.360 --> 01:11.770
+Así que voy a seguir adelante y hacer eso allí y lo puso entre los otros dos.
+
+01:12.280 --> 01:16.930
+Vuelvo a pulsar aquí dejando que unity recompile.
+
+01:18.540 --> 01:24.810
+Y ahora desde la interfaz de usuario aquí tengo que declarar que el botón de borrar está ahora conectado correctamente.
+
+01:24.810 --> 01:27.000
+Así que ahora la vista sabe de esto.
+
+01:27.000 --> 01:28.140
+Ejecutaré la escena.
+
+01:29.440 --> 01:31.690
+Primero de todo, observa que no está en gris todavía.
+
+01:31.690 --> 01:36.910
+Yo, por supuesto, no he hecho ningún código, pero puedo hacer clic en el botón de borrar aquí para que haga clic, pero obviamente
+
+01:36.910 --> 01:38.080
+ninguna consecuencia todavía.
+
+01:39.160 --> 01:41.770
+Lo siguiente que quiero hacer con esto es seguirlo.
+
+01:41.770 --> 01:43.390
+Bueno, ¿cómo funciona el botón de inicio de sesión?
+
+01:43.390 --> 01:44.790
+Bueno, aquí está.
+
+01:44.800 --> 01:53.740
+Así que voy a copiar y pegar y vamos a hacer botón de borrar y luego voy a imitar la estructura que es
+
+01:53.740 --> 01:54.440
+ahí.
+
+01:54.460 --> 01:56.470
+Se pulsa el botón Borrar.
+
+01:56.980 --> 02:01.060
+Ese método aún no existe, así que bajaré aquí.
+
+02:04.960 --> 02:05.770
+Allá vamos.
+
+02:06.370 --> 02:10.990
+Así que podemos ver que dentro del botón de inicio de sesión tenemos un evento de inicio de sesión personalizado.
+
+02:10.990 --> 02:13.980
+Así que en el botón de borrar, queremos tener un evento personalizado de borrar.
+
+02:13.990 --> 02:16.150
+Así que vamos a borrarlo aquí.
+
+02:18.390 --> 02:20.130
+Lo llamaremos on clear.
+
+02:25.750 --> 02:26.170
+Allá vamos.
+
+02:27.580 --> 02:34.420
+Y voy a hacer que no tome ningún parámetro.
+
+02:34.420 --> 02:36.460
+Así que en realidad tengo que ajustar.
+
+02:37.520 --> 02:38.420
+Y
+
+02:39.680 --> 02:41.990
+Porque no necesito ningún parámetro.
+
+02:44.520 --> 02:47.550
+Y como mejor práctica, le daré su propio evento ahí.
+
+02:54.680 --> 02:56.420
+Ok, ahora hemos capturado el botón.
+
+02:56.420 --> 03:00.100
+Click desde la UI aquí en The View y hemos despachado clear.
+
+03:00.110 --> 03:04.280
+Imitaré como trabajaría en un proyecto de producción, especialmente si estoy añadiendo funcionalidad que es
+
+03:04.280 --> 03:05.890
+muy similar a otra cosa.
+
+03:05.900 --> 03:10.670
+Fíjate que acabo de mirar como funcionaba el botón de inicio de sesión y lo copio y pego.
+
+03:10.700 --> 03:12.560
+Vamos a seguir el mismo patrón aquí.
+
+03:13.970 --> 03:16.070
+Voy a buscar usos de esto.
+
+03:25.510 --> 03:32.530
+Sólo estoy usando las referencias de la vista del editor de código o ver los usos y ser capaz de ver, bueno, donde
+
+03:32.530 --> 03:34.240
+se utiliza ese evento de inicio de sesión?
+
+03:34.240 --> 03:36.310
+¿Qué se usa aquí dentro del controlador?
+
+03:36.310 --> 03:38.800
+Así que voy a imitar ese flujo también.
+
+03:41.310 --> 03:43.890
+Y vamos a añadir un nuevo método aquí.
+
+03:44.850 --> 03:46.830
+Así que aquí está el controlador.
+
+03:59.780 --> 04:04.880
+Y en este caso específico, quiero traducir este evento de vista en un comando.
+
+04:05.300 --> 04:09.820
+Así que voy a mirar voy a ir a la fuente de donde el comando presentado es.
+
+04:09.830 --> 04:11.420
+Mira en mi proyecto aquí.
+
+04:12.390 --> 04:17.130
+En realidad no necesito argumentos porque si piensas en borrar, no tengo que decir que
+
+04:17.160 --> 04:18.560
+campos fueron eliminados.
+
+04:18.570 --> 04:24.000
+Puedo entender que cada vez que se pulsa el botón de borrar, no se pasa ningún detalle,
+
+04:24.000 --> 04:26.820
+sólo borrar globalmente lo que necesita ser borrado.
+
+04:26.820 --> 04:32.490
+Así que voy a tomar ningún parámetro aquí y voy a hacer el comando claro.
+
+04:56.690 --> 05:01.200
+Así que aquí el controlador está ahora escuchando ese evento y enviando un nuevo comando.
+
+05:01.220 --> 05:05.260
+Si ejecutáramos la escena ahora mismo, todo se compilaría, ¿verdad?
+
+05:05.270 --> 05:07.130
+Estaríamos capturando el click.
+
+05:07.130 --> 05:11.750
+El clic se está propagando aquí al controlador, como era de esperar, y luego está enviando
+
+05:11.750 --> 05:14.440
+un comando, pero nadie está escuchando el comando.
+
+05:14.450 --> 05:17.270
+Así que si lo piensas, ¿quién debería estar escuchando?
+
+05:17.270 --> 05:19.730
+¿Quién se encargaría de las consecuencias?
+
+05:20.390 --> 05:21.440
+Bueno, es la vista, ¿no?
+
+05:21.440 --> 05:23.570
+Así que vamos a seguir adelante y echar un vistazo a la vista.
+
+05:35.470 --> 05:38.500
+Así que aquí en la vista, vamos a suscribirnos a ese nuevo evento.
+
+06:12.280 --> 06:14.380
+Ok, hemos cableado el comando clear correctamente.
+
+06:14.380 --> 06:16.470
+Ahora, pensemos realmente lo que debería pasar.
+
+06:16.480 --> 06:19.300
+Bueno, es algo parecido a lo que pasa cuando cerramos la sesión.
+
+06:19.300 --> 06:20.770
+Así que echemos un vistazo al cierre de sesión.
+
+06:24.240 --> 06:27.220
+Así logout, que he copiado de aquí como un motor de arranque.
+
+06:27.240 --> 06:32.280
+Lo que hace es que sólo va a través y establece adecuadamente todos estos campos aquí.
+
+06:34.400 --> 06:38.810
+Así que queremos algo que imite exactamente lo que hace el cierre de sesión.
+
+06:38.810 --> 06:43.400
+Pero por el bien de tener algo nuevo, vamos a copiar esto aquí.
+
+06:45.230 --> 06:46.550
+Ya sabes, sólo reemplázalos.
+
+06:46.760 --> 06:48.290
+Sé que ya los tenemos ahí.
+
+06:48.290 --> 06:59.150
+Y voy a actualizar esto para decir log in cleared y para el texto de estado, sólo diré enter username
+
+06:59.150 --> 07:02.900
+y contraseña, pero no voy a poner la pista sólo para tener algo diferente aquí.
+
+07:05.170 --> 07:05.740
+Correcto.
+
+07:05.770 --> 07:12.190
+Ahora, otra cosa es que cada vez que estoy alternando el botón de inicio de sesión y el botón de cierre de sesión, debería
+
+07:12.190 --> 07:15.150
+pensar también en el botón de borrar.
+
+07:15.160 --> 07:19.840
+Así que vamos a ir a la parte superior y voy a desplazarse a través y en cualquier lugar que veo el interactivo se utiliza
+
+07:20.170 --> 07:22.810
+actualizar que para el botón de borrar.
+
+07:34.850 --> 07:37.340
+Así que aquí tenemos el botón de inicio de sesión.
+
+07:37.580 --> 07:39.410
+Cuando cerramos sesión.
+
+07:43.710 --> 07:49.830
+El botón de borrar no debería estar habilitado porque cuando acabas de cerrar la sesión, ya se ha borrado todo.
+
+07:49.830 --> 07:51.060
+No deberías poder pulsarlo.
+
+07:53.770 --> 07:59.080
+Entonces, cuando vuelvas a pulsar el botón de borrar, no deberías poder pulsarlo una segunda vez.
+
+07:59.080 --> 08:00.910
+porque los campos ya están limpios.
+
+08:04.130 --> 08:06.560
+Cada vez que haga clic, inicie sesión.
+
+08:08.350 --> 08:10.630
+Debería poder hacerlo.
+
+08:12.760 --> 08:14.020
+¿Está claro?
+
+08:16.030 --> 08:18.190
+Realmente no tenemos un estado de inicio de sesión completo aquí.
+
+08:18.190 --> 08:20.770
+Así que algo de esto es sólo para la demostración.
+
+08:22.440 --> 08:25.350
+Y luego cada vez que cierras sesión.
+
+08:26.560 --> 08:29.740
+Básicamente queremos que log out y clear se comporten de manera similar.
+
+08:29.740 --> 08:31.450
+Así que log out y clear.
+
+08:33.040 --> 08:34.240
+Sí, supongo que es correcto.
+
+08:34.480 --> 08:36.580
+Echemos un vistazo y veamos cómo estamos hasta ahora.
+
+08:38.050 --> 08:40.750
+El botón de borrado del micrófono está correctamente en gris.
+
+08:43.190 --> 08:48.440
+Ahora, una vez que empiece a escribir aquí, me gustaría que el botón de borrar se activara.
+
+08:48.440 --> 08:49.460
+Veámoslo.
+
+09:23.670 --> 09:28.440
+Así que he actualizado aquí cada vez que los campos de la interfaz de usuario se están escribiendo en.
+
+09:28.440 --> 09:35.820
+Ya tenía un evento unity llamando a este método aquí, así que sólo permito que se envíe el login si ambos
+
+09:35.820 --> 09:37.920
+de los campos tienen algo en ellos.
+
+09:38.040 --> 09:42.930
+Así que aquí quiero decir que si cualquiera de los campos tienen algo en ellos, entonces usted sería capaz de golpear
+
+09:42.930 --> 09:43.770
+el botón de borrar.
+
+09:43.890 --> 09:50.130
+Este es un detalle a nivel de implementación, pero es bueno ser capaz de mostrar los tipos de pensamientos y
+
+09:50.130 --> 09:53.490
+decisiones por las que pasarías al añadir una nueva pieza de interfaz de usuario.
+
+09:56.140 --> 09:58.480
+Así que aquí estamos ejecutando la demo de nuevo.
+
+09:59.940 --> 10:04.170
+Observa que cuando escribo algo aquí, el botón de borrar se activa.
+
+10:04.350 --> 10:07.560
+Si elimino del campo, se desactiva.
+
+10:08.190 --> 10:11.010
+Si escribo un poco la contraseña.
+
+10:11.800 --> 10:15.400
+Y si lo deshago, se convierte para que lo tengamos funcionando correctamente.
+
+10:15.670 --> 10:17.740
+Ahora, digamos que tengo los dos campos ahí.
+
+10:17.740 --> 10:23.290
+Podría iniciar sesión o podría hacer clic en borrar y volvería a funcionar correctamente.
+
+10:23.290 --> 10:24.640
+Lo escribiré de nuevo.
+
+10:25.120 --> 10:31.870
+De nuevo, aquí podríamos iniciar sesión o podríamos pulsar borrar, y eso funciona correctamente ahora para nosotros.
+
+10:31.870 --> 10:33.820
+Así que no lo he probado a fondo.
+
+10:33.820 --> 10:35.890
+No me aseguré de que todos los casos de esquina estuvieran ahí.
+
+10:35.890 --> 10:43.240
+Pero aquí quería demostrar lo que sería añadir un nuevo elemento de interfaz de usuario y luego ser capaz de propagar
+
+10:43.240 --> 10:43.720
+a través de eso.
+
+10:43.720 --> 10:51.670
+Todas las preocupaciones y aquí las preocupaciones estaban poniendo la interfaz de usuario en la escena de la unidad, a continuación, llevarlo a
+
+10:51.670 --> 10:58.360
+la propia clase View, a continuación, escuchar a la vista y pasar a lo largo del controlador y luego
+
+10:58.360 --> 11:00.670
+que el controlador envíe los comandos apropiados.
+
+11:00.670 --> 11:02.500
+Así que fuimos capaces de hacer todo eso.
+
+11:02.500 --> 11:07.990
+Ahora lo estaba explicando sobre la marcha, pero digamos que esto lleva unos minutos.
+
+11:08.200 --> 11:15.040
+Un enfoque alternativo sería simplemente la Vista escucha a un evento de unidad y se actualiza sin
+
+11:15.040 --> 11:18.250
+controlador involucrado y sin comandos involucrados.
+
+11:18.370 --> 11:20.560
+Y ese no es un mal punto de partida.
+
+11:20.560 --> 11:24.790
+Pero ahora ninguna de las otras preocupaciones puede capturar ese momento en el tiempo.
+
+11:24.790 --> 11:30.160
+Lo que es bueno sobre el flujo que hemos hecho aquí, este tipo de orquestación completa, es que cualquier
+
+11:30.160 --> 11:31.960
+podría escucharlo?
+
+11:31.990 --> 11:34.210
+¿Acaban de pulsar el botón de borrar?
+
+11:34.210 --> 11:38.200
+A veces necesitas ese tipo de mensajes y a veces no.
+
+11:38.200 --> 11:44.860
+Así que depende de ti mientras navegas por las aguas aquí, aprendiendo MVC para que decidas entre cómo
+
+11:44.860 --> 11:49.450
+robusto que desea configurar la comunicación y la propagación a través de las preocupaciones.
+
+11:49.450 --> 11:53.310
+Así que eso es todo para añadir esta asignación de codificación aquí en la muestra.
+
+11:53.320 --> 11:54.130
+Gracias.

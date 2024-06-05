@@ -1,0 +1,196 @@
+WEBVTT
+
+00:00.090 --> 00:01.510
+Création des tests unitaires.
+
+00:01.530 --> 00:03.600
+Classe de test et méthodes de test.
+
+00:03.600 --> 00:07.260
+Voici le code d'une classe de test contenant une méthode de test.
+
+00:07.260 --> 00:12.510
+A l'intérieur, nous suivons le paradigme optionnel de arrange, act et assert.
+
+00:12.510 --> 00:14.970
+C'est la convention que j'utilise pour tous mes tests.
+
+00:14.970 --> 00:19.120
+Nous avons donc vu à quoi ressemble un test et comment exécuter un test existant.
+
+00:19.140 --> 00:20.750
+Maintenant, créons notre propre test.
+
+00:20.760 --> 00:27.780
+Nous allons ouvrir un projet vide, ouvrir la fenêtre d'exécution du test, créer un dossier de test, une classe de test,
+
+00:27.780 --> 00:29.760
+et une méthode à l'intérieur de ce test.
+
+00:29.910 --> 00:31.740
+Nous allons ensuite exécuter le test et voir le résultat.
+
+00:31.740 --> 00:34.020
+Nous voici dans un projet relativement vide.
+
+00:34.020 --> 00:37.410
+J'ai déjà ajouté le framework de test unity.
+
+00:37.410 --> 00:43.920
+Ouvrons la fenêtre de test runner puisque le projet n'a pas de test en mode édition ni en mode lecture,
+
+00:43.920 --> 00:47.670
+chacun de ces onglets offre quelques options pour nous aider à démarrer.
+
+00:47.670 --> 00:53.610
+Tout d'abord, nous allons créer un dossier d'assemblage de test en mode édition en cliquant sur le bouton qui crée un nouveau dossier.
+
+00:53.610 --> 00:59.430
+dans notre fenêtre de projet, comprenant un assemblage configuré pour le test, les assemblages unity et l'assemblage
+
+00:59.430 --> 01:07.110
+Le fichier de définition de l'assemblage n'entre pas dans le cadre de ce cours, mais en bref, il signale à unity que les choses qui se trouvent à l'intérieur de l'assemblage ne sont pas des assemblages.
+
+01:07.110 --> 01:11.700
+ce dossier donné doivent être compilés, doivent être compilés d'une manière unique.
+
+01:11.700 --> 01:16.470
+Maintenant que le dossier de l'assemblage de test est configuré, nous pouvons créer notre première classe de test.
+
+01:16.470 --> 01:21.390
+Chacune de ces étapes peut être réalisée manuellement sans utiliser la fenêtre, mais je vais continuer en cliquant sur le bouton
+
+01:21.390 --> 01:26.610
+pour créer un script de test dans le dossier actuel de la fenêtre de projet, qui crée un fichier d'essai.
+
+01:26.610 --> 01:29.600
+nouvelle classe de test et nous donne deux méthodes de test.
+
+01:29.610 --> 01:32.430
+Remarquez que dans la fenêtre d'exécution du test, tout s'affiche.
+
+01:32.550 --> 01:33.930
+Je vais exécuter tous ces tests.
+
+01:33.930 --> 01:35.150
+Tous les tests sont réussis.
+
+01:35.160 --> 01:37.230
+Regardons le code généré.
+
+01:37.230 --> 01:42.090
+A ce stade, vous êtes libre de renommer la classe et ces méthodes comme bon vous semble.
+
+01:42.090 --> 01:45.660
+Et puis, bien sûr, copier-coller pour ajouter d'autres méthodes à l'intérieur.
+
+01:45.660 --> 01:50.940
+Il n'y a pas de limite au nombre de méthodes de test que vous pouvez avoir dans une classe de test, mais en général vous utilisez
+
+01:50.940 --> 01:57.990
+la classe pour organiser certains sujets, peut-être une classe de test pour chaque classe de production, puis une classe de test pour chaque classe de production, puis une classe de test pour chaque classe de production.
+
+01:57.990 --> 02:01.170
+méthode de test pour chaque méthode en production.
+
+02:01.170 --> 02:03.420
+Vous voulez tester quelque chose comme ça.
+
+02:03.420 --> 02:07.110
+Ces commentaires sont générés automatiquement par unity et sont très utiles.
+
+02:07.650 --> 02:09.120
+Je vais passer en revue les points essentiels ici.
+
+02:09.120 --> 02:10.380
+Utilisation du test.
+
+02:10.920 --> 02:19.290
+L'utilisation de l'attribut test nous prépare à un test en mode édition normal L'utilisation de l'attribut unity test permet de tester le mode édition.
+
+02:19.290 --> 02:22.250
+d'exécuter un test sur plusieurs images.
+
+02:22.260 --> 02:26.790
+J'ai déjà mentionné que l'utilisation de unity test est plus adaptée au mode lecture.
+
+02:26.790 --> 02:31.320
+Vous avez beaucoup plus d'options sur le type de fonctionnalité asynchrone que vous pouvez faire ici.
+
+02:31.320 --> 02:38.160
+C'est en effet possible ici et comme le suggère le commentaire, vous pouvez utiliser yield return null pour sauter une frame.
+
+02:38.160 --> 02:43.020
+Par exemple, faire le setup, puis attendre une frame et faire le test.
+
+02:43.020 --> 02:44.010
+Quelque chose comme ça.
+
+02:44.010 --> 02:47.730
+Par exemple, faire le code d'installation, attendre une trame.
+
+02:48.380 --> 02:51.080
+Et puis faire l'assertion, quelque chose comme ça.
+
+02:51.080 --> 02:54.620
+Ici, de retour dans unity, je vais tabuler sur le.
+
+02:55.350 --> 02:57.840
+Play mode et suivre les mêmes étapes.
+
+02:57.840 --> 03:04.020
+Tout d'abord, nous allons créer un dossier d'assemblage de test de mode de jeu et ensuite je vais créer un script de test.
+
+03:04.020 --> 03:09.900
+Dans ce dossier, nous pouvons voir dans le test runner que nous avons une classe de test qui contient deux méthodes de test.
+
+03:10.500 --> 03:13.370
+Je lance tous les tests et nous voyons que tout passe.
+
+03:13.380 --> 03:15.350
+Jetons un coup d'œil au code généré.
+
+03:15.360 --> 03:21.960
+Le code généré ici est en fait identique en mode lecture et en mode édition.
+
+03:21.960 --> 03:24.240
+Les points de départ sont très similaires.
+
+03:24.240 --> 03:25.110
+C'est tout.
+
+03:26.480 --> 03:31.700
+C'est ce que nous commençons à voir avec la fenêtre du programme d'essai et un peu de C dièse en plus.
+
+03:31.700 --> 03:35.250
+Nous pouvons faire plus de choses avec nos projets unity qu'auparavant.
+
+03:35.270 --> 03:41.420
+Si vous êtes novice en matière de tests unitaires, vous êtes familier avec l'utilisation de unity pour créer du code d'exécution, mais les tests
+
+03:41.420 --> 03:42.800
+est quelque chose de différent.
+
+03:43.480 --> 03:46.750
+Les utilisateurs finaux n'en font jamais l'expérience directe.
+
+03:47.200 --> 03:49.770
+Ce code ne s'exécute qu'en mode test.
+
+03:49.790 --> 03:52.320
+Il n'est même pas intégré à votre version finale.
+
+03:52.330 --> 03:59.470
+Nous commençons à considérer les tests comme une petite fenêtre sur des moments et des moments d'une application de test plus importante.
+
+03:59.470 --> 04:03.030
+avec un objectif précis pour s'assurer d'obtenir des résultats cohérents.
+
+04:03.040 --> 04:08.320
+Jusqu'à présent, nous avons surtout parlé de l'ajout de nouveaux tests au code existant.
+
+04:08.350 --> 04:13.420
+Ensuite, nous allons voir comment ajouter des tests pendant que nous développons du code avec le développement piloté par les tests.
+
+04:13.420 --> 04:14.200
+Merci de votre compréhension.

@@ -1,0 +1,94 @@
+WEBVTT
+
+00:00.080 --> 00:01.490
+Hola y bienvenido.
+
+00:01.490 --> 00:05.940
+He dedicado algo de tiempo a añadir aún más contenido y voy a repasarlo hoy.
+
+00:05.960 --> 00:06.620
+Estupendo.
+
+00:06.650 --> 00:13.520
+Lo que quería hacer en esta charla es repasar algunos temas avanzados y demos avanzadas que he creado.
+
+00:14.090 --> 00:17.150
+Así que vamos a ir a través de ellos uno por uno y vamos a ver lo que tenemos aquí.
+
+00:17.150 --> 00:24.140
+Si estás usando unity durante 2 o 3 años a tiempo completo, incluso en proyectos de producción, encontrarás que incluso
+
+00:24.140 --> 00:30.500
+como las mejores mentes se reúnen y trabajan en proyectos que traen algunas de las mejores prácticas a la misma, todavía se convierte en
+
+00:30.500 --> 00:37.160
+un reto para organizar sus proyectos de una manera que puede escalar, que puede ser comprobable, que puede ser mantenible.
+
+00:37.160 --> 00:42.380
+Incluso si eres nuevo en los conceptos de MVC, podrás empezar a ver los patrones.
+
+00:42.380 --> 00:44.840
+A medida que voy a través de cada uno de estos ejemplos.
+
+00:44.840 --> 00:48.890
+UI Toolkit Cómo construir un tutorial en el juego.
+
+00:48.890 --> 00:53.840
+Ya sabes, cuando quieres que el jugador sea guiado a través de sus primeros cinco minutos, aprendiendo las teclas,
+
+00:53.840 --> 00:59.480
+etcétera, ya sabes, ¿cómo añadir exactamente que en un juego a continuación, un enfoque de múltiples minis.
+
+00:59.480 --> 01:04.890
+Así que una vez que te acostumbras al concepto arquitectónico MVC, por lo general pensamos en tener uno de esos en el
+
+01:04.890 --> 01:06.300
+proyecto completo.
+
+01:06.300 --> 01:10.590
+Pero ¿y si en realidad desea romper su proyecto y tener más de un mini en ella, que sin duda
+
+01:10.590 --> 01:11.160
+¿puedes?
+
+01:11.700 --> 01:13.710
+Hablaré también de la vinculación de datos.
+
+01:13.710 --> 01:19.740
+Así que si quieres tener un campo de texto en la interfaz de usuario y, a continuación, mapa que a donde se almacenan los datos y cualquier
+
+01:19.740 --> 01:26.910
+vez que el usuario actualice ese texto, se actualizará automáticamente el modelo de datos y a la inversa.
+
+01:26.910 --> 01:29.880
+Cada vez que el modelo de datos se actualice, se actualizará la interfaz de usuario.
+
+01:30.060 --> 01:33.990
+Así que mirando a la vinculación de datos, unity no soporta eso de forma nativa.
+
+01:33.990 --> 01:40.680
+Muy interesante, que está disponible en el kit de herramientas de interfaz de usuario para el editor ahora y en el futuro.
+
+01:40.680 --> 01:43.500
+Está llegando a Unity para el tiempo de ejecución.
+
+01:43.500 --> 01:44.910
+Estoy muy entusiasmado con eso.
+
+01:44.910 --> 01:48.810
+Este es un enfoque personalizado que hace algunas vinculaciones de datos.
+
+01:48.930 --> 01:55.260
+A continuación, vamos a ver un juego simple, este juego de pelota saltarina, y luego a partir de la parte superior vamos a ver
+
+01:55.260 --> 01:56.130
+una calculadora.
+
+01:56.130 --> 01:59.790
+Y este ejemplo de conteo hacia arriba es muy introductorio maneras de echar un vistazo.
+
+01:59.790 --> 02:03.450
+Así que empezaremos desde arriba con la calculadora.
+
+02:03.450 --> 02:05.130
+Así que vamos a saltar a la unidad aquí.

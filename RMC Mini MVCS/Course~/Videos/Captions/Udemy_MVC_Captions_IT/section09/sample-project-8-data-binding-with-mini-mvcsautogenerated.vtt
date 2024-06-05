@@ -1,0 +1,508 @@
+WEBVTT
+
+00:00.200 --> 00:00.620
+Va bene.
+
+00:00.650 --> 00:06.410
+Diamo poi un'occhiata al data binding all'interno di Unity con un'architettura personalizzata.
+
+00:09.280 --> 00:13.990
+Questa è la demo del data binding a lato.
+
+00:14.590 --> 00:22.750
+Nella demo del data binding, vedremo come, in un progetto che ha aggiunto MVC, come si potrebbe
+
+00:22.750 --> 00:24.280
+il binding dei dati?
+
+00:24.280 --> 00:33.700
+Il data binding ha lo scopo di avere uno schema facilmente riutilizzabile per sincronizzare i valori tra domini diversi.
+
+00:33.700 --> 00:41.560
+Quindi, se si hanno due classi che hanno entrambe un valore di testo del messaggio e si vuole che se una di esse cambia
+
+00:41.560 --> 00:46.720
+il valore, l'altra lo senta, e se la prima lo sente, lo cambia, allora
+
+00:46.720 --> 00:47.650
+il secondo lo sente.
+
+00:47.650 --> 00:49.210
+Quindi abbiamo un binding a due vie.
+
+00:49.210 --> 00:50.800
+Diamo quindi un'occhiata a un esempio.
+
+00:50.800 --> 00:52.780
+Potete immaginare quanto sarebbe utile.
+
+00:53.470 --> 00:59.830
+Questa demo fa parte del corso sull'architettura MVC per Unity, di cui potete trovare il link qui sotto.
+
+00:59.830 --> 01:07.000
+È un corso a pagamento e ora è in sconto perché stiamo festeggiando il superamento dei 6000 studenti.
+
+01:07.420 --> 01:10.790
+Speriamo che quando guarderete questo video, vedrete ancora più studenti.
+
+01:13.270 --> 01:20.200
+Il corso in sé copre tutti i tipi di argomenti diversi: unity, software, design e anche i mini nvq.
+
+01:20.200 --> 01:27.220
+E nei contenuti extra abbiamo aggiunto altre dieci demo oltre a quelle già presenti.
+
+01:27.220 --> 01:28.660
+E ne analizzeremo una qui.
+
+01:29.080 --> 01:31.260
+Guardiamo il binding dei dati qui.
+
+01:31.270 --> 01:35.830
+Diamo quindi un'occhiata al data binding saltando in unity.
+
+01:36.370 --> 01:38.800
+Ecco il progetto all'interno di Unity.
+
+01:38.800 --> 01:44.980
+Se seguite il link git, il link git gratuito che contiene l'intero codice sorgente, potete inserire il file
+
+01:44.980 --> 01:50.190
+con le istruzioni e poi si andrà su samples e si farà clic su import.
+
+01:50.300 --> 01:53.140
+L'ho già fatto qui per il bene di questo corso.
+
+01:54.340 --> 01:58.760
+Andiamo nella cartella more e guardiamo l'esempio di data binding.
+
+01:58.780 --> 02:03.070
+Osserviamo i dati e la struttura delle cartelle.
+
+02:03.070 --> 02:10.330
+Quindi, all'interno del data binding, ho una cartella per con Mini, perché in alcune delle demo precedenti ho una versione
+
+02:10.330 --> 02:11.380
+senza mini.
+
+02:11.410 --> 02:17.360
+Se volete vedere un approccio tradizionale in unity e poi con Mini questo l'ho realizzato solo con
+
+02:17.360 --> 02:19.100
+Mini, che è quello che stiamo guardando qui.
+
+02:19.220 --> 02:26.690
+Poi, nella cartella resources, ho un paio di prefabbricati per le due diverse viste che andremo a creare
+
+02:26.690 --> 02:27.770
+che saranno presenti nell'applicazione.
+
+02:28.670 --> 02:32.230
+Ho la scena, che eseguirò tra un secondo, e poi il codice sorgente.
+
+02:32.240 --> 02:40.580
+Ora, come accade spesso con queste dimostrazioni e come best practice per molti MVC, ogni volta che si esegue una dimostrazione in
+
+02:41.120 --> 02:46.600
+Unity, si vuole strutturare il tutto in modo che i file sorgenti per controller, modello, vista e servizio.
+
+02:46.610 --> 02:48.920
+Se ce l'avete, abbiano la loro cartella dedicata.
+
+02:48.920 --> 02:53.960
+In questo modo è possibile vedere facilmente le diverse separazioni delle preoccupazioni.
+
+02:54.790 --> 02:55.330
+Ottimo.
+
+02:55.930 --> 02:57.250
+Eseguiamo la demo.
+
+02:57.250 --> 02:58.450
+Lo farò bello grande.
+
+03:00.280 --> 03:01.810
+Ora, diamo un'occhiata a questo.
+
+03:01.810 --> 03:04.150
+Qui abbiamo due viste diverse.
+
+03:04.150 --> 03:07.930
+Si potrebbe pensare che questo faccia parte di un unico layout, ma in realtà ci sono due prefabbricati.
+
+03:07.930 --> 03:16.450
+Quindi li mettiamo qui fuori e vogliamo essere in grado di modificare questo qui e dire Hello world da sinistra.
+
+03:16.450 --> 03:20.500
+E notiamo che entrambi i campi di testo vengono aggiornati in tempo reale.
+
+03:20.980 --> 03:25.030
+Andiamo qui e diciamo che mi trovo a destra.
+
+03:25.570 --> 03:28.270
+E si può vedere che entrambi vengono aggiornati.
+
+03:28.270 --> 03:31.050
+Quindi abbiamo un binding a due vie negli MVC.
+
+03:31.060 --> 03:32.580
+Vediamo come si fa.
+
+03:32.590 --> 03:40.270
+Ora, come forse ho accennato in una parte precedente di questa serie di video, Unity non ha storicamente
+
+03:40.270 --> 03:41.920
+supporta alcun binding bidirezionale.
+
+03:42.680 --> 03:49.370
+Poi l'hanno aggiunto nell'editor per gli strumenti di editing e in futuro arriverà a runtime,
+
+03:49.520 --> 03:52.520
+soprattutto come parte del toolkit dell'interfaccia utente.
+
+03:52.520 --> 03:58.790
+Quindi non sto usando l'UI toolkit e la funzione di binding bidirezionale a runtime di Unity non è ancora disponibile.
+
+03:58.790 --> 04:04.010
+disponibile al momento di questa registrazione, quindi ho creato una soluzione personalizzata.
+
+04:04.010 --> 04:04.520
+a questo.
+
+04:07.820 --> 04:13.550
+Nella scena ho il mondo, che è un oggetto di gioco che contiene solo la telecamera e l'illuminazione.
+
+04:13.550 --> 04:14.120
+in esso.
+
+04:14.330 --> 04:19.850
+Poi ho la visuale sinistra, che se sposto a sinistra.
+
+04:23.090 --> 04:23.930
+Non riesco nemmeno a farlo.
+
+04:25.330 --> 04:25.810
+Va bene.
+
+04:25.810 --> 04:27.700
+E poi abbiamo anche la vista a destra.
+
+04:27.730 --> 04:29.860
+E poi abbiamo l'esempio di data binding.
+
+04:29.860 --> 04:33.620
+Ora il data binding prende un riferimento dalla vista sinistra e da quella destra.
+
+04:33.640 --> 04:36.760
+Iniziamo quindi il nostro viaggio nel codice.
+
+04:37.690 --> 04:39.400
+Ecco il mono-comportamento.
+
+04:39.400 --> 04:42.500
+Questo è un esempio di esecuzione dell'intera scena.
+
+04:42.520 --> 04:44.530
+Ho i due campi serializzati.
+
+04:44.530 --> 04:47.790
+Abbiamo appena esaminato la vista sinistra e la vista destra.
+
+04:47.800 --> 04:52.150
+Poi, qui all'inizio, creerò un nuovo contesto.
+
+04:52.180 --> 04:59.080
+Ora, non abbiamo visto questo nelle dimostrazioni precedenti e nel cuore del corso, non mostriamo questo contesto esatto
+
+04:59.080 --> 05:02.470
+flusso di lavoro, ma qui sto creando.
+
+05:08.140 --> 05:08.620
+Qui.
+
+05:08.620 --> 05:14.650
+Creo il contesto al di fuori di Mini e lo passo qui.
+
+05:15.010 --> 05:18.520
+Poi ho la vista sinistra e la vista destra.
+
+05:19.120 --> 05:25.120
+Quindi ho creato l'esterno e passo lo stesso valore in ciascuna di esse.
+
+05:26.060 --> 05:27.050
+preoccupazioni.
+
+05:27.210 --> 05:33.200
+A dire il vero, ora che ci penso, c'è un'altra demo in cui abbiamo più mini in
+
+05:33.200 --> 05:35.960
+lo stesso progetto e questo è preso in prestito da quello.
+
+05:35.960 --> 05:40.850
+Quindi la creazione del contesto al di fuori del mini non è esplicitamente richiesta.
+
+05:40.850 --> 05:46.460
+Ecco l'altra demo chiamata Multiple Minis, che potete vedere nella serie.
+
+05:46.460 --> 05:50.020
+Quindi questo commento non è necessariamente necessario.
+
+05:50.030 --> 05:51.980
+Ora andiamo avanti e guardiamo il Mini.
+
+05:53.020 --> 06:01.150
+Qui ho impostato il binding dei dati nel suo mini, e il mini qui sta andando a
+
+06:01.150 --> 06:04.600
+prendere i riferimenti per la vista sinistra e la vista destra e memorizzarli.
+
+06:05.960 --> 06:10.010
+Poi, qui sotto, c'è l'inizializzazione di Mini.
+
+06:10.950 --> 06:12.660
+Configurerò il modello.
+
+06:12.840 --> 06:15.840
+C'è un modello che sto per impostare, The View.
+
+06:15.870 --> 06:16.860
+Ci sono due viste.
+
+06:16.890 --> 06:18.060
+Una a sinistra e una a destra.
+
+06:18.060 --> 06:24.730
+Notate ancora una volta che si tratta di interfacce utente distinte e che qui c'è il controllore.
+
+06:24.750 --> 06:31.320
+Ora, il controllore prenderà un riferimento al modello e a entrambe le viste e, come per tutti i minis, sarà in grado di gestire il modello e le viste,
+
+06:31.320 --> 06:33.840
+il controllore è il più intelligente dei problemi.
+
+06:33.840 --> 06:38.490
+Prende quindi un riferimento alle diverse parti ed è il controllore che sarà in grado di avere
+
+06:38.490 --> 06:40.290
+di farle lavorare insieme.
+
+06:41.160 --> 06:42.660
+Ecco il controllore.
+
+06:43.230 --> 06:46.560
+Credo che questo sia l'unico problema che vedremo in questa demo.
+
+06:46.830 --> 06:49.920
+Prendo la sinistra e la destra e le memorizzo qui.
+
+06:49.920 --> 06:51.210
+Memorizzo il modello.
+
+06:51.480 --> 06:53.370
+Poi qui sotto.
+
+06:54.400 --> 06:55.270
+Ooh.
+
+06:55.750 --> 06:58.100
+Mi aspettavo che ci fosse più logica qui.
+
+06:58.120 --> 06:59.560
+Fammi pensare un attimo a questo.
+
+07:01.690 --> 07:03.040
+Sì, credo che ci sia.
+
+07:03.190 --> 07:04.840
+L'ho creato un po' di tempo fa.
+
+07:05.800 --> 07:10.210
+Spesso, quello che sto per mostrare nelle visualizzazioni è il modo in cui viene eseguita la sincronizzazione.
+
+07:10.210 --> 07:15.550
+Ma si potrebbe fare l'affondamento dei due valori per il campo di testo a sinistra e per il campo di testo a
+
+07:15.550 --> 07:16.990
+destra nel controllore.
+
+07:16.990 --> 07:18.940
+Quindi mi aspettavo di vederlo qui.
+
+07:18.940 --> 07:21.220
+Ma diamo un'occhiata agli altri problemi.
+
+07:21.220 --> 07:22.510
+Ecco il modello.
+
+07:24.060 --> 07:26.430
+E il modello in MVC.
+
+07:28.290 --> 07:30.450
+È il più stupido dei problemi.
+
+07:30.450 --> 07:35.670
+Quindi, se il controllore è il più intelligente, il più consapevole, ha il contesto dell'intero sistema.
+
+07:35.670 --> 07:38.790
+i modelli di situazione sono più stupidi.
+
+07:38.790 --> 07:41.130
+Memorizzano i dati e basta.
+
+07:41.130 --> 07:44.040
+Quindi qui memorizza una stringa di messaggio.
+
+07:45.160 --> 07:47.950
+E inizierà con il valore iniziale.
+
+07:47.980 --> 07:50.110
+Abbiamo visto che dice: modifica questo testo.
+
+07:50.110 --> 07:53.080
+Eseguiremo la demo un'altra volta, in modo da poter vedere l'impostazione.
+
+07:54.460 --> 07:56.790
+Diamo poi un'occhiata alla vista sinistra e a quella destra.
+
+07:56.800 --> 07:58.600
+Ecco la vista sinistra.
+
+07:58.630 --> 08:05.820
+Utilizzeremo il comportamento mono, come spesso vogliamo fare per le questioni relative all'interfaccia utente.
+
+08:05.830 --> 08:10.060
+È opzionale estendere il comportamento mono in Mini, ma in questo caso vogliamo farlo.
+
+08:10.940 --> 08:13.820
+E poi, qui sotto, ecco dove si trova il binding.
+
+08:13.820 --> 08:16.310
+Assicuriamoci che questo sia sullo schermo in un bel punto.
+
+08:16.310 --> 08:18.650
+Di nuovo, siamo in initialize.
+
+08:18.980 --> 08:22.970
+Voglio solo avere un po' di spazio per parlarne.
+
+08:22.970 --> 08:23.410
+Ok.
+
+08:23.420 --> 08:25.790
+Quindi la prima cosa che faccio è impostare questo.
+
+08:25.790 --> 08:33.560
+Ora ho un riferimento al modello in MVC.
+
+08:33.800 --> 08:38.330
+Il controllore può sempre accedere alle altre preoccupazioni.
+
+08:38.600 --> 08:45.410
+Ma come best practice, si vuole limitare l'accesso da altri modelli.
+
+08:45.410 --> 08:48.440
+Per esempio, alla vista e dalla vista al modello.
+
+08:48.440 --> 08:50.360
+È bene essere molto consapevoli di questi aspetti.
+
+08:50.360 --> 08:56.270
+In questo caso, sto scegliendo consapevolmente di far sì che la vista, che è la classe in cui ci troviamo, riceva una classe
+
+08:56.270 --> 08:57.380
+riferimento al modello.
+
+08:57.380 --> 09:03.590
+Il modo in cui è possibile farlo è chiedere al contesto, che è implicitamente disponibile per noi e
+
+09:03.590 --> 09:08.630
+e dire: "Ehi, localizzatore di modelli, trovami un riferimento al modello che è nel gioco".
+
+09:08.660 --> 09:15.480
+Questa linea in particolare assomiglia un po' all'iniezione di dipendenza, ma non è proprio così.
+
+09:15.480 --> 09:17.100
+soluzione universale.
+
+09:17.130 --> 09:22.860
+Il contesto ha localizzatori solo per i modelli, in modo che chiunque possa ottenerli se necessario.
+
+09:22.890 --> 09:25.650
+Quindi, nella vista, otteniamo un riferimento al modello.
+
+09:25.800 --> 09:30.030
+Ricordiamo che il modello contiene solo la stringa dei messaggi sullo schermo.
+
+09:30.880 --> 09:33.870
+Poi faremo il binding qui.
+
+09:33.880 --> 09:43.440
+Quindi, se il modello di dati del messaggio cambia, lo ascolteremo di seguito.
+
+09:43.450 --> 09:47.500
+Quindi, ogni volta che il modello dei dati cambia, lo sentiremo.
+
+09:47.620 --> 09:51.940
+E ogni volta che la vista cambia, la ascolteremo.
+
+09:51.940 --> 09:54.430
+Di seguito vedremo il metodo per ciascuno di essi.
+
+09:54.430 --> 09:55.420
+Ma ricordate che stiamo ascoltando.
+
+09:55.420 --> 09:58.810
+Se il modello cambia o se la vista cambia.
+
+09:59.230 --> 10:02.800
+Quindi, qui sotto, esaminiamo prima questo.
+
+10:03.530 --> 10:10.100
+Se il modello dei dati cambia, allora aggiorneremo la vista.
+
+10:11.800 --> 10:18.160
+E qui sotto, se la vista cambia, aggiorneremo il modello.
+
+10:18.160 --> 10:24.490
+Quindi ognuno di questi due elementi esegue l'estremità opposta di questo legame bidirezionale e il gioco è fatto.
+
+10:24.760 --> 10:30.340
+Quindi i dettagli di questo particolare flusso non sono unici per Mini.
+
+10:30.370 --> 10:36.070
+Si può fare anche al di fuori di Mini, ma le classi che aiutano a realizzare tutto questo sono incluse qui.
+
+10:36.070 --> 10:43.540
+È un argomento particolarmente interessante quando si parla di mini MVC, perché il binding dei dati è uno dei principali elementi di
+
+10:43.540 --> 10:44.850
+plus.
+
+10:44.860 --> 10:50.440
+Se si dispone di data binding, l'utilizzo di un mini MVC è ancora più rapido e semplice da configurare.
+
+10:52.190 --> 10:54.020
+Eseguiamo ancora una volta la demo.
+
+10:57.940 --> 10:59.470
+Credo di aver decommentato qualcosa.
+
+10:59.470 --> 11:00.880
+Ecco perché stiamo ricompilando.
+
+11:00.910 --> 11:02.740
+Quindi, anche in questo caso, stiamo eseguendo.
+
+11:02.740 --> 11:06.780
+Carichiamo dal servizio la modifica di questo testo, che in realtà è stato codificato in modo rigido.
+
+11:06.790 --> 11:11.290
+Abbiamo il valore codificato e se lo digito sul lato sinistro, lo otteniamo.
+
+11:11.290 --> 11:14.260
+E se lo digito sul lato destro, viene sincronizzato.
+
+11:14.260 --> 11:15.040
+Ecco fatto.
+
+11:15.040 --> 11:19.900
+Questo è il data binding all'interno di questa demo MVC di Unity.

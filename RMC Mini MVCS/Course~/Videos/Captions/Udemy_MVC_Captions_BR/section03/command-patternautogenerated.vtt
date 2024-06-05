@@ -1,0 +1,184 @@
+WEBVTT
+
+00:00.180 --> 00:02.800
+Vamos dar uma olhada no padrão de design do comando.
+
+00:02.820 --> 00:05.390
+Command é um padrão de design comportamental.
+
+00:05.400 --> 00:09.210
+É um pouco semelhante ao observer, mas suficientemente diferente.
+
+00:09.210 --> 00:11.340
+Ele se qualifica como seu próprio padrão.
+
+00:11.430 --> 00:17.730
+Alguns dos benefícios de usá-lo incluem a possibilidade de executar e desfazer a funcionalidade.
+
+00:17.730 --> 00:23.360
+Muitas vezes, é aí que muitas equipes o utilizam para poder ter a funcionalidade de desfazer em sua interface de usuário.
+
+00:23.370 --> 00:30.600
+Mas mesmo sem esse paradigma, ele ainda é tremendamente bem-sucedido em lhe dar os benefícios do observador
+
+00:30.600 --> 00:37.530
+com um pouco mais de desacoplamento e abstração em comparação com o padrão do observador aqui, não precisamos de uma referência
+
+00:37.530 --> 00:40.020
+ao remetente da mensagem.
+
+00:40.020 --> 00:47.790
+Em vez disso, tanto o remetente quanto o observador sabem sobre algum tipo de sistema de mensagens que fica entre
+
+00:47.790 --> 00:48.240
+eles.
+
+00:48.480 --> 00:51.510
+Em um código posterior, veremos esse sistema ser chamado de gerenciador de comandos.
+
+00:51.510 --> 00:57.780
+Desde que esses escopos possam alcançar o gerenciador de comandos, ele atua como intermediário entre eles e a comunicação.
+
+00:57.780 --> 01:03.990
+E, assim como o observador, isso permite a troca de dados e a comunicação, que é isolada de, bem..,
+
+01:03.990 --> 01:07.410
+se um mudar, o outro precisa necessariamente mudar?
+
+01:07.410 --> 01:11.720
+E você certamente pode ter vários observadores facilmente adicionados e removidos.
+
+01:11.730 --> 01:12.270
+Veremos.
+
+01:12.270 --> 01:15.600
+Um paralelo com o exemplo do observador que vimos anteriormente aqui.
+
+01:15.600 --> 01:22.640
+As três partes principais são criar o sistema de comando, adicionar um ouvinte e invocá-lo.
+
+01:22.650 --> 01:28.230
+Agora, normalmente, estaríamos enviando comandos entre duas ou mais classes, mas, por uma questão de brevidade, incluí
+
+01:28.230 --> 01:29.760
+em um único arquivo de classe aqui.
+
+01:29.760 --> 01:33.380
+Dessa forma, podemos ver rapidamente um exemplo funcional completo.
+
+01:33.390 --> 01:37.710
+Agora vou mencionar mais alguns padrões, mas vou ser um pouco mais rápido.
+
+01:37.860 --> 01:44.730
+Os próximos dois que vou mostrar são coisas que veremos no espírito de como as arquiteturas MVC
+
+01:44.730 --> 01:45.570
+são organizadas.
+
+01:45.570 --> 01:48.960
+Um padrão com o qual você talvez já esteja familiarizado é o padrão singleton.
+
+01:48.960 --> 01:55.710
+Sempre que você quiser ter um sistema criado exatamente uma vez dentro do seu código e ter acesso global a ele,
+
+01:55.710 --> 01:57.990
+esse é um ótimo lugar para o padrão Singleton.
+
+01:57.990 --> 02:05.010
+As atualizações recentes do Unity têm algumas soluções nativas para isso, mas tradicionalmente usamos a comunidade
+
+02:05.010 --> 02:13.440
+classes de comportamento mono baseadas na comunidade que nos ajudam a acessar globalmente um determinado comportamento mono ou algum
+
+02:13.440 --> 02:14.420
+outro tipo de dados.
+
+02:14.430 --> 02:21.450
+Em segundo lugar, o padrão de fachada nos ajuda a reduzir a complexidade percebida de uma série de subsistemas.
+
+02:21.540 --> 02:28.050
+Digamos que você tenha um sistema de entrada, um sistema de renderização e um sistema de física, todos criados para o seu
+
+02:28.050 --> 02:29.790
+jogo em vez de seu jogador.
+
+02:29.790 --> 02:35.940
+Conhecendo os detalhes desses sistemas, o jogador poderia interagir com uma fachada que, por sua vez, chama esses sistemas.
+
+02:35.940 --> 02:39.960
+sistemas individuais ou subseções selecionadas do que eles podem fazer.
+
+02:39.960 --> 02:43.890
+Muitas vezes, no jargão do desenvolvedor, chamamos isso de funcionalidade de empacotamento.
+
+02:43.890 --> 02:49.560
+Portanto, pode-se dizer que eu agrupei três sistemas em uma única classe para facilitar o uso.
+
+02:49.560 --> 02:53.010
+Mediator e proxy são dois padrões adicionais.
+
+02:53.010 --> 02:59.700
+Eles são de fato separados, mas posso usar os termos de forma intercambiável tanto em mediação quanto em proxy.
+
+02:59.700 --> 03:05.130
+Quero dizer, ter algum tipo de intermediário que fica entre a comunicação, alguns dos benefícios
+
+03:05.130 --> 03:09.330
+aqui é que você pode facilmente fazer alterações em qualquer uma das duas classes.
+
+03:09.330 --> 03:15.150
+Nesse exemplo, ajuste o intermediário e você não precisará refatorar o sistema de forma massiva.
+
+03:15.150 --> 03:17.070
+Portanto, é uma forma de atenuar as mudanças.
+
+03:17.070 --> 03:19.980
+Veremos alguns desses conceitos nas arquiteturas mais tarde.
+
+03:19.980 --> 03:26.280
+Portanto, apenas com uma breve visão geral dos padrões de projeto aqui, vemos que eles são soluções reutilizáveis que
+
+03:26.280 --> 03:30.540
+nos ajudam a resolver os desafios de design que surgem com frequência em nosso desenvolvimento de jogos.
+
+03:30.540 --> 03:36.030
+Embora o Singleton possa ser a solução com a qual você está mais familiarizado no Unity, como é frequentemente discutido, o observador
+
+03:36.030 --> 03:42.840
+é provavelmente o mais útil para um desenvolvedor iniciante elevar um pouco seu jogo e
+
+03:42.840 --> 03:47.820
+alguns desses outros padrões que mencionei especificamente porque mais tarde, quando analisarmos as arquiteturas,
+
+03:47.820 --> 03:51.600
+eu poderei usar esses termos e você terá um pouco mais de familiaridade.
+
+03:51.900 --> 03:57.150
+Em resumo desta seção, examinamos alguns dos conceitos de design de software de alto nível.
+
+03:57.150 --> 04:04.470
+Analisamos os princípios de design como filosofias para resolver desafios, a UML como uma forma de diagrama e comunicação
+
+04:04.470 --> 04:05.790
+sobre nossas ideias.
+
+04:05.790 --> 04:11.580
+E examinamos alguns padrões de design, especificamente o observer e o command, que serão abordados novamente
+
+04:11.580 --> 04:12.180
+mais tarde.
+
+04:12.180 --> 04:15.640
+E eles são uma ótima maneira de desacoplar a comunicação dentro do seu projeto.
+
+04:15.660 --> 04:17.880
+A seguir, vamos discutir a arquitetura.
+
+04:17.880 --> 04:23.430
+Examinaremos algumas das soluções disponíveis, os prós e contras de cada uma delas e reduziremos o número de soluções disponíveis.
+
+04:23.430 --> 04:28.290
+a alguns dos frameworks populares que podemos usar especificamente para a unidade.
+
+04:28.440 --> 04:29.370
+Obrigado.

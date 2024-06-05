@@ -1,0 +1,133 @@
+WEBVTT
+
+00:00.240 --> 00:02.490
+Überblick über das Software-Design.
+
+00:02.670 --> 00:06.000
+Beginnen wir mit der Theorie der Entwurfsprinzipien.
+
+00:06.180 --> 00:10.710
+Erfahrene Entwickler können es einfach aussehen lassen, aber sauberer Code wird nicht zufällig geschrieben.
+
+00:10.740 --> 00:17.430
+Gute Projekte entstehen durch die Anwendung solider Prinzipien, guter Arbeitsabläufe und produktiver Muster
+
+00:17.430 --> 00:18.670
+in Ihrem Prozess.
+
+00:18.690 --> 00:21.440
+Lassen Sie uns zunächst über Gestaltungsprinzipien sprechen.
+
+00:21.450 --> 00:25.040
+Dies sind die Philosophien, die zu einer produktiven Softwareentwicklung führen.
+
+00:25.050 --> 00:32.490
+Zu den Vorteilen gehören schnellere Planung, klare Kommunikation und Konzentration während der Entwicklung.
+
+00:32.700 --> 00:37.350
+Die Geschichte der Informatik ist voll von diesen Entwurfsprinzipien.
+
+00:37.470 --> 00:39.850
+Ich werde einige der populärsten durchgehen.
+
+00:39.870 --> 00:46.410
+Dies ist eine ausgezeichnete Gelegenheit für Sie, Ihre eigenen Nachforschungen über die für Sie neuen Prinzipien anzustellen und sich
+
+00:46.410 --> 00:49.370
+zu vertiefen, mit denen Sie bereits vertraut sind.
+
+00:49.380 --> 00:56.220
+Beginnen wir mit den soliden Prinzipien, wobei jeder Buchstabe in solid einem Designprinzip entspricht.
+
+00:56.490 --> 01:04.530
+Das Prinzip der einzelnen Verantwortung ist der allgemeine Wunsch, dass jede Ihrer Klassen und Strukturen
+
+01:04.530 --> 01:06.050
+nur eine Sache tun.
+
+01:06.060 --> 01:14.010
+Das Prinzip "offen geschlossen" bedeutet, dass jede Klasse offen für Erweiterungen, aber geschlossen für Änderungen sein sollte.
+
+01:14.010 --> 01:19.290
+Bei der objektorientierten Programmierung gibt es Vererbung und Schnittstellen.
+
+01:19.290 --> 01:27.840
+Das Prinzip der Substitutionsliste besagt, dass jeder Untertyp als Elternteil gecastet werden können sollte
+
+01:27.870 --> 01:29.220
+Typ und Schnittstelle.
+
+01:29.220 --> 01:36.030
+Segregation bedeutet, dass wir nicht mehr Schnittstellen auf einen bestimmten Typ anwenden sollten als nötig.
+
+01:36.030 --> 01:41.970
+Und schließlich bedeutet die Inversion von Abhängigkeiten, dass man, wenn man es mit hohem Code und niedrigem Code zu tun hat
+
+01:41.970 --> 01:49.280
+einem System zu tun hat, sollte der High-Level-Code nicht von konkreten Implementierungen des Low-Level-Codes abhängen.
+
+01:49.290 --> 01:55.140
+Stattdessen sollte er so etwas wie Schnittstellen verwenden, um zu abstrahieren, die einige andere beliebte Konzepte beinhalten.
+
+01:55.140 --> 01:56.520
+Wiederholen Sie sich nicht.
+
+01:56.520 --> 02:02.940
+Dies ist eine Erinnerung, die wir als Entwickler verwenden, wenn du dich dabei ertappst, dass du kopierst, einfügst, wörtlichen Code
+
+02:02.940 --> 02:08.910
+oder Konzepte kopiert, kann es einen systematischen Ansatz geben, der uns hilft, diesen Code effizienter wiederzuverwenden.
+
+02:08.940 --> 02:15.540
+Keep it simple erinnert uns daran, unsere Lösungen nicht übermäßig zu verkomplizieren, und Sie werden es nicht brauchen.
+
+02:15.540 --> 02:19.500
+Erinnert uns daran, die Lösungen von morgen nicht schon heute zu entwickeln.
+
+02:20.310 --> 02:21.870
+In der iterativen Entwicklung.
+
+02:21.870 --> 02:28.080
+Wir wollen die Herausforderungen, vor denen wir stehen, jetzt mit soliden Prinzipien lösen und nicht etwas entwickeln, das
+
+02:28.080 --> 02:30.180
+unbedingt zukunftssicher ist.
+
+02:30.210 --> 02:36.630
+Wir wissen oft nicht, was die Zukunft bringen wird, und die Planung für morgen ist eine unnötige Komplikation.
+
+02:36.630 --> 02:42.870
+Wenn Sie die hier beschriebenen Prinzipien praktizieren und sie in Ihrem Projekt anwenden, werden Sie automatisch
+
+02:42.870 --> 02:49.150
+mehr Skalierbarkeit, Wartbarkeit und Lebensqualität als Entwickler.
+
+02:49.170 --> 02:54.900
+Wenn wir in diesem Abschnitt über diese Software-Design-Prinzipien nachdenken, gehen wir von einem hohen
+
+02:54.900 --> 03:00.720
+theoretischen Ebene, die über verschiedene Programmierplattformen hinweg universell sein kann.
+
+03:00.720 --> 03:06.450
+Dann werden wir uns mehr mit den Details befassen, insbesondere mit der Anwendung in Unity.
+
+03:06.600 --> 03:13.890
+Aber Sie werden diesen Unterschied bemerken, wo wir auf hoher Ebene sprechen und dann konkret auf niedriger Ebene und durchgehend
+
+03:13.890 --> 03:19.890
+dass Sie Ihren eigenen persönlichen Stil entwickeln können, welche dieser Prinzipien Ihren Arbeitsalltag beeinflussen
+
+03:19.890 --> 03:21.020
+mehr als andere.
+
+03:21.030 --> 03:27.180
+Wir werden einige dieser Prinzipien auch in den Architekturen wiedererkennen, die wir verwenden, und schließlich
+
+03:27.180 --> 03:30.030
+den Code, den wir gemeinsam in den Kodierungsabschnitten erstellen.
+
+03:30.150 --> 03:31.260
+Das war's für jetzt.
+
+03:31.260 --> 03:31.980
+Vielen Dank!

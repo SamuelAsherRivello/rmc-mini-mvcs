@@ -1,0 +1,196 @@
+WEBVTT
+
+00:00.520 --> 00:03.490
+Das Unity MVC-Framework.
+
+00:03.490 --> 00:10.750
+Ich habe das Unity UMBC-Framework vor einigen Jahren entwickelt, basierend auf meinen damaligen Erkenntnissen und meinen architektonischen
+
+00:10.750 --> 00:11.460
+Ziele.
+
+00:11.470 --> 00:17.140
+Die Vorteile der Verwendung dieses speziellen Frameworks sind, dass es sich bewährt hat und auf einer Vielzahl von
+
+00:17.140 --> 00:20.310
+Prinzipien und Mustern basiert, die wir in diesem Kurs bereits kennengelernt haben.
+
+00:20.320 --> 00:26.080
+Die Version existiert zwar nur für Unity, aber theoretisch sind die Muster dort sprachunabhängig, also
+
+00:26.080 --> 00:28.920
+man sie auf andere Plattformen übertragen kann, wenn man will.
+
+00:28.930 --> 00:35.740
+Es bringt eine besser testbare Umgebung zu Unity, weil jeder Bereich des Codes getrennt und entkoppelt ist.
+
+00:35.740 --> 00:39.940
+Und wie viele der etablierten Architekturen haben wir einen Blick auf Unity geworfen.
+
+00:39.940 --> 00:45.010
+Und das ermöglicht eine schnellere Entwicklung und eine viel effizientere Wartung Ihrer Projekte.
+
+00:45.010 --> 00:50.860
+Zum Zeitpunkt der Erstellung hatte ich einen mono behavior centric flow, wie ich in Unity entwickelte.
+
+00:50.920 --> 00:53.860
+Also habe ich dieses System so gebaut, dass es auf die gleiche Weise funktioniert.
+
+00:53.860 --> 00:58.300
+Eines der Hauptmerkmale hier ist, dass es stark auf Mono-Verhaltensweisen setzt.
+
+00:58.300 --> 01:01.780
+Jeder der vier Bereiche erweitert das Mono-Verhalten.
+
+01:01.780 --> 01:07.060
+Das bedeutet, dass man jeden dieser Belange an ein Spielobjekt hängen kann, was großartig ist, wenn man alle
+
+01:07.060 --> 01:12.550
+vertrauten Workflows, die wir in Unity für Spielobjekte und Komponenten haben, einschließlich der Serialisierung von Feldern auf
+
+01:12.550 --> 01:13.570
+jedes der Anliegen.
+
+01:13.570 --> 01:17.890
+Auf dem Screenshot hier sehen Sie zum Beispiel eines der Modelle.
+
+01:17.890 --> 01:23.920
+Das Modell ist ein Mono-Verhalten, so dass es serialisierte Felder haben kann und sich gut in den Unity Inspector einfügt
+
+01:23.920 --> 01:24.250
+Ansicht.
+
+01:24.250 --> 01:27.550
+Wie ist die Struktur von dir und den VCs auf hoher Ebene?
+
+01:27.550 --> 01:34.090
+Nun, wir haben das bekannte m v aus den Mustern, die wir uns zuvor angesehen haben, wo jedes dieser vier
+
+01:34.090 --> 01:36.130
+betrifft, erweitert das Mono-Verhalten.
+
+01:36.130 --> 01:42.700
+Dann würde ich in meinem Spielcode ein App-Konzept erstellen, das auch eine Menge Verhalten ist.
+
+01:42.700 --> 01:48.430
+Das ist die eine Sache in meiner Szene, unter der all dies wieder sitzt, einige Vorteile des Mono-Verhaltens
+
+01:48.430 --> 01:50.740
+Ansatz, da es sich sehr nativ für Unity anfühlt.
+
+01:50.740 --> 01:55.360
+Die Dinge sitzen in der Szene auf Spielobjekten und können getrennt werden, wie ich es mag.
+
+01:55.360 --> 01:58.270
+In diesem Kapitel geben wir nur einen Überblick über diese Dinge.
+
+01:58.270 --> 02:01.000
+Wir werden schließlich zu einem anderen Rahmenwerk übergehen.
+
+02:01.000 --> 02:04.480
+Hier ist ein Ausschnitt aus der Funktionsweise des UMBC-Systems.
+
+02:04.480 --> 02:08.680
+Es gibt einige Erkenntnisse aus diesem älteren System, die mir immer noch sehr gut gefallen.
+
+02:08.680 --> 02:13.480
+Erstens verwende ich in vielen Bereichen, wie z.B. dem Basis-Controller, den wir hier sehen, Generika.
+
+02:13.480 --> 02:19.450
+Generics sind eine fantastische Möglichkeit in C-Sharp, um wiederverwendbare Template-Klassen zu erstellen.
+
+02:19.450 --> 02:25.840
+Zweitens erlaubt der Arbeitsablauf, den ich hier habe, eine starke Typisierung, was in bestimmten Fällen großartig ist
+
+02:25.840 --> 02:27.100
+wie mein Spiel abläuft.
+
+02:27.100 --> 02:32.770
+Ich kann die automatische Vervollständigung nutzen, die mir die Eigenschaften und Methoden anzeigt, die sinnvoll sind für
+
+02:32.770 --> 02:37.630
+und das Framework führt die Konzepte ein, die wir aus den Entwurfsmustern gelernt haben.
+
+02:37.630 --> 02:45.070
+Wir haben sowohl den Befehlsmanager für die FA-Kommunikation auf hoher Ebene in einer mehr entkoppelten Art und Weise als auch Unity
+
+02:45.070 --> 02:48.670
+Ereignisse für die Kommunikation auf lokaler, untergeordneter Ebene.
+
+02:48.670 --> 02:53.350
+Der Hauptunterschied hier ist, wie wir bereits bei der Diskussion dieser Muster besprochen haben, dass der Befehl
+
+02:53.350 --> 02:58.750
+Manager-Konzept keine Referenzen zwischen Sender und Empfänger benötigt, während
+
+02:58.750 --> 03:04.420
+das Unity-Ereigniskonzept erfordert, dass der Beobachter einen Verweis auf den Absender hat.
+
+03:04.420 --> 03:09.550
+Dies gibt dem Framework zwei Ebenen, wie es zwischen den Hauptanliegen kommunizieren kann.
+
+03:09.550 --> 03:15.490
+Zu der Zeit, als ich diesen speziellen Rahmen schuf, umfasste er die Prinzipien, wie ich an die folgenden Punkte herangehe
+
+03:15.490 --> 03:16.690
+Unity-Projekte.
+
+03:16.690 --> 03:20.410
+Wie ich bereits erwähnt habe, war es ein sehr mono behavioristischer Ansatz.
+
+03:20.410 --> 03:23.020
+Das Projekt ist immer noch lebendig und kann genutzt werden.
+
+03:23.020 --> 03:27.130
+Für diesen Kurs werde ich empfehlen, dass wir ein anderes Framework wählen, über das ich sprechen werde.
+
+03:27.130 --> 03:27.880
+sprechen werde.
+
+03:27.880 --> 03:34.690
+Aber ich erwähne dieses Projekt als ein gültiges Beispiel in meinem Architekturportfolio an einem Ort, von dem aus
+
+03:34.690 --> 03:38.440
+Ich habe insgesamt viel gelernt in diesem Abschnitt, wir haben über Architekturen gesprochen.
+
+03:38.440 --> 03:42.610
+Wir sahen die Vor- und Nachteile der Verwendung einer bestimmten etablierten Architektur.
+
+03:42.610 --> 03:47.440
+Wir sprachen über einige der Unterschiede zwischen den wichtigsten etablierten Architekturen, die uns zur Verfügung stehen.
+
+03:47.440 --> 03:50.710
+Wir haben die Nachteile des Ansatzes "keine Architektur" gesehen.
+
+03:50.710 --> 03:55.960
+Obwohl sich das sehr natürlich anfühlt, vor allem als Anfänger, zahlt es sich letztendlich nicht aus.
+
+03:55.960 --> 04:01.840
+Und wir haben eine Liste mit einigen der Unity-zentrierten Frameworks gesehen, die wir für die Spielarchitektur wählen können,
+
+04:01.840 --> 04:05.740
+einschließlich des Projekts von dir und VC, das ich vor einigen Jahren entwickelt habe.
+
+04:05.740 --> 04:11.770
+Als Nächstes wollen wir einen anderen Rahmen besprechen, den Rahmen von Mini und VC, den ich vor kurzem erstellt habe.
+
+04:11.770 --> 04:17.260
+Dies ist der Höhepunkt all der Lektionen, die wir hier im Laufe des Kurses die Designprinzipien haben,
+
+04:17.260 --> 04:21.400
+die Entwurfsmuster, Lehren aus anderen Architekturen, einschließlich meiner eigenen.
+
+04:21.400 --> 04:26.710
+Wir werden uns einen Überblick über das System verschaffen, die Vor- und Nachteile der Verwendung und wie man anfängt.
+
+04:26.710 --> 04:32.230
+Dieser Abschnitt über die Architekturen war besonders gründlich und enthielt eine Menge Informationen.
+
+04:32.230 --> 04:38.710
+Schauen Sie sich einige Abschnitte noch einmal an, um die Konzepte zu verinnerlichen, und wir werden
+
+04:38.710 --> 04:40.540
+gemeinsam zum nächsten Abschnitt übergehen.
+
+04:40.540 --> 04:41.290
+Ich danke Ihnen.

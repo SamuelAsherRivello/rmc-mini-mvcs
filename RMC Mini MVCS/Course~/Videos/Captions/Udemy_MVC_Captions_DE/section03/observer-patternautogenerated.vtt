@@ -1,0 +1,193 @@
+WEBVTT
+
+00:00.150 --> 00:03.690
+Schauen wir uns die Entwurfsmuster an, beginnend mit dem Observer.
+
+00:03.720 --> 00:11.100
+Während die Entwurfsprinzipien in der Theorie sehr hoch angesiedelt sind, fangen die Entwurfsmuster ein wenig mehr an zu sein
+
+00:11.100 --> 00:14.370
+in der Informatik und in konkreten Lösungen zu verankern.
+
+00:14.400 --> 00:16.450
+Dennoch sind sie sprachunabhängig.
+
+00:16.470 --> 00:22.080
+Sie können dieselben Muster auf eine Vielzahl verschiedener Programmiersprachen und Plattformen anwenden.
+
+00:22.080 --> 00:28.050
+Man kann sich ein Entwurfsmuster als eine wiederverwendbare Lösung für ein Entwurfsproblem vorstellen.
+
+00:28.080 --> 00:32.550
+Nun können Sie sich vorstellen, dass es in Ihrem Projekt viele Dinge gibt, die nur für das Projekt gelten
+
+00:32.550 --> 00:38.580
+Bedürfnisse deines Spiels, aber viele der verschiedenen Probleme, die auftauchen werden und wie du organisieren musst.
+
+00:38.580 --> 00:41.160
+Solche Dinge wurden schon einmal in Software gemacht.
+
+00:42.090 --> 00:45.750
+Einige Vorteile der Verwendung von Entwurfsmustern sind, dass sie bewährt sind.
+
+00:46.260 --> 00:51.450
+Viele dieser Herausforderungen wurden bereits gelöst, und zwar ziemlich gut, warum also nicht davon lernen?
+
+00:51.450 --> 00:56.530
+Und sie können zu einer viel schnelleren Entwicklung und einer einfacheren Wartung führen.
+
+00:56.550 --> 00:59.970
+Hier sehen wir eine Liste mit einigen der beliebtesten Entwurfsmuster.
+
+01:00.150 --> 01:04.620
+Es gibt sicherlich noch viel mehr, und Sie können sogar Ihre eigenen Entwurfsmuster definieren.
+
+01:04.620 --> 01:10.380
+Aber wenn Sie mit etwa 20 von ihnen vertraut sind, haben Sie eine gute Grundlage, um über Ihre
+
+01:10.380 --> 01:11.220
+Projekte.
+
+01:11.220 --> 01:15.270
+Es gibt drei Haupttypen Schöpferische Muster erzeugen neue Dinge.
+
+01:15.270 --> 01:22.950
+Strukturelle Muster organisieren, wie diese Dinge aufgebaut sind und Verhaltensmuster definieren, wie diese Systeme
+
+01:22.950 --> 01:24.270
+sich zueinander verhalten.
+
+01:24.450 --> 01:30.540
+Wir werden uns nur einige von ihnen genauer ansehen, da sie sich direkt auf die Architekturen beziehen, die wir uns ansehen werden
+
+01:30.540 --> 01:31.290
+später betrachten werden.
+
+01:31.290 --> 01:37.290
+Eine sehr beliebte Methode, die Sie wahrscheinlich schon benutzen, besonders als Unit-Entwickler,
+
+01:37.290 --> 01:39.030
+ist das Beobachtermuster.
+
+01:39.030 --> 01:44.040
+Das Observer-Muster definiert, wie zwei oder mehr Objekte miteinander kommunizieren können.
+
+01:44.040 --> 01:49.290
+Jetzt wissen wir, dass eine Klasse einen Verweis auf eine zweite Klasse erhalten und eine Methode direkt auf dieser aufrufen kann.
+
+01:49.290 --> 01:53.480
+Sie muss diesen Verweis haben und sie muss genau wissen, welche Methode sie aufrufen muss.
+
+01:53.490 --> 01:58.200
+Das ist ein Beispiel für eng verbundene oder eng gekoppelte Beziehungen.
+
+01:58.200 --> 02:01.980
+Der Vorteil des Beobachters ist, dass er nicht so eng verbunden ist.
+
+02:01.980 --> 02:08.760
+Während eine Klasse einen Verweis auf den Absender benötigt, ist sie in der Lage, Daten leichter auszutauschen und zu isolieren
+
+02:08.760 --> 02:12.360
+die Probleme, die entstehen, wenn man den einen ändert, ohne den anderen zu ändern.
+
+02:12.360 --> 02:18.840
+Man kann auch mehrere Beobachter haben und sie leicht hinzufügen und entfernen, während wir durch dieses Muster gehen
+
+02:18.840 --> 02:24.210
+und andere durchgehen, schauen Sie sich das Diagramm an und wenden Sie an, was wir über die UML gelernt haben, um ein wenig zu verstehen
+
+02:24.210 --> 02:24.870
+etwas mehr zu verstehen.
+
+02:24.870 --> 02:29.730
+Und bei jedem dieser Muster gibt es eine ausgezeichnete Möglichkeit, zusätzliche Forschung zu betreiben.
+
+02:29.940 --> 02:32.520
+Hier ist ein Beispiel für einen Beobachter für die Einheit.
+
+02:32.520 --> 02:38.190
+Nun, es gibt mehrere Möglichkeiten, dies in Unity zu lösen, aber eine erste Lösung, die du sicher kennst, ist
+
+02:38.190 --> 02:41.490
+bekannt ist, ist das Unity-Event.
+
+02:41.790 --> 02:48.510
+Es gibt drei Hauptteile, die man hier aufzählen kann: das Erzeugen des Ereignisses, das Abhören des Ereignisses und das Aufrufen des
+
+02:48.510 --> 02:49.230
+Ereignis.
+
+02:49.260 --> 02:50.630
+Alle werden hier angezeigt.
+
+02:50.640 --> 02:58.320
+Normalerweise würden wir dies über zwei oder mehr Klassen hinweg tun, aber der Kürze halber zeige ich hier eine Klasse
+
+02:58.320 --> 03:00.540
+die sich selbst zuhört, sozusagen.
+
+03:00.540 --> 03:06.030
+Während das letzte Beispiel in Unity eingebaut wurde, ist hier eine benutzerdefinierte Klasse, die Sie später sehen werden, wenn
+
+03:06.030 --> 03:07.230
+wir uns mit dem Code beschäftigen.
+
+03:07.230 --> 03:13.020
+Ich habe einige der Konzepte des Unity-Ereignisses übernommen und sie in die Observable-Klasse eingebaut.
+
+03:13.020 --> 03:13.440
+Hier.
+
+03:13.440 --> 03:21.240
+In diesem Beispiel des Observable, kann ich ein Observable erstellen, das auf ein Observable hört und aufruft
+
+03:21.240 --> 03:22.380
+diese Observable.
+
+03:23.320 --> 03:30.430
+Das ist ein weit verbreitetes Muster, besonders wenn man seine Daten vom Rest der Spiellogik trennt
+
+03:30.430 --> 03:33.770
+zu einer, die man abonniert, wenn sich die Daten ändern.
+
+03:33.790 --> 03:39.420
+Diese observable Klasse ist ein wirklich einfacher Weg, um das Observer-Muster zu nutzen.
+
+03:39.430 --> 03:41.560
+Jeder Zeitwert ändert sich.
+
+03:41.560 --> 03:43.510
+Sie können das hier im Code sehen.
+
+03:43.510 --> 03:45.230
+Und wie das letzte Beispiel.
+
+03:45.250 --> 03:51.640
+Normalerweise würden wir zwei oder mehr Klassen für eine vollständige Demo verwenden, aber der Kürze halber habe ich es in eine Klasse gepackt
+
+03:51.640 --> 03:52.210
+Datei.
+
+03:52.540 --> 04:00.100
+Das Beobachtermuster ist so grundlegend und vorteilhaft, wenn Sie feststellen, dass Sie es gerade genug benutzt haben
+
+04:00.100 --> 04:03.790
+aber nicht wirklich versteht oder das Gefühl hat, dass man es ausnutzt.
+
+04:03.910 --> 04:06.180
+Ich werde es mir auf jeden Fall genauer ansehen.
+
+04:06.190 --> 04:09.610
+Wir werden es in einigen Beispielen sehen, die wir später in unseren Beispielen machen werden.
+
+04:09.610 --> 04:16.570
+Aber man kann es auch in vielen verschiedenen APIs und SDKs sehen, die mit den Unity-Projekten verbunden sind.
+
+04:16.570 --> 04:22.360
+Es ist ungeheuer einfach und mächtig, die verschiedenen Bereiche deines Codes zu trennen, die
+
+04:22.360 --> 04:23.580
+einige Vorteile bringen wird.
+
+04:23.590 --> 04:24.340
+Vielen Dank!

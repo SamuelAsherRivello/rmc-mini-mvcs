@@ -1,0 +1,433 @@
+WEBVTT
+
+00:00.180 --> 00:04.080
+Então, vou fazer a codificação ao vivo aqui para enfrentar um dos desafios de codificação.
+
+00:04.080 --> 00:11.250
+Este vai ser adicionar um botão claro à IU para que não seja para fazer o login e não seja para fazer o logout,
+
+00:11.250 --> 00:14.510
+mas apenas para limpar os campos de nome de usuário e senha.
+
+00:14.520 --> 00:19.440
+É um exemplo um pouco forçado porque o nosso botão de logout faz algo semelhante, mas
+
+00:19.440 --> 00:26.220
+Quero mostrar um exemplo de como podemos adicionar algo novo ao The View e fazer com que isso se propague adequadamente
+
+00:26.220 --> 00:27.330
+através das preocupações.
+
+00:27.330 --> 00:30.270
+Portanto, vamos começar com a própria visualização e adicionar o nosso novo botão.
+
+00:30.270 --> 00:37.650
+Então, vou a este objecto de jogo aqui, que é um pré-fabricado e vou acrescentar um novo botão e vou
+
+00:37.650 --> 00:39.450
+chamá-lo de botão limpar.
+
+00:40.650 --> 00:42.300
+Vou dar-lhe um nome.
+
+00:44.190 --> 00:52.350
+Também lhe darei o texto adequado para dizer limpar, e depois volto aqui para a vista de início de sessão e
+
+00:52.350 --> 00:56.190
+é aí que o botão de login e o botão de logout são declarados.
+
+00:56.190 --> 00:59.490
+Então, eu abro essa classe.
+
+01:00.820 --> 01:06.730
+Tentarei manter a ordem correta para que esse botão fique visualmente no meio.
+
+01:07.360 --> 01:11.770
+Portanto, vou seguir em frente e fazer isso e colocá-lo entre os outros dois.
+
+01:12.280 --> 01:16.930
+Eu dou um toque aqui para deixar o unity recompilar.
+
+01:18.540 --> 01:24.810
+E agora, a partir da interface do usuário, preciso declarar que o botão limpar está conectado corretamente.
+
+01:24.810 --> 01:27.000
+Portanto, agora a visualização sabe sobre isso.
+
+01:27.000 --> 01:28.140
+Vou executar a cena.
+
+01:29.440 --> 01:31.690
+Antes de mais nada, observe que ainda não está cinza.
+
+01:31.690 --> 01:36.910
+É claro que eu não fiz nenhuma codificação, mas posso clicar no botão limpar aqui para que ele clique, mas obviamente
+
+01:36.910 --> 01:38.080
+nenhuma consequência ainda.
+
+01:39.160 --> 01:41.770
+A próxima coisa que eu gostaria de fazer com isso é simplesmente seguir.
+
+01:41.770 --> 01:43.390
+Bem, como funciona o botão de login?
+
+01:43.390 --> 01:44.790
+Bem, aqui está ele.
+
+01:44.800 --> 01:53.740
+Então, vou copiar e colar e vamos limpar o botão e depois vou imitar a estrutura que está
+
+01:53.740 --> 01:54.440
+aqui.
+
+01:54.460 --> 01:56.470
+O botão Limpar é clicado.
+
+01:56.980 --> 02:01.060
+Esse método ainda não existe, portanto, vou descer aqui.
+
+02:04.960 --> 02:05.770
+Aqui vamos nós.
+
+02:06.370 --> 02:10.990
+Assim, podemos ver que dentro do botão de login temos um evento de login personalizado.
+
+02:10.990 --> 02:13.980
+Portanto, no botão limpar, queremos ter um evento de limpeza personalizado.
+
+02:13.990 --> 02:16.150
+Então, vamos em frente e limpar isso aqui.
+
+02:18.390 --> 02:20.130
+Vamos chamá-lo de "on clear".
+
+02:25.750 --> 02:26.170
+Aqui vamos nós.
+
+02:27.580 --> 02:34.420
+E vou fazer com que isso não aceite quaisquer parâmetros.
+
+02:34.420 --> 02:36.460
+Então, na verdade, tenho de ajustar.
+
+02:37.520 --> 02:38.420
+E.
+
+02:39.680 --> 02:41.990
+Porque eu não preciso de nenhum parâmetro.
+
+02:44.520 --> 02:47.550
+E, como prática recomendada, eu lhe darei seu próprio evento.
+
+02:54.680 --> 02:56.420
+Pronto, agora já capturamos o botão.
+
+02:56.420 --> 03:00.100
+Clique a partir da interface do usuário aqui no The View e despachamos o clear.
+
+03:00.110 --> 03:04.280
+Vou imitar como eu trabalharia em um projeto de produção, especialmente se estiver adicionando uma funcionalidade que é
+
+03:04.280 --> 03:05.890
+muito semelhante a outra coisa.
+
+03:05.900 --> 03:10.670
+Observe que acabei de ver como o botão de login funcionava e copiei e colei.
+
+03:10.700 --> 03:12.560
+Vamos seguir o mesmo padrão aqui.
+
+03:13.970 --> 03:16.070
+Vou encontrar usos para isso.
+
+03:25.510 --> 03:32.530
+Estou apenas usando as referências de visualização do editor de código ou visualizando os usos e sendo capaz de ver, bem, onde
+
+03:32.530 --> 03:34.240
+esse evento de login é usado?
+
+03:34.240 --> 03:36.310
+O que é usado dentro do controlador aqui?
+
+03:36.310 --> 03:38.800
+Portanto, vou imitar esse fluxo também.
+
+03:41.310 --> 03:43.890
+E vamos acrescentar um novo método aqui.
+
+03:44.850 --> 03:46.830
+Aqui está o controlador.
+
+03:59.780 --> 04:04.880
+E, neste caso específico, quero traduzir esse evento de visualização em um comando.
+
+04:05.300 --> 04:09.820
+Então, vou dar uma olhada e ir até a fonte de onde está o comando enviado.
+
+04:09.830 --> 04:11.420
+Dê uma olhada no meu projeto aqui.
+
+04:12.390 --> 04:17.130
+Na verdade, não preciso de nenhum argumento porque, se você pensar em limpar, não preciso dizer qual
+
+04:17.160 --> 04:18.560
+campos foram eliminados.
+
+04:18.570 --> 04:24.000
+Posso apenas entender que sempre que o botão limpar for clicado, não passe nenhum detalhe,
+
+04:24.000 --> 04:26.820
+apenas limpe globalmente o que precisa ser limpo.
+
+04:26.820 --> 04:32.490
+Portanto, não vou aceitar nenhum parâmetro aqui e vou fazer o comando clear.
+
+04:56.690 --> 05:01.200
+Portanto, aqui o controlador está ouvindo esse evento e enviando um novo comando.
+
+05:01.220 --> 05:05.260
+Então, se executássemos a cena agora, tudo seria compilado, certo?
+
+05:05.270 --> 05:07.130
+Estaríamos capturando o clique.
+
+05:07.130 --> 05:11.750
+O clique está sendo propagado aqui para o controlador, como seria de se esperar, e então ele está enviando
+
+05:11.750 --> 05:14.440
+um comando, mas ninguém está ouvindo o comando.
+
+05:14.450 --> 05:17.270
+Então, se pensarmos bem, quem deveria estar ouvindo?
+
+05:17.270 --> 05:19.730
+Quem de fato lidaria com as conseqüências disso?
+
+05:20.390 --> 05:21.440
+Bem, é a visão, certo?
+
+05:21.440 --> 05:23.570
+Então, vamos dar uma olhada na visualização.
+
+05:35.470 --> 05:38.500
+Então, aqui na visualização, vamos nos inscrever nesse novo evento.
+
+06:12.280 --> 06:14.380
+Pronto, conectamos o comando clear corretamente.
+
+06:14.380 --> 06:16.470
+Agora, vamos de fato pensar no que deve acontecer.
+
+06:16.480 --> 06:19.300
+Bem, é algo parecido com o que acontece quando fazemos o logout.
+
+06:19.300 --> 06:20.770
+Então, vamos dar uma olhada no logout.
+
+06:24.240 --> 06:27.220
+Então, o logout, que copiei daqui para começar.
+
+06:27.240 --> 06:32.280
+O que ele faz é simplesmente passar por ele e definir corretamente todos esses campos aqui.
+
+06:34.400 --> 06:38.810
+Portanto, queremos algo que imite exatamente o que o logout faz.
+
+06:38.810 --> 06:43.400
+Mas, para termos algo novo, vamos copiar isso aqui.
+
+06:45.230 --> 06:46.550
+Você sabe, basta substituí-los.
+
+06:46.760 --> 06:48.290
+Sei que já os temos aqui.
+
+06:48.290 --> 06:59.150
+E vou atualizar isso para dizer "log in cleared" e para o texto de status, vou dizer apenas "enter username".
+
+06:59.150 --> 07:02.900
+e a senha, mas não colocarei a dica apenas para ter algo diferente aqui.
+
+07:05.170 --> 07:05.740
+Certo.
+
+07:05.770 --> 07:12.190
+Agora, outra coisa é que cada vez que eu estiver alternando o botão de login e o botão de logout, eu devo
+
+07:12.190 --> 07:15.150
+pensar também no botão limpar agora.
+
+07:15.160 --> 07:19.840
+Então, vamos subir até o topo e eu vou percorrer e em qualquer lugar que eu veja o interativo será usado
+
+07:20.170 --> 07:22.810
+atualize-o para o botão limpar.
+
+07:34.850 --> 07:37.340
+Então, aqui temos o botão de login.
+
+07:37.580 --> 07:39.410
+Quando fazemos o logout.
+
+07:43.710 --> 07:49.830
+O botão limpar não deve ser ativado porque quando você faz o logout, tudo já está limpo.
+
+07:49.830 --> 07:51.060
+Você não deve ser capaz de clicar nele.
+
+07:53.770 --> 07:59.080
+Então, quando você pressionar o botão Limpar novamente, não deverá ser possível clicar em Limpar uma segunda vez
+
+07:59.080 --> 08:00.910
+porque os campos já estão limpos.
+
+08:04.130 --> 08:06.560
+Toda vez que você clicar, faça o login.
+
+08:08.350 --> 08:10.630
+Eu diria que você deveria ser capaz de fazer isso.
+
+08:12.760 --> 08:14.020
+Está claro aí?
+
+08:16.030 --> 08:18.190
+Na verdade, não temos um estado de login completo aqui.
+
+08:18.190 --> 08:20.770
+Portanto, parte disso é apenas para fins de demonstração.
+
+08:22.440 --> 08:25.350
+E então, cada vez que você faz o logout.
+
+08:26.560 --> 08:29.740
+Basicamente, queremos que o logout e o clear se comportem de forma semelhante.
+
+08:29.740 --> 08:31.450
+Portanto, log out e clear.
+
+08:33.040 --> 08:34.240
+Sim, acho que é isso mesmo.
+
+08:34.480 --> 08:36.580
+Vamos dar uma olhada e ver como estamos até agora.
+
+08:38.050 --> 08:40.750
+O botão de limpar do microfone está devidamente acinzentado.
+
+08:43.190 --> 08:48.440
+Agora, quando eu começar a digitar aqui, gostaria que o botão de limpar ficasse habilitado.
+
+08:48.440 --> 08:49.460
+Então, vamos dar uma olhada nisso.
+
+09:23.670 --> 09:28.440
+Então, eu atualizei aqui sempre que esses campos da IU estiverem sendo digitados.
+
+09:28.440 --> 09:35.820
+Eu já tinha um evento unity chamando esse método aqui, portanto, só permito que o login seja enviado se ambos
+
+09:35.820 --> 09:37.920
+dos campos tiverem algo neles.
+
+09:38.040 --> 09:42.930
+Portanto, quero dizer que se algum dos campos tiver algo, você poderá clicar em
+
+09:42.930 --> 09:43.770
+o botão de limpar.
+
+09:43.890 --> 09:50.130
+Este é um detalhe de nível de implementação, mas é bom poder mostrar os tipos de pensamentos e
+
+09:50.130 --> 09:53.490
+decisões pelas quais você passaria ao adicionar uma nova parte da interface do usuário.
+
+09:56.140 --> 09:58.480
+Então, aqui estamos executando a demonstração novamente.
+
+09:59.940 --> 10:04.170
+Observe que, quando digito algo aqui, o botão limpar é ativado.
+
+10:04.350 --> 10:07.560
+Se eu remover do campo, ele será desativado.
+
+10:08.190 --> 10:11.010
+Se eu digitar um pouco da senha.
+
+10:11.800 --> 10:15.400
+E se eu desfizer a senha, ela volta a funcionar corretamente.
+
+10:15.670 --> 10:17.740
+Agora, digamos que eu tivesse os dois campos lá.
+
+10:17.740 --> 10:23.290
+Eu poderia fazer o login ou clicar em limpar e ele voltaria a funcionar corretamente.
+
+10:23.290 --> 10:24.640
+Vou digitar isso novamente.
+
+10:25.120 --> 10:31.870
+Novamente, aqui podemos fazer o login ou clicar em limpar, e agora está funcionando corretamente para nós.
+
+10:31.870 --> 10:33.820
+Portanto, não fiz um teste robusto.
+
+10:33.820 --> 10:35.890
+Não me certifiquei de que todos os casos de canto estão lá.
+
+10:35.890 --> 10:43.240
+Mas aqui eu queria demonstrar como seria adicionar um novo elemento da interface do usuário e depois poder propagar
+
+10:43.240 --> 10:43.720
+através dele.
+
+10:43.720 --> 10:51.670
+Todas as preocupações e aqui as preocupações eram colocar a UI na cena da unidade e depois trazê-la para
+
+10:51.670 --> 10:58.360
+a classe View em si, depois ouvir a View e passar isso para o controlador e depois
+
+10:58.360 --> 11:00.670
+fazendo com que o controlador envie os comandos apropriados.
+
+11:00.670 --> 11:02.500
+Assim, conseguimos fazer tudo isso.
+
+11:02.500 --> 11:07.990
+Agora eu estava explicando à medida que avançava, mas digamos que isso leve alguns minutos.
+
+11:08.200 --> 11:15.040
+Uma abordagem alternativa seria simplesmente a View ouvir um evento de unidade e se atualizar sem
+
+11:15.040 --> 11:18.250
+controlador envolvido e sem comandos envolvidos.
+
+11:18.370 --> 11:20.560
+E esse não é um lugar ruim para começar.
+
+11:20.560 --> 11:24.790
+Mas agora nenhuma das outras preocupações pode capturar esse momento no tempo.
+
+11:24.790 --> 11:30.160
+O que é bom no fluxo que fizemos aqui, esse tipo de orquestração completa, é que qualquer
+
+11:30.160 --> 11:31.960
+preocupação seria capaz de ouvir?
+
+11:31.990 --> 11:34.210
+O botão "limpar" acabou de ser clicado?
+
+11:34.210 --> 11:38.200
+Às vezes você precisa desse tipo de mensagem e às vezes não.
+
+11:38.200 --> 11:44.860
+Portanto, cabe a você, enquanto navega pelas águas aqui, aprender MVC para decidir entre como
+
+11:44.860 --> 11:49.450
+robusto você deseja configurar a comunicação e a propagação por meio das preocupações.
+
+11:49.450 --> 11:53.310
+Então é isso para adicionar essa atribuição de codificação aqui na amostra.
+
+11:53.320 --> 11:54.130
+Muito obrigado.

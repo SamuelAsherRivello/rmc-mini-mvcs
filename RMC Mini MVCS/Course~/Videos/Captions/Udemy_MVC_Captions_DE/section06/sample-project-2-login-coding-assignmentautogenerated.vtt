@@ -1,0 +1,433 @@
+WEBVTT
+
+00:00.180 --> 00:04.080
+Ich werde hier also live programmieren, um eine der Programmierherausforderungen zu meistern.
+
+00:04.080 --> 00:11.250
+Bei dieser Aufgabe geht es darum, der Benutzeroberfläche eine eindeutige Schaltfläche hinzuzufügen, damit man sich nicht an- oder abmelden muss,
+
+00:11.250 --> 00:14.510
+sondern nur, um die Felder für den Benutzernamen und das Passwort zu löschen.
+
+00:14.520 --> 00:19.440
+Das ist jetzt ein etwas konstruiertes Beispiel, weil unser Logout-Button etwas Ähnliches macht, aber
+
+00:19.440 --> 00:26.220
+Ich möchte ein Beispiel dafür zeigen, wie wir etwas Neues zur Ansicht hinzufügen können und wie es sich richtig ausbreitet
+
+00:26.220 --> 00:27.330
+durch die Bedenken.
+
+00:27.330 --> 00:30.270
+Beginnen wir also mit der Ansicht selbst und fügen unsere neue Schaltfläche hinzu.
+
+00:30.270 --> 00:37.650
+Ich gehe also in dieses Spielobjekt hier, das eine Vorabversion ist, und füge eine neue Schaltfläche hinzu, und ich werde
+
+00:37.650 --> 00:39.450
+nenne sie die Schaltfläche "Löschen".
+
+00:40.650 --> 00:42.300
+Ich werde ihr einen Namen geben.
+
+00:44.190 --> 00:52.350
+Ich gebe ihr auch den richtigen Text, um sie zu löschen, und dann komme ich zurück in die Log-in-Ansicht und
+
+00:52.350 --> 00:56.190
+dort werden der Login-Button und der Logout-Button deklariert.
+
+00:56.190 --> 00:59.490
+Ich öffne also diese Klasse.
+
+01:00.820 --> 01:06.730
+Und ich werde versuchen, die Reihenfolge richtig zu halten, so dass diese Schaltfläche visuell in der Mitte sitzt.
+
+01:07.360 --> 01:11.770
+Ich werde das also tun und sie zwischen die beiden anderen setzen.
+
+01:12.280 --> 01:16.930
+Ich tippe hier zurück und lasse Unity neu kompilieren.
+
+01:18.540 --> 01:24.810
+Und jetzt muss ich in der UI hier erklären, dass der Clear-Button jetzt richtig verkabelt ist.
+
+01:24.810 --> 01:27.000
+Jetzt weiß die Ansicht darüber Bescheid.
+
+01:27.000 --> 01:28.140
+Ich starte die Szene.
+
+01:29.440 --> 01:31.690
+Als erstes fällt auf, dass sie noch nicht ausgegraut ist.
+
+01:31.690 --> 01:36.910
+Ich habe natürlich noch nichts kodiert, aber ich kann hier auf die Schaltfläche "Löschen" klicken, damit es klickt, aber offensichtlich
+
+01:36.910 --> 01:38.080
+noch keine Konsequenz.
+
+01:39.160 --> 01:41.770
+Das nächste, was ich damit machen möchte, ist einfach zu folgen.
+
+01:41.770 --> 01:43.390
+Nun, wie funktioniert die Schaltfläche "Anmelden"?
+
+01:43.390 --> 01:44.790
+Nun, hier ist sie.
+
+01:44.800 --> 01:53.740
+Ich werde einfach kopieren und einfügen, und wir werden die Schaltfläche löschen, und dann werde ich die Struktur nachahmen, die ist
+
+01:53.740 --> 01:54.440
+dort.
+
+01:54.460 --> 01:56.470
+Die Schaltfläche Löschen wird angeklickt.
+
+01:56.980 --> 02:01.060
+Diese Methode gibt es noch nicht, also komme ich einfach hier runter.
+
+02:04.960 --> 02:05.770
+Jetzt geht's los.
+
+02:06.370 --> 02:10.990
+Wir sehen also, dass wir innerhalb der Login-Schaltfläche ein benutzerdefiniertes Anmeldeereignis haben.
+
+02:10.990 --> 02:13.980
+In der Schaltfläche "Löschen" wollen wir ein benutzerdefiniertes Ereignis zum Löschen haben.
+
+02:13.990 --> 02:16.150
+Machen wir also weiter und löschen das hier.
+
+02:18.390 --> 02:20.130
+Wir nennen es "on clear".
+
+02:25.750 --> 02:26.170
+Jetzt geht's los.
+
+02:27.580 --> 02:34.420
+Und ich werde dafür sorgen, dass es keine Parameter braucht.
+
+02:34.420 --> 02:36.460
+Also muss ich das tatsächlich anpassen.
+
+02:37.520 --> 02:38.420
+Und.
+
+02:39.680 --> 02:41.990
+Weil ich keine Parameter brauche.
+
+02:44.520 --> 02:47.550
+Und als bestes Verfahren gebe ich ihm dort einfach ein eigenes Ereignis.
+
+02:54.680 --> 02:56.420
+Okay, jetzt haben wir also die Schaltfläche erfasst.
+
+02:56.420 --> 03:00.100
+Klicken Sie von der UI hier in der Ansicht und wir haben das Ereignis "clear" ausgelöst.
+
+03:00.110 --> 03:04.280
+Ich ahme nach, wie ich in einem Produktionsprojekt arbeiten würde, besonders wenn ich Funktionalität hinzufüge, die
+
+03:04.280 --> 03:05.890
+sehr ähnlich zu etwas anderem ist.
+
+03:05.900 --> 03:10.670
+Beachten Sie, dass ich mir gerade angesehen habe, wie die Anmeldeschaltfläche funktioniert, und ich habe sie kopiert und eingefügt.
+
+03:10.700 --> 03:12.560
+Wir werden hier demselben Muster folgen.
+
+03:13.970 --> 03:16.070
+Ich werde nach Verwendungen dafür suchen.
+
+03:25.510 --> 03:32.530
+Ich benutze einfach die View-Referenzen oder View-Usages des Code-Editors und kann sehen, also, wo
+
+03:32.530 --> 03:34.240
+wird das Login-Ereignis verwendet?
+
+03:34.240 --> 03:36.310
+Was wird hier innerhalb des Controllers verwendet?
+
+03:36.310 --> 03:38.800
+Ich werde also auch diesen Ablauf nachahmen.
+
+03:41.310 --> 03:43.890
+Und wir fügen hier eine neue Methode hinzu.
+
+03:44.850 --> 03:46.830
+Hier ist also der Controller.
+
+03:59.780 --> 04:04.880
+Und in diesem speziellen Fall möchte ich dieses View-Ereignis in einen Befehl übersetzen.
+
+04:05.300 --> 04:09.820
+Ich gehe also zu der Quelle, in der sich der übermittelte Befehl befindet.
+
+04:09.830 --> 04:11.420
+Schauen Sie hier in mein Projekt.
+
+04:12.390 --> 04:17.130
+Eigentlich brauche ich keine Argumente, denn wenn man an Entrümpelung denkt, muss ich nicht sagen, welche
+
+04:17.160 --> 04:18.560
+Felder geleert wurden.
+
+04:18.570 --> 04:24.000
+Ich kann nur irgendwie verstehen, dass jedes Mal, wenn die Schaltfläche Löschen angeklickt wird, keine Details weitergegeben werden,
+
+04:24.000 --> 04:26.820
+nur global löschen, was gelöscht werden muss.
+
+04:26.820 --> 04:32.490
+Ich nehme hier also keine Parameter und gebe den Befehl clear.
+
+04:56.690 --> 05:01.200
+Hier hört der Controller nun auf dieses Ereignis und sendet einen neuen Befehl aus.
+
+05:01.220 --> 05:05.260
+Wenn wir die Szene jetzt ausführen würden, würde alles kompiliert werden, richtig?
+
+05:05.270 --> 05:07.130
+Wir würden den Klick erfassen.
+
+05:07.130 --> 05:11.750
+Der Klick wird hier an den Controller weitergegeben, wie Sie es erwarten würden, und dann sendet er aus
+
+05:11.750 --> 05:14.440
+einen Befehl, aber niemand hört auf diesen Befehl.
+
+05:14.450 --> 05:17.270
+Wenn Sie also darüber nachdenken, wer sollte zuhören?
+
+05:17.270 --> 05:19.730
+Wer sollte eigentlich die Konsequenzen daraus ziehen?
+
+05:20.390 --> 05:21.440
+Nun, es ist die Aussicht, richtig?
+
+05:21.440 --> 05:23.570
+Schauen wir uns also die Ansicht an.
+
+05:35.470 --> 05:38.500
+Hier in der Ansicht abonnieren wir das neue Ereignis.
+
+06:12.280 --> 06:14.380
+Okay, wir haben den Clear-Befehl richtig verdrahtet.
+
+06:14.380 --> 06:16.470
+Lassen Sie uns nun überlegen, was eigentlich passieren sollte.
+
+06:16.480 --> 06:19.300
+Nun, es ist in etwa das, was passiert, wenn wir uns abmelden.
+
+06:19.300 --> 06:20.770
+Schauen wir uns also die Abmeldung an.
+
+06:24.240 --> 06:27.220
+Also Logout, das ich von hier kopiert habe, um den Anfang zu machen.
+
+06:27.240 --> 06:32.280
+Es geht einfach durch und setzt alle diese Felder hier richtig.
+
+06:34.400 --> 06:38.810
+Wir wollen also etwas, das genau das nachahmt, was das Abmelden tut.
+
+06:38.810 --> 06:43.400
+Aber um etwas Neues zu haben, kopieren wir das hierher.
+
+06:45.230 --> 06:46.550
+Weißt du, ersetze sie einfach.
+
+06:46.760 --> 06:48.290
+Ich weiß, dass wir sie dort schon haben.
+
+06:48.290 --> 06:59.150
+Und ich werde dies aktualisieren, um zu sagen, log in cleared und für den Statustext, werde ich einfach sagen, enter username
+
+06:59.150 --> 07:02.900
+und Passwort ein, aber ich werde den Hinweis nicht einfügen, nur um etwas anderes zu haben.
+
+07:05.170 --> 07:05.740
+Richtig.
+
+07:05.770 --> 07:12.190
+Eine andere Sache ist, dass ich jedes Mal, wenn ich die Schaltfläche zum Anmelden und Abmelden umschalte, sollte ich
+
+07:12.190 --> 07:15.150
+auch an die Schaltfläche "Löschen" denken.
+
+07:15.160 --> 07:19.840
+Also gehen wir einfach nach oben und ich scrolle durch und überall, wo ich den interaktiven Button sehe, wird er benutzt
+
+07:20.170 --> 07:22.810
+aktualisieren Sie das für die Schaltfläche "Löschen".
+
+07:34.850 --> 07:37.340
+Hier haben wir also die Schaltfläche "Anmelden".
+
+07:37.580 --> 07:39.410
+Wenn wir uns abmelden.
+
+07:43.710 --> 07:49.830
+Die Schaltfläche "Löschen" sollte nicht aktiviert sein, denn wenn man sich frisch abmeldet, ist bereits alles gelöscht.
+
+07:49.830 --> 07:51.060
+Man sollte sie nicht anklicken können.
+
+07:53.770 --> 07:59.080
+Wenn Sie dann erneut auf die Schaltfläche "Löschen" klicken, sollten Sie nicht ein zweites Mal auf "Löschen" klicken können
+
+07:59.080 --> 08:00.910
+weil die Felder bereits gelöscht sind.
+
+08:04.130 --> 08:06.560
+Jedes Mal, wenn Sie klicken, melden Sie sich an.
+
+08:08.350 --> 08:10.630
+Ich würde sagen, dass Sie das können sollten.
+
+08:12.760 --> 08:14.020
+Ist es dort klar?
+
+08:16.030 --> 08:18.190
+Wir haben hier nicht wirklich einen vollständigen Anmeldestatus.
+
+08:18.190 --> 08:20.770
+Einiges davon ist also nur zur Demonstration gedacht.
+
+08:22.440 --> 08:25.350
+Und dann jedes Mal, wenn Sie sich abmelden.
+
+08:26.560 --> 08:29.740
+Im Grunde wollen wir, dass sich Abmelden und Löschen ähnlich verhalten.
+
+08:29.740 --> 08:31.450
+Also abmelden und löschen.
+
+08:33.040 --> 08:34.240
+Ja, ich denke, das ist richtig.
+
+08:34.480 --> 08:36.580
+Schauen wir uns an, wie weit wir sind.
+
+08:38.050 --> 08:40.750
+Die Schaltfläche zum Löschen des Mikrofons ist richtig ausgegraut.
+
+08:43.190 --> 08:48.440
+Sobald ich hier anfange zu tippen, möchte ich, dass die Löschtaste aktiviert wird.
+
+08:48.440 --> 08:49.460
+Schauen wir uns das mal an.
+
+09:23.670 --> 09:28.440
+Ich habe hier also jedes Mal aktualisiert, wenn diese UI-Felder eingegeben werden.
+
+09:28.440 --> 09:35.820
+Ich hatte bereits ein Unity-Ereignis, das diese Methode hier aufruft, also erlaube ich die Anmeldung nur, wenn beide
+
+09:35.820 --> 09:37.920
+der Felder etwas enthalten.
+
+09:38.040 --> 09:42.930
+Hier möchte ich also sagen, wenn in einem der Felder etwas steht, dann können Sie auf
+
+09:42.930 --> 09:43.770
+die Löschtaste drücken.
+
+09:43.890 --> 09:50.130
+Dies ist ein Detail der Implementierungsebene, aber es ist schön, die Arten von Gedanken und
+
+09:50.130 --> 09:53.490
+Entscheidungen zu zeigen, die man beim Hinzufügen eines neuen Teils der Benutzeroberfläche treffen würde.
+
+09:56.140 --> 09:58.480
+Hier läuft also wieder die Demo.
+
+09:59.940 --> 10:04.170
+Wenn ich hier etwas eingebe, wird die Schaltfläche "Löschen" aktiviert.
+
+10:04.350 --> 10:07.560
+Wenn ich etwas aus dem Feld entferne, wird es deaktiviert.
+
+10:08.190 --> 10:11.010
+Wenn ich ein kleines Stück des Passworts eingebe.
+
+10:11.800 --> 10:15.400
+Und wenn ich es rückgängig mache, funktioniert es wieder richtig.
+
+10:15.670 --> 10:17.740
+Nehmen wir an, ich hätte beide Felder dort.
+
+10:17.740 --> 10:23.290
+Ich könnte mich anmelden oder auf "Löschen" klicken und es würde wieder funktionieren.
+
+10:23.290 --> 10:24.640
+Ich gebe das noch einmal ein.
+
+10:25.120 --> 10:31.870
+Auch hier können wir uns anmelden oder auf Löschen klicken, und das funktioniert jetzt wieder richtig für uns.
+
+10:31.870 --> 10:33.820
+Ich habe also keinen robusten Test gemacht.
+
+10:33.820 --> 10:35.890
+Ich habe nicht dafür gesorgt, dass alle Eckfälle vorhanden sind.
+
+10:35.890 --> 10:43.240
+Aber hier wollte ich demonstrieren, wie es wäre, ein neues UI-Element hinzuzufügen und dann in der Lage zu sein, es zu propagieren
+
+10:43.240 --> 10:43.720
+zu propagieren.
+
+10:43.720 --> 10:51.670
+Alle Bedenken und hier die Bedenken waren, die UI in die Unity-Szene zu bringen, dann in
+
+10:51.670 --> 10:58.360
+die View Klasse selbst, dann das Abhören der View und die Weitergabe an den Controller und dann
+
+10:58.360 --> 11:00.670
+der Controller sendet die entsprechenden Befehle.
+
+11:00.670 --> 11:02.500
+All das konnten wir also tun.
+
+11:02.500 --> 11:07.990
+Jetzt habe ich es nach und nach erklärt, aber sagen wir mal, das dauert ein paar Minuten.
+
+11:08.200 --> 11:15.040
+Ein alternativer Ansatz wäre, dass die View einfach auf ein Unity-Ereignis hört und sich selbst aktualisiert, ohne
+
+11:15.040 --> 11:18.250
+Controller und keine Befehle involviert sind.
+
+11:18.370 --> 11:20.560
+Und das ist kein schlechter Startpunkt.
+
+11:20.560 --> 11:24.790
+Aber jetzt kann keines der anderen Unternehmen diesen Moment einfangen.
+
+11:24.790 --> 11:30.160
+Das Schöne an dem Ablauf, den wir hier gemacht haben, diese Art der vollständigen Orchestrierung, ist, dass jeder
+
+11:30.160 --> 11:31.960
+Unternehmen in der Lage wäre, zuzuhören?
+
+11:31.990 --> 11:34.210
+Wurde der Löschknopf gerade angeklickt?
+
+11:34.210 --> 11:38.200
+Manchmal braucht man diese Art von Nachrichten und manchmal nicht.
+
+11:38.200 --> 11:44.860
+Es liegt also an Ihnen, während Sie hier durch die Gewässer navigieren und MVC lernen, zu entscheiden, wie
+
+11:44.860 --> 11:49.450
+robust Sie die Kommunikation und die Ausbreitung durch die Anliegen einrichten wollen.
+
+11:49.450 --> 11:53.310
+Das war's also mit dem Hinzufügen dieser Kodierungszuweisung in das Beispiel.
+
+11:53.320 --> 11:54.130
+Danke!

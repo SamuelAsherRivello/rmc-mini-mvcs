@@ -1,0 +1,94 @@
+WEBVTT
+
+00:00.080 --> 00:01.490
+Olá e seja bem-vindo.
+
+00:01.490 --> 00:05.940
+Gastei algum tempo para adicionar ainda mais conteúdo e vou analisá-lo hoje.
+
+00:05.960 --> 00:06.620
+Ótimo.
+
+00:06.650 --> 00:13.520
+O que eu queria fazer nesta palestra era passar por alguns tópicos avançados e demonstrações avançadas que criei.
+
+00:14.090 --> 00:17.150
+Portanto, vamos examiná-los um a um e ver o que temos aqui.
+
+00:17.150 --> 00:24.140
+Se você estiver usando a unidade por 2 ou 3 anos em tempo integral, mesmo em projetos de produção, você descobrirá que mesmo
+
+00:24.140 --> 00:30.500
+à medida que as melhores mentes se reúnem e trabalham em projetos trazendo algumas das melhores práticas, ele ainda se torna
+
+00:30.500 --> 00:37.160
+um desafio para organizar seus projetos de forma que possam ser escalonados, testados e mantidos.
+
+00:37.160 --> 00:42.380
+Mesmo que você seja novo nos conceitos de MVC, poderá começar a ver os padrões.
+
+00:42.380 --> 00:44.840
+À medida que eu for analisando cada um desses exemplos.
+
+00:44.840 --> 00:48.890
+UI Toolkit Como criar um tutorial no jogo.
+
+00:48.890 --> 00:53.840
+Sabe, quando você quer que o jogador seja guiado durante os primeiros cinco minutos, aprendendo as teclas,
+
+00:53.840 --> 00:59.480
+etc., como exatamente adicionar isso a um jogo com uma abordagem de vários minis.
+
+00:59.480 --> 01:04.890
+Assim, quando você se acostuma com o conceito arquitetônico MVC, normalmente pensamos em ter um desses no
+
+01:04.890 --> 01:06.300
+projeto inteiro.
+
+01:06.300 --> 01:10.590
+Mas e se você realmente quiser dividir o seu projeto e ter mais de um mini nele, o que você definitivamente quer fazer?
+
+01:10.590 --> 01:11.160
+pode?
+
+01:11.700 --> 01:13.710
+Também falarei sobre vinculação de dados.
+
+01:13.710 --> 01:19.740
+Portanto, se você quiser ter um campo de texto na interface do usuário e mapeá-lo para o local onde os dados estão armazenados e qualquer
+
+01:19.740 --> 01:26.910
+Quando o usuário atualizar o texto, ele atualizará automaticamente o modelo de dados e o inverso.
+
+01:26.910 --> 01:29.880
+Sempre que o modelo de dados for atualizado, ele atualizará a interface do usuário.
+
+01:30.060 --> 01:33.990
+Então, olhando para a vinculação de dados, a unidade não suporta isso nativamente.
+
+01:33.990 --> 01:40.680
+O que é muito interessante é que isso está disponível no kit de ferramentas UI para o editor agora e no futuro.
+
+01:40.680 --> 01:43.500
+Está chegando no Unity para tempo de execução.
+
+01:43.500 --> 01:44.910
+Estou muito animado com isso.
+
+01:44.910 --> 01:48.810
+Esta é uma abordagem personalizada que faz algumas ligações de dados.
+
+01:48.930 --> 01:55.260
+Em seguida, vamos dar uma olhada em um jogo simples, este jogo de bola saltitante, e, começando do topo, veremos
+
+01:55.260 --> 01:56.130
+em uma calculadora.
+
+01:56.130 --> 01:59.790
+E este exemplo de contagem crescente é muito introdutório para dar uma olhada.
+
+01:59.790 --> 02:03.450
+Então, vamos começar do topo com a calculadora.
+
+02:03.450 --> 02:05.130
+Então, vamos pular para a unidade aqui.

@@ -1,0 +1,193 @@
+WEBVTT
+
+00:00.150 --> 00:03.690
+Examinons les modèles de conception, en commençant par l'observateur.
+
+00:03.720 --> 00:11.100
+Alors que les principes de conception se situent très haut dans la théorie, les modèles de conception commencent un peu plus à être...
+
+00:11.100 --> 00:14.370
+ancrés dans l'informatique et les solutions spécifiques.
+
+00:14.400 --> 00:16.450
+Cependant, ils ne dépendent pas de la langue.
+
+00:16.470 --> 00:22.080
+Vous pouvez appliquer ces mêmes modèles à une variété de langages de programmation et de plates-formes.
+
+00:22.080 --> 00:28.050
+Vous pouvez considérer un modèle de conception comme un type de solution réutilisable pour un problème de conception.
+
+00:28.080 --> 00:32.550
+Maintenant, vous pouvez imaginer que dans votre projet, il y a beaucoup de choses que vous faites qui sont uniques au projet.
+
+00:32.550 --> 00:38.580
+besoins de votre jeu, mais il y a beaucoup de problèmes différents qui vont se poser et comment vous allez devoir vous organiser.
+
+00:38.580 --> 00:41.160
+Des choses ont déjà été faites dans les logiciels.
+
+00:42.090 --> 00:45.750
+Certains avantages de l'utilisation des modèles de conception sont qu'ils ont fait leurs preuves.
+
+00:46.260 --> 00:51.450
+Nombre de ces problèmes ont déjà été résolus et très bien résolus, alors pourquoi ne pas s'en inspirer ?
+
+00:51.450 --> 00:56.530
+Et cela peut conduire à un développement beaucoup plus rapide ainsi qu'à une maintenance plus facile.
+
+00:56.550 --> 00:59.970
+Voici une liste des modèles de conception les plus populaires.
+
+01:00.150 --> 01:04.620
+Il en existe certainement beaucoup d'autres, et vous pouvez même définir vos propres modèles de conception.
+
+01:04.620 --> 01:10.380
+Mais le fait de connaître une vingtaine d'entre eux vous permet de disposer d'une bibliothèque intéressante pour commencer à réfléchir à vos projets de conception.
+
+01:10.380 --> 01:11.220
+projets.
+
+01:11.220 --> 01:15.270
+Il y a trois grands types de patrons Les patrons de création créent de nouvelles choses.
+
+01:15.270 --> 01:22.950
+Les schémas structurels organisent la mise en place de ces éléments et les schémas comportementaux définissent la manière dont ces systèmes sont mis en œuvre.
+
+01:22.950 --> 01:24.270
+se comportent les uns avec les autres.
+
+01:24.450 --> 01:30.540
+Nous n'en examinerons que quelques-uns, car ils sont directement liés aux architectures que nous allons étudier.
+
+01:30.540 --> 01:31.290
+plus tard.
+
+01:31.290 --> 01:37.290
+Une méthode extrêmement populaire, que vous utilisez probablement déjà, en particulier en tant que développeur d'unités,
+
+01:37.290 --> 01:39.030
+est le modèle de l'observateur.
+
+01:39.030 --> 01:44.040
+Le modèle d'observateur définit la manière dont deux ou plusieurs objets peuvent communiquer ensemble.
+
+01:44.040 --> 01:49.290
+Nous savons maintenant qu'une classe peut obtenir une référence à une seconde classe et appeler une méthode directement sur celle-ci.
+
+01:49.290 --> 01:53.480
+Elle doit avoir cette référence et savoir exactement quelle méthode appeler.
+
+01:53.490 --> 01:58.200
+C'est un exemple de relations étroitement connectées ou étroitement couplées.
+
+01:58.200 --> 02:01.980
+L'avantage de l'observateur est qu'il n'est pas aussi étroitement connecté.
+
+02:01.980 --> 02:08.760
+Bien qu'une classe ait besoin d'une référence à l'expéditeur, elle est en mesure d'échanger plus facilement des données et d'isoler les données de l'expéditeur.
+
+02:08.760 --> 02:12.360
+les problèmes liés à la modification de l'un sans modifier l'autre.
+
+02:12.360 --> 02:18.840
+Il permet également d'avoir plusieurs observateurs et de les ajouter ou de les supprimer facilement au fur et à mesure que l'on progresse dans le modèle.
+
+02:18.840 --> 02:24.210
+et d'autres, jetez un coup d'oeil au diagramme et appliquez ce que nous avons appris sur UML pour comprendre un peu plus ce que nous faisons.
+
+02:24.210 --> 02:24.870
+un peu plus.
+
+02:24.870 --> 02:29.730
+Et pour chacun de ces modèles, il y a une excellente occasion de faire des recherches supplémentaires.
+
+02:29.940 --> 02:32.520
+Voici un exemple d'observateur pour l'unité.
+
+02:32.520 --> 02:38.190
+Il y a plusieurs façons de résoudre ce problème dans unity, mais une solution de première partie que je suis sûr que vous connaissez est la suivante.
+
+02:38.190 --> 02:41.490
+familier avec Unity, c'est l'événement unity.
+
+02:41.790 --> 02:48.510
+Il y a trois parties principales à appeler ici : créer l'événement, écouter l'événement et invoquer l'événement.
+
+02:48.510 --> 02:49.230
+l'événement.
+
+02:49.260 --> 02:50.630
+Tous ces éléments sont affichés ici.
+
+02:50.640 --> 02:58.320
+Normalement, nous ferions cela sur deux classes ou plus, mais par souci de concision, je montre une classe
+
+02:58.320 --> 03:00.540
+s'écoutant elle-même, pour ainsi dire.
+
+03:00.540 --> 03:06.030
+Alors que le dernier exemple était intégré à unity, voici une classe personnalisée que vous verrez plus tard lorsque
+
+03:06.030 --> 03:07.230
+nous entrerons dans le code.
+
+03:07.230 --> 03:13.020
+J'ai repris certains des concepts de l'événement Unity et je les ai placés dans la classe observable.
+
+03:13.020 --> 03:13.440
+Ici.
+
+03:13.440 --> 03:21.240
+Dans cet exemple d'observable, je suis capable de créer un observable, d'écouter un observable et d'invoquer
+
+03:21.240 --> 03:22.380
+cet observable.
+
+03:23.320 --> 03:30.430
+C'est un schéma très courant, en particulier lorsque vous séparez vos données du reste de votre logique de jeu.
+
+03:30.430 --> 03:33.770
+Il n'y a pas d'autre solution que de s'abonner à un service lorsque les données changent.
+
+03:33.790 --> 03:39.420
+Cette classe observable est un moyen très simple d'appliquer le modèle d'observateur.
+
+03:39.430 --> 03:41.560
+Chaque fois qu'une valeur change.
+
+03:41.560 --> 03:43.510
+Vous pouvez voir ce qui se passe dans le code ici.
+
+03:43.510 --> 03:45.230
+Et comme dans le dernier exemple.
+
+03:45.250 --> 03:51.640
+En règle générale, nous devrions utiliser deux classes ou plus pour une démonstration complète, mais par souci de concision, je l'ai placée dans une seule classe
+
+03:51.640 --> 03:52.210
+fichier.
+
+03:52.540 --> 04:00.100
+Le modèle de l'observateur est tellement fondamental et bénéfique si vous trouvez que vous l'avez utilisé juste ce qu'il faut
+
+04:00.100 --> 04:03.790
+mais sans vraiment comprendre ou avoir l'impression d'en tirer profit.
+
+04:03.910 --> 04:06.180
+Il faut absolument aller voir de plus près.
+
+04:06.190 --> 04:09.610
+Nous le verrons dans certains des exemples que nous ferons dans nos échantillons plus tard.
+
+04:09.610 --> 04:16.570
+Mais vous pouvez également le voir à travers de nombreuses API et SDK différentes qui sont connectées à vos projets Unity.
+
+04:16.570 --> 04:22.360
+Il est extrêmement simple et puissant de commencer à séparer les différentes zones de votre code, ce qui vous permet d'avoir une vision claire de ce que vous faites.
+
+04:22.360 --> 04:23.580
+apportera quelques avantages.
+
+04:23.590 --> 04:24.340
+Merci.

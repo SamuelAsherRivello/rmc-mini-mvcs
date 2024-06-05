@@ -1,0 +1,664 @@
+WEBVTT
+
+00:00.150 --> 00:06.650
+Aqui estou em um projeto unity vazio configurado com muitos frameworks de NPCs adicionados, bem como as amostras importadas.
+
+00:06.660 --> 00:10.170
+Aqui está a estrutura de pastas para a versão do jogo com o Mini.
+
+00:10.770 --> 00:15.360
+Já vimos essa estrutura de pastas em amostras anteriores, portanto não entrarei em muitos detalhes.
+
+00:15.360 --> 00:20.400
+Uma coisa que gostaria de mencionar é que, apenas para fins de demonstração, optei por ter o componente de coleta
+
+00:20.430 --> 00:24.750
+esteja fora do mini MVC estruturalmente e dentro do código.
+
+00:24.750 --> 00:26.880
+Durante a visão geral do exemplo, mencionarei o motivo.
+
+00:26.880 --> 00:29.460
+Comecemos por abrir o script de exemplo principal.
+
+00:29.460 --> 00:34.200
+Aqui estamos no script de exemplo principal, tal como fizemos anteriormente.
+
+00:34.200 --> 00:40.440
+temos alguns campos serializados em amostras anteriores que vimos no máximo um campo serializado usado neste
+
+00:40.440 --> 00:40.980
+nível.
+
+00:40.980 --> 00:42.320
+Mas aqui temos três.
+
+00:42.330 --> 00:46.800
+Isto porque esta versão do Mini MVCs tem três vistas.
+
+00:46.800 --> 00:51.780
+Há muitas maneiras de integrar as visualizações na estrutura, mas um bom fluxo que tenho aqui é
+
+00:51.780 --> 00:57.480
+serializá-las no script de exemplo e, em seguida, arrastar as referências dos objetos de jogo relacionados do
+
+00:57.480 --> 01:01.170
+view, player e UI na janela do inspetor.
+
+01:01.170 --> 01:06.450
+Aqui, no início, criamos a mini classe, passamos essas referências e inicializamos.
+
+01:06.450 --> 01:08.250
+Vamos dar uma olhada na hierarquia da cena.
+
+01:08.250 --> 01:14.820
+Portanto, aqui na hierarquia da cena, o script de exemplo principal tem três referências serializadas onde eu
+
+01:14.820 --> 01:19.080
+arrastei as referências para os outros três objetos do jogo que estão na cena.
+
+01:19.080 --> 01:24.810
+Temos a visualização do jogador com um script, temos a visualização da entrada com um script e temos a visualização da IU
+
+01:24.810 --> 01:25.650
+com um script.
+
+01:25.650 --> 01:32.460
+Você pode imaginar que, em um projeto mais complexo, talvez queira dividir a IU e outros elementos de visualização em
+
+01:32.460 --> 01:33.930
+vários objetos de jogo.
+
+01:34.760 --> 01:40.460
+Cada um deles pode ser tratado de forma independente ou talvez atribuído a diferentes desenvolvedores com menos oportunidades
+
+01:40.460 --> 01:43.130
+para conflitos e sobreposições de trabalho aqui.
+
+01:43.160 --> 01:49.610
+O raciocínio é lógico: o jogador tem um papel diferente no jogo do que a interface do usuário, e o
+
+01:49.610 --> 01:51.410
+A entrada também é bastante diferente.
+
+01:51.440 --> 01:53.060
+Vamos retomar a análise do código.
+
+01:53.060 --> 01:54.780
+Aqui estamos no Rollerball mini.
+
+01:54.800 --> 01:57.990
+Aqui estou implementando I Mini NBCs.
+
+01:58.010 --> 02:03.860
+Em exemplos anteriores, subclassificamos a mini classe MVC básica.
+
+02:04.540 --> 02:05.320
+Subclasses.
+
+02:05.350 --> 02:10.290
+Faz sentido quando você quer exatamente um modelo, um controlador de visualização e um serviço.
+
+02:10.300 --> 02:13.210
+Ter um de cada é comum em projetos simples.
+
+02:13.210 --> 02:14.920
+Portanto, esse é o padrão que faz sentido.
+
+02:14.920 --> 02:20.350
+No entanto, aqui, como vamos ter mais granularidade à medida que aumentamos a escala, simplesmente implementamos isto
+
+02:20.350 --> 02:25.450
+e isso nos dá mais flexibilidade para estruturar as coisas da maneira que quisermos aqui nas propriedades.
+
+02:25.450 --> 02:29.560
+Configuramos o contexto inicializado como fizemos antes e em outros exemplos.
+
+02:29.560 --> 02:37.180
+Configuramos o nosso modelo, configuramos várias visualizações, configuramos vários controladores e configuramos o nosso serviço
+
+02:37.180 --> 02:38.500
+aqui embaixo no construtor.
+
+02:38.500 --> 02:42.460
+Aceitamos os três parâmetros correspondentes às UIs.
+
+02:42.460 --> 02:48.010
+Lembre-se, esses são campos serializados e, para facilitar o uso, basta arrastá-los para a cena e, para facilitar
+
+02:48.010 --> 02:49.930
+de uso são passados por aqui.
+
+02:49.930 --> 02:55.410
+Em nosso initialize, configuramos o contexto, o serviço de modelo e o controlador como vimos anteriormente.
+
+02:55.420 --> 02:59.680
+Observe que aqui, no controlador, estamos recebendo mais parâmetros do que vimos antes.
+
+02:59.680 --> 03:00.640
+Assim mesmo.
+
+03:00.640 --> 03:03.310
+O Mini tem algumas visualizações e controladores adicionais.
+
+03:03.310 --> 03:06.640
+Esse construtor recebe alguns parâmetros adicionais.
+
+03:06.640 --> 03:12.760
+A ordem em que inicializamos as coisas aqui geralmente não é importante, mas muitas vezes, como os controladores recebem
+
+03:12.760 --> 03:20.020
+parâmetros em seu construtor, criamos os controladores por último e até mesmo os inicializamos por último que
+
+03:20.020 --> 03:21.430
+quando eles são inicializados.
+
+03:21.430 --> 03:26.920
+Sabemos que as partes que passamos para eles de antemão já estão inicializadas de todas as coisas
+
+03:26.920 --> 03:28.000
+que inicializamos.
+
+03:28.000 --> 03:34.960
+Já vimos exemplos em amostras anteriores do modelo, dos controladores e da visualização.
+
+03:34.960 --> 03:38.860
+Então, vou dar uma olhada no controlador aqui, já que ele faz algo único.
+
+03:38.860 --> 03:42.070
+Aqui estamos na classe do controlador e em alguns exemplos anteriores.
+
+03:42.070 --> 03:45.640
+Vimos que o nosso controlador estende um controlador de base.
+
+03:45.640 --> 03:52.540
+Novamente, a base faz mais sentido quando você tem um modelo, uma visualização, um controlador e um serviço,
+
+03:52.540 --> 03:54.010
+que é um bom padrão.
+
+03:54.130 --> 03:59.560
+Entretanto, sempre que você quiser ter mais dessas preocupações, por exemplo, várias visualizações.
+
+04:00.400 --> 04:02.620
+Precisamos de um controlador personalizado para gerenciá-las.
+
+04:02.620 --> 04:08.070
+Portanto, aqui implementamos o controlador de IA como vimos anteriormente e, em seguida, fazemos a implementação personalizada abaixo.
+
+04:08.080 --> 04:11.290
+Lidamos com a inicialização no contexto, como vimos no passado.
+
+04:11.290 --> 04:16.300
+Dentro do construtor, passamos todos os argumentos e os armazenamos, e dentro do initialize nós
+
+04:16.300 --> 04:21.400
+fazemos nossa configuração típica com inicialização no contexto e depois passamos para alguns detalhes personalizados.
+
+04:21.400 --> 04:26.680
+Observamos os eventos do modelo, observamos os eventos do The View e configuramos o serviço de chute
+
+04:26.680 --> 04:29.650
+o carregamento sempre que o botão de reinicialização da interface do usuário for chamado.
+
+04:29.650 --> 04:31.330
+Esse método também é chamado.
+
+04:31.330 --> 04:37.510
+A implementação é exatamente como vimos na versão não mini MVC, em que oferecemos ao usuário um
+
+04:37.510 --> 04:44.680
+janela de diálogo para saber se tem certeza de que deseja reiniciar e, em seguida, tratar os conceitos de OC ou cancelar aqui quando
+
+04:44.680 --> 04:45.730
+o serviço for carregado.
+
+04:45.730 --> 04:49.540
+Isto é chamado e configuramos os valores do modelo sempre que a nossa entrada.
+
+04:49.540 --> 04:51.730
+O Vue envia um evento.
+
+04:52.450 --> 04:53.740
+Este método é chamado.
+
+04:53.740 --> 04:55.120
+Duas coisas dignas de nota aqui.
+
+04:55.120 --> 05:01.300
+Em primeiro lugar, temos o modelo que armazena um valor para o fato de que estamos atualmente no fim do jogo ou estamos atualmente
+
+05:01.300 --> 05:01.810
+pausado.
+
+05:01.810 --> 05:07.450
+Então, em vários lugares no código aqui, você verá que, se qualquer um desses for o caso, nós saímos de um
+
+05:07.450 --> 05:08.170
+método mais cedo.
+
+05:08.170 --> 05:10.120
+Portanto, essencialmente nada está acontecendo.
+
+05:10.120 --> 05:12.190
+Se estivermos em pausa ou se o jogo estiver terminado.
+
+05:12.190 --> 05:18.100
+E então, como estamos começando a ver um padrão muito comum aqui, aqui no controlador, estamos ouvindo
+
+05:18.100 --> 05:19.720
+para The View.
+
+05:19.720 --> 05:26.050
+Quando a visualização chama o método, esse método aqui é chamado e traduzimos esse evento de visualização em
+
+05:26.050 --> 05:26.890
+um comando.
+
+05:27.340 --> 05:34.570
+Novamente, pegamos a lógica muito acoplada de um evento de visualização e a transmitimos como uma estação de rádio em
+
+05:34.570 --> 05:35.920
+a forma de um comando.
+
+05:36.100 --> 05:42.160
+Neste ponto, qualquer preocupação que queira ouvir pode ouvir esse valor de entrada, que é um vetor
+
+05:42.160 --> 05:48.070
+da direção em que o usuário está usando as teclas de seta sempre que a visualização do player detecta
+
+05:48.100 --> 05:49.660
+uma colisão com um coletor.
+
+05:49.660 --> 05:54.700
+Esse método é chamado. Tornamos o coletor invisível, já que ele foi coletado, tocamos um som e depois
+
+05:54.700 --> 05:58.780
+contamos o valor da pontuação de 0 a 1, dois e três.
+
+05:58.780 --> 06:02.020
+E se o valor máximo da pontuação for três, o jogo termina.
+
+06:02.020 --> 06:07.840
+Estamos começando a ver alguns padrões à medida que continuamos com essas amostras, além de vermos flexibilidade
+
+06:07.840 --> 06:10.690
+em como podemos lidar com diferentes aspectos do desenvolvimento de jogos.
+
+06:10.690 --> 06:16.990
+Então, aqui estamos no controlador e estamos vendo essa transmissão de evento do modelo que, ei, meu
+
+06:16.990 --> 06:18.130
+pontuação foi atualizada.
+
+06:18.130 --> 06:21.280
+Então, vamos pensar em algumas maneiras diferentes de lidar com isso.
+
+06:21.280 --> 06:25.360
+Diferentes preocupações podem estar interessadas na atualização da pontuação.
+
+06:25.360 --> 06:31.990
+Por exemplo, a interface do usuário pode querer atualizar o número do valor da pontuação mostrado na tela e, em teoria,
+
+06:31.990 --> 06:37.900
+alguma outra preocupação pode querer lidar com efeitos especiais ou áudio ou qualquer outra coisa que deva acontecer
+
+06:37.900 --> 06:39.370
+toda vez que a pontuação muda.
+
+06:39.370 --> 06:45.670
+Todas essas preocupações poderiam obter uma referência ao modelo e se inscrever no mesmo evento e lidar com
+
+06:45.670 --> 06:47.500
+as consequências que estamos vendo aqui.
+
+06:47.620 --> 06:49.090
+Essa seria uma solução.
+
+06:49.090 --> 06:52.480
+No entanto, neste exemplo, estamos adotando uma solução diferente.
+
+06:52.480 --> 06:59.170
+A única preocupação que está ouvindo essa mudança de modelo é o controlador, e o controlador está traduzindo
+
+06:59.170 --> 07:00.940
+esse evento em um comando.
+
+07:00.940 --> 07:07.270
+Como os comandos são uma estação de rádio que está sendo transmitida para qualquer interesse, esse é um processo especialmente fácil
+
+07:07.270 --> 07:12.700
+maneira especialmente fácil para que qualquer entidade possa ouvir esse comando sem precisar de uma referência ao modelo.
+
+07:13.030 --> 07:14.890
+Esse é o principal diferencial.
+
+07:14.890 --> 07:18.190
+Não é necessária nenhuma referência ao modelo para ouvir esse comando.
+
+07:18.190 --> 07:23.350
+E quando o modelo muda aqui para esse valor, vemos a mesma configuração e uma mudança no modelo.
+
+07:23.350 --> 07:25.900
+Para esse valor, vemos a mesma configuração novamente.
+
+07:25.900 --> 07:27.250
+Isso é tudo para o controlador.
+
+07:27.250 --> 07:28.540
+Vamos dar uma olhada na visualização.
+
+07:28.570 --> 07:30.940
+Aqui estamos na visualização da IU, por exemplo.
+
+07:30.940 --> 07:37.180
+Como já discutimos antes, não há nenhuma preocupação em muitos MVCs que devem ser um comportamento mono, mas isso é
+
+07:37.180 --> 07:37.870
+opcional.
+
+07:37.870 --> 07:39.370
+Você pode fazer isso sempre que quiser.
+
+07:39.370 --> 07:45.670
+E aqui, porque este é um elemento UI, porque o Unity UI funciona bem em comportamentos mono e porque
+
+07:45.670 --> 07:51.700
+Eu gosto da ideia da visualização em um objeto de jogo na cena, eu estendo meu comportamento.
+
+07:51.700 --> 07:57.070
+Aqui eu crio um evento personalizado para que, sempre que o botão de reiniciar for clicado, eu possa transmitir um evento
+
+07:57.070 --> 07:57.430
+aqui.
+
+07:57.430 --> 08:00.130
+Lido com a inicialização do contexto como sempre fazemos.
+
+08:00.130 --> 08:07.180
+Tenho referência a diferentes campos de texto da interface do usuário, botões e também à janela de diálogo que é anexada
+
+08:07.180 --> 08:08.740
+quando o usuário pressiona reiniciar.
+
+08:08.740 --> 08:14.110
+Aqui no initialize, fazemos coisas bem padrão, incluindo a assinatura do botão de reinicialização
+
+08:14.110 --> 08:14.520
+evento.
+
+08:14.530 --> 08:16.930
+Já vimos esse padrão antes aqui.
+
+08:16.930 --> 08:22.420
+Uma visualização está interessada em alguns comandos, algumas dessas estações de rádio que serão transmitidas
+
+08:22.420 --> 08:30.430
+de um remetente desconhecido Como a visualização da interface do usuário lida com a exibição dos valores da pontuação atual, o máximo
+
+08:30.430 --> 08:34.810
+e a mensagem de status, faz sentido que assinemos esses comandos.
+
+08:34.810 --> 08:35.140
+Aqui.
+
+08:35.140 --> 08:39.430
+Atualizaremos o texto da pontuação em vários pontos, portanto, temos um método aqui para ajudar.
+
+08:39.430 --> 08:42.760
+Quando o comando de alteração da pontuação acontece, atualizamos a interface do usuário aqui.
+
+08:42.760 --> 08:47.950
+Quando o comando de pontuação máxima acontece, também atualizamos a interface do usuário e quando o comando de status acontece,
+
+08:47.950 --> 08:49.120
+atualizamos o status.
+
+08:49.120 --> 08:54.130
+Então, quando eu estava falando sobre o controlador, mencionei que há diferentes maneiras de estruturar
+
+08:54.130 --> 08:55.150
+comunicação.
+
+08:55.150 --> 09:02.230
+A solução que escolhi aqui é que a interface do usuário não tenha uma referência direta ao modelo e ouça
+
+09:02.230 --> 09:03.010
+diretamente.
+
+09:03.550 --> 09:07.720
+Em vez disso, estamos obtendo essas informações indiretamente usando esses comandos.
+
+09:07.720 --> 09:14.410
+Em seu uso de muitos MVC, você pode escolher se deseja ter eventos com acoplamento ou comandos com
+
+09:14.410 --> 09:18.700
+menos acoplamento e, dependendo de suas necessidades, pode haver prós e contras para cada uma dessas soluções
+
+09:18.700 --> 09:19.120
+caminhos.
+
+09:19.120 --> 09:24.100
+Mas, apenas para fins de demonstração, e se quiséssemos que essa visualização acessasse o modelo diretamente?
+
+09:24.100 --> 09:29.620
+De fato, é uma boa prática fazer isso para ler dados do modelo, mas não é recomendado que
+
+09:29.620 --> 09:31.750
+a View escreva diretamente no modelo.
+
+09:31.750 --> 09:37.360
+Então, vamos dar um exemplo de como ler apenas para que possamos ver essa sintaxe aqui nas visualizações da IU Initialize
+
+09:37.360 --> 09:43.270
+Novamente, apenas para fins de exemplo, poderíamos comentar a pontuação, alterar o comando e, em vez disso, ouvir
+
+09:43.270 --> 09:44.500
+diretamente o modelo.
+
+09:44.500 --> 09:45.610
+Vejamos como fazer isso.
+
+09:45.610 --> 09:51.280
+Bem, eu sei qual modelo queremos referenciar e sei como podemos acessá-lo usando o contexto
+
+09:51.280 --> 09:52.000
+e o modelo local.
+
+09:52.510 --> 09:55.960
+Desde que o modelo Rollerball tenha sido registrado, podemos obtê-lo.
+
+09:55.960 --> 10:01.420
+Em seguida, ouço o evento que me interessa e penso que estamos fazendo a pontuação aqui, e sempre que seu valor
+
+10:01.420 --> 10:03.480
+muda, adicionamos um ouvinte.
+
+10:03.490 --> 10:07.300
+Vou criar um novo manipulador, manual ou automaticamente.
+
+10:07.300 --> 10:10.060
+Você pode criar o método adequado para ele.
+
+10:10.060 --> 10:15.550
+E então eu quero imitar exatamente o que estava acontecendo antes, definindo a pontuação local para o valor adequado
+
+10:15.550 --> 10:16.630
+valor de entrada.
+
+10:16.630 --> 10:17.980
+Para fins de documentação.
+
+10:17.980 --> 10:21.010
+Posso atualizar os nomes desses argumentos para que façam mais sentido.
+
+10:21.010 --> 10:21.910
+E aqui está.
+
+10:21.910 --> 10:28.510
+Demonstrei como, em vez de usar um comando, obtenho uma referência ao modelo, assino o
+
+10:28.510 --> 10:31.390
+e manipulo o evento diretamente.
+
+10:31.390 --> 10:37.180
+Como muitas coisas que estamos vendo aqui, esse padrão de comunicação de uma mudança de modelo para a visualização pode
+
+10:37.180 --> 10:38.890
+ser tratado de várias maneiras.
+
+10:38.890 --> 10:43.350
+As duas que mostrei aqui são com ou sem um comando.
+
+10:43.360 --> 10:49.600
+Mencionei anteriormente que, para fins de demonstração, optei por colocar o pickup em uma pasta separada aqui para lembrar
+
+10:49.600 --> 10:52.120
+que ela está sendo tratada de forma um pouco diferente.
+
+10:52.120 --> 10:59.740
+Às vezes, em um projeto, você pode querer ter coisas que existem dentro do Mini estruturalmente e fora
+
+10:59.740 --> 11:00.340
+o Mini.
+
+11:00.340 --> 11:02.860
+Este é um exemplo de algo que está do lado de fora.
+
+11:02.860 --> 11:07.510
+Não faz parte de um serviço de controlador de visualização de modelo, não faz parte do próprio Mini.
+
+11:07.510 --> 11:09.790
+Você poderia ter estruturado as coisas de forma diferente.
+
+11:09.790 --> 11:13.720
+Mas aqui, apenas para fins de demonstração, mais uma vez, estou mostrando isso sentado do lado de fora.
+
+11:13.720 --> 11:17.770
+Cada um dos cubos amarelos que vemos na cena tem esse componente de captação.
+
+11:18.070 --> 11:22.690
+Vamos dar uma olhada no seu conteúdo aqui na classe do componente de coleta, estendemos o comportamento do modelo, que
+
+11:22.690 --> 11:23.440
+faz sentido.
+
+11:23.440 --> 11:28.290
+Queremos ter um cubo na cena e que ele faça coisas como girar.
+
+11:28.300 --> 11:34.270
+Agora, as três coisas principais que ele precisa fazer no papel do jogo é ser um cubo giratório,
+
+11:34.300 --> 11:40.480
+estar disponível para ser pego e, quando for pego, o jogo precisa lidar com suas consequências
+
+11:40.480 --> 11:46.000
+aqui, restaurar alguns campos locais para que essa coleta saiba se o jogo está pausado ou acabou?
+
+11:46.000 --> 11:52.840
+No entanto, aqui na atualização, o cubo gira sozinho, a menos que esteja pausado ou o jogo tenha terminado.
+
+11:52.840 --> 12:00.580
+Esse tipo de estado de jogo de alto nível está sendo usado por partes menores, como o jogador, o inimigo e os coletores
+
+12:00.580 --> 12:02.140
+em um jogo, é muito comum.
+
+12:02.140 --> 12:05.950
+Então, nessa demonstração, eu estava explorando como passar essas informações.
+
+12:05.950 --> 12:12.880
+Há várias soluções diferentes, mas o que estou prestes a lhe mostrar é uma ideia experimental apenas para
+
+12:12.880 --> 12:15.610
+ajudar a ampliar sua mente sobre o que é possível.
+
+12:15.610 --> 12:19.930
+Essa não é necessariamente a melhor prática nem o caminho mais simples.
+
+12:19.930 --> 12:21.580
+É uma ideia um tanto maluca.
+
+12:21.580 --> 12:22.450
+Vamos dar uma olhada.
+
+12:22.450 --> 12:29.710
+Como estou considerando essa coleta um pouco fora do sistema, não é uma visão por escolha nem outra
+
+12:29.710 --> 12:30.340
+preocupação.
+
+12:30.340 --> 12:34.030
+Como podemos fazer com que ele acesse os dados de dentro da visualização?
+
+12:34.030 --> 12:40.300
+Bem, uma vez que a cena acorda e esse objeto acorda, fazemos uma ponte para o Mini e aqui
+
+12:40.300 --> 12:42.070
+está a solução experimental.
+
+12:42.070 --> 12:47.380
+Agora vimos o contexto e o localizador do modelo de contexto.
+
+12:47.380 --> 12:51.660
+O localizador de modelo permite que você registre um modelo e o recupere.
+
+12:51.670 --> 12:53.620
+Vimos isso anteriormente neste exemplo.
+
+12:53.620 --> 12:58.810
+O localizador de contexto não é usado em nenhum lugar da estrutura, exceto aqui.
+
+12:58.810 --> 13:04.690
+É um singleton, no qual qualquer contexto pode se adicionar ao localizador de contexto.
+
+13:04.690 --> 13:08.620
+E qualquer escopo, incluindo este aqui, pode obter o contexto.
+
+13:08.620 --> 13:15.430
+Portanto, sempre que um contexto é adicionado e um modelo é adicionado a esse contexto, verificamos se
+
+13:15.430 --> 13:16.930
+esse é um modelo que me interessa?
+
+13:16.930 --> 13:19.450
+E então assinamos essas alterações aqui.
+
+13:19.450 --> 13:24.610
+No manipulador de eventos, apenas armazenamos uma versão local dos valores que nos interessam.
+
+13:24.610 --> 13:32.200
+E agora, sempre que o jogo termina ou não, ou o jogo é pausado ou não, cada captador ouve isso
+
+13:32.200 --> 13:33.560
+e responde adequadamente.
+
+13:33.580 --> 13:39.940
+Agora, para esse caso de uso específico, eu não lidaria com isso dessa forma, mas eu queria isso em uma das amostras
+
+13:39.940 --> 13:45.070
+apenas para mostrar a você como fazer a ponte entre o mundo não mini e o mundo mini.
+
+13:45.070 --> 13:47.020
+E aqui está um exemplo de como fazer isso.
+
+13:47.020 --> 13:53.530
+Os casos de uso no mundo real disso podem ser se você decidir ter um jogo que atualmente não está habilitado para mini
+
+13:53.530 --> 13:59.080
+e quiser trazer o mini para uma solução híbrida, você poderia usar a técnica que você tem aqui
+
+13:59.080 --> 14:03.010
+para ter partes do seu jogo que ainda não estão em uma preocupação mini.
+
+14:03.010 --> 14:05.200
+Entre no minimundo conforme necessário.
+
+14:05.200 --> 14:09.400
+Portanto, espero inspirar algumas ideias, incluindo esta parte experimental aqui.
+
+14:09.400 --> 14:12.490
+Já examinamos todo o código que queríamos para este exemplo.
+
+14:12.490 --> 14:13.360
+É isso aí.

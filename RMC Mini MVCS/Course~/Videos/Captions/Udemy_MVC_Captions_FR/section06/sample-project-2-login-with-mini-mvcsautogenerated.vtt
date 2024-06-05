@@ -1,0 +1,169 @@
+WEBVTT
+
+00:00.150 --> 00:04.260
+Tout d'abord, regardons la version sans beaucoup de MVCs ajoutés.
+
+00:05.180 --> 00:08.070
+Nous sommes ici à l'intérieur d'un projet unity vide.
+
+00:08.090 --> 00:13.370
+J'ai déjà ajouté le mini NPCs framework et importé les samples.
+
+00:13.670 --> 00:15.650
+Ouvrons l'échantillon de connexion.
+
+00:16.830 --> 00:22.710
+Voici la structure du fichier pour la version de cet exemple qui n'a pas été complétée par le mini MVC.
+
+00:23.280 --> 00:29.820
+Dans la section des ressources, j'ai le préfabriqué utilisé pour l'interface utilisateur ainsi que le fichier texte qui reçoit les informations suivantes
+
+00:29.820 --> 00:32.550
+chargé pour simuler la couche de service.
+
+00:33.180 --> 00:38.700
+J'ai une scène et dans cette scène, nous avons le fichier d'exemple qui donne le coup d'envoi.
+
+00:39.090 --> 00:40.920
+Commençons par exécuter l'exemple.
+
+00:41.220 --> 00:44.550
+Cet exemple est une simulation hors ligne de la connexion.
+
+00:45.030 --> 00:50.460
+Nous utilisons le schéma habituel de saisie d'un nom d'utilisateur et d'un mot de passe.
+
+00:50.940 --> 00:52.560
+Cliquer sur le bouton de connexion.
+
+00:52.560 --> 00:57.330
+En règle générale, un service d'arrière-plan vérifie que ces champs correspondent correctement.
+
+00:58.290 --> 01:03.300
+Dans ce cas, je charge un fichier local et je vérifie que le mot de passe local correspond à celui que j'ai choisi.
+
+01:03.330 --> 01:04.260
+tapé ici.
+
+01:04.710 --> 01:07.890
+Faisons un exemple pratique.
+
+01:19.820 --> 01:23.960
+Comme l'indique le texte à l'écran, le mot de passe est évident.
+
+01:30.490 --> 01:35.890
+Lorsque je clique sur "log in", il y a un court délai, puis nous avons la confirmation que je me suis bien connecté.
+
+01:53.070 --> 01:57.540
+Je me suis déconnecté et je vais maintenant me connecter en utilisant un mot de passe manifestement erroné.
+
+02:00.680 --> 02:02.640
+Et nous voyons que le message a échoué.
+
+02:02.660 --> 02:04.410
+Tout fonctionne donc très bien ici.
+
+02:04.430 --> 02:06.950
+Regardons tout le code qui permet d'obtenir ce résultat.
+
+02:06.950 --> 02:09.500
+Commençons par le fichier d'exemple de haut niveau.
+
+02:10.380 --> 02:12.380
+Voici le code du fichier d'exemple.
+
+02:12.390 --> 02:17.310
+Je vais commencer par le faire défiler, puis je le vérifierai ligne par ligne.
+
+02:44.380 --> 02:49.690
+Nous ne commençons pas par le fichier de classe de l'exemple principal lui-même, mais par un objet de données d'aide.
+
+02:51.310 --> 02:56.260
+Cet objet de données utilisateur contient le nom d'utilisateur et le mot de passe sur le point d'être soumis.
+
+02:56.530 --> 03:01.780
+Voici l'exemple lui-même, et comme pour tous les exemples, nous étendons la monture du comportement afin de pouvoir attacher les objets suivants
+
+03:01.780 --> 03:03.080
+à un objet de jeu.
+
+03:03.100 --> 03:07.990
+Ensuite, nous voyons des champs sérialisés pour tous les différents éléments de l'interface utilisateur à l'intérieur du départ.
+
+03:07.990 --> 03:14.380
+Ici, nous souscrivons à certains événements unity intégrés à l'interface utilisateur, puis nous imitons le clic de la déconnexion.
+
+03:14.380 --> 03:17.160
+en appelant la fonction logout.
+
+03:17.170 --> 03:19.870
+Cela permet d'effacer l'interface utilisateur et de repartir sur de nouvelles bases.
+
+03:19.900 --> 03:26.890
+Ensuite, chaque fois que ces deux champs de saisie sont modifiés, cette fonction est appelée et nous procédons simplement à une mise à jour.
+
+03:26.890 --> 03:28.840
+Êtes-vous déjà autorisé à soumettre ?
+
+03:28.840 --> 03:33.670
+Il s'agit d'une vérification très simple, mais je dis simplement que si les champs sont vides, vous ne pouvez pas soumettre.
+
+03:33.670 --> 03:36.610
+S'il y a quelque chose dans les champs, vous pouvez soumettre.
+
+03:36.760 --> 03:40.510
+Voici ce qui se passe lorsque nous cliquons sur log in et il y a pas mal de choses ici.
+
+03:40.510 --> 03:44.200
+C'est la méthode la plus importante, je vais donc l'examiner section par section.
+
+03:44.350 --> 03:48.430
+Tout d'abord, je crée une nouvelle donnée utilisateur en fonction de ce que l'utilisateur a saisi dans les champs.
+
+03:48.430 --> 03:54.500
+Ensuite, je fais basculer l'intractabilité, voir si elle est désactivée ou non pour chacun des éléments de l'interface utilisateur.
+
+03:54.520 --> 04:00.820
+Comme nous l'avons vu dans l'exemple précédent, nous simulons un appel de back-end en ligne en chargeant simplement un fichier
+
+04:00.820 --> 04:02.080
+fichier texte local.
+
+04:02.200 --> 04:05.320
+Cela permet d'effectuer des opérations asynchrones.
+
+04:05.320 --> 04:12.190
+Il s'agit de données externes, donc lorsque nous discutons des couches de service, cela a du sens pour un composant de couche de service.
+
+04:12.250 --> 04:17.950
+et nous pouvons voir à la fin que ce que nous obtenons est la représentation textuelle du mot de passe valide
+
+04:17.950 --> 04:20.710
+et nous le vérifions simplement par rapport à ce que l'utilisateur a soumis.
+
+04:21.970 --> 04:23.050
+En supposant qu'il y ait une correspondance.
+
+04:23.050 --> 04:25.180
+Nous appelons cela une connexion réussie.
+
+04:25.420 --> 04:31.570
+Nous mettons à jour l'interface utilisateur pour qu'elle soit à nouveau activée, le cas échéant, puis nous affichons un message de réussite ou d'échec.
+
+04:31.570 --> 04:32.380
+à l'écran.
+
+04:32.410 --> 04:38.770
+Enfin, à tout moment, si l'utilisateur appuie sur le bouton de déconnexion, nous imitons cela dans la méthode de démarrage.
+
+04:38.770 --> 04:39.560
+en appelant ce formulaire.
+
+04:39.580 --> 04:42.280
+Au départ, cela efface simplement l'interface utilisateur.
+
+04:42.310 --> 04:43.890
+Exécutons à nouveau l'exemple.
+
+04:43.900 --> 04:48.790
+Je vais l'alimenter avec des informations qui fonctionnent avec succès et la démo est terminée.

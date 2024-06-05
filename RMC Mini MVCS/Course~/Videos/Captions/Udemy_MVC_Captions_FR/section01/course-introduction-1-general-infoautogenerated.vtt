@@ -1,0 +1,229 @@
+WEBVTT
+
+00:02.960 --> 00:06.650
+Bonjour et bienvenue à l'architecture MVC pour Unity.
+
+00:07.460 --> 00:08.350
+Bonjour.
+
+00:08.360 --> 00:09.290
+Je m'appelle Sam.
+
+00:09.320 --> 00:11.390
+Je vais vous guider tout au long de ce cours.
+
+00:11.720 --> 00:16.280
+Je suis un développeur certifié unity avec plus de 20 ans d'expérience.
+
+00:16.310 --> 00:21.020
+Ma mission est d'éduquer et de divertir avec la technologie interactive.
+
+00:21.050 --> 00:25.910
+J'ai livré des titres de jeux Unity pour les consoles PC et les plates-formes mobiles.
+
+00:26.120 --> 00:28.820
+Je suis particulièrement enthousiaste à l'idée de vous proposer ce cours.
+
+00:28.820 --> 00:35.270
+Il s'agit d'un moyen fantastique pour les développeurs intermédiaires et avancés d'améliorer leurs compétences d'une manière qui leur permette d'être plus efficaces.
+
+00:35.270 --> 00:36.110
+de l'importance.
+
+00:36.500 --> 00:39.140
+L'architecture est extrêmement importante.
+
+00:39.530 --> 00:43.730
+Au cours de ma carrière, j'ai eu des expériences variées au sein même de l'unité.
+
+00:43.730 --> 00:49.970
+J'ai travaillé dans le domaine de l'éducation, j'ai enseigné dans des universités et j'ai créé des cours en ligne comme celui-ci.
+
+00:49.970 --> 00:57.860
+des titres de jeux pour les consoles mobiles et les PC, et j'ai également travaillé sur du matériel pédagogique pour les outils unity et
+
+00:57.860 --> 01:00.170
+différentes entreprises de développement de jeux Unity.
+
+01:00.530 --> 01:03.410
+Bienvenue à l'architecture MVC pour Unity.
+
+01:03.560 --> 01:05.670
+Unity est un moteur de jeu polyvalent.
+
+01:05.690 --> 01:09.830
+Il peut être utilisé pour toutes sortes de projets, y compris, bien sûr, les jeux.
+
+01:10.010 --> 01:17.840
+L'architecture MVC, qui signifie Modèle, Vue et Contrôleur, apporte confiance, organisation et souplesse.
+
+01:17.840 --> 01:20.060
+et l'évolutivité de vos projets.
+
+01:20.390 --> 01:26.900
+A l'issue de ce cours, vous disposerez des compétences nécessaires pour concevoir et développer des projets d'unité.
+
+01:26.900 --> 01:28.830
+en utilisant l'architecture MVC.
+
+01:28.850 --> 01:33.980
+Tout au long de ce cours, nous allons nous concentrer sur trois pistes d'apprentissage différentes.
+
+01:34.370 --> 01:40.100
+Qu'il s'agisse des fondamentaux de la conception, des architectures d'unité qui seront abordées, ou de l'architecture de l'unité, nous nous concentrerons sur la conception de l'unité et sur l'architecture de l'unité.
+
+01:40.100 --> 01:41.530
+moteur Unity lui-même.
+
+01:41.540 --> 01:45.860
+Nous examinerons la théorie, l'éditeur et le code du jeu.
+
+01:45.860 --> 01:52.220
+Avec C-sharp, il y aura des pré-requis, il est suggéré avant de commencer ce cours que vous
+
+01:52.220 --> 01:54.230
+suivre le logiciel.
+
+01:54.230 --> 01:59.390
+Tous les logiciels requis sont liés à ce cours et à la section des ressources.
+
+01:59.390 --> 02:00.620
+tous disponibles gratuitement.
+
+02:00.620 --> 02:05.990
+Vous devez donc disposer de votre navigateur Web favori pour rechercher les différents liens qui vous seront donnés en utilisant
+
+02:05.990 --> 02:10.970
+l'éditeur Unity, qui a une version gratuite, et en utilisant votre éditeur de code C-sharp préféré.
+
+02:10.970 --> 02:14.210
+Vous pouvez utiliser la version gratuite qui est incluse dans le téléchargement d'Unity.
+
+02:14.210 --> 02:17.930
+Les connaissances requises pour ce cours ne sont pas pour les débutants.
+
+02:17.930 --> 02:23.230
+Il est suggéré que vous ayez plusieurs mois ou plus d'expérience avec Unity et C-sharp.
+
+02:23.300 --> 02:31.070
+Cela comprend les classes, les interfaces, les méthodes et les propriétés, l'utilisation des événements et les paradigmes généraux.
+
+02:31.070 --> 02:33.110
+de la programmation orientée objet.
+
+02:33.110 --> 02:39.140
+Si vous n'avez pas de connaissances approfondies de ces éléments particuliers, il vous est suggéré de les acquérir.
+
+02:39.140 --> 02:41.330
+avant de suivre ce cours.
+
+02:42.280 --> 02:46.750
+Jetons un coup d'œil au contenu du cours pour voir ce que nous allons couvrir tout au long des sections et des chapitres
+
+02:46.750 --> 02:47.240
+ici.
+
+02:47.260 --> 02:50.820
+Nous commencerons par l'introduction du cours, qui est cette section ici.
+
+02:50.830 --> 02:55.390
+Ensuite, nous aurons une brève vue d'ensemble de l'unité, en examinant comment et pourquoi vous choisiriez l'unité.
+
+02:55.390 --> 02:59.390
+moteur de jeu Unity, ainsi qu'un aperçu de la structure d'Unity.
+
+02:59.410 --> 03:05.560
+Bien que ce cours se concentre sur l'utilisation de l'architecture MVC, nous passons un peu de temps sur les principes fondamentaux.
+
+03:05.560 --> 03:12.610
+Ici, dans le domaine de la conception de logiciels, nous examinerons les principes de conception, les modèles de conception, les diagrammes UML,
+
+03:12.610 --> 03:15.760
+ainsi que l'architecture spécifique à unity.
+
+03:15.850 --> 03:22.240
+Cette section vous permet de comprendre les concepts qui seront repris dans l'architecture.
+
+03:22.240 --> 03:27.100
+Le cours mentionnera plusieurs architectures différentes compatibles avec unity.
+
+03:27.130 --> 03:30.880
+Nous allons progresser en utilisant un cadre particulier que j'ai créé.
+
+03:30.880 --> 03:33.790
+Le mini framework MVC.
+
+03:33.970 --> 03:40.900
+Le mini MVC pour Unity est un excellent framework à utiliser aussi bien en production qu'à des fins éducatives,
+
+03:40.900 --> 03:43.630
+et c'est pour cette raison que je me concentre sur lui dans ce cours.
+
+03:43.810 --> 03:50.170
+Les principes fondamentaux que vous apprenez ici vous aideront quel que soit le cadre final que vous choisissez ou si
+
+03:50.170 --> 03:54.910
+vous choisissez de créer votre propre framework MVC Avec les principes que nous avons appris ici après avoir appris
+
+03:54.910 --> 04:00.910
+comment et pourquoi nous choisissons une architecture et pourquoi MVC est un excellent choix, nous allons examiner des cas particuliers de MVC.
+
+04:00.910 --> 04:01.690
+exemples particuliers.
+
+04:01.690 --> 04:07.450
+Il s'agit de la partie du cours où je partagerai mon écran et où je passerai en revue trois exemples différents.
+
+04:07.450 --> 04:09.320
+différents que j'ai déjà créés.
+
+04:09.340 --> 04:14.440
+Vous pouvez télécharger ces projets et les suivre pendant le cours.
+
+04:14.440 --> 04:15.850
+pour que vous puissiez le faire.
+
+04:16.180 --> 04:24.130
+Nous verrons ici une horloge créée avec MVC, une simple connexion avec MVC, un exemple de jeu Rollerball en 3D,
+
+04:24.130 --> 04:26.450
+ainsi qu'un exemple de projet personnalisé.
+
+04:26.470 --> 04:31.540
+Ces trois premiers projets vont nous permettre d'examiner le projet existant et de voir comment nous pourrions l'accomplir.
+
+04:31.540 --> 04:35.290
+sans MVC et en utilisant le framework MVC.
+
+04:35.290 --> 04:39.160
+Les deux versions sont également disponibles pour consultation.
+
+04:39.160 --> 04:40.360
+Pour ce quatrième échantillon.
+
+04:40.360 --> 04:43.270
+C'est la seule section où je vais coder au fur et à mesure.
+
+04:43.270 --> 04:45.040
+Ce sera une section de codage en direct.
+
+04:45.040 --> 04:49.810
+Je commencerai par le framework MVC et je construirai un tout nouvel exemple.
+
+04:49.810 --> 04:54.280
+De plus, voici tous les concepts et pratiques que nous avons appris jusqu'à ce point dans le cours
+
+04:54.280 --> 04:57.850
+cours seront rassemblés dans une session de codage en direct.
+
+04:57.850 --> 05:03.280
+Nous verrons dans le cours, en particulier dans les principes fondamentaux, que l'une des raisons fantastiques d'adopter la technologie de l'information et de la communication (TIC) est la nécessité d'une formation continue.
+
+05:03.280 --> 05:09.610
+architectures comme MVC, c'est qu'elle sépare votre code en zones bien organisées.
+
+05:09.610 --> 05:14.290
+L'un des avantages de cette approche est qu'elle permet d'effectuer des tests unitaires.
+
+05:14.290 --> 05:19.900
+Nous allons donc, en prime, couvrir le contenu des tests unitaires et du développement piloté par les tests.

@@ -1,0 +1,94 @@
+WEBVTT
+
+00:00.080 --> 00:01.490
+Hallo und willkommen.
+
+00:01.490 --> 00:05.940
+Ich habe einige Zeit damit verbracht, noch mehr Inhalte hinzuzufügen, und ich werde sie heute durchgehen.
+
+00:05.960 --> 00:06.620
+Sehr gut.
+
+00:06.650 --> 00:13.520
+In diesem Vortrag möchte ich einige fortgeschrittene Themen und fortgeschrittene Demos vorstellen, die ich erstellt habe.
+
+00:14.090 --> 00:17.150
+Also gehen wir sie der Reihe nach durch und schauen, was wir hier haben.
+
+00:17.150 --> 00:24.140
+Wenn man Unity 2 oder 3 Jahre lang in Vollzeit benutzt, sogar für Produktionsprojekte, wird man feststellen, dass selbst
+
+00:24.140 --> 00:30.500
+wenn die besten Köpfe zusammenkommen und an Projekten arbeiten, die die besten Praktiken mitbringen, wird es immer noch
+
+00:30.500 --> 00:37.160
+eine Herausforderung, Ihre Projekte so zu organisieren, dass sie skalierbar, testbar und wartbar sind.
+
+00:37.160 --> 00:42.380
+Selbst wenn Sie mit den Konzepten von MVC nicht vertraut sind, werden Sie in der Lage sein, die Muster zu erkennen.
+
+00:42.380 --> 00:44.840
+Während ich durch jedes dieser Beispiele gehe.
+
+00:44.840 --> 00:48.890
+UI Toolkit Wie man ein Tutorial für ein Spiel erstellt.
+
+00:48.890 --> 00:53.840
+Du weißt schon, wenn du den Spieler durch seine ersten fünf Minuten führen willst, um die Tasten zu lernen,
+
+00:53.840 --> 00:59.480
+und so weiter, wie kann man das genau in ein Spiel einbauen, wenn man mehrere Minis hat.
+
+00:59.480 --> 01:04.890
+Wenn man sich also einmal an das MVC-Architekturkonzept gewöhnt hat, denken wir normalerweise daran, einen davon in der
+
+01:04.890 --> 01:06.300
+gesamten Projekt.
+
+01:06.300 --> 01:10.590
+Aber was ist, wenn Sie Ihr Projekt aufbrechen und mehr als eine Miniatur darin haben wollen, was Sie definitiv
+
+01:10.590 --> 01:11.160
+können?
+
+01:11.700 --> 01:13.710
+Ich werde auch über Datenbindung sprechen.
+
+01:13.710 --> 01:19.740
+Wenn Sie also ein Textfeld in Ihrer Benutzeroberfläche haben wollen und dieses dann mit dem Ort verknüpfen wollen, an dem Ihre Daten gespeichert sind, und jede
+
+01:19.740 --> 01:26.910
+wenn der Benutzer den Text aktualisiert, wird das Datenmodell automatisch aktualisiert und umgekehrt.
+
+01:26.910 --> 01:29.880
+Jedes Mal, wenn das Datenmodell aktualisiert wird, wird auch die Benutzeroberfläche aktualisiert.
+
+01:30.060 --> 01:33.990
+Wenn man sich also die Datenbindung ansieht, unterstützt Unity das nicht von Haus aus.
+
+01:33.990 --> 01:40.680
+Interessanterweise ist das im UI-Toolkit für den Editor jetzt und in Zukunft verfügbar.
+
+01:40.680 --> 01:43.500
+Es wird in Unity für die Laufzeit verfügbar sein.
+
+01:43.500 --> 01:44.910
+Ich bin sehr aufgeregt darüber.
+
+01:44.910 --> 01:48.810
+Dies ist ein benutzerdefinierter Ansatz, der einige Datenbindungen vornimmt.
+
+01:48.930 --> 01:55.260
+Dann schauen wir uns ein einfaches Spiel an, dieses Hüpfballspiel, und dann schauen wir uns von oben an
+
+01:55.260 --> 01:56.130
+auf einen Taschenrechner.
+
+01:56.130 --> 01:59.790
+Und dieses Zählbeispiel ist eine sehr einführende Möglichkeit, sich das anzusehen.
+
+01:59.790 --> 02:03.450
+Wir fangen also von oben an, mit dem Taschenrechner.
+
+02:03.450 --> 02:05.130
+Also lasst uns hier in die Einheit einsteigen.

@@ -1,0 +1,193 @@
+WEBVTT
+
+00:00.150 --> 00:03.690
+Diamo un'occhiata ai design pattern, iniziando con l'Observer.
+
+00:03.720 --> 00:11.100
+Ora, mentre i principi di progettazione si collocano molto in alto nella teoria, i design pattern iniziano un po' di più a essere
+
+00:11.100 --> 00:14.370
+ancorati all'informatica e a soluzioni specifiche.
+
+00:14.400 --> 00:16.450
+Tuttavia, sono agnostici rispetto al linguaggio.
+
+00:16.470 --> 00:22.080
+È possibile applicare questi stessi schemi a una varietà di linguaggi di programmazione e piattaforme diverse.
+
+00:22.080 --> 00:28.050
+Si può pensare a un design pattern come a un tipo di soluzione riutilizzabile per un problema di progettazione.
+
+00:28.080 --> 00:32.550
+Ora, potete immaginare che nel vostro progetto ci siano molte cose che state facendo e che sono uniche per il progetto stesso.
+
+00:32.550 --> 00:38.580
+esigenze del vostro gioco, ma molti dei diversi problemi che si presenteranno e come dovrete organizzarvi.
+
+00:38.580 --> 00:41.160
+Le cose sono già state fatte in passato nel software.
+
+00:42.090 --> 00:45.750
+Alcuni vantaggi dell'uso dei design pattern sono la loro comprovata efficacia.
+
+00:46.260 --> 00:51.450
+Molte di queste sfide sono già state risolte in passato e in modo eccellente, quindi perché non imparare da quelle?
+
+00:51.450 --> 00:56.530
+E possono portare a uno sviluppo molto più rapido e a una manutenzione più semplice.
+
+00:56.550 --> 00:59.970
+Qui vediamo un elenco di alcuni dei design pattern più popolari.
+
+01:00.150 --> 01:04.620
+Ce ne sono sicuramente molti altri e si possono anche definire i propri design pattern.
+
+01:04.620 --> 01:10.380
+Ma la conoscenza di circa 20 di essi vi fornisce una buona libreria per iniziare a pensare ai vostri modelli di design.
+
+01:10.380 --> 01:11.220
+progetti.
+
+01:11.220 --> 01:15.270
+Ci sono tre tipi principali I modelli creativi creano nuove cose.
+
+01:15.270 --> 01:22.950
+Gli schemi strutturali organizzano il modo in cui queste cose vengono create e gli schemi comportamentali definiscono il modo in cui questi sistemi
+
+01:22.950 --> 01:24.270
+si comportano tra loro.
+
+01:24.450 --> 01:30.540
+Ne analizzeremo da vicino solo alcuni, poiché si riferiscono direttamente alle architetture che esamineremo.
+
+01:30.540 --> 01:31.290
+più avanti.
+
+01:31.290 --> 01:37.290
+Uno molto popolare, che probabilmente state già usando, soprattutto come sviluppatori di unità,
+
+01:37.290 --> 01:39.030
+è il modello dell'osservatore.
+
+01:39.030 --> 01:44.040
+Il pattern observer definisce il modo in cui uno o più oggetti possono comunicare tra loro.
+
+01:44.040 --> 01:49.290
+Ora sappiamo che una classe può ottenere un riferimento a una seconda classe e chiamare un metodo direttamente su di essa.
+
+01:49.290 --> 01:53.480
+Deve avere quel riferimento e deve sapere esattamente quale metodo chiamare.
+
+01:53.490 --> 01:58.200
+Questo è un esempio di relazione strettamente connessa o strettamente accoppiata.
+
+01:58.200 --> 02:01.980
+Il vantaggio dell'osservatore è che non è così strettamente connesso.
+
+02:01.980 --> 02:08.760
+Anche se una classe ha bisogno di un riferimento al mittente, è in grado di scambiare più facilmente i dati e di isolare
+
+02:08.760 --> 02:12.360
+i problemi che derivano dalla modifica di uno senza modificare l'altro.
+
+02:12.360 --> 02:18.840
+Permette inoltre di avere più osservatori e di aggiungerli e rimuoverli facilmente man mano che si procede con questo schema
+
+02:18.840 --> 02:24.210
+e altri, diamo un'occhiata al diagramma e applichiamo quello che abbiamo imparato su UML per capire un po' di
+
+02:24.210 --> 02:24.870
+un po' di più.
+
+02:24.870 --> 02:29.730
+E con ognuno di questi modelli, c'è un'eccellente opportunità di fare ulteriori ricerche.
+
+02:29.940 --> 02:32.520
+Ecco un esempio di osservatore per l'unità.
+
+02:32.520 --> 02:38.190
+Ora, ci sono diversi modi per risolvere questo problema in unity, ma una soluzione di prima parte che sono sicuro che
+
+02:38.190 --> 02:41.490
+con cui avete familiarità in Unity è l'evento unity.
+
+02:41.790 --> 02:48.510
+Ci sono tre parti principali da richiamare: la creazione dell'evento, l'ascolto dell'evento e l'invocazione dell'evento stesso.
+
+02:48.510 --> 02:49.230
+evento.
+
+02:49.260 --> 02:50.630
+Tutti sono mostrati qui.
+
+02:50.640 --> 02:58.320
+In genere si tratta di due o più classi, ma per brevità mostro una sola classe.
+
+02:58.320 --> 03:00.540
+che ascolta se stessa, per così dire.
+
+03:00.540 --> 03:06.030
+Ora, mentre l'ultimo esempio è stato integrato in unity, ecco una classe personalizzata che vedrete più avanti quando
+
+03:06.030 --> 03:07.230
+entreremo nel codice.
+
+03:07.230 --> 03:13.020
+Ho preso alcuni degli stessi concetti dell'evento Unity e li ho inseriti nella classe observable.
+
+03:13.020 --> 03:13.440
+Qui.
+
+03:13.440 --> 03:21.240
+In questo esempio di osservabile, sono in grado di creare un osservabile che ascolta un osservabile e richiama
+
+03:21.240 --> 03:22.380
+quell'osservabile.
+
+03:23.320 --> 03:30.430
+È uno schema molto comune, soprattutto quando si separano i dati dal resto della logica di gioco.
+
+03:30.430 --> 03:33.770
+a uno da sottoscrivere quando i dati cambiano.
+
+03:33.790 --> 03:39.420
+Questa classe osservabile è un modo molto semplice per legare il modello dell'osservatore.
+
+03:39.430 --> 03:41.560
+Qualsiasi modifica del valore temporale.
+
+03:41.560 --> 03:43.510
+Lo si può vedere nel codice qui.
+
+03:43.510 --> 03:45.230
+E come nell'ultimo esempio.
+
+03:45.250 --> 03:51.640
+In genere si userebbero due o più classi come una demo completa, ma per brevità l'ho inserita in una sola classe
+
+03:51.640 --> 03:52.210
+file.
+
+03:52.540 --> 04:00.100
+Lo schema dell'osservatore è così fondamentale e vantaggioso se si scopre che lo si è usato abbastanza
+
+04:00.100 --> 04:03.790
+ma senza capire o sentire di trarne vantaggio.
+
+04:03.910 --> 04:06.180
+Sicuramente andrò a dare un'occhiata più approfondita.
+
+04:06.190 --> 04:09.610
+Lo vedremo in alcuni degli esempi che faremo in seguito.
+
+04:09.610 --> 04:16.570
+Ma lo si può vedere anche in molte API e SDK diversi collegati ai progetti Unity.
+
+04:16.570 --> 04:22.360
+È estremamente semplice e potente iniziare a separare le diverse aree del codice, che
+
+04:22.360 --> 04:23.580
+porterà alcuni benefici.
+
+04:23.590 --> 04:24.340
+Grazie.

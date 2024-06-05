@@ -1,0 +1,133 @@
+WEBVTT
+
+00:00.240 --> 00:02.490
+Panoramica sulla progettazione del software.
+
+00:02.670 --> 00:06.000
+Iniziamo con la teoria dei principi di progettazione.
+
+00:06.180 --> 00:10.710
+Gli sviluppatori esperti possono farlo sembrare facile, ma il codice pulito non si scrive per caso.
+
+00:10.740 --> 00:17.430
+La creazione di buoni progetti deriva dall'utilizzo di principi solidi, buoni flussi di lavoro e modelli produttivi.
+
+00:17.430 --> 00:18.670
+nel vostro processo.
+
+00:18.690 --> 00:21.440
+Per prima cosa, parliamo dei principi di progettazione.
+
+00:21.450 --> 00:25.040
+Sono le filosofie che portano a uno sviluppo produttivo del software.
+
+00:25.050 --> 00:32.490
+I vantaggi includono una pianificazione più rapida, una comunicazione chiara e la concentrazione durante lo sviluppo.
+
+00:32.700 --> 00:37.350
+La storia dell'informatica è piena di questi principi di progettazione.
+
+00:37.470 --> 00:39.850
+Ne illustrerò alcuni tra i più noti.
+
+00:39.870 --> 00:46.410
+Questa è un'ottima occasione per fare le vostre ricerche su quelli che vi sono nuovi e per scavare
+
+00:46.410 --> 00:49.370
+approfondire quelli con cui avete una certa familiarità.
+
+00:49.380 --> 00:56.220
+Cominciamo con i principi solidi, dove ogni lettera di solid corrisponde a un principio di progettazione.
+
+00:56.490 --> 01:04.530
+Il principio della singola responsabilità è il desiderio generale che ciascuna delle vostre classi e strutture
+
+01:04.530 --> 01:06.050
+faccia una sola cosa.
+
+01:06.060 --> 01:14.010
+Il principio aperto e chiuso significa che ogni classe dovrebbe essere aperta all'estensione ma chiusa alla modifica.
+
+01:14.010 --> 01:19.290
+La programmazione orientata agli oggetti prevede l'ereditarietà e le interfacce.
+
+01:19.290 --> 01:27.840
+Il principio della lista di sostituzione stabilisce che ogni sottotipo deve poter essere lanciato come genitore.
+
+01:27.870 --> 01:29.220
+tipo e interfaccia.
+
+01:29.220 --> 01:36.030
+La segregazione significa che non dobbiamo applicare a un dato tipo più interfacce di quante siano necessarie.
+
+01:36.030 --> 01:41.970
+Infine, l'inversione di dipendenza indica che quando si ha a che fare con codice alto e basso in
+
+01:41.970 --> 01:49.280
+un sistema, il codice di alto livello non dovrebbe dipendere da implementazioni concrete del codice di livello inferiore.
+
+01:49.290 --> 01:55.140
+Dovrebbe invece utilizzare qualcosa come le interfacce per astrarre che alcuni altri concetti popolari includono.
+
+01:55.140 --> 01:56.520
+Non ripetersi.
+
+01:56.520 --> 02:02.940
+Questo è un promemoria che usiamo come sviluppatori per ricordare che se ci si trova a copiare, incollare, letteralizzare il codice
+
+02:02.940 --> 02:08.910
+o concetti, potrebbe esserci un approccio sistematico che ci aiuta a riutilizzare quel codice in modo più efficiente.
+
+02:08.940 --> 02:15.540
+Keep it simple ci ricorda di non complicare eccessivamente le nostre soluzioni e non ne avrete bisogno.
+
+02:15.540 --> 02:19.500
+Ci ricorda di non costruire oggi le soluzioni di domani.
+
+02:20.310 --> 02:21.870
+Nello sviluppo iterativo.
+
+02:21.870 --> 02:28.080
+Vogliamo risolvere le sfide che abbiamo di fronte ora con principi solidi e non ingegnerizzare qualcosa che
+
+02:28.080 --> 02:30.180
+necessariamente a prova di futuro.
+
+02:30.210 --> 02:36.630
+Spesso non sappiamo cosa ci riserverà il futuro e progettare per il domani è una complicazione inutile.
+
+02:36.630 --> 02:42.870
+Basta mettere in pratica i principi qui esposti e applicarli al vostro progetto per ottenere automaticamente
+
+02:42.870 --> 02:49.150
+più scalabilità, manutenibilità e qualità della vita come sviluppatore.
+
+02:49.170 --> 02:54.900
+Quando pensiamo a questi principi di progettazione del software in questa particolare sezione, partiamo da un alto
+
+02:54.900 --> 03:00.720
+livello teorico che può essere più universale tra le diverse piattaforme di programmazione.
+
+03:00.720 --> 03:06.450
+Poi entreremo nel vivo dell'applicazione, in particolare all'interno di unity.
+
+03:06.600 --> 03:13.890
+Ma noterete questa differenza: parliamo ad alto livello e poi concretamente a basso livello e per tutta la durata del progetto.
+
+03:13.890 --> 03:19.890
+che potete sviluppare il vostro stile personale su quali di questi principi hanno un impatto sulla vostra vita lavorativa quotidiana
+
+03:19.890 --> 03:21.020
+più di altri.
+
+03:21.030 --> 03:27.180
+Riconosceremo alcuni di questi principi anche nelle architetture che utilizziamo e infine
+
+03:27.180 --> 03:30.030
+il codice che realizziamo insieme nelle sezioni di codifica.
+
+03:30.150 --> 03:31.260
+Per ora è tutto.
+
+03:31.260 --> 03:31.980
+Grazie.

@@ -1,0 +1,358 @@
+WEBVTT
+
+00:00.210 --> 00:02.340
+La panoramica dei test unitari.
+
+00:02.340 --> 00:04.220
+Prima di tutto, un po' di contesto.
+
+00:04.230 --> 00:11.790
+Man mano che i progetti crescono, con più script, più metodi, più complessità, può essere difficile assicurare che
+
+00:11.790 --> 00:14.610
+che il nuovo codice non rompa quello vecchio.
+
+00:14.640 --> 00:20.020
+I test automatizzati possono aiutare a garantire che il codice funzioni come ci si aspetta.
+
+00:20.040 --> 00:26.640
+I test automatizzati ci aiutano a scoprire come e dove si verificano i bug nelle prime fasi del processo invece di
+
+00:26.640 --> 00:31.140
+l'opzione molto più costosa di aspettare che siano gli utenti finali a segnalare i bug.
+
+00:31.140 --> 00:37.650
+Quindi si possono usare architetture MVC senza test e si possono usare test senza architetture MVC.
+
+00:37.650 --> 00:41.140
+Perché è importante parlare di questi argomenti insieme?
+
+00:41.160 --> 00:46.860
+Perché la combinazione di queste due tecnologie è incredibilmente potente grazie all'utilizzo di un'architettura
+
+00:46.860 --> 00:48.090
+come l'MVC.
+
+00:48.120 --> 00:54.450
+Aiuta a garantire che il codice sia più disaccoppiato, che ogni classe abbia un singolo scopo e che le soluzioni
+
+00:54.450 --> 00:55.140
+sono più semplici.
+
+00:55.140 --> 00:58.060
+Tutti questi sono tratti per un codice più testabile.
+
+00:58.080 --> 01:04.740
+L'aggiunta di test al progetto aggiunge robustezza, maggiore sicurezza e incoraggia soluzioni semplici,
+
+01:04.740 --> 01:09.090
+Soprattutto se si utilizza lo sviluppo guidato dai test, di cui parleremo.
+
+01:09.090 --> 01:12.690
+L'aggiunta di test unitari al vostro progetto e al vostro flusso di lavoro vi farà risparmiare tempo.
+
+01:12.690 --> 01:15.620
+Risparmia la pianificazione, lo sviluppo e la manutenzione.
+
+01:15.630 --> 01:21.450
+Aggiunge maggiore sicurezza al codice e, grazie a questa sicurezza, è possibile avere più audacia nel
+
+01:21.450 --> 01:22.460
+fattori di rischio.
+
+01:22.470 --> 01:29.010
+Pensate di eseguire tutti i vostri test prima di un importante refactor, e poi dopo aver risparmiato tempo e dato
+
+01:29.010 --> 01:31.530
+di sicurezza che il refactor ha funzionato bene.
+
+01:31.560 --> 01:33.750
+Il testing è sia un'arte che una scienza.
+
+01:33.750 --> 01:38.480
+Con più ricerca e più pratica, ogni sviluppatore può sviluppare la propria arte.
+
+01:38.490 --> 01:43.050
+Anche i test di basso livello, cioè i test a livello di unità.
+
+01:43.620 --> 01:49.200
+Metodi individuali, diciamo, e le pratiche e l'evoluzione del vostro software che deriveranno da
+
+01:49.200 --> 01:56.370
+che incoraggia anche la discussione a livello superiore sulle scelte architettoniche, le dipendenze o la mancanza di
+
+01:56.370 --> 02:00.840
+di queste nel codice e su quanto questi sistemi siano accoppiati o disaccoppiati.
+
+02:00.870 --> 02:06.980
+Tutto questo fa parte di un discorso più ampio che invita a dare una buona organizzazione al software.
+
+02:06.990 --> 02:13.530
+Il nostro primo obiettivo, soprattutto se siamo alle prime armi con i test, è quello di assicurarci che un metodo specifico abbia i risultati desiderati.
+
+02:13.530 --> 02:14.300
+risultati desiderati.
+
+02:14.310 --> 02:21.060
+Una volta fatto questo, è possibile testare il metodo con condizioni inaspettate e casi particolari che potrebbero far discutere
+
+02:21.060 --> 02:24.390
+e analisi sulla struttura della classe stessa.
+
+02:24.390 --> 02:28.230
+Poi si può esaminare lo scopo del sistema in cui si trova quella classe.
+
+02:28.230 --> 02:35.430
+Come ho già detto, questo tipo di analisi ci offre l'opportunità e il formato per guardare alle grandi
+
+02:35.430 --> 02:37.290
+soluzione su larga scala che abbiamo di fronte.
+
+02:37.290 --> 02:37.980
+Nel software.
+
+02:37.980 --> 02:43.250
+Ci sono molti tipi diversi di test e, che lo sappiate o no, lo state già facendo.
+
+02:43.260 --> 02:46.980
+Alcuni dei tipi di test più comuni sono lo smoke test.
+
+02:46.980 --> 02:50.730
+Si tratta di un test piuttosto casuale: funziona per me?
+
+02:50.730 --> 02:55.380
+E per molti di noi questo potrebbe essere l'unico tipo di test del progetto che stiamo facendo.
+
+02:56.030 --> 03:03.050
+Ogni volta che si crea del nuovo codice, si esegue l'applicazione come un utente o si gioca al gioco come un giocatore e si
+
+03:03.050 --> 03:08.300
+vedere se quel particolare percorso attraverso l'applicazione o il gioco funziona nel modo in cui mi aspetto?
+
+03:08.330 --> 03:14.210
+Poi c'è il test degli utenti, in cui periodicamente, magari dopo una build settimanale, si invitano alcuni utenti
+
+03:14.210 --> 03:16.340
+o giocatori a provare il gioco.
+
+03:16.370 --> 03:21.880
+Qui non si cerca solo di capire se ha qualche bug, ma se soddisfa le aspettative degli utenti.
+
+03:21.890 --> 03:23.840
+È divertente giocare a cose del genere?
+
+03:23.840 --> 03:30.320
+E con il test unitario, si esamina una sezione molto piccola dell'esperienza, forse solo una singola parte dell'esperienza.
+
+03:30.320 --> 03:34.790
+metodo o una piccola serie di chiamate, mentre i sistemi lavorano insieme.
+
+03:34.790 --> 03:38.120
+E ci si chiede se funziona come dovrebbe?
+
+03:38.150 --> 03:43.280
+Come ho già detto, stiamo già effettuando lo smoke testing come metodo fondamentale di approccio ai progetti.
+
+03:43.280 --> 03:45.410
+Immaginiamo quindi un semplice esempio.
+
+03:45.410 --> 03:50.240
+Se avessimo un'applicazione "click the button", che ha un pulsante e quando lo si clicca, si vince.
+
+03:50.360 --> 03:52.730
+Potremmo aggiungere del codice.
+
+03:52.730 --> 03:55.040
+Compilare ed eseguire l'esperienza.
+
+03:55.040 --> 03:59.670
+Fare clic sul pulsante uno e vedere se viene visualizzato il testo della vittoria.
+
+03:59.690 --> 04:05.120
+Questo sarebbe un test di fumo e si potrebbe passare all'utente per vedere se funziona.
+
+04:05.450 --> 04:11.470
+In entrambi i casi, si tratta di un test piuttosto costoso da eseguire e di un uso molto limitato del codice.
+
+04:11.480 --> 04:11.810
+qui.
+
+04:11.810 --> 04:17.570
+In questo semplice esempio, può sembrare che riusciamo a catturare tutti i casi d'uso, ma immaginate un gioco più ampio
+
+04:17.570 --> 04:19.940
+con loop centrali e loop metallici.
+
+04:20.210 --> 04:26.240
+Non si può contare sul fatto che lo sviluppatore o l'utente e l'utente testino, testino tutti i pulsanti, tutte le
+
+04:26.240 --> 04:30.200
+funzionalità, tutti gli input e tutti i potenziali risultati.
+
+04:30.200 --> 04:36.560
+Se fatto correttamente, il test unitario può catturare più percorsi attraverso il codice in modo più rapido, e si
+
+04:36.560 --> 04:40.550
+di test automaticamente più frequentemente nel corso del tempo.
+
+04:40.550 --> 04:44.690
+Si sta costruendo un elenco di test permanenti pronti per essere eseguiti.
+
+04:44.690 --> 04:48.050
+In questo modo si sa che il nuovo codice non rompe nessuna vecchia funzionalità.
+
+04:48.050 --> 04:54.440
+Alcuni team operano secondo i principi dello sviluppo Agile, che prevede una parte del calendario chiamata
+
+04:54.440 --> 04:55.130
+sprint.
+
+04:55.130 --> 05:01.910
+Per esempio, ogni due settimane il team si impegna ad aggiungere nuove funzionalità ogni ora, giorno, settimana o settimana.
+
+05:01.910 --> 05:02.540
+sprint.
+
+05:02.540 --> 05:05.240
+Il team può eseguire nuovamente i test automatizzati.
+
+05:05.240 --> 05:07.610
+È una grande opportunità per individuare eventuali bug.
+
+05:07.610 --> 05:09.950
+Come si eseguono esattamente questi test?
+
+05:09.980 --> 05:13.730
+Beh, Unity ha un supporto per i test all'interno dell'editor di Unity.
+
+05:13.730 --> 05:19.660
+C'è una finestra dedicata che si può aprire ed eseguire manualmente i test in qualsiasi momento.
+
+05:19.670 --> 05:21.220
+È un ottimo punto di partenza.
+
+05:21.230 --> 05:25.850
+Naturalmente, l'automazione è possibile e consigliata per i progetti più grandi.
+
+05:25.850 --> 05:32.150
+C'è modo di collegarlo al controllo di versione, in modo che ogni volta che si esegue un commit o un commit a un determinato
+
+05:32.150 --> 05:34.460
+ramo, si possono eseguire di nuovo i test.
+
+05:34.760 --> 05:39.170
+Unity stesso offre alcuni servizi, tra cui Unity Cloud build.
+
+05:39.170 --> 05:45.170
+Questo imita l'esecuzione dei test e la costruzione del gioco, ma con un server che lo fa automaticamente.
+
+05:45.170 --> 05:47.960
+una volta al giorno o con la frequenza che riterrete più opportuna.
+
+05:47.960 --> 05:52.670
+Ora, nello sviluppo di unity in generale, abbiamo familiarità con due diverse modalità all'interno di unity
+
+05:52.670 --> 05:53.660
+esperienza.
+
+05:54.020 --> 05:56.870
+Prima di premere il pulsante play, siamo in modalità di modifica.
+
+05:56.870 --> 06:01.430
+Una volta premuto il tasto play finché la scena non si ferma, siamo in modalità play.
+
+06:01.730 --> 06:05.780
+Con unity testing, è possibile eseguire i test in una di queste due modalità.
+
+06:05.780 --> 06:07.970
+Esistono poi diversi modi di approccio.
+
+06:08.450 --> 06:13.580
+Alcune idee di test potrebbero essere quelle di chiamare un metodo e vedere se questo dà il risultato desiderato.
+
+06:13.580 --> 06:14.720
+risultato atteso.
+
+06:14.720 --> 06:20.720
+Supponiamo di avere una classe del sistema matematico con un metodo ADD e di passare i parametri conosciuti e vedere
+
+06:20.720 --> 06:22.280
+se il risultato corrisponde a quello noto.
+
+06:22.280 --> 06:27.200
+Si possono anche avere test che pongono domande specifiche sulla funzionalità dell'ED.
+
+06:27.230 --> 06:33.920
+La finestra di Ed è apparsa con le dimensioni corrette per gli oggetti di gioco o la telecamera nella posizione corretta?
+
+06:33.920 --> 06:35.480
+prima dell'inizio della scena?
+
+06:35.480 --> 06:41.000
+Fare i test e la modalità di modifica quando è possibile è un ottimo punto di partenza, quindi fatelo di default.
+
+06:41.000 --> 06:41.540
+Modalità di riproduzione.
+
+06:41.570 --> 06:47.030
+I test sono incredibilmente utili, ma comportano l'aggiunta della complessità del codice di runtime.
+
+06:47.710 --> 06:52.900
+In questo caso, non si tratta solo di testare il ritorno e il risultato di un certo metodo, ma anche di testare il risultato all'interno di un'altra applicazione.
+
+06:52.900 --> 06:57.100
+del più ampio ciclo di vita degli oggetti di gioco e di altri concetti di unity.
+
+06:57.200 --> 07:03.850
+E se è qui, si può testare il codice che si basa su un aggiornamento di avvio della sveglia, ecc.
+
+07:03.850 --> 07:04.520
+in fase di esecuzione.
+
+07:04.540 --> 07:11.320
+Alcune idee di test per vedere se un prefabbricato, una volta istanziato, esegue correttamente il suo metodo di avvio.
+
+07:11.320 --> 07:12.720
+Senza alcuna eccezione.
+
+07:12.730 --> 07:14.860
+È possibile testare il codice nel tempo.
+
+07:15.580 --> 07:17.890
+Questo ciclo viene eseguito correttamente?
+
+07:17.890 --> 07:19.280
+Dopo qualche secondo.
+
+07:19.300 --> 07:21.940
+È possibile controllare le interazioni fisiche a tempo di esecuzione.
+
+07:21.940 --> 07:28.850
+Quanti rimbalzi avrà una palla nel vostro gioco 3D prima che smetta di verificare il fattore di rimbalzo?
+
+07:28.870 --> 07:30.430
+Un po' più di contesto qui.
+
+07:30.430 --> 07:36.970
+Storicamente, unity non offriva test integrati nell'editor tramite l'esecuzione di test o la finestra.
+
+07:36.970 --> 07:37.480
+Vedremo.
+
+07:37.480 --> 07:43.360
+Nei molti anni trascorsi dal lancio di Unity, questa funzionalità è stata lentamente aggiunta e ampliata.
+
+07:43.360 --> 07:45.220
+A partire dall'ultima versione di Unity.
+
+07:45.220 --> 07:50.650
+Abbiamo tutto ciò che ci serve per eseguire i tipi di test che vogliamo nel modo in cui vogliamo.
+
+07:50.650 --> 07:56.020
+Non c'è mai stato un momento migliore per aggiungere i test unitari al vostro flusso di lavoro.
+
+07:56.020 --> 07:56.830
+per farlo.
+
+07:57.250 --> 07:58.090
+Grazie.

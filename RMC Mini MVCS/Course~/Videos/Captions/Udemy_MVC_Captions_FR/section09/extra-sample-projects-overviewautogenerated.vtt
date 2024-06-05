@@ -1,0 +1,94 @@
+WEBVTT
+
+00:00.080 --> 00:01.490
+Bonjour et bienvenue.
+
+00:01.490 --> 00:05.940
+J'ai passé un peu de temps à ajouter encore plus de contenu et je vais le passer en revue aujourd'hui.
+
+00:05.960 --> 00:06.620
+C'est très bien.
+
+00:06.650 --> 00:13.520
+Ce que je voulais faire dans cet exposé, c'est passer en revue quelques sujets et démonstrations avancés que j'ai créés.
+
+00:14.090 --> 00:17.150
+Nous allons donc les passer en revue un par un et voir ce que nous avons ici.
+
+00:17.150 --> 00:24.140
+Si vous utilisez unity pendant 2 ou 3 ans à plein temps, même sur des projets de production, vous constaterez que même
+
+00:24.140 --> 00:30.500
+que les meilleurs esprits se réunissent et travaillent sur des projets en y apportant les meilleures pratiques, il devient toujours
+
+00:30.500 --> 00:37.160
+un défi pour organiser vos projets de manière à ce qu'ils soient évolutifs, testables et maintenables.
+
+00:37.160 --> 00:42.380
+Même si vous ne connaissez pas encore les concepts de MVC, vous pourrez commencer à voir les modèles.
+
+00:42.380 --> 00:44.840
+Au fur et à mesure que je passe en revue chacun de ces exemples.
+
+00:44.840 --> 00:48.890
+UI Toolkit Comment créer un didacticiel dans le jeu.
+
+00:48.890 --> 00:53.840
+Vous savez, quand vous voulez que le joueur soit guidé pendant ses cinq premières minutes, en apprenant les touches,
+
+00:53.840 --> 00:59.480
+etcetera, vous savez, comment vous ajoutez exactement cela dans un jeu alors qu'une approche de figurines multiples.
+
+00:59.480 --> 01:04.890
+Une fois que l'on s'est habitué au concept architectural MVC, on pense généralement à en avoir un dans le jeu.
+
+01:04.890 --> 01:06.300
+l'ensemble du projet.
+
+01:06.300 --> 01:10.590
+Mais qu'en est-il si vous souhaitez diviser votre projet et y intégrer plus d'un mini, ce qui est tout à fait possible ?
+
+01:10.590 --> 01:11.160
+peut le faire ?
+
+01:11.700 --> 01:13.710
+Je parlerai également de la liaison de données.
+
+01:13.710 --> 01:19.740
+Donc si vous voulez avoir un champ de texte dans votre interface utilisateur et le faire correspondre à l'endroit où vos données sont stockées, et tout
+
+01:19.740 --> 01:26.910
+chaque fois que l'utilisateur met à jour ce texte, le modèle de données est automatiquement mis à jour et inversement.
+
+01:26.910 --> 01:29.880
+Chaque fois que le modèle de données est mis à jour, l'interface utilisateur est mise à jour.
+
+01:30.060 --> 01:33.990
+En ce qui concerne la liaison de données, unity ne la prend pas en charge de manière native.
+
+01:33.990 --> 01:40.680
+Ce qui est très intéressant, c'est que cela est disponible dans la boîte à outils de l'interface utilisateur pour l'éditeur, maintenant et à l'avenir.
+
+01:40.680 --> 01:43.500
+C'est à venir dans Unity pour l'exécution.
+
+01:43.500 --> 01:44.910
+Je suis très enthousiaste à ce sujet.
+
+01:44.910 --> 01:48.810
+Il s'agit d'une approche personnalisée qui permet de lier les données.
+
+01:48.930 --> 01:55.260
+Nous allons ensuite examiner un jeu simple, ce jeu de balle rebondissante, et en commençant par le haut, nous allons regarder
+
+01:55.260 --> 01:56.130
+une calculatrice.
+
+01:56.130 --> 01:59.790
+Cet exemple de comptage à rebours est très instructif.
+
+01:59.790 --> 02:03.450
+Nous allons donc commencer par le haut avec la calculatrice.
+
+02:03.450 --> 02:05.130
+Passons donc à l'unité.

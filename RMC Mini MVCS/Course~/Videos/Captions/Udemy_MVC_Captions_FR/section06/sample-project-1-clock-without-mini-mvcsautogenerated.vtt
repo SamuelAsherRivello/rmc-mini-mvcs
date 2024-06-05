@@ -1,0 +1,244 @@
+WEBVTT
+
+00:00.120 --> 00:04.320
+Jetons un coup d'œil à l'exemple de l'horloge sans beaucoup de MVC.
+
+00:04.620 --> 00:06.670
+Nous voici dans Unity.
+
+00:06.690 --> 00:13.170
+Nous avons créé un nouveau projet Unity en utilisant la dernière version TFS de l'éditeur Unity.
+
+00:13.170 --> 00:18.930
+En suivant les instructions données plus tôt dans le cours, nous avons ajouté le paquetage mini MVCs et importé
+
+00:18.930 --> 00:19.840
+les échantillons.
+
+00:19.860 --> 00:25.290
+Ici, nous allons regarder l'exemple de l'horloge, et nous allons commencer par la version qui n'en a pas beaucoup,
+
+00:25.290 --> 00:26.580
+MVCs ajoutés.
+
+00:26.610 --> 00:31.440
+Il est prévu que cela ressemble à une révision pour vous dans les connaissances de base de l'unité.
+
+00:31.470 --> 00:32.770
+Exécutons la scène.
+
+00:32.790 --> 00:34.650
+Nous voici donc avec la scène en cours d'exécution.
+
+00:34.650 --> 00:41.010
+Nous n'avons pas de véritable interface utilisateur ici, mais dans la fenêtre de la console, nous avons quelques instructions de débogage qui fonctionnent.
+
+00:41.010 --> 00:42.870
+quelque chose comme une interface utilisateur pour nous.
+
+00:42.870 --> 00:47.160
+Il n'y a pas de saisie de la part de l'utilisateur, mais à chaque seconde, nous recevons une déclaration de débogage.
+
+00:47.310 --> 00:48.770
+C'est tout l'exemple.
+
+00:48.780 --> 00:51.620
+Jetons un coup d'œil au code dans la vue hiérarchique.
+
+00:51.630 --> 00:56.760
+Nous voyons que nous avons un objet de jeu monde vide qui a la caméra et l'éclairage par défaut.
+
+00:56.760 --> 01:01.770
+Nous n'utilisons pas vraiment la caméra dans l'éclairage ici, mais par souci de cohérence, je l'ai dans tous les objets de jeu.
+
+01:01.770 --> 01:02.400
+scène.
+
+01:02.610 --> 01:06.450
+Nous avons ensuite un objet de jeu avec notre script d'exemple.
+
+01:06.450 --> 01:08.190
+Ouvrons ce script d'exemple.
+
+01:08.190 --> 01:11.940
+C'est le seul script qui exécute toute la scène.
+
+01:12.210 --> 01:13.410
+Voici l'exemple.
+
+01:13.410 --> 01:15.840
+Vous pouvez voir qu'il étend le comportement mono.
+
+01:16.350 --> 01:20.280
+Je vais faire un rapide survol du code, puis le parcourir ligne par ligne.
+
+01:40.730 --> 01:43.810
+Pour ce premier exemple, je vais passer en revue quelques principes fondamentaux.
+
+01:43.820 --> 01:48.350
+Nous avons notre instruction using qui indique à cette classe quelles autres classes elle peut référencer.
+
+01:48.350 --> 01:51.350
+Nous avons un espace de noms approprié pour cette classe d'exemple.
+
+01:51.350 --> 01:53.060
+Nous avons ici la définition de la classe.
+
+01:53.060 --> 01:54.650
+Nous étendons le comportement mono.
+
+01:54.650 --> 01:56.240
+Nous avons quelques champs privés.
+
+01:56.240 --> 01:59.240
+Ce sont des variables que nous utiliserons tout au long de cet exemple.
+
+01:59.240 --> 02:05.000
+Remarquez qu'au lieu d'utiliser directement INT et float, nous utilisons la classe observable.
+
+02:05.000 --> 02:07.490
+Ce point est abordé dans une section précédente du cours.
+
+02:07.490 --> 02:11.570
+Mais n'oubliez pas que la classe observable nous offre des fonctionnalités supplémentaires.
+
+02:11.570 --> 02:17.870
+Dans le cas de la temporisation, nous stockons un INT, mais nous sommes également en mesure de déclencher un événement tous les
+
+02:17.870 --> 02:19.760
+chaque fois que la valeur de l'INT change.
+
+02:19.760 --> 02:26.330
+Cela permet d'appliquer le modèle d'observateur à un simple élément de données, et nous l'utilisons dans tous les exemples.
+
+02:26.360 --> 02:32.810
+Elle est facultative lorsque l'on utilise mini MVC, mais fortement recommandée à l'intérieur de la méthode Unity Start, qui s'appelle
+
+02:32.810 --> 02:33.230
+une fois.
+
+02:33.230 --> 02:39.800
+Lorsque la scène se réveille, nous commençons par charger cet exemple et tous les échantillons que nous allons utiliser.
+
+02:39.800 --> 02:41.570
+charger un fichier local.
+
+02:41.570 --> 02:48.740
+Dans le monde MVC, une fois que nous avons vu cet exemple, c'est notre façon d'imiter l'appel à un serveur dorsal.
+
+02:48.740 --> 02:54.950
+Le chargement d'un fichier local est assez facile, mais il est asynchrone et il s'agit de données externes.
+
+02:54.950 --> 02:56.600
+pour l'étendue du service.
+
+02:56.600 --> 03:02.870
+Il s'agit d'un exemple un peu artificiel et stupide, car nous pourrions bien sûr coder en dur la valeur de l'heure
+
+03:02.870 --> 03:04.100
+ici en Do dièse.
+
+03:04.100 --> 03:07.520
+Mais encore une fois, cela est fait pour les échantillons ici dans la fenêtre du projet.
+
+03:07.520 --> 03:13.160
+Nous pouvons voir l'emplacement de ce fichier texte local et nous voyons ici le contenu de ce fichier texte.
+
+03:13.280 --> 03:17.000
+Il s'agit simplement d'une chaîne de caractères que nous allons saisir.
+
+03:17.000 --> 03:23.360
+INT Bien entendu, cette valeur 1000 pourrait être codée en dur en Do dièse, mais il s'agit simplement d'une illustration.
+
+03:23.360 --> 03:24.890
+comment charger des données externes.
+
+03:24.890 --> 03:29.930
+Nous chargeons donc ce texte, nous attendons une demi-seconde pour simuler un délai.
+
+03:29.930 --> 03:36.350
+Ceci est utile pour que nous sachions que dans des exemples plus complexes où l'on tient compte de la latence subtile
+
+03:36.350 --> 03:41.360
+que nous obtiendrions en appelant un vrai service backend, puis en supposant que nous avons chargé avec succès, nous
+
+03:41.360 --> 03:47.120
+nous saisissons cette valeur de chaîne et la tapons en tant qu'int. Souvenez-vous que le délai est un type observable.
+
+03:47.120 --> 03:51.590
+Ainsi, lorsque nous définissons la valeur, nous devons définir la propriété dot value à l'intérieur.
+
+03:51.590 --> 03:56.960
+Encore une fois, l'avantage de cette méthode est qu'elle déclenche un événement automatique dès que la valeur
+
+03:56.960 --> 03:57.710
+change.
+
+03:57.710 --> 04:03.260
+Nous n'en tirons pas vraiment parti dans cet exemple simple, mais nous le verrons dans un code ultérieur.
+
+04:03.260 --> 04:05.870
+Maintenant que le chargement est réussi, nous allons commencer le tic-tac.
+
+04:05.870 --> 04:07.430
+Voici l'horloge elle-même.
+
+04:07.430 --> 04:12.350
+Pour que le code soit appelé de façon répétée, il y a beaucoup de choses que vous pouvez faire dans unity.
+
+04:12.350 --> 04:17.240
+La plus basique et la plus commune est d'utiliser une routine de code.
+
+04:17.390 --> 04:20.270
+Tout ce que nous faisons ici est de lancer une routine de code.
+
+04:20.270 --> 04:21.890
+Celle-ci sera appelée à plusieurs reprises.
+
+04:21.890 --> 04:23.960
+Il s'agit donc d'un exemple artificiel.
+
+04:23.960 --> 04:30.380
+Mais en fait, je voulais juste faire un compte à rebours en utilisant des secondes du monde réel, de un à l'infini.
+
+04:30.380 --> 04:35.350
+Tant que la scène est ouverte, nous utilisons time, time pour récupérer cela dans unity.
+
+04:35.360 --> 04:42.650
+À chaque fois, je mets à jour notre variable time et j'appelle un gestionnaire distinct pour gérer les conséquences, comme nous le faisons.
+
+04:42.650 --> 04:44.240
+nous gérons cette conséquence ici.
+
+04:44.240 --> 04:49.220
+Et tout simplement, je voulais avoir un exemple qui n'ait pas de vue explicite.
+
+04:49.220 --> 04:57.130
+Nous avons donc ici un journal de débogage qui simule une sorte de retour d'information de la part de l'utilisateur sans aucune complexité supplémentaire.
+
+04:57.140 --> 04:59.030
+Exécutons la scène une dernière fois.
+
+05:05.720 --> 05:07.310
+Nous voyons l'horloge tourner.
+
+05:07.430 --> 05:08.240
+C'est tout.
+
+05:09.440 --> 05:13.450
+C'était donc l'horloge qui fonctionnait sans beaucoup de MVC.
+
+05:13.460 --> 05:16.430
+Je m'attends à ce que tout ce que nous avons couvert fasse l'objet d'un examen.
+
+05:16.460 --> 05:23.630
+Nous avons vu les classes, les méthodes, les variables, les propriétés, les événements, les champs sérialisés et plus encore.
+
+05:23.660 --> 05:29.720
+C'est une bonne base d'unité pour nous permettre d'avoir une compréhension commune avant de passer au mini
+
+05:29.720 --> 05:31.040
+exemple de MVC.
+
+05:31.820 --> 05:32.540
+Merci.

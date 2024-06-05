@@ -1,0 +1,196 @@
+WEBVTT
+
+00:00.090 --> 00:01.510
+Criando testes unitários.
+
+00:01.530 --> 00:03.600
+Classe de teste e métodos de teste.
+
+00:03.600 --> 00:07.260
+Aqui está o código para uma classe de teste contendo um método de teste.
+
+00:07.260 --> 00:12.510
+Em seu interior, seguimos o paradigma opcional de organizar, agir e afirmar.
+
+00:12.510 --> 00:14.970
+Essa é a convenção que uso para todos os meus testes.
+
+00:14.970 --> 00:19.120
+Assim, vimos como é um teste e como executar um teste existente.
+
+00:19.140 --> 00:20.750
+Agora vamos criar o nosso próprio teste.
+
+00:20.760 --> 00:27.780
+Abriremos um projeto vazio, abriremos a janela ou execução de teste, criaremos uma pasta de teste, uma classe de teste,
+
+00:27.780 --> 00:29.760
+e um método dentro desse teste.
+
+00:29.910 --> 00:31.740
+Em seguida, executaremos o teste e veremos o resultado.
+
+00:31.740 --> 00:34.020
+Aqui estamos em um projeto bastante vazio.
+
+00:34.020 --> 00:37.410
+Já tenho a estrutura de teste unity adicionada.
+
+00:37.410 --> 00:43.920
+Vamos abrir a janela do executor de testes, já que o projeto não tem testes de modo de edição nem de modo de reprodução,
+
+00:43.920 --> 00:47.670
+cada uma dessas guias oferece algumas opções para começarmos.
+
+00:47.670 --> 00:53.610
+Primeiro, criaremos uma pasta de montagem de teste de modo de edição clicando no botão que cria uma nova pasta
+
+00:53.610 --> 00:59.430
+em nossa janela de projeto, incluindo uma montagem configurada para teste, montagens de unidade e a montagem
+
+00:59.430 --> 01:07.110
+O arquivo de definição de montagem está fora do escopo deste curso, mas, em resumo, ele sinaliza ao unity que as coisas dentro do
+
+01:07.110 --> 01:11.700
+essa determinada pasta deve ser compilada, deve ser compilada de uma forma única.
+
+01:11.700 --> 01:16.470
+Portanto, agora que temos essa pasta de montagem de teste configurada, podemos criar nossa primeira classe de teste.
+
+01:16.470 --> 01:21.390
+Cada um desses passos pode ser feito manualmente sem usar a janela, mas continuarei clicando no botão
+
+01:21.390 --> 01:26.610
+próximo botão aqui para criar um script de teste na pasta atual na janela do projeto que cria um
+
+01:26.610 --> 01:29.600
+nova classe de teste e nos dá dois métodos de teste.
+
+01:29.610 --> 01:32.430
+Observe que na janela de execução do teste, tudo aparece.
+
+01:32.550 --> 01:33.930
+Vou executar todos esses testes.
+
+01:33.930 --> 01:35.150
+Todos os testes são aprovados.
+
+01:35.160 --> 01:37.230
+Vamos dar uma olhada no código que foi gerado.
+
+01:37.230 --> 01:42.090
+Neste ponto, você está livre para renomear a classe e os métodos como quiser.
+
+01:42.090 --> 01:45.660
+E depois, é claro, copiar e colar para adicionar mais métodos.
+
+01:45.660 --> 01:50.940
+Não há limite para o número de métodos de teste que você pode ter em uma classe de teste, mas geralmente você usa
+
+01:50.940 --> 01:57.990
+a classe para organizar determinados tópicos, talvez uma classe de teste para cada classe de produção e depois uma classe de teste para cada classe de produção.
+
+01:57.990 --> 02:01.170
+método de teste para cada método em produção.
+
+02:01.170 --> 02:03.420
+Você quer testar algo assim.
+
+02:03.420 --> 02:07.110
+Esses comentários são gerados automaticamente pelo unity e são bastante úteis.
+
+02:07.650 --> 02:09.120
+Vou falar sobre os destaques aqui.
+
+02:09.120 --> 02:10.380
+Usando o teste.
+
+02:10.920 --> 02:19.290
+O uso do atributo test nos prepara para um teste de modo de edição normal O uso do atributo unity test permite
+
+02:19.290 --> 02:22.250
+executar um teste em vários quadros.
+
+02:22.260 --> 02:26.790
+Agora, mencionei anteriormente que o uso do unity test é mais adequado para o modo de reprodução.
+
+02:26.790 --> 02:31.320
+Você tem muito mais opções quanto ao tipo de funcionalidade assíncrona que pode fazer ali.
+
+02:31.320 --> 02:38.160
+É de fato possível aqui e, como o comentário sugere, você pode usar yield return null para pular um quadro.
+
+02:38.160 --> 02:43.020
+Por exemplo, fazer a configuração, depois esperar um quadro e fazer o teste.
+
+02:43.020 --> 02:44.010
+Algo parecido com isso.
+
+02:44.010 --> 02:47.730
+Por exemplo, fazer o código de configuração, esperar um quadro.
+
+02:48.380 --> 02:51.080
+E depois fazer a afirmação, algo assim.
+
+02:51.080 --> 02:54.620
+Aqui, de volta à unidade, vou passar para a guia.
+
+02:55.350 --> 02:57.840
+Modo Play e seguir os mesmos passos.
+
+02:57.840 --> 03:04.020
+Primeiro, criaremos uma pasta de montagem de teste do modo de jogo e, em seguida, criarei um script de teste.
+
+03:04.020 --> 03:09.900
+Nessa pasta, podemos ver no executor de teste que temos uma classe de teste que contém dois métodos de teste.
+
+03:10.500 --> 03:13.370
+Vou executar todos e veremos que tudo passa.
+
+03:13.380 --> 03:15.350
+Vamos dar uma olhada no código gerado.
+
+03:15.360 --> 03:21.960
+O código gerado aqui é, na verdade, idêntico tanto no modo de reprodução quanto no modo de edição.
+
+03:21.960 --> 03:24.240
+Eles lhe dão pontos de partida muito semelhantes.
+
+03:24.240 --> 03:25.110
+É isso aí.
+
+03:26.480 --> 03:31.700
+Estamos começando a ver isso com a janela do executor de teste e apenas um pouco de C-sharp adicionado.
+
+03:31.700 --> 03:35.250
+Podemos fazer mais coisas com nossos projetos de unidade do que antes.
+
+03:35.270 --> 03:41.420
+Se você é novo em testes unitários, está familiarizado com o uso do unity para criar código em tempo de execução, mas os testes
+
+03:41.420 --> 03:42.800
+código é algo diferente.
+
+03:43.480 --> 03:46.750
+Ele nunca é experimentado diretamente pelos usuários finais.
+
+03:47.200 --> 03:49.770
+Esse código só é executado no modo de teste.
+
+03:49.790 --> 03:52.320
+Ele nem sequer é empacotado em sua compilação final.
+
+03:52.330 --> 03:59.470
+Começamos a olhar para os testes agora como uma pequena janela para momentos e tempo em um teste de aplicativo maior
+
+03:59.470 --> 04:03.030
+com um foco estreito para garantir resultados consistentes.
+
+04:03.040 --> 04:08.320
+Até agora, falamos principalmente sobre a adição de novos testes ao código existente.
+
+04:08.350 --> 04:13.420
+A seguir, veremos como adicionar testes enquanto estivermos desenvolvendo o código com o desenvolvimento orientado a testes.
+
+04:13.420 --> 04:14.200
+Obrigado.

@@ -1,0 +1,319 @@
+WEBVTT
+
+00:00.090 --> 00:01.360
+Développement piloté par les tests.
+
+00:01.380 --> 00:04.920
+Voici un exemple de classe de test avec une méthode de test.
+
+00:04.920 --> 00:08.450
+Nous avons déjà vu dans le cours comment exécuter un test existant.
+
+00:08.460 --> 00:14.910
+Nous avons vu comment créer de nouveaux tests à partir de zéro. Le développement piloté par les tests, ou TDD, est la pratique qui consiste à ajouter des tests à un ensemble de tests.
+
+00:14.910 --> 00:17.550
+tests avant d'ajouter le code de production.
+
+00:17.550 --> 00:21.290
+Pour certains, en particulier ceux qui débutent dans les tests, cela peut sembler étrange.
+
+00:21.300 --> 00:26.430
+Nous allons en apprendre davantage sur cette technique et noter qu'il est possible de combiner le développement piloté par les tests avec le développement traditionnel.
+
+00:26.430 --> 00:29.490
+comme vous le souhaitez dans vos propres flux de travail.
+
+00:29.520 --> 00:36.570
+Le TDD crée des tests qui spécifient et valident ce que le code va faire une fois qu'il est créé.
+
+00:37.110 --> 00:38.280
+Voici le flux de travail.
+
+00:38.280 --> 00:44.220
+Vous créez un nouveau test, vous y ajoutez juste assez d'implémentation pour que le code se compile.
+
+00:44.220 --> 00:48.610
+Puisque nous avons ajouté juste assez de code de production pour que ce code compile.
+
+00:48.630 --> 00:54.000
+Peut-être même en ayant une implémentation vide, nous lançons le test et le test échoue.
+
+00:54.450 --> 00:55.590
+On s'y attendait.
+
+00:55.590 --> 01:01.950
+Et c'est en fait un très bon point de départ : en voyant d'abord un test échouer, nous sommes plus confiants.
+
+01:01.950 --> 01:05.040
+que le test, une fois réussi, signifie réellement quelque chose.
+
+01:05.040 --> 01:09.420
+Vous remaniez ensuite votre code de production jusqu'à ce qu'il réussisse, puis vous passez à autre chose.
+
+01:09.420 --> 01:16.020
+Le TDD n'est pas simplement l'ordre de tester d'abord et d'écrire le code de production ensuite.
+
+01:16.020 --> 01:19.140
+C'est aussi une façon de penser vos projets.
+
+01:19.140 --> 01:24.230
+Il faut vraiment pratiquer certaines choses pour en ressentir les résultats.
+
+01:24.240 --> 01:31.110
+Mais ce que je constate avec plus d'expérience en TDD, c'est que vous pensez à votre nouveau code différemment, vous êtes
+
+01:31.110 --> 01:38.160
+plus concentré dans votre développement, vous créez plus de code atomique qui ne fait qu'une seule chose, et lorsque vous
+
+01:38.160 --> 01:42.180
+le code de test passe, c'est un passage plus significatif.
+
+01:42.210 --> 01:48.840
+Une autre façon de voir ce flux est que vous écrivez un test qui échoue, vous faites passer le test, et ensuite
+
+01:48.840 --> 01:51.660
+vous remaniez votre code pour atteindre d'autres objectifs.
+
+01:51.660 --> 01:58.590
+Vous avez l'optimisation, les normes de codage, etc. et ensuite vous répétez, Voyons cela en action.
+
+01:58.590 --> 02:01.320
+Nous allons ouvrir un projet unity qui a déjà fait l'objet d'un test.
+
+02:01.320 --> 02:08.790
+Nous allons utiliser le TDD pour ajouter un nouveau test, créer juste assez de code de production pour qu'il compile, voir un échec du test.
+
+02:08.790 --> 02:12.090
+et ensuite refactoriser jusqu'à ce que nous ayons un résultat satisfaisant.
+
+02:13.020 --> 02:16.130
+Nous voici dans un projet unity assez vide.
+
+02:16.140 --> 02:22.560
+Je me suis assuré que le framework de test est déjà ajouté dans le gestionnaire de paquets comme indiqué plus haut, et
+
+02:22.560 --> 02:25.590
+J'ai copié un test pour commencer.
+
+02:25.620 --> 02:28.350
+Jetons un coup d'œil à ce test en mode édition.
+
+02:28.350 --> 02:33.780
+J'ai un test qui couvre la méthode ADD d'une classe mathématique simple.
+
+02:33.780 --> 02:34.850
+Exécutons le test.
+
+02:34.860 --> 02:35.900
+Il est réussi.
+
+02:35.910 --> 02:41.430
+Jetons un coup d'œil au code et voyons ici le test que nous connaissons depuis le début de la présentation.
+
+02:41.430 --> 02:45.330
+Effectuons maintenant un développement piloté par les tests, comme nous l'avons vu ici.
+
+02:45.360 --> 02:51.450
+L'idée est que si nous devions étendre la fonctionnalité du système mathématique, nous avons plusieurs approches.
+
+02:51.450 --> 02:57.090
+Nous pourrions soit créer ce code de production sans aucun test et après.
+
+02:58.260 --> 03:01.350
+Et par la suite, nous pouvons ajouter des tests ou non.
+
+03:02.530 --> 03:08.530
+Cependant, avec le développement piloté par les tests, nous allons d'abord tester avant d'ajouter la moindre production.
+
+03:08.530 --> 03:09.040
+code de production.
+
+03:09.870 --> 03:11.010
+Voyons comment cela fonctionne.
+
+03:11.040 --> 03:11.700
+J'imagine.
+
+03:11.700 --> 03:11.880
+Je suis.
+
+03:13.080 --> 03:14.040
+Imaginons.
+
+03:14.040 --> 03:16.680
+Le système mathématique a besoin d'une méthode de soustraction.
+
+03:17.980 --> 03:22.240
+Cette méthode abstraite n'existe pas encore, comme nous le verrons dans le code source.
+
+03:23.150 --> 03:24.830
+Mais faisons tout de même un test pour cette méthode.
+
+03:25.760 --> 03:29.060
+Commençons par ajouter l'attribut test.
+
+03:29.270 --> 03:37.130
+Je nommerai la méthode en indiquant ce qui est testé, le résultat attendu et la situation dans laquelle je m'attends à ce qu'elle soit testée.
+
+03:37.130 --> 03:38.390
+pour la soustraction.
+
+03:38.390 --> 03:40.130
+Le résultat serait cinq.
+
+03:40.160 --> 03:45.140
+Si je passe dix et cinq, dix moins cinq donne cinq.
+
+03:45.170 --> 03:48.980
+Pour mettre en place le test, j'instancie une nouvelle copie de mon système mathématique.
+
+03:49.220 --> 03:52.250
+J'obtiens le résultat en appelant la méthode subtract.
+
+03:52.280 --> 03:56.830
+Le texte rouge indique que mon éditeur de code sait qu'il n'y a pas de méthode de soustraction.
+
+03:56.840 --> 04:03.320
+Enfin, nous nous attendons à ce que notre méthode renvoie une valeur de cinq, car j'ai copié et collé ceci à partir du fichier
+
+04:03.320 --> 04:04.100
+l'exemple précédent.
+
+04:04.100 --> 04:05.060
+Il est écrit 15.
+
+04:05.090 --> 04:06.180
+Je vais changer cela maintenant.
+
+04:06.200 --> 04:08.150
+Maintenant, l'hypothèse correcte est vérifiée.
+
+04:08.840 --> 04:13.180
+Nous savons maintenant que cela ne va pas compiler, mais sauvegardons et retournons à unity.
+
+04:13.190 --> 04:14.750
+Notons deux choses.
+
+04:14.750 --> 04:19.250
+Premièrement, la fenêtre de la console indique correctement qu'il y a une erreur de compilation.
+
+04:19.250 --> 04:24.300
+D'autre part, dans la fenêtre du lanceur de test, nous ne voyons pas encore notre nouvelle méthode.
+
+04:24.320 --> 04:26.610
+Ce sont de bonnes choses à noter en TDD.
+
+04:26.630 --> 04:30.970
+L'étape suivante consiste à créer juste assez de code pour qu'il se compile.
+
+04:30.980 --> 04:34.700
+Il est très important de ne pas terminer l'implémentation à ce stade.
+
+04:34.700 --> 04:36.920
+Voici le code source de notre système mathématique.
+
+04:36.920 --> 04:42.050
+Voici l'implémentation la plus simple que je puisse faire pour compiler le code.
+
+04:42.050 --> 04:45.740
+Remarquez que je ne termine pas l'implémentation correcte.
+
+04:45.740 --> 04:52.550
+Dans cet exemple, cela semble trivial car nous savons que tout ce que nous avons à faire est de soustraire A et B.
+
+04:52.550 --> 04:58.460
+Cependant, dans le cadre d'un développement piloté par les tests, l'implémentation d'une méthode donnée est normalement plus complexe.
+
+04:58.460 --> 04:59.540
+et prendrait plus de temps.
+
+04:59.540 --> 05:03.470
+Quoi qu'il en soit, nous nous arrêtons toujours ici une fois que nous en avons assez pour compiler.
+
+05:04.230 --> 05:05.360
+Regardons le test.
+
+05:05.370 --> 05:09.150
+Notre éditeur de code n'affiche plus subtract en rouge.
+
+05:09.570 --> 05:11.340
+Sauvegardons et vérifions l'unité.
+
+05:11.370 --> 05:13.710
+Nous ne voyons plus d'erreurs dans la console.
+
+05:13.710 --> 05:14.280
+Très bien.
+
+05:14.280 --> 05:15.540
+Tout se compile.
+
+05:15.540 --> 05:19.290
+Et maintenant, la fenêtre de notre programme de test affiche correctement la nouvelle méthode de test.
+
+05:19.290 --> 05:20.430
+Exécutons tous les tests.
+
+05:20.430 --> 05:26.430
+Vous pouvez considérer que les tests ont échoué parce qu'une ou plusieurs méthodes de test ont échoué.
+
+05:26.430 --> 05:31.350
+Lorsque nous regardons quand nous sélectionnons la méthode qui échoue, nous voyons une petite entrée.
+
+05:31.350 --> 05:34.200
+Nous voyons un peu de texte en sortie qui montre pourquoi la méthode a échoué.
+
+05:34.470 --> 05:38.490
+Il s'attend à recevoir cinq, mais au lieu de cela, il renvoie zéro.
+
+05:38.490 --> 05:40.560
+Maintenant, pourquoi avons-nous fait tout cela ?
+
+05:40.560 --> 05:46.350
+Cela peut sembler trivial, mais il s'agit d'une distinction importante : nous créons un test, nous croyons que nous testons l'élément
+
+05:46.350 --> 05:49.260
+fonctionnalité appropriée et que nous le voyons échouer pour la première fois.
+
+05:49.260 --> 05:55.560
+Cela nous donne une bonne base pour savoir quand une implémentation correcte donne un succès avec confiance.
+
+05:55.560 --> 05:57.420
+Ajoutons l'implémentation correcte ici.
+
+05:57.420 --> 06:02.160
+Nous supposons que le premier paramètre entrant est plus grand que le second, et nous renvoyons simplement
+
+06:02.160 --> 06:05.670
+et nous renvoyons simplement a moins B, sauvegardons et exécutons le test.
+
+06:07.570 --> 06:12.600
+Le test s'exécute correctement et nous avons terminé notre premier exemple de développement piloté par les tests.
+
+06:12.610 --> 06:13.450
+C'est tout.
+
+06:13.990 --> 06:20.680
+Je sais par expérience qu'il m'a fallu du temps et de la pratique avec les tests pour vraiment ressentir les avantages du développement piloté par les tests.
+
+06:20.680 --> 06:21.520
+avantages.
+
+06:21.520 --> 06:29.890
+Nous avons eu un bref aperçu des tests unitaires, de la création de tests unitaires et du développement piloté par les tests.
+
+06:30.580 --> 06:35.200
+J'espère que vous commencez à voir certains des avantages qui pourraient vous convenir.
+
+06:35.200 --> 06:41.350
+En combinant ce que vous avez appris ici sur les tests avec l'architecture MVC, vous disposez des outils nécessaires pour créer
+
+06:41.350 --> 06:47.460
+projets plus modulaires, évolutifs, optimisés, robustes et fiables.
+
+06:47.470 --> 06:52.610
+La combinaison des tests et d'une bonne architecture est vraiment puissante.
+
+06:52.630 --> 06:53.500
+Merci à tous.

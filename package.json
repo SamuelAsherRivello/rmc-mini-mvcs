@@ -1,0 +1,42 @@
+{
+  "name": "com.rmc.rmc-mini-mvcs",
+  "displayName": "RMC Mini MVCS",
+  "version": "0.9.0",
+  "unity": "2022.3",
+  "description": "Mini MVCS (Model View Controller Service) library for Unity Development by Rivello Multimedia Consulting",
+  "keywords": [
+    "unity",
+    "unity3d",
+    "upm",
+    "rmc",
+    "mvc",
+    "mvcs",
+    "architecture",
+    "utility"
+  ],
+  "homepage": "https://github.com/SamuelAsherRivello/rmc-mini-mvcs.git",
+  "bugs": {
+    "url": "https://github.com/SamuelAsherRivello/rmc-mini-mvcs/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/SamuelAsherRivello/rmc-mini-mvcs.git"
+  },
+  "license": "MIT",
+  "author": "RMC (github.com/SamuelAsherRivello)",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "samples": [
+    {
+      "displayName": "RMC Mini MVCS - 1. Beginner Examples",
+      "description": "Beginner examples for education and inspiration of proper usage.\n\nThese are **required** to follow along with the training course.",
+      "path": "RMC Mini MVCS/Samples~/RMC Mini MVCS - 1. Beginner Examples"
+    },
+    {
+      "displayName": "RMC Mini MVCS - 2. Advanced Examples",
+      "description": "Advanced examples with more complexity.",
+      "path": "RMC Mini MVCS/Samples~/RMC Mini MVCS - 2. Advanced Examples"
+    }
+  ]
+}

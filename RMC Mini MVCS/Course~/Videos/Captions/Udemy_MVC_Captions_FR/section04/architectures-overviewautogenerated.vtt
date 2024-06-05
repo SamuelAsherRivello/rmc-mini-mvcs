@@ -1,0 +1,208 @@
+WEBVTT
+
+00:00.330 --> 00:02.580
+Regardons maintenant les architectures.
+
+00:03.000 --> 00:08.190
+Une architecture logicielle est l'organisation fondamentale de toutes ses parties.
+
+00:08.190 --> 00:13.880
+Nous verrons que les architectures sont construites sur la base de principes et de modèles de conception.
+
+00:13.890 --> 00:18.210
+Parmi les avantages, on peut citer le fait qu'il s'agit de solutions éprouvées à des problèmes reproductibles.
+
+00:18.210 --> 00:25.080
+En organisant notre projet de manière personnalisée, nous pouvons apporter confiance, évolutivité, performance et
+
+00:25.080 --> 00:26.490
+plus à nos projets.
+
+00:26.490 --> 00:32.670
+Les architectures logicielles sont généralement de haut niveau et peuvent être appliquées à différents langages ou plates-formes,
+
+00:32.670 --> 00:39.420
+En les utilisant, nous pouvons accélérer le développement et faciliter les phases de maintenance.
+
+00:39.420 --> 00:40.560
+de nos projets.
+
+00:40.560 --> 00:46.140
+En tant que développeurs, nous pensons souvent que notre travail consiste à ajouter de nouvelles fonctionnalités et que c'est la majeure partie de notre travail.
+
+00:46.140 --> 00:53.880
+de notre expérience, les recherches montrent que 80 % du temps passé sur un projet logiciel est consacré à la maintenance du code.
+
+00:54.000 --> 01:00.660
+Ainsi, en choisissant dès le départ des architectures, des principes de conception et des modèles et en les appliquant tout au long du projet, il est possible d'améliorer la qualité du code.
+
+01:00.660 --> 01:06.960
+projet, lorsque nous ajoutons des fonctionnalités, cette grande phase de maintenance peut être plus facile et augmenter notre productivité.
+
+01:06.960 --> 01:09.180
+qualité de vie à un niveau élevé.
+
+01:09.180 --> 01:15.960
+Certains types d'architectures sont l'approche sans architecture, typiquement de jeunes équipes ou des individus
+
+01:15.960 --> 01:17.550
+qui se lancent dans le logiciel.
+
+01:17.550 --> 01:23.550
+Nous faisons ce qui nous semble bon sur le moment, sans perspective ou vision plus large du projet.
+
+01:23.550 --> 01:25.080
+Mais en fin de compte, nous verrons.
+
+01:25.080 --> 01:26.400
+Nous avons besoin d'autre chose.
+
+01:26.400 --> 01:32.790
+Les équipes de vétérans peuvent utiliser des solutions architecturales personnalisées qui tiennent compte des besoins uniques d'une équipe et
+
+01:32.790 --> 01:39.420
+le produit qu'elles créent, en utilisant une bibliothèque de ces principes et modèles et en créant des solutions architecturales personnalisées.
+
+01:39.420 --> 01:40.710
+leur propre solution.
+
+01:40.710 --> 01:46.830
+Cette approche présente des avantages et des inconvénients, et un autre type de solution consiste à utiliser une architecture établie,
+
+01:46.830 --> 01:52.460
+quelque chose que nous pouvons sortir de l'étagère et appliquer de manière prescriptive à nos projets.
+
+01:52.470 --> 02:01.740
+Il s'agit notamment de MVP, VC et VM, et il y en a beaucoup, beaucoup d'autres que nous examinerons en détail.
+
+02:02.010 --> 02:08.700
+Bien qu'il soit tout à fait naturel de développer au fur et à mesure et de faire ce qui nous semble le plus juste dans l'instant, cela ne signifie pas pour autant qu'il n'y a pas d'autre solution.
+
+02:08.700 --> 02:11.190
+pas d'architecture présente des inconvénients.
+
+02:11.190 --> 02:16.710
+Que vous soyez seul ou que vous fassiez partie d'une petite équipe, il y aura davantage de débats sur la manière d'ajouter chaque fonctionnalité.
+
+02:16.710 --> 02:22.860
+puisque vous n'avez pas de recette qui conduit à des incohérences au cours de la vie d'un développeur et à travers les différents projets de l'entreprise.
+
+02:22.860 --> 02:28.110
+chaque développeur de l'équipe, cela signifie que l'application des facteurs re devient plus difficile parce qu'il y a
+
+02:28.110 --> 02:30.570
+toutes les variations subtiles de la base de code.
+
+02:30.840 --> 02:37.100
+Il devient beaucoup plus difficile de lire le code un jour plus tard, une semaine plus tard ou un an plus tard.
+
+02:37.110 --> 02:43.410
+De même, lorsque vous intégrez de nouveaux membres à l'équipe ou que vous retirez des membres de l'équipe du projet, il est plus difficile de lire le code un jour, une semaine ou un an plus tard.
+
+02:43.410 --> 02:44.640
+de la main d'œuvre.
+
+02:44.670 --> 02:47.430
+Vous devez fournir davantage d'explications personnalisées.
+
+02:47.430 --> 02:52.260
+Le nouveau développeur doit passer plus de temps à comprendre ce qui existe et la base de code.
+
+02:52.260 --> 02:57.990
+Et chaque fois qu'un développeur part, il doit expliquer et documenter un peu plus son travail personnel.
+
+02:57.990 --> 03:00.540
+sur la façon dont il l'a appliqué au projet.
+
+03:00.540 --> 03:06.180
+Pour de nombreux développeurs, en particulier les débutants, cette approche peut encore sembler être le moyen le plus rapide d'atteindre les objectifs suivants
+
+03:06.180 --> 03:07.590
+faire passer vos fonctionnalités.
+
+03:07.590 --> 03:14.160
+Et nous voyons souvent des développeurs en phase de prototypage jeter ces règles par la fenêtre et faire l'impasse sur l'architecture.
+
+03:14.160 --> 03:14.790
+approche.
+
+03:14.790 --> 03:21.090
+Cependant, un code aussi rapide apporte effectivement plus de bogues et de complexité au projet, et le coût de l'architecture est plus élevé que celui de l'architecture.
+
+03:21.090 --> 03:23.910
+des bogues logiciels croît de manière exponentielle au fil du temps.
+
+03:24.150 --> 03:30.090
+Si vous pouvez détecter les bogues plus tôt, ils sont plus rapides à corriger et ont moins d'impact sur l'ensemble du projet.
+
+03:30.090 --> 03:35.820
+La recherche montre que si vous détectez le même bogue après avoir livré le produit, il peut être 30 fois plus coûteux que si vous l'aviez détecté plus tôt.
+
+03:35.820 --> 03:40.950
+ou plus difficile de corriger ce bogue et de sortir la nouvelle version.
+
+03:40.950 --> 03:46.770
+Les meilleures pratiques consistent donc à créer un code facile à maintenir dès le départ afin d'accroître l'automatisation et de réduire les risques d'erreur.
+
+03:46.770 --> 03:52.440
+tests qui l'entourent, dont nous parlerons plus tard, afin de détecter les bogues rapidement et souvent et de corriger toutes les erreurs.
+
+03:52.440 --> 03:56.040
+de vos bogues avant de passer à la création de nouvelles fonctionnalités.
+
+03:56.040 --> 04:02.550
+La recherche sur les logiciels montre que plus de 80 % des bogues concernent environ 20 % des fonctionnalités.
+
+04:02.580 --> 04:08.610
+Il peut s'agir des pièces maîtresses de la colle ou de l'architecture qui maintient l'ensemble, en travaillant rapidement.
+
+04:08.610 --> 04:14.820
+d'ajouter de nouvelles fonctionnalités pour l'architecture ou l'approche sans architecture causera de plus en plus de problèmes
+
+04:14.820 --> 04:15.420
+au fil du temps.
+
+04:15.420 --> 04:23.160
+En outre, ce qui est surprenant pour beaucoup, c'est que pendant 80 % de la vie des développeurs d'un projet logiciel, ces 80 % ne peuvent pas se concentrer sur les problèmes de l'architecture.
+
+04:23.160 --> 04:27.360
+sont consacrés à la maintenance de la base de code, et pas nécessairement à l'ajout de nouvelles fonctionnalités.
+
+04:27.360 --> 04:33.630
+Ainsi, alors que nous pourrions penser que toute la journée est consacrée à l'ajout de fonctionnalités, cela ne représente qu'une petite partie de la charge de travail globale.
+
+04:33.630 --> 04:41.160
+L'essentiel est donc de réaliser ces 20 % de nouvelles fonctionnalités et caractéristiques de manière efficace et à long terme.
+
+04:41.160 --> 04:47.220
+à long terme, de sorte que lorsque nous passons du temps à maintenir la base de code, nous récoltons ces avantages.
+
+04:47.220 --> 04:47.790
+ensemble.
+
+04:47.790 --> 04:56.220
+Nous verrons que l'utilisation d'une architecture établie comme MVC nous apportera de nombreux avantages dans le développement de notre unité.
+
+04:56.580 --> 04:59.850
+L'un des thèmes abordés dans cette section est que souvent le.
+
+05:00.040 --> 05:04.870
+L'idée que nous nous faisons de la manière dont se déroule le développement de logiciels ne correspond pas à la réalité.
+
+05:04.960 --> 05:10.840
+Nous avons l'impression que toute la journée est consacrée à l'ajout de nouvelles fonctionnalités, mais ce n'est en fait qu'une petite partie de la durée de vie.
+
+05:10.840 --> 05:11.650
+d'un projet.
+
+05:11.650 --> 05:17.350
+Lorsque nous commençons à réfléchir à des solutions à long terme qui facilitent la maintenance, nous accordons une plus grande importance à l'entretien.
+
+05:17.350 --> 05:23.690
+valeur à l'apprentissage de bons principes de conception, de modèles de conception et, en fin de compte, d'architectures.
+
+05:23.710 --> 05:25.240
+C'est tout pour cette section.
+
+05:25.240 --> 05:25.990
+Nous vous remercions.

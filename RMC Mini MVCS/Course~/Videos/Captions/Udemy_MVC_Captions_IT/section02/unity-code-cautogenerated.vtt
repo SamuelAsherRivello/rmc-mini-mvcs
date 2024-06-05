@@ -1,0 +1,244 @@
+WEBVTT
+
+00:00.240 --> 00:06.180
+Gli editor sono alcuni dei principali strumenti che utilizziamo nello sviluppo di software quando sviluppiamo giochi con unity.
+
+00:06.180 --> 00:12.840
+L'editor di Unity stesso è il luogo in cui svolgiamo la maggior parte del nostro lavoro, mentre un editor di codice separato è il luogo in cui
+
+00:12.840 --> 00:13.590
+aggiungiamo il codice.
+
+00:13.620 --> 00:19.380
+L'editor di Unity è costituito da un concetto di layout, che è un gruppo di schede e di elementi agganciati.
+
+00:19.380 --> 00:20.220
+finestre.
+
+00:21.280 --> 00:26.920
+Ognuna di queste finestre svolge delle funzioni e ci fornisce ulteriori informazioni sul gioco e sul progetto.
+
+00:26.920 --> 00:27.700
+che stiamo creando.
+
+00:27.730 --> 00:31.910
+Ecco un layout abbastanza comune con le finestre più diffuse e utili.
+
+00:31.930 --> 00:35.070
+La finestra della gerarchia ci mostra gli oggetti del mondo.
+
+00:35.080 --> 00:38.860
+La vista scena ci offre una rappresentazione 3D del mondo.
+
+00:38.950 --> 00:42.100
+Può anche essere impostata in 2D per un gameplay in 2D.
+
+00:42.130 --> 00:48.130
+La finestra del progetto rappresenta la libreria di tutti i possibili asset e codici che possiamo inserire nella scena.
+
+00:48.130 --> 00:54.550
+Quando si selezionano diversi elementi e funzionalità in queste finestre, la finestra Inspector fornisce
+
+00:54.550 --> 00:58.480
+maggiori dettagli e campi serializzati del nostro codice.
+
+00:58.480 --> 01:02.320
+Vengono visualizzati qui per facilitarne la modifica e il tempo di esecuzione.
+
+01:02.350 --> 01:05.200
+Vediamolo in azione nell'editor di Unity.
+
+01:05.200 --> 01:06.580
+Creo una nuova scena.
+
+01:06.580 --> 01:08.340
+Creo un oggetto di gioco.
+
+01:08.350 --> 01:11.530
+Aggiungo uno script personalizzato all'oggetto di gioco.
+
+01:11.530 --> 01:15.970
+Premiamo play in unity e vediamo come lo script si traduce in runtime.
+
+01:15.970 --> 01:21.460
+Poi giocherò con i campi serializzati all'interno dell'inspector per dimostrare come funziona.
+
+01:21.580 --> 01:25.780
+I prerequisiti per questo corso includono alcuni software gratuiti.
+
+01:25.960 --> 01:29.350
+Per prima cosa, utilizzate il vostro browser web preferito.
+
+01:30.270 --> 01:35.280
+Questo è utile per fare qualsiasi ricerca aggiuntiva che si debba fare durante il corso.
+
+01:35.850 --> 01:38.460
+Ad esempio, è possibile ottenere Chrome da Google.
+
+01:38.490 --> 01:41.070
+Poi, avremo bisogno dell'editor Unity stesso.
+
+01:41.400 --> 01:44.790
+L'editor di Unity è dotato anche di un editor di codice.
+
+01:45.180 --> 01:50.760
+In alternativa, si può usare l'editor di codice che si preferisce dal pulsante getting started nella barra di navigazione in alto.
+
+01:50.790 --> 01:55.350
+Troviamo diverse scelte e prezzi per il pacchetto Unity Software.
+
+01:55.350 --> 02:02.040
+Le opzioni includono Unity, personal e Unity student, entrambi gratuiti e consigliati per
+
+02:02.040 --> 02:03.220
+l'uso in questo corso.
+
+02:03.240 --> 02:08.340
+Questi includono tutte le caratteristiche e le funzionalità di cui abbiamo parlato e tutto ciò di cui avrete bisogno per
+
+02:08.340 --> 02:09.950
+imparare da questo corso.
+
+02:09.960 --> 02:16.680
+Quando scarichiamo ed eseguiamo Unity per la prima volta in un progetto aperto e vuoto, avremo quel layout familiare e
+
+02:16.680 --> 02:19.280
+serie di finestre che abbiamo visto prima.
+
+02:19.290 --> 02:20.760
+Creiamo una nuova scena.
+
+02:20.760 --> 02:24.690
+Possiamo farlo in molti modi, ma è sufficiente archiviare una nuova scena.
+
+02:24.690 --> 02:28.260
+Sceglieremo la scena di base costruita e la gerarchia.
+
+02:28.260 --> 02:32.850
+Vediamo che la scena di base è impostata con la telecamera e l'illuminazione di default.
+
+02:32.850 --> 02:34.410
+Creiamo un nuovo oggetto di gioco.
+
+02:34.410 --> 02:39.000
+Scegliamo il cubo e poi inseriamo uno script personalizzato sul cubo.
+
+02:39.030 --> 02:44.240
+Ci sono molti modi per farlo, ma noi sceglieremo Oggetto di gioco, Oggetto 3D e Cubo.
+
+02:44.250 --> 02:47.760
+Ora possiamo vedere il rendering del cubo nella vista di gioco.
+
+02:47.790 --> 02:52.050
+La vista di gioco rappresenta ciò che gli utenti finali vedranno dalla telecamera di gioco.
+
+02:52.050 --> 02:58.410
+Con il cubo selezionato nella gerarchia, possiamo vedere nella finestra dell'ispettore tutti i componenti correnti
+
+02:58.410 --> 02:59.190
+allegato.
+
+02:59.490 --> 03:01.590
+Aggiungiamo un nuovo componente personalizzato.
+
+03:06.400 --> 03:10.270
+Ora nella finestra del progetto vediamo la prima risorsa creata.
+
+03:11.010 --> 03:15.000
+Possiamo fare doppio clic sullo script e aprirlo nell'editor di codice predefinito.
+
+03:15.700 --> 03:21.190
+Quando creiamo un nuovo script e lo apriamo, si apre l'editor di codice predefinito.
+
+03:21.400 --> 03:25.480
+Per iniziare, unity include una piccola parte di codice modello.
+
+03:25.630 --> 03:30.550
+Siete liberi di rimuovere le parti che non volete o di cui avete bisogno e di iniziare a codificare da zero.
+
+03:31.030 --> 03:35.240
+Copiate tutto dalla nostra diapositiva di scripting e incollatelo in unity.
+
+03:35.260 --> 03:40.990
+Abbiamo il metodo di risveglio, il metodo di avvio e il metodo di aggiornamento che verrà eseguito a ogni fotogramma.
+
+03:41.830 --> 03:45.100
+Qui sto usando il componente transform per ruotare l'oggetto.
+
+03:45.100 --> 03:48.680
+Salviamo il nostro script e torniamo a unity per eseguire la scena.
+
+03:48.700 --> 03:56.150
+Si può vedere in fase di esecuzione che il codice transform rotate all'interno del metodo update sta facendo ruotare il cubo.
+
+03:56.170 --> 04:02.890
+Inoltre, mentre Unity è in esecuzione qui con il cubo selezionato, vedo il campo serializzato di velocità e
+
+04:02.890 --> 04:04.030
+Posso manipolarlo.
+
+04:12.970 --> 04:15.490
+Ora sta girando molto, molto più velocemente.
+
+04:24.390 --> 04:25.800
+O molto più lentamente.
+
+04:28.760 --> 04:35.840
+Siamo in grado di apportare queste modifiche a tutti i campi serializzati, in modo da poter modificare la sensazione di gioco o la partita
+
+04:35.840 --> 04:38.420
+senza fermare unity.
+
+04:39.360 --> 04:43.480
+Questa è una caratteristica incredibilmente potente del motore di unity.
+
+04:43.500 --> 04:47.670
+L'editor di Unity ci mostra un'approssimazione del nostro gioco e dello sviluppo.
+
+04:48.270 --> 04:52.650
+È meglio testare il gioco in una build completa per vedere i risultati reali.
+
+04:52.680 --> 04:56.360
+Ci sono molti modi per farlo, ma io userò file, build e run.
+
+04:56.370 --> 05:00.510
+Ora vediamo il nostro progetto in esecuzione in una build standalone.
+
+05:00.540 --> 05:03.660
+Nel mio caso, è impostato per Windows.
+
+05:03.690 --> 05:09.360
+Questo è tutto per una breve panoramica di Unity, l'aggiunta dello scripting e la costruzione del progetto.
+
+05:10.920 --> 05:19.110
+Con questa rapida panoramica su unity, l'ed di unity e lo scripting, possiamo iniziare a vedere quanto sia potente unity
+
+05:19.110 --> 05:19.600
+è.
+
+05:19.620 --> 05:22.820
+Stiamo solo grattando la superficie di ciò che è possibile fare.
+
+05:22.830 --> 05:27.120
+Abbiamo esaminato l'editor teorico e il Coding Inside Unity.
+
+05:27.120 --> 05:33.210
+Abbiamo visto che l'oggetto di gioco è un concetto fondamentale che i prefabbricati e le scene sono utilizzati per il livello alto.
+
+05:33.210 --> 05:38.970
+organizzazione di alto livello nel progetto e che, creando una classe ed estendendo il comportamento mono, si ottiene molto
+
+05:38.970 --> 05:40.810
+di funzionalità fuori dalla scatola.
+
+05:40.830 --> 05:47.130
+Successivamente, faremo un passo indietro rispetto alle specifiche di unity e guarderemo ad alcuni concetti di progettazione del software.
+
+05:47.130 --> 05:56.040
+Esamineremo i principi di progettazione, i modelli di progettazione e l'UML o linguaggio di modellazione unificato per la creazione di diagrammi.
+
+05:56.040 --> 05:57.630
+i nostri concetti e progetti.
+
+05:58.300 --> 05:59.170
+Grazie.

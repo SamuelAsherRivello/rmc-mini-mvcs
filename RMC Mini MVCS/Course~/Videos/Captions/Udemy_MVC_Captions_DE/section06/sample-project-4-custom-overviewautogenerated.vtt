@@ -1,0 +1,256 @@
+WEBVTT
+
+00:00.120 --> 00:03.570
+Das benutzerdefinierte Beispielprojekt des Mini-NBC.
+
+00:03.570 --> 00:05.010
+Herzlichen Glückwunsch!
+
+00:05.010 --> 00:09.180
+Sie haben die gesamte Theorie dieses Kurses gemeinsam erfolgreich abgeschlossen.
+
+00:09.180 --> 00:11.010
+Wir haben die Kurseinführung durchgesprochen.
+
+00:11.010 --> 00:14.850
+Wir haben uns einen Überblick über Unity, einschließlich der Unity-Struktur, verschafft.
+
+00:14.850 --> 00:22.770
+Wir haben uns den Softwareentwurf auf hohem Niveau angesehen und dabei Entwurfsprinzipien, Entwurfsmuster und UML-Diagramme behandelt,
+
+00:22.770 --> 00:24.840
+sowie die Architekturen selbst.
+
+00:24.840 --> 00:29.340
+Und dann haben wir uns gemeinsam in die MINI- und VCs-Architektur für Unity vertieft.
+
+00:29.340 --> 00:35.460
+Lasst uns all diese Theorie in die Praxis umsetzen und ein neues Projekt von Grund auf erstellen.
+
+00:35.460 --> 00:41.190
+Mit jedem Beispielprojekt, das wir bisher behandelt haben, und auch mit diesem neuen Projekt, fahren wir fort, uns zurück zu schälen
+
+00:41.190 --> 00:46.770
+mehr Schichten in MVCs Konzepten und denken kritisch darüber nach, wie wir sie anwenden.
+
+00:46.770 --> 00:48.600
+Wenn wir den nächsten Abschnitt durchgehen.
+
+00:48.600 --> 00:55.170
+Überlegen Sie selbst, mit welchen Aspekten der Architektur und dieses Rahmens Sie sich am wohlsten fühlen
+
+00:55.170 --> 00:55.410
+mit?
+
+00:55.420 --> 01:00.150
+Fangen Sie an, die langfristigen Vorteile zu erkennen, wenn Sie Architektur auf Ihre Projekte anwenden?
+
+01:00.150 --> 01:02.660
+Welche Teile des Frameworks möchten Sie genauer erforschen?
+
+01:02.670 --> 01:06.390
+Überlegen Sie auch, welche Aspekte für Ihre Bedürfnisse nicht geeignet sind.
+
+01:06.390 --> 01:12.120
+Was können Sie tun, um die gewünschten Ergebnisse in einem Projekt zu erzielen, in dem Gestaltungsprinzipien, Muster
+
+01:12.120 --> 01:14.580
+und andere Konzepte unklar bleiben?
+
+01:14.580 --> 01:19.440
+Nun, bis zu diesem Punkt haben wir mehrere Beispiele für MVCs in Aktion gesehen.
+
+01:19.440 --> 01:22.270
+In jedem Fall haben wir etwas überprüft, das bereits existierte.
+
+01:22.290 --> 01:24.510
+Jetzt werden wir ein neues Projekt von Grund auf erstellen.
+
+01:24.510 --> 01:26.550
+Hier ist der übergeordnete Prozess, den wir gemeinsam durchführen werden.
+
+01:26.550 --> 01:29.370
+Nun, was ist unser Konzept und was sind die funktionalen Anforderungen?
+
+01:29.370 --> 01:30.690
+Was muss es können?
+
+01:30.720 --> 01:32.490
+Wie sieht die Benutzererfahrung aus?
+
+01:32.490 --> 01:35.550
+Was sehen sie, und welche Art von Eingabe verwenden sie?
+
+01:35.550 --> 01:38.620
+Welche architektonischen Belange werden wir brauchen?
+
+01:38.640 --> 01:42.960
+Model-View-Controller-Service, vielleicht mehrere.
+
+01:42.960 --> 01:47.730
+Und für welche dieser Belange können wir die Basisfunktionalität verwenden und für welche benötigen wir sie?
+
+01:47.730 --> 01:49.260
+Einige benutzerdefinierte Funktionen?
+
+01:49.260 --> 01:54.690
+Lassen Sie uns also eine einfache mathematische Anwendung erstellen, einen Taschenrechner, der viele MVCs verwendet.
+
+01:54.690 --> 01:56.070
+Hier sind die Anforderungen.
+
+01:56.340 --> 01:59.370
+Wir werden einige Textfelder auf dem Bildschirm haben.
+
+01:59.880 --> 02:06.750
+Der Benutzer gibt zwei ganzzahlige Zahlen ein und klickt dann auf eine Schaltfläche, um sie mathematisch zu addieren
+
+02:06.750 --> 02:07.650
+und zeigt das Ergebnis an.
+
+02:07.650 --> 02:09.930
+Wie können wir dies nun in Bedenken auflösen?
+
+02:09.930 --> 02:11.430
+Nun, das Modell speichert die Daten.
+
+02:11.430 --> 02:14.220
+Welche Art von Daten brauchen wir also, um dies zu ermöglichen?
+
+02:14.220 --> 02:19.590
+Nun, wenn wir von der Ansicht ausgehen und die Daten auf diese Weise betrachten, wissen wir, dass wir etwas Text haben
+
+02:19.590 --> 02:22.620
+Felder, die von den Benutzern eingegeben werden, und wir müssen sie irgendwie speichern.
+
+02:22.620 --> 02:28.290
+Wir haben also eine Ganzzahl für das erste Textfeld, eine Ganzzahl für das zweite und eine Ganzzahl für das
+
+02:28.290 --> 02:28.860
+Ergebnis.
+
+02:28.860 --> 02:35.400
+In der Ansicht werden wir eine Art von Text für A, für B und auch für die Anzeige des Ergebnisses im Controller haben,
+
+02:35.400 --> 02:41.460
+der die Logik handhaben wird, braucht etwas, um die Add-Operation durchzuführen, sowie einen Weg, um
+
+02:41.460 --> 02:43.290
+die App zu löschen oder zurückzusetzen.
+
+02:43.290 --> 02:49.290
+Und während wir in früheren Beispielen einen Service-Layer verwendet haben, um externe Daten zu laden, brauchen wir das nicht
+
+02:49.290 --> 02:51.480
+für dieses Beispiel, also werden wir keinen Dienst haben.
+
+02:51.480 --> 02:55.020
+Welche Basisfunktionalität werden wir also hier verwenden?
+
+02:55.020 --> 03:00.240
+Hier denken wir darüber nach, für welche Belange wir die Standardfunktionalität und für welche wir die
+
+03:00.240 --> 03:01.290
+benutzerdefinierte Funktionalität?
+
+03:01.290 --> 03:05.400
+Nun, wie es für das Modell typisch ist, wollen wir eine gewisse Grundfunktionalität.
+
+03:05.400 --> 03:08.610
+Normalerweise gibt es keine Notwendigkeit, vom Basismodell abzuweichen.
+
+03:08.610 --> 03:11.580
+Hier werden wir also das Basismodell für die Ansicht erweitern.
+
+03:11.580 --> 03:16.230
+Wir implementieren das Eye View Interface und erweitern das Mono Verhalten.
+
+03:16.230 --> 03:18.110
+Jetzt haben wir dieses Muster schon einmal gesehen.
+
+03:18.120 --> 03:20.400
+Jedes Mal, wenn du Unitys UI benutzen willst.
+
+03:20.400 --> 03:23.340
+Unity's UI spielt sehr gut mit Mono Behaviors.
+
+03:23.340 --> 03:28.470
+Also lehnen wir uns daran an und verwenden ein Mono Behavior für unseren View für den Controller.
+
+03:28.470 --> 03:32.970
+Während eine Basis-Controller-Klasse existiert, die am besten funktioniert, wenn wir eine wollen.
+
+03:32.970 --> 03:38.340
+Jeweils ein Model-View-Controller und ein Service hier, weil wir den Service nicht brauchen.
+
+03:38.340 --> 03:43.890
+Wir haben ein paar Möglichkeiten, wie wir vorgehen können, aber wir werden ganz einfach einen AI Controller implementieren und einen Service erstellen
+
+03:43.890 --> 03:46.560
+benutzerdefinierte Funktionalität, die den Dienst nicht nutzt.
+
+03:46.560 --> 03:50.790
+Und wieder, auf der Service-Schicht, werden wir keinen Service verwenden, also überspringen wir diesen Teil.
+
+03:50.790 --> 03:53.700
+Das liegt daran, dass die App keine externen Daten benötigt.
+
+03:53.700 --> 03:59.430
+In dieser Phase des Brainstormings ist es ein guter Zeitpunkt, um über die Diagrammerstellung mit UML nachzudenken.
+
+03:59.460 --> 04:05.430
+Das hilft Ihnen, herauszufinden, wo die Abhängigkeiten liegen, welche Schnittstellen implementiert werden sollen, welche
+
+04:05.430 --> 04:10.320
+Klassen erweitert werden sollen, egal ob man alleine oder mit dem Team an einem Projekt arbeitet,
+
+04:10.320 --> 04:14.310
+UML ist eine großartige Methode, um zu kommunizieren und sich bei der Entwicklung zu konzentrieren.
+
+04:14.310 --> 04:20.100
+Wir nehmen also dieselben Brainstorms, die wir in den letzten Schritten hatten, und stellen sie visuell dar.
+
+04:20.100 --> 04:25.530
+Wir werden eine Taschenrechner-Miniklasse haben, die die gesamte Struktur im Inneren darstellt.
+
+04:25.530 --> 04:30.060
+Wir werden ein Taschenrechner-Modell, einen Taschenrechner-Controller und die Taschenrechner-Ansicht haben.
+
+04:30.060 --> 04:33.270
+Während des gesamten Kurses gab es mehrere Aufgaben zum Thema Programmierung.
+
+04:33.270 --> 04:38.070
+Wenn Sie bereit sind für die ultimative Programmieraufgabe, können Sie das Video hier anhalten.
+
+04:38.070 --> 04:43.950
+Verwenden Sie nur die Informationen, die wir in diesem Abschnitt besprochen haben, und beginnen Sie mit dem Programmieren von Grund auf, sobald Sie die
+
+04:43.950 --> 04:49.110
+oder wenn Sie nicht weiterkommen, können Sie zu diesem Abschnitt zurückkehren und sehen, wie wir das Problem
+
+04:49.110 --> 04:49.650
+gemeinsam gelöst haben.
+
+04:49.650 --> 04:50.850
+Schauen wir uns das in Aktion an.
+
+04:50.850 --> 04:57.840
+Ich werde von Anfang an zeigen, wie man Unity bekommt, es installiert, ein neues Projekt erstellt, ein
+
+04:57.840 --> 04:59.910
+das Mini und VC's Framework und.
+
+04:59.960 --> 05:03.470
+Live-Codierung für diesen Taschenrechner Beispielprojekt.
+
+05:03.470 --> 05:08.690
+Dieses Beispielprojekt wird sich ein bisschen anders anfühlen als die anderen, die wir bisher gemacht haben, weil ich es programmieren werde
+
+05:08.690 --> 05:14.030
+und wenn wir Glück haben, mache ich dabei auch ein paar Fehler, die
+
+05:14.030 --> 05:15.100
+wir gemeinsam lösen können.
+
+05:15.110 --> 05:16.280
+Dann fangen wir mal an.

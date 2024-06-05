@@ -1,0 +1,229 @@
+WEBVTT
+
+00:02.960 --> 00:06.650
+Hallo und willkommen zur MVC-Architektur für Unity.
+
+00:07.460 --> 00:08.350
+Hallo.
+
+00:08.360 --> 00:09.290
+Ich bin Sam.
+
+00:09.320 --> 00:11.390
+Ich werde euch durch diesen Kurs führen.
+
+00:11.720 --> 00:16.280
+Ich bin ein zertifizierter Unity-Entwickler mit über 20 Jahren Erfahrung.
+
+00:16.310 --> 00:21.020
+Mein Ziel ist es, mit interaktiver Technologie zu unterrichten und zu unterhalten.
+
+00:21.050 --> 00:25.910
+Ich habe Unity-Spieltitel für PC-Konsolen und mobile Plattformen entwickelt.
+
+00:26.120 --> 00:28.820
+Ich freue mich besonders, Ihnen diesen Kurs anbieten zu können.
+
+00:28.820 --> 00:35.270
+Es ist eine fantastische Möglichkeit für fortgeschrittene Entwickler, ihre Fähigkeiten auf eine Art und Weise zu verbessern, die
+
+00:35.270 --> 00:36.110
+wichtig ist.
+
+00:36.500 --> 00:39.140
+Die Architektur ist ungeheuer wichtig.
+
+00:39.530 --> 00:43.730
+Im Laufe meiner Karriere habe ich verschiedene Erfahrungen mit der Einheit gemacht.
+
+00:43.730 --> 00:49.970
+Ich habe im Bildungsbereich gearbeitet, an Universitäten gelehrt und Online-Kurse wie diesen hier erstellt
+
+00:49.970 --> 00:57.860
+Spieletitel für mobile Konsolen und PC, sowie die Arbeit an Lehrmaterialien für Unity Tools und
+
+00:57.860 --> 01:00.170
+verschiedene Unity-Spieleentwicklungsfirmen.
+
+01:00.530 --> 01:03.410
+Willkommen bei der MVC-Architektur für Unity.
+
+01:03.560 --> 01:05.670
+Unity ist eine vielseitige Spiel-Engine.
+
+01:05.690 --> 01:09.830
+Sie kann für alle Arten von Projekten verwendet werden, natürlich auch für Spiele.
+
+01:10.010 --> 01:17.840
+Die MVC-Architektur, die für Model, View und Controller steht, bringt Vertrauen, Organisation
+
+01:17.840 --> 01:20.060
+und Skalierbarkeit für Ihre Projekte.
+
+01:20.390 --> 01:26.900
+Nach Abschluss dieses Kurses werden Sie in der Lage sein, Unity-Projekte zu entwerfen und zu entwickeln
+
+01:26.900 --> 01:28.830
+unter Verwendung der MVC-Architektur.
+
+01:28.850 --> 01:33.980
+Während der gesamten Dauer dieses Kurses werden wir uns auf drei verschiedene Lernpfade konzentrieren.
+
+01:34.370 --> 01:40.100
+Ob wir nun über Design-Grundlagen sprechen, die Einheitsarchitekturen besprechen, oder die
+
+01:40.100 --> 01:41.530
+Unity-Engine selbst.
+
+01:41.540 --> 01:45.860
+Wir werden uns die Theorie anschauen, wir werden uns den Editor anschauen und wir werden uns den Spielcode anschauen.
+
+01:45.860 --> 01:52.220
+Mit C-sharp wird es Kursvoraussetzungen geben, es wird vorgeschlagen, dass Sie vor Beginn dieses Kurses
+
+01:52.220 --> 01:54.230
+mit der Software zu arbeiten.
+
+01:54.230 --> 01:59.390
+Die gesamte erforderliche Software ist in diesem Kurs und im Abschnitt Ressourcen verlinkt, und sie ist
+
+01:59.390 --> 02:00.620
+alles frei verfügbar.
+
+02:00.620 --> 02:05.990
+Dazu gehört auch, dass Sie Ihren Lieblings-Webbrowser haben, um die verschiedenen Links zu durchsuchen, die wir Ihnen zur Verfügung stellen werden.
+
+02:05.990 --> 02:10.970
+den Unity-Editor, von dem es eine kostenlose Version gibt, und die Verwendung Ihres bevorzugten C-Sharp-Code-Editors.
+
+02:10.970 --> 02:14.210
+Sie können den kostenlosen Editor verwenden, der im Unity-Download enthalten ist.
+
+02:14.210 --> 02:17.930
+Das erforderliche Wissen für diesen Kurs ist nicht für Anfänger geeignet.
+
+02:17.930 --> 02:23.230
+Es wird empfohlen, dass Sie einige Monate oder mehr Erfahrung mit Unity und C-sharp haben.
+
+02:23.300 --> 02:31.070
+Dazu gehören Klassen, Schnittstellen, Methoden und Eigenschaften, die Verwendung von Ereignissen und die allgemeinen Paradigmen
+
+02:31.070 --> 02:33.110
+der objektorientierten Programmierung.
+
+02:33.110 --> 02:39.140
+Wenn Sie diese speziellen Elemente noch nicht kennen, sollten Sie sich diese Kenntnisse aneignen
+
+02:39.140 --> 02:41.330
+Kenntnisse zu erwerben, bevor Sie diesen Kurs besuchen.
+
+02:42.280 --> 02:46.750
+Werfen wir einen Blick auf den Kursinhalt, um zu sehen, was wir in den einzelnen Abschnitten und Kapiteln behandeln werden
+
+02:46.750 --> 02:47.240
+hier.
+
+02:47.260 --> 02:50.820
+Wir beginnen mit der Einführung in den Kurs, das ist dieser Abschnitt hier.
+
+02:50.830 --> 02:55.390
+Dann werden wir einen kurzen Überblick über Unity geben und uns ansehen, wie und warum man sich für Unity entscheiden sollte
+
+02:55.390 --> 02:59.390
+Game-Engine, sowie einen Überblick über die Struktur von Unity.
+
+02:59.410 --> 03:05.560
+Obwohl sich dieser Kurs auf die MVC-Architektur konzentriert, verbringen wir einige Zeit mit den Grundlagen
+
+03:05.560 --> 03:12.610
+hier im Softwaredesign einen Blick auf Entwurfsprinzipien, Entwurfsmuster und UML-Diagramme werfen,
+
+03:12.610 --> 03:15.760
+sowie die Architektur speziell für Unity.
+
+03:15.850 --> 03:22.240
+Dieser Abschnitt gibt Ihnen einen Hintergrund, um die Konzepte zu verstehen, die in der Architektur weitergeführt werden
+
+03:22.240 --> 03:27.100
+fortgesetzt werden, während der Kurs verschiedene Architekturen erwähnt, die mit Unity kompatibel sind.
+
+03:27.130 --> 03:30.880
+Wir werden ein bestimmtes Framework verwenden, das ich erstellt habe.
+
+03:30.880 --> 03:33.790
+Das Mini-MVC-Framework.
+
+03:33.970 --> 03:40.900
+Das Mini-MVC-Framework für Unity ist ein großartiges Framework, das sowohl für Produktions- als auch für Ausbildungszwecke verwendet werden kann,
+
+03:40.900 --> 03:43.630
+und aus diesem Grund konzentriere ich mich hier in diesem Kurs darauf.
+
+03:43.810 --> 03:50.170
+Die Grundlagen, die Sie hier lernen, werden Ihnen helfen, unabhängig davon, welchen Endrahmen Sie wählen oder ob
+
+03:50.170 --> 03:54.910
+Sie sich entscheiden, Ihr eigenes MVC-Framework zu erstellen Mit den Prinzipien, die wir hier gelernt haben, nachdem Sie
+
+03:54.910 --> 04:00.910
+wie und warum wir eine Architektur wählen sollten und warum MVC eine gute Wahl ist, werden wir uns für bestimmte
+
+04:00.910 --> 04:01.690
+Beispiele.
+
+04:01.690 --> 04:07.450
+Dies ist der Abschnitt des Kurses, in dem ich meinen Bildschirm mit anderen teile und durch drei verschiedene
+
+04:07.450 --> 04:09.320
+Projekte, die ich bereits erstellt habe.
+
+04:09.340 --> 04:14.440
+Diese Projekte können Sie herunterladen und im Kurs mitverfolgen, und es wird Aufgaben geben, die
+
+04:14.440 --> 04:15.850
+damit Sie genau das tun können.
+
+04:16.180 --> 04:24.130
+Hier sehen wir uns eine Uhr an, die mit MVC erstellt wurde, ein einfaches Login mit MVC, ein 3d Rollerball Beispielspiel,
+
+04:24.130 --> 04:26.450
+sowie ein benutzerdefiniertes Beispielprojekt.
+
+04:26.470 --> 04:31.540
+Die ersten drei werden nun das bestehende Projekt durchgehen und sich ansehen, wie wir es durchführen würden
+
+04:31.540 --> 04:35.290
+ohne MVC und dann mit dem MVC-Framework.
+
+04:35.290 --> 04:39.160
+Beide Versionen können Sie sich ebenfalls ansehen.
+
+04:39.160 --> 04:40.360
+Für dieses vierte Beispiel.
+
+04:40.360 --> 04:43.270
+Das ist der einzige Abschnitt, in dem ich nach und nach codieren werde.
+
+04:43.270 --> 04:45.040
+Es wird ein Live-Coding-Abschnitt sein.
+
+04:45.040 --> 04:49.810
+Ich werde mit dem MVC-Framework beginnen und ein brandneues Beispiel erstellen.
+
+04:49.810 --> 04:54.280
+Darüber hinaus sind hier alle Konzepte und Praktiken, die wir bis zu diesem Punkt gelernt haben, in der
+
+04:54.280 --> 04:57.850
+Kurs gelernt haben, in einer Live-Codierungssitzung zusammenkommen.
+
+04:57.850 --> 05:03.280
+Wir werden im Kurs sehen, besonders in den Grundlagen, dass einer der besten Gründe für die Einführung von
+
+05:03.280 --> 05:09.610
+Architekturen wie MVC zu verwenden, ist, dass es Ihren Code in gut organisierte Bereiche aufteilt.
+
+05:09.610 --> 05:14.290
+Und ein Vorteil davon ist, dass Sie dann Unit-Tests einsetzen können.
+
+05:14.290 --> 05:19.900
+Wir werden also als Bonus einige Unit-Tests und testgetriebene Entwicklung behandeln.

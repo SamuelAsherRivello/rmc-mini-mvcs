@@ -1,0 +1,76 @@
+.screen {
+    flex-grow: 1;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+}
+
+.content {
+    flex-direction: column;
+    flex-grow: 1;
+    margin-top: 50px;
+    margin-right: 50px;
+    margin-bottom: 50px;
+    margin-left: 50px;
+}
+
+.header {
+    flex-grow: 0;
+    background-color: rgb(55, 55, 55);
+    justify-content: flex-end;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 30px;
+    height: 10%;
+}
+
+.body {
+    flex-grow: 1;
+    height: 90%;
+    flex-direction: column;
+}
+
+.unity-text-element {
+    -unity-font-definition: url("project://database/Assets/Samples/RMC%20Mini%20MVCS/2.4.0/RMC%20Mini%20MVCS%20-%202.%20Advanced%20Examples/Examples/Example01_ConfiguratorMini/Art/Fonts/SOURCESANSPRO-REGULAR%20SDF.asset?fileID=11400000&guid=da399494ce2b4924c8903ea35b3e0869&type=2#SOURCESANSPRO-REGULAR SDF");
+    font-size: 40px;
+    -unity-font-style: normal;
+    -unity-font: url("project://database/Assets/Samples/RMC%20Mini%20MVCS/2.4.0/RMC%20Mini%20MVCS%20-%202.%20Advanced%20Examples/Examples/Example01_ConfiguratorMini/Art/Fonts/SOURCESANSPRO-REGULAR.TTF?fileID=12800000&guid=1dae810738d38ae4b8af4be3b6c17c50&type=3#SOURCESANSPRO-REGULAR");
+    -unity-text-align: middle-center;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
+}
+
+.att-visibility-false {
+    visibility: hidden;
+}
+
+.body-quadrant {
+    align-items: auto;
+    justify-content: flex-start;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 100%;
+}
+
+.unity-label {
+    color: rgb(255, 255, 255);
+}
+
+.title-label {
+    font-size: 100px;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.39);
+    margin-bottom: 66px;
+    -unity-text-align: upper-right;
+}
+
+.unity-button {
+    min-width: 500px;
+    max-width: 500px;
+}

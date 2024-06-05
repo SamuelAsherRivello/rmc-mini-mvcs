@@ -1,0 +1,463 @@
+WEBVTT
+
+00:00.750 --> 00:01.050
+Très bien.
+
+00:01.080 --> 00:03.900
+Regardons maintenant la démo de comptage.
+
+00:03.930 --> 00:09.600
+Il s'agit d'une démo créée à l'aide de l'architecture mini MVC pour unity.
+
+00:09.630 --> 00:16.860
+Vous pouvez consulter le cours Udemy si vous voulez voir tous les enseignements sur le comment et le pourquoi de l'architecture
+
+00:16.860 --> 00:22.700
+et l'unité est un défi et pourquoi le mini MVC est une excellente solution dirigée par la communauté.
+
+00:22.710 --> 00:27.870
+Le framework lui-même est disponible gratuitement, donc vous pouvez consulter le lien et vous pouvez juste
+
+00:27.870 --> 00:30.000
+jouer avec le code source si vous le souhaitez.
+
+00:30.630 --> 00:34.890
+Ceci est donc construit sur les concepts de l'architecture MVC.
+
+00:34.890 --> 00:38.790
+Il y a un cours Udemy qui couvre le contenu suivant.
+
+00:38.820 --> 00:40.290
+L'introduction du cours.
+
+00:40.290 --> 00:46.890
+Je parle de unity, je parle de la conception de logiciels et du mini framework MVC pour unity.
+
+00:47.040 --> 00:50.730
+Ensuite, des informations plus approfondies sur chacun de ces sujets.
+
+00:50.730 --> 00:56.040
+Vous pouvez voir ici que des exemples de projets sont inclus, mais aujourd'hui nous allons en voir plus
+
+00:56.040 --> 00:56.760
+démos.
+
+00:56.760 --> 01:00.430
+En particulier, nous allons nous pencher sur la démo de comptage.
+
+01:00.430 --> 01:02.680
+Jetons donc un coup d'œil à cette démo.
+
+01:04.210 --> 01:07.510
+Me voici dans le projet mini Max.
+
+01:07.510 --> 01:13.330
+Lorsque vous aurez téléchargé et installé ce logiciel, vous pourrez aller ici et cliquer sur samples.
+
+01:13.330 --> 01:17.710
+Donc mini max et ensuite samples et importer ces samples.
+
+01:17.710 --> 01:24.910
+Je l'ai déjà fait ici, nous pouvons donc en voir plus et regarder le décompte.
+
+01:25.480 --> 01:28.660
+Je vais donc commencer par lancer la démo.
+
+01:32.550 --> 01:35.430
+Ici, sur l'écran, c'est un peu petit.
+
+01:35.430 --> 01:38.220
+Voyons si nous pouvons faire comme ça.
+
+01:38.250 --> 01:38.700
+Nous y voilà.
+
+01:38.710 --> 01:39.560
+C'est un peu plus grand.
+
+01:39.570 --> 01:44.550
+Il s'agit donc de la démo la plus simple incluse dans le cours.
+
+01:44.550 --> 01:49.530
+Nous avons donc ici une vue qui indique que le texte est compté dans le mini exemple.
+
+01:49.530 --> 01:53.360
+Il y a ensuite un bouton de comptage qui affiche le numéro 23.
+
+01:53.370 --> 01:58.770
+Je pense que je commence à une valeur non nulle parce que je charge à partir d'un service.
+
+01:58.800 --> 02:03.540
+Ensuite, nous pouvons cliquer ici et si je clique n'importe où sur l'écran, la valeur augmente.
+
+02:03.540 --> 02:06.750
+Lorsque je clique, la scène s'arrête et redémarre.
+
+02:07.600 --> 02:10.600
+La scène commence toujours à 23, puis nous cliquons vers le haut.
+
+02:10.600 --> 02:11.620
+Nous allons donc regarder dans le code.
+
+02:11.620 --> 02:13.330
+Pourquoi commence-t-il à 23 ?
+
+02:14.670 --> 02:15.660
+C'est donc ça.
+
+02:15.690 --> 02:17.910
+Prendre un clic, le montrer à l'écran.
+
+02:17.910 --> 02:22.610
+Vous n'avez pas nécessairement besoin d'une architecture complexe pour cet exemple.
+
+02:22.620 --> 02:28.110
+Vous pouvez probablement vous contenter d'un seul comportement unique et faire fonctionner l'ensemble de l'exemple.
+
+02:28.110 --> 02:31.980
+Mais il s'agit d'un moyen simple d'intégrer et de comprendre les principes fondamentaux.
+
+02:33.390 --> 02:36.510
+Et imaginez ensuite que vous les apportiez à un jeu comme Fortnite, n'est-ce pas ?
+
+02:36.630 --> 02:38.310
+C'est beaucoup plus complexe.
+
+02:38.310 --> 02:40.460
+Et vous voudriez apprendre ces bases ici.
+
+02:40.470 --> 02:43.380
+Voyons donc comment la scène est configurée.
+
+02:44.790 --> 02:48.870
+Nous avons donc un objet de jeu mondial qui contient simplement la caméra et la lumière directionnelle.
+
+02:48.900 --> 02:50.670
+Il ne se passe rien d'intéressant ici.
+
+02:50.700 --> 02:58.290
+Nous avons ensuite un canevas d'interface utilisateur unity ici avec notre texte de titre et notre texte d'état ici.
+
+02:59.010 --> 03:01.110
+Zoomons un peu sur ces deux éléments.
+
+03:01.140 --> 03:02.160
+Nous y voilà.
+
+03:04.730 --> 03:05.660
+Nous y sommes.
+
+03:06.170 --> 03:10.550
+Ensuite, nous avons le mini-exemple lui-même.
+
+03:10.550 --> 03:14.000
+Voici donc le monobehaviour qui lance la démo.
+
+03:14.150 --> 03:20.240
+Il crée le mini lui-même et introduit la vue et le concept de contrôleur.
+
+03:20.240 --> 03:21.260
+Jetons-y un coup d'œil.
+
+03:21.260 --> 03:23.120
+Ouvrons le code source ici.
+
+03:25.700 --> 03:27.870
+Hum, vérifions que nous avons bien.
+
+03:30.310 --> 03:34.870
+Et contrairement aux démonstrations précédentes, je vais m'assurer que je ne couvre pas le code intéressant ici.
+
+03:35.640 --> 03:36.290
+Nous y voilà.
+
+03:36.300 --> 03:37.770
+Nous voici donc au sommet.
+
+03:37.770 --> 03:40.820
+C'est le mini exemple qui donne le coup d'envoi.
+
+03:40.830 --> 03:43.680
+Je reçois un champ sérialisé de The View.
+
+03:43.680 --> 03:44.850
+Regardons donc ici.
+
+03:45.180 --> 03:52.620
+Nous avons un champ sérialisé de The View et nous faisons glisser The View comme ceci, et il est là.
+
+03:52.770 --> 03:53.790
+de retour dans le code.
+
+03:53.790 --> 03:59.700
+Tout ce que je fais, c'est créer le mini compte à rebours, que l'on pourrait considérer comme l'application elle-même.
+
+03:59.700 --> 04:01.800
+Il s'agit de la structure la plus parentale.
+
+04:01.800 --> 04:03.950
+Et je passe la vue, d'accord ?
+
+04:03.960 --> 04:11.010
+Ainsi, chaque fois que nous voulons avoir une vue dans la scène, nous suivons généralement ce modèle, nous la sérialisons et nous la passons.
+
+04:11.010 --> 04:11.940
+de cette façon.
+
+04:12.090 --> 04:15.030
+Jetons ensuite un coup d'œil au mini-code de comptage.
+
+04:18.550 --> 04:19.150
+Très bien.
+
+04:19.330 --> 04:27.400
+Le mini compte à rebours va donc étendre le mini MVC, qui va contenir ces parties.
+
+04:27.400 --> 04:32.200
+Il va avoir un contexte, qui est la communication entre les quatre niveaux.
+
+04:32.230 --> 04:34.420
+Il a un modèle, qui est le stockage des données.
+
+04:34.420 --> 04:41.320
+Il comporte la vue, qui est ce qui rend l'interface utilisateur et ce qui reçoit les données de l'utilisateur.
+
+04:41.350 --> 04:47.590
+Le contrôleur, qui va gérer la logique métier, la viande et les pommes de terre, le gros de l'activité.
+
+04:47.590 --> 04:52.750
+de votre code serait probablement dans le contrôleur et le service est optionnel et n'est qu'une partie de votre code.
+
+04:52.750 --> 04:55.450
+nécessaire si vous voulez appeler des données externes.
+
+04:55.480 --> 05:01.300
+Chargement d'un fichier depuis votre machine locale, appel d'un service backend en ligne.
+
+05:01.300 --> 05:05.950
+Par exemple, ici, dans le constructeur, je prends la vue et je la stocke.
+
+05:06.250 --> 05:10.090
+Ensuite, dans l'initialisation, je crée un nouveau contexte const.
+
+05:10.150 --> 05:14.560
+Le contexte est un objet de bas niveau qui doit être utilisé.
+
+05:14.740 --> 05:17.650
+Ensuite, je construis le modèle, le service et le contrôleur.
+
+05:17.650 --> 05:24.680
+Maintenant, comme c'est souvent le cas dans ces exemples, le contrôleur prendra les trois autres niveaux à l'intérieur et
+
+05:24.680 --> 05:27.830
+c'est vraiment le contrôleur qui fait le plus gros du travail.
+
+05:27.830 --> 05:34.010
+Ce que nous voyons ici, c'est la Mini, mais la Mini se contente de préparer et d'alimenter le contrôleur.
+
+05:34.010 --> 05:36.040
+et c'est le contrôleur qui va faire le plus gros du travail.
+
+05:36.050 --> 05:41.840
+Une question fréquente est de savoir si l'on a toujours exactement un modèle, une vue et un contrôleur de service dans le module
+
+05:41.840 --> 05:42.560
+votre projet ?
+
+05:42.560 --> 05:44.270
+Et vous pouvez en avoir beaucoup, beaucoup plus.
+
+05:44.270 --> 05:51.290
+Imaginez donc ce mini ici en train de configurer le modèle de lecteur, le lecteur, le contrôleur de lecteur de service et ce
+
+05:51.290 --> 05:57.680
+et d'avoir ensuite le méta-modèle de jeu, le méta-service de jeu et le méta-contrôleur de jeu.
+
+05:57.680 --> 06:04.100
+Le méta-jeu est souvent l'endroit où les services de jeu connectent les choses à l'arrière-plan, ce qui permet à l'utilisateur d'accéder à l'arrière-plan.
+
+06:04.100 --> 06:09.890
+l'utilisateur de stocker ses progrès, de se connecter avec ses amis, toutes ces fonctions sociales, de pouvoir partager des données avec d'autres utilisateurs.
+
+06:09.890 --> 06:16.700
+Ainsi, vous pouvez faire en sorte que chacune de ces parties de votre projet fasse l'objet d'un mini-code séparé ou d'un contrôleur séparé.
+
+06:16.700 --> 06:19.580
+Vous voyez qu'ils sont tous initialisés ici.
+
+06:19.580 --> 06:22.520
+Passons maintenant à l'étape suivante et examinons chacun de ces trois contrôleurs.
+
+06:22.520 --> 06:24.080
+Dans le modèle.
+
+06:25.540 --> 06:26.080
+Membre.
+
+06:26.080 --> 06:31.450
+Tout ce que nous faisons ici, c'est cliquer sur l'écran et voir un nombre augmenter de 23, 24, 25.
+
+06:31.480 --> 06:35.950
+Il nous suffit donc de stocker cet int, que nous pourrions stocker comme un simple int.
+
+06:35.950 --> 06:43.870
+Dans toutes mes démonstrations, j'utilise ce que l'on appelle un int observable, qui est un int qui dispatche également
+
+06:43.870 --> 06:45.780
+un événement à chaque fois qu'il change.
+
+06:45.790 --> 06:47.620
+Très utile pour la liaison de données.
+
+06:47.950 --> 06:50.730
+Ici, tout ce que je fais, c'est mettre la valeur à zéro.
+
+06:50.740 --> 06:55.720
+Souvenez-vous que lorsque nous lançons la démo, elle démarre à la valeur 23, donc nous n'avons toujours pas vu pourquoi elle démarre
+
+06:55.720 --> 06:59.260
+à 23 parce qu'ici, on dirait qu'il va commencer à zéro.
+
+06:59.650 --> 07:01.570
+Regardons ensuite le service.
+
+07:02.270 --> 07:07.070
+Le service va hériter du service de base, qui est optionnel.
+
+07:07.310 --> 07:10.850
+Chaque fois que vous étendez les classes de base, c'est facultatif.
+
+07:10.850 --> 07:16.460
+Mais ce que nous voulons faire ici, c'est utiliser le service de base, car cela va donner lieu à des activités intéressantes.
+
+07:16.730 --> 07:17.800
+intéressantes.
+
+07:17.810 --> 07:20.510
+Très léger, mais pratique.
+
+07:20.660 --> 07:25.510
+Ensuite, nous stockons ici une valeur et c'est ici que nous obtenons cette valeur.
+
+07:25.520 --> 07:26.340
+23.
+
+07:26.360 --> 07:33.110
+Nous allons donc charger un fichier texte local et, quelle que soit la valeur que nous chargeons à partir de ce fichier texte local, nous obtiendrons cette valeur.
+
+07:33.110 --> 07:37.330
+nous allons l'envoyer au modèle.
+
+07:37.340 --> 07:42.380
+Et si je devais regarder ce fichier texte, faisons-le maintenant.
+
+07:42.380 --> 07:44.870
+Ressources, texte, nombre de textes.
+
+07:44.900 --> 07:47.150
+Nous pouvons voir qu'il commence à 22.
+
+07:47.180 --> 07:49.790
+Je disais donc 23 avant, mais ça commence à 22.
+
+07:50.660 --> 07:53.030
+C'est donc pour cela que ça commence à 22.
+
+07:53.040 --> 07:54.190
+Si nous modifions cette valeur.
+
+07:54.200 --> 07:56.000
+Il s'agit là d'un exemple stupide.
+
+07:56.000 --> 07:59.960
+Pourquoi votre modèle de données ne coderait-il pas en dur la valeur en do dièse ?
+
+07:59.990 --> 08:00.920
+C'est tout à fait possible.
+
+08:00.950 --> 08:04.730
+Mais ici, je voulais montrer un exemple de ce qu'est un service.
+
+08:04.760 --> 08:09.950
+Un service charge des données externes à partir de fichiers locaux ou de services d'arrière-plan.
+
+08:10.280 --> 08:11.720
+Voilà, c'est tout.
+
+08:11.720 --> 08:12.740
+C'est le service.
+
+08:12.740 --> 08:13.880
+Regardons maintenant le contrôleur.
+
+08:13.880 --> 08:15.350
+C'est la partie la plus complexe.
+
+08:16.310 --> 08:19.720
+Le contrôleur va donc s'étendre à partir du contrôleur de base.
+
+08:19.730 --> 08:23.600
+Comme le dit le commentaire, l'extension à partir de la base est toujours optionnelle.
+
+08:23.960 --> 08:29.990
+Nous le faisons encore ici parce qu'il y a un peu de code de base commun qui est fait pour vous.
+
+08:30.080 --> 08:35.330
+Ensuite, le contrôleur ici, dans l'initialisation, va définir le texte de l'interface utilisateur.
+
+08:36.000 --> 08:39.510
+Ensuite, il va charger le service que nous venons de voir.
+
+08:40.450 --> 08:42.790
+Puis, lorsque le service est chargé.
+
+08:43.910 --> 08:49.160
+Il va définir la valeur du compteur de modèle à la valeur du service qui vient d'être chargé.
+
+08:49.160 --> 08:50.890
+Le service va donc chercher la valeur.
+
+08:50.900 --> 08:51.860
+22.
+
+08:51.890 --> 08:56.870
+Il la transmet au modèle et celui-ci a maintenant cette valeur comme valeur initiale.
+
+08:56.870 --> 08:59.850
+C'est pourquoi il commence à 22 et non à zéro.
+
+08:59.930 --> 09:03.920
+Ensuite, nous écoutons chaque fois que nous cliquons sur un élément de l'écran.
+
+09:03.920 --> 09:06.970
+Et si l'écran est cliqué, descendons ici.
+
+09:06.980 --> 09:09.680
+Le modèle est incrémenté d'une unité.
+
+09:09.800 --> 09:11.570
+Et c'est vraiment tout.
+
+09:11.600 --> 09:13.640
+Exécutons donc la démo une dernière fois.
+
+09:14.940 --> 09:20.880
+Donc c'est toujours, je suppose que quelque part j'ajoute, Oh, attendez, en fait, quand j'ai cliqué sur l'écran.
+
+09:20.880 --> 09:21.720
+Exactement.
+
+09:21.990 --> 09:24.060
+Juste pour charger la scène ici.
+
+09:24.060 --> 09:26.000
+C'est pour cela qu'il en charge une de plus.
+
+09:26.010 --> 09:27.390
+Il charge donc 22.
+
+09:27.390 --> 09:30.450
+Je clique sur l'écran, il affiche 23 et c'est la démo.
+
+09:30.900 --> 09:32.460
+C'est tout pour cette démo.

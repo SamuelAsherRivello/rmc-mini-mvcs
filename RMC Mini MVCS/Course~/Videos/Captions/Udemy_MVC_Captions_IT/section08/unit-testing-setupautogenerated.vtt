@@ -1,0 +1,400 @@
+WEBVTT
+
+00:00.150 --> 00:03.750
+Configurazione della finestra del test runner e delle classi di test.
+
+00:03.750 --> 00:07.380
+Il codice sorgente del framework di test è disponibile attraverso il gestore di pacchetti.
+
+00:07.380 --> 00:14.580
+Si può aggiungere la ricerca del pacchetto per il framework di test, importare il framework di test e opzionalmente importare
+
+00:14.580 --> 00:15.270
+copertura del codice.
+
+00:15.270 --> 00:19.980
+Strumenti Il framework Unity Test include tutte le librerie necessarie per testare il codice CE.
+
+00:19.980 --> 00:25.830
+Se siete alle prime armi con i test, come singoli o come team, non dovete testare tutto il vostro codice.
+
+00:25.830 --> 00:26.670
+in una volta sola.
+
+00:26.670 --> 00:32.550
+Si può iniziare a testare lentamente, con il tempo, più il codice è coperto da test, meglio è
+
+00:32.550 --> 00:37.740
+avrete più fiducia in alcuni modi in cui potrete integrarlo nel vostro team in modo semplice e chiaro.
+
+00:37.860 --> 00:44.670
+Aggiungete i test solo per le nuove funzionalità o aggiungete i test ai sistemi chiave prima di un importante refactor.
+
+00:44.670 --> 00:48.780
+Un ottimo modo per iniziare è testare solo durante le correzioni dei bug.
+
+00:48.780 --> 00:55.200
+Se un utente segnala un bug, per prima cosa bisogna replicare l'esistenza del bug con un test che fallisce.
+
+00:55.200 --> 00:57.930
+Poi si corregge il codice e il test passa.
+
+00:57.930 --> 01:00.690
+Si può lasciare questo test come eredità.
+
+01:00.690 --> 01:03.420
+Quindi sei sicuro che quel bug non si ripresenterà in futuro?
+
+01:03.420 --> 01:08.880
+Il concetto di copertura del codice si riferisce a quanta parte del codice base è coperta da test.
+
+01:09.150 --> 01:16.680
+Se in tutto il progetto ci sono una classe e tre metodi e tutti e tre hanno dei test, allora
+
+01:16.680 --> 01:18.390
+si ha una copertura del 100%.
+
+01:18.390 --> 01:21.120
+In generale, più alta è la copertura, meglio è.
+
+01:21.120 --> 01:27.390
+Si può aprire la finestra di copertura del codice, eseguire i test e ottenere risultati solidi che mostrino
+
+01:27.390 --> 01:32.280
+non solo la percentuale per classe e sistema, ma anche all'interno di ogni classe.
+
+01:32.280 --> 01:36.900
+Si ottiene una lettura riga per riga di quali metodi hanno copertura e quali no.
+
+01:37.320 --> 01:38.430
+È molto utile.
+
+01:38.430 --> 01:43.770
+È possibile tenere traccia di quanta parte del codice viene testata, individuare eventuali vulnerabilità durante la fase di test.
+
+01:43.770 --> 01:48.840
+processo di test e monitorare la copertura crescente nel tempo.
+
+01:48.840 --> 01:54.930
+Con queste librerie installate, potete creare il vostro primo test, aprire la finestra di esecuzione del test, creare
+
+01:54.930 --> 02:00.510
+una cartella di test e creare la prima classe e il primo metodo in quella classe.
+
+02:00.510 --> 02:05.820
+A quel punto, i test vengono visualizzati nella finestra di esecuzione dei test, dove è possibile fare clic, eseguire e vedere
+
+02:05.820 --> 02:06.450
+l'esecuzione.
+
+02:06.450 --> 02:09.180
+Ecco un esempio di classe di test con un metodo di test.
+
+02:09.300 --> 02:11.100
+Notate che sembra abbastanza normale.
+
+02:11.100 --> 02:16.980
+C Sharpe L'attributo test mostrato tra le parentesi quadre è il segreto.
+
+02:16.980 --> 02:22.380
+In questo caso, il sistema cerca qualsiasi metodo contrassegnato da questo attributo per considerarlo un test.
+
+02:22.380 --> 02:26.730
+Come ho già detto, il test è una forma d'arte e ci sono molti modi diversi per affrontarlo.
+
+02:26.730 --> 02:32.040
+Un buon espediente che uso è quello di dividere ogni metodo in tre sezioni.
+
+02:32.610 --> 02:35.310
+Disporre, agire e affermare.
+
+02:35.460 --> 02:39.960
+In arrange si eseguono una o più righe necessarie per impostare il test.
+
+02:39.960 --> 02:45.750
+Nella parte act, si esegue tutto ciò che è specificamente correlato al test e poi si
+
+02:45.750 --> 02:46.560
+si esegue l'asserzione.
+
+02:46.560 --> 02:49.530
+Asserire significa supporre che qualcosa sia vero.
+
+02:49.530 --> 02:52.410
+Quindi il framework di testing viene fornito con la libreria assert.
+
+02:52.410 --> 02:55.920
+Immaginiamo di avere un sistema matematico personalizzato che permette di sommare due numeri.
+
+02:55.920 --> 02:56.550
+Insieme.
+
+02:56.550 --> 03:03.930
+Potremmo affermare che la somma di cinque più dieci è uguale a 15, e lo considereremmo un test riuscito.
+
+03:04.050 --> 03:06.200
+Lo eseguiamo e vediamo che passa.
+
+03:06.210 --> 03:07.650
+Vediamolo in azione.
+
+03:07.650 --> 03:10.620
+Aprirò un progetto unity con un test pronto.
+
+03:10.710 --> 03:14.010
+Vediamo come funziona ed eseguiamo il test.
+
+03:15.110 --> 03:17.630
+Siamo in un progetto unity vuoto.
+
+03:17.630 --> 03:20.360
+Inizierò impostando il framework di test.
+
+03:20.510 --> 03:22.370
+Apro il gestore dei pacchetti.
+
+03:26.970 --> 03:30.980
+Il gestore dei pacchetti mostra quali sono i pacchetti già installati.
+
+03:30.990 --> 03:36.660
+È possibile che nel progetto iniziale sia già stato aggiunto il framework di test.
+
+03:37.390 --> 03:40.070
+Ma se così non fosse, ecco come aggiungerlo da soli.
+
+03:40.090 --> 03:44.890
+Cercate il framework di test nel registro di Unity e installate l'ultima versione.
+
+03:44.890 --> 03:52.630
+Successivamente, per le funzionalità aggiuntive opzionali, cercate nel Registro di Unity la copertura del codice e installate il codice
+
+03:52.630 --> 03:54.400
+La copertura del codice ha alcuni esempi opzionali.
+
+03:54.400 --> 03:55.870
+Non li installerò qui.
+
+03:56.760 --> 04:02.160
+Esaminando ora i pacchetti che abbiamo nel progetto, vediamo sia il framework di test sia, opzionalmente, se
+
+04:02.160 --> 04:04.160
+si è scelto di installare la copertura della codifica IT.
+
+04:04.170 --> 04:07.290
+Ora questo progetto è pienamente compatibile con i test unitari.
+
+04:09.140 --> 04:09.860
+Per iniziare.
+
+04:09.860 --> 04:11.630
+Apriamo la finestra del test runner.
+
+04:12.050 --> 04:16.340
+La finestra del test runner ha due schede, edit mode e play mode.
+
+04:16.580 --> 04:18.200
+Perché non sono stati aggiunti test.
+
+04:18.230 --> 04:23.210
+La finestra è molto utile e offre alcune opzioni di creazione cliccabili per realizzare i test.
+
+04:23.240 --> 04:26.690
+In una demo successiva, mostrerò come creare i test da zero.
+
+04:27.050 --> 04:30.260
+Per ora, ne incollerò uno che ho già preparato.
+
+04:31.220 --> 04:35.960
+Il test mostrato qui è stato incollato dal progetto di esempio Mini MVCs.
+
+04:35.960 --> 04:36.920
+Per il corso.
+
+04:36.920 --> 04:40.450
+Per aiutarci a concentrarci, ho rimosso tutto tranne il test che vogliamo esaminare.
+
+04:40.460 --> 04:45.130
+Esploriamo il test, eseguiamo le nostre finestre, iniziando con la modalità di modifica qui nella scheda della modalità di modifica.
+
+04:45.140 --> 04:49.580
+Per impostazione predefinita, tutti i test del progetto sono elencati qui nella scheda della modalità di modifica.
+
+04:49.580 --> 04:55.820
+Per impostazione predefinita, vengono mostrati tutti i test disponibili in qualsiasi punto della cartella assets e della cartella packages.
+
+04:55.820 --> 04:59.780
+È possibile filtrare per categoria per vedere solo alcuni dei test.
+
+04:59.780 --> 05:04.880
+Non abbiamo molti test, ma per comodità dimostrativa sceglierò la categoria per i nostri campioni.
+
+05:04.880 --> 05:08.720
+Ora la finestra mostra una gerarchia di tutti i test organizzati per spazio dei nomi.
+
+05:08.720 --> 05:15.470
+Quando espando tutti i livelli inferiori, vedo la classe di test e poi un metodo di test sotto di essa.
+
+05:15.470 --> 05:18.470
+Possiamo eseguire tutti i test e vedere che passano.
+
+05:18.650 --> 05:22.130
+Possiamo selezionare un singolo test ed eseguire quello selezionato.
+
+05:22.130 --> 05:26.960
+Se il test passa o fallisce, abbiamo un modo semplice per accedere al codice sorgente con un clic del tasto destro del mouse.
+
+05:26.960 --> 05:27.560
+menu.
+
+05:30.280 --> 05:31.930
+Ecco il codice di prova completo.
+
+05:32.290 --> 05:35.120
+Questo è lo stesso che abbiamo visto in precedenza nella presentazione.
+
+05:35.140 --> 05:36.360
+Esaminiamo i punti salienti.
+
+05:36.370 --> 05:40.990
+Abbiamo un attributo opzionale di categoria che ci aiuta a organizzare i nostri test.
+
+05:41.290 --> 05:46.930
+Il menu a tendina che ho mostrato, filtra in base a questo valore, si possono avere molte classi di test che sono
+
+05:46.930 --> 05:48.040
+nella stessa categoria.
+
+05:48.040 --> 05:50.950
+Si possono avere molte classi di test che appartengono alla stessa categoria.
+
+05:50.950 --> 05:52.450
+Poi abbiamo l'attributo test.
+
+05:52.450 --> 05:57.190
+Questo è ciò che indica al framework di test che questo metodo è effettivamente un metodo di test.
+
+05:57.990 --> 06:00.740
+Senza questo, il metodo non viene visualizzato nella finestra del test runner.
+
+06:00.750 --> 06:07.710
+Poi usiamo il paradigma familiare ma opzionale di un atto di intervallo e asseriamo che questo è solo un modo che io uso
+
+06:07.710 --> 06:10.170
+come convenzione per organizzare la mia logica di test.
+
+06:10.170 --> 06:16.350
+Inoltre, quando do un nome ai miei test, scelgo di chiamarli in base a ciò che è oggetto del test, a quali sono le aspettative
+
+06:16.350 --> 06:17.640
+e qual è la situazione.
+
+06:17.640 --> 06:24.120
+Sto testando il metodo ADD per verificare che il risultato sia 15 quando passo cinque e dieci come operandi.
+
+06:24.120 --> 06:25.890
+Passiamo alla modalità di riproduzione.
+
+06:25.890 --> 06:31.410
+La scheda della modalità di gioco ha un aspetto molto simile e sembra che mostri lo stesso identico test, ma non è così.
+
+06:31.410 --> 06:32.370
+Apro il sorgente.
+
+06:32.370 --> 06:34.350
+Ecco il codice sorgente per un test in modalità play.
+
+06:34.350 --> 06:35.610
+In che modo questo è diverso?
+
+06:35.610 --> 06:40.320
+La differenza principale è la posizione nella finestra del progetto.
+
+06:40.440 --> 06:41.640
+Lo mostrerò tra poco.
+
+06:41.640 --> 06:47.610
+Una differenza opzionale che ho scelto è che per i miei test in modalità play, aggiungo la classe con modalità play
+
+06:47.610 --> 06:53.010
+test, mentre in modalità ed aggiungo solo test che mi aiuta a organizzarmi.
+
+06:53.010 --> 06:58.980
+Ora, a scopo dimostrativo, sto testando lo stesso identico comportamento una volta in modalità edit e una volta in modalità play.
+
+06:58.980 --> 07:01.290
+Probabilmente non è necessario per voi.
+
+07:01.290 --> 07:08.280
+Si può invece eseguire il test per impostazione predefinita in modalità di modifica e utilizzare il test in modalità di riproduzione solo quando è necessario catturare la riproduzione.
+
+07:08.280 --> 07:15.690
+eventi in modalità play, come l'avvio del risveglio o la funzionalità dell'oggetto di gioco, il rilevamento delle collisioni e altre cose che
+
+07:15.690 --> 07:16.980
+avvengono solo in fase di esecuzione.
+
+07:16.980 --> 07:21.180
+Come discusso nel corso, utilizzo la stessa convenzione di denominazione dei metodi che abbiamo visto in precedenza.
+
+07:21.180 --> 07:22.170
+Notiamone due.
+
+07:22.320 --> 07:24.330
+Notiamo due differenze fondamentali.
+
+07:24.330 --> 07:31.320
+Utilizziamo un attributo di test di unità, non un attributo di test, come abbiamo visto prima, e in aggiunta a un range
+
+07:31.320 --> 07:34.470
+act e assert c'è un paradigma opzionale a weight.
+
+07:34.470 --> 07:41.160
+Questo viene usato qui solo per dimostrare il fatto che mentre i test in modalità edit vengono eseguiti in modo sincrono play
+
+07:41.160 --> 07:44.670
+i test in modalità play possono essere eseguiti in modo asincrono.
+
+07:44.670 --> 07:49.860
+Quindi, se avete del codice che richiede test asincroni, la modalità play è un'ottima opzione.
+
+07:49.860 --> 07:52.620
+Diamo un'occhiata alla finestra del progetto per vedere l'organizzazione.
+
+07:52.620 --> 07:58.080
+Notiamo che il test della modalità di modifica si trova in una cartella dell'editor e che il test della modalità di riproduzione si trova in una cartella del runtime.
+
+07:58.080 --> 07:58.500
+cartella.
+
+07:58.500 --> 08:05.310
+Questa differenza, insieme alle differenze nei file di definizione dell'assembly adiacenti a questi test
+
+08:05.310 --> 08:09.870
+è il modo in cui il sistema sa che uno è un test dell'editor e l'altro è un test della modalità di riproduzione.
+
+08:09.870 --> 08:11.370
+Eseguirò i test in modalità gioco.
+
+08:11.370 --> 08:13.460
+Infine, eseguirò il test della modalità di gioco.
+
+08:13.470 --> 08:18.840
+La finestra del test runner si comporta allo stesso modo, con un'eccezione, perché si tratta di test in modalità play.
+
+08:18.840 --> 08:25.710
+Unity crea una scena anonima, esegue il test in isolamento e poi distrugge la scena.
+
+08:25.740 --> 08:31.710
+Sebbene tutto questo avvenga abbastanza rapidamente, lo si può notare qui come un plus, come un'esecuzione a pressione di tutti i test.
+
+08:31.710 --> 08:34.680
+invece di eseguire tutti i test in un millisecondo.
+
+08:34.680 --> 08:39.600
+Ad esempio, la modalità di modifica richiede diversi millisecondi per l'esecuzione.
+
+08:39.600 --> 08:46.220
+Qui abbiamo la possibilità di vedere un test in esecuzione, di vedere la finestra del test runner e di vedere le basi.
+
+08:46.230 --> 08:48.990
+Diamo poi un'occhiata a come creare i nostri test.

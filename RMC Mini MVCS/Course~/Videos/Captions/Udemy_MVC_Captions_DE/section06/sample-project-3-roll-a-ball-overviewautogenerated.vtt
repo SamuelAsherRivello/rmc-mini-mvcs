@@ -1,0 +1,145 @@
+WEBVTT
+
+00:00.270 --> 00:03.750
+Das Mini MVCs Rollerball Beispielprojekt.
+
+00:04.580 --> 00:11.300
+Mit jedem Beispielprojekt gibt es die Möglichkeit, mehr von den Schichten in MVCs abzuschälen und zu denken
+
+00:11.300 --> 00:13.090
+kritisch über diese Konzepte nachzudenken.
+
+00:13.100 --> 00:15.590
+Das wird Ihren Lernerfolg dramatisch steigern.
+
+00:15.620 --> 00:20.390
+Um Ihre Überlegungen in Gang zu bringen, betrachten Sie die Vor- und Nachteile des Rahmens in jedem Beispiel.
+
+00:20.390 --> 00:22.900
+Mit welchen Aspekten fühlen Sie sich am wohlsten?
+
+00:22.910 --> 00:26.180
+Fangen Sie an, die langfristigen Vorteile der Wahl eines Rahmens zu erkennen?
+
+00:26.180 --> 00:30.410
+Welche Teile des Frameworks sind für Sie spannend und Sie möchten mehr darüber lernen?
+
+00:30.410 --> 00:33.290
+Sie könnten einige mögliche Nachteile oder Nachteile identifizieren.
+
+00:33.290 --> 00:36.680
+Welche Aspekte des Frameworks könnten für Ihre Bedürfnisse nicht geeignet sein?
+
+00:36.680 --> 00:42.410
+Gibt es etwas, das Sie tun können, um die gewünschten Ergebnisse zu erzielen, und welche Muster und Praktiken bleiben
+
+00:42.410 --> 00:43.430
+für Sie unklar?
+
+00:43.430 --> 00:44.930
+Denken Sie über diese Punkte nach.
+
+00:44.930 --> 00:50.570
+Engagieren Sie sich in der Gemeinschaft, machen Sie sich Notizen und denken Sie darüber nach, wie wir diese Probe in ein Projekt einbringen können
+
+00:50.570 --> 00:54.020
+das sowohl den Quellcode für das Framework als auch die Beispiele enthält.
+
+00:54.140 --> 00:59.000
+Jedes der Beispiele, die wir behandeln, hat eine Version mit vielen MVCs und eine ohne.
+
+00:59.000 --> 01:07.790
+Mit dem Rollerball-Beispiel sehen wir ein einfaches komplettes Drei-D-Spiel mit Audio, UI-Eingabe und Physik.
+
+01:07.790 --> 01:13.490
+Vom architektonischen Standpunkt aus gesehen, sehen wir ein bisschen mehr Komplexität als in den vorherigen Beispielen.
+
+01:13.490 --> 01:19.340
+Hier haben wir mehrere Ansichten und mehrere Controller, die die Skalierbarkeit des Frameworks zeigen.
+
+01:19.340 --> 01:24.050
+Und mit der Integration in Unity sehen wir auch mehrere Mono-Verhaltensweisen im Einsatz.
+
+01:24.050 --> 01:28.640
+Aufgrund der zusätzlichen Komplexität ist das Zielpublikum hier der fortgeschrittene Entwickler.
+
+01:28.640 --> 01:33.890
+Wenn Sie bei den vorherigen Beispielen gut mitgemacht haben, ist dies eine gute Gelegenheit, noch mehr zu lernen.
+
+01:33.890 --> 01:39.620
+Während wir uns in dieses Beispiel vertiefen, sollten Sie überlegen, welche dieser Codierungsaufgaben Sie übernehmen möchten.
+
+01:39.620 --> 01:42.410
+Es gibt hier eine Vielzahl von Aufgaben, und Sie könnten sogar Ihre eigenen erstellen.
+
+01:42.410 --> 01:46.580
+Wir beginnen mit einem niedrigeren Schwierigkeitsgrad, um diese Konzepte zu erklären.
+
+01:46.580 --> 01:50.860
+Nachdem Sie sich in das Beispiel vertieft haben, sind Sie sicher genug, um es einem Freund zu erklären?
+
+01:50.870 --> 01:52.700
+Jedes Beispiel enthält Unit-Tests.
+
+01:52.700 --> 01:56.780
+Können Sie einen weiteren Unit-Test hinzufügen, der im Zusammenhang mit dem Beispiel Sinn macht?
+
+01:56.780 --> 02:03.440
+Sie können ein neues UI-Feature hinzufügen, z.B. einen Text oder eine Schaltfläche auf der Benutzeroberfläche und diese dann richtig verdrahten
+
+02:03.440 --> 02:05.240
+auf eine Weise, die für das Framework sinnvoll ist.
+
+02:05.240 --> 02:11.030
+Du könntest eine andere Art von neuer Eingabe erstellen, vielleicht eine Tastatureingabe, irgendetwas passendes machen
+
+02:11.030 --> 02:11.810
+für das Beispiel.
+
+02:11.810 --> 02:13.340
+Sie könnten das Beispiel kopieren.
+
+02:13.340 --> 02:18.410
+Vielleicht enthält das Beispiel einige Dinge, die für einen anderen Anwendungsfall interessant sind, kopieren Sie es und fügen Sie es ein
+
+02:18.410 --> 02:24.590
+gesamten übergeordneten Ordner, benennen Sie jede Klasse so um, dass sie eindeutig ist oder geben Sie ihr einen neuen Namensraum und fügen Sie dann
+
+02:24.590 --> 02:26.900
+und passen Sie die Funktionalität an Ihre Bedürfnisse an.
+
+02:26.900 --> 02:32.600
+Und die vielleicht größte Herausforderung in dieser Liste ist es, selbst ein neues Beispiel zu erstellen, anstatt es zu kopieren
+
+02:32.600 --> 02:33.380
+und einzufügen.
+
+02:33.380 --> 02:36.140
+Beginnen Sie hier mit der leeren Leinwand eines neuen Projekts.
+
+02:36.140 --> 02:39.320
+Importieren Sie das Framework selbst und beginnen Sie mit der Codierung.
+
+02:39.320 --> 02:43.130
+Das beweist, dass Sie alle Konzepte beherrschen.
+
+02:43.130 --> 02:48.020
+Solche Aufgaben helfen Ihnen, Ihr Wissen durch praktische Erfahrung zu vertiefen.
+
+02:48.020 --> 02:53.810
+Sehen wir uns das in Aktion an Sie können ein neues Unity-Projekt erstellen, das Mini und das Framework importieren.
+
+02:53.810 --> 03:00.200
+Importieren Sie die Beispiele, öffnen Sie dieses spezielle Beispiel, erkunden Sie die Version darin, die den mini nicht benutzt
+
+03:00.200 --> 03:03.170
+MVCs, um das Grundwissen zu erlangen, wie es funktioniert.
+
+03:03.170 --> 03:06.980
+Und dann schauen Sie sich die Version mit vielen MVCs und mit jedem Beispiel an.
+
+03:06.980 --> 03:10.100
+Ich werde etwas Live-Coding mit einer der Beispielaufgaben machen.
+
+03:10.100 --> 03:11.300
+Fangen wir an.

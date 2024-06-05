@@ -1,0 +1,433 @@
+WEBVTT
+
+00:00.180 --> 00:04.080
+Je vais donc faire du codage en direct pour relever l'un des défis de codage.
+
+00:04.080 --> 00:11.250
+Il s'agit d'ajouter un bouton clair à l'interface utilisateur pour qu'il ne serve ni à se connecter ni à se déconnecter,
+
+00:11.250 --> 00:14.510
+mais pour effacer les champs du nom d'utilisateur et du mot de passe.
+
+00:14.520 --> 00:19.440
+L'exemple est un peu artificiel car notre bouton de déconnexion fait quelque chose de similaire, mais
+
+00:19.440 --> 00:26.220
+Je veux montrer un exemple de la façon dont nous pouvons ajouter quelque chose de nouveau à The View et faire en sorte que cela se propage correctement.
+
+00:26.220 --> 00:27.330
+à travers les préoccupations.
+
+00:27.330 --> 00:30.270
+Commençons donc par la vue elle-même et ajoutons notre nouveau bouton.
+
+00:30.270 --> 00:37.650
+Je vais donc dans cet objet de jeu, qui est un préfabriqué, et je vais ajouter un nouveau bouton.
+
+00:37.650 --> 00:39.450
+l'appeler le bouton clear.
+
+00:40.650 --> 00:42.300
+Je vais lui donner un nom.
+
+00:44.190 --> 00:52.350
+Je vais également lui donner le texte approprié pour dire "clear", et ensuite je reviens ici à la vue de la connexion et
+
+00:52.350 --> 00:56.190
+c'est là que les boutons de connexion et de déconnexion sont déclarés.
+
+00:56.190 --> 00:59.490
+J'ouvre donc cette classe.
+
+01:00.820 --> 01:06.730
+Et je vais essayer de garder l'ordre correct pour que ce bouton se trouve visuellement au milieu.
+
+01:07.360 --> 01:11.770
+Je vais donc aller de l'avant et le placer entre les deux autres.
+
+01:12.280 --> 01:16.930
+Je tape ici pour laisser unity recompiler.
+
+01:18.540 --> 01:24.810
+Et maintenant, à partir de l'interface utilisateur, je dois déclarer que le bouton Clear est maintenant correctement connecté.
+
+01:24.810 --> 01:27.000
+La vue est maintenant au courant.
+
+01:27.000 --> 01:28.140
+Je vais lancer la scène.
+
+01:29.440 --> 01:31.690
+Tout d'abord, remarquez qu'il n'y a pas encore de gris.
+
+01:31.690 --> 01:36.910
+Je n'ai bien sûr pas fait de codage, mais je peux cliquer sur le bouton d'effacement ici pour qu'il y ait un clic, mais évidemment
+
+01:36.910 --> 01:38.080
+aucune conséquence pour l'instant.
+
+01:39.160 --> 01:41.770
+La prochaine chose que je voudrais faire avec ça, c'est suivre.
+
+01:41.770 --> 01:43.390
+Comment fonctionne le bouton de connexion ?
+
+01:43.390 --> 01:44.790
+Eh bien, c'est ici.
+
+01:44.800 --> 01:53.740
+Je vais donc faire un copier-coller et nous allons effacer le bouton, puis je vais imiter la structure qui est
+
+01:53.740 --> 01:54.440
+là.
+
+01:54.460 --> 01:56.470
+Le bouton Clear est cliqué.
+
+01:56.980 --> 02:01.060
+Cette méthode n'existe pas encore, je vais donc descendre ici.
+
+02:04.960 --> 02:05.770
+Nous y voilà.
+
+02:06.370 --> 02:10.990
+Nous pouvons donc voir qu'à l'intérieur du bouton de connexion, nous avons un événement de connexion personnalisé.
+
+02:10.990 --> 02:13.980
+Dans le bouton clear, nous voulons un événement clear personnalisé.
+
+02:13.990 --> 02:16.150
+Allons donc de l'avant et effaçons-le ici.
+
+02:18.390 --> 02:20.130
+Nous l'appellerons "on clear".
+
+02:25.750 --> 02:26.170
+Nous y voilà.
+
+02:27.580 --> 02:34.420
+Et je vais faire en sorte que cela ne prenne aucun paramètre.
+
+02:34.420 --> 02:36.460
+Je dois donc procéder à un ajustement.
+
+02:37.520 --> 02:38.420
+Et.
+
+02:39.680 --> 02:41.990
+Parce que je n'ai pas besoin de paramètres.
+
+02:44.520 --> 02:47.550
+Et comme meilleure pratique, je vais juste lui donner son propre événement ici.
+
+02:54.680 --> 02:56.420
+D'accord, nous avons capturé le bouton.
+
+02:56.420 --> 03:00.100
+Cliquez depuis l'interface utilisateur ici dans The View et nous avons envoyé clear.
+
+03:00.110 --> 03:04.280
+Je vais imiter la façon dont je travaillerais dans un projet de production, en particulier si j'ajoute une fonctionnalité qui n'est pas encore disponible.
+
+03:04.280 --> 03:05.890
+très similaire à quelque chose d'autre.
+
+03:05.900 --> 03:10.670
+Remarquez que je viens de regarder comment fonctionnait le bouton de connexion et que je le copie et le colle.
+
+03:10.700 --> 03:12.560
+Nous allons suivre le même schéma ici.
+
+03:13.970 --> 03:16.070
+Je vais trouver des utilisations de ceci.
+
+03:25.510 --> 03:32.530
+J'utilise simplement la vue des références ou la vue des usages de l'éditeur de code et je suis capable de voir, eh bien, où
+
+03:32.530 --> 03:34.240
+l'événement de connexion est utilisé ?
+
+03:34.240 --> 03:36.310
+Qu'est-ce qui est utilisé dans le contrôleur ici ?
+
+03:36.310 --> 03:38.800
+Je vais donc imiter ce flux.
+
+03:41.310 --> 03:43.890
+Et nous allons ajouter une nouvelle méthode ici.
+
+03:44.850 --> 03:46.830
+Voici donc le contrôleur.
+
+03:59.780 --> 04:04.880
+Et dans ce cas précis, je veux traduire cet événement de vue en une commande.
+
+04:05.300 --> 04:09.820
+Je vais donc aller à la source où se trouve la commande soumise.
+
+04:09.830 --> 04:11.420
+Regardez dans mon projet ici.
+
+04:12.390 --> 04:17.130
+En fait, je n'ai pas besoin d'arguments parce que si vous pensez à l'effacement, je n'ai pas besoin de dire quel est l'objet de la commande.
+
+04:17.160 --> 04:18.560
+champs ont été nettoyés.
+
+04:18.570 --> 04:24.000
+Je peux juste comprendre qu'à chaque fois que l'on clique sur le bouton d'effacement, il ne faut pas transmettre de détails,
+
+04:24.000 --> 04:26.820
+il suffit d'effacer globalement ce qui doit être effacé.
+
+04:26.820 --> 04:32.490
+Je ne vais donc pas prendre de paramètres ici et je vais faire la commande clear.
+
+04:56.690 --> 05:01.200
+Le contrôleur écoute maintenant cet événement et envoie une nouvelle commande.
+
+05:01.220 --> 05:05.260
+Si nous lancions la scène maintenant, tout se compilerait, n'est-ce pas ?
+
+05:05.270 --> 05:07.130
+Nous capturerions le clic.
+
+05:07.130 --> 05:11.750
+Le clic est propagé ici vers le contrôleur, comme on peut s'y attendre, et il envoie ensuite
+
+05:11.750 --> 05:14.440
+une commande, mais personne n'écoute la commande.
+
+05:14.450 --> 05:17.270
+Si vous y réfléchissez bien, qui devrait écouter ?
+
+05:17.270 --> 05:19.730
+Qui s'occuperait des conséquences de cette situation ?
+
+05:20.390 --> 05:21.440
+Eh bien, c'est le point de vue, n'est-ce pas ?
+
+05:21.440 --> 05:23.570
+Jetons donc un coup d'œil à la vue.
+
+05:35.470 --> 05:38.500
+De retour ici, dans la vue, nous allons nous abonner à ce nouvel événement.
+
+06:12.280 --> 06:14.380
+Ok, nous avons correctement câblé la commande clear.
+
+06:14.380 --> 06:16.470
+Maintenant, réfléchissons à ce qui doit se passer.
+
+06:16.480 --> 06:19.300
+Eh bien, c'est un peu comme ce qui se passe quand on se déconnecte.
+
+06:19.300 --> 06:20.770
+Regardons donc la déconnexion.
+
+06:24.240 --> 06:27.220
+Donc logout, que j'ai copié d'ici pour commencer.
+
+06:27.240 --> 06:32.280
+Ce qu'il fait, c'est qu'il passe en revue et définit correctement tous ces champs ici.
+
+06:34.400 --> 06:38.810
+Nous voulons donc quelque chose qui imite exactement ce que fait logout.
+
+06:38.810 --> 06:43.400
+Mais pour avoir quelque chose de nouveau, copions-les ici.
+
+06:45.230 --> 06:46.550
+Vous savez, remplaçons-les simplement.
+
+06:46.760 --> 06:48.290
+Je sais que nous les avons déjà là.
+
+06:48.290 --> 06:59.150
+Et je vais mettre à jour ceci pour dire log in cleared et pour le texte d'état, je vais juste dire enter username
+
+06:59.150 --> 07:02.900
+et le mot de passe, mais je ne mettrai pas l'indice juste pour avoir quelque chose de différent ici.
+
+07:05.170 --> 07:05.740
+C'est exact.
+
+07:05.770 --> 07:12.190
+Autre chose : chaque fois que je bascule le bouton de connexion et le bouton de déconnexion, je dois
+
+07:12.190 --> 07:15.150
+penser aussi au bouton "effacer".
+
+07:15.160 --> 07:19.840
+Remontons donc en haut et je vais faire défiler les pages, et partout où je vois le bouton interactif, j'utiliserai
+
+07:20.170 --> 07:22.810
+mettre à jour le bouton d'effacement.
+
+07:34.850 --> 07:37.340
+Voici donc le bouton de connexion.
+
+07:37.580 --> 07:39.410
+Lorsque nous nous déconnectons.
+
+07:43.710 --> 07:49.830
+Le bouton d'effacement ne devrait pas être activé car lorsque vous vous déconnectez, tout est déjà effacé.
+
+07:49.830 --> 07:51.060
+Vous ne devriez pas pouvoir cliquer dessus.
+
+07:53.770 --> 07:59.080
+Ensuite, lorsque vous appuyez à nouveau sur le bouton d'effacement, vous ne devriez pas pouvoir cliquer une deuxième fois sur ce bouton.
+
+07:59.080 --> 08:00.910
+car les champs sont déjà effacés.
+
+08:04.130 --> 08:06.560
+Chaque fois que vous cliquez, connectez-vous.
+
+08:08.350 --> 08:10.630
+Je dirais que vous devriez pouvoir le faire.
+
+08:12.760 --> 08:14.020
+C'est clair ?
+
+08:16.030 --> 08:18.190
+Nous n'avons pas vraiment d'état de connexion complet ici.
+
+08:18.190 --> 08:20.770
+Donc une partie de ceci est juste pour la démo.
+
+08:22.440 --> 08:25.350
+Et à chaque fois que vous vous déconnectez.
+
+08:26.560 --> 08:29.740
+En fait, nous voulons que log out et clear se comportent de la même manière.
+
+08:29.740 --> 08:31.450
+Donc log out et clear.
+
+08:33.040 --> 08:34.240
+Oui, je suppose que c'est exact.
+
+08:34.480 --> 08:36.580
+Jetons un coup d'œil et voyons où nous en sommes jusqu'à présent.
+
+08:38.050 --> 08:40.750
+Le bouton Mic so clear est correctement grisé.
+
+08:43.190 --> 08:48.440
+Maintenant, dès que je commence à taper ici, j'aimerais que le bouton d'effacement soit activé.
+
+08:48.440 --> 08:49.460
+Voyons cela.
+
+09:23.670 --> 09:28.440
+J'ai donc mis à jour ici chaque fois que ces champs d'interface utilisateur sont saisis.
+
+09:28.440 --> 09:35.820
+J'avais déjà un événement unity qui appelait cette méthode ici, donc je n'autorise le login à être soumis que si à la fois
+
+09:35.820 --> 09:37.920
+des champs contiennent quelque chose.
+
+09:38.040 --> 09:42.930
+Je veux donc dire ici que si l'un des deux champs contient quelque chose, vous pourrez cliquer sur
+
+09:42.930 --> 09:43.770
+le bouton d'effacement.
+
+09:43.890 --> 09:50.130
+Il s'agit d'un détail au niveau de l'implémentation, mais il est agréable de pouvoir montrer les types de pensées et de
+
+09:50.130 --> 09:53.490
+décisions que vous prendriez en ajoutant un nouvel élément d'interface utilisateur.
+
+09:56.140 --> 09:58.480
+Nous voici donc en train d'exécuter à nouveau la démo.
+
+09:59.940 --> 10:04.170
+Remarquez que lorsque je tape quelque chose ici, le bouton d'effacement est activé.
+
+10:04.350 --> 10:07.560
+Si je supprime un élément du champ, le bouton est désactivé.
+
+10:08.190 --> 10:11.010
+Si je tape un peu du mot de passe.
+
+10:11.800 --> 10:15.400
+Et si je l'annule, il le redevient pour qu'il fonctionne correctement.
+
+10:15.670 --> 10:17.740
+Maintenant, disons que j'ai les deux champs ici.
+
+10:17.740 --> 10:23.290
+Je pourrais me connecter ou cliquer sur "clear" et cela fonctionnerait à nouveau correctement.
+
+10:23.290 --> 10:24.640
+Je vais le retaper.
+
+10:25.120 --> 10:31.870
+Ici encore, nous pouvons nous connecter ou cliquer sur clear, et cela fonctionne correctement pour nous.
+
+10:31.870 --> 10:33.820
+Je n'ai pas fait de test approfondi.
+
+10:33.820 --> 10:35.890
+Je ne me suis pas assuré que tous les cas de figure étaient présents.
+
+10:35.890 --> 10:43.240
+Mais ici, je voulais montrer ce que serait l'ajout d'un nouvel élément de l'interface utilisateur et la possibilité de propager les éléments suivants
+
+10:43.240 --> 10:43.720
+à travers cet élément.
+
+10:43.720 --> 10:51.670
+Toutes les préoccupations et ici les préoccupations étaient de mettre l'interface utilisateur dans la scène unity, puis de l'amener dans la scène unity, puis de l'amener dans la scène unity.
+
+10:51.670 --> 10:58.360
+la classe View elle-même, puis d'écouter la View et de la transmettre au contrôleur, et ensuite
+
+10:58.360 --> 11:00.670
+le contrôleur envoie les commandes appropriées.
+
+11:00.670 --> 11:02.500
+Nous avons donc pu faire tout cela.
+
+11:02.500 --> 11:07.990
+Je l'expliquais au fur et à mesure, mais disons que cela prend quelques minutes.
+
+11:08.200 --> 11:15.040
+Une autre approche serait que la vue écoute simplement un événement d'unité et se mette à jour sans avoir à se préoccuper de ce qui se passe.
+
+11:15.040 --> 11:18.250
+contrôleur et sans commande.
+
+11:18.370 --> 11:20.560
+Et ce n'est pas un mauvais point de départ.
+
+11:20.560 --> 11:24.790
+Mais maintenant, aucune des autres préoccupations ne peut capturer ce moment dans le temps.
+
+11:24.790 --> 11:30.160
+Ce qui est bien avec le flux que nous avons fait ici, ce genre d'orchestration complète, c'est que n'importe quel
+
+11:30.160 --> 11:31.960
+pourrait l'écouter ?
+
+11:31.990 --> 11:34.210
+A-t-on cliqué sur le bouton d'effacement ?
+
+11:34.210 --> 11:38.200
+Parfois, vous avez besoin de ce type de message, parfois non.
+
+11:38.200 --> 11:44.860
+C'est donc à vous, en naviguant dans les eaux, en apprenant MVC, de décider comment
+
+11:44.860 --> 11:49.450
+robuste que vous voulez mettre en place la communication et la propagation à travers les préoccupations.
+
+11:49.450 --> 11:53.310
+Voilà pour l'ajout de cette affectation de codage dans l'échantillon.
+
+11:53.320 --> 11:54.130
+Merci.

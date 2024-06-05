@@ -1,0 +1,433 @@
+WEBVTT
+
+00:00.180 --> 00:04.080
+Quindi farò del live coding per affrontare una delle sfide di codifica.
+
+00:04.080 --> 00:11.250
+Si tratta di aggiungere un pulsante chiaro all'interfaccia utente, in modo che non sia per accedere e non sia per uscire,
+
+00:11.250 --> 00:14.510
+ma solo per cancellare i campi del nome utente e della password.
+
+00:14.520 --> 00:19.440
+Ora, è un esempio un po' artificioso perché il nostro pulsante di logout fa qualcosa di simile, ma
+
+00:19.440 --> 00:26.220
+Voglio mostrare un esempio di come si possa aggiungere qualcosa di nuovo alla vista e far sì che questo si propaghi correttamente
+
+00:26.220 --> 00:27.330
+attraverso le preoccupazioni.
+
+00:27.330 --> 00:30.270
+Cominciamo con la vista stessa e aggiungiamo il nostro nuovo pulsante.
+
+00:30.270 --> 00:37.650
+Quindi vado in questo oggetto di gioco, che è un prefabbricato, e aggiungo un nuovo pulsante e lo faccio
+
+00:37.650 --> 00:39.450
+lo chiamerò pulsante di cancellazione.
+
+00:40.650 --> 00:42.300
+Gli darò un nome.
+
+00:44.190 --> 00:52.350
+Gli darò anche un testo appropriato che indichi "clear" e poi tornerò qui alla vista di accesso e
+
+00:52.350 --> 00:56.190
+è qui che vengono dichiarati il pulsante di login e il pulsante di logout.
+
+00:56.190 --> 00:59.490
+Quindi apro questa classe.
+
+01:00.820 --> 01:06.730
+Cercherò di mantenere l'ordine giusto, in modo che questo pulsante si trovi visivamente al centro.
+
+01:07.360 --> 01:11.770
+Quindi procedo con questo e lo inserisco tra gli altri due.
+
+01:12.280 --> 01:16.930
+Tocco di nuovo qui per lasciare che unity ricompili.
+
+01:18.540 --> 01:24.810
+Ora dall'interfaccia utente devo dichiarare che il pulsante di cancellazione è stato collegato correttamente.
+
+01:24.810 --> 01:27.000
+Così ora la vista sa di questo.
+
+01:27.000 --> 01:28.140
+Eseguo la scena.
+
+01:29.440 --> 01:31.690
+Prima di tutto, notiamo che non è ancora grigio.
+
+01:31.690 --> 01:36.910
+Naturalmente non ho eseguito alcuna codifica, ma posso fare clic sul pulsante di cancellazione qui, in modo che faccia clic, ma ovviamente
+
+01:36.910 --> 01:38.080
+nessuna conseguenza.
+
+01:39.160 --> 01:41.770
+La cosa successiva che vorrei fare con questo è seguirlo.
+
+01:41.770 --> 01:43.390
+Come funziona il pulsante di accesso?
+
+01:43.390 --> 01:44.790
+Beh, eccolo qui.
+
+01:44.800 --> 01:53.740
+Quindi copierò e incollerò il pulsante "clear" e poi imiterò la struttura che è
+
+01:53.740 --> 01:54.440
+lì.
+
+01:54.460 --> 01:56.470
+Il pulsante Clear viene cliccato.
+
+01:56.980 --> 02:01.060
+Questo metodo non esiste ancora, quindi scendo qui.
+
+02:04.960 --> 02:05.770
+Ecco qui.
+
+02:06.370 --> 02:10.990
+Possiamo vedere che all'interno del pulsante di login abbiamo un evento di accesso personalizzato.
+
+02:10.990 --> 02:13.980
+Quindi, nel pulsante di cancellazione, vogliamo avere un evento di cancellazione personalizzato.
+
+02:13.990 --> 02:16.150
+Quindi andiamo avanti e cancelliamo questo evento.
+
+02:18.390 --> 02:20.130
+Lo chiameremo "on clear".
+
+02:25.750 --> 02:26.170
+Ecco fatto.
+
+02:27.580 --> 02:34.420
+E farò in modo che non accetti alcun parametro.
+
+02:34.420 --> 02:36.460
+Quindi, devo effettivamente modificare.
+
+02:37.520 --> 02:38.420
+E.
+
+02:39.680 --> 02:41.990
+Perché non ho bisogno di alcun parametro.
+
+02:44.520 --> 02:47.550
+E, come prassi migliore, gli darò il proprio evento.
+
+02:54.680 --> 02:56.420
+Ok, ora abbiamo catturato il pulsante.
+
+02:56.420 --> 03:00.100
+Clicchiamo dall'interfaccia utente qui nella vista e abbiamo inviato l'evento clear.
+
+03:00.110 --> 03:04.280
+Imiterò il modo in cui lavorerei in un progetto di produzione, in particolare se sto aggiungendo funzionalità che sono
+
+03:04.280 --> 03:05.890
+molto simile a un'altra.
+
+03:05.900 --> 03:10.670
+Notate che ho appena guardato come funzionava il pulsante di accesso e l'ho copiato e incollato.
+
+03:10.700 --> 03:12.560
+Seguiremo lo stesso schema anche qui.
+
+03:13.970 --> 03:16.070
+Troverò gli usi di questa parola.
+
+03:25.510 --> 03:32.530
+Sto usando i riferimenti di vista o gli usi di vista dell'editor di codice e sono in grado di vedere, beh, dove
+
+03:32.530 --> 03:34.240
+viene utilizzato l'evento di login?
+
+03:34.240 --> 03:36.310
+Cosa viene utilizzato all'interno del controllore?
+
+03:36.310 --> 03:38.800
+Quindi imiterò anche questo flusso.
+
+03:41.310 --> 03:43.890
+E aggiungeremo un nuovo metodo qui.
+
+03:44.850 --> 03:46.830
+Ecco il controllore.
+
+03:59.780 --> 04:04.880
+In questo caso specifico, voglio tradurre l'evento della vista in un comando.
+
+04:05.300 --> 04:09.820
+Quindi cercherò di andare alla fonte del comando inviato.
+
+04:09.830 --> 04:11.420
+Guardate qui nel mio progetto.
+
+04:12.390 --> 04:17.130
+In realtà non c'è bisogno di argomenti perché se si pensa di cancellare, non devo dire quale
+
+04:17.160 --> 04:18.560
+campi sono stati cancellati.
+
+04:18.570 --> 04:24.000
+Posso solo capire che ogni volta che si fa clic sul pulsante di cancellazione, non si deve trasmettere alcun dettaglio,
+
+04:24.000 --> 04:26.820
+solo cancellare globalmente ciò che deve essere cancellato.
+
+04:26.820 --> 04:32.490
+Quindi non prenderò alcun parametro ed eseguirò il comando di cancellazione.
+
+04:56.690 --> 05:01.200
+Ora il controllore ascolta l'evento e invia un nuovo comando.
+
+05:01.220 --> 05:05.260
+Se ora eseguissimo la scena, tutto verrebbe compilato, giusto?
+
+05:05.270 --> 05:07.130
+Verrebbe catturato il clic.
+
+05:07.130 --> 05:11.750
+Il clic viene propagato al controllore, come ci si aspetterebbe, e poi viene inviato a
+
+05:11.750 --> 05:14.440
+un comando, ma nessuno sta ascoltando il comando.
+
+05:14.450 --> 05:17.270
+Quindi, se ci pensate, chi dovrebbe ascoltare?
+
+05:17.270 --> 05:19.730
+Chi dovrebbe gestire le conseguenze di questa situazione?
+
+05:20.390 --> 05:21.440
+Beh, è il panorama, no?
+
+05:21.440 --> 05:23.570
+Quindi andiamo avanti e diamo un'occhiata alla vista.
+
+05:35.470 --> 05:38.500
+Quindi, qui nella vista, sottoscriviamo questo nuovo evento.
+
+06:12.280 --> 06:14.380
+Ok, abbiamo cablato correttamente il comando clear.
+
+06:14.380 --> 06:16.470
+Ora pensiamo a cosa dovrebbe accadere.
+
+06:16.480 --> 06:19.300
+È qualcosa di simile a ciò che accade quando ci si disconnette.
+
+06:19.300 --> 06:20.770
+Vediamo il logout.
+
+06:24.240 --> 06:27.220
+Quindi il logout, che ho copiato da qui come inizio.
+
+06:27.240 --> 06:32.280
+Ciò che fa è passare attraverso e impostare correttamente tutti questi campi.
+
+06:34.400 --> 06:38.810
+Quindi vogliamo qualcosa che imiti esattamente ciò che fa il logout.
+
+06:38.810 --> 06:43.400
+Ma per avere qualcosa di nuovo, copiamo questi elementi qui.
+
+06:45.230 --> 06:46.550
+Sostituiamoli.
+
+06:46.760 --> 06:48.290
+So che ci sono già.
+
+06:48.290 --> 06:59.150
+E aggiornerò questo per dire login autorizzato e per il testo di stato, dirò semplicemente inserisci nome utente
+
+06:59.150 --> 07:02.900
+e la password, ma non metterò il suggerimento solo per avere qualcosa di diverso.
+
+07:05.170 --> 07:05.740
+Giusto.
+
+07:05.770 --> 07:12.190
+Ora, un'altra cosa è che ogni volta che si attiva il pulsante di accesso e il pulsante di uscita, dovrei
+
+07:12.190 --> 07:15.150
+pensare anche al pulsante di cancellazione.
+
+07:15.160 --> 07:19.840
+Quindi, andiamo in cima e scorriamo la pagina e ovunque veda l'interattività, la utilizzeremo
+
+07:20.170 --> 07:22.810
+aggiornarlo per il pulsante di cancellazione.
+
+07:34.850 --> 07:37.340
+Quindi abbiamo il pulsante di accesso.
+
+07:37.580 --> 07:39.410
+Quando facciamo il logout.
+
+07:43.710 --> 07:49.830
+Il pulsante di cancellazione non dovrebbe essere abilitato perché quando si fa il logout, tutto è già stato cancellato.
+
+07:49.830 --> 07:51.060
+Non si dovrebbe poterlo cliccare.
+
+07:53.770 --> 07:59.080
+Poi, quando si preme di nuovo il pulsante di cancellazione, non si dovrebbe essere in grado di cliccare una seconda volta su "clear".
+
+07:59.080 --> 08:00.910
+perché i campi sono già stati cancellati.
+
+08:04.130 --> 08:06.560
+Ogni volta che si fa clic, si accede.
+
+08:08.350 --> 08:10.630
+Direi che si dovrebbe essere in grado di farlo.
+
+08:12.760 --> 08:14.020
+È chiaro?
+
+08:16.030 --> 08:18.190
+Non abbiamo uno stato di login completo.
+
+08:18.190 --> 08:20.770
+Quindi una parte di questo è solo a scopo dimostrativo.
+
+08:22.440 --> 08:25.350
+E poi ogni volta che ci si disconnette.
+
+08:26.560 --> 08:29.740
+Fondamentalmente vogliamo che il logout e la cancellazione si comportino in modo simile.
+
+08:29.740 --> 08:31.450
+Quindi, log out e clear.
+
+08:33.040 --> 08:34.240
+Sì, credo che sia giusto.
+
+08:34.480 --> 08:36.580
+Diamo un'occhiata e vediamo come siamo messi finora.
+
+08:38.050 --> 08:40.750
+Il pulsante di cancellazione del microfono è correttamente oscurato.
+
+08:43.190 --> 08:48.440
+Ora, quando inizio a digitare, vorrei che il pulsante di cancellazione fosse abilitato.
+
+08:48.440 --> 08:49.460
+Quindi, diamo un'occhiata a questo.
+
+09:23.670 --> 09:28.440
+Ho aggiornato qui ogni volta che i campi dell'interfaccia utente vengono digitati.
+
+09:28.440 --> 09:35.820
+Avevo già un evento unity che richiamava questo metodo, quindi permetto l'invio del login solo se entrambi i campi sono stati digitati.
+
+09:35.820 --> 09:37.920
+dei campi hanno qualcosa.
+
+09:38.040 --> 09:42.930
+Quindi, se uno dei due campi contiene qualcosa, si può premere il tasto
+
+09:42.930 --> 09:43.770
+il pulsante di cancellazione.
+
+09:43.890 --> 09:50.130
+Si tratta di un dettaglio a livello di implementazione, ma è bello poter mostrare i tipi di pensieri e di
+
+09:50.130 --> 09:53.490
+decisioni da prendere quando si aggiunge un nuovo elemento dell'interfaccia utente.
+
+09:56.140 --> 09:58.480
+Ecco di nuovo la demo.
+
+09:59.940 --> 10:04.170
+Notate che quando digito qualcosa qui, il pulsante di cancellazione si attiva.
+
+10:04.350 --> 10:07.560
+Se lo rimuovo dal campo, si disattiva.
+
+10:08.190 --> 10:11.010
+Se digito una piccola parte della password.
+
+10:11.800 --> 10:15.400
+E se la annullo, diventa così funzionante.
+
+10:15.670 --> 10:17.740
+Ora, supponiamo di avere entrambi i campi lì.
+
+10:17.740 --> 10:23.290
+Posso accedere o fare clic su Cancella e funziona di nuovo correttamente.
+
+10:23.290 --> 10:24.640
+Lo digito di nuovo.
+
+10:25.120 --> 10:31.870
+Anche in questo caso, possiamo effettuare il login o cliccare su cancella, e ora funziona correttamente.
+
+10:31.870 --> 10:33.820
+Non ho fatto un test approfondito.
+
+10:33.820 --> 10:35.890
+Non mi sono assicurato che ci siano tutti i casi limite.
+
+10:35.890 --> 10:43.240
+Ma qui volevo dimostrare come sarebbe stato aggiungere un nuovo elemento dell'interfaccia utente e poi essere in grado di propagare
+
+10:43.240 --> 10:43.720
+attraverso di esso.
+
+10:43.720 --> 10:51.670
+Tutte le preoccupazioni, e qui si trattava di inserire l'interfaccia utente nella scena di unity, per poi portarla nella scena di unity.
+
+10:51.670 --> 10:58.360
+la classe View stessa, poi ascoltare la View e passarla al controllore e quindi
+
+10:58.360 --> 11:00.670
+il controllore invia i comandi appropriati.
+
+11:00.670 --> 11:02.500
+Quindi siamo riusciti a fare tutto questo.
+
+11:02.500 --> 11:07.990
+Ora lo stavo spiegando man mano, ma diciamo che ci vuole qualche minuto.
+
+11:08.200 --> 11:15.040
+Un approccio alternativo sarebbe semplicemente che la vista ascoltasse un evento di unità e si aggiornasse senza
+
+11:15.040 --> 11:18.250
+controllore e senza comandi.
+
+11:18.370 --> 11:20.560
+E questo non è un brutto punto di partenza.
+
+11:20.560 --> 11:24.790
+Ma ora nessuna delle altre preoccupazioni può catturare quel momento nel tempo.
+
+11:24.790 --> 11:30.160
+L'aspetto positivo del flusso che abbiamo realizzato qui, questo tipo di orchestrazione completa, è che qualsiasi
+
+11:30.160 --> 11:31.960
+preoccupazione sia in grado di ascoltare?
+
+11:31.990 --> 11:34.210
+Il pulsante di cancellazione è stato appena cliccato?
+
+11:34.210 --> 11:38.200
+A volte è necessario questo tipo di messaggio e a volte no.
+
+11:38.200 --> 11:44.860
+Quindi sta a voi, mentre navigate nelle acque, imparare MVC e decidere tra il modo in cui
+
+11:44.860 --> 11:49.450
+come volete impostare la comunicazione e la propagazione attraverso le preoccupazioni.
+
+11:49.450 --> 11:53.310
+Questo è quanto per l'aggiunta di questa assegnazione di codice nell'esempio.
+
+11:53.320 --> 11:54.130
+Grazie.

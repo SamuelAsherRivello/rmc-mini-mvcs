@@ -1,0 +1,463 @@
+WEBVTT
+
+00:00.750 --> 00:01.050
+Muito bem.
+
+00:01.080 --> 00:03.900
+Agora vamos dar uma olhada na demonstração da contagem.
+
+00:03.930 --> 00:09.600
+Esta é uma demonstração criada utilizando a arquitetura mini MVC para a unidade.
+
+00:09.630 --> 00:16.860
+Você pode conferir o curso da Udemy se quiser ver todos os ensinamentos sobre como e por que a arquitetura
+
+00:16.860 --> 00:22.700
+e a unidade são desafiadoras e por que o mini MVC é uma ótima solução voltada para a comunidade.
+
+00:22.710 --> 00:27.870
+Além disso, a estrutura em si está disponível gratuitamente, portanto, você pode conferir o link e
+
+00:27.870 --> 00:30.000
+brincar com o código-fonte, se quiser.
+
+00:30.630 --> 00:34.890
+Portanto, este é construído com base nos conceitos da arquitetura MVC.
+
+00:34.890 --> 00:38.790
+Há um curso da Udemy que aborda o seguinte conteúdo.
+
+00:38.820 --> 00:40.290
+A introdução do curso.
+
+00:40.290 --> 00:46.890
+Falo sobre unidade, falo sobre design de software e a estrutura mini MVC para unidade.
+
+00:47.040 --> 00:50.730
+Depois, mais informações sobre cada um desses tópicos.
+
+00:50.730 --> 00:56.040
+Aqui você pode ver que há exemplos de projetos incluídos, mas hoje vamos examinar mais alguns
+
+00:56.040 --> 00:56.760
+demos.
+
+00:56.760 --> 01:00.430
+Em particular, vamos dar uma olhada na demonstração de contagem regressiva.
+
+01:00.430 --> 01:02.680
+Então, vamos dar uma olhada nela.
+
+01:04.210 --> 01:07.510
+Aqui estou eu no projeto mini Max.
+
+01:07.510 --> 01:13.330
+Ao fazer o download e instalar isso, você pode ir aqui e clicar em samples.
+
+01:13.330 --> 01:17.710
+Então, mini max e depois samples e importar esses samples.
+
+01:17.710 --> 01:24.910
+Eu já fiz isso aqui, então podemos dar uma olhada em mais e vamos dar uma olhada na contagem.
+
+01:25.480 --> 01:28.660
+Então, vou começar executando a demonstração.
+
+01:32.550 --> 01:35.430
+Então, aqui na tela, ela é um pouco pequena.
+
+01:35.430 --> 01:38.220
+Vamos ver se conseguimos fazer isso.
+
+01:38.250 --> 01:38.700
+Aqui vamos nós.
+
+01:38.710 --> 01:39.560
+Está um pouco maior.
+
+01:39.570 --> 01:44.550
+Portanto, esta deve ser a demonstração mais simples incluída no curso.
+
+01:44.550 --> 01:49.530
+Temos aqui uma vista que diz "text count up mini example".
+
+01:49.530 --> 01:53.360
+E depois há um botão de contador que mostra o número 23.
+
+01:53.370 --> 01:58.770
+Acho que começo com um valor diferente de zero só porque carrego a partir de um serviço.
+
+01:58.800 --> 02:03.540
+Então podemos clicar aqui e se eu clicar em qualquer lugar da tela, ele sobe.
+
+02:03.540 --> 02:06.750
+Quando eu clicar, vamos parar e iniciar a cena novamente.
+
+02:07.600 --> 02:10.600
+Ela sempre começa em 23 e depois clicamos para cima.
+
+02:10.600 --> 02:11.620
+Então vamos dar uma olhada no código.
+
+02:11.620 --> 02:13.330
+Por que ele começa em 23?
+
+02:14.670 --> 02:15.660
+Então é isso.
+
+02:15.690 --> 02:17.910
+Clique e mostre-o na tela.
+
+02:17.910 --> 02:22.610
+Agora, você não precisa necessariamente de uma arquitetura complexa para este exemplo.
+
+02:22.620 --> 02:28.110
+Você provavelmente poderia se safar com um monocomportamento e fazer todo o exemplo funcionar.
+
+02:28.110 --> 02:31.980
+Mas ele foi concebido para ser uma maneira fácil de integrar e entender os fundamentos.
+
+02:33.390 --> 02:36.510
+E então imagine trazê-los para um jogo como o Fortnite, certo?
+
+02:36.630 --> 02:38.310
+Isso é muito mais complexo.
+
+02:38.310 --> 02:40.460
+E você gostaria de aprender esses conceitos básicos aqui.
+
+02:40.470 --> 02:43.380
+Então, vamos dar uma olhada em como a cena está configurada.
+
+02:44.790 --> 02:48.870
+Então, temos um objeto de jogo mundial que tem apenas a câmera e a luz direcional.
+
+02:48.900 --> 02:50.670
+Não há nada de interessante acontecendo aqui.
+
+02:50.700 --> 02:58.290
+Em seguida, temos uma tela de interface do usuário da unidade aqui com nosso texto de título e nosso texto de status aqui.
+
+02:59.010 --> 03:01.110
+Vamos aumentar um pouco o zoom sobre eles.
+
+03:01.140 --> 03:02.160
+Aqui está.
+
+03:04.730 --> 03:05.660
+Aqui está.
+
+03:06.170 --> 03:10.550
+Em seguida, temos o mini exemplo propriamente dito.
+
+03:10.550 --> 03:14.000
+Este é o monobehaviour que dá início à demonstração.
+
+03:14.150 --> 03:20.240
+Ele cria a própria miniatura e traz a visão e o conceito de controlador.
+
+03:20.240 --> 03:21.260
+Então, vamos dar uma olhada nisso.
+
+03:21.260 --> 03:23.120
+Vamos abrir o código-fonte aqui.
+
+03:25.700 --> 03:27.870
+Apenas certifique-se de que temos.
+
+03:30.310 --> 03:34.870
+E, ao contrário das demonstrações anteriores, vou me certificar de que não estou encobrindo o código interessante aqui.
+
+03:35.640 --> 03:36.290
+Aqui vamos nós.
+
+03:36.300 --> 03:37.770
+Então, aqui estamos no topo.
+
+03:37.770 --> 03:40.820
+Este é o mini exemplo que está dando início a tudo.
+
+03:40.830 --> 03:43.680
+Eu pego um campo serializado do The View.
+
+03:43.680 --> 03:44.850
+Então vamos dar uma olhada aqui.
+
+03:45.180 --> 03:52.620
+Temos um campo serializado do The View e arrastamos o The View tal como este, e depois está lá dentro
+
+03:52.770 --> 03:53.790
+de volta ao código.
+
+03:53.790 --> 03:59.700
+Tudo o que faço é criar o mini count up, que você pode considerar como o próprio aplicativo.
+
+03:59.700 --> 04:01.800
+Esta é a estrutura mais primária aqui.
+
+04:01.800 --> 04:03.950
+E eu passo a visualização, certo?
+
+04:03.960 --> 04:11.010
+Portanto, sempre que quisermos ter uma visualização na cena, geralmente fazemos esse padrão, serializamos, passamos
+
+04:11.010 --> 04:11.940
+dessa forma.
+
+04:12.090 --> 04:15.030
+Então vamos dar uma olhada no mini-código de contagem.
+
+04:18.550 --> 04:19.150
+Muito bem.
+
+04:19.330 --> 04:27.400
+Assim, o mini count up vai estender os mini MVCs, que terão estas partes.
+
+04:27.400 --> 04:32.200
+Terá um contexto, que é a comunicação entre as quatro camadas.
+
+04:32.230 --> 04:34.420
+Tem o modelo, que é o armazenamento de dados.
+
+04:34.420 --> 04:41.320
+Tem a visualização, que é o que é renderizado para a interface do usuário e o que recebe a entrada de volta do usuário.
+
+04:41.350 --> 04:47.590
+O controlador, que vai lidar com qualquer lógica de negócios, a carne e as batatas, o grosso
+
+04:47.590 --> 04:52.750
+do seu código provavelmente estaria no controlador e, em seguida, o serviço de serviço é opcional e é apenas
+
+04:52.750 --> 04:55.450
+necessário se você quiser chamar algum dado externo.
+
+04:55.480 --> 05:01.300
+Carregando um arquivo de sua máquina local, chamando um serviço de backend on-line.
+
+05:01.300 --> 05:05.950
+Por exemplo, aqui embaixo, no construtor, eu simplesmente pego a visualização e a armazeno.
+
+05:06.250 --> 05:10.090
+Depois, na inicialização, crio um novo contexto const.
+
+05:10.150 --> 05:14.560
+O contexto, mais uma vez, é apenas um objeto de baixo nível que é parte necessária disso.
+
+05:14.740 --> 05:17.650
+Em seguida, construo o modelo, o serviço e o controlador.
+
+05:17.650 --> 05:24.680
+Agora, como é bastante comum nesses exemplos, o controlador levará as outras três camadas para dentro e
+
+05:24.680 --> 05:27.830
+é realmente o controlador que faz a maior parte do trabalho.
+
+05:27.830 --> 05:34.010
+Portanto, o que estamos vendo aqui é o Mini, mas o Mini apenas prepara e alimenta o controlador
+
+05:34.010 --> 05:36.040
+e o controlador fará a maior parte do trabalho.
+
+05:36.050 --> 05:41.840
+Agora, uma pergunta comum é: bem, você sempre tem exatamente uma visão de modelo e um controlador de serviço em
+
+05:41.840 --> 05:42.560
+seu projeto?
+
+05:42.560 --> 05:44.270
+E você pode ter muitos, muitos mais.
+
+05:44.270 --> 05:51.290
+Então, imagine este mini aqui configurando o modelo de jogador, jogador, controlador de jogador de serviço e isso
+
+05:51.290 --> 05:57.680
+trabalhando por conta própria e, em seguida, tendo o modelo de metajogo, o serviço de metajogo e o controlador de metajogo
+
+05:57.680 --> 06:04.100
+O meta game é geralmente onde você tem seus serviços de jogo conectando coisas ao back-end, permitindo que o
+
+06:04.100 --> 06:09.890
+usuário armazene seu progresso, conecte-se com amigos, todos esses recursos sociais, podendo compartilhar
+
+06:09.890 --> 06:16.700
+para que você possa ter cada uma dessas áreas do seu projeto em minis separados ou controladores separados.
+
+06:16.700 --> 06:19.580
+Assim, você verá que todos eles são inicializados aqui.
+
+06:19.580 --> 06:22.520
+Então, agora vamos dar uma olhada em cada um desses três.
+
+06:22.520 --> 06:24.080
+Então, no modelo.
+
+06:25.540 --> 06:26.080
+Membro.
+
+06:26.080 --> 06:31.450
+Tudo o que estamos fazendo aqui é clicar na tela e ver uma contagem de números 23, 24, 25.
+
+06:31.480 --> 06:35.950
+Portanto, só precisamos armazenar esse int. Você poderia armazená-lo como um int. simples.
+
+06:35.950 --> 06:43.870
+Eu uso algo em todas as minhas demonstrações chamado int observável, que é um int que também despacha
+
+06:43.870 --> 06:45.780
+um evento sempre que ele muda.
+
+06:45.790 --> 06:47.620
+Muito útil para vinculação de dados.
+
+06:47.950 --> 06:50.730
+Aqui, tudo o que eu faço é definir o valor como zero.
+
+06:50.740 --> 06:55.720
+Lembre-se de que quando executamos a demonstração, ela começa com o valor 23, portanto, ainda não vimos por que ela começa
+
+06:55.720 --> 06:59.260
+em 23 porque aqui parece que vai começar em zero.
+
+06:59.650 --> 07:01.570
+Então, vamos dar uma olhada no serviço.
+
+07:02.270 --> 07:07.070
+O serviço vai herdar do serviço base, que é opcional.
+
+07:07.310 --> 07:10.850
+Sempre que você estender a partir das classes base, isso é opcional.
+
+07:10.850 --> 07:16.460
+Mas o que queremos fazer aqui é usar o serviço básico porque isso vai dar início a algumas coisas interessantes
+
+07:16.730 --> 07:17.800
+coisas interessantes para nós.
+
+07:17.810 --> 07:20.510
+Muito leve, mas é conveniente.
+
+07:20.660 --> 07:25.510
+Então, aqui embaixo, armazenamos um valor e é aqui que obtemos esse valor.
+
+07:25.520 --> 07:26.340
+23.
+
+07:26.360 --> 07:33.110
+Portanto, vamos carregar um arquivo de texto local e qualquer que seja o valor que carregarmos desse arquivo local
+
+07:33.110 --> 07:37.330
+local, nós o enviaremos para o modelo.
+
+07:37.340 --> 07:42.380
+E se eu fosse dar uma olhada nesse arquivo de texto, vamos fazer isso agora mesmo.
+
+07:42.380 --> 07:44.870
+Recursos, texto, contagem de texto.
+
+07:44.900 --> 07:47.150
+Podemos ver que começa em 22.
+
+07:47.180 --> 07:49.790
+Então eu estava dizendo 23 antes, mas começa com 22.
+
+07:50.660 --> 07:53.030
+Então é por isso que começa em 22.
+
+07:53.040 --> 07:54.190
+Se ajustarmos este valor.
+
+07:54.200 --> 07:56.000
+Agora, este é um exemplo bobo.
+
+07:56.000 --> 07:59.960
+Por que seu modelo de dados não codificaria o valor em dó sustenido?
+
+07:59.990 --> 08:00.920
+Você certamente poderia.
+
+08:00.950 --> 08:04.730
+Mas aqui eu queria mostrar um exemplo do que é um serviço.
+
+08:04.760 --> 08:09.950
+Um serviço carrega qualquer dado externo de arquivos locais ou de serviços de back-end.
+
+08:10.280 --> 08:11.720
+Então é isso aí.
+
+08:11.720 --> 08:12.740
+Esse é o serviço.
+
+08:12.740 --> 08:13.880
+Agora vamos dar uma olhada no controlador.
+
+08:13.880 --> 08:15.350
+Essa é a parte mais complexa.
+
+08:16.310 --> 08:19.720
+Portanto, o controlador vai se estender a partir do controlador base.
+
+08:19.730 --> 08:23.600
+Como diz o comentário, estender a partir da base é sempre opcional.
+
+08:23.960 --> 08:29.990
+Fazemos isso aqui novamente porque há um pouco de código boilerplate comum que é feito para você.
+
+08:30.080 --> 08:35.330
+Em seguida, o controlador aqui na inicialização definirá o texto da IU.
+
+08:36.000 --> 08:39.510
+Em seguida, ele carregará o serviço que acabamos de ver.
+
+08:40.450 --> 08:42.790
+Depois, quando o serviço for carregado.
+
+08:43.910 --> 08:49.160
+Ele definirá o valor do contador do modelo para o serviço que acabou de ser carregado.
+
+08:49.160 --> 08:50.890
+Então, o serviço vai e obtém o valor.
+
+08:50.900 --> 08:51.860
+22.
+
+08:51.890 --> 08:56.870
+Ele o passa para o modelo e agora o modelo tem esse valor como inicial.
+
+08:56.870 --> 08:59.850
+É por isso que ele começa em 22 e não em zero.
+
+08:59.930 --> 09:03.920
+Em seguida, ouvimos a qualquer momento, em qualquer lugar da tela que seja clicado.
+
+09:03.920 --> 09:06.970
+E se a tela for clicada, vamos descer aqui.
+
+09:06.980 --> 09:09.680
+Ele apenas incrementa o modelo em um.
+
+09:09.800 --> 09:11.570
+E isso é realmente tudo.
+
+09:11.600 --> 09:13.640
+Então, vamos executar a demonstração mais uma vez.
+
+09:14.940 --> 09:20.880
+Então, ainda é, acho que em algum lugar estou adicionando, Oh, espere, na verdade, quando eu cliquei na tela.
+
+09:20.880 --> 09:21.720
+Exatamente.
+
+09:21.990 --> 09:24.060
+Só para carregar a cena aqui em cima.
+
+09:24.060 --> 09:26.000
+É por isso que está carregando mais uma.
+
+09:26.010 --> 09:27.390
+Então ele carrega 22.
+
+09:27.390 --> 09:30.450
+Eu clico na tela, ela mostra 23 e essa é a demonstração.
+
+09:30.900 --> 09:32.460
+Isso é tudo para esta demonstração.

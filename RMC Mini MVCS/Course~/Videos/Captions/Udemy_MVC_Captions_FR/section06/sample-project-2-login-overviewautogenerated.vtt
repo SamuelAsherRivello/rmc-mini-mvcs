@@ -1,0 +1,145 @@
+WEBVTT
+
+00:00.700 --> 00:04.180
+Le projet mini NBC's Sample Login.
+
+00:04.540 --> 00:11.290
+Avec chaque exemple de projet, il est possible d'éplucher davantage de couches dans les MVC et de réfléchir à ce qui suit
+
+00:11.290 --> 00:13.090
+critique sur ces concepts.
+
+00:13.090 --> 00:15.580
+Cela améliorera considérablement votre apprentissage.
+
+00:15.610 --> 00:20.410
+Pour amorcer votre réflexion, examinez les avantages et les inconvénients du cadre dans chaque exemple.
+
+00:20.410 --> 00:22.900
+Avec quels aspects vous sentez-vous plus à l'aise ?
+
+00:22.900 --> 00:26.170
+Commencez-vous à voir les avantages à long terme du choix d'un cadre ?
+
+00:26.170 --> 00:30.400
+Quelles sont les parties du cadre qui vous enthousiasment et que vous souhaitez approfondir en cours de route ?
+
+00:30.400 --> 00:33.310
+Vous pourriez identifier certains inconvénients ou désavantages possibles.
+
+00:33.310 --> 00:36.670
+Quels sont les aspects du cadre qui pourraient ne pas répondre à vos besoins ?
+
+00:36.670 --> 00:42.430
+Y a-t-il quelque chose que vous puissiez faire pour obtenir les résultats dont vous avez besoin et quels sont les modèles et les pratiques qui subsistent ?
+
+00:42.430 --> 00:43.420
+pas clairs pour vous ?
+
+00:43.420 --> 00:44.920
+Réfléchissez à ces points.
+
+00:44.920 --> 00:50.590
+Engagez-vous dans la communauté, prenez des notes et réfléchissez au moment où nous entrons dans cet échantillon.
+
+00:50.590 --> 00:54.010
+qui contient le code source du cadre ainsi que les échantillons.
+
+00:54.130 --> 01:01.330
+Chacun des exemples que nous couvrons a une version avec de nombreux MVC et sans le projet d'exemple de connexion d'utilisateur.
+
+01:01.330 --> 01:05.520
+Le projet d'exemple de connexion d'utilisateur augmente un peu la complexité par rapport à l'exemple précédent.
+
+01:05.530 --> 01:11.260
+Ici, nous avons une vue qui rend l'interface utilisateur d'unity et nous capturons également les données de l'utilisateur.
+
+01:11.260 --> 01:18.670
+Cet exemple introduit également un comportement mono utilisé dans la vue, tout en restant relativement simple et ciblé
+
+01:18.670 --> 01:20.050
+un public de débutants.
+
+01:20.050 --> 01:22.000
+Nous verrons ici quelques nouveaux concepts.
+
+01:22.830 --> 01:28.510
+Pendant que nous creusons cet échantillon, réfléchissez aux tâches de codage que vous aimeriez entreprendre.
+
+01:28.530 --> 01:31.320
+Il y en a toute une variété ici, et vous pouvez même créer la vôtre.
+
+01:31.320 --> 01:35.490
+Commencer par un niveau de difficulté moins élevé permet d'expliquer ces concepts.
+
+01:35.490 --> 01:39.730
+Après avoir creusé l'exemple, êtes-vous suffisamment à l'aise pour l'expliquer à un ami ?
+
+01:39.750 --> 01:41.610
+Chaque exemple comprend des tests unitaires.
+
+01:41.610 --> 01:45.690
+Pouvez-vous ajouter un test unitaire supplémentaire qui ait du sens dans le contexte de l'échantillon ?
+
+01:45.690 --> 01:52.350
+Vous pouvez ajouter une nouvelle fonctionnalité de l'interface utilisateur, par exemple en ajoutant du texte ou un bouton à l'interface utilisateur et en le connectant correctement.
+
+01:52.350 --> 01:54.150
+d'une manière qui ait du sens pour le cadre.
+
+01:54.150 --> 01:59.940
+Vous pourriez créer un autre type de nouvelle entrée, par exemple une entrée clavier, et faire quelque chose d'approprié.
+
+01:59.940 --> 02:00.720
+pour l'échantillon.
+
+02:00.720 --> 02:02.220
+Vous pouvez copier l'échantillon.
+
+02:02.220 --> 02:07.290
+Si l'échantillon contient des éléments intéressants pour un autre cas d'utilisation, copiez et collez l'exemple.
+
+02:07.290 --> 02:13.500
+l'ensemble du dossier parent, renommez chaque classe pour qu'elle soit unique ou donnez-lui un nouvel espace de noms et ajoutez ensuite
+
+02:13.500 --> 02:15.810
+et ajustez la fonctionnalité pour répondre à vos besoins.
+
+02:15.810 --> 02:21.510
+Et peut-être que le plus difficile de cette liste serait de créer vous-même un nouvel échantillon au lieu de copier
+
+02:21.510 --> 02:22.290
+et de coller.
+
+02:22.290 --> 02:25.080
+Ici, commencez par le canevas vide d'un nouveau projet.
+
+02:25.080 --> 02:28.230
+Importez le framework lui-même et commencez à coder à partir de zéro.
+
+02:28.230 --> 02:32.040
+Voilà qui démontre une bonne maîtrise de tous les concepts.
+
+02:32.040 --> 02:36.900
+Ce genre de mission permet d'approfondir ses connaissances grâce à l'expérience pratique.
+
+02:36.900 --> 02:38.250
+Voyons cela en action.
+
+02:38.250 --> 02:44.730
+Vous pouvez créer un nouveau projet Unity, importer le Mini NPCs Framework, importer les échantillons, ouvrir ceci
+
+02:44.730 --> 02:51.120
+exemple particulier, explorer la version qui n'utilise pas les mini MVC pour acquérir les connaissances de base.
+
+02:51.120 --> 02:52.080
+de son fonctionnement.
+
+02:52.080 --> 02:55.890
+Ensuite, regardez la version avec de nombreux MVC et avec chaque échantillon.
+
+02:55.890 --> 02:58.980
+Je vais faire un peu de codage en direct avec l'un des exemples d'affectation.
+
+02:58.980 --> 03:00.180
+Commençons.

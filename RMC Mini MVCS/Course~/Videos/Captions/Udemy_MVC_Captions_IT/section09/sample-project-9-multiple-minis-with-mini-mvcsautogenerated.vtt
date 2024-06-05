@@ -1,0 +1,484 @@
+WEBVTT
+
+00:00.080 --> 00:09.410
+Diamo un'occhiata a una dimostrazione del sistema MVC mini e di come sia possibile avere più mini nello stesso progetto.
+
+00:09.440 --> 00:11.750
+Ora, perché è necessario farlo?
+
+00:14.180 --> 00:15.380
+È una bella domanda.
+
+00:15.380 --> 00:17.760
+Avevo bisogno di bere un po' d'acqua solo per pensarci.
+
+00:17.780 --> 00:27.650
+In genere, in un progetto, il motivo per cui si utilizza un'architettura off the shelf come MVC o in particolare
+
+00:27.650 --> 00:35.600
+in questo caso, il framework mini MVC, è che si vuole impostare il progetto in modo che sia più manutenibile
+
+00:35.600 --> 00:38.960
+e più scalabile quando il progetto cresce.
+
+00:39.700 --> 00:46.810
+Ora, la prima cosa da fare è creare la mini-struttura e al suo interno la vista del modello
+
+00:46.810 --> 00:48.660
+il controllore e il servizio.
+
+00:48.670 --> 00:53.230
+La maggior parte dei nostri progetti demo ha questo livello di complessità.
+
+00:53.590 --> 01:00.130
+Se si vuole aggiungere un po' più di complessità al progetto perché il set di funzionalità cresce, si può
+
+01:00.130 --> 01:05.350
+aggiungere un altro modello, un'altra vista, un altro controllore, un altro servizio, giusto?
+
+01:05.350 --> 01:12.430
+Quindi si possono avere tutte le preoccupazioni che si vogliono, tutte all'interno dello stesso mini, ma si può anche
+
+01:12.430 --> 01:18.910
+un altro strumento a vostra disposizione è quello di avere più mini nello stesso progetto.
+
+01:18.910 --> 01:24.970
+Immaginate un gioco in cui il ciclo di gioco principale, diciamo che stiamo giocando a Pac-Man, prende l'input di Pac-Man,
+
+01:24.970 --> 01:31.480
+muoversi, afferrare le palline energetiche, l'occhio dei nemici, tutta questa logica di gioco centrale potrebbe
+
+01:31.480 --> 01:34.810
+vivere in una miniatura e completare l'intero gioco in questo modo.
+
+01:34.810 --> 01:38.770
+E poi si dice: "Bene, ora dobbiamo creare un meta-loop intorno all'intera cosa".
+
+01:38.770 --> 01:44.600
+Dobbiamo avere mondi multipli, dobbiamo avere alcune funzioni sociali, dobbiamo avere il multiplayer,
+
+01:44.600 --> 01:50.570
+Dobbiamo avere tabelle dei punteggi più alti, qualsiasi cosa si voglia avvolgere attorno all'esperienza principale, si potrebbe
+
+01:50.570 --> 01:56.120
+aggiungere un controller model view per questo, oppure creare un mini gioco separato che sia il meta-gioco e poi
+
+01:56.120 --> 02:02.030
+si potrebbe fare in modo che il mini gioco principale e il mini meta dialoghino tra loro in modo prevedibile.
+
+02:02.030 --> 02:09.260
+Ci sono quindi molti modi diversi per scalare il progetto una volta che si è incorporato il mini MVC.
+
+02:09.260 --> 02:10.340
+nel vostro progetto.
+
+02:10.340 --> 02:15.530
+Diamo quindi un'occhiata a una dimostrazione di più mini in un progetto demo.
+
+02:15.530 --> 02:21.230
+Questo fa parte di un corso che è l'architettura MVC per il corso Unity.
+
+02:21.230 --> 02:23.960
+MVC sta per Model View e Controller.
+
+02:23.990 --> 02:27.410
+Il contenuto di alto livello è qui ancora più approfondito.
+
+02:27.410 --> 02:33.650
+Guardando i contenuti del corso, possiamo notare che abbiamo diversi progetti di esempio, quindi il corso
+
+02:33.650 --> 02:40.910
+spiega come creare un semplice orologio, come creare un login, come realizzare la demo di Rollerball unity
+
+02:40.940 --> 02:46.400
+in cui si ha una palla che si muove con la fisica, si raccolgono diversi cubi con la fisica e si ottiene un punteggio.
+
+02:46.400 --> 02:47.030
+punti.
+
+02:47.030 --> 02:48.830
+È un classico progetto unity.
+
+02:48.830 --> 02:55.100
+È stato realizzato in mini MVC nel corso e c'è anche un progetto campione personalizzato.
+
+02:55.100 --> 02:58.340
+Ora stiamo guardando altre demo che abbiamo aggiunto.
+
+02:58.340 --> 03:03.380
+Oltre a queste, ce ne sono una decina diverse, ma quella su cui ci concentreremo qui è multi
+
+03:03.410 --> 03:04.040
+minis.
+
+03:04.040 --> 03:06.200
+Diamo quindi un'occhiata all'interno di Unity.
+
+03:06.860 --> 03:08.840
+Eccoci quindi all'interno di Unity.
+
+03:08.840 --> 03:14.930
+Se guardate la pagina se siete nel corso e seguite il corso, potete scaricarla in questo modo.
+
+03:14.930 --> 03:22.820
+Se siete iscritti al corso e prendete il codice gratuito da GitHub, allora avrete il mini MVC qui nella vostra
+
+03:22.820 --> 03:28.550
+gestore di pacchetti e si dovrà andare qui agli esempi, importare gli esempi e poi
+
+03:28.550 --> 03:30.260
+avrete accesso a tutto ciò che stiamo per vedere.
+
+03:30.260 --> 03:32.000
+E questo è già stato fatto qui per me.
+
+03:32.000 --> 03:35.390
+E se guardo qui, nella cartella more.
+
+03:37.260 --> 03:40.350
+Abbiamo più mini qui, giusto?
+
+03:40.350 --> 03:42.060
+Questo è quello che abbiamo impostato.
+
+03:44.070 --> 03:49.350
+Quindi, nei mini multipli che abbiamo, eseguiamo la scena per iniziare.
+
+03:51.320 --> 03:59.300
+Abbiamo quindi un mini di sinistra, che è un controllore del modello di vista sul lato sinistro dello schermo e un
+
+03:59.300 --> 04:01.870
+mini di destra, che è un mini completamente separato.
+
+04:01.880 --> 04:08.960
+Quindi, se avete seguito e visto i video precedenti del corso o i video precedenti di questo argomento, potete vedere che il mini è un mini completamente separato.
+
+04:08.960 --> 04:14.960
+su YouTube, saprete che in genere in ogni demo abbiamo esattamente un mini.
+
+04:14.960 --> 04:21.140
+Ma per parlare di come si può scalare e di quelle opzioni di cui ho parlato pochi minuti fa,
+
+04:21.140 --> 04:25.820
+questa demo mostra due miniature, quindi notate che si assomigliano.
+
+04:26.210 --> 04:32.240
+Uno occupa circa il 50% dello schermo a sinistra e l'altro circa il 50% a destra.
+
+04:32.240 --> 04:35.180
+E hanno layout e caratteristiche piuttosto simili.
+
+04:35.180 --> 04:39.620
+Era solo per avere qualche somiglianza a livello di simmetria.
+
+04:39.620 --> 04:45.740
+Ma non devono necessariamente essere simili dal punto di vista logico o semantico.
+
+04:45.740 --> 04:46.940
+Potreste averne uno.
+
+04:46.940 --> 04:51.450
+Anche in questo caso, si tratta solo della logica di base del gioco e del meta che lo circonda.
+
+04:51.480 --> 04:57.210
+Potreste averne uno che rappresenta circa il 10% dell'esperienza dell'utente e un altro che rappresenta il 90% dell'esperienza.
+
+04:57.210 --> 04:58.920
+Potreste averne anche più di due.
+
+04:58.950 --> 05:01.860
+Si possono avere tre, quattro, cinque mini all'interno di un progetto.
+
+05:01.890 --> 05:05.340
+Si può immaginare di creare un pacchetto unity che sia un mini.
+
+05:07.260 --> 05:08.460
+Per distribuirli.
+
+05:08.460 --> 05:14.670
+E poi le persone che hanno un progetto basato su mini o un progetto non basato su mini potrebbero portare quel pacchetto in
+
+05:14.670 --> 05:15.750
+e tutto potrebbe funzionare.
+
+05:15.750 --> 05:20.310
+Quindi si può pensare ai mini come a un piccolo mondo a sé stante, con una grande flessibilità nel modo di integrarli.
+
+05:20.400 --> 05:22.200
+Ecco cosa facciamo.
+
+05:22.850 --> 05:26.150
+Possiamo fare clic sul pulsante di incremento del contatore a sinistra.
+
+05:27.020 --> 05:30.290
+E si aggiorna il contatore a destra.
+
+05:30.560 --> 05:32.720
+Ora, ci sono molti modi in cui si può strutturare questo sistema.
+
+05:32.750 --> 05:38.600
+Si tratta di un esempio un po' arbitrario di suddivisione, ma per la dimostrazione a sinistra, ci vuole
+
+05:38.600 --> 05:41.710
+e a destra esegue il rendering della vista.
+
+05:41.720 --> 05:43.670
+Diamo quindi un'occhiata a come è impostata questa scena.
+
+05:44.860 --> 05:50.560
+Qui abbiamo il mondo che nasconde la telecamera e la luce, perché non è troppo interessante.
+
+05:50.560 --> 05:51.550
+per il nostro discorso.
+
+05:51.850 --> 05:59.740
+Abbiamo poi la vista sinistra, che è la porzione appena mostrata a sinistra, e la vista destra, che è la parte
+
+05:59.740 --> 06:01.150
+porzione mostrata a destra.
+
+06:01.180 --> 06:03.760
+Ognuna di queste tele è un'unità.
+
+06:03.760 --> 06:04.690
+Se vi interessa.
+
+06:04.780 --> 06:10.180
+Poi, qui sotto, abbiamo l'esempio stesso di multi mini.
+
+06:10.180 --> 06:11.740
+Si tratta di un comportamento mono.
+
+06:11.740 --> 06:18.550
+Questo è il demo che fa partire tutto e in cui passo solo un riferimento alla vista sinistra e un
+
+06:18.550 --> 06:24.760
+alla vista destra, in modo che la demo possa collegarle tra loro nel modo necessario.
+
+06:25.060 --> 06:27.850
+Iniziamo quindi a guardare il mini esempio.
+
+06:29.080 --> 06:30.360
+Si ingrandisce un po'.
+
+06:31.910 --> 06:33.380
+Quindi il comportamento di zamana.
+
+06:33.920 --> 06:35.600
+Prendo un campo serializzato.
+
+06:37.520 --> 06:38.900
+Di sinistra e di destra.
+
+06:40.620 --> 06:42.180
+Poi quello che faccio.
+
+06:42.210 --> 06:46.020
+Fondamentale e importante per questa dimostrazione.
+
+06:46.740 --> 06:56.100
+Creo il contesto al di fuori dei mini e passo lo stesso contesto al mini di sinistra e in
+
+06:56.100 --> 06:57.000
+al mini di destra.
+
+06:57.090 --> 06:58.740
+Ora, perché è importante?
+
+06:58.860 --> 07:05.610
+Il contesto, proprio come il contesto tipico delle parole nella vita, il contesto è decisivo.
+
+07:05.640 --> 07:12.630
+Il contesto determina quali opzioni e possibilità si presentano come disponibili per voi.
+
+07:12.660 --> 07:18.580
+Quindi, se passo lo stesso contesto alla sinistra e alla destra, sono in grado di comunicare tra loro.
+
+07:18.600 --> 07:24.630
+Possono, ad esempio, inviare comandi l'uno all'altro o ottenere un riferimento al modello per l'altro.
+
+07:24.660 --> 07:26.790
+In pratica vivono in un unico mondo.
+
+07:26.820 --> 07:28.980
+Se per amore di discussione.
+
+07:29.990 --> 07:36.140
+Avevo un contesto uno e un contesto due e ne ho passato uno a sinistra e due a destra.
+
+07:36.170 --> 07:39.530
+Allora la sinistra e la destra non possono parlare tra loro.
+
+07:39.770 --> 07:46.310
+Questo fa parte dell'incapsulamento di come funziona la programmazione orientata agli oggetti, che si rafforza nel modo in cui
+
+07:46.340 --> 07:47.330
+molti funzionano.
+
+07:47.330 --> 07:53.150
+Ma se si vuole essere in grado di comunicare, allora si passa lo stesso riferimento a entrambi.
+
+07:53.600 --> 07:54.080
+Giusto.
+
+07:54.080 --> 07:59.630
+Guardiamo quindi l'esempio a sinistra, che prende in considerazione la vista sinistra e il contesto che abbiamo appena
+
+07:59.630 --> 08:00.470
+discusso.
+
+08:03.770 --> 08:06.800
+Ed esegue l'inizializzazione.
+
+08:06.800 --> 08:09.060
+Vediamo come funziona l'inizializzazione.
+
+08:09.080 --> 08:15.560
+Vediamo come funziona, ci sono diverse opzioni che ho menzionato nei commenti.
+
+08:15.560 --> 08:17.720
+Si possono fare cose diverse.
+
+08:17.720 --> 08:21.320
+Ma quello che faccio qui è creare il modello all'interno.
+
+08:21.440 --> 08:29.690
+Passo il contesto universale nel modello, poi passo il contesto nella vista e poi creo
+
+08:29.690 --> 08:30.620
+il controllore di sinistra.
+
+08:30.620 --> 08:32.480
+Diamo un'occhiata al controllore di sinistra.
+
+08:32.480 --> 08:35.000
+Prenderà un riferimento al modello e alla vista.
+
+08:35.030 --> 08:42.500
+Ricordiamo che il modello è l'immagazzinamento muto dei dati e la vista è il rendering muto per l'utente e l'acquisizione di input da parte dell'utente.
+
+08:42.500 --> 08:43.160
+utente.
+
+08:44.030 --> 08:51.500
+E qui sotto, tutto ciò che farò è dire: "Ehi, vista di sinistra, ogni volta che l'utente fa clic su quell'incremento
+
+08:51.500 --> 08:53.390
+pulsante, fammi sapere.
+
+08:54.140 --> 08:59.300
+Poi qui sotto, quando lo gestisco, ogni volta che l'utente fa clic sul pulsante e ne abbiamo notizia, io
+
+08:59.300 --> 09:00.960
+aggiornare la vista.
+
+09:00.980 --> 09:01.530
+Mi dispiace.
+
+09:01.550 --> 09:02.660
+Aggiornare il modello.
+
+09:02.720 --> 09:05.330
+Quindi, aggiungendo quel valore lì.
+
+09:06.020 --> 09:08.330
+Ora diamo un'occhiata a destra.
+
+09:11.730 --> 09:13.410
+Quello che dico a Ray Mini.
+
+09:13.650 --> 09:15.240
+Quindi eccomi qui con questo.
+
+09:15.240 --> 09:16.140
+Eccoci di nuovo qui.
+
+09:16.140 --> 09:20.160
+Quindi la parte sinistra, quando abbiamo visto, prende il clic e aggiorna il modello.
+
+09:20.400 --> 09:22.050
+Ora diamo un'occhiata a quello di destra.
+
+09:22.050 --> 09:26.160
+Quindi memorizzerà la vista destra nel contesto come prima.
+
+09:26.190 --> 09:28.320
+Ora farà qualcosa di leggermente diverso.
+
+09:28.500 --> 09:35.940
+Invece di creare il proprio modello, dirà: "Ehi, contesto, hai già un modello?".
+
+09:35.940 --> 09:37.560
+con questo particolare nome?
+
+09:37.560 --> 09:40.530
+E sappiamo di averlo, perché quello di sinistra l'ha appena creato.
+
+09:40.530 --> 09:46.770
+E qui diremo: "Ehi, vista giusta, ecco il tuo contesto nel caso tu voglia ascoltarlo".
+
+09:46.770 --> 09:48.510
+contesto universale condiviso.
+
+09:48.510 --> 09:50.550
+E poi creiamo il controllore giusto.
+
+09:50.670 --> 09:51.810
+Diamogli un'occhiata.
+
+09:52.710 --> 09:57.120
+Ora il controllore giusto sta per.
+
+09:58.880 --> 10:04.550
+Ricordate che il controllore di sinistra diceva: "Ehi, l'utente ha cliccato sul pulsante?".
+
+10:04.640 --> 10:08.300
+Questo dice: Ehi, modello, il modello è cambiato?
+
+10:08.690 --> 10:13.550
+E poi qui sotto, se il modello cambia, invierà un comando.
+
+10:14.530 --> 10:23.560
+Abbiamo quindi diversi esempi di come i comandi siano utili e di come si possa parlare direttamente con il modello.
+
+10:24.160 --> 10:29.920
+In alcune di queste dimostrazioni, mentre le guardate, vedrete spesso che ho diverse opzioni
+
+10:29.920 --> 10:31.180
+che vengono comunicate.
+
+10:33.720 --> 10:37.500
+Quindi, in questa demo, stiamo invocando un comando.
+
+10:37.530 --> 10:46.380
+Ora, nella serie, se si guarda ai comandi, si può pensare che un comando sia un insieme riutilizzabile di istruzioni
+
+10:46.380 --> 10:48.870
+che vengono inviate attraverso il contesto.
+
+10:48.870 --> 10:54.350
+E ogni preoccupazione che lo desideri può dire: "Ehi, voglio sentire ogni volta che questo comando si verifica".
+
+10:54.360 --> 10:58.140
+In questo caso, sto invocando il comando di modifica del contatore.
+
+10:58.140 --> 11:01.500
+E se qualcuno dei contesti vuole saperlo, può farlo.
+
+11:02.010 --> 11:03.500
+È tutto per questa dimostrazione.
+
+11:03.510 --> 11:05.550
+Diamo un'altra occhiata all'esecuzione.
+
+11:06.990 --> 11:10.080
+Di nuovo, il lato sinistro prende l'input.
+
+11:10.080 --> 11:15.240
+Faccio clic sul pulsante di incremento uno, due, tre e il lato destro visualizza l'output.
+
+11:15.240 --> 11:19.170
+Quindi mostrerà il valore del modello sulla destra.
+
+11:20.230 --> 11:20.950
+Ecco fatto.

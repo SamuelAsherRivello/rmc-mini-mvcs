@@ -1,0 +1,256 @@
+WEBVTT
+
+00:00.120 --> 00:03.570
+O mini projeto de amostra personalizada da NBC.
+
+00:03.570 --> 00:05.010
+Parabéns.
+
+00:05.010 --> 00:09.180
+Você completou com sucesso toda a teoria deste curso em conjunto.
+
+00:09.180 --> 00:11.010
+Já revisamos a introdução do curso.
+
+00:11.010 --> 00:14.850
+Vimos uma visão geral da unidade, incluindo a estrutura da unidade.
+
+00:14.850 --> 00:22.770
+Examinamos o design de software em um nível elevado, abrangendo princípios de design, padrões de design, diagramação UML,
+
+00:22.770 --> 00:24.840
+bem como as próprias arquiteturas.
+
+00:24.840 --> 00:29.340
+E depois, juntos, mergulhamos fundo na arquitetura MINI e VCs para Unity.
+
+00:29.340 --> 00:35.460
+Vamos colocar toda essa teoria em prática e criar um novo projeto do zero.
+
+00:35.460 --> 00:41.190
+Agora, com cada projeto de amostra que cobrimos e com este novo também, continuamos a nos desvencilhar
+
+00:41.190 --> 00:46.770
+mais camadas nos conceitos MVCs e pensar criticamente sobre como estamos aplicando-os.
+
+00:46.770 --> 00:48.600
+Ao passarmos pela próxima seção.
+
+00:48.600 --> 00:55.170
+Pense por si mesmo sobre quais aspectos da arquitetura e dessa estrutura você se sente mais confortável
+
+00:55.170 --> 00:55.410
+com eles?
+
+00:55.420 --> 01:00.150
+Você está começando a ver os benefícios de longo prazo quando aplica a arquitetura aos seus projetos?
+
+01:00.150 --> 01:02.660
+Quais partes da estrutura você gostaria de explorar mais?
+
+01:02.670 --> 01:06.390
+Além disso, considere quais aspectos podem não funcionar para suas necessidades.
+
+01:06.390 --> 01:12.120
+O que você pode fazer para obter os resultados que deseja em um projeto no qual os princípios de design, padrões
+
+01:12.120 --> 01:14.580
+e outros conceitos não estão claros?
+
+01:14.580 --> 01:19.440
+Bem, até este ponto, vimos vários exemplos de MVCs em ação.
+
+01:19.440 --> 01:22.270
+Em cada caso, revisamos algo que já existia.
+
+01:22.290 --> 01:24.510
+Agora vamos criar um novo projeto do zero.
+
+01:24.510 --> 01:26.550
+Este é o processo de alto nível que faremos juntos.
+
+01:26.550 --> 01:29.370
+Bem, qual é o nosso conceito e quais são os requisitos funcionais?
+
+01:29.370 --> 01:30.690
+O que ele precisa fazer?
+
+01:30.720 --> 01:32.490
+Qual é a experiência do usuário?
+
+01:32.490 --> 01:35.550
+O que eles veem e que tipo de entrada usam?
+
+01:35.550 --> 01:38.620
+De quais preocupações arquitetônicas precisaremos?
+
+01:38.640 --> 01:42.960
+Serviço de controle de visualização de modelo, talvez múltiplo.
+
+01:42.960 --> 01:47.730
+E para quais dessas preocupações podemos usar a funcionalidade básica e para quais precisamos?
+
+01:47.730 --> 01:49.260
+Alguma funcionalidade personalizada?
+
+01:49.260 --> 01:54.690
+Então, vamos criar um aplicativo simples de matemática, uma calculadora usando muitos MVCs.
+
+01:54.690 --> 01:56.070
+Aqui estão os requisitos.
+
+01:56.340 --> 01:59.370
+Teremos alguns campos de texto de entrada na tela.
+
+01:59.880 --> 02:06.750
+O usuário digitará dois números inteiros e depois clicará em um botão de adição para somá-los matematicamente
+
+02:06.750 --> 02:07.650
+e mostrar o resultado.
+
+02:07.650 --> 02:09.930
+Então, como dividimos isso em preocupações?
+
+02:09.930 --> 02:11.430
+Bem, o modelo armazena os dados.
+
+02:11.430 --> 02:14.220
+Então, que tipo de dados precisaríamos para fazer isso acontecer?
+
+02:14.220 --> 02:19.590
+Bem, começando apenas com a visualização e pensando nos dados dessa forma, sabemos que temos algum texto
+
+02:19.590 --> 02:22.620
+dos usuários entrando e precisamos armazená-los de alguma forma.
+
+02:22.620 --> 02:28.290
+Portanto, teremos um número inteiro para o primeiro campo de texto, um número inteiro para o segundo e um número inteiro para o campo
+
+02:28.290 --> 02:28.860
+resultado.
+
+02:28.860 --> 02:35.400
+Na visualização, teremos algum tipo de texto para A, para B e também para mostrar o resultado no controlador,
+
+02:35.400 --> 02:41.460
+que vai lidar com a lógica, precisaria de algo para fazer a operação de adição, bem como uma forma de
+
+02:41.460 --> 02:43.290
+limpar ou reiniciar o aplicativo.
+
+02:43.290 --> 02:49.290
+E embora em amostras anteriores tenhamos usado uma camada de serviço para carregar alguns dados externos, não precisamos disso
+
+02:49.290 --> 02:51.480
+para este exemplo, portanto, não teremos um serviço.
+
+02:51.480 --> 02:55.020
+Então, qual das funcionalidades básicas usaremos aqui?
+
+02:55.020 --> 03:00.240
+Aqui estamos pensando em quais preocupações queremos a funcionalidade padrão e em quais queremos
+
+03:00.240 --> 03:01.290
+funcionalidade personalizada?
+
+03:01.290 --> 03:05.400
+Bem, como é normalmente o caso do modelo, queremos algumas funcionalidades básicas.
+
+03:05.400 --> 03:08.610
+Normalmente, não há necessidade de se desviar do modelo básico.
+
+03:08.610 --> 03:11.580
+Portanto, aqui estaremos estendendo o modelo básico para a visualização.
+
+03:11.580 --> 03:16.230
+Implementaremos a interface da visão ocular e também estenderemos o comportamento mono.
+
+03:16.230 --> 03:18.110
+Já vimos esse padrão antes.
+
+03:18.120 --> 03:20.400
+Sempre que você quiser usar a UI do Unity.
+
+03:20.400 --> 03:23.340
+A UI do Unity funciona muito bem com comportamentos mono.
+
+03:23.340 --> 03:28.470
+Portanto, vamos nos apoiar nisso e usar um comportamento mono para a nossa visualização do controlador.
+
+03:28.470 --> 03:32.970
+Embora exista uma classe controladora básica que funciona melhor quando queremos uma.
+
+03:32.970 --> 03:38.340
+Cada um dos modelos de controle de visualização e serviço aqui porque não precisamos do serviço.
+
+03:38.340 --> 03:43.890
+Temos algumas opções de como avançar, mas simplesmente implementaremos o controlador de IA e criaremos
+
+03:43.890 --> 03:46.560
+funcionalidade personalizada que não utiliza o serviço.
+
+03:46.560 --> 03:50.790
+E, novamente, na camada de serviço, não usaremos um serviço, portanto, pularemos essa parte.
+
+03:50.790 --> 03:53.700
+Isso ocorre porque o aplicativo não solicita dados externos.
+
+03:53.700 --> 03:59.430
+Portanto, nesse estágio do brainstorming, é um ótimo ponto para pensar em diagramação, usando UML.
+
+03:59.460 --> 04:05.430
+Isso ajuda você a pensar onde estão as dependências, quais interfaces seriam implementadas, quais
+
+04:05.430 --> 04:10.320
+classes seriam estendidas, quer você esteja trabalhando em um projeto sozinho ou em conjunto com a equipe,
+
+04:10.320 --> 04:14.310
+A UML é uma ótima maneira de se comunicar e de se concentrar no desenvolvimento.
+
+04:14.310 --> 04:20.100
+Então, usando os mesmos brainstorms que tivemos nas últimas etapas, nós articulamos isso visualmente.
+
+04:20.100 --> 04:25.530
+Teremos uma mini classe de calculadora que representa toda a estrutura interna.
+
+04:25.530 --> 04:30.060
+Teremos um modelo de calculadora, um controlador de calculadora e a visualização da calculadora.
+
+04:30.060 --> 04:33.270
+Ao longo do curso, houve várias tarefas de desafio de codificação.
+
+04:33.270 --> 04:38.070
+Se você estiver pronto para a última tarefa do desafio de codificação, pode pausar o vídeo aqui.
+
+04:38.070 --> 04:43.950
+Use apenas as informações de que falamos nesta seção e comece a codificar do zero depois de concluir
+
+04:43.950 --> 04:49.110
+a tarefa ou se você ficar preso, pode voltar a esta seção e ver como resolvemos
+
+04:49.110 --> 04:49.650
+juntos.
+
+04:49.650 --> 04:50.850
+Vamos ver isso em ação.
+
+04:50.850 --> 04:57.840
+Vou mostrar desde o início como obter o unity, instalá-lo, criar um novo projeto, adicionar
+
+04:57.840 --> 04:59.910
+a estrutura do mini e do VC e.
+
+04:59.960 --> 05:03.470
+Fazer a codificação ao vivo para esse projeto de amostra de calculadora.
+
+05:03.470 --> 05:08.690
+Este projeto de exemplo será um pouco diferente dos que fizemos antes porque estou codificando-o
+
+05:08.690 --> 05:14.030
+à medida que vou codificando, portanto, haverá menos edição e, se tivermos sorte, cometerei alguns erros ao longo do caminho, o que
+
+05:14.030 --> 05:15.100
+podemos resolver juntos.
+
+05:15.110 --> 05:16.280
+Vamos começar.

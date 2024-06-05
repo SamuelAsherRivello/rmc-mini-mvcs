@@ -1,0 +1,454 @@
+WEBVTT
+
+00:00.170 --> 00:00.500
+Va bene.
+
+00:00.500 --> 00:03.080
+Diamo un'occhiata alla demo della palla rimbalzante.
+
+00:03.110 --> 00:05.900
+Sono un po' in ritardo rispetto alla parola demo, ma eccola.
+
+00:05.900 --> 00:09.580
+Questo fa parte del mini corso di mvc.
+
+00:09.590 --> 00:14.330
+Questo è un corso di architettura unity disponibile per l'acquisto.
+
+00:14.330 --> 00:19.970
+E tutto il codice che mostriamo qui, compreso quello completo del corso, è liberamente disponibile su
+
+00:19.970 --> 00:20.510
+GitHub.
+
+00:20.510 --> 00:21.950
+Potete quindi darci un'occhiata.
+
+00:21.950 --> 00:30.620
+Il link sotto questo corso riguarda l'architettura all'interno di Unity, il modello di vista e il controllore.
+
+00:30.620 --> 00:31.160
+in esso.
+
+00:31.160 --> 00:36.560
+Tratteremo l'introduzione al corso, parleremo di Unity, esamineremo la progettazione del software.
+
+00:36.560 --> 00:42.740
+Diamo un'occhiata alla prossima diapositiva per andare ancora più a fondo nella progettazione del software, esaminando i principi di progettazione.
+
+00:42.740 --> 00:44.780
+Esaminiamo i modelli di progettazione.
+
+00:44.780 --> 00:46.160
+Cosa sono queste cose?
+
+00:46.160 --> 00:49.310
+Esaminiamo i modi per diagrammare i nostri progetti.
+
+00:49.310 --> 00:56.090
+Con UML, esaminiamo tutte le diverse opzioni architettoniche per l'unità, per poi approdare a mini MVC,
+
+00:56.120 --> 01:01.170
+che è un'architettura libera da vincoli come soluzione principale.
+
+01:01.850 --> 01:05.150
+Ci sono poi quattro diversi progetti di esempio inclusi nel corso.
+
+01:05.150 --> 01:07.790
+Ma oggi esamineremo ancora più demo.
+
+01:07.790 --> 01:09.920
+Oltre a queste, credo di averne aggiunte altre dieci.
+
+01:09.950 --> 01:13.040
+Ora analizzeremo la demo della palla rimbalzante.
+
+01:13.040 --> 01:14.450
+Diamo un'occhiata a questo.
+
+01:14.870 --> 01:17.240
+Eccomi nel progetto di esempio.
+
+01:17.240 --> 01:23.540
+Se avete preso il progetto d'esempio, il mini MVC, e avete seguito le istruzioni del Git
+
+01:23.540 --> 01:28.430
+poi si entra negli esempi qui e si importano gli esempi.
+
+01:28.430 --> 01:30.350
+L'ho già fatto per noi.
+
+01:30.380 --> 01:37.640
+Possiamo vedere i campioni e nella cartella more c'è la bouncy ball mini.
+
+01:37.640 --> 01:39.380
+Diamo quindi un'occhiata a questi.
+
+01:40.520 --> 01:41.810
+Ed ecco la demo.
+
+01:41.810 --> 01:44.120
+Eseguiamo la demo per iniziare.
+
+01:46.100 --> 01:47.690
+È un po' di audio in riproduzione.
+
+01:47.690 --> 01:49.160
+Non sono sicuro che riusciate a sentirlo.
+
+01:49.950 --> 01:59.220
+Ma tutto ciò che fa è usare la fisica di unity per far rimbalzare una palla su una superficie e poi aggiornare l'interfaccia utente.
+
+01:59.250 --> 02:02.060
+Ora, non c'è interattività in questa demo.
+
+02:02.070 --> 02:04.500
+In realtà, credo di poter premere la barra spaziatrice se me lo ricordo.
+
+02:05.320 --> 02:05.530
+Ora.
+
+02:06.610 --> 02:08.410
+Ora non c'è interattività.
+
+02:08.980 --> 02:14.140
+Quindi tutto ciò che fa qui è funzionare da solo e usare la fisica.
+
+02:14.140 --> 02:18.400
+Si può quindi osservare come la fisica interagisce e si può vedere che l'interfaccia utente viene aggiornata.
+
+02:18.400 --> 02:18.690
+lì.
+
+02:18.700 --> 02:20.530
+Diamo quindi un'occhiata a come è strutturato il tutto.
+
+02:22.980 --> 02:28.410
+Nella scena, abbiamo un oggetto world game che nasconde la telecamera e la luce, che sono
+
+02:28.410 --> 02:29.490
+non troppo interessanti.
+
+02:29.520 --> 02:36.630
+Poi abbiamo la vista palla rimbalzante, che contiene tutta la grafica che vediamo e anche l'interfaccia utente.
+
+02:36.660 --> 02:38.760
+Diamo quindi un'occhiata agli elementi dell'interfaccia utente.
+
+02:38.790 --> 02:42.090
+Ci sono il titolo e lo stato.
+
+02:42.090 --> 02:47.550
+La vista contiene tutto ciò che vediamo visivamente e riproduce anche l'audio.
+
+02:47.580 --> 02:52.770
+Ora, non sono sicuro che nella registrazione si possa sentire l'audio, ma sta semplicemente rimbalzando, rimbalzando,
+
+02:52.770 --> 02:54.760
+rimbalza e fa un po' di rumore.
+
+02:54.780 --> 02:56.760
+Quindi è tutto qui.
+
+02:57.420 --> 03:00.540
+Ora diamo un'occhiata all'esempio stesso.
+
+03:00.540 --> 03:04.050
+Si tratta di un comportamento singolo, chiamato mini esempio di palla rimbalzante.
+
+03:04.050 --> 03:09.810
+Tutto ciò che faccio è trascinare la vista come unico riferimento da prendere.
+
+03:09.810 --> 03:12.540
+E questo è pronto per l'uso.
+
+03:12.540 --> 03:14.190
+Diamo quindi un'occhiata al codice sorgente.
+
+03:16.110 --> 03:17.810
+Ingrandiamo un po' qui.
+
+03:17.820 --> 03:19.950
+Ecco l'esempio.
+
+03:20.040 --> 03:23.970
+L'esempio accetta la vista come campo serializzato.
+
+03:24.150 --> 03:27.840
+Poi inizierà a partire da qui.
+
+03:27.840 --> 03:31.920
+Creerà una nuova palla rimbalzante mini e passerà nella vista.
+
+03:31.920 --> 03:37.290
+Quindi Mini, in questa terminologia, è l'involucro dell'intera applicazione.
+
+03:37.290 --> 03:41.940
+Quindi, ogni volta che si vede Mini nel codice sorgente, si intende la struttura principale.
+
+03:41.940 --> 03:45.420
+E al suo interno ha diversi elementi, tra cui la vista.
+
+03:45.870 --> 03:47.460
+Diamo ora un'occhiata a questo elemento.
+
+03:50.920 --> 03:54.250
+Apriamo la vista.
+
+03:56.600 --> 03:58.280
+La vista si estende.
+
+03:58.310 --> 03:58.860
+Mi dispiace.
+
+03:58.880 --> 04:00.890
+Sto aprendo il Mini per iniziare.
+
+04:01.370 --> 04:04.580
+Quindi nel Mini prendo l'elemento view.
+
+04:04.610 --> 04:07.040
+Anche qui c'è un controller audio.
+
+04:07.040 --> 04:11.180
+Ecco cosa facciamo all'interno del mini initialize.
+
+04:11.210 --> 04:19.700
+Creeremo un contesto, un servizio di controllo del modello e li collegheremo tutti insieme.
+
+04:19.700 --> 04:21.400
+in questa riga.
+
+04:21.410 --> 04:28.040
+Quindi ogni volta che si vede il controllore inizializzato nel mondo mini, il controllore è il più,
+
+04:28.430 --> 04:32.750
+diciamo, la preoccupazione più consapevole dell'intero sistema.
+
+04:32.750 --> 04:36.020
+Il mini ha quattro parti al suo interno.
+
+04:36.020 --> 04:40.670
+Una di queste parti è il controllore, e il controllore è la parte più esperta.
+
+04:40.670 --> 04:46.550
+Quindi riceve un riferimento alle altre tre parti ed è quello che dirà: "Ehi, modello di dati, che cos'è?
+
+04:46.550 --> 04:47.450
+il tuo valore?
+
+04:47.480 --> 04:50.060
+Ehi, vista, qualcuno ha interagito con te?
+
+04:50.090 --> 04:52.430
+Ehi, servizio, puoi caricare qualcosa per me?
+
+04:52.430 --> 04:54.830
+È il controllore che incolla tutto questo insieme.
+
+04:55.520 --> 04:57.780
+Diamo un'occhiata veloce al modello.
+
+04:58.170 --> 05:04.650
+Il modello conterrà i valori di quante volte abbiamo contato e qual è il massimo?
+
+05:04.650 --> 05:07.560
+Quindi dirà uno su tre, due su tre.
+
+05:07.560 --> 05:12.510
+E poi, quando raggiunge il tre su tre, si reimposta uno su tre, due su tre.
+
+05:12.510 --> 05:14.580
+Ecco come funzionano questi due valori.
+
+05:14.610 --> 05:17.460
+Qui, notate che sono entrambi impostati a zero.
+
+05:17.460 --> 05:21.360
+Tra poco vedremo cosa imposta il massimo a tre.
+
+05:22.020 --> 05:23.700
+Ora diamo un'occhiata al servizio.
+
+05:23.700 --> 05:27.960
+Il livello di servizio è quello che serve a chiamare qualsiasi dato esterno.
+
+05:27.960 --> 05:34.620
+Se il vostro gioco non ha bisogno di dati esterni fin dall'inizio o mai, potete omettere questo passaggio.
+
+05:34.620 --> 05:36.150
+Non è necessario avere un servizio.
+
+05:36.150 --> 05:43.080
+Ma in genere i giochi di oggi chiamano servizi back end, file locali esterni al gioco stesso,
+
+05:43.080 --> 05:49.140
+come quello che vediamo qui, e questo concetto di servizio è ottimo per questo.
+
+05:49.140 --> 05:56.850
+Qui tutto ciò che farà è caricare un file di testo locale e poi analizzare quel valore in
+
+05:56.850 --> 05:58.830
+il conteggio dei rimbalzi.
+
+05:58.860 --> 06:01.530
+Max Diamo quindi un'occhiata a questo file di testo.
+
+06:01.710 --> 06:04.200
+È qui, nei testi delle risorse.
+
+06:04.380 --> 06:07.440
+Se lo apro, inizia con il valore tre.
+
+06:07.440 --> 06:11.280
+Sembra un po' sciocco che ci sia un valore.
+
+06:11.310 --> 06:14.010
+Perché non scrivere il valore tre in Do diesis?
+
+06:14.040 --> 06:17.580
+Questa è solo una dimostrazione arbitraria.
+
+06:17.580 --> 06:21.330
+Mettiamo alcuni dati fuori dall'applicazione e carichiamoli.
+
+06:21.330 --> 06:24.830
+Avrei potuto caricarlo anche dal back-end, per esempio.
+
+06:24.840 --> 06:26.190
+Questo è quanto per il servizio.
+
+06:26.220 --> 06:29.700
+Caricherà il valore tre e lo passerà al controllore.
+
+06:30.430 --> 06:31.780
+Ora diamo un'occhiata al controllore.
+
+06:31.810 --> 06:36.010
+Questa è l'ultima cosa che dobbiamo vedere nel controllore.
+
+06:36.740 --> 06:40.820
+Ereditiamo dal controllore di base, come dice il commento.
+
+06:41.060 --> 06:44.570
+A proposito, sempre la base è facoltativa da estendere.
+
+06:44.570 --> 06:48.950
+Questo non fa altro che fornire alcune funzionalità gratuite, ma si può iniziare a vedere attraverso questi esempi
+
+06:48.950 --> 06:53.590
+quante poche righe di codice ci sono per configurare questa architettura.
+
+06:53.600 --> 06:59.210
+Ebbene, io dico che anche chi guarda questo esempio potrebbe dire: "Ehi, potrei far rimbalzare una palla con
+
+06:59.210 --> 07:02.690
+un solo comportamento, perché ho bisogno di queste altre classi?
+
+07:02.690 --> 07:08.060
+Ma ancora una volta, l'esempio è che stavate imparando i fondamenti in un caso d'uso molto semplice.
+
+07:08.060 --> 07:14.540
+Ora immaginate di far crescere il vostro progetto fino alle dimensioni di Fortnite che gestisce il metagame multiplayer.
+
+07:14.540 --> 07:18.380
+Ogni giocatore, tutte le cose che si possono fare con il proprio giocatore.
+
+07:18.380 --> 07:23.270
+Avremmo migliaia di classi e decine di migliaia di righe di codice.
+
+07:23.300 --> 07:29.930
+Avere queste best practice divise in model view controller e service dà davvero i suoi frutti sul vostro
+
+07:29.930 --> 07:30.800
+progetti.
+
+07:30.800 --> 07:32.510
+Ecco perché iniziamo in modo così semplice.
+
+07:32.510 --> 07:38.060
+È una preoccupazione comune quando le persone si avvicinano alle architetture di apprendimento, e si sentono come, Hey,
+
+07:38.060 --> 07:42.310
+sono un sacco di classi o di righe di codice per fare cose semplici.
+
+07:42.320 --> 07:48.350
+È vero, ma si sta investendo del tempo per imparare questi fondamenti.
+
+07:48.350 --> 07:55.610
+Quindi, man mano che il tuo progetto scala il tuo set, è una cosa meravigliosa che a tre mesi da un progetto solista
+
+07:55.610 --> 08:02.000
+o due settimane in un progetto di cinque persone, non ci si chiede dove debba andare il prossimo lungometraggio.
+
+08:02.000 --> 08:07.850
+perché si lavora tutti insieme sullo stesso modello architettonico e si sa che un pulsante
+
+08:07.850 --> 08:12.530
+cliccato, questo inizierà nella vista e poi andrà al controllore e poi
+
+08:12.530 --> 08:13.400
+al modello.
+
+08:13.430 --> 08:14.810
+State parlando la stessa lingua.
+
+08:14.810 --> 08:21.560
+Il corso Udemy parla dei benefici e dell'analisi costi-benefici dell'introduzione di nuove tecnologie, come ad esempio
+
+08:21.560 --> 08:23.120
+questo numero di MVC.
+
+08:23.120 --> 08:24.800
+Torniamo al controllore.
+
+08:24.800 --> 08:29.120
+Inizializziamo la vista con alcuni campi di testo.
+
+08:29.120 --> 08:31.820
+Andiamo ad ascoltare il servizio qui.
+
+08:32.680 --> 08:36.430
+E poi, ogni volta che il servizio viene caricato, prendiamo quel valore.
+
+08:36.460 --> 08:39.670
+caricato dal campo di testo e lo passiamo al modello.
+
+08:39.790 --> 08:42.520
+Poi ascoltiamo la vista e diciamo: "Ehi, vista".
+
+08:42.520 --> 08:49.630
+Ogni volta che la fisica rileva che la palla è rimbalzata, la catturiamo qui e la aggiorniamo.
+
+08:49.630 --> 08:53.490
+in ascolto ogni volta che il conteggio dei rimbalzi è cambiato.
+
+08:53.500 --> 08:55.630
+Quindi c'è un po' di più da guardare qui.
+
+08:55.630 --> 08:56.610
+Si può scavare.
+
+08:56.620 --> 09:02.170
+Abbiamo anche un po' di schema di comando, che vedremo in un prossimo esempio.
+
+09:02.170 --> 09:04.060
+Eseguiamo ancora una volta la demo.
+
+09:08.740 --> 09:11.680
+Sì, vedo che il microfono rileva il rimbalzo.
+
+09:13.350 --> 09:14.130
+Quindi va.
+
+09:14.130 --> 09:14.820
+Uno, due, tre.
+
+09:14.820 --> 09:15.510
+Uno, due, tre.
+
+09:15.510 --> 09:16.290
+Uno, due, tre.
+
+09:16.740 --> 09:18.420
+Questo è tutto per la demo del conteggio.

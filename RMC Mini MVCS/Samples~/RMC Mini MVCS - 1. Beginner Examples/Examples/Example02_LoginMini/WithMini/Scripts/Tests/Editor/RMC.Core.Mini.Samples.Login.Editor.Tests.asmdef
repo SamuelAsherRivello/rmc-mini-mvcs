@@ -1,0 +1,20 @@
+{
+    "name": "RMC.Core.Mini.Samples.Login.Editor.Tests",
+    "rootNamespace": "",
+    "references": [
+        "GUID:4245cf09d0036f34e8bb2477b3fed3c2",
+        "GUID:e93d410136709f64dafe41c75ac6addb",
+        "GUID:3edc4aa519aea1a459c7af715b5e70b0"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

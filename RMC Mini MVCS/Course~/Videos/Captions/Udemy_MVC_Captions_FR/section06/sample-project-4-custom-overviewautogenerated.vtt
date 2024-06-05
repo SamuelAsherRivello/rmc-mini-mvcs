@@ -1,0 +1,256 @@
+WEBVTT
+
+00:00.120 --> 00:03.570
+Le mini projet d'échantillonnage personnalisé de NBC.
+
+00:03.570 --> 00:05.010
+Félicitations.
+
+00:05.010 --> 00:09.180
+Vous avez suivi avec succès l'ensemble des cours théoriques de ce cours.
+
+00:09.180 --> 00:11.010
+Nous avons revu l'introduction du cours.
+
+00:11.010 --> 00:14.850
+Nous avons vu une vue d'ensemble de l'unité, y compris la structure de l'unité.
+
+00:14.850 --> 00:22.770
+Nous avons étudié la conception de logiciels à un niveau élevé, en couvrant les principes de conception, les modèles de conception, les diagrammes UML,
+
+00:22.770 --> 00:24.840
+ainsi que les architectures elles-mêmes.
+
+00:24.840 --> 00:29.340
+Ensuite, nous avons approfondi ensemble l'architecture MINI et VCs pour Unity.
+
+00:29.340 --> 00:35.460
+Mettons toute cette théorie en pratique et créons un nouveau projet à partir de zéro.
+
+00:35.460 --> 00:41.190
+Maintenant, avec chaque exemple de projet que nous avons couvert et avec ce nouveau projet également, nous continuons à éplucher
+
+00:41.190 --> 00:46.770
+de plus en plus de couches dans les concepts MVC et de réfléchir de manière critique à la manière dont nous les appliquons.
+
+00:46.770 --> 00:48.600
+Au fur et à mesure que nous avançons dans la section suivante.
+
+00:48.600 --> 00:55.170
+Réfléchissez vous-même aux aspects de l'architecture et de ce cadre avec lesquels vous vous sentez le plus à l'aise
+
+00:55.170 --> 00:55.410
+avec lesquels vous vous sentez le plus à l'aise ?
+
+00:55.420 --> 01:00.150
+Commencez-vous à voir les avantages à long terme de l'application de l'architecture à vos projets ?
+
+01:00.150 --> 01:02.660
+Quelles sont les parties du cadre que vous souhaitez explorer davantage ?
+
+01:02.670 --> 01:06.390
+Réfléchissez également aux aspects qui pourraient ne pas répondre à vos besoins.
+
+01:06.390 --> 01:12.120
+Que pouvez-vous faire pour obtenir les résultats que vous souhaitez dans un projet dans lequel les principes de conception, les modèles, etc.
+
+01:12.120 --> 01:14.580
+et d'autres concepts restent flous ?
+
+01:14.580 --> 01:19.440
+Jusqu'à présent, nous avons vu plusieurs exemples de MVC en action.
+
+01:19.440 --> 01:22.270
+Dans chaque cas, nous avons examiné quelque chose qui existait déjà.
+
+01:22.290 --> 01:24.510
+Nous allons maintenant créer un nouveau projet à partir de zéro.
+
+01:24.510 --> 01:26.550
+Voici le processus de haut niveau que nous allons suivre ensemble.
+
+01:26.550 --> 01:29.370
+Quel est notre concept et quelles sont les exigences fonctionnelles ?
+
+01:29.370 --> 01:30.690
+Que doit-il faire ?
+
+01:30.720 --> 01:32.490
+Quelle est l'expérience de l'utilisateur ?
+
+01:32.490 --> 01:35.550
+Que voient-ils et quel type d'entrée utilisent-ils ?
+
+01:35.550 --> 01:38.620
+Quelles sont les préoccupations architecturales dont nous aurons besoin ?
+
+01:38.640 --> 01:42.960
+Un service modèle-vue-contrôleur, peut-être multiple.
+
+01:42.960 --> 01:47.730
+Et pour lesquelles de ces préoccupations pouvons-nous utiliser la fonctionnalité de base et pour lesquelles en avons-nous besoin ?
+
+01:47.730 --> 01:49.260
+Des fonctionnalités personnalisées ?
+
+01:49.260 --> 01:54.690
+Réalisons donc une application mathématique simple, une calculatrice, en utilisant plusieurs MVC.
+
+01:54.690 --> 01:56.070
+Voici les exigences.
+
+01:56.340 --> 01:59.370
+Nous aurons quelques champs de texte sur l'écran.
+
+01:59.880 --> 02:06.750
+L'utilisateur saisit deux nombres entiers, puis clique sur un bouton d'ajout pour les additionner mathématiquement.
+
+02:06.750 --> 02:07.650
+et afficher le résultat.
+
+02:07.650 --> 02:09.930
+Comment décomposer ce résultat en préoccupations ?
+
+02:09.930 --> 02:11.430
+Le modèle stocke les données.
+
+02:11.430 --> 02:14.220
+De quel type de données avons-nous besoin pour y parvenir ?
+
+02:14.220 --> 02:19.590
+En partant de la vue et en pensant aux données de cette façon, nous savons que nous avons du texte
+
+02:19.590 --> 02:22.620
+champs de texte saisis par les utilisateurs et nous devons les stocker d'une manière ou d'une autre.
+
+02:22.620 --> 02:28.290
+Nous aurons donc un entier pour le premier champ de texte, un entier pour le deuxième et un entier pour le troisième.
+
+02:28.290 --> 02:28.860
+résultat.
+
+02:28.860 --> 02:35.400
+Dans la vue, nous aurons une sorte de texte pour A, pour B, et aussi pour afficher le résultat dans le contrôleur,
+
+02:35.400 --> 02:41.460
+qui va gérer la logique, aurait besoin de quelque chose pour effectuer l'opération d'ajout ainsi que d'un moyen pour
+
+02:41.460 --> 02:43.290
+d'effacer ou de réinitialiser l'application.
+
+02:43.290 --> 02:49.290
+Et alors que dans les échantillons précédents, nous utilisions une couche de service pour charger des données externes, nous n'avons pas besoin de cela
+
+02:49.290 --> 02:51.480
+pour cet exemple, donc nous n'aurons pas de service.
+
+02:51.480 --> 02:55.020
+Alors, quelle fonctionnalité de base allons-nous utiliser ici ?
+
+02:55.020 --> 03:00.240
+Nous nous demandons ici pour quelles préoccupations nous voulons une fonctionnalité standard et pour quelles préoccupations nous voulons
+
+03:00.240 --> 03:01.290
+fonctionnalité personnalisée ?
+
+03:01.290 --> 03:05.400
+Comme c'est généralement le cas pour le modèle, nous voulons une fonctionnalité de base.
+
+03:05.400 --> 03:08.610
+Il n'est généralement pas nécessaire de s'écarter du modèle de base.
+
+03:08.610 --> 03:11.580
+Ici, nous allons donc étendre le modèle de base pour la vue.
+
+03:11.580 --> 03:16.230
+Nous allons implémenter l'interface eye view et étendre le comportement mono.
+
+03:16.230 --> 03:18.110
+Nous avons déjà vu ce modèle auparavant.
+
+03:18.120 --> 03:20.400
+Chaque fois que vous voulez utiliser l'interface utilisateur de Unity.
+
+03:20.400 --> 03:23.340
+L'interface utilisateur d'Unity est très agréable à utiliser avec les comportements mono.
+
+03:23.340 --> 03:28.470
+Nous allons donc nous appuyer là-dessus et utiliser un comportement mono pour notre vue du contrôleur.
+
+03:28.470 --> 03:32.970
+Bien qu'il existe une classe de contrôleur de base qui fonctionne mieux lorsque nous en voulons une.
+
+03:32.970 --> 03:38.340
+Ici, il s'agit d'un modèle, d'une vue, d'un contrôleur et d'un service, car nous n'avons pas besoin du service.
+
+03:38.340 --> 03:43.890
+Nous avons quelques options pour aller de l'avant, mais nous allons tout simplement implémenter AI controller et créer
+
+03:43.890 --> 03:46.560
+une fonctionnalité personnalisée qui n'utilise pas le service.
+
+03:46.560 --> 03:50.790
+Et encore une fois, sur la couche de service, nous n'utiliserons pas de service, donc nous sauterons cette partie.
+
+03:50.790 --> 03:53.700
+C'est parce que l'application ne fait appel à aucune donnée externe.
+
+03:53.700 --> 03:59.430
+À ce stade du brainstorming, c'est donc le moment idéal pour penser à la création de diagrammes, à l'aide d'UML.
+
+03:59.460 --> 04:05.430
+Cela vous aide à déterminer les dépendances, les interfaces à mettre en œuvre, les interfaces à utiliser, les interfaces à utiliser, les interfaces à utiliser et les interfaces à utiliser.
+
+04:05.430 --> 04:10.320
+classes seront étendues, que vous travailliez sur un projet seul ou avec l'équipe,
+
+04:10.320 --> 04:14.310
+UML est un excellent moyen de communiquer et de se concentrer sur le développement.
+
+04:14.310 --> 04:20.100
+En reprenant les mêmes brainstormings que ceux que nous avons eus au cours des dernières étapes, nous les articulons visuellement.
+
+04:20.100 --> 04:25.530
+Nous aurons une mini-classe de calculatrice qui représentera toute la structure à l'intérieur.
+
+04:25.530 --> 04:30.060
+Nous aurons un modèle de calculatrice, un contrôleur de calculatrice et la vue de calculatrice.
+
+04:30.060 --> 04:33.270
+Tout au long du cours, nous avons réalisé plusieurs défis de codage.
+
+04:33.270 --> 04:38.070
+Si vous êtes prêt pour l'ultime défi de codage, vous pouvez mettre la vidéo en pause ici.
+
+04:38.070 --> 04:43.950
+Utilisez uniquement les informations dont nous avons parlé dans cette section et commencez à coder à partir de zéro une fois que vous avez terminé.
+
+04:43.950 --> 04:49.110
+ou si vous êtes bloqué, vous pouvez revenir à cette section et voir comment nous avons résolu le problème.
+
+04:49.110 --> 04:49.650
+ensemble.
+
+04:49.650 --> 04:50.850
+Voyons cela en action.
+
+04:50.850 --> 04:57.840
+Je vais montrer depuis le tout début comment obtenir unity, l'installer, créer un nouveau projet, ajouter les éléments suivants
+
+04:57.840 --> 04:59.910
+le mini et le framework de VC et.
+
+04:59.960 --> 05:03.470
+Faire le codage en direct pour cette calculatrice Exemple de projet.
+
+05:03.470 --> 05:08.690
+Ce projet d'exemple sera un peu différent de ceux que nous avons faits auparavant parce que je vais le coder.
+
+05:08.690 --> 05:14.030
+Il y aura donc moins d'édition et, si nous avons de la chance, je ferai quelques erreurs en cours de route, ce qui nous permettra d'avoir une vision plus claire de la situation.
+
+05:14.030 --> 05:15.100
+nous pourrons les résoudre ensemble.
+
+05:15.110 --> 05:16.280
+Commençons.

@@ -1,0 +1,208 @@
+WEBVTT
+
+00:00.330 --> 00:02.580
+Schauen wir uns nun die Architekturen an.
+
+00:03.000 --> 00:08.190
+Eine Softwarearchitektur ist die grundlegende Organisation aller ihrer Teile.
+
+00:08.190 --> 00:13.880
+Wir werden sehen, dass Architekturen auf Designprinzipien und -mustern aufgebaut sind.
+
+00:13.890 --> 00:18.210
+Zu den Vorteilen gehört, dass es sich um bewährte Lösungen für wiederholbare Probleme handelt.
+
+00:18.210 --> 00:25.080
+Indem wir unser Projekt auf eine maßgeschneiderte Weise organisieren, können wir Vertrauen, Skalierbarkeit, Leistung und
+
+00:25.080 --> 00:26.490
+mehr für unsere Projekte.
+
+00:26.490 --> 00:32.670
+Softwarearchitekturen sind in der Regel sehr komplex und können auf verschiedene Sprachen oder Plattformen angewendet werden,
+
+00:32.670 --> 00:39.420
+und durch ihre Verwendung können wir sowohl die Entwicklung beschleunigen als auch die Wartungsphasen vereinfachen
+
+00:39.420 --> 00:40.560
+unserer Projekte.
+
+00:40.560 --> 00:46.140
+Während wir als Entwickler oft denken, dass es unsere Aufgabe ist, neue Funktionen hinzuzufügen, und dass das die Mehrheit ist
+
+00:46.140 --> 00:53.880
+unserer Erfahrung ist, zeigen Untersuchungen, dass 80 % der Zeit in einem Softwareprojekt für die Wartung des Codes aufgewendet wird.
+
+00:54.000 --> 01:00.660
+Indem wir also im Vorfeld Entscheidungen für Architekturen, Entwurfsprinzipien und Muster treffen und diese durchgängig anwenden
+
+01:00.660 --> 01:06.960
+unserem Projekt anwenden, wenn wir neue Funktionen hinzufügen, kann die große Wartungsphase einfacher sein und unsere
+
+01:06.960 --> 01:09.180
+Lebensqualität auf einem hohen Niveau.
+
+01:09.180 --> 01:15.960
+Einige Arten von Architekturen sind der Ansatz ohne Architektur, typischerweise junge Teams oder Einzelpersonen
+
+01:15.960 --> 01:17.550
+die sich mit Software beschäftigen.
+
+01:17.550 --> 01:23.550
+Wir machen das, was sich im Moment richtig anfühlt, ohne eine größere Perspektive oder Vision für das Projekt.
+
+01:23.550 --> 01:25.080
+Aber letztendlich werden wir sehen.
+
+01:25.080 --> 01:26.400
+Wir brauchen etwas anderes.
+
+01:26.400 --> 01:32.790
+Erfahrene Teams können maßgeschneiderte architektonische Lösungen verwenden, bei denen sie die besonderen Bedürfnisse eines Teams berücksichtigen und
+
+01:32.790 --> 01:39.420
+das Produkt, das sie erstellen, eine Bibliothek dieser Prinzipien und Muster verwenden und
+
+01:39.420 --> 01:40.710
+ihre eigene Lösung.
+
+01:40.710 --> 01:46.830
+Dieser Ansatz hat seine Vor- und Nachteile, und ein weiterer wichtiger Typ ist die Verwendung einer etablierten Architektur,
+
+01:46.830 --> 01:52.460
+etwas, das wir aus dem Regal nehmen und auf unsere Projekte vorschreiben können.
+
+01:52.470 --> 02:01.740
+Dazu gehören MVP und VC und VM, und es gibt noch viele, viele mehr, auf die wir im Detail eingehen werden.
+
+02:02.010 --> 02:08.700
+Während es sich also ganz natürlich anfühlt, sich einfach nach und nach zu entwickeln und das zu tun, was sich im Moment richtig anfühlt, ist dies
+
+02:08.700 --> 02:11.190
+Ansatz ohne Architektur hat Nachteile.
+
+02:11.190 --> 02:16.710
+Ob Sie nun als Einzelperson oder in einem kleinen Team arbeiten, es wird mehr Diskussionen darüber geben, wie jede Funktion hinzugefügt werden soll
+
+02:16.710 --> 02:22.860
+da man kein Rezept hat, das zu Inkonsistenzen über die Lebensdauer eines Entwicklers und über
+
+02:22.860 --> 02:28.110
+jedem anderen Entwickler im Team führt, bedeutet das, dass die Anwendung von re Faktoren schwieriger wird, weil es
+
+02:28.110 --> 02:30.570
+alle subtilen Variationen in der Codebasis.
+
+02:30.840 --> 02:37.100
+Es wird viel schwieriger, den Code einen Tag später, eine Woche später oder ein Jahr später zu lesen.
+
+02:37.110 --> 02:43.410
+Wenn man neue Teammitglieder ins Team holt oder Teammitglieder aus dem Projekt entlässt, ist es auch schwieriger
+
+02:43.410 --> 02:44.640
+arbeitsintensiv.
+
+02:44.670 --> 02:47.430
+Man muss mehr individuelle Erklärungen abgeben.
+
+02:47.430 --> 02:52.260
+Der neue Entwickler muss mehr Zeit aufwenden, um zu verstehen, was vorhanden ist, und um die Codebasis zu verstehen.
+
+02:52.260 --> 02:57.990
+Und jedes Mal, wenn ein Entwickler das Unternehmen verlässt, muss er mehr von seiner persönlichen Arbeit erklären und dokumentieren
+
+02:57.990 --> 03:00.540
+Geschmacksrichtung erklären und dokumentieren, wie sie das auf das Projekt angewendet haben.
+
+03:00.540 --> 03:06.180
+Nun, für viele Entwickler, besonders für Anfänger, mag sich dieser Ansatz immer noch wie der schnellste Weg zu
+
+03:06.180 --> 03:07.590
+Ihre Funktionen zu vermitteln.
+
+03:07.590 --> 03:14.160
+Und oft sehen wir, wie Entwickler in der Prototyp-Phase diese Regeln über den Haufen werfen und die "no architecture" anwenden
+
+03:14.160 --> 03:14.790
+Ansatz.
+
+03:14.790 --> 03:21.090
+Allerdings bringt solch schneller Code tatsächlich mehr Fehler und Komplexität in das Projekt, und die Kosten für
+
+03:21.090 --> 03:23.910
+Software-Fehler wachsen mit der Zeit exponentiell an.
+
+03:24.150 --> 03:30.090
+Wenn man Fehler früher entdeckt, lassen sie sich schneller beheben und haben weniger Auswirkungen auf das Gesamtprojekt.
+
+03:30.090 --> 03:35.820
+Untersuchungen zeigen, dass ein Fehler, der erst nach der Auslieferung des Produkts entdeckt wird, 30-mal teurer sein kann als ein anderer.
+
+03:35.820 --> 03:40.950
+oder noch schwieriger, den Fehler zu beheben und die neue Version herauszubringen.
+
+03:40.950 --> 03:46.770
+Die besten Praktiken sind also, von Anfang an einen wartbaren Code zu erstellen, um die Automatisierung zu erhöhen und alle
+
+03:46.770 --> 03:52.440
+Testen, worüber wir später noch sprechen werden, um diese Fehler früh und oft zu finden und um alle
+
+03:52.440 --> 03:56.040
+Fehler zu beheben, bevor man sich an neue Funktionen macht.
+
+03:56.040 --> 04:02.550
+Die Softwareforschung zeigt, dass mehr als 80% der Fehler bei etwa 20% der Funktionalität auftreten.
+
+04:02.580 --> 04:08.610
+Dies können die Kernstücke des Klebstoffs oder die Architektur sein, die alles zusammenhält und schnell funktioniert
+
+04:08.610 --> 04:14.820
+um neue Funktionen für die Architektur hinzuzufügen, oder der Ansatz ohne Architektur wird mehr und mehr Probleme verursachen
+
+04:14.820 --> 04:15.420
+im Laufe der Zeit.
+
+04:15.420 --> 04:23.160
+Außerdem ist es für viele überraschend, dass 80% der Entwickler in einem Softwareprojekt über 80% der Zeit
+
+04:23.160 --> 04:27.360
+auf die Pflege der Codebasis und nicht unbedingt auf das Hinzufügen neuer Funktionen.
+
+04:27.360 --> 04:33.630
+Man könnte also meinen, dass der ganze Tag dem Hinzufügen von Funktionen gewidmet ist, aber das ist nur ein kleiner Teil der gesamten Arbeitslast.
+
+04:33.630 --> 04:41.160
+Eine wichtige Erkenntnis ist also, dass man diese 20 % an neuen Funktionen und Merkmalen auf lange Sicht effizient umsetzen muss
+
+04:41.160 --> 04:47.220
+Methodik zu tun, so dass wir, wenn wir die Zeit für die Pflege der Codebasis aufwenden, diese Vorteile auch ernten
+
+04:47.220 --> 04:47.790
+zusammen.
+
+04:47.790 --> 04:56.220
+Wir werden sehen, dass die Verwendung einer etablierten Architektur wie MVC uns viele Vorteile bei der Entwicklung von Unity bringen wird.
+
+04:56.580 --> 04:59.850
+Eines der Themen, die wir in diesem Abschnitt sehen, ist, dass oft die.
+
+05:00.040 --> 05:04.870
+Vorstellung, die wir davon haben, wie Softwareentwicklung abläuft, nicht mit der Realität übereinstimmt.
+
+05:04.960 --> 05:10.840
+Wir haben das Gefühl, dass es den ganzen Tag darum geht, neue Funktionen hinzuzufügen, aber in Wirklichkeit ist das nur ein kleiner Teil der Lebensspanne
+
+05:10.840 --> 05:11.650
+eines Projekts.
+
+05:11.650 --> 05:17.350
+Wenn wir anfangen, über langfristige Lösungen nachzudenken, die die Wartung erleichtern, legen wir einen höheren
+
+05:17.350 --> 05:23.690
+Wert auf das Erlernen guter Entwurfsprinzipien, Entwurfsmuster und schließlich Architekturen.
+
+05:23.710 --> 05:25.240
+Das war's für diesen Abschnitt.
+
+05:25.240 --> 05:25.990
+Ich danke Ihnen.

@@ -1,0 +1,361 @@
+WEBVTT
+
+00:00.510 --> 00:03.090
+Aperçu de l'architecture MVC ici.
+
+00:03.090 --> 00:08.430
+En continuant avec l'aperçu du cours, regardons ce que nous allons apprendre des principes fondamentaux de MVC.
+
+00:08.430 --> 00:09.120
+eux-mêmes.
+
+00:09.120 --> 00:14.130
+Lorsque l'on parle d'architecture et de conception logicielle, il y a tellement de termes différents.
+
+00:14.130 --> 00:20.100
+Certains de ces termes vous sont peut-être déjà familiers et vous savez peut-être déjà quels sont ceux que vous connaissez le mieux.
+
+00:20.100 --> 00:22.080
+que vous voyez ici sont nouveaux pour vous.
+
+00:22.110 --> 00:25.740
+Ou peut-être en avez-vous une idée, mais pas une définition complète.
+
+00:25.740 --> 00:31.260
+Vous verrez des termes comme ceux-ci utilisés tout au long du cours, et lorsque j'introduirai un nouveau terme, je le ferai.
+
+00:31.260 --> 00:33.660
+expliquerai ce que c'est et donnerai le contexte.
+
+00:34.080 --> 00:37.740
+À la fin de ce cours, vous maîtriserez mieux le vocabulaire.
+
+00:37.770 --> 00:41.440
+Imaginez une échelle de votre propre évolution professionnelle tout au long de votre carrière.
+
+00:41.520 --> 00:47.670
+Certains de ces principes interviennent plus tôt dans votre développement et seraient nécessaires aux niveaux junior et intermédiaire.
+
+00:47.670 --> 00:48.510
+intermédiaires.
+
+00:48.510 --> 00:52.830
+La compréhension des classes et de la programmation orientée objet est fondamentale.
+
+00:52.830 --> 00:59.940
+Au fil du temps, les développeurs experts travaillent sur des modèles de conception, en abstrayant les concepts, en rendant leur code plus facile à comprendre et à utiliser.
+
+00:59.940 --> 01:04.980
+modulaire et réutilisable, ainsi que sur l'apprentissage, les tests et les architectures.
+
+01:04.980 --> 01:10.620
+Ce cours se concentre sur l'architecture, et nous aborderons également un grand nombre de ces différents concepts, notamment
+
+01:10.620 --> 01:12.900
+tester la progression d'un jeu.
+
+01:12.900 --> 01:19.950
+La carrière de développeur peut s'accompagner de nombreux titres de poste différents en fonction de la culture de l'entreprise ou du pays dans lequel vous travaillez.
+
+01:19.950 --> 01:20.670
+dans laquelle vous travaillez.
+
+01:20.700 --> 01:22.440
+Cette croissance peut être très différente.
+
+01:22.440 --> 01:27.780
+Mais voici un exemple non exhaustif des différents emplois dans lesquels vous pouvez évoluer au cours d'une longue carrière
+
+01:27.780 --> 01:28.710
+dans le développement de jeux.
+
+01:28.710 --> 01:34.590
+Bien qu'une expérience des concepts architecturaux soit toujours importante dans le développement de logiciels et de jeux
+
+01:34.590 --> 01:41.640
+Si l'expérience des concepts architecturaux est toujours importante dans le développement de logiciels et de jeux, elle est particulièrement cruciale à mi-parcours pour accéder à des postes de développement de haut niveau.
+
+01:41.640 --> 01:47.520
+Vous pouvez même voir sur ce graphique spécifique qu'il existe des postes d'architecte logiciel dédiés ainsi qu'un poste d'architecte logiciel.
+
+01:47.520 --> 01:49.440
+d'apporter votre expertise.
+
+01:49.440 --> 01:56.190
+En fin de compte, l'architecture d'un logiciel est l'organisation fondamentale de toutes ses parties.
+
+01:56.190 --> 02:02.610
+Elle s'appuie sur un ensemble de principes et de modèles de conception, que nous aborderons dans le cours.
+
+02:02.610 --> 02:09.060
+L'application consciente d'une architecture à votre application ou à votre jeu présente notamment l'avantage d'être
+
+02:09.060 --> 02:10.890
+basée sur des concepts éprouvés.
+
+02:10.890 --> 02:14.910
+Il apportera confiance, performance et évolutivité à vos projets.
+
+02:14.910 --> 02:21.120
+Les architectures sont généralement indépendantes du langage, ce qui signifie que les principes sont plus élevés et plus théoriques.
+
+02:21.120 --> 02:26.670
+et peuvent être appliqués à différents langages de programmation et plates-formes de programmation comme Unity
+
+02:26.670 --> 02:27.300
+moteur de jeu.
+
+02:27.300 --> 02:33.060
+Bien qu'il y ait une courbe d'apprentissage, les équipes qui adoptent l'architecture verront le développement progresser
+
+02:33.060 --> 02:37.860
+plus rapidement et, en particulier, la maintenance des projets sera également beaucoup plus rapide.
+
+02:37.860 --> 02:40.740
+Dans le cours, nous aborderons les différents types d'architecture.
+
+02:40.740 --> 02:43.740
+Il y a d'abord l'approche sans architecture.
+
+02:43.740 --> 02:49.860
+C'est surtout ce que les débutants utilisent dans les projets ou même les vétérans dans les prototypes de projets.
+
+02:49.860 --> 02:56.580
+Ici, par souci de rapidité et de flexibilité, les équipes peuvent ne pas choisir de cadre particulier et aller de l'avant.
+
+02:56.790 --> 03:01.860
+Dans ces exemples, il arrive souvent que l'évolutivité et l'ajout de fonctionnalités à la fin d'un projet posent problème.
+
+03:01.860 --> 03:02.940
+devient très difficile.
+
+03:02.940 --> 03:08.580
+Les équipes chevronnées peuvent choisir des architectures personnalisées, en s'inspirant des différents principes et modèles que nous allons présenter ici.
+
+03:08.580 --> 03:11.460
+dont nous parlerons dans ce cours et les appliquer elles-mêmes.
+
+03:11.460 --> 03:14.340
+Cela présente des avantages, notamment en termes de personnalisation.
+
+03:14.340 --> 03:19.800
+Il existe des architectures établies, des schémas directeurs que nous pouvons extraire de l'étagère et intégrer à notre système d'information.
+
+03:19.800 --> 03:20.640
+projet.
+
+03:20.640 --> 03:24.840
+Il s'agit notamment de MVC, Nvme et MVP.
+
+03:24.870 --> 03:30.810
+Ce cours se concentrera sur le modèle MVC ou modèle vue contrôleur, alors pourquoi ne pas poursuivre dans notre
+
+03:30.810 --> 03:34.950
+dans nos projets avec l'approche sans architecture, en faisant ce qui nous semble bon sur le moment ?
+
+03:34.950 --> 03:40.800
+Eh bien, bien que cela puisse être plus rapide au début et un peu plus libre et flexible dans la façon dont vous l'abordez, vous allez
+
+03:40.800 --> 03:45.780
+vous constaterez qu'il y aura plus de débats sur la manière et l'endroit où ajouter chaque fonctionnalité, que vous soyez une personne seule ou non.
+
+03:45.780 --> 03:47.610
+ou d'une équipe plus importante.
+
+03:47.610 --> 03:50.400
+Chaque développeur peut aborder et résoudre ce problème différemment.
+
+03:50.400 --> 03:56.190
+Cette incohérence rendra votre code plus difficile à lire, votre projet plus difficile à maintenir.
+
+03:56.190 --> 04:01.170
+Et lorsque vous intégrez ou retirez des talents à votre projet, il peut être difficile d'intégrer de nouvelles personnes.
+
+04:01.170 --> 04:01.470
+sur.
+
+04:01.470 --> 04:06.750
+Il y a plus de formation à faire et lorsque quelqu'un quitte votre équipe, il y a plus d'informations à personnaliser.
+
+04:06.750 --> 04:10.080
+à leurs solutions particulières que vous devez obtenir avant qu'ils ne partent.
+
+04:10.080 --> 04:15.300
+Pour de nombreux développeurs, l'absence d'architecture peut sembler être la meilleure solution, mais il est certain que l'on ne peut pas s'en passer.
+
+04:15.300 --> 04:17.300
+des bogues et de la complexité apparaîtront sans aucun doute.
+
+04:17.310 --> 04:20.400
+Cette citation me revient à l'esprit et je vais la paraphraser.
+
+04:20.730 --> 04:26.280
+Chaque décision que nous prenons en travaillant sur nos projets logiciels est un investissement, et chaque investissement
+
+04:26.280 --> 04:27.420
+a un coût.
+
+04:27.420 --> 04:33.180
+Il y a effectivement une courbe d'apprentissage, mais nous abordons cet investissement en étant convaincus qu'il portera ses fruits.
+
+04:33.180 --> 04:34.560
+des avantages en cours de route.
+
+04:34.560 --> 04:40.230
+C'est ainsi que je suggère de considérer les architectures avec un coût et des avantages à long terme.
+
+04:40.230 --> 04:46.350
+En tant que développeurs, nous avons souvent l'impression que le processus de développement de logiciels et de jeux consiste essentiellement à
+
+04:46.350 --> 04:48.660
+l'ajout de nouvelles caractéristiques et fonctionnalités.
+
+04:48.660 --> 04:51.170
+Mais ce n'est pas nécessairement le cas.
+
+04:51.180 --> 04:57.960
+Les recherches montrent qu'environ 20 % seulement de nos efforts de production sont consacrés à l'ajout de nouvelles caractéristiques et fonctionnalités.
+
+04:57.960 --> 04:59.820
+Nous consacrons la grande majorité de nos efforts de production à l'ajout de nouvelles caractéristiques et fonctionnalités.
+
+05:00.000 --> 05:06.090
+Notre temps et notre énergie à maintenir ces fonctionnalités, à mettre à jour les différents outils et cadres que nous utilisons,
+
+05:06.390 --> 05:12.660
+les commentaires des utilisateurs, même en réduisant les domaines d'application et, bien sûr, en corrigeant les bogues.
+
+05:12.660 --> 05:19.560
+La création d'un code facile à maintenir porte ses fruits, en établissant une structure et une architecture dès le début.
+
+05:19.680 --> 05:26.640
+avec une façon cohérente et personnalisée d'ajouter notre nouvelle fonctionnalité nous aidera grandement pendant ces 80 % du processus de développement.
+
+05:26.640 --> 05:27.750
+de la vie du logiciel.
+
+05:27.750 --> 05:31.800
+Lorsque nous assurons la maintenance, nous corrigeons les bogues et nous tenons compte des commentaires.
+
+05:31.800 --> 05:33.630
+Prenons l'exemple des bogues.
+
+05:33.630 --> 05:39.060
+Le même bogue rencontré plus tôt dans le développement est beaucoup, beaucoup moins coûteux à résoudre.
+
+05:39.060 --> 05:41.850
+Il nécessite moins de temps de la part du développeur et moins de tests.
+
+05:41.850 --> 05:47.700
+La meilleure pratique consiste à détecter ces bogues rapidement et souvent, ainsi qu'à corriger les bogues avant d'en ajouter de nouveaux.
+
+05:47.700 --> 05:48.360
+fonctionnalités.
+
+05:48.360 --> 05:53.640
+Outre la création d'un code facile à maintenir pour nous aider à atteindre ces objectifs, nous pouvons également augmenter le nombre d'utilisateurs.
+
+05:53.640 --> 05:55.260
+d'automatisation et de tests.
+
+05:55.260 --> 05:56.190
+En même temps que le projet.
+
+05:56.190 --> 06:00.030
+Nous verrons comment les architectures nous permettent de faire des tests plus facilement.
+
+06:00.030 --> 06:06.990
+L'augmentation de l'automatisation et des tests apporte également de la confiance, de la robustesse et de la stabilité à nos projets.
+
+06:06.990 --> 06:12.810
+Comment un cadre comme l'architecture modèle-vue-contrôleur nous aide-t-il à tester ?
+
+06:12.810 --> 06:19.380
+Eh bien, à la base, l'utilisation d'un cadre comme MVC nous invite à séparer les différents domaines d'intérêt
+
+06:19.390 --> 06:27.150
+de nos projets, en faisant en sorte que ces aspects soient séparés, découplés dans la façon dont ils communiquent, et aussi en faisant en sorte que ces aspects soient séparés, découplés dans la façon dont ils communiquent.
+
+06:27.150 --> 06:30.440
+invitant à des responsabilités plus petites au sein de chaque classe.
+
+06:30.450 --> 06:36.000
+Toutes ces qualités permettent d'obtenir un code plus testable dans le cadre des tests, en particulier lorsque nous employons quelque chose de
+
+06:36.000 --> 06:39.030
+appelé développement piloté par les tests, que nous aborderons dans le cours.
+
+06:39.030 --> 06:42.870
+Les tests eux-mêmes seront pris en compte dans la manière dont nous faisons fonctionner nos solutions.
+
+06:42.870 --> 06:49.560
+Nous verrons que le fait de penser aux tests dès le départ nous aide à créer des projets avec des solutions plus simples.
+
+06:49.560 --> 06:53.370
+Nous pouvons certainement créer un projet NVQ sans ajouter de tests.
+
+06:53.520 --> 06:58.890
+Et pour ceux d'entre vous qui ont fait des tests, vous savez que l'architecture MVC n'est pas nécessaire.
+
+06:58.890 --> 07:01.350
+Alors pourquoi parle-t-on de les réunir ?
+
+07:01.350 --> 07:05.430
+Parce que la combinaison de ces deux concepts est incroyablement puissante.
+
+07:05.430 --> 07:10.920
+Dans ce cours, nous verrons comment l'utilisation d'une architecture établie telle que MVC apportera de nombreux avantages à nos clients.
+
+07:10.920 --> 07:12.510
+développement de nos projets Unity.
+
+07:12.510 --> 07:17.910
+Dans l'ensemble, je suis très enthousiaste à l'idée de mettre ces concepts et ces pratiques entre les mains d'un plus grand nombre de développeurs.
+
+07:17.910 --> 07:23.370
+Le public des développeurs Unity comprend un nombre incroyable de types de développeurs différents.
+
+07:23.370 --> 07:28.800
+Nous avons des amateurs qui créent des projets pour le plaisir et des développeurs professionnels de tous les niveaux de compétence.
+
+07:28.800 --> 07:29.820
+utilisant unity.
+
+07:30.120 --> 07:34.910
+Unity est très flexible et c'est l'un des avantages les plus intéressants de son utilisation.
+
+07:34.920 --> 07:39.060
+Cependant, cette flexibilité peut parfois nous permettre de créer de mauvaises solutions.
+
+07:39.060 --> 07:44.850
+L'application des meilleures pratiques que nous allons aborder ici vous aidera vraiment à réfléchir à de nouvelles façons d'aborder les questions de sécurité.
+
+07:44.850 --> 07:45.750
+vos projets.
+
+07:45.750 --> 07:51.990
+Je suis persuadé que les thèmes abordés ici aideront chacun d'entre vous dans le développement de son projet.
+
+07:51.990 --> 07:56.760
+En résumé, ce cours se concentre sur l'architecture MVC pour Unity.
+
+07:56.790 --> 07:59.220
+Nous avons couvert le contenu du cours.
+
+07:59.490 --> 08:05.460
+Nous avons vu un peu comment l'architecture peut nous aider à créer de meilleurs projets, et j'ai aussi fait allusion à l'architecture MVC.
+
+08:05.460 --> 08:11.130
+que la combinaison puissante des tests et de l'architecture peut produire des résultats passionnants.
+
+08:11.130 --> 08:15.750
+Dans la section suivante, nous parlerons plus en détail de Unity en tant que plateforme.
+
+08:16.260 --> 08:22.260
+Nous récapitulerons rapidement les raisons pour lesquelles vous choisiriez Unity, ainsi que les différentes fonctionnalités et services,
+
+08:22.260 --> 08:25.200
+et une brève présentation de ses principales parties.
+
+08:25.380 --> 08:26.130
+Merci.

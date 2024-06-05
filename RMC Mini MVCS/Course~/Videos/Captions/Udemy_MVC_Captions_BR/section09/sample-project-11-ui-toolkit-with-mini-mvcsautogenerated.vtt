@@ -1,0 +1,493 @@
+WEBVTT
+
+00:00.880 --> 00:01.390
+Muito bem.
+
+00:01.390 --> 00:02.830
+Bem-vindo de volta.
+
+00:04.350 --> 00:04.860
+Aqui.
+
+00:04.860 --> 00:13.140
+Vamos dar uma olhada em uma demonstração do uso de mini MVCs, que é uma arquitetura para unidade e uso de
+
+00:13.140 --> 00:15.540
+junto com o kit de ferramentas UI.
+
+00:18.380 --> 00:24.890
+Portanto, isso faz parte de um curso que está disponível para a arquitetura MVC paga para a unidade.
+
+00:24.920 --> 00:28.170
+Abrange o modelo view controller e o link está abaixo.
+
+00:28.190 --> 00:30.410
+Você pode saber mais sobre o curso.
+
+00:30.440 --> 00:31.820
+Veja se ele é para você.
+
+00:31.850 --> 00:33.860
+Assista também ao trailer do curso.
+
+00:33.890 --> 00:39.080
+Aqui vamos falar sobre mais conteúdo que é adicionado à experiência.
+
+00:39.080 --> 00:45.020
+Portanto, no curso básico, cobrimos o design do software Unity, todos os diferentes aspectos.
+
+00:45.020 --> 00:51.170
+Mini MVC para Unity, que é uma estrutura específica que eu recomendo e todos os diferentes exemplos
+
+00:51.170 --> 00:52.550
+projetos junto com ele.
+
+00:53.030 --> 00:57.590
+O que eu fiz, o que eu fiz aqui foi adicionar ainda mais demonstrações.
+
+00:57.590 --> 01:03.680
+O curso atingiu recentemente 6 ou 7.000 alunos, o que me deixou muito animado, por isso acrescentei muitas
+
+01:03.680 --> 01:05.360
+de conteúdo novo em cima dele.
+
+01:05.360 --> 01:09.940
+E o que temos aqui é uma demonstração sobre o uso do kit de ferramentas UI.
+
+01:09.950 --> 01:17.210
+Então, o kit de ferramentas UI, se você não sabe, é o mais novo, agora está no Unity 2022 e além.
+
+01:17.240 --> 01:22.830
+A UI padrão que não vem em um pacote, mas incorporada.
+
+01:22.830 --> 01:25.140
+E ainda não é a mais popular.
+
+01:25.170 --> 01:27.690
+O Unity UI continua a ser bastante popular.
+
+01:27.690 --> 01:34.770
+Ele já existe há 5 ou 6 anos, mas o UI Toolkit é um sistema novo e incrivelmente poderoso para fazer tudo
+
+01:34.770 --> 01:35.550
+sua interface de usuário.
+
+01:35.580 --> 01:42.930
+Então, vamos dar uma olhada em um exemplo de uso do kit de ferramentas UI no projeto mini MVC.
+
+01:44.870 --> 01:46.370
+Então, vamos dar uma olhada aqui.
+
+01:46.370 --> 01:55.040
+Aqui estamos dentro do projeto, e este é o repositório gratuito do mini MVCs que está disponível no Git.
+
+01:55.070 --> 01:58.190
+Há um link no chat abaixo que você pode dar uma olhada.
+
+01:58.190 --> 02:03.820
+Nele, você pode clicar nas amostras e importar as amostras para cá e acompanhar o processo.
+
+02:03.830 --> 02:07.250
+Agora, isso já foi feito aqui para fins desta demonstração.
+
+02:07.250 --> 02:12.650
+E podemos ver aqui, na pasta more, que temos todo tipo de coisas diferentes e a última,
+
+02:12.650 --> 02:20.990
+o décimo que vamos abordar na série é o Mini Mini Incorporated with UI toolkit.
+
+02:21.900 --> 02:25.800
+Então, aqui eu tenho, vamos dar uma olhada em todas as coisas diferentes que temos.
+
+02:25.830 --> 02:29.010
+Temos uma pasta de recursos que tem algumas coisas dentro dela.
+
+02:29.040 --> 02:32.900
+Temos a cena, que será executada em um momento, e depois temos o código-fonte.
+
+02:32.910 --> 02:35.640
+Observe o código-fonte nas melhores práticas.
+
+02:35.640 --> 02:42.090
+Para muitos, ele é dividido em controlador, modelo, serviço e visualização.
+
+02:42.450 --> 02:45.120
+Então vamos em frente e executar o Mini.
+
+02:47.420 --> 02:51.860
+Carregue-o e vamos dar uma olhada na execução deste exemplo.
+
+02:52.310 --> 02:55.100
+Aqui temos a interface do usuário.
+
+02:55.130 --> 03:01.610
+Se você não estiver familiarizado com o kit de ferramentas UI, pode pensar: "Ah, isso é criado na unidade de uso normal".
+
+03:01.640 --> 03:04.090
+UI, mas vamos dar uma olhada em como ele é estruturado.
+
+03:04.100 --> 03:10.580
+Portanto, cada um desses elementos aqui é um botão e observe que eles têm um mouse over consistente.
+
+03:12.200 --> 03:12.920
+Muito bom.
+
+03:12.920 --> 03:16.160
+E eu clico em um botão de lebre e ele muda o seu cabelo.
+
+03:18.560 --> 03:19.820
+Clique no botão do rosto.
+
+03:21.890 --> 03:23.540
+O botão da camiseta.
+
+03:24.080 --> 03:26.450
+Está apenas passando por alguns gráficos diferentes.
+
+03:27.770 --> 03:29.590
+O próprio corpo pode mudar.
+
+03:29.600 --> 03:31.310
+Você pode randomizar.
+
+03:32.130 --> 03:33.900
+E você pode voltar ao original.
+
+03:34.500 --> 03:41.160
+Agora, toda a IU aqui é criada no kit de ferramentas da IU, portanto, vamos dar uma olhada nisso e depois
+
+03:41.160 --> 03:45.060
+vamos nos concentrar na mini experiência.
+
+03:46.710 --> 03:48.810
+Então, vamos dar uma olhada na estrutura da cena aqui.
+
+03:49.110 --> 03:52.470
+Então, aqui no mundo, deixe-me fechar isto.
+
+03:56.820 --> 03:57.150
+Sim.
+
+03:57.480 --> 04:01.860
+Então, aqui no mundo, temos apenas a câmera principal e a luz.
+
+04:01.890 --> 04:03.210
+Nada muito empolgante aqui.
+
+04:03.210 --> 04:05.700
+Então, eu os coloco no objeto vazio do mundo.
+
+04:05.730 --> 04:09.390
+Em seguida, temos a visualização aqui, que é a visualização do kit de ferramentas da IU.
+
+04:09.420 --> 04:10.740
+Vamos dar uma olhada nisso daqui a pouco.
+
+04:10.740 --> 04:14.220
+E depois temos o exemplo do próprio Mini.
+
+04:14.220 --> 04:17.670
+Portanto, há duas partes para mostrar essa demonstração aqui neste vídeo.
+
+04:17.700 --> 04:21.060
+Há a parte do kit de ferramentas UI e depois a parte do mini.
+
+04:21.090 --> 04:28.500
+Agora, na verdade, se você estiver familiarizado com o Mini, não há nada de novo acontecendo aqui no que diz respeito a como
+
+04:28.500 --> 04:29.430
+essas estruturas funcionam.
+
+04:29.430 --> 04:30.900
+Então, vamos dar um mergulho lá.
+
+04:30.900 --> 04:36.300
+Mas o interessante aqui, que é uma espécie de novidade para muitos usuários do unity, é como a interface do usuário é definida
+
+04:36.300 --> 04:36.750
+up.
+
+04:36.780 --> 04:46.320
+Então, o que eu faço aqui é ter um documento UI que está bem aqui e o documento UI é uma classe central da unidade.
+
+04:47.580 --> 04:49.140
+Deixe-me aparecer aqui por um segundo.
+
+04:49.170 --> 04:56.380
+A UI do unity é uma classe central que faz parte do kit de ferramentas da UI e usa um recurso de árvore visual.
+
+04:56.500 --> 04:58.930
+Então, se olharmos para o nosso projeto aqui.
+
+05:02.550 --> 05:05.340
+Já estou perdido onde clico nisso.
+
+05:05.340 --> 05:08.790
+Clique, clique.
+
+05:09.720 --> 05:10.290
+Aqui vamos nós.
+
+05:10.500 --> 05:18.250
+Portanto, nesta mini demonstração do kit de ferramentas da interface do usuário, há uma pasta do kit de ferramentas da interface do usuário e ela contém algumas configurações.
+
+05:18.270 --> 05:22.470
+Ela tem as folhas de estilo em cascata que são chamadas de nós.
+
+05:22.500 --> 05:25.080
+Tem o layout do kit de ferramentas UI.
+
+05:25.110 --> 05:28.260
+Agora é o layout que determina o que está na tela.
+
+05:28.290 --> 05:34.410
+Agora tenho outros vídeos com links abaixo e você pode dar uma olhada em como o kit de ferramentas UI funciona, como e por que ele é
+
+05:34.410 --> 05:39.870
+superlegal, como ele se baseia em padrões da Web como CSS, HTML e JavaScript.
+
+05:39.870 --> 05:42.690
+Mas vamos abrir isso para que você possa dar uma olhada rápida.
+
+05:43.540 --> 05:44.920
+Faça isso em tela cheia aqui.
+
+05:44.920 --> 05:46.320
+Vou clicar aqui.
+
+05:46.330 --> 05:47.140
+Aqui está.
+
+05:47.740 --> 05:51.580
+Assim, podemos ver aqui qual é o melhor lado para eu estar.
+
+05:51.580 --> 05:58.030
+Vou voltar para cá para que você possa ver como é todo o editor de unidade aqui e o que
+
+05:58.030 --> 05:58.600
+estamos vendo.
+
+05:58.600 --> 06:05.080
+Mas esta é, na verdade, uma janela de layout dentro do Unity porque o sistema do kit de ferramentas UI e seu construtor UI
+
+06:05.080 --> 06:07.980
+A janela aqui tem muitas informações.
+
+06:07.990 --> 06:11.440
+Temos todos os diferentes estilos representados à esquerda.
+
+06:11.470 --> 06:16.780
+Temos uma hierarquia da estrutura aqui que é apenas a hierarquia da visualização.
+
+06:16.810 --> 06:19.390
+Você pode ver que podemos clicar em todos os itens diferentes.
+
+06:20.430 --> 06:20.970
+Membro.
+
+06:20.970 --> 06:25.600
+Se eu clicar em visualizar aqui, posso ver os diferentes estados do mouse sobre o item.
+
+06:25.620 --> 06:30.380
+Vamos dar uma olhada rápida em um dos benefícios de nos usar.
+
+06:30.420 --> 06:37.380
+Se eu quisesse fazer com que isso não aumentasse e ficasse azul quando passássemos o mouse sobre ele, e se quiséssemos
+
+06:37.380 --> 06:39.210
+que ele fique menor e verde?
+
+06:39.300 --> 06:44.010
+Apenas para um exemplo arbitrário, tenho um estilo aqui para quando o botão passa pelo mouse.
+
+06:47.270 --> 06:53.600
+E se eu for até a cor, mudarei para verde.
+
+06:53.840 --> 06:59.540
+Depois, vou até a transformação e altero para 0,98 e 0,98.
+
+06:59.540 --> 07:02.560
+Agora estou ficando verde e menor.
+
+07:02.570 --> 07:05.270
+Agora vamos fazer a pré-visualização novamente e passar o mouse por cima.
+
+07:05.270 --> 07:10.190
+Agora veja, todos eles mudam consistentemente seus estados de sobreposição.
+
+07:10.220 --> 07:16.850
+Agora, fazer a mesma coisa no sistema tradicional de UI da unidade é muito possível, mas nunca foi
+
+07:16.850 --> 07:24.320
+mais fácil ter efeitos modelados que passam por cima dos pseudo-estados do mouse hover.
+
+07:24.320 --> 07:24.860
+Selecionado.
+
+07:24.860 --> 07:25.610
+ET cetera.
+
+07:25.640 --> 07:26.180
+Incorporado.
+
+07:26.180 --> 07:27.380
+Muito, muito bom.
+
+07:27.380 --> 07:32.930
+A questão é que esse sistema é muito legal, mas não vamos nos aprofundar nisso.
+
+07:32.930 --> 07:36.350
+Vamos agora dar uma olhada no que está acontecendo aqui.
+
+07:39.200 --> 07:41.510
+Voltamos a aparecer aqui.
+
+07:43.230 --> 07:48.810
+Vamos parar por um minuto e ver como o Mini está configurado.
+
+07:49.020 --> 07:54.390
+Então, nessa cena, criamos algumas das preocupações do Mini.
+
+07:54.390 --> 07:58.530
+Criamos o contexto, o modelo, o serviço e o controlador.
+
+07:58.560 --> 08:03.990
+Agora, como vimos em muitas outras demonstrações do curso e você pode assistir a diferentes vídeos no YouTube
+
+08:03.990 --> 08:08.820
+sobre o assunto que abordei, o controlador é realmente a cola que une tudo.
+
+08:08.820 --> 08:10.620
+Então, vamos dar uma olhada em como isso funciona.
+
+08:11.750 --> 08:20.720
+O que fazemos aqui é inicializar e dizer: "Ei, modelo, mantenha um int que represente o índice".
+
+08:20.720 --> 08:26.720
+de qual cabelo nós temos e será zero, um, dois, três, quatro, dependendo do cabelo para o
+
+08:26.720 --> 08:29.180
+rosto, para a camiseta, para o corpo.
+
+08:29.180 --> 08:32.960
+Portanto, todos esses elementos diferentes são armazenados no modelo e nós os ouvimos aqui.
+
+08:32.960 --> 08:40.880
+E sempre que o modelo diz: "Ah, o usuário avançou o corpo a ser usado", nós simplesmente pegamos o próximo
+
+08:40.880 --> 08:43.160
+referência a um sprite e o usamos lá.
+
+08:43.670 --> 08:48.080
+Depois, aqui embaixo, sempre que a visualização mudar.
+
+08:48.080 --> 08:52.040
+Então, se clicarmos no botão de cabelo, vamos lidar com isso.
+
+08:52.040 --> 08:53.470
+O botão de cabelo foi clicado.
+
+08:53.480 --> 08:56.990
+Sempre que o botão de rosto for clicado, trataremos disso aqui.
+
+08:56.990 --> 09:03.530
+Portanto, estamos lidando com as mudanças, afetando a renderização da visualização e também ouvindo
+
+09:03.530 --> 09:04.490
+aqui embaixo.
+
+09:04.490 --> 09:06.470
+Vamos ver o que acontece.
+
+09:06.470 --> 09:16.920
+Sempre que clicamos em qualquer um dos botões aqui, vamos até aqui e alteramos o valor diferente que é
+
+09:16.920 --> 09:18.960
+armazenado no modelo de dados.
+
+09:18.960 --> 09:24.390
+Portanto, se você clicar em next hair, por favor, ele atualiza isso dentro do modelo.
+
+09:24.940 --> 09:25.450
+Muito bem.
+
+09:25.450 --> 09:26.210
+Então é isso.
+
+09:26.260 --> 09:31.390
+Há uma coisa que eu queria ver aqui, que se eu voltar aqui e vir que quando eu criar
+
+09:31.390 --> 09:32.890
+A visualização.
+
+09:34.280 --> 09:36.290
+Não a crie aqui.
+
+09:36.290 --> 09:37.450
+De fato, sim.
+
+09:37.730 --> 09:38.480
+Eu peguei um você.
+
+09:40.970 --> 09:48.320
+Portanto, aqui temos uma propriedade pública para cada um dos botões nessa IU.
+
+09:48.350 --> 09:54.520
+Agora, normalmente você teria esses campos serializados para cada botão na UI do Unity.
+
+09:54.530 --> 09:59.270
+Mas vamos fazer algo diferente aqui porque estamos usando o kit de ferramentas UI.
+
+09:59.420 --> 10:08.390
+O UI Toolkit tem uma linguagem de consulta em que você pode digitar Q e obter qualquer elemento nomeado e, se quiser
+
+10:08.390 --> 10:13.790
+fortemente digitado, você pode digitar Q button e então dar o nome que você quiser.
+
+10:13.820 --> 10:19.270
+Portanto, você pode ver aqui nessa sintaxe que eu consigo acessar o botão Hare.
+
+10:19.280 --> 10:23.720
+Agora, vamos verificar novamente onde ele está nomeado, no próprio layout.
+
+10:23.720 --> 10:26.150
+Então, quando eu abri essa grande janela e mostrei.
+
+10:27.080 --> 10:29.150
+Como tudo é projetado ali.
+
+10:29.180 --> 10:34.160
+Em seguida, você dá a eles seu próprio nome personalizado e aqui eu o uso.
+
+10:34.190 --> 10:38.540
+Agora, às vezes você os verá nomeados como botão de cabelo assim.
+
+10:38.540 --> 10:42.890
+Tomando emprestado de um tipo de padrão da web mundial.
+
+10:42.890 --> 10:51.860
+Mas eu continuo a usar o nome da unidade que eu gosto assim, então essa é realmente a única outra coisa que eu
+
+10:51.860 --> 10:52.580
+quero mostrar.
+
+10:52.610 --> 10:53.780
+Vamos rodar a cena novamente.
+
+10:54.950 --> 10:55.590
+Aqui está.
+
+10:55.610 --> 11:04.460
+Então, clico aqui, clico no rosto, pescoço e camisa, coloco o corpo, clico no botão de reiniciar e tudo funciona
+
+11:04.460 --> 11:04.950
+aqui.
+
+11:05.000 --> 11:08.900
+Parecia um pouco instável, mas acho que está funcionando muito bem.
+
+11:08.900 --> 11:11.720
+Muito obrigado por assistir a este vídeo.
+
+11:11.720 --> 11:12.680
+E é isso.

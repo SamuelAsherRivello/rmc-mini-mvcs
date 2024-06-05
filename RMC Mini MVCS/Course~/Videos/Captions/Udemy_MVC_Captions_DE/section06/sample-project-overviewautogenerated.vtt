@@ -1,0 +1,181 @@
+WEBVTT
+
+00:00.560 --> 00:03.770
+Die Mini-MVCs-Beispielprojekte.
+
+00:04.190 --> 00:11.210
+Der Beispielcode, um mehr über mini MVCs zu erfahren, ist im Paket für das Framework selbst enthalten.
+
+00:11.480 --> 00:14.690
+Er ist frei auf Git zum Herunterladen und für Unity verfügbar.
+
+00:15.110 --> 00:21.410
+Um diese Beispiele zu importieren, öffnen Sie den Paketmanager, wählen Sie das Mini-MVCs-Paket und Sie sehen die
+
+00:21.410 --> 00:23.580
+Beispiele angezeigt, die Sie importieren können.
+
+00:23.600 --> 00:25.460
+Sie können das im Screenshot hier sehen.
+
+00:25.460 --> 00:32.000
+Wenn Sie das Mini-MVCs-Paket importieren, wird der Quellcode in Ihrem Paketordner aufgefüllt.
+
+00:32.000 --> 00:34.000
+Das ist alles, was Sie brauchen, um loszulegen.
+
+00:34.010 --> 00:39.260
+Die Beispiele, die wir hier besprechen, sind optional und eine gute Möglichkeit, mehr über das Framework zu lernen.
+
+00:39.260 --> 00:44.570
+Wenn Ihre Bedürfnisse auch einem der Beispielprojekte ähneln, können Sie das Beispielprojekt verwenden, um
+
+00:44.570 --> 00:47.810
+mit dem Kopieren oder Ändern der dort vorhandenen Elemente beginnen.
+
+00:47.810 --> 00:50.720
+In diesem Kurs werden wir uns mehrere Beispiele ansehen.
+
+00:50.720 --> 00:58.160
+Jedes von ihnen zeigt genau das gleiche Endergebnis. Mit und ohne die Mini-MVCs, finde ich das besonders
+
+00:58.160 --> 00:58.800
+hilfreich.
+
+00:58.820 --> 01:02.330
+Beginnen Sie mit der Version, die nicht viele MVCs enthält.
+
+01:02.660 --> 01:07.700
+Sie können die volle Funktionalität der Lösung des Anwendungsfalls ohne Framework sehen.
+
+01:07.700 --> 01:14.120
+Wenn Sie damit vertraut sind, öffnen Sie die Version mit vielen MVCs und Sie können sehen, wie dieselben Anwendungsfälle
+
+01:14.120 --> 01:16.050
+mit Hilfe des Frameworks gelöst werden.
+
+01:16.070 --> 01:21.860
+Sie können gerne zwischen diesen beiden Beispielen hin- und herspringen, um ein umfassendes Verständnis zu erlangen.
+
+01:21.860 --> 01:24.110
+In diesem Kurs werden wir uns mehrere Beispiele ansehen.
+
+01:24.110 --> 01:26.270
+Hier ist ein Überblick über die einzelnen Beispiele.
+
+01:26.270 --> 01:29.060
+Das Beispiel mit der Uhr ist ein guter Ausgangspunkt für den Einstieg.
+
+01:29.060 --> 01:31.310
+Es ist das einfachste der Beispiele.
+
+01:31.310 --> 01:37.790
+Es hat kein Mono-Verhalten und die einzige Ansicht ist sozusagen das Debug-Logging auf der Konsole
+
+01:37.790 --> 01:38.330
+Fenster.
+
+01:38.330 --> 01:43.870
+Hier gibt es keine Eingaben, es tickt nur wie eine Uhr und das Publikum ist für Anfänger gedacht.
+
+01:43.880 --> 01:46.280
+Als nächstes haben wir ein Beispiel für eine Benutzeranmeldung.
+
+01:46.280 --> 01:51.530
+Dieses Beispiel ist zwar noch recht einfach, verwendet aber ein Mono-Verhalten, eines davon für die Ansicht.
+
+01:51.530 --> 01:58.670
+Es verwendet das UI von Unity und erfasst Benutzereingaben in Form von Schaltflächenklicks, während wir die Anmeldung nachahmen.
+
+01:58.670 --> 02:03.560
+Es ist ein reines Offline-Projekt, also lädt der Service-Layer eine lokale Datei.
+
+02:03.560 --> 02:08.030
+Dies hilft, die Dinge einfach zu verstehen und erfordert kein Internet.
+
+02:08.030 --> 02:10.160
+Das Publikum hier ist für Anfänger.
+
+02:10.160 --> 02:15.560
+Als nächstes folgt ein Rollerball-Beispiel, das von einem der in Unity integrierten Lernprojekte inspiriert ist.
+
+02:15.560 --> 02:22.280
+Wir sind in der Lage, die vier Pfeiltasten zu benutzen, einen Ball mit Physik über eine Tischplatte zu rollen und gelbe Punkte zu sammeln
+
+02:22.280 --> 02:23.510
+rotierende Tonabnehmer.
+
+02:23.510 --> 02:29.300
+Dies ist das komplexeste Beispiel, das wir zeigen werden, und es fasst alle Eigenschaften eines einfachen, aber
+
+02:29.300 --> 02:34.940
+vollständigen Drei-D-Spiels, einschließlich Audioeingabe, Benutzeroberfläche und Physik.
+
+02:34.940 --> 02:38.570
+Zur Veranschaulichung der Skalierbarkeit von vielen MVCs.
+
+02:38.570 --> 02:43.070
+Dieses Projekt beinhaltet mehrere Views und mehrere Controller.
+
+02:43.070 --> 02:48.860
+Obwohl dieses Projekt noch relativ einfach ist, ist es für fortgeschrittene Entwickler geeignet, wenn sie sich entscheiden
+
+02:48.860 --> 02:50.780
+wie man Architektur am besten lehrt.
+
+02:50.780 --> 02:56.570
+Der Wert des Programmierens und des sich die Hände schmutzig machens in einigen Beispielen wurde offensichtlich, um
+
+02:56.570 --> 03:00.050
+eine Vielzahl von Unterrichtsprinzipien in den Konzepten hier auszudrücken.
+
+03:00.170 --> 03:02.810
+Ich habe es in mehrere Projekte aufgeteilt.
+
+03:02.810 --> 03:09.950
+Wir haben ein Projekt, das kein Geldverhalten verwendet und keine Ansicht hat, die das einfachste Beispiel darstellt
+
+03:09.950 --> 03:13.870
+bis hin zu einem Projekt mit dreifachem Physikeingang, Audio und mehr.
+
+03:13.880 --> 03:20.210
+Alle Beispiele sind relativ einfach im Vergleich zu der Komplexität, die man in einem Triple-A-Unity-Spiel hat,
+
+03:20.210 --> 03:25.910
+ist es eine geeignete Spielwiese, um die Konzepte von MVC zu erlernen und zu sehen, wie sie für Ihre Bedürfnisse skalieren.
+
+03:25.910 --> 03:29.420
+In diesem Abschnitt haben wir über die Beispielprojekte von Mini und VC gesprochen.
+
+03:29.420 --> 03:34.730
+Wir haben die Installation, die Funktionen und einige der Lernprinzipien besprochen
+
+03:34.730 --> 03:35.270
+die dahinter stehen.
+
+03:35.270 --> 03:39.590
+Als Nächstes werden wir noch tiefer gehen und uns die einzelnen Beispiele ansehen.
+
+03:39.590 --> 03:44.900
+Wir werden sehen, wie wir all die Theorie, die wir bisher im Kurs besprochen haben, in Gestaltungsprinzipien umsetzen können,
+
+03:44.900 --> 03:49.100
+Design Patterns, Philosophien und wie man das alles in funktionalen Code umsetzt.
+
+03:49.100 --> 03:54.590
+Ich werde jedes Beispiel durchsehen, teilen und überprüfen, und innerhalb jedes Beispiels werde ich eine kurze Codierung durchführen
+
+03:54.590 --> 03:59.030
+und Sie dazu ermutigen, weitere Aufgaben zu bearbeiten, die Ihnen gestellt werden.
+
+03:59.030 --> 04:04.400
+Diese Aufgaben sind optional, aber es ist eine fantastische Möglichkeit für Sie, sich die Hände schmutzig zu machen und zu verstehen
+
+04:04.400 --> 04:05.360
+diese Prinzipien zu verstehen.
+
+04:05.360 --> 04:09.970
+Ich empfehle Ihnen dringend, diese Aufgaben zu bearbeiten, denn so können Sie am besten lernen.
+
+04:09.980 --> 04:10.760
+Ich danke Ihnen.

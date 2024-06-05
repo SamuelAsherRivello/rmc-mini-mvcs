@@ -1,0 +1,169 @@
+WEBVTT
+
+00:00.150 --> 00:04.260
+Primeiro, vamos dar uma olhada na versão sem muitos MVCs adicionados.
+
+00:05.180 --> 00:08.070
+Aqui estamos dentro de um projeto unity vazio.
+
+00:08.090 --> 00:13.370
+Já adicionei a estrutura de mini NPCs e importei as amostras.
+
+00:13.670 --> 00:15.650
+Vamos abrir a amostra de login.
+
+00:16.830 --> 00:22.710
+Aqui está a estrutura de arquivos para a versão deste exemplo que não tem o mini MVC adicionado.
+
+00:23.280 --> 00:29.820
+Na seção de recursos, tenho o pré-fabricado que é usado para a IU, bem como o arquivo de texto que recebe
+
+00:29.820 --> 00:32.550
+carregado simulando a camada de serviço.
+
+00:33.180 --> 00:38.700
+Tenho uma cena e, nessa cena, temos o arquivo de exemplo que dá início a tudo.
+
+00:39.090 --> 00:40.920
+Vamos começar executando o exemplo.
+
+00:41.220 --> 00:44.550
+Este exemplo é uma simulação off-line do login.
+
+00:45.030 --> 00:50.460
+Usamos o padrão familiar de inserir um nome de usuário e uma senha.
+
+00:50.940 --> 00:52.560
+Clicar no botão de login.
+
+00:52.560 --> 00:57.330
+Normalmente, um serviço de back-end validaria se esses campos correspondem corretamente.
+
+00:58.290 --> 01:03.300
+Neste caso, estou carregando um arquivo local e apenas verificando se a senha local corresponde ao que eu
+
+01:03.330 --> 01:04.260
+digitada aqui.
+
+01:04.710 --> 01:07.890
+Vamos seguir em frente e fazer um exemplo de trabalho.
+
+01:19.820 --> 01:23.960
+Como o texto na tela sugere, a senha é evidente.
+
+01:30.490 --> 01:35.890
+Quando pressiono log in, há um pequeno atraso e, em seguida, temos o sucesso de que eu fiz o login corretamente.
+
+01:53.070 --> 01:57.540
+Agora eu fiz o logout e vou fazer o login usando uma senha obviamente errada.
+
+02:00.680 --> 02:02.640
+E vemos que a mensagem falhou.
+
+02:02.660 --> 02:04.410
+Portanto, tudo está funcionando bem aqui.
+
+02:04.430 --> 02:06.950
+Vamos dar uma olhada em todo o código para que isso aconteça.
+
+02:06.950 --> 02:09.500
+Vamos começar com o arquivo de exemplo de alto nível.
+
+02:10.380 --> 02:12.380
+Aqui está o código do arquivo de exemplo.
+
+02:12.390 --> 02:17.310
+Começarei fazendo uma rolagem para baixo e depois verificarei linha por linha.
+
+02:44.380 --> 02:49.690
+Começamos não com o arquivo da classe de exemplo principal em si, mas com um objeto de dados auxiliar.
+
+02:51.310 --> 02:56.260
+Esse objeto de dados do usuário contém o nome de usuário e a senha que estão prestes a ser enviados.
+
+02:56.530 --> 03:01.780
+Aqui está o exemplo em si e, como em todos os exemplos, estendemos a montagem do comportamento para que possamos anexar
+
+03:01.780 --> 03:03.080
+a um objeto do jogo.
+
+03:03.100 --> 03:07.990
+Em seguida, vemos campos serializados para todos os diferentes elementos da interface do usuário dentro do início.
+
+03:07.990 --> 03:14.380
+Aqui, assinamos alguns eventos de unidade incorporados para a UI e, em seguida, imitamos o clique do logout
+
+03:14.380 --> 03:17.160
+apenas chamando a função de logout.
+
+03:17.170 --> 03:19.870
+Isso simplesmente limpa a interface do usuário e começamos do zero.
+
+03:19.900 --> 03:26.890
+Em seguida, sempre que esses dois campos de entrada forem editados, isso será chamado e nós simplesmente atualizaremos.
+
+03:26.890 --> 03:28.840
+Você já tem permissão para enviar?
+
+03:28.840 --> 03:33.670
+Esta é uma verificação muito simples, mas estou dizendo que se os campos estiverem vazios, você não pode enviar.
+
+03:33.670 --> 03:36.610
+Se houver algo nos campos, você pode enviar.
+
+03:36.760 --> 03:40.510
+Aqui está o que acontece quando clicamos em log in e há bastante coisa aqui.
+
+03:40.510 --> 03:44.200
+Este é o método mais significativo, portanto, vou analisá-lo por seção.
+
+03:44.350 --> 03:48.430
+Primeiro, crio um novo dado de usuário com base no que o usuário digitou nos campos.
+
+03:48.430 --> 03:54.500
+Em seguida, altero a intratabilidade, ou seja, se ela está desativada ou não para cada um dos elementos da IU.
+
+03:54.520 --> 04:00.820
+Agora, como vimos no exemplo anterior, simulamos uma chamada de back-end on-line carregando apenas um
+
+04:00.820 --> 04:02.080
+arquivo de texto local.
+
+04:02.200 --> 04:05.320
+Isso faz algumas operações assíncronas.
+
+04:05.320 --> 04:12.190
+São dados externos, portanto, uma vez que discutimos camadas de serviço, isso faz sentido para um componente de camada de serviço
+
+04:12.250 --> 04:17.950
+e podemos ver no final que o que estamos obtendo é a representação de texto da senha válida
+
+04:17.950 --> 04:20.710
+e estamos apenas comparando-a com o que o usuário enviou.
+
+04:21.970 --> 04:23.050
+Supondo que haja uma correspondência.
+
+04:23.050 --> 04:25.180
+Chamamos isso de login bem-sucedido.
+
+04:25.420 --> 04:31.570
+Atualizamos a interface do usuário para que seja habilitada novamente, conforme apropriado, e depois mostramos uma mensagem de sucesso ou falha
+
+04:31.570 --> 04:32.380
+na tela.
+
+04:32.410 --> 04:38.770
+Por fim, a qualquer momento, se o usuário pressionar o botão de logout e também imitarmos isso no método de início
+
+04:38.770 --> 04:39.560
+chamando este formulário.
+
+04:39.580 --> 04:42.280
+Inicialmente, isso apenas limpa a interface do usuário.
+
+04:42.310 --> 04:43.890
+Vamos executar o exemplo novamente.
+
+04:43.900 --> 04:48.790
+Vou preenchê-lo com informações de trabalho que funcionam com sucesso e a demonstração está completa.

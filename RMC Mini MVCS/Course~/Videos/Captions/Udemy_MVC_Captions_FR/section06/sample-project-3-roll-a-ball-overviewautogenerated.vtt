@@ -1,0 +1,145 @@
+WEBVTT
+
+00:00.270 --> 00:03.750
+Le projet d'exemple Mini MVCs Rollerball.
+
+00:04.580 --> 00:11.300
+Avec chaque exemple de projet, il est possible d'éplucher un peu plus les couches de MVC et de réfléchir à ce qui suit
+
+00:11.300 --> 00:13.090
+critique sur ces concepts.
+
+00:13.100 --> 00:15.590
+Cela améliorera considérablement votre apprentissage.
+
+00:15.620 --> 00:20.390
+Pour amorcer votre réflexion, examinez les avantages et les inconvénients du cadre dans chaque exemple.
+
+00:20.390 --> 00:22.900
+Avec quels aspects vous sentez-vous plus à l'aise ?
+
+00:22.910 --> 00:26.180
+Commencez-vous à voir les avantages à long terme du choix d'un cadre ?
+
+00:26.180 --> 00:30.410
+Quelles sont les parties du cadre qui vous enthousiasment et que vous souhaitez approfondir en cours de route ?
+
+00:30.410 --> 00:33.290
+Vous pourriez identifier certains inconvénients ou désavantages possibles.
+
+00:33.290 --> 00:36.680
+Quels sont les aspects du cadre qui pourraient ne pas répondre à vos besoins ?
+
+00:36.680 --> 00:42.410
+Y a-t-il quelque chose que vous puissiez faire pour obtenir les résultats dont vous avez besoin et quels sont les modèles et les pratiques qui subsistent ?
+
+00:42.410 --> 00:43.430
+pas clairs pour vous ?
+
+00:43.430 --> 00:44.930
+Réfléchissez à ces points.
+
+00:44.930 --> 00:50.570
+Engagez-vous dans la communauté, prenez des notes et réfléchissez au moment où nous entrons dans cet échantillon.
+
+00:50.570 --> 00:54.020
+qui contient le code source du cadre ainsi que les échantillons.
+
+00:54.140 --> 00:59.000
+Chacun des exemples que nous couvrons comporte une version avec plusieurs MVC et une version sans MVC.
+
+00:59.000 --> 01:07.790
+Avec l'exemple Rollerball, nous voyons un jeu simple et complet à trois D qui inclut l'audio, l'interface utilisateur et la physique.
+
+01:07.790 --> 01:13.490
+D'un point de vue architectural, nous verrons un peu plus de complexité que dans les exemples précédents.
+
+01:13.490 --> 01:19.340
+Ici, nous avons plusieurs vues et plusieurs contrôleurs, ce qui montre l'évolutivité du framework.
+
+01:19.340 --> 01:24.050
+Et grâce à son intégration dans unity, nous voyons également de multiples comportements mono utilisés.
+
+01:24.050 --> 01:28.640
+En raison de la complexité accrue, le public cible est constitué de développeurs de niveau intermédiaire.
+
+01:28.640 --> 01:33.890
+Si vous avez bien suivi les échantillons précédents, voici une excellente occasion d'en apprendre encore plus.
+
+01:33.890 --> 01:39.620
+Au fur et à mesure que nous avançons dans cet échantillon, réfléchissez aux tâches de codage que vous aimeriez entreprendre.
+
+01:39.620 --> 01:42.410
+Il y en a toute une variété et vous pouvez même créer la vôtre.
+
+01:42.410 --> 01:46.580
+Commencer par la difficulté la plus faible permet simplement d'expliquer ces concepts.
+
+01:46.580 --> 01:50.860
+Après avoir creusé l'exemple, êtes-vous suffisamment à l'aise pour l'expliquer à un ami ?
+
+01:50.870 --> 01:52.700
+Chaque exemple comprend des tests unitaires.
+
+01:52.700 --> 01:56.780
+Pouvez-vous ajouter un test unitaire supplémentaire qui ait du sens dans le contexte de l'échantillon ?
+
+01:56.780 --> 02:03.440
+Vous pouvez ajouter une nouvelle fonctionnalité de l'interface utilisateur, par exemple en ajoutant du texte ou un bouton à l'interface utilisateur et en le connectant correctement.
+
+02:03.440 --> 02:05.240
+d'une manière qui ait du sens pour le cadre.
+
+02:05.240 --> 02:11.030
+Vous pourriez créer un autre type de nouvelle entrée, par exemple une entrée clavier, et faire quelque chose d'approprié.
+
+02:11.030 --> 02:11.810
+pour l'échantillon.
+
+02:11.810 --> 02:13.340
+Vous pouvez copier l'échantillon.
+
+02:13.340 --> 02:18.410
+Si l'échantillon contient des éléments intéressants pour un autre cas d'utilisation, copiez et collez l'exemple.
+
+02:18.410 --> 02:24.590
+dossier parent entier, renommez chaque classe pour qu'elle soit unique ou donnez-lui un nouvel espace de noms et ajoutez ensuite
+
+02:24.590 --> 02:26.900
+et adapter la fonctionnalité à vos besoins.
+
+02:26.900 --> 02:32.600
+Et peut-être que le plus difficile de cette liste serait de créer vous-même un nouvel échantillon au lieu de le copier.
+
+02:32.600 --> 02:33.380
+et de coller.
+
+02:33.380 --> 02:36.140
+Ici, commencez par le canevas vide d'un nouveau projet.
+
+02:36.140 --> 02:39.320
+Importez le framework lui-même et commencez à coder à partir de zéro.
+
+02:39.320 --> 02:43.130
+Voilà qui démontre une bonne maîtrise de tous les concepts.
+
+02:43.130 --> 02:48.020
+Ce genre de mission permet d'approfondir ses connaissances grâce à l'expérience pratique.
+
+02:48.020 --> 02:53.810
+Voyons cela en action Vous pouvez créer un nouveau projet Unity, importer le mini et le framework.
+
+02:53.810 --> 03:00.200
+Importer les échantillons, ouvrir cet échantillon particulier, explorer la version qui n'utilise pas mini.
+
+03:00.200 --> 03:03.170
+MVC pour acquérir les connaissances de base sur son fonctionnement.
+
+03:03.170 --> 03:06.980
+Ensuite, regardez la version avec plusieurs MVC et avec chaque échantillon.
+
+03:06.980 --> 03:10.100
+Je vais faire un peu de codage en direct avec l'un des exemples d'affectation.
+
+03:10.100 --> 03:11.300
+Commençons.

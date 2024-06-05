@@ -1,0 +1,169 @@
+WEBVTT
+
+00:00.150 --> 00:04.260
+Schauen wir uns zunächst die Version an, der nicht viele MVCs hinzugefügt wurden.
+
+00:05.180 --> 00:08.070
+Hier sind wir in einem leeren Unity-Projekt.
+
+00:08.090 --> 00:13.370
+Ich habe bereits das Mini-NPCs-Framework hinzugefügt und die Beispiele importiert.
+
+00:13.670 --> 00:15.650
+Öffnen wir nun das Login-Beispiel.
+
+00:16.830 --> 00:22.710
+Hier ist die Dateistruktur für die Version dieses Beispiels, die kein Mini-MVC hinzugefügt hat.
+
+00:23.280 --> 00:29.820
+In der Sektion resources habe ich die Prefab, die für die UI verwendet wird, sowie die Textdatei, die
+
+00:29.820 --> 00:32.550
+geladen wird, um die Serviceschicht zu simulieren.
+
+00:33.180 --> 00:38.700
+Ich habe eine Szene, und in dieser Szene haben wir die eine Beispieldatei, die alles in Gang setzt.
+
+00:39.090 --> 00:40.920
+Beginnen wir mit der Ausführung des Beispiels.
+
+00:41.220 --> 00:44.550
+Dieses Beispiel ist eine Offline-Simulation der Anmeldung.
+
+00:45.030 --> 00:50.460
+Wir verwenden das bekannte Muster der Eingabe eines Benutzernamens und eines Passworts.
+
+00:50.940 --> 00:52.560
+Anklicken der Anmeldeschaltfläche.
+
+00:52.560 --> 00:57.330
+Normalerweise würde ein Backend-Dienst überprüfen, ob diese Felder korrekt übereinstimmen.
+
+00:58.290 --> 01:03.300
+In diesem Fall lade ich eine lokale Datei und überprüfe nur, ob das lokale Kennwort mit dem übereinstimmt, was ich eingegeben habe
+
+01:03.330 --> 01:04.260
+hier eingegeben habe.
+
+01:04.710 --> 01:07.890
+Machen wir weiter und führen ein Arbeitsbeispiel durch.
+
+01:19.820 --> 01:23.960
+Wie der Text auf dem Bildschirm andeutet, ist das Passwort offensichtlich.
+
+01:30.490 --> 01:35.890
+Wenn ich auf Anmelden drücke, gibt es eine kurze Verzögerung, und dann haben wir den Erfolg, dass ich mich richtig angemeldet habe.
+
+01:53.070 --> 01:57.540
+Jetzt habe ich mich abgemeldet und melde mich jetzt mit einem offensichtlich falschen Passwort an.
+
+02:00.680 --> 02:02.640
+Und wir sehen die Meldung failed.
+
+02:02.660 --> 02:04.410
+Hier funktioniert also alles einwandfrei.
+
+02:04.430 --> 02:06.950
+Schauen wir uns den gesamten Code an, um dies zu erreichen.
+
+02:06.950 --> 02:09.500
+Wir beginnen mit der übergeordneten Beispieldatei.
+
+02:10.380 --> 02:12.380
+Hier ist der Code für die Beispieldatei.
+
+02:12.390 --> 02:17.310
+Ich fange an, indem ich nach unten scrolle, und dann schaue ich mir Zeile für Zeile an.
+
+02:44.380 --> 02:49.690
+Wir beginnen nicht mit der Hauptbeispiel-Klassendatei selbst, sondern mit einem Hilfsdatenobjekt.
+
+02:51.310 --> 02:56.260
+Dieses Benutzerdatenobjekt enthält den Benutzernamen und das Kennwort, wie sie gerade übermittelt werden sollen.
+
+02:56.530 --> 03:01.780
+Hier ist das eigentliche Beispiel, und wie bei allen Beispielen erweitern wir das Verhalten, so dass wir Folgendes anhängen können
+
+03:01.780 --> 03:03.080
+an ein Spielobjekt anhängen können.
+
+03:03.100 --> 03:07.990
+Dann sehen wir serialisierte Felder für all die verschiedenen UI-Elemente innerhalb des Starts.
+
+03:07.990 --> 03:14.380
+Hier abonnieren wir einige eingebaute Unity-Ereignisse für die Benutzeroberfläche und ahmen dann das Klicken des Logouts nach
+
+03:14.380 --> 03:17.160
+Button nach, indem wir die Logout Funktion aufrufen.
+
+03:17.170 --> 03:19.870
+Das löscht die Benutzeroberfläche und wir beginnen von vorne.
+
+03:19.900 --> 03:26.890
+Jedes Mal, wenn diese beiden Eingabefelder bearbeitet werden, wird diese Funktion aufgerufen und wir aktualisieren einfach.
+
+03:26.890 --> 03:28.840
+Dürfen Sie schon abschicken?
+
+03:28.840 --> 03:33.670
+Dies ist eine sehr einfache Prüfung, aber ich sage nur, wenn die Felder leer sind, kann man nicht abschicken.
+
+03:33.670 --> 03:36.610
+Wenn etwas in den Feldern steht, kannst du sie abschicken.
+
+03:36.760 --> 03:40.510
+Das passiert, wenn wir auf "Anmelden" klicken, und hier gibt es eine ganze Menge.
+
+03:40.510 --> 03:44.200
+Dies ist die wichtigste Methode, also gehe ich sie Schritt für Schritt durch.
+
+03:44.350 --> 03:48.430
+Zuerst erstelle ich neue Benutzerdaten auf der Grundlage dessen, was der Benutzer in die Felder eingegeben hat.
+
+03:48.430 --> 03:54.500
+Dann schalte ich für jedes UI-Element die Intractability um, d.h., ob es deaktiviert ist oder nicht.
+
+03:54.520 --> 04:00.820
+Nun, wie wir im vorherigen Beispiel gesehen haben, simulieren wir einen Online Backend-Aufruf, indem wir einfach eine
+
+04:00.820 --> 04:02.080
+lokale Textdatei laden.
+
+04:02.200 --> 04:05.320
+Dies führt eine asynchrone Operation durch.
+
+04:05.320 --> 04:12.190
+Es handelt sich um externe Daten. Wenn wir also über Dienstschichten sprechen, ist dies eine sinnvolle Komponente für eine Dienstschicht
+
+04:12.250 --> 04:17.950
+und am Ende können wir sehen, dass wir die Textdarstellung des gültigen Passworts erhalten
+
+04:17.950 --> 04:20.710
+und wir überprüfen es mit dem, was der Benutzer eingegeben hat.
+
+04:21.970 --> 04:23.050
+Angenommen, es gibt eine Übereinstimmung.
+
+04:23.050 --> 04:25.180
+Wir nennen dies eine erfolgreiche Anmeldung.
+
+04:25.420 --> 04:31.570
+Wir aktualisieren die Benutzeroberfläche, um sie wieder zu aktivieren, und zeigen dann eine Erfolgs- oder Fehlermeldung an
+
+04:31.570 --> 04:32.380
+auf dem Bildschirm.
+
+04:32.410 --> 04:38.770
+Und schließlich, wenn der Benutzer die Abmeldetaste drückt und wir dies auch in der Startmethode nachahmen
+
+04:38.770 --> 04:39.560
+indem wir dieses Formular aufrufen.
+
+04:39.580 --> 04:42.280
+Zunächst wird nur die Benutzeroberfläche geleert.
+
+04:42.310 --> 04:43.890
+Lassen wir das Beispiel noch einmal laufen.
+
+04:43.900 --> 04:48.790
+Ich fülle es mit Arbeitsinformationen auf, die erfolgreich funktionieren, und die Demo ist fertig.

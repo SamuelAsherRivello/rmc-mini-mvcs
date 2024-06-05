@@ -1,0 +1,352 @@
+WEBVTT
+
+00:00.090 --> 00:04.620
+Quando il controllore aggiorna direttamente la vista, si evita il modello.
+
+00:04.620 --> 00:09.620
+In sostanza, memorizziamo i dati del modello direttamente nella vista.
+
+00:09.630 --> 00:15.900
+Da un punto di vista fondamentale, stiamo uscendo dalla separazione delle preoccupazioni MVC.
+
+00:16.020 --> 00:21.870
+Cerchiamo di iterare questo aspetto e di portare un po' più di sani principi nel codice.
+
+00:22.630 --> 00:29.440
+Invece, quando l'utente fa clic sul pulsante di aggiunta, il controllore può tradurre questi dati in
+
+00:29.440 --> 00:32.500
+valori dell'interfaccia utente dalla vista al modello.
+
+00:32.530 --> 00:33.580
+Facciamolo ora.
+
+00:33.580 --> 00:35.530
+Vediamo cosa abbiamo fatto di diverso qui.
+
+00:35.740 --> 00:41.830
+Abbiamo aggiornato ognuno di questi gestori per essere un po' più convenzionali nelle pratiche degli MVC.
+
+00:41.860 --> 00:47.920
+Ora, quando aggiungiamo, prendiamo i valori della vista e li inseriamo direttamente nel modello e poi nel reset,
+
+00:47.920 --> 00:53.860
+facciamo qualcosa di un po' ridondante, ma cancelliamo la vista e poi cancelliamo
+
+00:53.860 --> 00:54.470
+il modello.
+
+00:54.490 --> 00:59.800
+Non è male, ma la ridondanza che vediamo non raggiunge l'obiettivo della semplicità.
+
+00:59.830 --> 01:05.620
+Ora abbiamo alcune opzioni per creare un legame migliore tra la vista e il modello,
+
+01:05.620 --> 01:12.160
+possiamo andare nella vista e far sì che la vista ascolti direttamente il modello per le operazioni di sola lettura.
+
+01:12.160 --> 01:13.660
+È una buona pratica.
+
+01:13.660 --> 01:21.580
+Un'alternativa sarebbe quella di inviare nel controllore un comando che dica: "Ehi, vista, resettati".
+
+01:21.580 --> 01:24.370
+o dicendo Ehi, view, il modello è cambiato.
+
+01:24.370 --> 01:24.910
+In passato.
+
+01:24.910 --> 01:25.930
+Progetti di esempio.
+
+01:25.930 --> 01:31.660
+Abbiamo già usato i comandi a questo livello, ma per provare qualcosa di nuovo, entriamo in The View e facciamo osservare
+
+01:31.660 --> 01:34.360
+direttamente al modello per eventuali modifiche.
+
+01:34.360 --> 01:42.580
+E all'interno di initialize useremo il contesto e il localizzatore del modello per ottenere un riferimento alla calcolatrice
+
+01:42.580 --> 01:43.030
+modello.
+
+01:43.030 --> 01:49.660
+Le best practice sostengono che la vista legga dal modello, ma sarebbe un superamento del ruolo
+
+01:49.660 --> 01:52.870
+della vista per impostare direttamente qualsiasi valore.
+
+01:53.020 --> 02:00.090
+Quindi tutto ciò che sto facendo è ascoltare il valore cambiato su A, B e il risultato come stenografia.
+
+02:00.100 --> 02:05.680
+Sto usando una cosiddetta espressione lambda, che è un modo veloce per osservare un evento in questo modo
+
+02:05.680 --> 02:07.720
+caso e gestirne le conseguenze.
+
+02:07.720 --> 02:15.010
+L'osservabile su valore cambiato passa il valore precedente a p e vede il valore attuale.
+
+02:15.010 --> 02:21.400
+Quindi, ogni volta che uno di questi osservabili cambia, aggiorno la vista al valore corrente con i soli osservabili
+
+02:21.400 --> 02:22.090
+poche righe.
+
+02:22.090 --> 02:27.280
+Ora abbiamo la vista legata al modello utilizzando le migliori pratiche.
+
+02:27.280 --> 02:32.670
+Nel controllore della calcolatrice, torniamo ai gestori di eventi come erano prima.
+
+02:32.680 --> 02:38.620
+Ora, poiché abbiamo aggiunto il binding dalla vista direttamente al modello, il controllore non è più
+
+02:38.620 --> 02:44.500
+ha bisogno di impostare manualmente i valori della vista, quindi possiamo eliminare queste righe e sbarazzarci di
+
+02:44.500 --> 02:45.200
+anche di questo.
+
+02:45.220 --> 02:47.770
+Eseguiamo la scena e vediamo come si comporta.
+
+02:47.770 --> 02:49.330
+Eccoci nella scena in esecuzione.
+
+02:49.330 --> 02:52.270
+Inserisco alcuni valori e premo reset.
+
+02:52.270 --> 02:59.260
+Vediamo che quando viene resettato, inserisce alcuni zeri in questi campi che inizialmente non c'erano.
+
+02:59.260 --> 03:01.120
+È un piccolo dettaglio, ma lo affronteremo.
+
+03:01.120 --> 03:02.740
+Ora proviamo l'operazione di inserzione.
+
+03:02.740 --> 03:06.040
+L'operazione di inserzione funziona bene nel controllore della calcolatrice.
+
+03:06.040 --> 03:11.170
+Resettiamo inizialmente prima che l'utente esegua qualsiasi input all'interno di initialize.
+
+03:11.170 --> 03:17.290
+Dopo aver eseguito gli ascoltatori di annunci esistenti, imiteremo la conseguenza della pressione del pulsante di reset.
+
+03:17.980 --> 03:19.820
+Eseguiamo la scena e vediamo il risultato.
+
+03:19.840 --> 03:25.410
+Ora, quando eseguiamo l'applicazione per la prima volta, prima di eseguire qualsiasi input dell'utente, vediamo quei familiari zeri.
+
+03:25.420 --> 03:31.370
+Questo è un ottimo modo per avere un aspetto coerente prima e dopo che l'utente inizia a interagire.
+
+03:31.390 --> 03:33.160
+L'applicazione è ora completa.
+
+03:33.160 --> 03:39.250
+Siamo in grado di inserire A, inserire B, sommare i risultati e resettare tutti i campi.
+
+03:39.250 --> 03:46.780
+Finora, in questo esempio personalizzato, abbiamo usato il controller model view, abbiamo osservato gli eventi e abbiamo ottenuto
+
+03:46.780 --> 03:48.070
+la nostra applicazione funziona bene.
+
+03:48.370 --> 03:53.170
+Non abbiamo usato alcun comando e, in un'applicazione abbastanza piccola, questo va bene.
+
+03:53.170 --> 03:56.560
+Ma voglio dimostrare come un comando possa aggiungere valore.
+
+03:56.560 --> 04:02.440
+Lascerò tutti i vincoli che abbiamo ora, ma sostituirò queste righe con il comando
+
+04:02.440 --> 04:05.320
+in modo che la vista sappia come resettarsi.
+
+04:05.320 --> 04:06.940
+Iniziamo a richiamare il comando.
+
+04:06.940 --> 04:10.960
+Utilizziamo il contesto e il gestore dei comandi per invocare un nuovo comando.
+
+04:10.960 --> 04:12.990
+Lo chiameremo comando di reset.
+
+04:13.000 --> 04:16.090
+Ora creiamo questa classe nella sua forma più elementare.
+
+04:16.090 --> 04:20.020
+Duplicherò il modello di classe e lo posizionerò nella posizione corretta.
+
+04:20.020 --> 04:26.110
+Qui, all'interno della cartella del controllore, ho creato una cartella dei comandi e ho aggiunto il nostro comando di reset.
+
+04:26.110 --> 04:30.660
+Finora gli ho dato uno spazio dei nomi e ho aggiornato il nome della classe dal template.
+
+04:30.670 --> 04:36.520
+Tutto ciò che dobbiamo fare è implementare il comando I e tornare al codice in cui utilizziamo questo comando
+
+04:36.520 --> 04:38.140
+nel controllore della calcolatrice.
+
+04:38.140 --> 04:39.490
+Il codice sembra buono.
+
+04:39.490 --> 04:41.550
+Ora stiamo invocando un comando.
+
+04:41.560 --> 04:43.390
+Chi deve ascoltare questo comando?
+
+04:43.390 --> 04:48.210
+Beh, qualsiasi preoccupazione potrebbe sottoscrivere e ascoltare quando avviene il reset.
+
+04:48.220 --> 04:53.470
+Nel nostro caso, andremo su The View, ascolteremo questo comando e resetteremo questi tre campi.
+
+04:53.470 --> 05:00.070
+Quindi, nella vista calcolatrice, all'interno dell'inizializzazione, utilizziamo il gestore di contesto e di comandi per aggiungere
+
+05:00.070 --> 05:01.270
+un ascoltatore di comandi.
+
+05:01.270 --> 05:06.940
+Ogni volta che viene richiamato il comando reset, questo codice viene eseguito e ripristina i campi.
+
+05:06.940 --> 05:11.860
+Ora, in questo esempio specifico, questo è un po' problematico e ridondante.
+
+05:11.860 --> 05:18.640
+Il binding funzionava già, ma volevo mostrare come collegare un comando per ogni evenienza.
+
+05:18.640 --> 05:19.840
+Eseguiamo questo esempio.
+
+05:19.840 --> 05:20.980
+Ecco tutto in esecuzione.
+
+05:20.980 --> 05:23.710
+Ecco la funzionalità di reset che funziona bene.
+
+05:23.710 --> 05:26.530
+Ecco la funzionalità di annuncio che funziona bene.
+
+05:26.530 --> 05:32.500
+In questo caso specifico, rimuoverò il comando prima di terminare il progetto.
+
+05:32.800 --> 05:39.460
+Sono tornato nel controllore e ho commentato quel codice e sono tornato nella vista e ho commentato
+
+05:39.460 --> 05:42.490
+e il codice correlato.
+
+05:43.850 --> 05:45.020
+Eseguiamo la demo.
+
+05:45.050 --> 05:45.620
+Eccoci qui.
+
+05:45.620 --> 05:46.670
+Esecuzione della demo.
+
+05:46.700 --> 05:48.230
+Eseguire l'operazione di annuncio.
+
+05:49.610 --> 05:50.630
+Funziona benissimo.
+
+05:50.660 --> 05:51.590
+Eseguire il reset.
+
+05:53.910 --> 05:55.140
+Funziona benissimo anche questo.
+
+05:55.170 --> 05:59.890
+Includerò questo esempio di calcolatrice nella base di codice, in modo che possiate verificarlo anche voi.
+
+05:59.910 --> 06:05.730
+Per coloro che hanno partecipato alla sfida di codifica e hanno completato questo esempio prima di guardare il video
+
+06:05.730 --> 06:09.150
+il video, spero che abbiate imparato molto attraverso quell'attività.
+
+06:09.510 --> 06:15.420
+In generale, il processo che abbiamo usato qui è qualcosa che si può usare in progetti più grandi e VC come
+
+06:15.420 --> 06:15.960
+bene.
+
+06:15.990 --> 06:21.330
+Pensate innanzitutto a quali sono i vostri requisiti, a quale sarà l'esperienza dell'utente, e poi spezzate
+
+06:21.330 --> 06:27.060
+in ogni aspetto, modello, vista, controllore e servizio.
+
+06:27.060 --> 06:31.500
+Poi pensate a quali funzionalità di base, se ce ne sono, vi servono per le preoccupazioni.
+
+06:31.530 --> 06:37.740
+Ora, mentre questo esempio era piuttosto piccolo e richiedeva solo un modello, una vista e un controllore per un modello semplice
+
+06:37.740 --> 06:44.730
+ora, probabilmente per un progetto tipico di un mese o di un anno ne avrete molti,
+
+06:44.730 --> 06:49.710
+molte viste, molti modelli e molti controllori.
+
+06:49.710 --> 06:53.490
+Anche con un progetto di quella portata, si dovrebbero comunque seguire questi passaggi.
+
+06:53.490 --> 06:59.880
+E lo stesso tempo che abbiamo trascorso insieme per iniziare questo progetto è il modo in cui iniziereste un progetto molto più grande.
+
+06:59.880 --> 07:00.990
+progetto.
+
+07:01.740 --> 07:07.620
+Nel corso del tempo, si potrebbe vedere il ridimensionamento di ciascuna di queste preoccupazioni, magari avendo una vista che diventa un po' più
+
+07:07.620 --> 07:08.520
+troppo grande.
+
+07:08.520 --> 07:10.860
+Quindi si divide in due viste.
+
+07:10.860 --> 07:16.360
+Avrete anche una lunga libreria di comandi che potrete utilizzare e riutilizzare in tutto il progetto.
+
+07:16.380 --> 07:18.450
+Immaginate i prossimi passi di questa calcolatrice.
+
+07:18.450 --> 07:24.450
+Come compito opzionale di codifica, si potrebbe aggiungere e sottrarre funzionalità
+
+07:24.870 --> 07:27.480
+o aggiungere test unitari al progetto.
+
+07:27.480 --> 07:30.600
+Si possono testare il modello, la vista e il controllore.
+
+07:30.600 --> 07:35.220
+Si può prendere la logica di aggiunta e separarla in una classe propria.
+
+07:35.370 --> 07:41.220
+Qualcosa di simile al mio sistema matematico, con un metodo di addizione e un altro di sottrazione.
+
+07:41.950 --> 07:46.360
+Questo sarebbe un ottimo modo per scalare l'apprendimento da questo campione e andare avanti.
+
+07:46.810 --> 07:48.680
+Questo è tutto per la calcolatrice Mini.
+
+07:48.700 --> 07:49.600
+Grazie.

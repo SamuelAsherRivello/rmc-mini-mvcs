@@ -1,0 +1,811 @@
+WEBVTT
+
+00:00.360 --> 00:07.050
+Diamo un'occhiata più da vicino ad alcune delle architetture consolidate tra cui possiamo scegliere e vediamone i vantaggi
+
+00:07.050 --> 00:08.190
+di MVC.
+
+00:09.330 --> 00:15.960
+Sono possibili diversi approcci quando si realizza un gioco unity come parte di un'esplorazione su questo tema
+
+00:15.960 --> 00:16.750
+argomento.
+
+00:16.770 --> 00:26.160
+Ho creato un semplice gioco di bowling in unity a tre D partendo da zero, utilizzando sei stili diversi, ognuno dei quali focalizzato su
+
+00:26.160 --> 00:27.760
+su una particolare architettura.
+
+00:27.780 --> 00:29.650
+Ne vediamo alcuni elencati qui.
+
+00:29.670 --> 00:34.620
+Partendo dall'alto, si tratta di ciò che risulta più naturale a uno sviluppatore principiante.
+
+00:34.770 --> 00:41.220
+Lo chiamo l'approccio senza architettura, e il sapore che si vede in unity è quando si mette il codice in locale
+
+00:41.220 --> 00:43.530
+all'oggetto tre D a cui si riferisce.
+
+00:43.530 --> 00:49.980
+Quindi si mette il codice della palla da bowling sulla palla da bowling, il codice del birillo sul birillo quando si impara unity.
+
+00:49.980 --> 00:51.830
+Questo sembra un modo naturale di farlo.
+
+00:51.840 --> 00:57.240
+Uno dei problemi che si presentano è come ottenere questi diversi oggetti a tre D con i loro oggetti separati.
+
+00:57.240 --> 00:59.220
+codice separati per dialogare bene insieme?
+
+00:59.220 --> 01:05.430
+Andando avanti, probabilmente qualcuno con un po' di esperienza in più si renderebbe conto che avere la maggior parte di
+
+01:05.430 --> 01:13.200
+del proprio codice su un oggetto di gioco vuoto e separato, con riferimenti ai perni e riferimenti
+
+01:13.200 --> 01:16.350
+alla palla da bowling sarebbe un passo successivo.
+
+01:16.350 --> 01:22.530
+In questo modo si semplifica la comunicazione, perché l'oggetto di gioco vuoto può facilitare la comunicazione tra le due parti.
+
+01:22.650 --> 01:23.940
+un possibile problema.
+
+01:23.940 --> 01:30.450
+In questo caso, l'oggetto gioco vuoto non conosce l'esatto ciclo di vita di ciascuno degli oggetti.
+
+01:30.450 --> 01:36.570
+Potrebbe avere problemi nell'avviare il mondo, nel mettere in pausa il gameplay e nel sapere quando gli elementi
+
+01:36.570 --> 01:37.580
+sono stati distrutti.
+
+01:37.590 --> 01:43.260
+Uno sviluppatore veterano o un piccolo team che realizza questo gioco può provare un'architettura personalizzata.
+
+01:43.260 --> 01:48.870
+Utilizzeranno i buoni principi di progettazione e i modelli di progettazione che hanno imparato e li applicheranno ad alcuni
+
+01:48.870 --> 01:50.060
+soluzione personalizzata.
+
+01:50.070 --> 01:54.840
+Secondo la mia esperienza, la maggior parte dei team che siedono qui utilizza architetture personalizzate.
+
+01:54.840 --> 01:57.210
+I vantaggi sono che è molto flessibile.
+
+01:57.210 --> 02:02.730
+Per creare una soluzione di questo tipo sono necessarie molte più conoscenze ed esperienze.
+
+02:02.820 --> 02:08.000
+I problemi che si presentano sono quelli di dover reinventare la ruota per ogni progetto.
+
+02:08.010 --> 02:08.940
+Mi sembra giusto.
+
+02:08.940 --> 02:13.560
+La soluzione è personalizzata per ogni soluzione, ma se si gestiscono più progetti, può essere
+
+02:13.560 --> 02:16.980
+un po' più difficile entrare e uscire da ciascuno di essi.
+
+02:16.980 --> 02:23.040
+Inoltre, quando si assumono nuovi collaboratori, è necessario istruirli sulle soluzioni architettoniche che si vogliono adottare.
+
+02:23.040 --> 02:23.760
+per progetto.
+
+02:23.760 --> 02:26.340
+Infine, c'è l'utilizzo di una soluzione consolidata.
+
+02:26.340 --> 02:31.260
+Prendere una soluzione già pronta e applicarla al progetto ha molti vantaggi.
+
+02:31.260 --> 02:32.820
+Sappiamo che è stata provata.
+
+02:32.820 --> 02:36.900
+Sappiamo che è costruito sulla base di principi e modelli che funzionano.
+
+02:36.900 --> 02:42.840
+Tuttavia, è meno flessibile e può essere visto come prolisso, magari dovendo aggiungere più classi o
+
+02:42.840 --> 02:47.790
+un bel po' di codice per realizzare cose semplici, soprattutto nei primi giorni di sviluppo.
+
+02:47.790 --> 02:53.280
+Inoltre, ogni membro del team e ogni nuovo arrivato deve conoscere quel particolare framework.
+
+02:53.280 --> 02:56.280
+Da un certo punto di vista è più facile, perché ci sono materiali già esistenti.
+
+02:56.280 --> 03:00.900
+I ragazzi possono già possedere le competenze per un particolare quadro di riferimento che avete scelto, ma l'apprendimento
+
+03:00.900 --> 03:01.980
+curva di apprendimento è notevole.
+
+03:01.980 --> 03:07.980
+Ora, dopo decenni di sviluppo del software, molte delle architetture che vediamo oggi hanno resistito alla
+
+03:07.980 --> 03:08.880
+prova del tempo.
+
+03:08.880 --> 03:16.110
+Alcune molto diffuse includono la suddivisione della funzionalità principale in tre o quattro parti separate e
+
+03:16.110 --> 03:17.850
+far comunicare questi pezzi.
+
+03:17.970 --> 03:24.180
+L'idea generale è che ciascuno di essi risolva sfide che hanno esigenze specifiche, quindi ha senso
+
+03:24.180 --> 03:30.570
+di raggruppare alcune delle architetture consolidate che conosciamo per il nostro presentatore Modello, vista,
+
+03:30.570 --> 03:38.280
+view, model e model view controller o MVC model view presenter organizza il codice in tre distinti
+
+03:38.280 --> 03:38.940
+unità.
+
+03:38.940 --> 03:44.400
+Il presentatore si colloca al centro e organizza e coordina gli altri livelli.
+
+03:44.670 --> 03:47.730
+In questo caso, il presentatore riceve gli input dall'utente.
+
+03:47.730 --> 03:51.930
+In primo luogo, il presentatore coordina il rendering con la vista.
+
+03:51.930 --> 03:57.540
+Quando l'interazione con l'utente è elevata e le visualizzazioni vengono aggiornate di frequente, questa è un'ottima soluzione.
+
+03:57.540 --> 03:58.230
+soluzione.
+
+03:58.230 --> 04:01.350
+Il modello vista modello è abbastanza simile.
+
+04:01.350 --> 04:07.680
+È separato in tre preoccupazioni o tre aree di codice, e qui il modello di vista si trova nel mezzo.
+
+04:07.680 --> 04:12.180
+Il modello di vista gestisce l'input e coordina il rendering con la vista.
+
+04:12.180 --> 04:17.370
+È ideale anche quando c'è interazione con l'utente e frequenti aggiornamenti della vista.
+
+04:17.370 --> 04:19.530
+L'aspetto di MVC è molto simile.
+
+04:19.530 --> 04:22.620
+Qui abbiamo un controllore come oggetto centrale.
+
+04:22.620 --> 04:26.070
+In MVC strict, è il controllore a gestire l'input.
+
+04:26.070 --> 04:32.190
+Coordina l'estrazione dei dati dal modello, passando ciò che è necessario per il rendering della vista.
+
+04:32.190 --> 04:37.740
+È ideale quando si hanno più modelli e più viste per coordinare questa complessità.
+
+04:37.740 --> 04:42.060
+In definitiva, questo insieme di architetture consolidate sono abbastanza simili.
+
+04:42.060 --> 04:48.210
+Tutte cercano di separare le preoccupazioni del progetto per contribuire a migliorare la qualità della vita complessiva.
+
+04:48.210 --> 04:50.580
+durante il lavoro e la manutenzione del progetto.
+
+04:50.580 --> 04:55.740
+È fondamentale separare l'interfaccia utente o la vista dai dati.
+
+04:55.740 --> 04:57.810
+Le differenze sono piuttosto sottili.
+
+04:57.810 --> 05:03.270
+Naturalmente la denominazione è un po' diversa, ma anche i comportamenti che si possono vedere solo in realtà
+
+05:03.270 --> 05:06.590
+a livello di implementazione sono unici per ciascuno di essi.
+
+05:06.600 --> 05:08.790
+Per ora, diamo uno sguardo più approfondito a MVC.
+
+05:09.110 --> 05:12.440
+Lo sceglieremo come modello preferito e andremo avanti.
+
+05:12.470 --> 05:18.980
+Model View Controller è un'architettura che separa il codice da questi tre aspetti principali.
+
+05:18.980 --> 05:26.420
+Ricapitolando, il modello gestisce i dati di runtime, la vista gestisce l'interfaccia utente e gli input dell'utente.
+
+05:26.450 --> 05:30.260
+Inoltre, rende all'utente anche le immagini audio.
+
+05:30.260 --> 05:31.880
+Il controller è il collante.
+
+05:31.880 --> 05:36.530
+Si colloca tra tutto, coordina le cose e ha la logica di gioco di alto livello.
+
+05:36.530 --> 05:43.460
+Una nota particolare è che in genere MVC fa sì che il controllore gestisca l'input dell'utente.
+
+05:43.460 --> 05:49.880
+Nel mio approccio con MVC e in molti altri che utilizzano unity, è la vista a gestire l'input.
+
+05:49.880 --> 05:55.690
+È una differenza sottile che ha a che fare con il modo in cui unity si relaziona con gli input in senso tradizionale.
+
+05:55.700 --> 06:01.970
+Spesso pensiamo che la vista sia un comportamento mono, che monitorizzi i comportamenti, che aiuti a gestire l'input, quindi è una
+
+06:01.970 --> 06:02.600
+buona misura.
+
+06:02.600 --> 06:09.470
+Una piccola variazione è che la vista gestisce gli input e li passa al controllore.
+
+06:09.470 --> 06:12.080
+per elaborare e decidere cosa significa.
+
+06:12.080 --> 06:18.290
+I giochi moderni sono spesso collegati a servizi di back end o addirittura al multiplayer con altri giocatori.
+
+06:18.290 --> 06:19.010
+in diretta.
+
+06:19.160 --> 06:21.260
+Questo introduce un livello di servizio.
+
+06:21.260 --> 06:27.470
+Prendiamo quindi ciò che abbiamo discusso con MVC e aggiungiamo un ulteriore livello, un livello di servizio dedicato che
+
+06:27.470 --> 06:30.860
+si occuperà di dati esterni diversi da quelli del modello.
+
+06:30.860 --> 06:36.260
+Nel resto del corso, potrò usare MVC e MVC in modo intercambiabile.
+
+06:36.260 --> 06:43.070
+Intendo dire che si tratta della stessa soluzione, dello stesso progetto di base con magari un livello di servizio o forse
+
+06:43.070 --> 06:43.640
+non c'è.
+
+06:43.640 --> 06:47.150
+A seconda che il vostro gioco ne abbia bisogno, potete considerare questo livello opzionale.
+
+06:47.150 --> 06:53.540
+Nel complesso, l'utilizzo di un'architettura MVC ha molte caratteristiche e vantaggi.
+
+06:53.540 --> 06:59.180
+Le architetture consolidate sono costruite su principi e schemi che abbiamo visto con successo.
+
+06:59.180 --> 07:04.160
+Sono agnostiche rispetto ai linguaggi, quindi in teoria è possibile portarle su linguaggi e piattaforme diverse se
+
+07:04.160 --> 07:06.650
+il carico di lavoro si espande a diverse tecnologie.
+
+07:06.650 --> 07:12.350
+Sebbene ci sia una curva di apprendimento, l'utilizzo di un'architettura di questo tipo porta a uno sviluppo più rapido.
+
+07:12.350 --> 07:17.300
+E poiché abbiamo visto che la maggior parte della durata di vita di un progetto viene spesa per la manutenzione, noi
+
+07:17.300 --> 07:22.010
+saremo in grado di eseguire la manutenzione in modo più rapido ed efficiente all'interno dell'architettura.
+
+07:22.010 --> 07:30.320
+Inoltre, un progetto MVC è più leggibile, più testabile, più disaccoppiato per quanto riguarda il modo in cui questi diversi
+
+07:30.320 --> 07:31.850
+comunicano.
+
+07:31.850 --> 07:37.550
+Abbiamo un livello di servizio dedicato, se ne abbiamo bisogno nel nostro progetto, cosa che accade spesso, e c'è
+
+07:37.550 --> 07:44.060
+vantaggi del flusso di lavoro e i nostri progetti si trovano tutti sul controllo di versione e collaboriamo facendo il commit
+
+07:44.060 --> 07:50.330
+al controllo di versione, vedremo meno attrito nei commit quando usiamo un'architettura consolidata puramente
+
+07:50.330 --> 07:56.960
+perché separa la nostra base di codice in frammenti più piccoli, e questo significa che c'è meno probabilità
+
+07:56.960 --> 07:57.890
+di conflitti.
+
+07:57.890 --> 08:03.080
+Vale la pena notare che c'è un sano dibattito, in particolare nello sviluppo di videogiochi e nell'unità di misura.
+
+08:03.080 --> 08:06.470
+contro l'uso di qualcosa come MVC.
+
+08:06.500 --> 08:13.100
+Alcune delle argomentazioni più diffuse sono che è troppo rigido, che è difficile da seguire e da applicare e che ha
+
+08:13.100 --> 08:14.930
+la disciplina nel vostro progetto.
+
+08:14.930 --> 08:19.490
+Ora, una risposta in difesa di MVC è che la curva di apprendimento vale lo sforzo.
+
+08:19.490 --> 08:24.410
+Inoltre, ho accennato al fatto che nella mente degli sviluppatori spesso si pensa che la vita sia tutta una questione di aggiunte.
+
+08:24.410 --> 08:28.580
+funzionalità e dimentichiamo che la vera fase importante è la manutenzione.
+
+08:28.670 --> 08:34.850
+In questo caso può sembrare più facile usare qualcos'altro, ma MVC in definitiva crea un flusso di lavoro migliore.
+
+08:34.850 --> 08:41.600
+Un'altra argomentazione è che unity non è dotato di data binding, e senza data binding non si può
+
+08:41.600 --> 08:45.020
+stabilire i modelli di architettura che sono destinati a MVC.
+
+08:45.020 --> 08:50.870
+Sebbene l'uso del data binding possa rendere più facile l'applicazione di questi schemi, esistono soluzioni alternative.
+
+08:50.870 --> 08:52.250
+e ne vedremo alcune.
+
+08:52.340 --> 08:57.980
+In particolare, la classe osservabile, di cui ho parlato in una sezione precedente, è il modo in cui
+
+08:57.980 --> 08:59.870
+per risolvere questo problema all'interno della nostra architettura.
+
+08:59.870 --> 09:03.830
+Qui otteniamo qualcosa di simile al binding in modo piuttosto semplice.
+
+09:03.830 --> 09:10.580
+Un'altra osservazione è che, poiché la comunicazione è disaccoppiata e passa attraverso più passaggi, l'uso di
+
+09:10.580 --> 09:14.000
+un'architettura consolidata come MVC non è ottimizzato.
+
+09:14.000 --> 09:18.110
+E sappiamo che il gioco è un tipo di software che necessita di ottimizzazione.
+
+09:18.110 --> 09:20.660
+Non potrei essere più d'accordo con questa valutazione.
+
+09:20.660 --> 09:27.530
+Tuttavia, direi che il grosso del vostro lavoro come team non è necessariamente sulle parti più ristrette del software.
+
+09:27.530 --> 09:29.840
+catturare gli input e renderizzare la grafica.
+
+09:29.840 --> 09:36.980
+Un modo semplice per risolvere questo problema è quello di avere un metagame più ampio dei vostri menu, le vostre funzioni sociali,
+
+09:36.980 --> 09:44.240
+le tabelle dei punteggi più alti, la gestione dell'inventario, tutta la complessità dell'interfaccia utente, all'interno di un sistema di
+
+09:44.240 --> 09:50.060
+e il vostro gameplay di base che ha bisogno dei benefici di una pipeline altamente ottimizzata che possa
+
+09:50.060 --> 09:54.560
+al di fuori dell'MVC, comunicando in modo più rapido e accoppiato.
+
+09:54.560 --> 09:56.360
+È un'ottima soluzione ibrida.
+
+09:56.360 --> 10:01.940
+Infine, si critica il fatto che l'utilizzo di un'architettura consolidata significhi che ogni nuovo pulsante
+
+10:01.940 --> 10:07.940
+che si aggiunge e che si deve cablare, è troppo prolisso, ci sono troppi passaggi, troppe classi.
+
+10:07.970 --> 10:08.980
+Crisi da creare.
+
+10:08.980 --> 10:11.560
+Vedremo un po' di più su questo aspetto in una prossima diapositiva.
+
+10:11.560 --> 10:12.870
+Direi che è vero.
+
+10:12.880 --> 10:19.540
+Per inserire l'interfaccia utente nel gioco è necessario effettuare circa quattro o cinque passaggi invece di due o tre.
+
+10:19.540 --> 10:24.940
+In questo esempio specifico, soprattutto all'inizio, fare un paio di passaggi in più può risultare noioso,
+
+10:24.940 --> 10:30.070
+ma alla fine questo è un sintomo del vantaggio di separare le preoccupazioni.
+
+10:30.070 --> 10:32.980
+Durante il 20% iniziale di aggiunta di funzionalità.
+
+10:32.980 --> 10:38.680
+Lo sentirete e ci vorrà un po' di tempo per abituarsi, ma i vantaggi si applicano davvero a questo periodo più ampio.
+
+10:38.680 --> 10:40.780
+80% del mantenimento della base di codice.
+
+10:40.780 --> 10:45.580
+Ora che le cose sono disposte in modo separato, scoprirete che il refactor avviene con maggiore sicurezza.
+
+10:45.580 --> 10:50.770
+È meno probabile che si verifichino bug e, quando si verificano, la loro risoluzione è più semplice e diretta.
+
+10:50.770 --> 10:52.900
+Qui saranno inclusi alcuni link di riferimento.
+
+10:52.900 --> 10:57.550
+Se volete saperne un po' di più sulla prospettiva, potete dare un'occhiata e vi invito a farlo
+
+10:57.550 --> 10:57.940
+quindi.
+
+10:57.940 --> 11:01.780
+Nel complesso, ogni strumento di sviluppo software ha pro e contro.
+
+11:01.780 --> 11:08.650
+In questo corso dimostro che l'apprendimento di un'architettura consolidata come MVC presenta vantaggi che superano
+
+11:08.650 --> 11:09.520
+gli svantaggi.
+
+11:09.520 --> 11:13.900
+Impariamo di più e il VC inizia con la separazione delle preoccupazioni.
+
+11:13.900 --> 11:15.160
+Ricapitoliamo.
+
+11:15.160 --> 11:21.100
+Il modello gestisce i dati di runtime, il controllore sta nel mezzo e coordina la comunicazione.
+
+11:21.100 --> 11:23.710
+Contiene anche la maggior parte della logica di gioco.
+
+11:23.710 --> 11:29.410
+La vista gestisce l'interfaccia utente e gli input dell'utente, oltre a renderizzare la grafica e l'audio.
+
+11:29.560 --> 11:33.510
+Il livello di servizio gestisce le chiamate ai dati esterni.
+
+11:33.520 --> 11:39.640
+Ad esempio, se il gioco collabora con un sistema di back end per l'invio dei punteggi più alti, le convenzioni
+
+11:39.640 --> 11:45.490
+dell'uso di MVC è di essere attenti ai riferimenti e alla comunicazione tra i vari progetti.
+
+11:45.490 --> 11:47.850
+Si vogliono tenere separati i problemi.
+
+11:47.860 --> 11:52.720
+L'idea è che ogni preoccupazione sia destinata a fare cose molto diverse.
+
+11:52.720 --> 11:55.360
+E quindi si vogliono isolare queste modifiche.
+
+11:55.360 --> 11:57.520
+Date un'occhiata a questa tabella di comunicazione.
+
+11:57.520 --> 12:03.670
+Ci sono molte informazioni, ma la cosa più importante è che il controllore invia e riceve
+
+12:03.670 --> 12:05.380
+la maggior parte delle comunicazioni.
+
+12:05.380 --> 12:09.760
+Vogliamo che il modello sia piuttosto stupido e che conosca solo i dati.
+
+12:09.760 --> 12:14.740
+Vogliamo che la vista stessa sia piuttosto stupida, gestendo solo l'interfaccia utente e gli input.
+
+12:14.740 --> 12:19.870
+Il fatto che non comunichino apertamente tra loro è un vantaggio.
+
+12:19.870 --> 12:24.820
+E per la maggior parte delle comunicazioni vediamo che il servizio si comporta come il modello.
+
+12:24.820 --> 12:28.180
+Anch'esso è pensato per essere muto e gestire solo i propri dati.
+
+12:28.180 --> 12:33.280
+Ora, quando si entra per la prima volta in una di queste, quando si inizia a imparare una qualsiasi architettura consolidata
+
+12:33.280 --> 12:39.790
+come gli MVC e i VC offre una certa flessibilità nel modo in cui si comunica con i diversi problemi.
+
+12:39.790 --> 12:44.590
+La prima reazione di chi si avvicina a un framework consolidato è: "Wow, è prolisso".
+
+12:44.590 --> 12:49.690
+Devo fare un bel po' di passi per realizzare qualcosa di semplice come un pulsante dell'interfaccia utente.
+
+12:49.690 --> 12:50.140
+Clic.
+
+12:50.140 --> 12:52.990
+Vediamo prima la gamma di complessità.
+
+12:52.990 --> 12:59.100
+Se avessimo un approccio senza architettura e non usassimo MVC, come ascolteremmo un pulsante?
+
+12:59.110 --> 13:05.440
+Immaginiamo di avere un gioco "click the button" e che cliccando sul pulsante il testo si aggiorni su "hai vinto".
+
+13:05.470 --> 13:06.940
+Questo è un gioco molto semplice.
+
+13:06.940 --> 13:09.960
+Potremmo fare a meno di due fasi del processo.
+
+13:09.970 --> 13:16.480
+Supponendo di utilizzare Unity UI, ascolteremmo l'evento on-click su tale interfaccia e gestiremmo
+
+13:16.480 --> 13:18.040
+con del codice personalizzato.
+
+13:18.040 --> 13:19.290
+Sono due passi.
+
+13:19.300 --> 13:25.720
+Ora, utilizzando un'architettura consolidata come gli MVC, vediamo che ci vorranno altri passi.
+
+13:25.720 --> 13:30.760
+Questo perché queste preoccupazioni sono state separate nel modo più verboso.
+
+13:30.760 --> 13:33.370
+Vedremo circa cinque passaggi per gestire questo pulsante.
+
+13:33.370 --> 13:33.880
+Fare clic.
+
+13:33.880 --> 13:41.140
+Il pulsante della vista invia un messaggio, il controllore lo gestisce, aggiorna il modello, il controllore
+
+13:41.140 --> 13:42.820
+modello che invia un messaggio.
+
+13:42.820 --> 13:49.000
+Ehi, sono stato aggiornato e la vista riceve queste informazioni per poter aggiornare la vista stessa.
+
+13:49.000 --> 13:54.130
+Vedrete anche che in questo elenco cambio se viene utilizzato un evento o un comando.
+
+13:54.130 --> 13:56.970
+Questa distinzione si vedrà un po' di più nel codice.
+
+13:56.980 --> 14:02.740
+In definitiva, quello che raccomando ai team è di scegliere una di queste varianti e di seguirla.
+
+14:02.740 --> 14:09.610
+Ad esempio, applicando coerentemente il numero cinque all'inizio dello sviluppo, si può avere un'impressione
+
+14:09.610 --> 14:10.330
+per questo.
+
+14:10.330 --> 14:16.630
+Se volete accorciare il processo da 5 a 4 o a un altro numero di passi, sta a voi decidere di farlo.
+
+14:16.630 --> 14:17.290
+decidere.
+
+14:17.290 --> 14:23.020
+Ma ricordate che essere coerenti nel vostro approccio e più disaccoppiati nel vostro approccio paga.
+
+14:23.050 --> 14:28.540
+Ora, può essere un po' confuso il fatto che alcune parti di questo processo siano prescrittive e che noi
+
+14:28.540 --> 14:32.500
+che dobbiamo seguire, e ci sono anche parti flessibili, come queste scelte diverse.
+
+14:32.500 --> 14:38.380
+Visto che ci si sta abituando a usare gli MVC, direi di non preoccuparsi troppo di renderli perfetti.
+
+14:38.560 --> 14:44.550
+Si tratta di un processo di apprendimento e, strada facendo, capirete qual è la soluzione migliore per voi.
+
+14:44.560 --> 14:47.470
+Un altro bonus a questo proposito si trova più avanti nel progetto.
+
+14:47.470 --> 14:54.040
+Se decidete di cambiare il vostro approccio, sarà molto più facile rifattorizzare all'interno di
+
+14:54.040 --> 14:55.840
+MVC rispetto a quelli precedenti.
+
+14:55.840 --> 15:01.270
+Anche se ci sono delle sottili differenze nel modo in cui sono stati applicati, gli schemi stessi forniscono
+
+15:01.270 --> 15:07.750
+una coerenza che forse mancava agli approcci precedenti ai fini della nostra discussione.
+
+15:07.810 --> 15:14.890
+Sceglieremo l'MVC o MVC come framework preferito per andare avanti e vedere come questo si applica
+
+15:14.890 --> 15:17.020
+all'unità per avere una buona percezione.
+
+15:17.020 --> 15:22.630
+Scegliamo un framework come parte della ricerca Per questo corso, ho esaminato molti diversi modelli di unity.
+
+15:22.630 --> 15:23.410
+approcci.
+
+15:23.410 --> 15:29.530
+Alcuni di essi sono descritti in un post sul blog di un team di sviluppo, ma non hanno alcun codice.
+
+15:29.530 --> 15:31.340
+che possiamo ottenere e a cui possiamo aggrapparci.
+
+15:31.360 --> 15:37.870
+Tuttavia, ci sono molte architetture su misura e consolidate di cui possiamo approfittare specificamente
+
+15:37.870 --> 15:38.680
+per l'unità.
+
+15:38.800 --> 15:41.710
+Alcune di quelle che ho usato e con cui ho giocato sono qui.
+
+15:41.710 --> 15:47.530
+Se dopo aver completato l'intero corso volete tornare indietro e provare uno di questi framework, vi invito a
+
+15:47.530 --> 15:48.450
+a farlo.
+
+15:48.460 --> 15:53.980
+I principi che apprenderete nel resto del corso saranno applicati a qualsiasi approccio MVC vogliate adottare.
+
+15:53.980 --> 15:54.790
+vorrete fare.
+
+15:54.820 --> 15:57.880
+Due di questi sono nell'elenco che ho creato io stesso.
+
+15:57.880 --> 16:08.230
+L'MVC You è un RC che ho creato anni fa, mentre i mini MVC li ho creati solo per questo corso.
+
+16:08.230 --> 16:11.170
+E scopriremo molto di più su come e perché lo consiglio.
+
+16:11.170 --> 16:17.950
+Ora una nota speciale sul perché le soluzioni MVC devono essere un po' massificate quando le si porta in unity
+
+16:17.950 --> 16:21.460
+è che unity ha già una struttura su misura.
+
+16:21.460 --> 16:24.520
+Ne abbiamo parlato un po' in una sezione precedente.
+
+16:24.520 --> 16:30.310
+Che unity è basato su scene e oggetti di gioco e che c'è un modo in cui la comunicazione fra
+
+16:30.310 --> 16:34.180
+componenti e oggetti di gioco avvenga all'interno di Unity.
+
+16:34.180 --> 16:39.700
+È importante notare che Unity stesso non è costruito su una struttura MVC.
+
+16:39.880 --> 16:45.220
+Unity ha delle aree di interesse che fanno collassare queste tre in un'unica area.
+
+16:45.220 --> 16:52.420
+Per esempio, probabilmente la classe più importante che utilizzerete in qualsiasi progetto unity è mono
+
+16:52.420 --> 16:53.200
+comportamento.
+
+16:53.200 --> 16:55.660
+Soprattutto se si è uno sviluppatore principiante.
+
+16:55.660 --> 16:59.290
+Tutto ciò che si fa poggia su una sottoclasse di mono behavior.
+
+16:59.290 --> 17:03.400
+Usando solo mono behavior e un esempio, possiamo vedere che unity collassa.
+
+17:03.400 --> 17:05.260
+Ci sono molte preoccupazioni diverse.
+
+17:05.260 --> 17:10.870
+Si comporta in qualche modo come un modello, con proprietà come tag enabled e transform.
+
+17:10.870 --> 17:17.320
+Si comporta come una vista che esegue ogni sorta di loop di input e rendering grafico dall'interno.
+
+17:17.320 --> 17:21.220
+del ciclo di vita del comportamento mono e si comporta come un controllore.
+
+17:21.220 --> 17:26.950
+Ha momenti che si possono catturare in modo prevedibile per un aggiornamento di Wake Start e molti altri.
+
+17:26.980 --> 17:32.440
+Ha il concetto di riferimento serializzato che aiuta ad affrontare e raggiungere diversi problemi.
+
+17:32.440 --> 17:34.480
+che si possono avere al di fuori del comportamento del monarca.
+
+17:34.480 --> 17:39.880
+E man mano che si procede con il resto del corso e che si introducono i concetti di MVC nell'unità, questo è qualcosa di
+
+17:39.880 --> 17:40.900
+da tenere a mente.
+
+17:40.900 --> 17:47.440
+Unity, come ogni piattaforma specifica, ha caratteristiche uniche, e dobbiamo portare questi concetti teorici in un'unica piattaforma.
+
+17:47.440 --> 17:49.870
+di architettura nel mondo reale di Unity.
+
+17:49.870 --> 17:55.510
+Alcune risorse che potete consultare qui e che saranno linkate di seguito includono l'ordine di esecuzione di
+
+17:55.510 --> 18:00.340
+tutti i diversi eventi che caratterizzano il comportamento e, naturalmente, il riferimento allo script di documentazione
+
+18:00.340 --> 18:01.690
+sul comportamento stesso.
+
+18:01.690 --> 18:06.880
+Ora, se pensiamo a qualsiasi architettura e la portiamo in unity, o se creiamo un comportamento personalizzato
+
+18:06.880 --> 18:09.880
+soluzione personalizzata, ci sono alcune considerazioni da fare.
+
+18:09.880 --> 18:13.930
+Il framework o l'architettura hanno caratteristiche specifiche per l'unità?
+
+18:13.930 --> 18:16.060
+Qual è il ruolo dei comportamenti del monarca?
+
+18:16.060 --> 18:19.840
+Sono molto importanti nel mondo di unity, ma hanno alcuni pro e contro.
+
+18:19.840 --> 18:22.570
+L'architettura utilizza i comportamenti del monarca?
+
+18:22.570 --> 18:28.270
+Come gestisce l'architettura i diversi problemi e la comunicazione tra di essi?
+
+18:28.270 --> 18:33.370
+A questo proposito, qual è il livello di rigidità rispetto alla flessibilità?
+
+18:33.370 --> 18:36.520
+In questa sezione abbiamo molte nuove informazioni.
+
+18:36.520 --> 18:42.820
+Abbiamo visto come le basi dei principi di progettazione e dei modelli di progettazione entrino nel mondo più ampio di
+
+18:42.820 --> 18:43.900
+architetture.
+
+18:44.140 --> 18:49.660
+Abbiamo visto alcune delle sfide uniche che si presentano quando si porta un'architettura consolidata all'interno del proprio team e
+
+18:49.660 --> 18:51.610
+anche alcuni dei vantaggi.
+
+18:51.610 --> 18:57.820
+E abbiamo visto che unity, come ogni piattaforma, ha le sue idiosincrasie, le sue caratteristiche specifiche e i suoi vantaggi.
+
+18:57.820 --> 19:03.520
+e limitazioni e qualsiasi scelta architetturale vogliamo, vogliamo che si adatti bene al mondo unity.
+
+19:03.610 --> 19:04.720
+Per ora è tutto.
+
+19:04.720 --> 19:05.470
+Grazie.

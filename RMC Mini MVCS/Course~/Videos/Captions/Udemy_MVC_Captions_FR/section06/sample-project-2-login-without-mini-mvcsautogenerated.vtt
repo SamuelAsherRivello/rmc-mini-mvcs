@@ -1,0 +1,709 @@
+WEBVTT
+
+00:03.200 --> 00:04.700
+Nous voici dans Unity.
+
+00:04.700 --> 00:10.490
+J'ai un nouveau projet dans lequel j'ai installé le mini framework VCs et importé les échantillons.
+
+00:10.520 --> 00:13.960
+Voici une structure de fichier pour la version qui en a beaucoup.
+
+00:13.970 --> 00:19.660
+Nous avons des ressources, y compris le fichier texte que nous allons charger pour simuler un appel à la couche de service.
+
+00:19.670 --> 00:23.750
+Nous avons un dossier science avec notre scène unique, puis nous avons des scripts d'exécution.
+
+00:23.750 --> 00:29.210
+Nous n'avons pas encore examiné la structure du code MVCs dans un exemple, alors faisons-le.
+
+00:29.210 --> 00:34.370
+En commençant par le bas, nous avons le fichier d'exemple lui-même qui est attaché à un objet de jeu dans la section
+
+00:34.370 --> 00:34.880
+scène.
+
+00:34.880 --> 00:37.010
+Ensuite, nous avons la mini classe log in.
+
+00:37.010 --> 00:40.880
+C'est la structure de plus haut niveau du monde MVC.
+
+00:40.880 --> 00:47.900
+Ensuite, comme le veut la convention, je crée un dossier pour chaque modèle, vue, contrôleur et service.
+
+00:47.900 --> 00:50.750
+Dans la vue, il y a une classe, la vue login.
+
+00:50.750 --> 00:54.140
+Dans le service, il y a une classe, le service de connexion.
+
+00:54.140 --> 00:55.250
+Dans le modèle.
+
+00:55.250 --> 01:02.210
+Nous avons deux classes, une classe de données utilisateur, ainsi que le modèle principal lui-même pour la connexion à l'intérieur du modèle.
+
+01:02.210 --> 01:03.200
+contrôleur.
+
+01:03.200 --> 01:07.070
+J'ai le contrôleur de connexion, qui est le contrôleur principal du projet.
+
+01:07.160 --> 01:12.050
+Il convient également d'avoir un sous-dossier ici pour toutes les commandes d'un projet.
+
+01:12.050 --> 01:16.970
+Je vais parler un peu plus des commandes puisque nous ne les avons pas encore abordées dans le code précédent
+
+01:16.970 --> 01:17.770
+sessions.
+
+01:17.780 --> 01:22.940
+Bien qu'il s'agisse d'un exemple relativement simple, il serait raisonnable dans un projet de production de
+
+01:22.940 --> 01:29.330
+suivre la même structure de dossier et nous verrions chacun des dossiers se remplir de plusieurs modèles,
+
+01:29.330 --> 01:36.680
+de multiples vues et services, de nombreux contrôleurs, ainsi qu'un dossier vraiment robuste, rempli de
+
+01:36.680 --> 01:37.490
+commandes.
+
+01:37.490 --> 01:44.330
+Vous pouvez considérer le gestionnaire de commandes comme une station de radio capable d'émettre vers n'importe quelle préoccupation.
+
+01:44.330 --> 01:50.510
+Ainsi, les messages de haut niveau qui sont appropriés ici, des choses comme dans ce cas, se connecter, se connecter
+
+01:50.510 --> 01:51.920
+déconnexion, effacement de l'écran.
+
+01:51.920 --> 01:55.730
+Si nous disposions d'une telle fonctionnalité, ces commandes seraient présentées ici en tant que commandes individuelles.
+
+01:55.730 --> 01:58.340
+Nous voici donc en train d'exécuter le mini exemple.
+
+01:58.340 --> 02:01.070
+Comme le montre l'indice, un mot de passe est suggéré.
+
+02:01.070 --> 02:03.410
+C'est le seul mot de passe acceptable ici.
+
+02:03.440 --> 02:05.570
+Nous vérifions dans un fichier local.
+
+02:05.570 --> 02:09.170
+Les données sont correctes, je les soumets et nous constatons un succès.
+
+02:09.170 --> 02:14.090
+Ce qui se passe ici, c'est que la couche de service charge un fichier texte local et s'assure que les données sont correctes.
+
+02:14.090 --> 02:17.990
+l'utilisateur a tapé dans l'interface utilisateur correspond à ce qui se trouve dans ce fichier texte.
+
+02:17.990 --> 02:23.960
+Il s'agit d'un substitut très simplifié à une sorte d'interaction complexe avec l'arrière-plan.
+
+02:25.330 --> 02:28.260
+Entrons dans le code, en commençant par l'exemple de haut niveau.
+
+02:28.270 --> 02:32.800
+Voici l'exemple lui-même, qui est un comportement situé sur un objet de jeu dans la scène.
+
+02:32.830 --> 02:37.570
+De nombreux MVC n'exigent pas qu'une de leurs préoccupations soit un comportement honoré.
+
+02:37.570 --> 02:45.070
+Mais dans cet exemple spécifique, comme c'est probablement le cas dans votre travail, vous avez la vue b amount
+
+02:45.070 --> 02:45.880
+de comportement.
+
+02:46.000 --> 02:52.840
+Il est donc facile d'intégrer cette vue dans le jeu en l'affichant comme quantité de comportement sur un jeu
+
+02:52.840 --> 02:58.240
+dans la scène, de le faire glisser sous la forme d'une référence sérialisée, puis de le passer dans l'objet de jeu.
+
+02:58.240 --> 03:00.260
+log in mini constructor comme nous le voyons ici.
+
+03:00.280 --> 03:03.310
+Jetons un coup d'œil rapide à la scène pour voir comment elle est câblée.
+
+03:03.310 --> 03:05.950
+Ici, dans la scène, je dois me connecter à View selected.
+
+03:05.950 --> 03:11.360
+Vous pouvez voir dans la fenêtre de l'inspecteur qu'il y a un script de connexion sur cet objet de jeu.
+
+03:11.380 --> 03:17.110
+Maintenant, avec l'exemple lui-même sélectionné, nous pouvons voir un champ sérialisé qui attend une référence
+
+03:17.110 --> 03:18.270
+à la vue du journal.
+
+03:18.280 --> 03:22.300
+C'est vraiment le seul câblage dont nous avons besoin dans la scène elle-même.
+
+03:22.570 --> 03:28.420
+Il existe d'autres façons de procéder, mais il nous est très familier d'avoir des comportements mono comme une vue
+
+03:28.420 --> 03:32.230
+s'asseoir dans la scène et faire glisser une référence dans un champ sérialisé ici.
+
+03:32.230 --> 03:38.080
+Dans l'exemple du début, après avoir créé la classe et passé la vue, nous nous contentons de
+
+03:38.080 --> 03:39.070
+initialiser.
+
+03:39.070 --> 03:40.510
+C'est tout à ce niveau.
+
+03:40.510 --> 03:42.340
+Jetons un coup d'oeil à la classe suivante.
+
+03:42.820 --> 03:45.100
+Nous voici à l'intérieur de la mini classe log in.
+
+03:45.490 --> 03:51.490
+Cet exemple est assez conventionnel en ce sens qu'il prend un contexte, un modèle, un contrôleur de vue et un service.
+
+03:51.490 --> 03:54.970
+un de chaque pour que je puisse profiter de la classe de base ici.
+
+03:54.970 --> 04:02.830
+De nombreux PNJ l'étendent et transmettent les types forts pour chacune des préoccupations que je souhaite à l'intérieur du constructeur.
+
+04:02.830 --> 04:07.210
+Je passe simplement la vue et dans l'initialisation, je fais le gros du travail.
+
+04:07.210 --> 04:10.970
+Je crée ici le contexte, le modèle, la vue et le contrôleur.
+
+04:10.990 --> 04:15.340
+Remarquez que le contrôleur est le seul constructeur qui prend plusieurs arguments.
+
+04:15.340 --> 04:21.400
+Cela nous indique que le contrôleur a un peu plus de connaissances et d'importance dans la structure.
+
+04:21.400 --> 04:23.880
+Enfin, nous initialisons chacune de ses parties.
+
+04:23.890 --> 04:25.360
+C'est tout pour cette classe.
+
+04:25.360 --> 04:30.940
+Dans l'exemple de code précédent, nous passons en revue chaque modèle, chaque vue, chaque contrôleur et chaque service.
+
+04:30.940 --> 04:34.510
+Par souci de concision, la couche de service est très similaire.
+
+04:34.510 --> 04:38.830
+Jetez un coup d'œil au code si vous le souhaitez, ainsi qu'au modèle.
+
+04:38.830 --> 04:42.670
+Les aspects uniques sont donc la vue et le contrôleur.
+
+04:42.670 --> 04:43.900
+Jetons un coup d'œil à chacun d'entre eux.
+
+04:44.200 --> 04:45.460
+Voici la vue login.
+
+04:45.460 --> 04:48.790
+N'oubliez pas que cette vue est placée sur un objet de jeu dans la scène.
+
+04:48.790 --> 04:54.010
+Il n'est pas créé à la volée comme d'autres problèmes dans cette démo.
+
+04:54.010 --> 04:58.720
+Je vais faire défiler l'écran vers le bas pour que nous puissions jeter un coup d'œil au niveau supérieur de la classe, puis je passerai à l'étape suivante.
+
+04:58.720 --> 04:59.740
+ligne par ligne.
+
+05:32.460 --> 05:34.990
+Tout d'abord, nous avons quelques événements d'unité personnalisés.
+
+05:35.010 --> 05:38.960
+Ce n'est pas vraiment un flux spécifique à ce mini MVC.
+
+05:38.970 --> 05:40.580
+C'est une pratique générale.
+
+05:40.590 --> 05:46.800
+Chaque fois que vous voulez envoyer un événement Unity dans Unity et que vous voulez envoyer un type long aux paramètres,
+
+05:46.800 --> 05:52.800
+il faut toujours sous-classer comme nous le voyons ici, il n'est pas vraiment important que nous regardions les détails des classes
+
+05:52.800 --> 05:55.140
+ici car il n'y a pas d'implémentation.
+
+05:55.140 --> 06:01.610
+Nous déclarons simplement la classe pour lui donner un nom et déclarer le sous-type qu'elle aura à l'intérieur.
+
+06:01.620 --> 06:08.490
+Par exemple, l'événement log in Unity accepte les données de l'utilisateur chaque fois qu'il est invoqué et transmet ces informations.
+
+06:08.490 --> 06:08.970
+seul.
+
+06:08.970 --> 06:12.340
+C'est donc la première vue que nous avons vue qui étend le comportement de mono.
+
+06:12.360 --> 06:17.910
+Rappelez-vous qu'avec de nombreux MVC, l'utilisation de comportements montés est complètement optionnelle, mais probablement dans tous les cas.
+
+06:17.910 --> 06:24.270
+d'une certaine complexité et certainement dans un cas d'utilisation en production, vous étendriez le comportement mono pour
+
+06:24.270 --> 06:25.190
+vos vues.
+
+06:25.200 --> 06:30.600
+C'est parce que le rôle de la vue est de traiter les entrées de l'utilisateur et les éléments de l'interface utilisateur.
+
+06:30.600 --> 06:34.540
+Et dans unity, il est plus logique que les comportements mono soient impliqués.
+
+06:34.560 --> 06:38.040
+Ensuite, nous déclarons des propriétés et des champs.
+
+06:38.430 --> 06:44.610
+Remarquez que ces éléments d'interface utilisateur sont les mêmes que ceux de la version non mini MVC que nous avons vue précédemment.
+
+06:44.640 --> 06:48.330
+L'idée est qu'ils se présentent et se comportent de la même manière pour chacun des échantillons.
+
+06:48.330 --> 06:53.040
+Vous allez donc voir ici beaucoup de code familier de la dernière section ici dans l'initialisation.
+
+06:53.040 --> 06:55.080
+Il se passe quelques choses intéressantes.
+
+06:55.080 --> 07:02.340
+Tout d'abord, nous avons un bloc de boutons d'interface utilisateur et nous nous abonnons aux événements d'unité que nous verrions dans la section
+
+07:02.340 --> 07:03.960
+une version non mini MVCs.
+
+07:03.960 --> 07:05.100
+C'est assez standard.
+
+07:05.100 --> 07:09.630
+Chaque fois que vous voulez avoir des nouvelles de l'interface utilisateur d'Unity, vous vous abonnez à ses événements unity.
+
+07:09.630 --> 07:12.890
+Mais cette deuxième section est unique à ce framework.
+
+07:12.900 --> 07:17.520
+Ici, nous utilisons le contexte qui est disponible à partir de n'importe quelle préoccupation et de n'importe quel accès.
+
+07:17.520 --> 07:18.640
+La commande Manager.
+
+07:18.660 --> 07:24.450
+Encore une fois, je parlerai un peu plus du gestionnaire de commandes au cours de cet exemple particulier pour aller plus loin.
+
+07:24.540 --> 07:29.910
+Le gestionnaire de commandes s'appuie sur le contexte et ce dernier est transmis à toutes les préoccupations.
+
+07:29.910 --> 07:37.290
+L'une des choses que vous pouvez faire avec le gestionnaire de commandes est de vous abonner pour écouter différentes notifications.
+
+07:37.290 --> 07:38.910
+qui arrivent sous forme de commandes.
+
+07:39.390 --> 07:41.310
+D'autre part, vous pouvez les invoquer.
+
+07:41.310 --> 07:48.240
+N'oubliez pas qu'aucune des préoccupations qui les ajoutent ou les invoquent n'a besoin de savoir qui les écoute.
+
+07:48.240 --> 07:54.000
+ou qui d'autre est en train d'invoquer le gestionnaire de commandes est l'intermédiaire qui se trouve entre les deux couches de l'interface utilisateur.
+
+07:54.000 --> 07:55.500
+l'observateur et l'expéditeur.
+
+07:55.710 --> 08:01.560
+Ce qui est intéressant, c'est que vous pouvez envoyer aveuglément un message à une station de radio par exemple.
+
+08:01.560 --> 08:03.480
+qui émet dans le ciel.
+
+08:03.480 --> 08:08.910
+Et partout où quelqu'un se met à l'écoute de cette fréquence ou de cette commande spécifique, il reçoit
+
+08:08.910 --> 08:09.690
+le message.
+
+08:09.690 --> 08:15.450
+Et ce que nous voyons lorsque nous descendons sous les lignes de code dans cette classe, c'est que nous utilisons souvent la vue pour demander
+
+08:15.450 --> 08:15.900
+l'unité.
+
+08:15.900 --> 08:20.880
+L'interface utilisateur a été cliquée, puis nous traduisons cela en une commande.
+
+08:20.880 --> 08:22.410
+Nous allons voir comment cela se passe ici.
+
+08:22.440 --> 08:27.510
+Comme dans l'exemple précédent, chaque fois que l'utilisateur tape dans les champs de texte ou les efface, c'est simplement
+
+08:27.510 --> 08:29.410
+met à jour le bouton de connexion.
+
+08:29.430 --> 08:33.960
+L'idée est de valider si la soumission de l'utilisateur est potentiellement correcte.
+
+08:33.960 --> 08:38.760
+Nous vérifions simplement si le champ est vide ou non.
+
+08:38.760 --> 08:43.920
+Chaque fois que le bouton de connexion est cliqué, nous traduisons cela en un événement de vue et nous le distribuons.
+
+08:43.920 --> 08:47.520
+Nous ne savons pas à partir de ce champ d'application qui écoute ou si quelqu'un écoute.
+
+08:47.520 --> 08:51.360
+Mais lorsque nous aborderons la section suivante, nous verrons qui est l'abonné ici.
+
+08:51.900 --> 08:52.500
+Même chose.
+
+08:52.500 --> 08:55.290
+Lorsque le bouton de déconnexion est cliqué, nous envoyons ce message.
+
+08:55.290 --> 08:59.790
+Nous traduisons donc une sorte d'événement d'unité locale en un événement de vue personnalisé.
+
+09:00.640 --> 09:02.560
+Dans le cadre d'une meilleure pratique générale.
+
+09:02.560 --> 09:07.210
+Tout ce à quoi nous nous abonnons à l'intérieur de la destruction, ici nous nous désabonnons.
+
+09:07.510 --> 09:12.820
+Maintenant, plus haut dans cette classe, nous nous abonnons à l'écoute de la commande Logout et ici la vue dit
+
+09:12.820 --> 09:20.110
+Chaque fois qu'un utilisateur envoie la commande de déconnexion, je capture cette commande et je vide mes champs.
+
+09:20.110 --> 09:22.360
+mettra à jour mon bouton Click ability.
+
+09:22.630 --> 09:25.750
+Et la vue est également à l'écoute de la soumission de la connexion.
+
+09:25.960 --> 09:31.660
+Chaque fois que cela se produit, l'interface utilisateur est préparée pour la soumission et les vues écoutent également chaque fois que
+
+09:31.660 --> 09:32.950
+la connexion est terminée.
+
+09:33.250 --> 09:38.440
+C'est la plus grande méthode de cette classe, je pense, mais elle fonctionne exactement comme la méthode non mini.
+
+09:38.440 --> 09:39.040
+version.
+
+09:39.040 --> 09:42.940
+Vous pouvez donc consulter cette version et voir comment je décris les détails ici.
+
+09:42.940 --> 09:44.650
+Nous faisons vraiment les mêmes choses.
+
+09:45.130 --> 09:48.430
+À titre d'exemple, j'ai ajouté un peu de code ici.
+
+09:48.430 --> 09:55.060
+La partie surlignée montre que chaque commande est accompagnée de toutes les données pertinentes.
+
+09:55.390 --> 10:01.870
+Lorsque la connexion est terminée, nous disposons des données de l'utilisateur et nous pouvons les afficher dans l'interface utilisateur si nous le souhaitons,
+
+10:02.350 --> 10:10.330
+Pour démontrer une alternative complète à cette approche à partir de n'importe quel champ d'application, y compris la vue, nous avons
+
+10:10.330 --> 10:14.350
+pouvons demander au contexte, Hey, va me chercher ce modèle particulier.
+
+10:14.350 --> 10:20.950
+Il obtiendra ce modèle s'il existe et nous pouvons faire tout ce que nous voulons, y compris la journalisation de débogage de ces
+
+10:20.950 --> 10:21.700
+valeurs.
+
+10:21.700 --> 10:25.240
+Voici donc un autre exemple de flexibilité.
+
+10:25.240 --> 10:31.450
+La convention ici est qu'il est probablement préférable d'envoyer un message avec la commande.
+
+10:31.450 --> 10:37.480
+Il y a donc moins de couplage, moins de connaissances de cette préoccupation sur la structure d'une autre préoccupation.
+
+10:37.480 --> 10:43.510
+Le code surligné ici suggère que la vue sait quelles données regarder dans quel modèle,
+
+10:43.510 --> 10:45.790
+ce qui pourrait être considéré comme un dépassement.
+
+10:45.790 --> 10:52.900
+Mais selon le cas d'utilisation que vous avez et aussi selon la façon dont votre interface utilisateur est structurée, il peut être tout à fait possible d'utiliser cette méthode.
+
+10:52.900 --> 10:57.730
+que votre vue utilise des modèles particuliers pour le rendu de ces données.
+
+10:57.730 --> 11:00.820
+Nous ne voulons pas que la vue affecte directement les données du modèle.
+
+11:00.820 --> 11:02.470
+Ce serait une mauvaise pratique.
+
+11:02.470 --> 11:04.180
+C'est la fin de la classe View.
+
+11:04.180 --> 11:09.010
+Avant de passer à la suite, j'aimerais prendre un moment pour examiner le gestionnaire de commandes et la commande
+
+11:09.010 --> 11:12.550
+parce que nous n'avons pas encore regardé cela dans les exemples de code précédents.
+
+11:12.850 --> 11:19.450
+Souvenez-vous que dans la même classe, plus haut, dans l'initialisation, nous ajoutons des auditeurs de commandes.
+
+11:19.450 --> 11:22.060
+Voyons donc ce que cela fait exactement.
+
+11:22.060 --> 11:24.540
+Nous allons commencer par examiner le contexte.
+
+11:24.550 --> 11:29.800
+N'oubliez pas que la classe contextuelle est importante car elle contient le localisateur de modèle et le gestionnaire de commandes.
+
+11:30.100 --> 11:32.830
+Le gestionnaire de commandes est pertinent pour cette discussion.
+
+11:32.830 --> 11:37.450
+Vous pouvez considérer le gestionnaire de commandes comme une liste des différentes commandes qui ont été enregistrées.
+
+11:37.450 --> 11:44.530
+Son API vous permet donc d'ajouter l'écoute de ces commandes et d'invoquer n'importe quelle commande pour plus de souplesse.
+
+11:44.530 --> 11:49.960
+La commande doit être une commande AI, mais remarquez que cette commande I est principalement une interface de marquage.
+
+11:49.960 --> 11:54.070
+Nous n'avons pas d'implémentation garantie en fonction de vos besoins.
+
+11:54.070 --> 12:01.510
+Il se peut que vous souhaitiez disposer d'une implémentation alternative nécessitant une sorte de fonctionnalité d'exécution et d'annulation.
+
+12:01.510 --> 12:08.470
+Mais pour le cas d'utilisation de base que j'ai dans ces exemples, je le passe simplement comme un objet stupide
+
+12:08.470 --> 12:09.400
+de paramètres.
+
+12:09.400 --> 12:14.470
+Jetons un coup d'œil à l'un des exemples que j'utilise dans le cas du log in soumis.
+
+12:14.830 --> 12:16.270
+Regardons la structure.
+
+12:16.270 --> 12:22.360
+Nous pouvons voir que la commande log in submitted comme il se doit implémente l'interface de la commande I
+
+12:22.360 --> 12:25.660
+en ce qui concerne l'implémentation à l'intérieur, elle est adaptée à ses propres besoins.
+
+12:25.660 --> 12:31.060
+Tout ce qu'il fait, c'est d'avoir un constructeur qui prend exactement les données dont nous avons besoin dans ce type d'opération.
+
+12:31.060 --> 12:32.730
+et les conserve ici localement.
+
+12:32.740 --> 12:34.780
+Dans un instant, nous verrons où il est invoqué.
+
+12:34.780 --> 12:39.790
+Mais rappelez-vous, c'est la vue qui écoute cette commande et chaque fois que la connexion est soumise à la commande
+
+12:39.790 --> 12:45.610
+se produit, elle réagit en mettant à jour l'interface utilisateur et en utilisant les données de l'utilisateur qui sont transmises et que nous voyons ici
+
+12:45.610 --> 12:47.200
+pour alimenter l'interface utilisateur.
+
+12:47.230 --> 12:48.910
+C'est tout pour la vue de connexion.
+
+12:48.910 --> 12:52.780
+De retour à la mini classe login de haut niveau, nous avons examiné la vue.
+
+12:52.780 --> 12:54.910
+Nous allons maintenant nous intéresser au contrôleur.
+
+12:54.910 --> 12:56.380
+C'est la dernière pièce du puzzle.
+
+12:56.380 --> 13:02.680
+Le contrôleur de connexion étend le contrôleur de base et comme dans tous les cas, en utilisant les mini MVC, étendre
+
+13:02.680 --> 13:04.030
+la base est optionnelle.
+
+13:04.030 --> 13:08.620
+Ici, nous obtenons une fonctionnalité gratuite, dont j'ai parlé dans les échantillons de code précédents, donc je vais
+
+13:08.620 --> 13:09.690
+sauter cette étape pour l'instant.
+
+13:09.700 --> 13:13.030
+À l'intérieur de l'initialisation, le contrôleur a des références.
+
+13:13.030 --> 13:15.390
+Passons maintenant aux autres problèmes majeurs.
+
+13:15.400 --> 13:21.790
+Remarquez que ce que nous faisons ici, c'est que nous câblons l'écoute de tous les événements qui nous intéressent.
+
+13:21.790 --> 13:26.020
+Nous écoutons le modèle, la vue et le service.
+
+13:26.350 --> 13:28.870
+Vous pouvez commencer à voir que le contrôleur est la colle.
+
+13:28.870 --> 13:34.330
+C'est la personne intermédiaire qui se situe entre ces différentes couches, qui écoute les événements de l'une d'entre elles et qui, en tant qu'utilisateur du service, est responsable de l'exécution du service.
+
+13:34.330 --> 13:37.150
+nous le verrons dans un instant, est capable d'envoyer des communications.
+
+13:37.150 --> 13:38.560
+Voici un exemple parfait.
+
+13:38.560 --> 13:43.750
+Nous écoutons la connexion de The View, et lorsque cela se produit, nous invoquons une commande.
+
+13:43.750 --> 13:49.840
+Imaginez donc une écoute avec deux tasses et une longue chaîne de caractères, un type de communication très couplé.
+
+13:49.840 --> 13:54.820
+Ici, le contrôleur écoute directement la vue pour qu'un événement spécifique se produise.
+
+13:54.820 --> 13:56.140
+C'est ce que nous voyons ici.
+
+13:56.140 --> 14:00.070
+Il va ensuite traduire cela en un type de station de radio beaucoup plus large.
+
+14:00.130 --> 14:02.180
+Diffusion lorsqu'il envoie la commande ?
+
+14:02.200 --> 14:03.010
+Tout à fait.
+
+14:03.010 --> 14:08.230
+Toute préoccupation dans l'ensemble de ce projet qui a accès au même contexte, ce qui est le cas de nos quatre niveaux
+
+14:08.230 --> 14:14.170
+ont accès au même contexte, nous serions en mesure de nous abonner et d'écouter ce log in soumis à la commande
+
+14:14.170 --> 14:15.460
+qui est déclenchée ici.
+
+14:15.460 --> 14:19.240
+Et ce scope consommateur ne sait pas nécessairement quel scope l'a envoyé.
+
+14:19.240 --> 14:22.870
+Nous considérons cela comme une bonne pratique de communication découplée.
+
+14:22.870 --> 14:27.970
+Encore une fois, nous invoquons cette commande, puis nous demandons au service de lancer le processus de connexion.
+
+14:27.970 --> 14:35.590
+Lorsque la déconnexion se produit, nous traduisons cet événement de vue en une commande Lorsque le service est terminé
+
+14:35.590 --> 14:42.010
+et qu'il s'est connecté avec succès, nous sommes en mesure de mettre à jour le modèle directement, ce qui est une bonne pratique.
+
+14:42.010 --> 14:45.010
+Les contrôleurs peuvent lire et écrire dans le modèle.
+
+14:45.010 --> 14:47.020
+Enfin, nous envoyons une commande.
+
+14:47.020 --> 14:51.310
+Il existe maintenant de nombreuses façons de structurer ces communications.
+
+14:51.310 --> 14:58.000
+Par exemple, ici, au lieu de mettre directement à jour le modèle et d'envoyer la commande, nous pourrions, en
+
+14:58.000 --> 15:05.410
+mettre à jour le modèle et toute personne souhaitant savoir quand le modèle est mis à jour pourrait directement le faire.
+
+15:05.410 --> 15:07.720
+s'abonnerait directement au modèle réalisable.
+
+15:07.720 --> 15:13.870
+Une autre solution consiste, au lieu que ce contrôleur ait un impact direct sur le modèle en définissant des valeurs,
+
+15:13.870 --> 15:20.260
+nous pourrions seulement envoyer la commande, et une autre préoccupation serait responsable de l'écoute de cette commande
+
+15:20.260 --> 15:21.640
+et de mettre à jour le modèle.
+
+15:21.640 --> 15:26.890
+Maintenant, pour un projet simple où nous avons un modèle et un contrôleur, ce que je montre ici est probablement
+
+15:26.890 --> 15:33.610
+mais dans un projet beaucoup plus important, vous pouvez avoir une paire de contrôleur et de modèle pour différentes
+
+15:33.610 --> 15:35.440
+différentes parties de l'application.
+
+15:35.440 --> 15:42.100
+Ainsi, un contrôleur peut simplement dire, Hey, je sais que lorsque je reçois ce message particulier, je vais juste dire à
+
+15:42.100 --> 15:46.660
+avec une commande aux autres préoccupations comment ils devraient réagir.
+
+15:46.660 --> 15:52.450
+Cela permet de découpler la logique du contrôleur en plusieurs contrôleurs.
+
+15:52.450 --> 15:56.530
+Enfin, chaque fois que le modèle change, nous envoyons une commande.
+
+15:56.530 --> 15:58.210
+C'est tout pour cette démo complète.
+
+15:58.210 --> 16:00.280
+Regardons à nouveau l'application en cours d'exécution.
+
+16:00.280 --> 16:01.150
+Nous y voilà.
+
+16:01.150 --> 16:04.150
+Enfin, nous allons jeter un autre coup d'oeil à l'exemple en cours d'exécution.
+
+16:16.350 --> 16:18.240
+J'utiliserai ici le bon mot de passe.
+
+16:22.220 --> 16:23.720
+Et nous obtenons un succès.
+
+16:24.610 --> 16:25.990
+C'est tout pour cette démo.

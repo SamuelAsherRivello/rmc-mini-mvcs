@@ -1,0 +1,406 @@
+WEBVTT
+
+00:00.090 --> 00:01.410
+Vamos configurar nossa visualização.
+
+00:01.920 --> 00:05.040
+Criarei um novo objeto de jogo e o colocarei na hierarquia da cena.
+
+00:05.400 --> 00:09.360
+Faço isso porque sabemos que o View vai utilizar alguma UI da unidade.
+
+00:09.540 --> 00:13.850
+O Unity UI funciona bem por ter comportamentos mono em uso.
+
+00:13.860 --> 00:16.080
+Começarei por criar uma tela Unity.
+
+00:16.080 --> 00:20.730
+Posso clicar com o botão direito do mouse na hierarquia da cena e optar por criar a tela em si e, em seguida, dentro do
+
+00:20.730 --> 00:24.330
+tela, sabemos que precisaremos de alguns campos de entrada e um botão.
+
+00:24.780 --> 00:26.310
+Portanto, tudo isso agora.
+
+00:27.320 --> 00:28.340
+Dentro da tela.
+
+00:28.340 --> 00:33.680
+Criei um painel que nos dá o quadrado cinzento flutuante que ocupa a maior parte da vista do jogo.
+
+00:33.710 --> 00:41.270
+Em seguida, adicionei três campos de entrada e dois botões para que possamos ter a entrada para A, para B e para o resultado,
+
+00:41.570 --> 00:45.470
+e, em seguida, os botões para adicionar, bem como limpar e reiniciar o aplicativo.
+
+00:45.500 --> 00:47.930
+Atualmente, todos esses elementos da interface do usuário têm a mesma posição.
+
+00:47.930 --> 00:49.190
+Eles estão centralizados na tela.
+
+00:49.640 --> 00:51.020
+Portanto, vou corrigir isso agora.
+
+00:51.880 --> 00:52.060
+Aqui.
+
+00:52.060 --> 00:56.410
+Posicionei cada um dos elementos da IU e dei-lhes um nome na hierarquia da cena.
+
+00:56.410 --> 01:00.760
+Então temos um campo de entrada para A, B e o resultado?
+
+01:01.460 --> 01:04.730
+E também um botão para adicionar e redefinir.
+
+01:04.730 --> 01:06.990
+Agora, a base dessa estrutura é a tela.
+
+01:07.010 --> 01:13.210
+O que eu gosto de fazer é renomear o canvas para corresponder ao nome da minha visualização e adicionar a classe personalizada.
+
+01:13.220 --> 01:18.560
+Aqui, adicionarei a classe da visualização da calculadora e prosseguirei com a configuração do código porque a calculadora
+
+01:18.560 --> 01:20.280
+está usando o Unity UI.
+
+01:20.300 --> 01:23.180
+Nós estendemos o comportamento mono dessa parte configurada.
+
+01:23.180 --> 01:27.170
+Implementaremos a visão ocular e implementaremos os membros que faltam.
+
+01:27.170 --> 01:28.510
+Usaremos todos os padrões.
+
+01:28.520 --> 01:30.020
+Vamos configurar nossa inicialização.
+
+01:30.030 --> 01:31.950
+Esse é um bom começo para a inicialização.
+
+01:31.970 --> 01:38.330
+Agora vamos serializar todos os campos da IU de que precisamos e observar os eventos necessários para cada um deles.
+
+01:38.330 --> 01:43.610
+Portanto, aqui nos campos, criamos campos serializados para cada um dos elementos da IU de que precisamos e no campo
+
+01:43.610 --> 01:46.040
+initialize, estamos ouvindo alguns eventos importantes.
+
+01:46.040 --> 01:52.880
+Sempre que o usuário estiver editando os campos de entrada para A ou B, faremos algo aqui e um pouco mais tarde
+
+01:52.880 --> 01:57.310
+implementaremos a consequência de clicar em adicionar ou clicar em reiniciar.
+
+01:57.320 --> 02:00.160
+Vamos voltar à hierarquia da cena e conectar a visualização.
+
+02:00.170 --> 02:05.270
+Então, aqui na visualização da calculadora, vamos conectar os campos serializados aos elementos da IU.
+
+02:05.270 --> 02:07.730
+Vamos começar com o campo de entrada A.
+
+02:09.110 --> 02:12.830
+Para ser o campo de entrada do resultado.
+
+02:14.280 --> 02:15.570
+Você adiciona o botão.
+
+02:16.840 --> 02:17.980
+E o botão reset.
+
+02:17.980 --> 02:20.720
+Portanto, nossa hierarquia de cena está quase completa.
+
+02:20.740 --> 02:26.020
+No entanto, mais uma coisa que precisamos fazer é passar a visualização da calculadora para o próprio mini aqui.
+
+02:26.020 --> 02:30.280
+No arquivo de exemplo, vamos serializar um campo e passá-lo para a mini calculadora.
+
+02:30.280 --> 02:33.610
+Então, criamos o campo e o passamos para o construtor.
+
+02:33.610 --> 02:34.720
+Vamos atualizar essa classe.
+
+02:34.720 --> 02:37.270
+Portanto, ela está esperando que ele entre no construtor.
+
+02:37.270 --> 02:42.160
+Não tínhamos um construtor antes, então vamos criar um aqui, aceitar a visualização da calculadora e armazenar
+
+02:42.160 --> 02:44.470
+a visualização da calculadora de volta na hierarquia da fila.
+
+02:44.470 --> 02:49.390
+Vamos conectar isso para que possamos arrastar uma referência da visualização da calculadora para o novo campo serializado.
+
+02:49.390 --> 02:52.810
+Agora quase tudo que precisamos para a cena está configurado.
+
+02:52.810 --> 02:55.030
+Salvaremos a cena e voltaremos ao código.
+
+02:55.030 --> 02:58.090
+Neste ponto, temos um projeto muito bem configurado.
+
+02:58.090 --> 03:05.920
+Temos pelo menos alguma forma de implementação para a mini classe, o modelo, a visualização e o controlador.
+
+03:05.920 --> 03:11.140
+Ainda não terminamos, mas já temos uma boa cena montada, bem como um código de compilação daqui para frente
+
+03:11.140 --> 03:12.460
+a mini classe da calculadora.
+
+03:12.460 --> 03:19.030
+Vamos pensar no que vem a seguir aqui no initialize, vemos que temos o contexto configurado no modelo.
+
+03:19.150 --> 03:23.500
+Não estamos fazendo nada com a visualização aqui, mas sabemos que ela está muito bem conectada.
+
+03:23.500 --> 03:28.840
+Temos o controlador, que definitivamente precisa de implementação e estamos fazendo algumas das inicializações.
+
+03:28.840 --> 03:31.720
+Vamos voltar ao nosso caso de uso para nos ajudar a fazer um brainstorming.
+
+03:31.720 --> 03:39.190
+Lembre-se de que queríamos aceitar dois valores int, fazer uma adição e exibir o resultado.
+
+03:39.190 --> 03:40.570
+Aqui está o nosso progresso até agora.
+
+03:40.570 --> 03:45.340
+Temos a nossa visualização configurada com os requisitos aqui, mas não temos o modelo nem o controlador.
+
+03:45.340 --> 03:47.980
+Podemos escolher livremente para qual deles queremos ir em seguida.
+
+03:47.980 --> 03:52.780
+Como acho que a implementação do modelo vai ser mais simples, vamos terminar o
+
+03:52.780 --> 03:55.840
+modelo e terminar toda a nossa codificação trabalhando no controlador.
+
+03:55.840 --> 03:59.680
+Então, aqui no modelo, sabemos que queremos armazenar alguns ints Now, embora opcionais.
+
+03:59.680 --> 04:04.600
+Até agora, em nossas amostras, usamos a classe observável, que nos dá não apenas a funcionalidade
+
+04:04.600 --> 04:09.940
+de uma INT para armazenamento, mas também uma boa maneira de ouvir quaisquer alterações nesse valor armazenado.
+
+04:09.940 --> 04:11.140
+Então, vamos usar isso agora.
+
+04:11.140 --> 04:15.130
+Assim, criamos a propriedade A para a, B e o resultado, bem como um campo.
+
+04:15.130 --> 04:20.950
+Agora, minha abordagem para todo o projeto X é ter uma propriedade pública com um valor privado embaixo dela
+
+04:20.950 --> 04:21.850
+que é opcional.
+
+04:21.850 --> 04:24.040
+Em vez disso, você poderia ter apenas um campo público.
+
+04:24.040 --> 04:29.110
+Como em outros exemplos que vimos, usaremos o initialize do modelo para definir alguns valores padrão
+
+04:29.110 --> 04:31.360
+dependendo exatamente de quais são os seus valores padrão.
+
+04:31.390 --> 04:34.150
+Isso pode não ser necessário, mas acho que é uma ótima prática.
+
+04:34.150 --> 04:39.910
+Portanto, como o modelo da calculadora estende o modelo básico, os modelos básicos já lidam com a inicialização.
+
+04:39.910 --> 04:45.160
+Portanto, assim como na programação geral orientada a objetos, podemos substituir um método pai.
+
+04:45.160 --> 04:49.390
+Chamar o método base para obter a funcionalidade base e definir os nossos padrões dessa forma.
+
+04:49.390 --> 04:51.580
+Com isso concluído, vamos dar uma olhada no controlador.
+
+04:51.580 --> 04:54.520
+A implementação do controlador é a última peça do quebra-cabeça.
+
+04:54.520 --> 04:56.950
+Temos uma configuração de visualização e uma configuração de modelo.
+
+04:56.950 --> 04:59.920
+Agora o controlador precisa ser a cola que une tudo isso.
+
+04:59.920 --> 05:04.360
+Primeiro, criei um construtor para receber todas as preocupações com as quais queremos nos preocupar.
+
+05:04.360 --> 05:09.190
+Nesse caso, o controlador cuidará das outras preocupações, que é o modelo da calculadora
+
+05:09.190 --> 05:10.060
+e a visualização da calculadora.
+
+05:10.060 --> 05:15.400
+Vou armazená-los como campos e, em seguida, atualizo o initialize para executar as etapas muito comuns de verificar se
+
+05:15.400 --> 05:17.680
+você está inicializado e armazenando o contexto.
+
+05:17.680 --> 05:20.530
+Então, quais são algumas coisas que precisaremos fazer aqui no controlador?
+
+05:20.740 --> 05:25.990
+Bem, primeiro, agora que temos uma referência ao modelo, queremos observar quaisquer alterações nesse modelo
+
+05:25.990 --> 05:30.970
+e, agora que temos uma referência à visualização da calculadora, queremos observar qualquer alteração importante no modelo.
+
+05:30.970 --> 05:32.290
+eventos importantes que vêm da visualização.
+
+05:32.290 --> 05:33.490
+Vamos configurar isso agora.
+
+05:34.200 --> 05:40.770
+Portanto, aqui na inicialização, vou querer ouvir o evento de reinicialização e o evento ADD que está chegando
+
+05:40.770 --> 05:41.640
+do The View.
+
+05:41.940 --> 05:43.440
+Vamos criar esses eventos agora.
+
+05:44.410 --> 05:47.410
+Aqui no topo do The View, vamos criar esses dois eventos.
+
+05:47.440 --> 05:50.470
+Nenhum deles precisa enviar qualquer informação.
+
+05:50.740 --> 05:53.230
+Portanto, podemos usar apenas os eventos básicos de unidade.
+
+05:53.970 --> 06:00.120
+Então, aqui eu criei os eventos on add e on reset e abaixo na mesma classe.
+
+06:00.120 --> 06:06.360
+Quando ouvimos a interface do usuário e capturamos um dos botões sendo clicado, enviamos esse evento personalizado.
+
+06:07.990 --> 06:14.650
+Agora, como um ponto secundário, porque o controlador tem uma referência à visualização e esses elementos de visualização são
+
+06:14.650 --> 06:16.750
+públicos nesse caso específico.
+
+06:16.960 --> 06:22.810
+Em vez disso, poderíamos simplesmente fazer com que o controlador ouvisse diretamente os eventos da interface do usuário em vez de criar isso
+
+06:22.810 --> 06:24.330
+passo com eventos personalizados.
+
+06:24.340 --> 06:29.620
+O que estamos mostrando aqui é uma abordagem mais desacoplada e você pode decidir em seu projeto o que funciona
+
+06:29.620 --> 06:30.220
+melhor para você.
+
+06:30.220 --> 06:35.200
+Então, aqui no controlador, eu liguei esses dois eventos, configurando um manipulador para cada um deles.
+
+06:35.380 --> 06:39.670
+Então, vamos pensar por um momento qual é a consequência que queremos que cada um deles tenha?
+
+06:39.940 --> 06:46.030
+Bem, sempre que você clicar no botão de reinicialização, ele deve limpar todos os campos do campo A, de
+
+06:46.030 --> 06:48.490
+o campo B e o campo de resultados.
+
+06:48.490 --> 06:50.260
+E o que queremos que aconteça quando adicionarmos?
+
+06:50.260 --> 06:56.080
+Bem, queremos definir o campo de resultado como a adição do campo A e do campo B.
+
+06:56.080 --> 06:58.720
+Em muitos MVCs, há flexibilidade.
+
+06:58.720 --> 07:01.120
+Então, vamos falar sobre algumas maneiras diferentes de fazer isso.
+
+07:01.120 --> 07:07.210
+Provavelmente, a maneira mais direta seria o controlador alterar os campos diretamente na visualização.
+
+07:07.240 --> 07:08.560
+Vamos ver como isso seria.
+
+07:08.560 --> 07:14.800
+Então, começando com a abordagem mais direta aqui no Reset, entramos na View e definimos esses campos
+
+07:14.800 --> 07:16.900
+valores da UI de volta para a string vazia.
+
+07:16.900 --> 07:22.630
+E então, no ADD, buscamos esses valores, os adicionamos e atualizamos a visualização diretamente.
+
+07:22.630 --> 07:24.430
+Vamos executar a cena e ver como isso se comporta.
+
+07:24.430 --> 07:26.290
+Aqui estamos na cena em execução.
+
+07:26.290 --> 07:28.960
+Adicione alguns valores de amostra e clique em reset.
+
+07:28.960 --> 07:30.610
+Parece que a reinicialização está correta.
+
+07:30.610 --> 07:33.550
+Vamos adicionar alguns valores novamente e clicar no botão add.
+
+07:37.620 --> 07:38.330
+Parece bom.
+
+07:38.340 --> 07:41.220
+Vamos pensar sobre isso e refletir sobre a nossa estrutura.
+
+07:41.220 --> 07:47.520
+Neste ponto, temos o controlador acessando diretamente a visualização dentro dos limites sugeridos de
+
+07:47.520 --> 07:48.860
+como nos comportamos aqui.
+
+07:48.870 --> 07:49.880
+Não há problema.
+
+07:49.890 --> 07:55.140
+Não há problema em o controlador ter uma referência, visualizá-la e atualizá-la diretamente quando o controlador
+
+07:55.140 --> 07:56.940
+atualiza diretamente a visualização.
+
+07:56.970 --> 07:58.620
+Estamos ignorando o modelo.
+
+07:58.620 --> 08:03.480
+Essencialmente, estamos armazenando os dados do modelo diretamente na visualização.
+
+08:03.480 --> 08:09.510
+E, de um ponto de vista fundamental, estamos deixando de lado a separação de preocupações do MVC.
+
+08:09.510 --> 08:14.880
+Vamos iterar sobre isso e trazer um pouco mais de princípios sólidos para o código.

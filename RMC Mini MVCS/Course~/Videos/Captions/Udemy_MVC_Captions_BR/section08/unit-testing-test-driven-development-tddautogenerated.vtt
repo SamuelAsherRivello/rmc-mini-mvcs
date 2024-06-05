@@ -1,0 +1,319 @@
+WEBVTT
+
+00:00.090 --> 00:01.360
+Desenvolvimento orientado a testes.
+
+00:01.380 --> 00:04.920
+Aqui está um exemplo de uma classe de teste com um método de teste.
+
+00:04.920 --> 00:08.450
+Já no curso, vimos como executar um teste existente.
+
+00:08.460 --> 00:14.910
+Vimos como criar novos testes a partir do zero. O desenvolvimento orientado por testes ou TDD é a prática de adicionar
+
+00:14.910 --> 00:17.550
+testes antes de adicionar o código de produção.
+
+00:17.550 --> 00:21.290
+Para alguns, especialmente os novatos em testes, isso pode parecer estranho.
+
+00:21.300 --> 00:26.430
+Aprenderemos mais sobre a técnica e observaremos que você pode misturar o desenvolvimento orientado por testes com o tradicional
+
+00:26.430 --> 00:29.490
+como quiser em seus próprios fluxos de trabalho.
+
+00:29.520 --> 00:36.570
+O TDD cria testes que especificam e validam o que o código fará depois de criado.
+
+00:37.110 --> 00:38.280
+Aqui está o fluxo de trabalho.
+
+00:38.280 --> 00:44.220
+Você cria um novo teste, adiciona apenas a implementação suficiente para que o código seja compilado.
+
+00:44.220 --> 00:48.610
+Uma vez que adicionamos código de produção suficiente para que este código seja compilado.
+
+00:48.630 --> 00:54.000
+Talvez mesmo tendo uma implementação vazia, executamos o teste e o teste falha.
+
+00:54.450 --> 00:55.590
+Isso é esperado.
+
+00:55.590 --> 01:01.950
+E, na verdade, é um bom ponto de partida: ao vermos um teste falhar, temos mais confiança
+
+01:01.950 --> 01:05.040
+de que o teste, uma vez aprovado, realmente significa algo.
+
+01:05.040 --> 01:09.420
+Em seguida, você refatora o código de produção até que o código seja aprovado e depois segue em frente.
+
+01:09.420 --> 01:16.020
+O TDD não é simplesmente a ordem de testar primeiro e escrever o código de produção depois.
+
+01:16.020 --> 01:19.140
+É também uma forma de pensar sobre seus projetos.
+
+01:19.140 --> 01:24.230
+Algumas dessas coisas você realmente precisa praticar para sentir os resultados.
+
+01:24.240 --> 01:31.110
+Mas o que eu descobri com mais experiência em TDD é que você pensa sobre o seu novo código de forma diferente, você está
+
+01:31.110 --> 01:38.160
+mais focado no seu desenvolvimento, você cria mais código atômico que faz apenas uma coisa, e quando você
+
+01:38.160 --> 01:42.180
+quando seu código de teste é aprovado, ele é aprovado de forma mais significativa.
+
+01:42.210 --> 01:48.840
+Outra forma de ver esse fluxo é escrever um teste que falhou, fazer com que o teste seja aprovado e depois
+
+01:48.840 --> 01:51.660
+você refatora seu código para atender a qualquer outro objetivo.
+
+01:51.660 --> 01:58.590
+Você tem otimização, padrões de codificação, etc. e depois repete: "Vamos ver isso em ação".
+
+01:58.590 --> 02:01.320
+Vamos abrir um projeto unity que já tem um teste.
+
+02:01.320 --> 02:08.790
+Usaremos o TDD para adicionar um novo teste, criar um código de produção suficiente para que ele seja compilado, ver uma falha
+
+02:08.790 --> 02:12.090
+e, em seguida, refatorar até obtermos um resultado positivo.
+
+02:13.020 --> 02:16.130
+Aqui estamos em um projeto unity razoavelmente vazio.
+
+02:16.140 --> 02:22.560
+Eu me certifiquei de que a estrutura de teste já está adicionada no gerenciador de pacotes, conforme mostrado anteriormente, e
+
+02:22.560 --> 02:25.590
+Copiei um teste para começarmos.
+
+02:25.620 --> 02:28.350
+Vamos dar uma olhada nesse teste aqui no modo de edição.
+
+02:28.350 --> 02:33.780
+Tenho um teste que fornece cobertura para o método ADD de uma classe matemática simples.
+
+02:33.780 --> 02:34.850
+Vamos executar o teste.
+
+02:34.860 --> 02:35.900
+Ele passa.
+
+02:35.910 --> 02:41.430
+Vamos dar uma olhada no código e aqui vemos o teste com o qual estamos familiarizados desde o início da apresentação.
+
+02:41.430 --> 02:45.330
+Agora vamos realizar um desenvolvimento orientado por testes, conforme discutido aqui.
+
+02:45.360 --> 02:51.450
+A ideia é que, se quisermos expandir a funcionalidade do sistema de matemática, temos algumas abordagens.
+
+02:51.450 --> 02:57.090
+Podemos criar esse código de produção sem nenhum teste e depois.
+
+02:58.260 --> 03:01.350
+E depois, talvez adicionemos testes ou não.
+
+03:02.530 --> 03:08.530
+No entanto, com o desenvolvimento orientado por testes, vamos testar primeiro, antes de adicionarmos qualquer produção
+
+03:08.530 --> 03:09.040
+de produção.
+
+03:09.870 --> 03:11.010
+Vamos ver como isso funciona.
+
+03:11.040 --> 03:11.700
+Vou imaginar.
+
+03:11.700 --> 03:11.880
+Eu vou.
+
+03:13.080 --> 03:14.040
+Vamos imaginar.
+
+03:14.040 --> 03:16.680
+O sistema matemático precisa de um método de subtração.
+
+03:17.980 --> 03:22.240
+Agora, esse método abstrato ainda não existe, como veremos quando examinarmos o código-fonte.
+
+03:23.150 --> 03:24.830
+Mas vamos fazer um teste para ele de qualquer forma.
+
+03:25.760 --> 03:29.060
+Vou começar por adicionar o atributo de teste.
+
+03:29.270 --> 03:37.130
+Vou nomear o método com o que está sendo testado, qual é o resultado esperado e em que situação eu espero
+
+03:37.130 --> 03:38.390
+para subtrair.
+
+03:38.390 --> 03:40.130
+O resultado seria cinco.
+
+03:40.160 --> 03:45.140
+Se eu passar dez e cinco, dez menos cinco é cinco.
+
+03:45.170 --> 03:48.980
+Para preparar o teste, instancio uma nova cópia do meu sistema matemático.
+
+03:49.220 --> 03:52.250
+Obtenho o resultado chamando o método subtract.
+
+03:52.280 --> 03:56.830
+O texto em vermelho aqui indica que meu editor de código sabe que não há método subtract.
+
+03:56.840 --> 04:03.320
+E, finalmente, esperamos que o nosso método retorne um valor de cinco porque eu copiei e colei isso do
+
+04:03.320 --> 04:04.100
+exemplo anterior.
+
+04:04.100 --> 04:05.060
+Ele diz 15.
+
+04:05.090 --> 04:06.180
+Vou mudar isso agora.
+
+04:06.200 --> 04:08.150
+Agora ele está verificando a suposição correta.
+
+04:08.840 --> 04:13.180
+Agora sabemos que isso não vai compilar, mas vamos salvar e voltar para a unidade.
+
+04:13.190 --> 04:14.750
+Vamos observar duas coisas.
+
+04:14.750 --> 04:19.250
+Primeiro, a janela do console está mostrando corretamente que há um erro do compilador.
+
+04:19.250 --> 04:24.300
+E para notar na janela do executor do teste, ainda não vemos o nosso novo método.
+
+04:24.320 --> 04:26.610
+Essas são coisas boas a serem observadas no TDD.
+
+04:26.630 --> 04:30.970
+O próximo passo é criar código suficiente para compilar.
+
+04:30.980 --> 04:34.700
+É muito importante que não terminemos a implementação nesta etapa.
+
+04:34.700 --> 04:36.920
+Aqui está o código-fonte do nosso sistema matemático.
+
+04:36.920 --> 04:42.050
+Esta é a implementação mais simples que posso fazer para que o código seja compilado.
+
+04:42.050 --> 04:45.740
+Observe que eu não terminei a implementação adequada.
+
+04:45.740 --> 04:52.550
+Neste exemplo, parece trivial porque sabemos que tudo o que precisamos fazer é subtrair A e B.
+
+04:52.550 --> 04:58.460
+Contudo, normalmente no desenvolvimento orientado por testes, a implementação de um determinado método seria mais complexa
+
+04:58.460 --> 04:59.540
+e levaria mais tempo.
+
+04:59.540 --> 05:03.470
+De qualquer forma, sempre paramos aqui quando temos o suficiente para compilar.
+
+05:04.230 --> 05:05.360
+Vamos dar uma olhada no teste.
+
+05:05.370 --> 05:09.150
+Nosso editor de código corretamente não mostra mais o subtract em vermelho.
+
+05:09.570 --> 05:11.340
+Vamos salvar e verificar a unidade.
+
+05:11.370 --> 05:13.710
+Agora não vemos nenhum erro no console.
+
+05:13.710 --> 05:14.280
+Ótimo.
+
+05:14.280 --> 05:15.540
+Tudo está sendo compilado.
+
+05:15.540 --> 05:19.290
+E agora a janela do nosso executor de teste mostra corretamente o novo método de teste.
+
+05:19.290 --> 05:20.430
+Vamos executar todos os testes.
+
+05:20.430 --> 05:26.430
+Você pode considerar o teste de falha porque um ou mais métodos de teste falham.
+
+05:26.430 --> 05:31.350
+Quando olhamos para o momento em que selecionamos o método com falha, vemos uma pequena entrada ali.
+
+05:31.350 --> 05:34.200
+Vemos um pouco de texto de saída que mostra por que ele falhou.
+
+05:34.470 --> 05:38.490
+Ele está esperando cinco, mas em vez disso está retornando zero.
+
+05:38.490 --> 05:40.560
+Agora, por que passamos por esse processo?
+
+05:40.560 --> 05:46.350
+Pode parecer trivial, mas é uma distinção importante que criamos um teste, acreditamos que testamos o
+
+05:46.350 --> 05:49.260
+funcionalidade adequada e, primeiro, o vemos falhar.
+
+05:49.260 --> 05:55.560
+Isso nos dá uma boa base para saber quando uma implementação adequada dá uma aprovação com confiança.
+
+05:55.560 --> 05:57.420
+Vamos adicionar a implementação adequada aqui.
+
+05:57.420 --> 06:02.160
+Assumimos que o primeiro parâmetro que entra seria maior do que o segundo e simplesmente retornamos
+
+06:02.160 --> 06:05.670
+e simplesmente retornamos A menos B, vamos salvar e executar o teste.
+
+06:07.570 --> 06:12.600
+Agora o teste funciona bem e concluímos nosso primeiro exemplo de desenvolvimento orientado por testes.
+
+06:12.610 --> 06:13.450
+É isso aí.
+
+06:13.990 --> 06:20.680
+Sei, por experiência própria, que precisei de tempo e prática com os testes para realmente sentir a
+
+06:20.680 --> 06:21.520
+benefícios.
+
+06:21.520 --> 06:29.890
+Tivemos uma breve visão geral dos testes unitários, da criação de testes unitários e do desenvolvimento orientado por testes.
+
+06:30.580 --> 06:35.200
+Espero que você esteja começando a ver alguns dos benefícios que podem funcionar bem para você.
+
+06:35.200 --> 06:41.350
+Combinando o que você aprendeu aqui sobre testes com a arquitetura MVC, você tem as ferramentas para criar
+
+06:41.350 --> 06:47.460
+projetos que são mais modulares, escaláveis, otimizados, robustos e confiáveis.
+
+06:47.470 --> 06:52.610
+A combinação de testes e boa arquitetura é realmente poderosa.
+
+06:52.630 --> 06:53.500
+Obrigado.

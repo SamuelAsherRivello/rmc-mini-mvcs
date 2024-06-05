@@ -1,0 +1,202 @@
+WEBVTT
+
+00:00.150 --> 00:04.260
+Primeiro, vamos dar uma olhada na versão sem muitos MVCs adicionados.
+
+00:05.260 --> 00:11.860
+Aqui estamos em um projeto unity vazio onde adicionei a estrutura de mini MVCs, bem como as amostras.
+
+00:12.070 --> 00:18.040
+Aqui está a estrutura de pastas para o jogo Rollerball sem muitos desde que vimos a estrutura de pastas
+
+00:18.040 --> 00:19.490
+de outras amostras antes.
+
+00:19.510 --> 00:20.640
+Vamos começar logo.
+
+00:20.650 --> 00:23.330
+Primeiro, vamos executar a cena e ver como ela funciona.
+
+00:23.350 --> 00:28.840
+A interface do usuário é atualizada, mostrando que tenho zero pontos e que as instruções são para usar as teclas de seta.
+
+00:28.840 --> 00:31.510
+Também tenho um botão de reinicialização no qual posso clicar.
+
+00:32.320 --> 00:36.430
+Vou usar as quatro teclas de seta aqui para mover a bola.
+
+00:38.280 --> 00:42.660
+Talvez não seja possível ouvir no vídeo, mas está tocando um ruído cada vez que eu pego uma bola
+
+00:42.660 --> 00:49.170
+desses captadores, além de refletir isso na pontuação atualizada da interface do usuário, o status mudou para "você ganhou".
+
+00:49.170 --> 00:51.900
+Portanto, o jogo terminou e não posso mais entrar.
+
+00:51.900 --> 00:55.170
+Não posso mais digitar com as teclas, mas vou clicar no botão de reiniciar.
+
+00:55.170 --> 00:58.080
+O botão de reinicialização mostra um prompt aqui que eu posso cancelar.
+
+01:01.230 --> 01:02.520
+Ou eu posso confirmar.
+
+01:05.820 --> 01:10.020
+A confirmação reinicia o jogo como se eu ainda não tivesse jogado e posso jogar novamente.
+
+01:10.830 --> 01:11.520
+É isso aí.
+
+01:12.000 --> 01:13.850
+Aqui estamos no script de exemplo.
+
+01:13.860 --> 01:19.170
+Como nos outros exemplos, o script de exemplo de alto nível estende o comportamento do mono.
+
+01:19.170 --> 01:22.170
+Dessa forma, ele pode ficar em um objeto de jogo na cena.
+
+01:22.170 --> 01:28.200
+Temos três campos serializados aqui para que este exemplo possa entrar na cena e acessar um objeto de jogo.
+
+01:28.200 --> 01:34.020
+objeto de jogo para o jogador, um objeto de jogo para a interface do usuário e uma lista de todos os objetos de coleta na cena.
+
+01:34.020 --> 01:36.480
+Mantemos algum estado de alto nível para.
+
+01:36.510 --> 01:38.460
+O jogo já terminou?
+
+01:38.460 --> 01:42.960
+O jogo está pausado no momento e alguns outros valores de pontuação?
+
+01:43.740 --> 01:46.770
+E alguns outros valores de pontuação no método de início.
+
+01:46.770 --> 01:53.130
+Ouvimos daqui, no script principal do jogo, a interface do usuário no player para alguns eventos-chave aqui no
+
+01:53.130 --> 01:58.290
+atualização, que é executada a cada quadro enquanto a cena estiver em execução, temos nosso loop principal do jogo.
+
+01:58.290 --> 02:04.080
+Se, a qualquer momento, o jogo terminar ou for pausado, saímos do loop para que nada mais aconteça.
+
+02:04.080 --> 02:07.590
+É esse script em que estamos aqui que tem o controle das coletas.
+
+02:07.590 --> 02:13.590
+Ele percorre todos os captadores e chama o rotate para dar a eles a rotação cosmética.
+
+02:13.590 --> 02:18.750
+A razão pela qual isso é feito aqui e não dentro do coletor, por exemplo, é apenas para que quando o jogo
+
+02:18.750 --> 02:21.450
+pausar, os captadores também pausam.
+
+02:21.450 --> 02:27.270
+E, finalmente, aqui no escopo do jogo, capturamos a entrada do usuário e a passamos para o jogador de modo que
+
+02:27.270 --> 02:28.890
+a bola possa rolar por aqui.
+
+02:28.890 --> 02:34.230
+No método load, carregamos a partir de um arquivo de texto local para obter o número máximo de pontos necessários para
+
+02:34.230 --> 02:34.650
+vencer.
+
+02:34.650 --> 02:40.380
+Ele carrega o número três, como já vimos em demonstrações anteriores, este é um exemplo, apenas como uma desculpa
+
+02:40.380 --> 02:41.730
+para usar a camada de serviço.
+
+02:41.730 --> 02:43.770
+Quando olharmos para a versão mini MVC.
+
+02:43.770 --> 02:49.590
+Portanto, é claro que este valor poderia ser codificado aqui, mas em vez disso o carregamos a partir de um script, apenas como exemplo
+
+02:49.590 --> 02:50.520
+de dados externos.
+
+02:50.520 --> 02:56.760
+Periodicamente, quando o jogo quiser atualizar a interface do usuário na tela, podemos chamar esse método a qualquer momento
+
+02:56.760 --> 03:00.990
+que o botão da IU para reiniciar for clicado, esse método será executado.
+
+03:00.990 --> 03:07.530
+Pausamos o jogo, instanciamos uma janela de diálogo na tela que flutua sobre o resto do jogo, Handle
+
+03:07.530 --> 03:12.570
+a consequência Se o usuário clicar, cancelamos a caixa de diálogo e tratamos a consequência.
+
+03:12.570 --> 03:16.920
+Se o usuário confirmar para reiniciar o jogo toda vez que o jogador colidir com o coletor.
+
+03:16.920 --> 03:21.630
+Esse método é chamado, o objeto de coleta fica invisível e um som é reproduzido.
+
+03:21.630 --> 03:28.800
+A pontuação aumenta de 0 para 1, para 2, para 3 e, quando atinge o valor máximo exigido, que
+
+03:28.800 --> 03:32.090
+normalmente é três, então o jogo termina e você ganha.
+
+03:32.100 --> 03:34.050
+Isso é tudo sobre a lógica central do jogo.
+
+03:34.050 --> 03:35.760
+Vamos dar uma olhada na hierarquia da cena.
+
+03:35.760 --> 03:41.640
+Portanto, na hierarquia da cena aqui, se eu selecionar o próprio exemplo do jogo, veremos alguns campos serializados
+
+03:41.640 --> 03:47.130
+no inspetor, incluindo uma referência ao jogador, à interface do usuário e a cada captador na cena.
+
+03:47.130 --> 03:52.800
+O jogador está aqui com o script do jogador, a interface do usuário está aqui com o script da interface do usuário e cada um dos nossos captadores
+
+03:52.800 --> 03:55.860
+está armazenado aqui, tudo sob o mesmo objeto de jogo pai.
+
+03:55.860 --> 03:57.630
+Cada um tem um script de coleta no topo.
+
+03:57.630 --> 04:01.170
+Vamos dar uma olhada final no jogo em execução novamente para que eu possa pressionar play.
+
+04:01.170 --> 04:03.150
+Posso andar por aqui.
+
+04:03.360 --> 04:06.780
+Observe que os captadores estão girando.
+
+04:09.370 --> 04:14.950
+E se eu clicar no botão reiniciar enquanto o prompt estiver aqui em cima, enquanto esta janela de diálogo estiver sendo exibida,
+
+04:14.950 --> 04:21.220
+os cubos não estão girando. É um pequeno detalhe visual, mas indica que este jogo é capaz de
+
+04:21.220 --> 04:26.710
+salvar o estado de quando estamos em pausa e quando o jogo termina.
+
+04:26.710 --> 04:29.710
+Observe quando eu ganhar a coleta, pare de girar também.
+
+04:36.290 --> 04:42.290
+Eu tenho um e o pickup para de girar, gerenciando o estado como se o jogo tivesse acabado e o jogo estivesse pausado.
+
+04:42.290 --> 04:48.050
+pequenos detalhes, mas tê-los orquestrados de forma suave ao longo das preocupações, como vemos aqui, demonstra
+
+04:48.050 --> 04:49.850
+um design de jogo bom e simples.

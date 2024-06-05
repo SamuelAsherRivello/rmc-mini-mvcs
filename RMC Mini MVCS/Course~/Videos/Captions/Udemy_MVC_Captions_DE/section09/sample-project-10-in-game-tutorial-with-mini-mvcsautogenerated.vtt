@@ -1,0 +1,595 @@
+WEBVTT
+
+00:00.290 --> 00:00.740
+Also gut.
+
+00:00.740 --> 00:04.940
+Laßt uns darüber reden, wie man ein Tutorial in einem Spiel machen würde.
+
+00:06.730 --> 00:14.230
+Zunächst einmal, warum ist ein Tutorial im Spiel nützlich für die Erfahrung des Endbenutzers und warum ist es eine Herausforderung
+
+00:14.230 --> 00:15.280
+für die Entwickler?
+
+00:15.310 --> 00:25.000
+Nun, wenn wir Videospiele spielen, gibt es oft genug Regeln über die Spielwelt, darüber, wie man interagiert,
+
+00:25.000 --> 00:30.010
+wie man die Eingaben macht, dass man das dem Benutzer explizit mitteilen muss.
+
+00:30.370 --> 00:37.180
+Ein Tutorial ist ein Hilfsmittel, das man in der ersten Minute, zehn Minuten, einer Stunde des Spiels, dem
+
+00:37.180 --> 00:39.490
+Benutzer zusätzliche Informationen.
+
+00:39.490 --> 00:46.720
+Wenn sie also auf eine Figur zugehen, erklären Sie ihnen, wie sie einen Knopf drücken müssen, um das Gespräch zu beginnen.
+
+00:46.720 --> 00:51.430
+Nach fünf Stunden Spielzeit muss man es ihnen nicht mehr jedes Mal zeigen.
+
+00:51.430 --> 00:57.640
+Es handelt sich also um etwas Vorübergehendes, das oft am Anfang oder bei der ersten Begegnung mit dem Benutzer gemacht wird
+
+00:57.640 --> 00:58.360
+etwas begegnet.
+
+00:58.540 --> 01:01.840
+Deshalb wollen wir es jetzt haben.
+
+01:01.840 --> 01:03.100
+Warum ist es eine Herausforderung?
+
+01:03.130 --> 01:06.260
+Nun, weil es nicht immer passiert.
+
+01:06.260 --> 01:10.370
+Wenn wir zum Beispiel Spielfunktionen erstellen, sind sie hier immer verfügbar.
+
+01:10.370 --> 01:15.460
+Wir wollen, dass dies nur in der ersten Minute oder 10 Minuten oder 1 Stunde passiert, wie ich schon sagte.
+
+01:15.470 --> 01:21.530
+Du könntest also entweder durch alle deine Spielsysteme gehen und sie alle sagen lassen: Hey, wenn wir in der
+
+01:21.530 --> 01:26.030
+den ersten zehn Minuten sind, macht diese zusätzliche Sache, aber sonst macht die zusätzliche Sache nicht.
+
+01:26.030 --> 01:30.530
+Aber das wird ein bisschen Code, den man in viele verschiedene Systeme einbauen muss.
+
+01:30.530 --> 01:34.960
+Was wir hier also sehen werden, ist, wie man Tutorials im Spiel auf eine andere Art und Weise durchführen kann.
+
+01:34.970 --> 01:40.970
+Wir werden die Kernspiellogik nichts über die Tutorials wissen lassen und dann werden wir ein Tutorial haben
+
+01:40.970 --> 01:47.810
+Die Entität sitzt an der Seite und hört zu, was das Hauptspiel macht, und sie wird nur aktiv sein
+
+01:47.810 --> 01:53.900
+für die ersten zehn Minuten aktiv sein, und wenn es dann verschwindet, hat das Hauptspiel nie etwas davon gewusst und weiß es auch nicht
+
+01:53.900 --> 01:54.920
+mehr davon.
+
+01:54.920 --> 01:56.870
+Schauen wir uns also an, wie das funktionieren würde.
+
+01:57.650 --> 02:04.070
+Dieser Vortrag und diese Demoszene sind Teil eines größeren Kurses, der die Mini-Architektur für
+
+02:04.070 --> 02:06.920
+Unity-Kurs, den Sie unten verlinkt finden.
+
+02:06.950 --> 02:12.740
+Das ist ein kostenpflichtiger Kurs, in dem Sie Beispiele sehen können, wie diese Funktion funktioniert.
+
+02:12.740 --> 02:15.110
+Über die Theorie des Softwaredesigns.
+
+02:15.110 --> 02:16.700
+Hier ist ein detaillierter Blick.
+
+02:16.700 --> 02:22.430
+Entwurfsmuster betrachten, Entwurfsprinzipien betrachten, UML lernen, Diagramme erstellen, verschiedene
+
+02:22.460 --> 02:26.360
+Arten von Einheitsarchitekturen und warum man sie brauchen könnte.
+
+02:26.930 --> 02:33.020
+Der Spoiler-Alarm hier ist, dass du sie brauchst, weil sie dir helfen, Projekte zu skalieren, besser wartbar zu machen
+
+02:33.020 --> 02:40.010
+Code und fehlerfreie Arbeitsabläufe bei der Erstellung eines skalierbaren Projekts.
+
+02:40.700 --> 02:42.650
+Es beinhaltet eine Menge verschiedener Dinge.
+
+02:42.680 --> 02:48.740
+Eine Sache, die wir hier hinzugefügt haben, sind zehn oder mehr zusätzliche Demos, seit der Kurs zum ersten Mal erstellt wurde, und
+
+02:48.740 --> 02:52.550
+eine davon ist, wie man ein Tutorial macht, und das werden wir uns jetzt ansehen.
+
+02:52.910 --> 02:54.830
+Also lasst uns hier in Unity einsteigen.
+
+02:55.580 --> 03:05.240
+Wenn du also das Mini-MVCs-Paket kostenlos von Git oder als Teil des Kurses bekommst, lädst du herunter und installierst
+
+03:05.240 --> 03:07.300
+das mit den Git-Anweisungen.
+
+03:07.310 --> 03:11.840
+Und dann importieren Sie hier auf der Registerkarte "Beispiele" die Beispiele.
+
+03:11.840 --> 03:14.680
+Und das werden wir uns hier auf der Seite ansehen.
+
+03:14.840 --> 03:15.950
+Das habe ich schon gemacht.
+
+03:15.950 --> 03:24.560
+Wenn ich also weiter gehe und das Mini-Tutorial öffne, sehen wir, dass wir ein paar Prefabs haben, wir haben
+
+03:24.560 --> 03:31.370
+die Szene, wir haben hier ein bisschen Code, der die Tutorial-View und den Tutorial-Controller enthält.
+
+03:31.490 --> 03:33.350
+Lasst uns weitermachen und dies ausführen.
+
+03:40.760 --> 03:45.580
+Ja, ich werde etwas zeigen, bevor wir damit anfangen, denn beachte das Tutorial.
+
+03:45.590 --> 03:46.640
+Nun, ich werde einfach ein schönes großes Bild machen.
+
+03:47.870 --> 03:56.090
+Das Tutorial, das in dieser Szene ist, ist in der Box in der oberen Ecke, da steht Tutorial Enter
+
+03:56.090 --> 03:57.770
+Benutzernamen und Passwort ein.
+
+03:57.800 --> 04:04.010
+Der Einfachheit halber ahme ich hier nach, wie eine Web-Erfahrung funktionieren würde.
+
+04:04.040 --> 04:07.130
+Oft melden wir uns bei Web-Erlebnissen an.
+
+04:07.130 --> 04:14.120
+Sie haben einen Benutzernamen und ein Passwort, das den Kern des Bildschirms ausmacht, das Login-Mini-Beispiel.
+
+04:14.120 --> 04:21.530
+Dieses Beispiel befindet sich in einer anderen Szene, um zu verdeutlichen, wie getrennt dieses Tutorial und der Kern des Systems sind.
+
+04:21.530 --> 04:22.880
+Spiellogik sein können.
+
+04:22.880 --> 04:29.000
+Ich habe die Login-Mini-Szene als separate Szene, so dass man sich diese Szene im Detail ansehen kann und man
+
+04:29.000 --> 04:35.480
+können sehen, wie viele davon verwendet werden können, um einen Benutzernamen, ein Passwort, einen Login-Button und einen Logout-Button einzubauen.
+
+04:35.480 --> 04:39.920
+Hier wird mir also gesagt, dass das Passwort eins, zwei, drei, vier ist.
+
+04:39.920 --> 04:46.550
+Wenn ich also hier weitermache und den Namen eingebe, gebe ich meinen Namen ein.
+
+04:47.480 --> 04:48.200
+Genau so.
+
+04:49.490 --> 04:53.660
+Dann fange ich an, das Passwort einzugeben, wenn ich pass eintippe.
+
+04:55.360 --> 05:02.440
+Wenn ich anfange zu tippen, weiß das Tutorial, dass es dir zuerst sagt, hey, gib den Benutzernamen ein und
+
+05:02.440 --> 05:03.190
+das Passwort.
+
+05:03.190 --> 05:09.010
+Aber in dem Moment, in dem man den Benutzernamen eingegeben hat und das Passwort eintippt, heißt es: Oh, du könntest
+
+05:09.010 --> 05:10.720
+bereit sein, auf "Anmelden" zu klicken.
+
+05:10.720 --> 05:18.640
+Das ist also ein willkürliches Beispiel dafür, wie das Lernprogramm Ihren Fortschritt im Kernsystem verfolgt
+
+05:18.640 --> 05:22.140
+Benutzererfahrung und gibt Ihnen einige hilfreiche Hinweise.
+
+05:22.150 --> 05:26.530
+Es könnte sagen: Hey, hier ist eine Figur, mit der du im Spiel interagieren kannst.
+
+05:26.530 --> 05:32.740
+Klicken Sie auf A, um den Dialog zu starten, und nachdem der Benutzer damit vertraut ist, wollen Sie ihm niemals die
+
+05:32.740 --> 05:34.840
+Klicken Sie auf A, um den Dialog erneut zu starten.
+
+05:34.840 --> 05:35.180
+Richtig?
+
+05:35.260 --> 05:36.370
+Hier das Gleiche.
+
+05:36.370 --> 05:39.700
+Dies sitzt an der Seite und zeigt Informationen an.
+
+05:39.700 --> 05:44.230
+Dies könnte vielleicht nur vorübergehend im Spiel verfügbar sein.
+
+05:44.230 --> 05:51.880
+Aber der Kerngedanke hier ist, dass das Spiel selbst nichts von dem Tutorial weiß.
+
+05:52.300 --> 05:52.870
+Richtig?
+
+05:53.350 --> 05:54.700
+Dann klicke ich auf "Anmelden".
+
+05:54.700 --> 05:55.730
+Ich erhalte eine Fehlermeldung.
+
+05:55.730 --> 05:58.130
+Das Tutorial ist fehlgeschlagen, versuchen Sie es erneut.
+
+05:58.130 --> 06:01.250
+Ich melde mich also ab und benutze den Pass.
+
+06:01.250 --> 06:02.540
+Eins, zwei, drei, vier.
+
+06:02.540 --> 06:05.600
+Das ist, wie der Hinweis zeigt, die richtige Antwort.
+
+06:05.630 --> 06:06.470
+Ich drücke auf "Anmelden".
+
+06:06.470 --> 06:10.070
+Es wird angezeigt, dass du das Tutorial abgeschlossen hast, mal sehen, wie schön das ist.
+
+06:10.070 --> 06:12.920
+Das Tutorial sitzt an der Seite und gibt dir hilfreiche Tipps.
+
+06:12.920 --> 06:15.730
+Es könnte Ihnen sicherlich viel mehr Hinweise geben als das, was hier gezeigt wird.
+
+06:15.740 --> 06:17.960
+Schauen wir mal, wie diese Struktur funktioniert.
+
+06:19.050 --> 06:27.150
+Hier haben wir also die Tutorial-Ansicht, das ist die Benutzeroberfläche hier mit dem.
+
+06:28.640 --> 06:29.190
+Da haben wir es.
+
+06:29.210 --> 06:30.520
+Der Titel und der Körper.
+
+06:30.530 --> 06:32.420
+Es sitzt einfach da oben in der Ecke.
+
+06:32.420 --> 06:33.710
+Einfache Unity UI.
+
+06:35.740 --> 06:42.700
+Dann wird der Mini hier eine Referenz auf diese Ansicht aufnehmen, die wir hier haben.
+
+06:42.970 --> 06:45.370
+Schauen wir uns an, wie der Mini strukturiert ist.
+
+06:47.230 --> 06:48.760
+Hier gibt es also einen Kommentar.
+
+06:48.760 --> 06:49.630
+Ich werde ihn einfach lesen.
+
+06:49.660 --> 06:53.170
+Das Beispiel ist der Haupteinstiegspunkt in die Demo.
+
+06:53.440 --> 06:56.990
+Ein Tutorial muss keine separate Szene laden.
+
+06:57.010 --> 07:03.850
+Das wird hier nur gemacht, um zu zeigen, dass dies ein völlig unabhängiger Code ist, der richtig dekorieren kann
+
+07:03.880 --> 07:07.360
+ein Benutzererlebnis auf einem System ohne Wissen.
+
+07:07.360 --> 07:10.660
+Wir könnten also alles in dieser Szene haben.
+
+07:10.660 --> 07:16.300
+Aber ich zeige, hey, wenn wir dieses Login-Beispiel laden, kann das so separat sein, dass es sein kann
+
+07:16.300 --> 07:17.230
+überlagert werden kann.
+
+07:17.230 --> 07:21.190
+Und gerade diese Illustration der Trennung ist schön, oder?
+
+07:21.580 --> 07:23.920
+Hier nehmen wir also The View auf.
+
+07:24.950 --> 07:30.510
+Nun, die meisten Demoszenen, die mitgeliefert werden, eigentlich alle Demoszenen außer dieser, die mit
+
+07:30.510 --> 07:32.870
+dem Mini beiliegen, sind Demos mit einer Szene.
+
+07:32.930 --> 07:41.990
+Aber auch hier, nachdem ich die Mini geladen habe, gehe ich weiter und lade das Log-in mit dem Mini-Beispiel ein,
+
+07:42.140 --> 07:44.600
+das ist nur der Anmeldeteil.
+
+07:44.600 --> 07:50.630
+Und es wurde lange vor dieser Demo erstellt und weiß nichts über das Tutorial, das auf
+
+07:50.630 --> 07:50.900
+es.
+
+07:50.900 --> 07:53.450
+Es brauchte dafür nicht einmal aktualisiert zu werden.
+
+07:53.630 --> 07:57.620
+Dann mache ich hier unten eine Brücke zum Mini.
+
+08:02.760 --> 08:03.840
+Und dann.
+
+08:07.330 --> 08:09.040
+Ich mache die Verkabelung hier oben.
+
+08:09.250 --> 08:15.880
+Was ich also bei der Erstellung einer Brücke mache, ist, dass ich das Modell aus der geladenen Szene hole, so dass man sich das anschauen kann
+
+08:15.880 --> 08:17.800
+den Code oben ansehen, um zu sehen, wie das gemacht wird.
+
+08:17.800 --> 08:24.790
+Aber jetzt, wo ich weiß, okay, hier ist das Modell aus der geladenen Szene, müssen wir als Tutorial zuhören
+
+08:24.790 --> 08:25.600
+zuhören.
+
+08:25.840 --> 08:36.640
+Ich initialisiere also die Ansicht mit dem Kontext der Kernlogik und erstelle dann einen Tutorial-Controller
+
+08:36.640 --> 08:37.390
+hier.
+
+08:38.330 --> 08:41.570
+Und ich übergebe das Login-Modell und den View.
+
+08:41.660 --> 08:44.930
+Hier ist also die Logik des Tutorials.
+
+08:44.930 --> 08:47.930
+Werfen wir nun einen Blick in den Controller und sehen wir uns an, wie er funktioniert.
+
+08:52.110 --> 08:58.830
+Ich aktualisiere also die Tutorials, das kleine Fenster mit dem Wort Tutorial, um das Tutorial zu starten
+
+08:58.830 --> 08:59.790
+Klarheit zu schaffen.
+
+08:59.910 --> 09:04.230
+Und dann fange ich an, das Anmeldemodell abzuhören.
+
+09:04.470 --> 09:07.150
+Denken Sie daran, ich lade diese zusätzliche Szene.
+
+09:07.170 --> 09:14.100
+Ich greife auf das Modell zu, weil es mit Mini erstellt wurde, also kann ich das Anmeldemodell von
+
+09:14.100 --> 09:18.390
+und dann höre ich auf einen Wert namens Can I log in?
+
+09:19.010 --> 09:23.180
+Und dann höre ich auf verschiedene Befehle.
+
+09:23.300 --> 09:25.820
+Also jedes Mal, wenn ich mich anmelde.
+
+09:28.030 --> 09:31.630
+Login-Schaltfläche aktiviert wird, ist Login wahr.
+
+09:31.630 --> 09:35.820
+Ich kann also darauf achten, so dass ich den Prozess durchlaufen kann.
+
+09:35.830 --> 09:44.020
+Jedes Mal, wenn der Befehl zum Abmelden kommt, jedes Mal, wenn der Befehl zum Anmelden kommt, und jedes Mal, wenn der Befehl zum
+
+09:44.020 --> 09:45.730
+log in completed passiert.
+
+09:45.730 --> 09:48.610
+Es gibt also vier Dinge, die ich mir anhören konnte.
+
+09:48.610 --> 09:56.500
+Theoretisch, wenn man das Tutorial und die Kernlogik gleichzeitig entwickelt, würde der Schritt
+
+09:56.500 --> 09:57.340
+wie folgt aussehen.
+
+09:57.340 --> 10:03.310
+Sobald Sie die Grundstruktur haben, die wir hier haben, nehmen wir an, dass Sie die Idee des Gehens eingeführt haben
+
+10:03.310 --> 10:06.220
+in einem RPG-Spiel auf Charaktere zuzugehen und mit ihnen zu sprechen.
+
+10:06.220 --> 10:13.810
+Du würdest wollen, dass dein Kern-Login-Modell hier ein Ereignis wie "Started conversation with character equals" ausgibt
+
+10:13.810 --> 10:14.470
+Wahr.
+
+10:14.500 --> 10:19.960
+Oder hier ist ein neuer Befehl, der den Befehl Konversation beginnen ausgibt.
+
+10:19.990 --> 10:26.470
+Beide Befehle sollten Teil der Kernlogik des Spiels sein und aktualisiert und versendet werden.
+
+10:26.500 --> 10:33.260
+Dann kann das Tutorial, wie wir hier sehen, entweder durch das Modell oder durch die
+
+10:33.260 --> 10:37.490
+Kontext-Befehls-Manager einklinken und auf diese Dinge hören.
+
+10:37.640 --> 10:45.200
+Der Nutzen hier unten ist, dass jedes Mal, wenn die Abmeldung in der Kernlogik passiert, ich
+
+10:45.200 --> 10:53.180
+den Text des Tutorials aktualisieren, um die erste Phrase von okay, it's time to enter login, enter username
+
+10:53.180 --> 10:53.990
+und Passwort ein.
+
+10:54.440 --> 11:01.430
+Jeder Zeitpunkt, an dem man sich anmelden kann, wird geändert, da die Kernlogik weiß, dass man sich zu diesem Zeitpunkt anmelden können sollte
+
+11:01.430 --> 11:02.510
+Moment einloggen können oder nicht?
+
+11:02.540 --> 11:07.340
+Das Tutorial aktualisiert sich wieder und sagt ein wenig mehr Informationen.
+
+11:07.700 --> 11:15.680
+Jedes Mal, wenn der Benutzer sich angemeldet hat, sagt das Tutorial, dass er auf das Ergebnis wartet, und jedes Mal, wenn
+
+11:15.680 --> 11:21.920
+die Anmeldung beendet ist, hört es zu und sagt: "Nun, wenn du erfolgreich warst, dann bist du erfolgreich
+
+11:21.920 --> 11:25.790
+oder wenn du nicht erfolgreich warst, dann hast du das Tutorial nicht bestanden.
+
+11:25.820 --> 11:29.360
+Es handelt sich hier also um eine willkürliche Demo.
+
+11:29.720 --> 11:32.120
+Dies ist ein ziemlich dummes Beispiel.
+
+11:32.780 --> 11:34.910
+Um Hilfe für ein Formular wie dieses zu geben.
+
+11:34.910 --> 11:40.520
+Aber man kann sich vorstellen, dass es in einem Spiel viele verschiedene Teile der Kernlogik gibt, die man haben möchte
+
+11:40.520 --> 11:43.370
+für das Tutorialsystem zugänglich machen möchte.
+
+11:43.580 --> 11:50.450
+Theoretisch könnten also zwei verschiedene Teams, nur um noch einmal die Trennung zu verdeutlichen, an dem einen Team arbeiten
+
+11:50.450 --> 11:55.730
+an der Kernlogik des Spiels arbeiten und eines an der Logik des Tutorials und anderen Systemen.
+
+11:55.730 --> 12:01.490
+Aber ich zeige hier nur die Trennung und sie sprechen alle durch das Login-Modell und
+
+12:01.490 --> 12:02.270
+die Befehle.
+
+12:02.270 --> 12:03.170
+Das war's also.
+
+12:03.200 --> 12:05.390
+Schauen wir uns jetzt noch einmal die laufende Demo an.
+
+12:07.120 --> 12:12.220
+Auch hier wird der größte Teil der Bildschirmfläche von einer anderen Szene geladen.
+
+12:12.220 --> 12:15.450
+Es weiß nicht, dass es im Tutorial geladen wurde.
+
+12:15.460 --> 12:22.060
+Das Tutorial sitzt oben und hat nur ein kleines Stückchen Ansicht in der Ecke und zeigt gut, es ist
+
+12:22.060 --> 12:23.050
+das Tutorial.
+
+12:23.050 --> 12:25.000
+Geben Sie den Benutzernamen und das Passwort ein.
+
+12:25.000 --> 12:27.400
+Ich fange an zu tippen und es wird aktualisiert.
+
+12:27.400 --> 12:29.860
+Es sagt okay, klicken Sie auf Anmelden.
+
+12:30.520 --> 12:31.800
+Jetzt klicke ich auf Anmelden.
+
+12:31.840 --> 12:33.610
+Es heißt, ich warte auf das Ergebnis.
+
+12:33.610 --> 12:35.410
+Und dann heißt es: Oh, Sie sind gescheitert.
+
+12:35.470 --> 12:37.150
+Und ich klicke auf Abmelden.
+
+12:37.180 --> 12:39.310
+Das Lernprogramm ändert sich wieder.
+
+12:39.340 --> 12:43.020
+Jetzt kann ich etwas eintippen und dann gebe ich hier die richtige Antwort ein.
+
+12:43.030 --> 12:44.080
+Eins, zwei, drei, vier.
+
+12:44.320 --> 12:45.310
+Klicken Sie, melden Sie sich an.
+
+12:45.340 --> 12:46.720
+Hier steht Warten auf ein Ergebnis.
+
+12:46.720 --> 12:49.250
+Und dann steht da: Sie haben das Tutorial abgeschlossen.
+
+12:49.270 --> 12:55.960
+Es ist also so eng integriert, als ob es Teil der Kernlogik wäre, aber man hat den Vorteil, dass
+
+12:55.960 --> 12:56.920
+Trennung.
+
+12:56.920 --> 13:02.740
+Im früheren Teil dieses Videos habe ich einen der Vorteile dieses Tutorials erwähnt.
+
+13:03.870 --> 13:09.030
+Getrennt zu sein bedeutet, dass man es vielleicht nur für die erste Minute des Spiels laufen lassen möchte.
+
+13:09.240 --> 13:14.730
+Ich könnte das Tutorial oben in der Ecke einfach deaktivieren und die Hauptlogik des Spiels muss nicht wissen, dass
+
+13:14.730 --> 13:16.020
+über das Tutorial.
+
+13:16.020 --> 13:18.290
+Sie braucht nicht zu wissen, ob es aktiviert ist oder nicht.
+
+13:18.300 --> 13:22.020
+Oder stellen Sie sich vor, dass es ein Einstellungsmenü gibt und die Einstellungen haben.
+
+13:22.020 --> 13:23.010
+Markieren Sie dieses Kästchen.
+
+13:23.010 --> 13:27.470
+Wenn du das Tutorial willst, markiere dieses Kästchen, wenn du das Tutorial nicht willst.
+
+13:27.480 --> 13:33.270
+Damit könnte auch das kleine Fenster in der Ecke ein- oder ausgeschaltet werden.
+
+13:34.360 --> 13:34.770
+Sehr gut.
+
+13:34.780 --> 13:36.160
+Das war's also mit dieser Demo.

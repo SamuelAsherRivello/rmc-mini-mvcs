@@ -1,0 +1,17 @@
+{
+    "name": "RMC.Core.Mini.Samples.DataBindingMini.Runtime",
+    "rootNamespace": "",
+    "references": [
+        "GUID:4245cf09d0036f34e8bb2477b3fed3c2",
+        "GUID:35f261089a2efb44e981edcc3e3d86d9"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

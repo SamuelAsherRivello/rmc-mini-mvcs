@@ -1,0 +1,709 @@
+WEBVTT
+
+00:03.200 --> 00:04.700
+Hier sind wir in Unity.
+
+00:04.700 --> 00:10.490
+Ich habe ein neues Projekt, in dem ich das Mini-VCs-Framework installiert und die Beispiele importiert habe.
+
+00:10.520 --> 00:13.960
+Hier ist eine Dateistruktur für die Version, die viele hat.
+
+00:13.970 --> 00:19.660
+Wir haben Ressourcen, einschließlich dieser Textdatei, die wir laden werden, um einen Aufruf der Dienstebene zu simulieren.
+
+00:19.670 --> 00:23.750
+Wir haben einen Wissenschaftsordner mit unserer einen Szene und dann haben wir Laufzeitskripte.
+
+00:23.750 --> 00:29.210
+Wir haben noch keinen Blick auf die Struktur des MVCs-Codes in einem Beispiel geworfen, also lassen Sie uns das tun.
+
+00:29.210 --> 00:34.370
+Nun, beginnend am unteren Ende, haben wir die Beispieldatei selbst, die an ein Spielobjekt in der
+
+00:34.370 --> 00:34.880
+Szene.
+
+00:34.880 --> 00:37.010
+Dann haben wir das Protokoll in der Miniklasse.
+
+00:37.010 --> 00:40.880
+Das ist die höchste Struktur der MVC-Welt.
+
+00:40.880 --> 00:47.900
+Dann erstelle ich, wie üblich, je einen Ordner für den Model-View-Controller und den Service.
+
+00:47.900 --> 00:50.750
+Innerhalb der View gibt es eine Klasse, die Login View.
+
+00:50.750 --> 00:54.140
+Innerhalb des Dienstes gibt es eine Klasse, den Login-Dienst.
+
+00:54.140 --> 00:55.250
+Innerhalb des Modells.
+
+00:55.250 --> 01:02.210
+Wir haben zwei Klassen, eine Klasse für die Benutzerdaten und das Hauptmodell selbst für die Anmeldung innerhalb der
+
+01:02.210 --> 01:03.200
+Controller Ordner.
+
+01:03.200 --> 01:07.070
+Ich habe den Log-in-Controller, der der Hauptcontroller für das Projekt ist.
+
+01:07.160 --> 01:12.050
+Es ist auch sinnvoll, hier einen Unterordner für alle Befehle eines Projekts anzulegen.
+
+01:12.050 --> 01:16.970
+Ich werde ein wenig mehr über Befehle sprechen, da wir sie im vorherigen Code noch nicht betrachtet haben
+
+01:16.970 --> 01:17.770
+Sitzungen.
+
+01:17.780 --> 01:22.940
+Obwohl dies ein relativ einfaches Beispiel ist, wäre es in einem Produktionsprojekt sinnvoll
+
+01:22.940 --> 01:29.330
+dieselbe Ordnerstruktur zu verwenden, und wir würden sehen, dass jeder der Ordner mit mehreren Modellen bestückt wird,
+
+01:29.330 --> 01:36.680
+mehreren Views und Services, vielen Controllern und wahrscheinlich auch einem wirklich robusten Ordner voller
+
+01:36.680 --> 01:37.490
+Befehlen.
+
+01:37.490 --> 01:44.330
+Man kann sich den Befehlsmanager wie einen Radiosender vorstellen, der an jeden der Konzerne senden kann.
+
+01:44.330 --> 01:50.510
+Also Nachrichten auf hoher Ebene, die dort angebracht sind, Dinge wie in diesem Fall das Einloggen, das Loggen
+
+01:50.510 --> 01:51.920
+Abmelden, Löschen des Bildschirms.
+
+01:51.920 --> 01:55.730
+Wenn wir eine solche Funktion hätten, würden diese hier als einzelne Befehle stehen.
+
+01:55.730 --> 01:58.340
+Hier führen wir also das Minibeispiel aus.
+
+01:58.340 --> 02:01.070
+Wie der Hinweis zeigt, gibt es ein vorgeschlagenes Passwort.
+
+02:01.070 --> 02:03.410
+Das ist das einzige Passwort, das hier akzeptabel ist.
+
+02:03.440 --> 02:05.570
+Wir prüfen gegen eine lokale Datei.
+
+02:05.570 --> 02:09.170
+Ich habe korrekte Daten und werde sie abschicken und wir sehen Erfolg.
+
+02:09.170 --> 02:14.090
+Was hier passiert, ist, dass die Serviceschicht eine lokale Textdatei lädt und sicherstellt, dass die Daten
+
+02:14.090 --> 02:17.990
+der Benutzer in die Benutzeroberfläche eingegeben hat, mit dem übereinstimmt, was in dieser Textdatei steht.
+
+02:17.990 --> 02:23.960
+Es ist ein sehr vereinfachter Ersatz für eine komplexe Backend-Interaktion.
+
+02:25.330 --> 02:28.260
+Schauen wir uns den Code an und beginnen mit dem Beispiel auf hoher Ebene.
+
+02:28.270 --> 02:32.800
+Hier ist das Beispiel selbst, ein Verhalten, das auf einem Spielobjekt in der Szene sitzt.
+
+02:32.830 --> 02:37.570
+Bei vielen MVCs ist es nicht erforderlich, dass irgendeines seiner Anliegen ein Verhalten ist.
+
+02:37.570 --> 02:45.070
+Aber in diesem speziellen Beispiel, wie es wahrscheinlich auch in Ihrer Arbeit üblich ist, haben Sie den View b amount
+
+02:45.070 --> 02:45.880
+des Verhaltens.
+
+02:46.000 --> 02:52.840
+Eine einfache Möglichkeit, das hier einzubinden, ist, das als Menge des Verhaltens in einem Spiel zu verwenden
+
+02:52.840 --> 02:58.240
+Objekt in der Szene zu haben, es als serialisierte Referenz hierher zu ziehen, und dann in der Lage zu sein, es in die
+
+02:58.240 --> 03:00.260
+Log in Mini-Konstruktor übergeben, wie wir hier sehen.
+
+03:00.280 --> 03:03.310
+Werfen wir einen kurzen Blick auf die Szene, um zu sehen, wie das verdrahtet ist.
+
+03:03.310 --> 03:05.950
+Hier in der Szene muss ich mich also in View selected einloggen.
+
+03:05.950 --> 03:11.360
+Du kannst im Inspektorfenster sehen, dass es ein Login View Skript gibt, das auf diesem Spielobjekt sitzt.
+
+03:11.380 --> 03:17.110
+Wenn das Beispiel selbst ausgewählt ist, sehen wir ein serialisiertes Feld, das auf eine Referenz wartet
+
+03:17.110 --> 03:18.270
+auf das Protokoll in der Ansicht.
+
+03:18.280 --> 03:22.300
+Das ist wirklich die einzige Verkabelung, die wir in der Szene selbst brauchen.
+
+03:22.570 --> 03:28.420
+Es gibt alternative Wege, dies zu tun, aber es ist sehr vertraut für uns, Mono-Verhaltensweisen wie eine Ansicht zu haben
+
+03:28.420 --> 03:32.230
+in der Szene sitzen und einen Verweis in ein serialisiertes Feld hierher ziehen.
+
+03:32.230 --> 03:38.080
+Zurück im Beispiel hier innerhalb des Starts, nachdem wir die Klasse erstellt und den View übergeben haben, können wir einfach
+
+03:38.080 --> 03:39.070
+initialisieren.
+
+03:39.070 --> 03:40.510
+Das war's auf dieser Ebene.
+
+03:40.510 --> 03:42.340
+Werfen wir einen Blick auf die nächste Klasse.
+
+03:42.820 --> 03:45.100
+Hier befinden wir uns in der Miniklasse log in.
+
+03:45.490 --> 03:51.490
+Dieses Beispiel ist ziemlich konventionell, da es einen Context, ein Model, einen View-Controller und einen Service benötigt
+
+03:51.490 --> 03:54.970
+eines von jedem, so dass ich hier die Vorteile der Basisklasse nutzen kann.
+
+03:54.970 --> 04:02.830
+Viele NPCs erweitern diese Klasse und geben die starken Typen für jeden der gewünschten Belange im Konstruktor ein
+
+04:02.830 --> 04:07.210
+Ich übergebe nur die Ansicht und innerhalb der Initialisierung mache ich den Großteil der Arbeit.
+
+04:07.210 --> 04:10.970
+Hier erstelle ich den Context, das Model, den View und den Controller.
+
+04:10.990 --> 04:15.340
+Beachten Sie, dass der Controller der einzige Konstruktor ist, der mehrere Argumente benötigt.
+
+04:15.340 --> 04:21.400
+Das gibt uns einen Hinweis darauf, dass der Controller ein bisschen mehr weiß und in der Struktur mehr Bedeutung hat.
+
+04:21.400 --> 04:23.880
+Und schließlich initialisieren wir jeden seiner Teile.
+
+04:23.890 --> 04:25.360
+Das war's für diese Klasse.
+
+04:25.360 --> 04:30.940
+Im vorherigen Beispielcode gehen wir durch jeden Model-View-Controller und Service.
+
+04:30.940 --> 04:34.510
+Der Kürze halber ist die Serviceschicht hier sehr ähnlich.
+
+04:34.510 --> 04:38.830
+Bitte sehen Sie sich den Code an, wenn Sie möchten, und auch das Modell.
+
+04:38.830 --> 04:42.670
+Die einzigartigen Aspekte hier sind also die View und der Controller.
+
+04:42.670 --> 04:43.900
+Werfen wir einen Blick auf beide.
+
+04:44.200 --> 04:45.460
+Hier ist die Login-Ansicht.
+
+04:45.460 --> 04:48.790
+Denken Sie daran, dass dies auf einem Spielobjekt in der Szene sitzt.
+
+04:48.790 --> 04:54.010
+Es wird nicht spontan erstellt, wie einige der anderen Probleme in dieser speziellen Demo.
+
+04:54.010 --> 04:58.720
+Ich scrolle hier nach unten, damit wir einen Blick auf die hohe Ebene der Klasse werfen können, und dann gehe ich Schritt für Schritt vor
+
+04:58.720 --> 04:59.740
+Zeile für Zeile durchgehen.
+
+05:32.460 --> 05:34.990
+Zuerst haben wir einige benutzerdefinierte Unity-Ereignisse.
+
+05:35.010 --> 05:38.960
+Dies ist nicht wirklich ein spezifischer Ablauf für diese Mini-MVCs.
+
+05:38.970 --> 05:40.580
+Es ist eine allgemeine Praxis.
+
+05:40.590 --> 05:46.800
+Jedes Mal, wenn Sie ein Unity-Ereignis innerhalb von Unity senden wollen und Sie wollen einen langen Typ an Parameter senden,
+
+05:46.800 --> 05:52.800
+wie wir hier sehen, ist es nicht wirklich wichtig, dass wir uns die Details der Klassen ansehen
+
+05:52.800 --> 05:55.140
+weil es hier keine Implementierung gibt.
+
+05:55.140 --> 06:01.610
+Wir deklarieren die Klasse nur, um ihr einen Namen zu geben und um anzugeben, welchen Subtyp sie enthalten soll.
+
+06:01.620 --> 06:08.490
+Das Unity-Ereignis log in zum Beispiel nimmt die Benutzerdaten an, wenn es aufgerufen wird, und übergibt diese Informationen
+
+06:08.490 --> 06:08.970
+allein.
+
+06:08.970 --> 06:12.340
+Dies ist also die erste Ansicht, die wir gesehen haben, die das Verhalten von Mono erweitert.
+
+06:12.360 --> 06:17.910
+Erinnern Sie sich daran, dass bei vielen MVCs die Verwendung von mounted behaviors völlig optional ist, aber wahrscheinlich in jedem
+
+06:17.910 --> 06:24.270
+Beispiel von beliebiger Komplexität und sicherlich in einem produktiven Anwendungsfall, würden Sie das Mono-Verhalten für
+
+06:24.270 --> 06:25.190
+Ihre Ansichten.
+
+06:25.200 --> 06:30.600
+Das liegt daran, dass die Rolle der Ansicht darin besteht, mit Benutzereingaben und Elementen der Benutzeroberfläche umzugehen.
+
+06:30.600 --> 06:34.540
+Und in Unity macht es einfach mehr Sinn, Mono-Verhaltensweisen einzubinden.
+
+06:34.560 --> 06:38.040
+Als nächstes deklarieren wir Eigenschaften und hier Felder.
+
+06:38.430 --> 06:44.610
+Beachten Sie, dass diese UI-Elemente die gleichen sind wie in der nicht-Mini-MVC-Version, die wir zuvor gesehen haben.
+
+06:44.640 --> 06:48.330
+Die Idee ist, dass sie in jedem der Beispiele gleich aussehen und sich gleich verhalten.
+
+06:48.330 --> 06:53.040
+Sie werden hier also eine Menge vertrauten Code aus dem letzten Abschnitt hier in der Initialisierung sehen.
+
+06:53.040 --> 06:55.080
+Wir haben ein paar interessante Dinge zu tun.
+
+06:55.080 --> 07:02.340
+Zuerst haben wir also einen Block von UI Buttons und wir abonnieren die Unity Events, die wir in
+
+07:02.340 --> 07:03.960
+einer nicht mini MVCs Version sehen würden.
+
+07:03.960 --> 07:05.100
+Dies ist ein ziemlicher Standard.
+
+07:05.100 --> 07:09.630
+Jedes Mal, wenn Sie eine Rückmeldung von der Unity-Benutzeroberfläche erhalten möchten, abonnieren Sie die Unity-Events.
+
+07:09.630 --> 07:12.890
+Aber dieser zweite Abschnitt ist einzigartig für dieses Framework.
+
+07:12.900 --> 07:17.520
+Hier verwenden wir den Kontext, der von jedem Konzern und jedem Zugriff verfügbar ist.
+
+07:17.520 --> 07:18.640
+Der Befehl Manager.
+
+07:18.660 --> 07:24.450
+Auch hier werde ich im Laufe des Beispiels noch ein wenig mehr über den Befehlsmanager sprechen, um ihn zu vertiefen.
+
+07:24.540 --> 07:29.910
+Der Befehlsmanager sitzt auf dem Kontext und der Kontext wird an alle Bedenken weitergegeben.
+
+07:29.910 --> 07:37.290
+Eines der Dinge, die man mit dem Befehlsmanager tun kann, ist, sich für verschiedene Benachrichtigungen anzumelden
+
+07:37.290 --> 07:38.910
+die als Befehle eintreffen.
+
+07:39.390 --> 07:41.310
+Das andere ist, dass man sie aufrufen kann.
+
+07:41.310 --> 07:48.240
+Denken Sie daran, dass keiner der Konzerne, der sie hinzufügt oder aufruft, wissen muss, wer zuhört
+
+07:48.240 --> 07:54.000
+oder wer sonst den Befehlsmanager aufruft, ist der Mittelsmann, der zwischen den beiden Schichten von
+
+07:54.000 --> 07:55.500
+dem Beobachter und dem Absender sitzt.
+
+07:55.710 --> 08:01.560
+Das Schöne daran ist, dass man blind eine Nachricht senden kann, etwa an einen Radiosender, der
+
+08:01.560 --> 08:03.480
+einfach in den Himmel sendet.
+
+08:03.480 --> 08:08.910
+Und überall dort, wo jemand zufällig auf diese Frequenz oder diesen speziellen Befehl eingestellt ist, erhält er
+
+08:08.910 --> 08:09.690
+die Nachricht.
+
+08:09.690 --> 08:15.450
+Und wenn wir in dieser Klasse unter die Codezeilen gehen, sehen wir, dass wir die Ansicht oft benutzen, um zu fragen
+
+08:15.450 --> 08:15.900
+Einigkeit.
+
+08:15.900 --> 08:20.880
+UI etwas angeklickt wurde und dann übersetzen wir das in einen Befehl.
+
+08:20.880 --> 08:22.410
+Wir werden sehen, wie das hier gemacht wird.
+
+08:22.440 --> 08:27.510
+Wie im vorigen Beispiel wird jedes Mal, wenn der Benutzer etwas in die Textfelder eingibt oder sie löscht, einfach
+
+08:27.510 --> 08:29.410
+aktualisiert die Login-Schaltfläche.
+
+08:29.430 --> 08:33.960
+Die Idee ist, dass Sie überprüfen, ob die Eingabe des Benutzers möglicherweise korrekt ist.
+
+08:33.960 --> 08:38.760
+Wir prüfen einfach, ob das Feld leer ist oder nicht leer ist.
+
+08:38.760 --> 08:43.920
+Immer wenn die Login-Schaltfläche angeklickt wird, übersetzen wir das in ein View-Ereignis und senden es aus.
+
+08:43.920 --> 08:47.520
+In diesem Bereich wissen wir nicht, wer zuhört oder ob jemand zuhört.
+
+08:47.520 --> 08:51.360
+Aber im nächsten Abschnitt werden wir sehen, wer hier der Teilnehmer ist.
+
+08:51.900 --> 08:52.500
+Das ist dasselbe.
+
+08:52.500 --> 08:55.290
+Wenn die Abmeldeschaltfläche angeklickt wird, senden wir diese Nachricht aus.
+
+08:55.290 --> 08:59.790
+Wir übersetzen also eine Art lokales Einheitsereignis in ein benutzerdefiniertes Ansichtsereignis.
+
+09:00.640 --> 09:02.560
+Als Teil einer allgemeinen Best Practice.
+
+09:02.560 --> 09:07.210
+Was auch immer wir innerhalb der Zerstörung abonnieren, hier melden wir uns ab.
+
+09:07.510 --> 09:12.820
+Oben in dieser Klasse haben wir den Befehl Logout abonniert und hier sagt die Ansicht
+
+09:12.820 --> 09:20.110
+Jedes Mal, wenn ein Konzern den Logout-Befehl sendet, erfasse ich das und leere meine Felder und ich
+
+09:20.110 --> 09:22.360
+aktualisiere meine Schaltfläche Klicken können.
+
+09:22.630 --> 09:25.750
+Und die Ansicht hört auch auf die Eintragung der Anmeldung.
+
+09:25.960 --> 09:31.660
+Wann immer das passiert, wird die UI für die Übermittlung vorbereitet und die Views hören auch zu, wenn
+
+09:31.660 --> 09:32.950
+die Anmeldung abgeschlossen ist.
+
+09:33.250 --> 09:38.440
+Dies ist, glaube ich, die größte Methode in dieser Klasse, aber sie funktioniert genau wie die Nicht-Mini-Methode
+
+09:38.440 --> 09:39.040
+Version.
+
+09:39.040 --> 09:42.940
+Du kannst dir das also anschauen und sehen, wie ich die Details hier beschreibe.
+
+09:42.940 --> 09:44.650
+Wir machen wirklich die gleichen Dinge.
+
+09:45.130 --> 09:48.430
+Nur um ein Beispiel zu geben, habe ich hier ein bisschen zusätzlichen Code.
+
+09:48.430 --> 09:55.060
+Der hervorgehobene Teil hier zeigt, dass jeder Befehl mit allen relevanten Daten einhergeht.
+
+09:55.390 --> 10:01.870
+Wenn also die Anmeldung abgeschlossen ist, haben wir die Benutzerdaten und können diese auf der Benutzeroberfläche anzeigen, wenn wir wollen,
+
+10:02.350 --> 10:10.330
+Um eine vollständige Alternative zu diesem Ansatz zu demonstrieren, und zwar in jedem Bereich, einschließlich der Ansicht, können wir
+
+10:10.330 --> 10:14.350
+können wir den Kontext fragen: "Hey, besorg mir dieses bestimmte Modell.
+
+10:14.350 --> 10:20.950
+Das Modell wird geholt, wenn es existiert, und wir können alles tun, was wir wollen, einschließlich der Debug-Protokollierung der
+
+10:20.950 --> 10:21.700
+Werte.
+
+10:21.700 --> 10:25.240
+Dies ist also ein weiteres Beispiel für die Flexibilität.
+
+10:25.240 --> 10:31.450
+Die Konvention hier ist, dass es wahrscheinlich am besten ist, eine Nachricht zusammen mit dem Befehl zu senden.
+
+10:31.450 --> 10:37.480
+Es gibt also weniger Kopplung, es gibt weniger Wissen dieses Konzerns über die Struktur eines anderen Konzerns.
+
+10:37.480 --> 10:43.510
+Der hervorgehobene Code hier suggeriert, dass die Ansicht weiß, welche Daten in welchem Modell zu betrachten sind,
+
+10:43.510 --> 10:45.790
+was als Übertreibung angesehen werden könnte.
+
+10:45.790 --> 10:52.900
+Aber je nach Anwendungsfall und auch je nachdem, wie Ihre Benutzeroberfläche strukturiert ist, kann es durchaus sinnvoll sein
+
+10:52.900 --> 10:57.730
+sinnvoll sein, dass Ihre Ansicht bestimmte Modelle zum Rendern dieser Daten verwendet.
+
+10:57.730 --> 11:00.820
+Wir wollen nicht, dass die Ansicht die Modelldaten direkt beeinflusst.
+
+11:00.820 --> 11:02.470
+Das wäre eine schlechte Praxis.
+
+11:02.470 --> 11:04.180
+Das ist das Ende der View-Klasse hier.
+
+11:04.180 --> 11:09.010
+Bevor wir weitermachen, möchte ich mir einen Moment Zeit nehmen und einen Blick auf den Befehlsmanager und den Befehl
+
+11:09.010 --> 11:12.550
+Struktur ansehen, weil wir uns das im vorherigen Beispielcode noch nicht angeschaut haben.
+
+11:12.850 --> 11:19.450
+Erinnern Sie sich also daran, dass wir in der gleichen Klasse oben in der Initialisierung Befehlszuhörer hinzufügen.
+
+11:19.450 --> 11:22.060
+Schauen wir uns also an, was das genau macht.
+
+11:22.060 --> 11:24.540
+Wir beginnen mit der Betrachtung des Kontextes zur Überprüfung.
+
+11:24.550 --> 11:29.800
+Denken Sie also daran, dass die Kontextklasse wichtig ist, weil sie den Model Locator und den Command Manager enthält
+
+11:30.100 --> 11:32.830
+Relevant für diese Diskussion ist der Befehlsmanager.
+
+11:32.830 --> 11:37.450
+Man kann sich den Befehlsmanager als eine Liste von verschiedenen Befehlen vorstellen, die registriert wurden.
+
+11:37.450 --> 11:44.530
+Die API ermöglicht es Ihnen, diese Befehle abzuhören und beliebige Befehle aufzurufen, um die Flexibilität zu erhöhen.
+
+11:44.530 --> 11:49.960
+Der Befehl muss ein AI-Befehl sein, aber beachten Sie, dass der I-Befehl hauptsächlich eine Marker-Schnittstelle ist.
+
+11:49.960 --> 11:54.070
+Wir haben keine garantierte Implementierung, abhängig von den Bedürfnissen, die Sie haben.
+
+11:54.070 --> 12:01.510
+Möglicherweise möchten Sie hier eine alternative Implementierung haben, die eine Art von Ausführungs- und Rückgängigmachungsfunktionalität erfordert.
+
+12:01.510 --> 12:08.470
+Aber für den grundlegenden Anwendungsfall, den ich in diesen Beispielen habe, gebe ich es einfach als ein dummes Objekt weiter
+
+12:08.470 --> 12:09.400
+von Parametern.
+
+12:09.400 --> 12:14.470
+Schauen wir uns eines der Beispiele an, die ich im Fall des eingereichten Logins verwende.
+
+12:14.830 --> 12:16.270
+Schauen wir uns die Struktur an.
+
+12:16.270 --> 12:22.360
+Wir können sehen, dass der Befehl log in submitted, wie es erforderlich ist, die Schnittstelle des Befehls I implementiert
+
+12:22.360 --> 12:25.660
+soweit die Implementierung im Inneren an die eigenen Bedürfnisse angepasst ist.
+
+12:25.660 --> 12:31.060
+Alles, was es wirklich tut, ist ein Konstruktor, der genau die Daten aufnimmt, die wir für diese Art von Operation benötigen
+
+12:31.060 --> 12:32.730
+und sie hier lokal hält.
+
+12:32.740 --> 12:34.780
+Gleich werden wir sehen, wo sie aufgerufen wird.
+
+12:34.780 --> 12:39.790
+Aber denken Sie daran, es ist die Ansicht, die auf diesen Befehl wartet und immer dann, wenn der Log-in-Befehl übermittelt wird
+
+12:39.790 --> 12:45.610
+geschieht, wird die Benutzeroberfläche aktualisiert und die Benutzerdaten, die wir hier sehen, werden verwendet
+
+12:45.610 --> 12:47.200
+um die Benutzeroberfläche aufzufüllen.
+
+12:47.230 --> 12:48.910
+Das war's mit der Login-Ansicht.
+
+12:48.910 --> 12:52.780
+Zurück zur Login-Miniklasse auf hoher Ebene, wir haben uns die Ansicht angesehen.
+
+12:52.780 --> 12:54.910
+Jetzt schauen wir uns endlich den Controller an.
+
+12:54.910 --> 12:56.380
+Das ist das letzte Teil des Puzzles.
+
+12:56.380 --> 13:02.680
+Der Login-Controller erweitert den Base-Controller und wie in jedem Fall, wenn man die Mini-MVCs verwendet, erweitert man
+
+13:02.680 --> 13:04.030
+der Basis optional ist.
+
+13:04.030 --> 13:08.620
+Hier bekommen wir einige kostenlose Funktionen, die ich in früheren Codebeispielen erwähnt habe, also werde ich
+
+13:08.620 --> 13:09.690
+überspringe ich das vorerst.
+
+13:09.700 --> 13:13.030
+Innerhalb der Initialisierung hat der Controller Referenzen.
+
+13:13.030 --> 13:15.390
+Nun zu den anderen wichtigen Aspekten.
+
+13:15.400 --> 13:21.790
+Beachten Sie, was wir hier tun, ist, dass wir alle Ereignisse abhören, die für uns interessant sind.
+
+13:21.790 --> 13:26.020
+Wir hören auf das Modell, wir hören auf die Ansicht und wir hören auf den Dienst.
+
+13:26.350 --> 13:28.870
+Sie können sehen, dass der Controller der Klebstoff ist.
+
+13:28.870 --> 13:34.330
+Er ist die mittlere Person, die zwischen diesen verschiedenen Schichten sitzt, auf ein Ereignis der einen hört und als
+
+13:34.330 --> 13:37.150
+wir gleich sehen werden, in der Lage ist, Kommunikation nach außen zu senden.
+
+13:37.150 --> 13:38.560
+Hier ist ein perfektes Beispiel.
+
+13:38.560 --> 13:43.750
+Wir hören zu, wenn sich The View anmeldet, und wenn das passiert, rufen wir einen Befehl auf.
+
+13:43.750 --> 13:49.840
+Stellen Sie sich also eine Art Abhören mit zwei Tassen und einer langen Zeichenkette vor, eine sehr gekoppelte Art der Kommunikation.
+
+13:49.840 --> 13:54.820
+Hier hört der Controller direkt auf den View, um ein bestimmtes Ereignis zu erfahren.
+
+13:54.820 --> 13:56.140
+Das ist es, was wir hier sehen.
+
+13:56.140 --> 14:00.070
+Dann wird das auf einen viel breiteren Radiosendertyp übertragen.
+
+14:00.130 --> 14:02.180
+Broadcast, wenn es den Befehl sendet?
+
+14:02.200 --> 14:03.010
+Ganz genau.
+
+14:03.010 --> 14:08.230
+Jedes Unternehmen in diesem Projekt, das Zugriff auf denselben Kontext hat, was alle vier unserer Ebenen sind
+
+14:08.230 --> 14:14.170
+auf denselben Kontext zugreifen können, können wir dieses Protokoll abonnieren und abhören, wenn ein Befehl übermittelt wird
+
+14:14.170 --> 14:15.460
+der hier abgefeuert wird.
+
+14:15.460 --> 14:19.240
+Und der konsumierende Bereich weiß nicht unbedingt, welcher Bereich ihn gesendet hat.
+
+14:19.240 --> 14:22.870
+Und wir halten das für eine gute Praxis, die entkoppelte Kommunikation.
+
+14:22.870 --> 14:27.970
+Also noch einmal, wir rufen diesen Befehl auf und sagen dann dem Dienst, dass er den Anmeldeprozess starten soll.
+
+14:27.970 --> 14:35.590
+Immer wenn die Abmeldung erfolgt, übersetzen wir dieses Ereignis in einen Befehl, wenn der Dienst fertig ist
+
+14:35.590 --> 14:42.010
+und er sich erfolgreich angemeldet hat, können wir das Modell direkt aktualisieren, was eine optimale Vorgehensweise ist.
+
+14:42.010 --> 14:45.010
+Die Controller können das Modell lesen und beschreiben.
+
+14:45.010 --> 14:47.020
+Und schließlich senden wir einen Befehl aus.
+
+14:47.020 --> 14:51.310
+Jetzt gibt es viele verschiedene Möglichkeiten, wie man diese Kommunikation strukturieren kann.
+
+14:51.310 --> 14:58.000
+Anstatt das Modell direkt zu aktualisieren und den Befehl zu senden, könnten wir zum Beispiel in
+
+14:58.000 --> 15:05.410
+theoretisch einfach das Modell aktualisieren und jeder Konzern, der wissen will, wann das Modell aktualisiert wird, würde direkt
+
+15:05.410 --> 15:07.720
+das Modell abonnieren, was machbar ist.
+
+15:07.720 --> 15:13.870
+Eine andere Alternative ist, dass der Controller nicht direkt auf das Modell einwirkt, indem er Werte setzt,
+
+15:13.870 --> 15:20.260
+könnten wir nur den Befehl senden, und ein anderer Bereich wäre dafür verantwortlich, auf diesen Befehl zu hören
+
+15:20.260 --> 15:21.640
+und das Modell zu aktualisieren.
+
+15:21.640 --> 15:26.890
+Nun, für ein einfaches Projekt, in dem wir ein Modell und einen Controller haben, ist das, was ich hier zeige, wahrscheinlich
+
+15:26.890 --> 15:33.610
+am besten geeignet, aber in einem viel größeren Projekt, haben Sie vielleicht einen Controller und ein Model Paar für verschiedene
+
+15:33.610 --> 15:35.440
+Bereiche der Anwendung haben.
+
+15:35.440 --> 15:42.100
+Ein Controller könnte also sagen: Hey, ich weiß, wenn ich diese bestimmte Nachricht bekomme, dann sage ich einfach
+
+15:42.100 --> 15:46.660
+mit einem Befehl an die anderen Konzerne, wie sie reagieren sollen.
+
+15:46.660 --> 15:52.450
+So kann man sogar die Controller-Logik in mehrere Controller entkoppeln.
+
+15:52.450 --> 15:56.530
+Und schließlich senden wir jedes Mal, wenn sich das Modell ändert, einen Befehl aus.
+
+15:56.530 --> 15:58.210
+Das war's für diese komplette Demo.
+
+15:58.210 --> 16:00.280
+Werfen wir noch einen Blick auf die laufende Anwendung.
+
+16:00.280 --> 16:01.150
+Hier sind wir also.
+
+16:01.150 --> 16:04.150
+Zum Schluss sehen wir uns noch einmal das laufende Beispiel an.
+
+16:16.350 --> 16:18.240
+Ich verwende hier das richtige Passwort.
+
+16:22.220 --> 16:23.720
+Und wir bekommen Erfolg.
+
+16:24.610 --> 16:25.990
+Das war's für diese Demo.

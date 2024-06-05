@@ -1,0 +1,181 @@
+WEBVTT
+
+00:00.560 --> 00:03.770
+Les mini-projets MVCs.
+
+00:04.190 --> 00:11.210
+Le code d'exemple permettant d'en savoir plus sur mini MVC est inclus dans le package du framework lui-même.
+
+00:11.480 --> 00:14.690
+Il est disponible gratuitement sur Git pour le téléchargement et l'unité.
+
+00:15.110 --> 00:21.410
+Pour importer ces échantillons, ouvrez le gestionnaire de paquets, sélectionnez le paquet mini MVCs et vous verrez le fichier
+
+00:21.410 --> 00:23.580
+que vous pouvez importer.
+
+00:23.600 --> 00:25.460
+Vous pouvez le voir dans la capture d'écran ici.
+
+00:25.460 --> 00:32.000
+Lorsque vous apportez le paquet mini MVCs lui-même, il remplit la source dans votre dossier de paquets.
+
+00:32.000 --> 00:34.000
+C'est tout ce dont vous avez besoin pour commencer.
+
+00:34.010 --> 00:39.260
+Les exemples dont nous parlons ici sont facultatifs et constituent un excellent moyen d'en apprendre plus sur le framework.
+
+00:39.260 --> 00:44.570
+Si vos besoins sont similaires à ceux de l'un des exemples de projets, vous pouvez utiliser l'exemple de projet pour obtenir les informations suivantes
+
+00:44.570 --> 00:47.810
+commencer à copier ou à modifier ce qui s'y trouve.
+
+00:47.810 --> 00:50.720
+Dans ce cours, nous allons examiner plusieurs exemples.
+
+00:50.720 --> 00:58.160
+Chacun d'entre eux montre exactement le même résultat final Avec et sans les mini MVC, je trouve cela particulièrement
+
+00:58.160 --> 00:58.800
+utile.
+
+00:58.820 --> 01:02.330
+Commencez par la version qui ne comporte pas beaucoup de MVC.
+
+01:02.660 --> 01:07.700
+Vous pouvez voir la fonctionnalité complète de la résolution du cas d'utilisation sans aucun cadre.
+
+01:07.700 --> 01:14.120
+Une fois que vous vous y êtes habitué, ouvrez la version avec plusieurs MVC et vous verrez comment les mêmes cas d'utilisation peuvent être résolus.
+
+01:14.120 --> 01:16.050
+sont résolus à l'aide du cadre.
+
+01:16.070 --> 01:21.860
+N'hésitez pas à faire des allers-retours entre ces deux exemples pour bien les comprendre.
+
+01:21.860 --> 01:24.110
+Dans ce cours, nous examinerons plusieurs échantillons.
+
+01:24.110 --> 01:26.270
+Voici un aperçu de haut niveau de chacun d'entre eux.
+
+01:26.270 --> 01:29.060
+L'exemple de l'horloge est un bon point de départ.
+
+01:29.060 --> 01:31.310
+C'est le plus simple des échantillons.
+
+01:31.310 --> 01:37.790
+Il n'y a pas de comportement mono, et la seule vue, pour ainsi dire, est la journalisation de débogage sur la console
+
+01:37.790 --> 01:38.330
+fenêtre.
+
+01:38.330 --> 01:43.870
+Il n'y a pas d'entrée ici, c'est juste un tic-tac comme une horloge et l'audience est conçue pour les débutants.
+
+01:43.880 --> 01:46.280
+Nous avons ensuite un exemple de connexion d'utilisateur.
+
+01:46.280 --> 01:51.530
+Bien qu'assez simple, cet exemple utilise un comportement mono, l'un d'entre eux pour la vue.
+
+01:51.530 --> 01:58.670
+Il utilise l'interface utilisateur de unity et capture les données de l'utilisateur sous la forme de clics de bouton pendant que nous imitons la connexion.
+
+01:58.670 --> 02:03.560
+Il s'agit d'un projet hors ligne uniquement, la couche de service charge donc un fichier local.
+
+02:03.560 --> 02:08.030
+Cela permet de garder les choses faciles à comprendre et de ne pas avoir besoin d'Internet pour les utiliser.
+
+02:08.030 --> 02:10.160
+Le public visé ici est celui des débutants.
+
+02:10.160 --> 02:15.560
+L'exemple suivant est un Rollerball inspiré par l'un des projets d'apprentissage intégrés à Unity.
+
+02:15.560 --> 02:22.280
+Nous sommes capables d'utiliser les quatre touches fléchées, de faire rouler une balle avec des lois physiques autour d'une table et de collecter des objets jaunes.
+
+02:22.280 --> 02:23.510
+jaunes qui tournent.
+
+02:23.510 --> 02:29.300
+Il s'agit de l'exemple le plus complexe que nous allons montrer, et il capture toutes les caractéristiques d'un jeu simple, mais qui n'est pas un jeu d'enfant.
+
+02:29.300 --> 02:34.940
+jeu à trois D simple mais complet, y compris l'entrée audio, l'interface utilisateur et la physique.
+
+02:34.940 --> 02:38.570
+Pour illustrer l'évolutivité de nombreux MVC.
+
+02:38.570 --> 02:43.070
+Ce projet comprend plusieurs vues et plusieurs contrôleurs.
+
+02:43.070 --> 02:48.860
+Bien qu'il soit encore relativement simple, ce projet convient aux développeurs de niveau intermédiaire lorsqu'il s'agit de décider de l'utilisation d'un MVC.
+
+02:48.860 --> 02:50.780
+la meilleure façon d'enseigner l'architecture.
+
+02:50.780 --> 02:56.570
+La valeur du codage et la nécessité de se salir les mains dans certains échantillons sont devenues évidentes.
+
+02:56.570 --> 03:00.050
+une variété de principes d'enseignement à travers les concepts présentés ici.
+
+03:00.170 --> 03:02.810
+Je l'ai divisé en plusieurs projets.
+
+03:02.810 --> 03:09.950
+Nous avons un projet qui n'utilise pas de comportements monétaires et n'a pas de vue qui représente l'échantillon le plus simple.
+
+03:09.950 --> 03:13.870
+Nous avons un projet qui n'utilise aucun comportement monétaire et qui n'a aucune vue, ce qui représente l'échantillon le plus simple, jusqu'à quelque chose avec trois entrées physiques, de l'audio et plus encore.
+
+03:13.880 --> 03:20.210
+Bien que tous les échantillons soient relativement simples par rapport à la complexité d'un jeu triple A unity,
+
+03:20.210 --> 03:25.910
+c'est un terrain de jeu approprié pour apprendre les concepts de MVC et voir comment ils s'adaptent à vos besoins.
+
+03:25.910 --> 03:29.420
+Dans cette section, nous avons parlé des exemples de projets Mini et VC.
+
+03:29.420 --> 03:34.730
+Nous avons passé en revue l'installation, les caractéristiques de chacun d'entre eux et certains des principes d'apprentissage.
+
+03:34.730 --> 03:35.270
+d'apprentissage qui les sous-tendent.
+
+03:35.270 --> 03:39.590
+Ensuite, nous approfondirons l'analyse en examinant les échantillons spécifiques.
+
+03:39.590 --> 03:44.900
+Nous verrons comment tirer des principes de conception toute la théorie que nous avons étudiée jusqu'à présent dans le cours,
+
+03:44.900 --> 03:49.100
+les modèles de conception, les philosophies et les transposer dans un code fonctionnel.
+
+03:49.100 --> 03:54.590
+J'examinerai, partagerai et passerai en revue chaque échantillon et, pour chacun d'entre eux, je ferai une brève analyse du code.
+
+03:54.590 --> 03:59.030
+et je vous encouragerai à poursuivre avec d'autres exercices qui vous seront donnés.
+
+03:59.030 --> 04:04.400
+Ces travaux sont facultatifs, mais c'est un excellent moyen pour vous de mettre les mains dans le cambouis et de comprendre ce qui se passe dans le monde.
+
+04:04.400 --> 04:05.360
+ces principes.
+
+04:05.360 --> 04:09.970
+Je vous encourage vivement à suivre ces travaux, car c'est la meilleure façon d'apprendre.
+
+04:09.980 --> 04:10.760
+Je vous remercie.

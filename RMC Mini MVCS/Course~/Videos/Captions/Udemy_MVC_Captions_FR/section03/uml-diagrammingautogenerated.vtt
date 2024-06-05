@@ -1,0 +1,148 @@
+WEBVTT
+
+00:00.400 --> 00:04.360
+Ensuite, parlons d'UML ou langage de modélisation unifié.
+
+00:04.720 --> 00:11.530
+Nous utilisons UML pour comprendre et communiquer sur les modèles de conception et les solutions logicielles.
+
+00:11.950 --> 00:17.290
+Je le mentionne dans ce cours parce que je veux discuter de quelques modèles de conception dans la section suivante,
+
+00:17.290 --> 00:24.190
+et ces diagrammes nous donnent un raccourci, un moyen de communiquer ces concepts plus rapidement et plus visuellement.
+
+00:24.190 --> 00:29.920
+Voici quelques avantages de l'utilisation d'UML Il permet une planification plus rapide et une communication plus claire avec votre équipe
+
+00:29.920 --> 00:34.210
+et pendant le développement, il vous aide à vous concentrer sur la solution donnée.
+
+00:34.210 --> 00:40.310
+Il existe de nombreux types de diagrammes, et même au sein de l'Usmle, il existe de nombreux types de diagrammes Usmle.
+
+00:40.330 --> 00:47.740
+La plupart de ce que je montre ici sont des diagrammes de classes, la façon dont les classes interagissent d'un point de vue très élevé.
+
+00:47.740 --> 00:48.460
+niveau.
+
+00:48.490 --> 00:55.120
+Je ne détaille pas les méthodes et les variables individuelles comme nous le faisons parfois dans ces diagrammes.
+
+00:55.120 --> 01:01.630
+Il s'agit plutôt d'une relation de haut niveau entre les classes, telle que cette classe en étend une autre.
+
+01:01.630 --> 01:05.470
+classe en utilisant l'héritage ou compose-t-elle une autre classe ?
+
+01:05.470 --> 01:05.740
+Ici ?
+
+01:05.740 --> 01:10.960
+Dans cette image, nous voyons l'exemple de la flèche blanche indiquant l'héritage.
+
+01:10.960 --> 01:16.480
+Ainsi, dans unity, par exemple, si vous avez une classe qui étend le comportement mono, voici ce qu'il faudrait faire
+
+01:16.480 --> 01:17.590
+diagramme à utiliser.
+
+01:17.590 --> 01:20.500
+Nous voyons donc ici quelques autres exemples.
+
+01:20.680 --> 01:26.620
+Il suffit de comprendre les bases de ce diagramme pour progresser dans la compréhension d'autres diagrammes.
+
+01:26.620 --> 01:29.080
+La flèche blanche indique l'héritage.
+
+01:29.080 --> 01:34.990
+La ligne pointillée avec la flèche blanche signifie que nous implémentons une interface et le losange noir et la flèche blanche indiquent que nous implémentons une interface.
+
+01:34.990 --> 01:39.040
+flèche noire indiquent la composition et la référence.
+
+01:39.040 --> 01:41.380
+Amusons-nous ici avec un exemple stupide.
+
+01:41.380 --> 01:45.820
+Une voiture Toyota est un type de voiture, c'est donc logique.
+
+01:45.820 --> 01:51.070
+Pour utiliser l'héritage, si vous êtes familier avec les interfaces, vous savez, nous commençons souvent le nom du type
+
+01:51.070 --> 01:55.660
+par un œil et nous décrivons quel type de comportement est possible.
+
+01:55.660 --> 02:02.350
+Nous pourrions donc dire que la roue est une classe qui implémente la composition de l'interface Rotatable de l'oeil.
+
+02:02.350 --> 02:04.300
+et la référence sont assez similaires.
+
+02:04.300 --> 02:08.470
+Il s'agit à la fois d'une classe qui utilise une autre classe d'une manière ou d'une autre.
+
+02:08.500 --> 02:13.600
+La principale différence ici est que la composition indique qu'elles ont le même cycle de vie.
+
+02:13.600 --> 02:18.300
+Dans ce cas, si la voiture Toyota disparaissait, les roues disparaîtraient avec elle.
+
+02:18.310 --> 02:22.540
+Nous comprenons que les roues en font partie, qu'elles sont liées dans un cycle de vie commun.
+
+02:22.540 --> 02:27.010
+Cependant, cette voiture Toyota peut également utiliser un système qui utilise le satellite GPS.
+
+02:27.010 --> 02:28.600
+Elle utilise donc également ce système.
+
+02:28.600 --> 02:34.000
+Mais nous comprenons que si la voiture disparaît, le satellite GPS continue probablement d'exister.
+
+02:34.000 --> 02:40.480
+Avec ces quatre types de lignes, nous pouvons créer de nombreuses solutions logicielles et expliquer clairement
+
+02:40.480 --> 02:40.810
+les expliquer clairement.
+
+02:40.810 --> 02:45.160
+Au cours de ma carrière, j'ai vu des diagrammes réalisés de différentes manières.
+
+02:45.160 --> 02:52.390
+Ceux qui connaissent l'UML et s'y appuient fortement peuvent faire des croquis sur papier ou utiliser des outils en ligne.
+
+02:52.390 --> 02:55.030
+qui vous aident à relier ces lignes et à les schématiser.
+
+02:55.030 --> 03:00.430
+Les personnes qui ne sont pas familiarisées avec cette manière officielle de schématiser peuvent certainement prendre un morceau de papier
+
+03:00.430 --> 03:03.850
+ou le dos d'une serviette de table et esquisser librement leurs idées.
+
+03:03.850 --> 03:09.880
+Mais plus nous serons nombreux à nous mettre d'accord sur une sorte de système linguistique, plus nous pourrons communiquer facilement.
+
+03:09.880 --> 03:12.520
+UML est une norme très répandue.
+
+03:12.520 --> 03:16.750
+Il existe depuis longtemps dans le domaine de l'informatique et il vaut la peine de s'y intéresser.
+
+03:16.750 --> 03:23.380
+Que vous choisissiez d'apprendre l'UML ici et de faire vos propres diagrammes ou que vous en appreniez juste assez pour suivre le mouvement
+
+03:23.380 --> 03:25.180
+dans le cours, cela me convient parfaitement.
+
+03:25.300 --> 03:30.130
+Nous allons voir un peu plus en détail comment UML s'applique à certains modèles de conception.
+
+03:30.130 --> 03:30.850
+Suivant.
+
+03:30.850 --> 03:31.660
+Merci de votre attention.

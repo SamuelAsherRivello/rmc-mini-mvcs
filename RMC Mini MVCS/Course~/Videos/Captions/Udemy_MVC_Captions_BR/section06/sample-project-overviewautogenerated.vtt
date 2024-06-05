@@ -1,0 +1,181 @@
+WEBVTT
+
+00:00.560 --> 00:03.770
+Os projetos de amostra de mini MVCs.
+
+00:04.190 --> 00:11.210
+O código de amostra para aprender mais sobre mini MVCs está incluído no pacote da própria estrutura.
+
+00:11.480 --> 00:14.690
+Ele está disponível gratuitamente no Git para download e unidade.
+
+00:15.110 --> 00:21.410
+Para importar essas amostras, abra o gerenciador de pacotes, selecione o pacote mini MVCs e você verá o pacote
+
+00:21.410 --> 00:23.580
+amostras mostradas que você pode importar.
+
+00:23.600 --> 00:25.460
+Você pode ver isso na captura de tela aqui.
+
+00:25.460 --> 00:32.000
+Quando você traz o próprio pacote mini MVCs que preenche a fonte em sua pasta de pacotes.
+
+00:32.000 --> 00:34.000
+Isso é tudo o que você precisa para começar.
+
+00:34.010 --> 00:39.260
+Os exemplos que estamos discutindo aqui são opcionais e uma ótima maneira de aprender mais sobre a estrutura.
+
+00:39.260 --> 00:44.570
+Se as suas necessidades também forem semelhantes às de um dos projetos de amostra, você pode usar o projeto de amostra para obter
+
+00:44.570 --> 00:47.810
+começar a copiar ou modificar o que estiver lá.
+
+00:47.810 --> 00:50.720
+Neste curso, daremos uma olhada em vários exemplos.
+
+00:50.720 --> 00:58.160
+Cada um deles mostra exatamente o mesmo resultado final. Com e sem os mini MVCs, acho isso especialmente
+
+00:58.160 --> 00:58.800
+útil.
+
+00:58.820 --> 01:02.330
+Comece com a versão que não apresenta muitos MVCs.
+
+01:02.660 --> 01:07.700
+Você pode ver a funcionalidade completa da solução do caso de uso sem nenhuma estrutura.
+
+01:07.700 --> 01:14.120
+Quando estiver familiarizado com isso, abra a versão com muitos MVCs e você poderá ver como esses mesmos casos de uso
+
+01:14.120 --> 01:16.050
+são resolvidos com o uso da estrutura.
+
+01:16.070 --> 01:21.860
+Sinta-se à vontade para alternar entre esses dois exemplos para que você tenha uma compreensão completa.
+
+01:21.860 --> 01:24.110
+Neste curso, examinaremos vários exemplos.
+
+01:24.110 --> 01:26.270
+Aqui está uma visão geral de alto nível de cada uma delas.
+
+01:26.270 --> 01:29.060
+A amostra do relógio é um ótimo lugar para começar.
+
+01:29.060 --> 01:31.310
+É a mais simples das amostras.
+
+01:31.310 --> 01:37.790
+Ele não apresenta comportamentos mono e a única visualização, por assim dizer, é o registro de depuração no console
+
+01:37.790 --> 01:38.330
+janela.
+
+01:38.330 --> 01:43.870
+Não há nenhuma entrada aqui, ele apenas faz tique-taque como um relógio e o público é destinado a iniciantes.
+
+01:43.880 --> 01:46.280
+Em seguida, temos um exemplo de login de usuário.
+
+01:46.280 --> 01:51.530
+Embora ainda seja bastante simples, esse exemplo usa um comportamento mono, um deles para a visualização.
+
+01:51.530 --> 01:58.670
+Ele usa a UI do unity e captura a entrada do usuário na forma de cliques em botões enquanto imitamos o login.
+
+01:58.670 --> 02:03.560
+É um projeto somente off-line, portanto a camada de serviço carrega um arquivo local.
+
+02:03.560 --> 02:08.030
+Isso ajuda a manter as coisas fáceis de entender e não requer o uso da Internet.
+
+02:08.030 --> 02:10.160
+O público aqui é de iniciantes.
+
+02:10.160 --> 02:15.560
+A seguir, um exemplo de Rollerball inspirado em um dos projetos de aprendizagem incorporados do Unity.
+
+02:15.560 --> 02:22.280
+Somos capazes de usar as quatro teclas de seta, rolar uma bola com física ao redor de uma mesa e coletar amarelos
+
+02:22.280 --> 02:23.510
+amarelos que estão girando.
+
+02:23.510 --> 02:29.300
+Este é o mais complexo dos exemplos que mostraremos e capta todas as características de um jogo simples, mas
+
+02:29.300 --> 02:34.940
+mas completo, incluindo a entrada de áudio, a interface do usuário e a física.
+
+02:34.940 --> 02:38.570
+Para ilustrar a escalabilidade de muitos MVCs.
+
+02:38.570 --> 02:43.070
+Este projeto inclui várias visualizações e vários controladores.
+
+02:43.070 --> 02:48.860
+Embora ainda relativamente simples, esse projeto é apropriado para desenvolvedores intermediários ao decidir
+
+02:48.860 --> 02:50.780
+a melhor forma de ensinar arquitetura.
+
+02:50.780 --> 02:56.570
+Ficou evidente o valor de codificar e sujar as mãos em algumas amostras, querendo expressar
+
+02:56.570 --> 03:00.050
+uma variedade de princípios de ensino em todos os conceitos aqui apresentados.
+
+03:00.170 --> 03:02.810
+Eu o dividi em vários projetos.
+
+03:02.810 --> 03:09.950
+Temos um projeto que não utiliza comportamentos monetários e não tem nenhuma visualização que represente a amostra mais simples
+
+03:09.950 --> 03:13.870
+até algo com três entradas de física, áudio e muito mais.
+
+03:13.880 --> 03:20.210
+Agora, embora todas as amostras sejam relativamente simples em relação à complexidade que você teria em um jogo de unidade triplo A,
+
+03:20.210 --> 03:25.910
+é um playground apropriado para aprender os conceitos de MVC e ver como eles se adaptam às suas necessidades.
+
+03:25.910 --> 03:29.420
+Nesta seção, falamos sobre os projetos de exemplo do Mini e do VC.
+
+03:29.420 --> 03:34.730
+Examinamos a instalação, os recursos de cada um deles e alguns dos princípios de aprendizagem
+
+03:34.730 --> 03:35.270
+por trás disso.
+
+03:35.270 --> 03:39.590
+Em seguida, vamos nos aprofundar ainda mais, examinando as amostras específicas.
+
+03:39.590 --> 03:44.900
+Veremos como aproveitar toda a teoria que vimos no curso até agora a partir dos princípios de design,
+
+03:44.900 --> 03:49.100
+padrões de design, filosofias e trazer tudo isso para o código funcional.
+
+03:49.100 --> 03:54.590
+Vou examinar, compartilhar e fazer uma revisão de cada amostra e, dentro de cada uma delas, farei uma breve codificação
+
+03:54.590 --> 03:59.030
+e incentivarei você a acompanhar algumas outras tarefas que serão dadas.
+
+03:59.030 --> 04:04.400
+Essas tarefas são opcionais, mas é uma maneira fantástica de você colocar a mão na massa e entender
+
+04:04.400 --> 04:05.360
+esses princípios.
+
+04:05.360 --> 04:09.970
+Recomendo enfaticamente que você acompanhe essas tarefas, pois é a melhor maneira de aprender.
+
+04:09.980 --> 04:10.760
+Obrigado.

@@ -1,0 +1,256 @@
+WEBVTT
+
+00:00.330 --> 00:03.630
+L'architettura del mini MDC per Unity.
+
+00:03.630 --> 00:08.820
+Dopo anni di esperienza in Unity, ho creato la mini architettura MVC.
+
+00:08.820 --> 00:12.740
+Nel corso del corso, mi riferirò ad essa come mini o mini MVC.
+
+00:12.750 --> 00:17.580
+Quando l'ho creato, ho applicato gli insegnamenti tratti da precedenti framework architetturali.
+
+00:17.580 --> 00:23.910
+Questi insegnamenti includono l'uso di generici, una forte tipizzazione, l'uso del modello di comando e dell'osservatore.
+
+00:23.910 --> 00:26.550
+per un sistema di comunicazione a due livelli.
+
+00:26.550 --> 00:32.670
+Come per altre architetture basate su MVC, abbiamo dei vantaggi, tra cui il fatto che si tratta di una soluzione collaudata.
+
+00:32.670 --> 00:34.080
+È agnostica rispetto al linguaggio.
+
+00:34.080 --> 00:39.300
+È possibile trovare materiale su questo tipo di approccio in molte lingue e piattaforme diverse.
+
+00:39.300 --> 00:45.300
+L'uso di MINI fornisce un ambiente più testabile che consente uno sviluppo più rapido e più semplice.
+
+00:45.300 --> 00:46.650
+manutenzione dei progetti.
+
+00:46.650 --> 00:49.080
+Alcune caratteristiche includono È leggero.
+
+00:49.080 --> 00:53.310
+Parte del motivo per cui si chiama MINI è che ci sono poche classi e concetti coinvolti.
+
+00:53.310 --> 00:56.820
+Inoltre, si tratta di un comportamento specifico non legato al denaro.
+
+00:56.820 --> 00:58.560
+I comportamenti legati al denaro sono facoltativi.
+
+00:58.560 --> 01:04.140
+Le preoccupazioni principali estendono un'interfaccia e non ci sono comportamenti richiesti.
+
+01:04.530 --> 01:09.180
+I comportamenti diventano opzionali e si possono usare per tutti e quattro i problemi.
+
+01:09.180 --> 01:13.590
+Nessuno dei problemi o la combinazione più adatta al progetto.
+
+01:13.590 --> 01:17.280
+Questo dimostra un'altra caratteristica di questo framework, che è un framework di opinione.
+
+01:17.280 --> 01:22.770
+C'è un percorso suggerito, ma è anche abbastanza flessibile in base alle esigenze del progetto.
+
+01:22.770 --> 01:26.370
+È possibile massaggiare questo sistema e ottenere i risultati migliori per il proprio caso d'uso.
+
+01:26.370 --> 01:32.670
+Questo framework è ottimo per i casi d'uso in produzione nel vostro progetto e, inoltre, è ideale per la didattica.
+
+01:32.670 --> 01:33.360
+usi.
+
+01:33.360 --> 01:37.650
+Ecco perché in questo corso mi concentro su di esso per insegnare i concetti di MVC.
+
+01:37.650 --> 01:42.300
+Diamo un'occhiata a questo diagramma UML di alto livello che mostra le classi coinvolte.
+
+01:42.300 --> 01:47.520
+Qui vediamo le note principali preoccupazioni di modello, vista, controllore e servizio.
+
+01:47.550 --> 01:51.090
+Notiamo che non abbiamo dipendenze dirette dal motore di unity.
+
+01:51.090 --> 01:53.220
+Non è più richiesto un comportamento mono.
+
+01:53.220 --> 01:55.530
+C'è flessibilità su come implementarlo.
+
+01:55.530 --> 02:01.740
+Ma in questo esempio del mio codice, sto sottoclassificando il progetto Mini e VC per iniziare.
+
+02:01.740 --> 02:07.110
+Quindi, quando si guarda a questo framework o a qualsiasi altro framework specifico per unity, alcune delle considerazioni da fare sono
+
+02:07.110 --> 02:08.610
+che potete fare sono qui.
+
+02:08.610 --> 02:12.030
+Ha qualche caratteristica specifica di unity in questo caso?
+
+02:12.030 --> 02:12.450
+No.
+
+02:12.450 --> 02:16.560
+Ho scelto di non dipendere e di richiedere il comportamento di mono.
+
+02:16.560 --> 02:19.470
+Per esempio, si può certamente aggiungerlo da soli.
+
+02:19.470 --> 02:25.110
+Il sistema è flessibile per l'uso di oggetti come mono behavior e script able object, ma non sono obbligatori.
+
+02:25.110 --> 02:26.340
+parti del nucleo del framework.
+
+02:26.340 --> 02:28.170
+Il desiderio era quello di mantenere le cose leggere.
+
+02:28.170 --> 02:30.150
+Qual è il ruolo dei comportamenti mono?
+
+02:30.150 --> 02:31.230
+Beh, sono facoltativi.
+
+02:31.230 --> 02:33.030
+Per ognuna delle quattro preoccupazioni.
+
+02:33.030 --> 02:35.250
+È possibile estendere o meno il comportamento mono.
+
+02:35.250 --> 02:39.390
+Come gestisce le preoccupazioni, le convenzioni nella comunicazione?
+
+02:39.390 --> 02:43.560
+Immaginate che all'interno del vostro progetto ci siano uno o più mini per impostazione predefinita.
+
+02:43.560 --> 02:48.180
+Presumo che ne aggiungiate uno al progetto, ma potreste dividerlo in più parti e farle comunicare tra loro.
+
+02:48.180 --> 02:50.280
+insieme per un approccio più modulare.
+
+02:50.280 --> 02:54.240
+È possibile avere zero o più di ognuno dei principali problemi.
+
+02:54.240 --> 03:00.390
+Immagino che come minimo si debba avere un mini e un controller, ma poi si possono avere diversi altri sistemi di controllo.
+
+03:00.390 --> 03:05.730
+controllori, viste multiple, modelli multipli e servizi multipli.
+
+03:05.730 --> 03:07.560
+In questo modo si adatta alle vostre esigenze.
+
+03:07.560 --> 03:10.470
+È progettato in modo tale da seguire le convenzioni.
+
+03:10.470 --> 03:16.860
+I suggerimenti sono molto più importanti di qualsiasi tipo di configurazione o requisito.
+
+03:16.860 --> 03:22.500
+Questo consente una certa flessibilità, ma vi incoraggio comunque a essere vigili nel separare le vostre preoccupazioni.
+
+03:22.500 --> 03:27.360
+e di osservare il modo in cui comunicate tra di loro per ottenere un progetto più scalabile.
+
+03:27.360 --> 03:31.650
+A proposito di comunicazione, il sistema supporta due livelli di comunicazione.
+
+03:31.650 --> 03:34.830
+Ha sia eventi che comandi.
+
+03:34.830 --> 03:39.370
+Avere entrambe le opzioni disponibili è incredibilmente potente, come vedremo.
+
+03:39.390 --> 03:42.900
+E infine, qual è l'equilibrio tra rigidità e flessibilità?
+
+03:42.900 --> 03:48.900
+La filosofia alla base di questo framework è che sia il più flessibile e leggero possibile.
+
+03:48.900 --> 03:54.210
+Ma per mantenere molti dei vantaggi che otteniamo dall'utilizzo di un'architettura, ci sono alcune regole che
+
+03:54.210 --> 03:58.800
+e, in qualsiasi modo le applichiate, vi suggerisco di applicarle in modo coerente.
+
+03:58.800 --> 04:05.520
+Quindi, ai fini di questo corso e della nostra discussione, eleggeremo Mini e VC come unità prescelta.
+
+04:05.520 --> 04:10.590
+e una componente chiave del modo in cui queste informazioni vengono fornite nel corso.
+
+04:10.590 --> 04:16.440
+indipendentemente dal framework MVC scelto o dalla scelta di creare il proprio framework.
+
+04:16.440 --> 04:23.190
+I principi di progettazione, gli schemi di progettazione, l'uso del diagramma di cui abbiamo parlato e l'esperienza
+
+04:23.190 --> 04:28.380
+che vedremo man mano che ci addentreremo in questo argomento, è possibile applicare tutti questi insegnamenti a qualsiasi architettura
+
+04:28.380 --> 04:28.890
+scegliere.
+
+04:28.890 --> 04:30.240
+Quindi iniziamo.
+
+04:30.240 --> 04:34.560
+Vi spiegherò come e perché ho scelto i mini MVC per questo corso.
+
+04:34.560 --> 04:39.780
+Dopo aver passato anni a imparare e ad applicare le architetture a diversi progetti e dopo aver voluto insegnare
+
+04:39.780 --> 04:44.340
+di più su questi concetti, mi sono reso conto che si tratta di un argomento vasto e che c'è molto da imparare.
+
+04:44.340 --> 04:51.390
+Suggerisco che il modo migliore per imparare sia quello di utilizzare effettivamente questi concetti nei propri progetti, Creare campioni
+
+04:51.390 --> 04:55.260
+progetti da zero, inserire questi concetti nei progetti esistenti.
+
+04:55.260 --> 04:59.760
+Solo in questo modo potrete davvero toccare con mano e imparare i vantaggi di queste soluzioni.
+
+05:00.060 --> 05:05.400
+Ho esaminato tutte le scelte disponibili da una prospettiva unitaria sulle migliori architetture.
+
+05:05.400 --> 05:10.200
+Ci sono molte ottime scelte in giro, ma spesso sono complesse per apprendere le idiosincrasie di
+
+05:10.200 --> 05:10.950
+ogni framework.
+
+05:10.950 --> 05:16.410
+Per questo motivo ho creato dei mini MVC per facilitare l'apprendimento dei concetti di MVC.
+
+05:16.440 --> 05:20.790
+È effettivamente pronto per la produzione, ma è stato progettato per scopi didattici.
+
+05:20.790 --> 05:26.340
+Per questo motivo, man mano che lo si approfondisce, si guardano i campioni basati su di esso e si seguono gli incarichi utilizzando
+
+05:26.340 --> 05:27.000
+il quadro di riferimento.
+
+05:27.000 --> 05:32.310
+Spero che alla fine del corso, sia che si tratti di questa soluzione particolare o di un'altra architettura,
+
+05:32.310 --> 05:37.230
+che si vedano i vantaggi dell'utilizzo di un'architettura e che si abbiano le competenze per applicarli.
+
+05:37.620 --> 05:38.460
+Grazie.

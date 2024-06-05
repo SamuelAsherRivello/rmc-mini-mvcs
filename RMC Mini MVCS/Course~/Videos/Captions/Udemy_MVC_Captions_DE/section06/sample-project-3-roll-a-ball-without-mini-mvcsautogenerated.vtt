@@ -1,0 +1,202 @@
+WEBVTT
+
+00:00.150 --> 00:04.260
+Schauen wir uns zunächst die Version an, der nicht viele MVCs hinzugefügt wurden.
+
+00:05.260 --> 00:11.860
+Hier sind wir in einem leeren Unity-Projekt, wo ich das Mini-MVC-Framework sowie die Beispiele hinzugefügt habe.
+
+00:12.070 --> 00:18.040
+Hier ist die Ordnerstruktur für das Rollerball-Spiel ohne viele, da wir uns die Ordnerstruktur angesehen haben
+
+00:18.040 --> 00:19.490
+von anderen Beispielen angesehen haben.
+
+00:19.510 --> 00:20.640
+Lasst uns gleich loslegen.
+
+00:20.650 --> 00:23.330
+Zuerst lassen wir die Szene laufen und sehen, wie sie sich spielt.
+
+00:23.350 --> 00:28.840
+Die Benutzeroberfläche wird aktualisiert und zeigt an, dass ich null Punkte habe und dass die Anweisungen lauten, die Pfeiltasten zu benutzen.
+
+00:28.840 --> 00:31.510
+Ich habe auch eine Neustart-Schaltfläche, auf die ich klicken kann.
+
+00:32.320 --> 00:36.430
+Ich benutze die vier Pfeiltasten hier, um den Ball zu bewegen.
+
+00:38.280 --> 00:42.660
+Du kannst es im Video vielleicht nicht hören, aber jedes Mal, wenn ich eine Kugel einsammle, ertönt ein Geräusch
+
+00:42.660 --> 00:49.170
+von diesen Pickups einsammle, und es wird auch im aktualisierten UI-Score angezeigt, der Status hat sich auf "Du hast gewonnen" geändert.
+
+00:49.170 --> 00:51.900
+Das Spiel ist also vorbei und ich kann nichts mehr eingeben.
+
+00:51.900 --> 00:55.170
+Ich kann keine Eingaben mehr mit den Tasten machen, aber ich klicke auf den Neustart-Button.
+
+00:55.170 --> 00:58.080
+Die Neustart-Schaltfläche zeigt hier eine Eingabeaufforderung, die ich abbrechen kann.
+
+01:01.230 --> 01:02.520
+Oder ich kann bestätigen.
+
+01:05.820 --> 01:10.020
+Wenn ich bestätige, wird das Spiel neu gestartet, als ob ich noch nicht gespielt hätte, und ich kann wieder spielen.
+
+01:10.830 --> 01:11.520
+Das war's.
+
+01:12.000 --> 01:13.850
+Hier sind wir im Beispielskript.
+
+01:13.860 --> 01:19.170
+Wie bei den anderen Beispielen erweitert das Beispielskript auf hoher Ebene das Verhalten von mono.
+
+01:19.170 --> 01:22.170
+Auf diese Weise kann es sich auf ein Spielobjekt in der Szene setzen.
+
+01:22.170 --> 01:28.200
+Wir haben hier drei serialisierte Felder, so dass dieses Beispiel auf die Szene zugreifen kann und ein
+
+01:28.200 --> 01:34.020
+Spielobjekt für den Spieler, ein Spielobjekt für die Benutzeroberfläche und eine Liste aller Pickup-Objekte in der Szene.
+
+01:34.020 --> 01:36.480
+Wir halten einen High-Level-Status für.
+
+01:36.510 --> 01:38.460
+Ist das Spiel gerade zu Ende?
+
+01:38.460 --> 01:42.960
+Ist das Spiel gerade pausiert und einige andere Werte?
+
+01:43.740 --> 01:46.770
+Und einige andere Wertungswerte in der Startmethode.
+
+01:46.770 --> 01:53.130
+Wir hören von hier im Hauptskript des Spiels in die Benutzeroberfläche des Players auf einige Schlüsselereignisse hier im
+
+01:53.130 --> 01:58.290
+Update, das bei jedem Frame ausgeführt wird, solange die Szene läuft, haben wir unsere Kernspielschleife.
+
+01:58.290 --> 02:04.080
+Wenn das Spiel zu irgendeinem Zeitpunkt vorbei ist oder wir pausieren, verlassen wir die Schleife, damit nichts weiter passiert.
+
+02:04.080 --> 02:07.590
+Das Skript, in dem wir uns hier befinden, hat die Kontrolle über die Pickups.
+
+02:07.590 --> 02:13.590
+Es durchläuft alle Tonabnehmer in einer Schleife und ruft den Befehl rotate auf, um ihnen die kosmetische Drehung zu geben.
+
+02:13.590 --> 02:18.750
+Der Grund dafür, dass es hier und nicht innerhalb des Pickups gemacht wird, ist, dass das Spiel
+
+02:18.750 --> 02:21.450
+pausiert, werden auch die Pickups pausiert.
+
+02:21.450 --> 02:27.270
+Und schließlich erfassen wir hier im Spielbereich die Benutzereingaben und geben sie an den Spieler weiter, damit
+
+02:27.270 --> 02:28.890
+der Ball hier herumrollen kann.
+
+02:28.890 --> 02:34.230
+In der Load-Methode laden wir von einer lokalen Textdatei, um die maximale Anzahl von Punkten zu erhalten, die benötigt werden, um
+
+02:34.230 --> 02:34.650
+zu gewinnen.
+
+02:34.650 --> 02:40.380
+Es wird die Zahl drei geladen, wie wir es bei früheren Demos gesehen haben, dies ist ein Beispiel, nur als Entschuldigung
+
+02:40.380 --> 02:41.730
+um die Serviceschicht zu benutzen.
+
+02:41.730 --> 02:43.770
+Sobald wir uns die Mini-MVC-Version ansehen.
+
+02:43.770 --> 02:49.590
+Natürlich könnte dieser Wert hier hart kodiert werden, aber stattdessen laden wir ihn aus einem Skript, nur als Beispiel
+
+02:49.590 --> 02:50.520
+von externen Daten.
+
+02:50.520 --> 02:56.760
+In regelmäßigen Abständen, wenn das Spiel hier die Bildschirmoberfläche aktualisieren will, können wir diese Methode jederzeit aufrufen
+
+02:56.760 --> 03:00.990
+wenn die Schaltfläche für den Neustart der Benutzeroberfläche angeklickt wird, wird diese Methode ausgeführt.
+
+03:00.990 --> 03:07.530
+Wir pausieren das Spiel, instanziieren ein Dialogfenster auf dem Bildschirm, das über dem Rest des Spiels schwebt, und handhaben
+
+03:07.530 --> 03:12.570
+die Konsequenz Wenn der Benutzer klickt, brechen wir im Dialog ab und behandeln die Konsequenz.
+
+03:12.570 --> 03:16.920
+Wenn der Benutzer bestätigt, dass das Spiel jedes Mal neu gestartet werden soll, wenn der Spieler mit dem Pickup kollidiert.
+
+03:16.920 --> 03:21.630
+Wenn diese Methode aufgerufen wird, wird das Pickup-Objekt unsichtbar und ein Sound wird abgespielt.
+
+03:21.630 --> 03:28.800
+Der Punktestand wird von 0 bis 1 bis 2 bis 3 hochgezählt, und wenn er den gewünschten Maximalwert erreicht, der
+
+03:28.800 --> 03:32.090
+in der Regel drei ist, ist das Spiel vorbei und man hat gewonnen.
+
+03:32.100 --> 03:34.050
+Das war's mit der grundlegenden Spiellogik.
+
+03:34.050 --> 03:35.760
+Schauen wir uns die Szenenhierarchie an.
+
+03:35.760 --> 03:41.640
+In der Szenenhierarchie hier, wenn ich das Spielbeispiel selbst auswähle, sehen wir einige serialisierte Felder
+
+03:41.640 --> 03:47.130
+im Inspektor, einschließlich eines Verweises auf den Spieler, die Benutzeroberfläche und jeden Pickup in der Szene.
+
+03:47.130 --> 03:52.800
+Der Spieler ist hier mit dem Player-Skript, die Benutzeroberfläche ist hier mit dem UI-Skript, und jeder unserer Pickups
+
+03:52.800 --> 03:55.860
+sind hier alle unter demselben übergeordneten Spielobjekt gespeichert.
+
+03:55.860 --> 03:57.630
+Jeder hat ein Aufnahmeskript oben drauf.
+
+03:57.630 --> 04:01.170
+Werfen wir einen letzten Blick auf das laufende Spiel, damit ich auf Play drücken kann.
+
+04:01.170 --> 04:03.150
+Ich kann hier herumlaufen.
+
+04:03.360 --> 04:06.780
+Beachte, dass sich die Pickups drehen.
+
+04:09.370 --> 04:14.950
+Und wenn ich auf die Neustart-Schaltfläche klicke, während die Eingabeaufforderung hier oben ist, während dieses Dialogfenster angezeigt wird,
+
+04:14.950 --> 04:21.220
+drehen sich die Würfel nicht. Es ist ein kleines visuelles Detail, aber es zeigt, dass dieses Spiel in der Lage ist
+
+04:21.220 --> 04:26.710
+den Zustand zu speichern, wenn wir gerade pausieren und auch wenn das Spiel zu Ende ist.
+
+04:26.710 --> 04:29.710
+Beobachte, wenn ich den Pickup gewinne, höre auch auf zu rotieren.
+
+04:36.290 --> 04:42.290
+Ich habe einen und der Pickup hört auf zu rotieren und verwaltet den Status wie "Spiel vorbei" und "Spiel pausiert".
+
+04:42.290 --> 04:48.050
+kleine Details zu sein, aber dass sie reibungslos in die Belange integriert sind, wie wir hier sehen, zeigt
+
+04:48.050 --> 04:49.850
+ein gutes und einfaches Spieldesign.

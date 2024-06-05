@@ -1,0 +1,193 @@
+WEBVTT
+
+00:00.150 --> 00:03.690
+Vamos dar uma olhada nos padrões de design, começando com o Observer.
+
+00:03.720 --> 00:11.100
+Agora, enquanto os princípios de design são muito elevados em teoria, os padrões de design começam um pouco mais a ser
+
+00:11.100 --> 00:14.370
+ancorados na ciência da computação e em soluções específicas.
+
+00:14.400 --> 00:16.450
+Ainda assim, eles são agnósticos em relação à linguagem.
+
+00:16.470 --> 00:22.080
+Você pode aplicar esses mesmos padrões a uma variedade de linguagens de programação e plataformas diferentes.
+
+00:22.080 --> 00:28.050
+Você pode pensar em um padrão de projeto como um tipo de solução reutilizável para um problema de projeto.
+
+00:28.080 --> 00:32.550
+Agora, você pode imaginar que no seu projeto há muitas coisas que você está fazendo que são exclusivas do
+
+00:32.550 --> 00:38.580
+necessidades do seu jogo, mas muitos dos diferentes problemas que surgirão e como você precisará se organizar.
+
+00:38.580 --> 00:41.160
+As coisas já foram feitas antes em software.
+
+00:42.090 --> 00:45.750
+Algumas vantagens de utilizar padrões de design são o fato de eles serem comprovados.
+
+00:46.260 --> 00:51.450
+Muitos desses desafios já foram resolvidos antes e muito bem resolvidos, então por que não aprender com eles?
+
+00:51.450 --> 00:56.530
+E eles podem levar a um desenvolvimento muito mais rápido, bem como a uma manutenção mais fácil.
+
+00:56.550 --> 00:59.970
+Aqui vemos uma lista de alguns dos padrões de design mais populares.
+
+01:00.150 --> 01:04.620
+Certamente há muitos outros, e você pode até mesmo definir seus próprios padrões de design.
+
+01:04.620 --> 01:10.380
+Mas o fato de conhecer cerca de 20 deles aqui lhe dá uma boa biblioteca para começar a pensar sobre o seu
+
+01:10.380 --> 01:11.220
+projetos.
+
+01:11.220 --> 01:15.270
+Há três tipos principais Os padrões de criação criam coisas novas.
+
+01:15.270 --> 01:22.950
+Os padrões estruturais organizam como essas coisas são configuradas e os padrões comportamentais definem como esses sistemas são criados.
+
+01:22.950 --> 01:24.270
+se comportam uns com os outros.
+
+01:24.450 --> 01:30.540
+Examinaremos de perto apenas alguns desses padrões, pois eles se relacionam diretamente com as arquiteturas que examinaremos
+
+01:30.540 --> 01:31.290
+mais tarde.
+
+01:31.290 --> 01:37.290
+Um tremendamente popular, um que você provavelmente já está usando, especialmente como desenvolvedor de unidades,
+
+01:37.290 --> 01:39.030
+é o padrão de observador.
+
+01:39.030 --> 01:44.040
+O padrão de observador define como dois ou mais objetos podem se comunicar entre si.
+
+01:44.040 --> 01:49.290
+Agora sabemos que uma classe pode obter uma referência a uma segunda classe e chamar um método diretamente nela.
+
+01:49.290 --> 01:53.480
+Ela precisa ter essa referência e precisa saber exatamente qual método chamar.
+
+01:53.490 --> 01:58.200
+Esse é um exemplo de relações fortemente conectadas ou fortemente acopladas.
+
+01:58.200 --> 02:01.980
+A vantagem do observador é que ele não está tão fortemente conectado.
+
+02:01.980 --> 02:08.760
+Embora uma classe precise de uma referência a esse remetente, ela pode trocar dados e isolar mais facilmente
+
+02:08.760 --> 02:12.360
+os problemas decorrentes da alteração de um sem alterar o outro.
+
+02:12.360 --> 02:18.840
+Ele também permite que você tenha vários observadores e os adicione e remova facilmente à medida que avançamos nesse padrão
+
+02:18.840 --> 02:24.210
+e outros, dê uma olhada no diagrama e aplique o que aprendemos sobre UML para entender um pouco
+
+02:24.210 --> 02:24.870
+um pouco mais.
+
+02:24.870 --> 02:29.730
+E, com cada um desses padrões, há uma excelente oportunidade de fazer uma pesquisa adicional.
+
+02:29.940 --> 02:32.520
+Aqui está um exemplo de observador para a unidade.
+
+02:32.520 --> 02:38.190
+Agora, há várias maneiras de resolver isso na unidade, mas uma solução de primeira parte que tenho certeza de que você está
+
+02:38.190 --> 02:41.490
+familiarizado no Unity é o evento unity.
+
+02:41.790 --> 02:48.510
+Há três partes principais a serem destacadas aqui: criar o evento, ouvir o evento e invocar o evento
+
+02:48.510 --> 02:49.230
+evento.
+
+02:49.260 --> 02:50.630
+Todos são mostrados aqui.
+
+02:50.640 --> 02:58.320
+Agora, normalmente, faríamos isso em duas ou mais classes, mas, por uma questão de brevidade, estou mostrando uma classe
+
+02:58.320 --> 03:00.540
+ouvindo a si mesma, por assim dizer.
+
+03:00.540 --> 03:06.030
+Agora, enquanto o último exemplo foi incorporado à unidade, aqui está uma classe personalizada que você verá mais tarde quando
+
+03:06.030 --> 03:07.230
+entrarmos no código.
+
+03:07.230 --> 03:13.020
+Peguei alguns dos mesmos conceitos do evento Unity e os coloquei dentro da classe observável.
+
+03:13.020 --> 03:13.440
+Aqui.
+
+03:13.440 --> 03:21.240
+Neste exemplo do observável, sou capaz de criar um observável, ouvir um observável e invocar
+
+03:21.240 --> 03:22.380
+esse observável.
+
+03:23.320 --> 03:30.430
+Esse é um padrão muito comum, especialmente quando você separa os dados do restante da lógica do jogo
+
+03:30.430 --> 03:33.770
+para que você possa se inscrever quando os dados mudarem.
+
+03:33.790 --> 03:39.420
+Essa classe observável é uma forma muito fácil de amarrar o padrão do observador.
+
+03:39.430 --> 03:41.560
+Qualquer alteração no valor do tempo.
+
+03:41.560 --> 03:43.510
+Você pode ver isso acontecendo no código aqui.
+
+03:43.510 --> 03:45.230
+E como no último exemplo.
+
+03:45.250 --> 03:51.640
+Normalmente, utilizaríamos duas ou mais classes como uma demonstração completa, mas, por uma questão de brevidade, coloquei-a em uma classe
+
+03:51.640 --> 03:52.210
+arquivo.
+
+03:52.540 --> 04:00.100
+O padrão observer é tão fundamental e benéfico se você achar que o está usando apenas o suficiente
+
+04:00.100 --> 04:03.790
+mas sem realmente entender ou sentir que está tirando proveito dele.
+
+04:03.910 --> 04:06.180
+Definitivamente, vou dar mais uma olhada.
+
+04:06.190 --> 04:09.610
+Veremos isso em alguns dos exemplos que faremos em nossas amostras mais tarde.
+
+04:09.610 --> 04:16.570
+Mas você também pode ver isso em muitas APIs e SDKs diferentes conectados aos seus projetos Unity.
+
+04:16.570 --> 04:22.360
+É tremendamente simples e poderoso começar a separar as diferentes áreas do seu código, que
+
+04:22.360 --> 04:23.580
+trará alguns benefícios.
+
+04:23.590 --> 04:24.340
+Obrigado.

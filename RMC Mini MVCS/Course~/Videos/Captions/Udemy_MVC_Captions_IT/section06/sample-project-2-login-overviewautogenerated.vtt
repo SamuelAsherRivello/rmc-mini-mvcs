@@ -1,0 +1,145 @@
+WEBVTT
+
+00:00.700 --> 00:04.180
+Il mini progetto Sample Login di NBC.
+
+00:04.540 --> 00:11.290
+Con ogni progetto di esempio, c'è l'opportunità di rimuovere altri strati di MVC e di pensare
+
+00:11.290 --> 00:13.090
+criticamente a questi concetti.
+
+00:13.090 --> 00:15.580
+Questo aumenterà drasticamente il vostro apprendimento.
+
+00:15.610 --> 00:20.410
+Per dare il via alle vostre riflessioni, considerate i pro e i benefici del quadro di riferimento in ciascun esempio.
+
+00:20.410 --> 00:22.900
+Con quali aspetti vi sentite più a vostro agio?
+
+00:22.900 --> 00:26.170
+Comincia a vedere i benefici a lungo termine della scelta di un framework?
+
+00:26.170 --> 00:30.400
+Quali parti del framework vi entusiasmano e volete imparare di più lungo il percorso?
+
+00:30.400 --> 00:33.310
+Potreste identificare alcuni possibili svantaggi o inconvenienti.
+
+00:33.310 --> 00:36.670
+Quali aspetti del framework potrebbero non funzionare per le vostre esigenze?
+
+00:36.670 --> 00:42.430
+C'è qualcosa che si può fare per ottenere i risultati di cui si ha bisogno e quali modelli e pratiche rimangono
+
+00:42.430 --> 00:43.420
+non sono chiari per voi?
+
+00:43.420 --> 00:44.920
+Riflettete su questi punti.
+
+00:44.920 --> 00:50.590
+Impegnatevi nella comunità, prendete appunti e riflettete, perché il campione sarà in un progetto.
+
+00:50.590 --> 00:54.010
+che contiene il codice sorgente del framework e gli esempi.
+
+00:54.130 --> 01:01.330
+Ognuno degli esempi trattati ha una versione con molti MVC e senza il progetto di esempio per il login dell'utente
+
+01:01.330 --> 01:05.520
+aumenta un po' la complessità rispetto all'esempio precedente.
+
+01:05.530 --> 01:11.260
+Qui abbiamo una vista che esegue il rendering dell'interfaccia utente di unity e cattura anche gli input dell'utente.
+
+01:11.260 --> 01:18.670
+Questo esempio introduce anche un comportamento mono utilizzato nella vista, pur essendo ancora relativamente semplice e mirato
+
+01:18.670 --> 01:20.050
+un pubblico di principianti.
+
+01:20.050 --> 01:22.000
+Vedremo alcuni nuovi concetti.
+
+01:22.830 --> 01:28.510
+Mentre ci addentriamo in questo esempio, valutate quale di questi compiti di codifica vi piacerebbe affrontare.
+
+01:28.530 --> 01:31.320
+Ce ne sono diversi, e potreste anche crearne di vostri.
+
+01:31.320 --> 01:35.490
+Iniziare con una difficoltà più bassa serve solo a spiegare questi concetti.
+
+01:35.490 --> 01:39.730
+Dopo aver approfondito l'esempio, siete abbastanza tranquilli da poterlo spiegare a un amico?
+
+01:39.750 --> 01:41.610
+Ogni esempio include test unitari.
+
+01:41.610 --> 01:45.690
+Si può aggiungere un altro test unitario che abbia senso nel contesto dell'esempio?
+
+01:45.690 --> 01:52.350
+Si può aggiungere una nuova funzionalità dell'interfaccia utente, magari aggiungendo un testo o un pulsante all'interfaccia utente e poi cablarlo correttamente
+
+01:52.350 --> 01:54.150
+in un modo che abbia senso per il framework.
+
+01:54.150 --> 01:59.940
+Si potrebbe creare qualche altro tipo di nuovo input, magari da tastiera, e fare qualcosa di appropriato.
+
+01:59.940 --> 02:00.720
+per il campione.
+
+02:00.720 --> 02:02.220
+Si può copiare il campione.
+
+02:02.220 --> 02:07.290
+Forse il campione contiene alcuni elementi interessanti per un caso d'uso diverso.
+
+02:07.290 --> 02:13.500
+l'intera cartella madre, rinominare ogni classe in modo che sia unica o darle un nuovo spazio dei nomi e poi aggiungere
+
+02:13.500 --> 02:15.810
+e adattare la funzionalità alle proprie esigenze.
+
+02:15.810 --> 02:21.510
+E forse la sfida più impegnativa di questo elenco è quella di creare da soli un nuovo campione invece di copiare
+
+02:21.510 --> 02:22.290
+e incollare.
+
+02:22.290 --> 02:25.080
+Qui si inizia con il canvas vuoto di un nuovo progetto.
+
+02:25.080 --> 02:28.230
+Importate il framework stesso e iniziate a codificare da zero.
+
+02:28.230 --> 02:32.040
+Questo dimostra una solida padronanza di tutti i concetti.
+
+02:32.040 --> 02:36.900
+Svolgere incarichi come questi aiuta ad approfondire le proprie conoscenze con l'esperienza pratica.
+
+02:36.900 --> 02:38.250
+Vediamolo in azione.
+
+02:38.250 --> 02:44.730
+Potete creare un nuovo progetto Unity, importare il Mini NPCs Framework, importare i campioni, aprire questo
+
+02:44.730 --> 02:51.120
+particolare, esplorare la versione che non utilizza i mini MVC per acquisire le conoscenze di base.
+
+02:51.120 --> 02:52.080
+di come funziona.
+
+02:52.080 --> 02:55.890
+E poi guardate la versione con molti MVC e con ogni campione.
+
+02:55.890 --> 02:58.980
+Eseguirò un po' di live coding con uno dei compiti di esempio.
+
+02:58.980 --> 03:00.180
+Iniziamo.

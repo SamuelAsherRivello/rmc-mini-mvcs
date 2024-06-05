@@ -1,0 +1,181 @@
+WEBVTT
+
+00:00.560 --> 00:03.770
+Los mini proyectos MVC de ejemplo.
+
+00:04.190 --> 00:11.210
+El código de ejemplo para aprender más sobre mini MVCs está incluido en el paquete del propio framework.
+
+00:11.480 --> 00:14.690
+Está disponible libremente en Git para su descarga y unidad.
+
+00:15.110 --> 00:21.410
+Para importar esas muestras, abre el gestor de paquetes, selecciona el paquete mini MVCs y verás el archivo
+
+00:21.410 --> 00:23.580
+que puedes importar.
+
+00:23.600 --> 00:25.460
+Puedes verlo en esta captura de pantalla.
+
+00:25.460 --> 00:32.000
+Cuando usted trae en el mini MVCs paquete en sí que rellena la fuente en su carpeta de paquetes.
+
+00:32.000 --> 00:34.000
+Esto es todo lo que necesitas para empezar.
+
+00:34.010 --> 00:39.260
+Los ejemplos que estamos discutiendo aquí son opcionales y una gran manera de aprender más sobre el framework.
+
+00:39.260 --> 00:44.570
+Si tus necesidades también son similares a uno de los proyectos de ejemplo, puedes utilizar el proyecto de ejemplo para obtener
+
+00:44.570 --> 00:47.810
+empezar a copiar o modificar lo que hay allí.
+
+00:47.810 --> 00:50.720
+En este curso, echaremos un vistazo a varios ejemplos.
+
+00:50.720 --> 00:58.160
+Cada uno de ellos muestra exactamente el mismo resultado final Con y sin los mini MVCs, encuentro esto especialmente
+
+00:58.160 --> 00:58.800
+útil.
+
+00:58.820 --> 01:02.330
+Empezar con la versión que no tiene muchos MVCs.
+
+01:02.660 --> 01:07.700
+Puedes ver la funcionalidad completa de resolver el caso de uso sin ningún framework.
+
+01:07.700 --> 01:14.120
+Una vez que estés familiarizado ahí, abre la versión con muchos MVCs y podrás ver como esos mismos casos de uso
+
+01:14.120 --> 01:16.050
+se resuelven utilizando el framework.
+
+01:16.070 --> 01:21.860
+Siéntete libre de ir y venir entre estos dos ejemplos para que tengas una comprensión completa.
+
+01:21.860 --> 01:24.110
+En este curso veremos varios ejemplos.
+
+01:24.110 --> 01:26.270
+Aquí tienes un resumen de alto nivel de cada una de ellas.
+
+01:26.270 --> 01:29.060
+La muestra del reloj es un buen punto de partida.
+
+01:29.060 --> 01:31.310
+Es la más sencilla de las muestras.
+
+01:31.310 --> 01:37.790
+No tiene comportamientos mono, y la única vista, por así decirlo, es el registro de depuración en la consola
+
+01:37.790 --> 01:38.330
+ventana.
+
+01:38.330 --> 01:43.870
+No hay entrada aquí, sólo hace tictac como un reloj y el público está diseñado para principiantes.
+
+01:43.880 --> 01:46.280
+A continuación tenemos un ejemplo de inicio de sesión de usuario.
+
+01:46.280 --> 01:51.530
+Aunque sigue siendo bastante simple, este ejemplo utiliza un comportamiento mono, uno de ellos para la vista.
+
+01:51.530 --> 01:58.670
+Utiliza la interfaz de usuario de la unidad y captura la entrada del usuario en forma de clics de botón mientras estamos imitando el inicio de sesión.
+
+01:58.670 --> 02:03.560
+Es un proyecto sólo offline, por lo que la capa de servicio carga un archivo local.
+
+02:03.560 --> 02:08.030
+Esto ayuda a mantener las cosas fáciles de entender y no requiere internet para su uso.
+
+02:08.030 --> 02:10.160
+El público aquí es para principiantes.
+
+02:10.160 --> 02:15.560
+El siguiente es un ejemplo de Rollerball inspirado en uno de los proyectos de aprendizaje de Unity.
+
+02:15.560 --> 02:22.280
+Somos capaces de utilizar las cuatro teclas de flecha, rodar una bola con la física alrededor de una mesa y recoger amarillo
+
+02:22.280 --> 02:23.510
+pickups giratorios.
+
+02:23.510 --> 02:29.300
+Este es el más complejo de nuestros ejemplos mostrará, y captura todas las características de un simple pero
+
+02:29.300 --> 02:34.940
+completo juego de tres D, incluyendo la entrada de audio, interfaz de usuario y la física.
+
+02:34.940 --> 02:38.570
+Para ilustrar la escalabilidad de muchos MVCs.
+
+02:38.570 --> 02:43.070
+Este proyecto incluye múltiples vistas y múltiples controladores.
+
+02:43.070 --> 02:48.860
+Aunque sigue siendo relativamente simple, este proyecto es apropiado para desarrolladores intermedios a la hora de decidir
+
+02:48.860 --> 02:50.780
+la mejor manera de enseñar arquitectura.
+
+02:50.780 --> 02:56.570
+El valor de codificar y ensuciarse las manos en algunas muestras se hizo evidente, queriendo expresar
+
+02:56.570 --> 03:00.050
+una variedad de principios de enseñanza a través de los conceptos aquí expuestos.
+
+03:00.170 --> 03:02.810
+Lo dividí en varios proyectos.
+
+03:02.810 --> 03:09.950
+Tenemos un proyecto que no utiliza comportamientos de dinero y no tiene vista que representa la muestra más simple
+
+03:09.950 --> 03:13.870
+todo el camino hasta algo con tres d física de entrada, audio y más.
+
+03:13.880 --> 03:20.210
+Ahora, mientras que todas las muestras son relativamente simples a la complejidad que tendría en un juego unity triple A,
+
+03:20.210 --> 03:25.910
+es un patio de recreo adecuado para aprender los conceptos de MVC y ver cómo se escalan para sus necesidades.
+
+03:25.910 --> 03:29.420
+En esta sección hemos hablado de los proyectos de ejemplo de Mini y MVC.
+
+03:29.420 --> 03:34.730
+Repasamos la instalación, qué características tiene cada uno de ellos y algunos de los principios de aprendizaje
+
+03:34.730 --> 03:35.270
+que hay detrás.
+
+03:35.270 --> 03:39.590
+A continuación, profundizaremos aún más en las muestras específicas.
+
+03:39.590 --> 03:44.900
+Veremos cómo tomar toda la teoría que hemos repasado en el curso hasta ahora de los principios de diseño,
+
+03:44.900 --> 03:49.100
+patrones de diseño, filosofías y llevarlo todo al código funcional.
+
+03:49.100 --> 03:54.590
+Proyectaré, compartiré y revisaré cada ejemplo, y dentro de cada uno de ellos haré una breve codificación.
+
+03:54.590 --> 03:59.030
+y os animaré a que sigáis con otras tareas que se os darán.
+
+03:59.030 --> 04:04.400
+Estas tareas son opcionales, pero es una manera fantástica de ensuciarse las manos y entender...
+
+04:04.400 --> 04:05.360
+estos principios.
+
+04:05.360 --> 04:09.970
+Te animo encarecidamente a que sigas estas tareas porque es la mejor forma de aprender.
+
+04:09.980 --> 04:10.760
+Gracias.

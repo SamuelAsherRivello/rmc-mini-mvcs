@@ -1,0 +1,550 @@
+WEBVTT
+
+00:00.080 --> 00:03.800
+Empezaremos desde arriba con la calculadora.
+
+00:04.520 --> 00:06.320
+Así que vamos a saltar a la unidad aquí.
+
+00:07.300 --> 00:11.350
+Así que aquí está el proyecto que he vinculado en el chat.
+
+00:11.380 --> 00:17.470
+Puedes ver que hay un repositorio git y hay instrucciones sobre cómo instalar ese repositorio git.
+
+00:17.620 --> 00:24.850
+Después de haber hecho eso, verás en el gestor de paquetes que estás siguiendo las instrucciones de git, verás
+
+00:24.850 --> 00:26.260
+tendrás este paquete instalado.
+
+00:26.260 --> 00:29.080
+Este es el RMK mini MVCs.
+
+00:29.080 --> 00:33.460
+RMK es mi empresa de consultoría, Ravella, consultoría multimedia.
+
+00:33.460 --> 00:35.770
+Todos los paquetes que publico tienen ese nombre.
+
+00:35.770 --> 00:42.610
+Y entonces el concepto de mini MVC es modelo vista controlador servicio y con sólo una huella muy ligera.
+
+00:42.610 --> 00:48.460
+Así que maneja los flujos de trabajo comunes más básicos que te encontrarás, incluyendo todo lo que estamos viendo
+
+00:48.460 --> 00:54.160
+hoy está construido sobre esta tecnología y es mini porque es bastante elegante, ligero.
+
+00:54.160 --> 00:54.910
+Etcétera.
+
+00:55.000 --> 00:59.950
+A continuación, en las muestras aquí, vas a querer hacer clic en muestras e importar.
+
+00:59.960 --> 01:02.410
+Ya lo he hecho, así que vamos a echar un vistazo.
+
+01:02.410 --> 01:06.130
+Pero de nuevo, el Léame explica cómo conseguir esas muestras ahí.
+
+01:07.050 --> 01:09.640
+Empecemos con la primera.
+
+01:09.660 --> 01:13.920
+Vamos a cerrar algunas cosas aquí sólo para prepararnos.
+
+01:14.040 --> 01:19.710
+A continuación, en el proyecto, en los activos, tenemos, la carpeta más y vamos a pasar a través de ellos.
+
+01:19.710 --> 01:23.740
+Así que vamos a empezar desde la parte superior y ver esta muestra calculadora.
+
+01:23.760 --> 01:32.490
+Ahora todas las estructuras MVC, organizamos la estructura de carpetas para imitar el patrón MVC, y cada
+
+01:32.490 --> 01:37.020
+de vez en cuando me aseguraré de que tengo mi vídeo en el lado correcto.
+
+01:37.050 --> 01:39.480
+Por ejemplo, puedo rebotarme aquí.
+
+01:39.510 --> 01:41.670
+A veces puedo estar tapando cosas.
+
+01:41.670 --> 01:45.540
+Sólo sé que si me sorprendo haciéndolo, volveré aquí.
+
+01:45.660 --> 01:48.000
+Así que, de nuevo, esta es la estructura.
+
+01:48.000 --> 01:56.100
+Tenemos una carpeta para la vista del modelo y el controlador, y vamos a abrir una de las carpetas padre aquí.
+
+01:56.100 --> 01:57.540
+Y aquí lo estamos viendo.
+
+01:57.540 --> 02:04.680
+Voy a tratar de ser consciente como estoy mostrando el código aquí de tener el código se presenta alrededor de 25 líneas de alto
+
+02:04.710 --> 02:06.030
+para que se vea bastante.
+
+02:06.030 --> 02:09.580
+Pero no debería solapar mi vídeo aquí.
+
+02:09.730 --> 02:11.470
+Así que hablemos de esto.
+
+02:11.770 --> 02:16.960
+Este es el mono-comportamiento que se encuentra en la escena que inicia todo el proyecto.
+
+02:16.960 --> 02:22.120
+Si estás familiarizado con Unity, sabrás que como mínimo tendrías un objeto de juego en la escena
+
+02:22.120 --> 02:28.230
+con un mono-comportamiento en él, y ahí es donde empiezas tu proyecto demo de juego, etcétera.
+
+02:28.240 --> 02:36.460
+Así que aquí tenemos eso y todo lo que hago aquí es que tengo un campo serializado para agarrar La Vista, que es un separado
+
+02:36.460 --> 02:39.310
+objeto de juego, sólo para separar las preocupaciones.
+
+02:39.310 --> 02:44.220
+Y luego en el método de inicio proporcionado por Unity, creo la calculadora mini.
+
+02:44.230 --> 02:49.540
+Así que cada vez que veas una de mis clases llamada Mini, se supone que es este objeto padre.
+
+02:49.540 --> 02:52.390
+Y típicamente en estos ejemplos hay exactamente uno.
+
+02:52.390 --> 02:58.360
+Así que aquí todo lo que hago es tomar la vista, pasarla al mini e inicializar el Mini.
+
+02:58.390 --> 03:01.470
+Ahora vamos a ejecutar la demo y ver exactamente lo que pasa aquí.
+
+03:01.480 --> 03:02.820
+Hazlo bonito y grande para nosotros.
+
+03:02.830 --> 03:10.030
+Así que aquí tenemos un campo A, un campo B, un campo de resultado, y entonces somos capaces de sumarlos y
+
+03:10.030 --> 03:10.810
+restablecerlos.
+
+03:10.810 --> 03:16.120
+Fíjate que add y reset están en gris porque no has introducido ningún campo aquí.
+
+03:16.120 --> 03:18.600
+Así que se ha hecho una ligera validación.
+
+03:18.610 --> 03:21.910
+Digamos que queremos sumar dos más tres.
+
+03:21.940 --> 03:26.320
+Ahora el botón Añadir está disponible y hacemos clic en ellos y el resultado es cinco.
+
+03:26.320 --> 03:32.140
+Puedo hacer clic en restablecer, voy a elegir cinco y diez y haga clic en añadir de nuevo.
+
+03:32.140 --> 03:34.180
+Y vemos que el resultado es 15.
+
+03:34.180 --> 03:41.950
+Así que tenemos la interfaz de usuario se muestra aquí y luego algún tipo de cálculos que se realizan en la interfaz de usuario y luego los
+
+03:41.950 --> 03:44.470
+resultados de los cálculos vuelven a la UI.
+
+03:44.500 --> 03:53.110
+Así que el ejemplo clásico fundamental de MVC es dividir lo que un principiante podría hacer...
+
+03:53.110 --> 04:00.010
+una clase que hace todo esto, tiene las vistas, tiene la interfaz de usuario, hace los cálculos, toma el usuario
+
+04:00.010 --> 04:02.110
+y lo refleja.
+
+04:02.110 --> 04:05.200
+Pero en un proyecto más grande que se convertiría en inescalable.
+
+04:05.620 --> 04:08.050
+Así que veamos qué, cómo preparamos la escena aquí.
+
+04:08.490 --> 04:15.300
+Así que tenemos en cada una de estas escenas, tenemos un objeto de juego mundo, que es sólo un objeto de juego vacío
+
+04:15.300 --> 04:18.000
+que tiene un par de hijos en ella, la cámara y la iluminación.
+
+04:18.000 --> 04:22.380
+Así que simplemente oculto que, ya que es el material básico de caldera en cada escena.
+
+04:22.410 --> 04:24.260
+Luego tenemos la vista de la calculadora.
+
+04:24.270 --> 04:25.530
+Echémosle un vistazo.
+
+04:25.530 --> 04:33.570
+Esto usa Unity UI, que es el sistema de interfaz de usuario más popular desde hace años.
+
+04:33.600 --> 04:39.510
+No confundir con UI toolkit, que es incluso más reciente, pero esta es tu UI estándar y tenemos
+
+04:39.510 --> 04:42.690
+los diferentes elementos de la UI, tenemos el sistema de eventos.
+
+04:42.690 --> 04:44.820
+Es todo bastante repetitivo.
+
+04:45.540 --> 04:48.480
+Y aquí me voy a meter.
+
+04:48.480 --> 04:55.050
+Así que tenemos el script de la vista de la calculadora, y eso es sólo un script personalizado que he añadido que toma
+
+04:55.050 --> 04:56.990
+cada uno de los elementos de la interfaz de usuario.
+
+04:57.000 --> 05:00.000
+Así que lo que hago con eso es.
+
+05:00.910 --> 05:04.480
+Sólo almacenarlos allí y luego poder acceder a ellos.
+
+05:04.480 --> 05:06.170
+Así es como está configurada la Vista.
+
+05:06.190 --> 05:10.890
+Entonces, como he mencionado, aquí está el ejemplo en sí y estamos arrastrado la vista en eso.
+
+05:10.900 --> 05:18.010
+Así que cada vez que en muchos MVC que desea tener una vista que se extiende Monobehaviour, que es un super
+
+05:18.010 --> 05:24.760
+patrón común pero opcional, entonces usted quiere tener que ser capaz de acceder por el propio Mini.
+
+05:24.760 --> 05:28.900
+Así que pasas la referencia a la vista en el ejemplo.
+
+05:28.900 --> 05:31.500
+Así que de nuevo, aquí estábamos en nuestro ejemplo.
+
+05:31.510 --> 05:32.710
+Aquí está la vista.
+
+05:32.740 --> 05:33.790
+Aquí viene el Mini.
+
+05:33.820 --> 05:35.680
+Echemos un vistazo a cómo está configurado.
+
+05:37.650 --> 05:39.180
+De nuevo cada vez.
+
+05:40.180 --> 05:42.040
+Nos estamos volviendo un poco locos con el zoom.
+
+05:42.340 --> 05:42.670
+De acuerdo.
+
+05:42.820 --> 05:46.200
+Aquí está el mini patrón.
+
+05:46.210 --> 05:52.750
+Extiende el construido en AI mini MVC aquí en el constructor.
+
+05:52.750 --> 05:54.490
+Toma esa vista.
+
+05:54.670 --> 05:58.150
+A continuación, en la inicialización, crea un contexto.
+
+05:58.180 --> 06:05.410
+Ahora, el contexto es el pegamento que tiene la vista del modelo y el controlador de la comunicación en el en el mismo
+
+06:05.410 --> 06:06.040
+sistema.
+
+06:06.040 --> 06:10.600
+Si tuvieras múltiples contextos, tendrías múltiples minis.
+
+06:10.600 --> 06:16.320
+Pero típicamente en nuestros proyectos, incluyendo éste, tenemos un mini, lo que significa que tenemos un contexto.
+
+06:16.330 --> 06:20.500
+Puedes pensar en ello como el pequeño canal de radio que consigue que estas tres diferentes preocupaciones hablen
+
+06:20.500 --> 06:21.160
+entre ellos.
+
+06:21.160 --> 06:25.060
+Así que creamos un contexto ahí, creando un simple contexto ahí.
+
+06:25.090 --> 06:30.250
+A continuación, creamos un modelo personalizado que va a mantener nuestros valores específicos aquí.
+
+06:31.010 --> 06:33.680
+Creamos un controlador específico aquí.
+
+06:33.710 --> 06:38.780
+Los controladores son el pegamento que hace la lógica de negocio.
+
+06:38.780 --> 06:44.690
+Así que tomo en un modelo, tomo en una vista y son capaces de tener los dos de ellos hablan entre sí.
+
+06:44.690 --> 06:50.000
+Y entonces, como es el patrón estándar con esto, lo que hago es I.
+
+06:51.570 --> 06:54.150
+Inicializar todo explícitamente.
+
+06:54.150 --> 06:56.850
+Así que puedes ver aquí que creamos el contexto.
+
+06:56.880 --> 06:58.320
+Creamos el modelo.
+
+06:58.350 --> 06:59.760
+Creamos el controlador.
+
+06:59.760 --> 07:02.820
+Y después de todo eso, inicializamos cada cosa.
+
+07:02.850 --> 07:05.760
+Típicamente es en la fase de inicialización.
+
+07:05.760 --> 07:07.890
+que las cosas realmente empiezan a suceder.
+
+07:07.890 --> 07:14.190
+Si no los inicializara, se quedarían ahí, quizás conectados entre sí y listos para hacer cosas
+
+07:14.190 --> 07:16.340
+pero no iniciarían realmente su proceso.
+
+07:16.350 --> 07:20.670
+Y como he mencionado aquí, a menudo el orden de inicialización es importante.
+
+07:20.670 --> 07:26.460
+Así que tengo que inicializar el modelo, la vista y el controlador, y eso no es una regla explícita a través de
+
+07:26.460 --> 07:33.120
+todos los proyectos, pero usted encontrará que dependiendo de lo que las dependencias se producen, usted querrá tener
+
+07:33.120 --> 07:37.050
+que empiecen de la forma más simple y fácil de inicializar.
+
+07:37.050 --> 07:40.380
+Y normalmente tu controlador se inicializa en último lugar.
+
+07:40.560 --> 07:41.340
+Genial.
+
+07:41.340 --> 07:42.900
+Echemos un vistazo a cada uno de estos.
+
+07:43.380 --> 07:45.240
+Aquí está el modelo de la calculadora.
+
+07:46.010 --> 07:51.620
+Así que el modelo en el marco MVC es sólo su almacenamiento de datos tonto.
+
+07:51.620 --> 07:57.350
+Así que aquí estoy almacenando el A, B y el resultado que vimos en La Vista.
+
+07:57.380 --> 08:04.700
+Ahora utilizo una clase personalizada que he creado y que está incluida en el mini MVC llamada Observable.
+
+08:04.700 --> 08:09.910
+Así que cada vez que vea observable INT, sólo piensa que eso es una unidad de edad regular.
+
+08:09.920 --> 08:16.100
+INT Eso es para almacenar números enteros, pero viene con un poco de poder extra que puede despachar
+
+08:16.130 --> 08:19.190
+eventos y ser escuchado y hacer un poco de unión de datos.
+
+08:19.190 --> 08:24.440
+Así que aquí estoy almacenando tres ints diferentes y luego los inicializo todos a 000.
+
+08:24.440 --> 08:26.180
+Eso es todo para el modelo.
+
+08:27.490 --> 08:28.900
+Ahora estamos de vuelta aquí.
+
+08:28.900 --> 08:30.280
+Veamos el controlador.
+
+08:30.310 --> 08:33.070
+Los controladores tienden a ser un poco más complejos.
+
+08:33.070 --> 08:37.030
+Así que aquí estoy usando el controlador de la interfaz I.
+
+08:37.960 --> 08:44.520
+Tengo una referencia al modelo que acabamos de ver y a la vista que almaceno aquí.
+
+08:44.530 --> 08:51.610
+Y luego en la inicialización, lo que hago es escuchar que cada vez que el botón de añadir o botón de reinicio son
+
+08:51.610 --> 08:56.140
+se hace clic, escucho de nuevo a eso y vamos a ver cuáles son las consecuencias.
+
+08:56.140 --> 09:03.460
+Bueno, cada vez que el controlador aquí está el botón de vista se ha restablecido entonces lo que vamos a hacer es que vamos a
+
+09:03.460 --> 09:05.260
+restablecer los valores en el modelo.
+
+09:05.290 --> 09:06.160
+Muy sencillo.
+
+09:06.160 --> 09:07.030
+Sencillo.
+
+09:08.190 --> 09:13.890
+Cada vez que el anuncio se hace aquí, los controladores en realidad lo que hace el cálculo?
+
+09:13.890 --> 09:20.190
+Así que va a decir A más B es el resultado y eso es todo.
+
+09:20.220 --> 09:30.060
+Ahora, observe aquí de nuevo, porque tengo la A, B y el resultado son de tipo observable int que siempre
+
+09:30.060 --> 09:32.940
+tienes que hacer dot value para establecerlos.
+
+09:32.940 --> 09:37.680
+Así que puedes echar un vistazo a la fuente del observable int y al repositorio git libre que está enlazado en la sección
+
+09:37.680 --> 09:38.310
+chat.
+
+09:38.550 --> 09:41.730
+Pero verás que el.
+
+09:43.890 --> 09:51.030
+Lo poderoso aquí es que cada vez que se establece que el valor, el un evento es enviado, que cualquier
+
+09:51.030 --> 09:52.290
+sistema puede escuchar.
+
+09:52.320 --> 09:55.920
+Así que de nuevo, estamos empezando a hablar de algunos datos ligeros de unión allí.
+
+09:56.070 --> 09:57.210
+Eso es todo.
+
+09:57.210 --> 10:01.140
+Ahora, vamos a hablar de la vista, que es la última cosa que no hemos visto.
+
+10:01.140 --> 10:04.500
+Así que vamos a subir aquí a nuestra referencia de The View.
+
+10:07.150 --> 10:07.750
+De acuerdo.
+
+10:07.750 --> 10:10.810
+Así que la vista, extiende monobehaviour.
+
+10:10.810 --> 10:16.870
+Así que no hay ninguna regla que diga que cualquiera de los MVCs tiene que extender Monobehaviour.
+
+10:18.310 --> 10:19.190
+Depende de ti.
+
+10:19.210 --> 10:23.050
+Cada uno de ellos o todos ellos, o ninguno de ellos puede extender el comportamiento del modelo.
+
+10:23.050 --> 10:26.740
+Pero es muy común que la vista extienda el comportamiento del modelo.
+
+10:26.740 --> 10:31.330
+Y eso es porque normalmente la vista se ocupa de tomar la entrada del usuario.
+
+10:32.180 --> 10:34.520
+Mostrar y renderizar gráficos al usuario.
+
+10:34.520 --> 10:38.030
+Y en el mundo unity, tener un mana beaver ayuda a que esas cosas sucedan.
+
+10:38.210 --> 10:42.710
+Así que aquí creo algunos eventos unity para cuando se haga click en los botones add y reset.
+
+10:42.740 --> 10:44.330
+Aquí hay algo de configuración.
+
+10:44.390 --> 10:52.010
+Escucho a los elementos de la interfaz de usuario, así que estoy utilizando eventos de unidad aquí para escuchar cuando estos cambios de campo de texto.
+
+10:53.090 --> 11:00.530
+Cada vez que uno de estos campos de texto, cada vez que el valor del modelo cambia.
+
+11:00.530 --> 11:06.070
+Así que aquí estoy escuchando a la A aquí, estoy escuchando a la B y aquí estoy escuchando el resultado.
+
+11:06.080 --> 11:11.030
+Cada vez que cambian, actualizo los valores del texto.
+
+11:11.030 --> 11:13.430
+Este es nuestro enlace bidireccional.
+
+11:13.430 --> 11:20.810
+Si el usuario escribe en el campo de entrada que se escucha aquí y se envía al modelo, y si el
+
+11:20.810 --> 11:26.840
+modelo alguna vez se cambia debido a la adición o el restablecimiento, a continuación, pasa de nuevo a la vista.
+
+11:26.840 --> 11:29.360
+Así que ahí es donde estamos haciendo nuestra vinculación de datos.
+
+11:29.360 --> 11:37.100
+Y aquí abajo hago un pequeño paso adicional para poner en gris el botón de reinicio y poner en gris el botón de añadir.
+
+11:37.100 --> 11:42.170
+Si no hay ninguna entrada válida en los campos, entonces acabo de comprobar que aquí.
+
+11:43.380 --> 11:44.670
+¿Y algo más que ver aquí?
+
+11:44.670 --> 11:51.810
+Sí, supongo que cuando el usuario hace clic en el botón de añadir, entonces yo envío el añadir un evento personalizado.
+
+11:52.080 --> 11:53.940
+Vamos a ejecutar la demo de nuevo.
+
+11:55.330 --> 11:58.510
+Lo haré bonito y grande y.
+
+12:01.400 --> 12:03.950
+Bueno, quizás estaba tapando código para mucho de eso.
+
+12:04.870 --> 12:05.150
+Hmm.
+
+12:05.640 --> 12:06.420
+Ups.
+
+12:06.430 --> 12:09.010
+Intentaremos colocarme en el lado derecho.
+
+12:09.130 --> 12:09.910
+Entonces.
+
+12:10.850 --> 12:14.770
+Intentemos uno más uno y luego le doy a reset.
+
+12:14.950 --> 12:18.130
+Y dos más dos y sumaré.
+
+12:18.250 --> 12:20.170
+Así que ahí está el resultado que tenemos allí.
+
+12:20.170 --> 12:22.210
+Así que eso es todo para la demostración de la calculadora.

@@ -1,0 +1,406 @@
+WEBVTT
+
+00:00.090 --> 00:01.410
+Richten wir unsere Ansicht ein.
+
+00:01.920 --> 00:05.040
+Ich werde ein neues Spielobjekt erstellen und es in der Szenenhierarchie platzieren.
+
+00:05.400 --> 00:09.360
+Ich mache das, weil wir wissen, dass die Ansicht ein Unity UI benutzen wird.
+
+00:09.540 --> 00:13.850
+Unity UI spielt gut mit, indem es Mono-Verhaltensweisen verwendet.
+
+00:13.860 --> 00:16.080
+Ich beginne mit der Erstellung eines Unity Canvas.
+
+00:16.080 --> 00:20.730
+Ich kann mit der rechten Maustaste in die Szenenhierarchie klicken und wählen, dass ich die Leinwand selbst erstellen möchte und dann innerhalb der
+
+00:20.730 --> 00:24.330
+Leinwand weiß ich, dass ich einige Eingabefelder und eine Schaltfläche benötige.
+
+00:24.780 --> 00:26.310
+Also all diese Sachen jetzt.
+
+00:27.320 --> 00:28.340
+Innerhalb der Leinwand.
+
+00:28.340 --> 00:33.680
+habe ich ein Panel erstellt, das uns das schwebende graue Quadrat gibt, das den größten Teil der Spielansicht einnimmt.
+
+00:33.710 --> 00:41.270
+Dann fügte ich drei Eingabefelder und zwei Schaltflächen hinzu, so dass wir die Eingabe für A, für B und für das Ergebnis haben,
+
+00:41.570 --> 00:45.470
+und dann die Schaltflächen zum Hinzufügen sowie zum Löschen und Zurücksetzen der App.
+
+00:45.500 --> 00:47.930
+Derzeit haben alle diese UI-Elemente die gleiche Position.
+
+00:47.930 --> 00:49.190
+Sie sind auf dem Bildschirm zentriert.
+
+00:49.640 --> 00:51.020
+Also werde ich das jetzt korrigieren.
+
+00:51.880 --> 00:52.060
+Hier.
+
+00:52.060 --> 00:56.410
+Ich habe jedes der UI-Elemente positioniert und ihnen einen Namen in der Szenenhierarchie gegeben.
+
+00:56.410 --> 01:00.760
+Wir haben also ein Eingabefeld für A, B und das Ergebnis?
+
+01:01.460 --> 01:04.730
+Sowie eine Schaltfläche zum Hinzufügen und Zurücksetzen.
+
+01:04.730 --> 01:06.990
+Die Basis dieser Struktur ist nun die Leinwand.
+
+01:07.010 --> 01:13.210
+Ich möchte Canvas in den Namen meiner Ansicht umbenennen und die benutzerdefinierte Klasse hinzufügen.
+
+01:13.220 --> 01:18.560
+Hier füge ich die Klasse calculator view hinzu und fahre fort, den Code einzurichten, weil der Rechner
+
+01:18.560 --> 01:20.280
+Ansicht die Unity UI verwendet.
+
+01:20.300 --> 01:23.180
+Wir haben das Mono-Verhalten erweitert, um diesen Teil einzurichten.
+
+01:23.180 --> 01:27.170
+Wir werden die Augenansicht implementieren und wir werden die fehlenden Mitglieder implementieren.
+
+01:27.170 --> 01:28.510
+Wir werden alle Standardeinstellungen verwenden.
+
+01:28.520 --> 01:30.020
+Richten wir unser Initialisieren ein.
+
+01:30.030 --> 01:31.950
+Das ist ein guter Start für die Initialisierung.
+
+01:31.970 --> 01:38.330
+Jetzt serialisieren wir alle UI-Felder, die wir brauchen, und beobachten die Ereignisse, die für jedes von ihnen benötigt werden.
+
+01:38.330 --> 01:43.610
+Hier in den Feldern haben wir also serialisierte Felder für jedes der benötigten UI-Elemente erstellt und in der
+
+01:43.610 --> 01:46.040
+initialize hören wir auf einige Schlüsselereignisse.
+
+01:46.040 --> 01:52.880
+Jedes Mal, wenn der Benutzer die Eingabefelder für A oder B bearbeitet, werden wir hier etwas tun und ein bisschen später werden wir
+
+01:52.880 --> 01:57.310
+werden wir die Folgen des Klickens auf Hinzufügen oder Zurücksetzen implementieren.
+
+01:57.320 --> 02:00.160
+Gehen wir zurück zur Szenenhierarchie und verkabeln die Ansicht.
+
+02:00.170 --> 02:05.270
+Hier in der Rechneransicht verdrahten wir also die serialisierten Felder mit den UI-Elementen.
+
+02:05.270 --> 02:07.730
+Wir beginnen mit dem Eingabefeld A.
+
+02:09.110 --> 02:12.830
+Das Eingabefeld soll das Ergebnis sein.
+
+02:14.280 --> 02:15.570
+Sie fügen die Schaltfläche hinzu.
+
+02:16.840 --> 02:17.980
+Und die Reset-Taste.
+
+02:17.980 --> 02:20.720
+Unsere Szenenhierarchie ist nun fast vollständig.
+
+02:20.740 --> 02:26.020
+Eine Sache, die wir noch tun müssen, ist, die Ansicht des Taschenrechners in den Mini selbst hier zu übertragen.
+
+02:26.020 --> 02:30.280
+In der Beispieldatei werden wir ein Feld serialisieren und es an den Mini-Taschenrechner übergeben.
+
+02:30.280 --> 02:33.610
+Wir haben also das Feld erstellt und es an den Konstruktor übergeben.
+
+02:33.610 --> 02:34.720
+Lass uns die Klasse aktualisieren.
+
+02:34.720 --> 02:37.270
+Es wird also erwartet, dass es in den Konstruktor kommt.
+
+02:37.270 --> 02:42.160
+Wir hatten vorher keinen Konstruktor, also erstellen wir hier einen, akzeptieren die Ansicht des Rechners und speichern
+
+02:42.160 --> 02:44.470
+die Taschenrechneransicht zurück in die Warteschlangenhierarchie.
+
+02:44.470 --> 02:49.390
+Lassen Sie uns das so verdrahten, dass wir eine Referenz aus der Rechneransicht in das neue serialisierte Feld ziehen.
+
+02:49.390 --> 02:52.810
+Jetzt ist fast alles, was wir für die Szene brauchen, eingerichtet.
+
+02:52.810 --> 02:55.030
+Wir speichern die Szene und gehen zurück zum Code.
+
+02:55.030 --> 02:58.090
+An diesem Punkt haben wir ein Projekt, das ziemlich gut eingerichtet ist.
+
+02:58.090 --> 03:05.920
+Wir haben zumindest eine Form der Implementierung für die Miniklasse, das Modell, die Ansicht und den Controller.
+
+03:05.920 --> 03:11.140
+Wir sind noch nicht fertig, aber wir haben eine ziemlich gute Szene aufgebaut und kompilieren den Code von hier aus
+
+03:11.140 --> 03:12.460
+der Taschenrechner-Miniklasse.
+
+03:12.460 --> 03:19.030
+Lasst uns darüber nachdenken, was als nächstes hier in der Initialisierung kommt, wir sehen, dass wir den Kontext eingerichtet haben, das Modell.
+
+03:19.150 --> 03:23.500
+Wir machen hier nichts mit der Ansicht, aber wir wissen, dass wir sie ziemlich gut verdrahtet haben.
+
+03:23.500 --> 03:28.840
+Wir haben den Controller, der definitiv implementiert werden muss und wir machen einige der Initialisierungen.
+
+03:28.840 --> 03:31.720
+Kehren wir zu unserem Anwendungsfall zurück, um uns beim Brainstorming zu helfen.
+
+03:31.720 --> 03:39.190
+Erinnern Sie sich, dass wir zwei int-Werte akzeptieren, eine Addition durchführen und das Ergebnis anzeigen wollten.
+
+03:39.190 --> 03:40.570
+Hier ist unser bisheriger Fortschritt.
+
+03:40.570 --> 03:45.340
+Wir haben unsere Ansicht mit den Anforderungen hier eingerichtet, aber wir haben weder das Modell noch den Controller.
+
+03:45.340 --> 03:47.980
+Wir können frei wählen, zu welchem von beiden wir als nächstes gehen wollen.
+
+03:47.980 --> 03:52.780
+Da ich das Gefühl habe, dass die Modellimplementierung einfacher sein wird, lassen Sie uns die
+
+03:52.780 --> 03:55.840
+Modell fertig und beenden unsere Codierung mit dem Controller.
+
+03:55.840 --> 03:59.680
+Hier im Modell wissen wir also, dass wir jetzt einige Ints speichern wollen, obwohl sie optional sind.
+
+03:59.680 --> 04:04.600
+Bis jetzt haben wir in unseren Beispielen die observable Klasse benutzt, die uns nicht nur die Funktionalität bietet
+
+04:04.600 --> 04:09.940
+eines INT zum Speichern bietet, sondern auch eine gute Möglichkeit, auf Änderungen an diesem gespeicherten Wert zu hören.
+
+04:09.940 --> 04:11.140
+Lass uns das jetzt benutzen.
+
+04:11.140 --> 04:15.130
+Wir erstellen also eine Eigenschaft für a, B und das Ergebnis sowie ein Feld.
+
+04:15.130 --> 04:20.950
+Nun ist es mein Ansatz, dass alle Projekte X eine öffentliche Eigenschaft mit einem privaten Wert darunter haben
+
+04:20.950 --> 04:21.850
+die optional ist.
+
+04:21.850 --> 04:24.040
+Sie könnten stattdessen einfach ein öffentliches Feld haben.
+
+04:24.040 --> 04:29.110
+Wie bei anderen Beispielen, die wir gesehen haben, werden wir die Initialisierung des Modells benutzen, um einige Standardwerte zu setzen
+
+04:29.110 --> 04:31.360
+Das hängt davon ab, was genau Ihre Standardwerte sind.
+
+04:31.390 --> 04:34.150
+Dies ist vielleicht nicht notwendig, aber ich denke, es ist eine gute Übung.
+
+04:34.150 --> 04:39.910
+Da das Taschenrechnermodell das Basismodell erweitert, sind die Basismodelle bereits für die Initialisierung zuständig.
+
+04:39.910 --> 04:45.160
+Genau wie bei der allgemeinen objektorientierten Programmierung können wir also eine übergeordnete Methode überschreiben.
+
+04:45.160 --> 04:49.390
+Rufen Sie die Basismethode auf, um die Basisfunktionalität zu erhalten, und legen Sie auf diese Weise unsere Standardwerte fest.
+
+04:49.390 --> 04:51.580
+Wenn das erledigt ist, lassen Sie uns einen Blick auf den Controller werfen.
+
+04:51.580 --> 04:54.520
+Die Implementierung des Controllers ist das letzte Teil des Puzzles.
+
+04:54.520 --> 04:56.950
+Wir haben ein View-Setup und ein Model-Setup.
+
+04:56.950 --> 04:59.920
+Jetzt muss der Controller der Klebstoff sein, der alles zusammenbringt.
+
+04:59.920 --> 05:04.360
+Zuerst habe ich einen Konstruktor erstellt, der alle Belange aufnimmt, um die wir uns kümmern wollen.
+
+05:04.360 --> 05:09.190
+In diesem Fall kümmert sich der Controller um die anderen Belange, d.h. um das Taschenrechnermodell
+
+05:09.190 --> 05:10.060
+und die Ansicht des Rechners.
+
+05:10.060 --> 05:15.400
+Ich speichere diese als Felder, dann aktualisiere ich die Initialisierung, um die üblichen Schritte der Überprüfung durchzuführen, ob
+
+05:15.400 --> 05:17.680
+Sie initialisiert sind und den Kontext speichern.
+
+05:17.680 --> 05:20.530
+Was sind also einige Dinge, die wir hier im Controller tun müssen?
+
+05:20.740 --> 05:25.990
+Nun, erstens, da wir jetzt einen Verweis auf das Modell haben, wollen wir alle Änderungen an diesem Modell beobachten
+
+05:25.990 --> 05:30.970
+und jetzt, da wir einen Verweis auf die Rechneransicht haben, wollen wir alle wichtigen
+
+05:30.970 --> 05:32.290
+Ereignisse, die von der Ansicht kommen.
+
+05:32.290 --> 05:33.490
+Lassen Sie uns das jetzt einrichten.
+
+05:34.200 --> 05:40.770
+Hier in der Initialisierung möchte ich auf das Reset-Ereignis und das ADD-Ereignis hören
+
+05:40.770 --> 05:41.640
+von The View.
+
+05:41.940 --> 05:43.440
+Lassen Sie uns diese Ereignisse jetzt erstellen.
+
+05:44.410 --> 05:47.410
+Hier oben in der Ansicht erstellen wir diese beiden Ereignisse.
+
+05:47.440 --> 05:50.470
+Keines der beiden Ereignisse muss irgendwelche Informationen weitergeben.
+
+05:50.740 --> 05:53.230
+Also können wir nur einfache Einheitsereignisse verwenden.
+
+05:53.970 --> 06:00.120
+Hier habe ich also die Ereignisse "on add" und "on reset" und darunter in der gleichen Klasse erstellt.
+
+06:00.120 --> 06:06.360
+Wenn wir die Benutzeroberfläche abhören und erfassen, dass eine der Schaltflächen angeklickt wird, senden wir dieses benutzerdefinierte Ereignis aus.
+
+06:07.990 --> 06:14.650
+Da der Controller einen Verweis auf den View hat und diese View-Elemente sind
+
+06:14.650 --> 06:16.750
+in diesem speziellen Fall öffentlich.
+
+06:16.960 --> 06:22.810
+Wir könnten stattdessen einfach den Controller direkt auf die UI-Ereignisse hören lassen, anstatt dies zu erstellen
+
+06:22.810 --> 06:24.330
+Schritt mit benutzerdefinierten Ereignissen.
+
+06:24.340 --> 06:29.620
+Was wir hier zeigen, ist ein entkoppelter Ansatz und Sie können in Ihrem Projekt entscheiden, was funktioniert
+
+06:29.620 --> 06:30.220
+für Sie am besten funktioniert.
+
+06:30.220 --> 06:35.200
+Hier im Controller habe ich also diese beiden Ereignisse verdrahtet und einen Handler für jedes von ihnen eingerichtet.
+
+06:35.380 --> 06:39.670
+Lassen Sie uns einen Moment darüber nachdenken, was die Folge eines jeden dieser Ereignisse sein soll.
+
+06:39.940 --> 06:46.030
+Wenn Sie auf die Schaltfläche "Zurücksetzen" klicken, sollten alle Felder aus dem Feld A gelöscht werden, aus
+
+06:46.030 --> 06:48.490
+dem B-Feld und dem Ergebnisfeld löschen.
+
+06:48.490 --> 06:50.260
+Und was soll passieren, wenn wir hinzufügen?
+
+06:50.260 --> 06:56.080
+Nun, wir wollen das Ergebnisfeld als die Addition von Feld A und Feld B festlegen.
+
+06:56.080 --> 06:58.720
+Bei vielen MVCs gibt es Flexibilität.
+
+06:58.720 --> 07:01.120
+Lassen Sie uns also über verschiedene Möglichkeiten sprechen, wie wir das machen können.
+
+07:01.120 --> 07:07.210
+Der direkteste Weg wäre wahrscheinlich, dass der Controller die Felder direkt in der Ansicht ändert.
+
+07:07.240 --> 07:08.560
+Schauen wir uns an, wie das aussehen würde.
+
+07:08.560 --> 07:14.800
+Wir beginnen also mit dem direktesten Ansatz hier im Reset, wir greifen in die Ansicht und setzen diese
+
+07:14.800 --> 07:16.900
+UI-Werte zurück auf einen leeren String.
+
+07:16.900 --> 07:22.630
+Und dann holen wir beim ADD diese Werte, addieren sie zusammen und aktualisieren die Ansicht direkt.
+
+07:22.630 --> 07:24.430
+Lassen wir die Szene laufen und sehen wir, wie sich das verhält.
+
+07:24.430 --> 07:26.290
+Hier sind wir also in der laufenden Szene.
+
+07:26.290 --> 07:28.960
+Fügen Sie ein paar Beispielwerte hinzu und klicken Sie auf Zurücksetzen.
+
+07:28.960 --> 07:30.610
+Sieht so aus, als ob es richtig zurückgesetzt wird.
+
+07:30.610 --> 07:33.550
+Fügen wir wieder ein paar Werte hinzu und klicken auf die Schaltfläche Hinzufügen.
+
+07:37.620 --> 07:38.330
+Sieht gut aus.
+
+07:38.340 --> 07:41.220
+Lassen Sie uns darüber nachdenken und unsere Struktur überdenken.
+
+07:41.220 --> 07:47.520
+An diesem Punkt hat der Controller direkten Zugriff auf die Ansicht innerhalb der vorgeschlagenen Grenzen von
+
+07:47.520 --> 07:48.860
+wie wir uns hier verhalten.
+
+07:48.870 --> 07:49.880
+Das ist in Ordnung.
+
+07:49.890 --> 07:55.140
+Es ist in Ordnung, wenn der Controller eine Referenz hat, um sie anzusehen und direkt zu aktualisieren, wenn der Controller
+
+07:55.140 --> 07:56.940
+direkt den View aktualisiert.
+
+07:56.970 --> 07:58.620
+Wir umgehen das Modell.
+
+07:58.620 --> 08:03.480
+Im Wesentlichen speichern wir die Modelldaten direkt in der Ansicht.
+
+08:03.480 --> 08:09.510
+Und von einem grundlegenden Standpunkt aus gesehen, entgleiten wir der MVC-Trennung von Belangen.
+
+08:09.510 --> 08:14.880
+Lassen Sie uns dies wiederholen und ein wenig mehr solide Prinzipien in den Code einbringen.

@@ -1,0 +1,142 @@
+WEBVTT
+
+00:00.390 --> 00:03.270
+Installation des mini MVC.
+
+00:04.310 --> 00:06.980
+Le code source complet est disponible gratuitement sur git.
+
+00:07.010 --> 00:08.870
+Le lien sera inclus ci-dessous.
+
+00:08.870 --> 00:11.880
+La procédure d'installation consiste à suivre ce lien.
+
+00:11.900 --> 00:13.850
+Créer un nouveau projet unity.
+
+00:13.850 --> 00:19.610
+Je suggère les dernières versions de unity et vous importez ce paquet dans votre projet.
+
+00:19.610 --> 00:27.410
+Dans le menu supérieur de Unity, vous naviguez vers Window Package Manager Add package from git URL et vous utilisez la commande
+
+00:27.410 --> 00:29.120
+au sommet de la page git.
+
+00:29.300 --> 00:31.640
+Nous voici dans notre navigateur web préféré.
+
+00:31.640 --> 00:37.460
+En regardant le repo du projet dans GitHub, nous cliquons sur code et nous pouvons voir l'URL complète de git.
+
+00:37.490 --> 00:39.950
+Nous voulons copier cette URL et l'intégrer dans unity.
+
+00:39.980 --> 00:44.840
+Nous sommes ici dans un projet unity vide utilisant la dernière version de unity.
+
+00:45.690 --> 00:47.490
+Nous allons ouvrir le gestionnaire de paquets.
+
+00:58.370 --> 01:03.970
+Le gestionnaire de paquets affiche toutes les dépendances actuelles et vous permet d'en ajouter d'autres.
+
+01:03.980 --> 01:07.500
+Nous cliquons sur le bouton plus et choisissons d'ajouter une nouvelle URL git.
+
+01:07.520 --> 01:13.970
+Nous collons l'URL que nous avons obtenu du repo github et maintenant le mini MVCs est ajouté avec succès dans votre
+
+01:13.970 --> 01:14.540
+projet.
+
+01:14.540 --> 01:20.000
+Remarquez dans la fenêtre du projet que nous n'avons rien dans les actifs dans cet exemple particulier parce que c'est
+
+01:20.000 --> 01:24.440
+un projet vide et sous les packages, nous pouvons voir de nombreux MVC.
+
+01:26.280 --> 01:30.780
+C'est un peu hors sujet, mais je vais parler un peu de unity et des packages.
+
+01:30.780 --> 01:34.590
+Historiquement, Unity proposait des assets via l'asset store.
+
+01:34.620 --> 01:40.470
+Ces ressources étaient téléchargées sous la forme d'un fichier zip que vous décompressiez dans votre projet et que vous pouviez utiliser comme suit
+
+01:40.470 --> 01:41.510
+de les utiliser.
+
+01:41.520 --> 01:43.270
+Le système fonctionnait assez bien.
+
+01:43.290 --> 01:47.750
+Il y a quelques années, l'unité a considérablement élargi la manière dont ce système serait fourni.
+
+01:47.760 --> 01:53.880
+Le magasin d'actifs existe toujours en tant que concept, mais maintenant lorsque vous téléchargez des choses de tierces parties,
+
+01:53.880 --> 01:58.290
+y compris ce paquet que je propose ici, il passe par le gestionnaire de paquets Unity.
+
+01:58.290 --> 02:03.120
+Parmi les avantages, vous disposez d'une autre voie d'accès qui vous permet d'ajouter très facilement des éléments à votre projet.
+
+02:03.120 --> 02:04.050
+Comme nous l'avons vu.
+
+02:04.350 --> 02:08.370
+Vous pouvez également inclure en tant que développeur des échantillons à partager avec d'autres.
+
+02:08.370 --> 02:12.000
+Nous examinerons quelques exemples pour de nombreux MVC dans les sections suivantes.
+
+02:12.000 --> 02:17.040
+Pendant que vous utilisez ce paquet ou un autre, vérifiez périodiquement dans le gestionnaire de paquets pour voir
+
+02:17.040 --> 02:22.110
+si une nouvelle version a été publiée afin de vous assurer que vous utilisez toujours le code le plus récent.
+
+02:22.110 --> 02:25.380
+nous avons examiné les mini MVC.
+
+02:25.380 --> 02:31.980
+Nous avons eu une vue d'ensemble, parlé des avantages et des inconvénients, de certaines caractéristiques, des avantages et nous avons vu que
+
+02:31.980 --> 02:34.620
+c'est une alternative plus légère que d'autres frameworks.
+
+02:34.620 --> 02:38.540
+Nous avons vu comment l'installer dans vos projets et sommes prêts à explorer davantage.
+
+02:38.550 --> 02:40.020
+Nous allons maintenant approfondir la question.
+
+02:40.020 --> 02:45.420
+Ce sera le premier regard sur le vrai code de ce framework, apprendre les fondamentaux à travers
+
+02:45.420 --> 02:46.290
+exemples.
+
+02:46.290 --> 02:52.530
+Nous allons voir des exemples de projets, comment prendre toute la théorie de ce cours et l'appliquer à C-sharp.
+
+02:52.530 --> 02:53.120
+code.
+
+02:53.130 --> 02:59.370
+Je sais que nous avons parlé de beaucoup de principes, de modèles, de concepts et de philosophies jusqu'à présent.
+
+02:59.370 --> 02:59.940
+point.
+
+02:59.940 --> 03:04.230
+Tout cela va s'assembler lorsque nous commencerons à le voir dans l'exemple de code.
+
+03:04.230 --> 03:06.180
+J'ai hâte de voir cela avec vous.
+
+03:06.180 --> 03:07.050
+Je vous remercie.

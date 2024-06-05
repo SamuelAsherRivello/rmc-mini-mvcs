@@ -1,0 +1,196 @@
+WEBVTT
+
+00:00.090 --> 00:01.510
+Erstellen von Unit-Tests.
+
+00:01.530 --> 00:03.600
+Testklasse und Testmethoden.
+
+00:03.600 --> 00:07.260
+Hier ist der Code für eine Testklasse mit einer Testmethode.
+
+00:07.260 --> 00:12.510
+Darin folgen wir dem optionalen Paradigma von arrange, act und assert.
+
+00:12.510 --> 00:14.970
+Das ist die Konvention, die ich für alle meine Tests verwende.
+
+00:14.970 --> 00:19.120
+Wir haben also gesehen, wie ein Test aussieht und wie man einen bestehenden Test ausführt.
+
+00:19.140 --> 00:20.750
+Nun wollen wir unseren eigenen Test erstellen.
+
+00:20.760 --> 00:27.780
+Wir öffnen ein leeres Projekt, öffnen den Testlauf oder das Fenster, erstellen einen Testordner und eine Testklasse,
+
+00:27.780 --> 00:29.760
+und eine Methode innerhalb dieses Tests.
+
+00:29.910 --> 00:31.740
+Dann führen wir den Test aus und sehen das Ergebnis.
+
+00:31.740 --> 00:34.020
+Hier sind wir in einem ziemlich leeren Projekt.
+
+00:34.020 --> 00:37.410
+Ich habe das Unity Test Framework bereits hinzugefügt.
+
+00:37.410 --> 00:43.920
+Öffnen wir das Test-Runner-Fenster, da das Projekt keine Tests für den Bearbeitungsmodus und den Spielmodus hat,
+
+00:43.920 --> 00:47.670
+Jede dieser Registerkarten bietet einige Optionen, die uns den Einstieg erleichtern.
+
+00:47.670 --> 00:53.610
+Als erstes erstellen wir einen Ordner für die Testanordnung im Bearbeitungsmodus, indem wir auf die Schaltfläche klicken, die einen neuen Ordner erstellt
+
+00:53.610 --> 00:59.430
+in unserem Projektfenster, einschließlich einer Baugruppe zum Testen, Unity-Baugruppen und der Baugruppe
+
+00:59.430 --> 01:07.110
+Definitionsdatei liegt außerhalb des Rahmens dieses Kurses, aber kurz gesagt signalisiert dies Unity, dass Dinge innerhalb
+
+01:07.110 --> 01:11.700
+dieses Ordners kompiliert werden sollen, und zwar auf eine eindeutige Weise.
+
+01:11.700 --> 01:16.470
+Nachdem wir nun den Ordner für die Testbaugruppe eingerichtet haben, können wir unsere erste Testklasse erstellen.
+
+01:16.470 --> 01:21.390
+Jeder dieser Schritte kann manuell durchgeführt werden, ohne das Fenster zu benutzen, aber ich fahre fort, indem ich auf die Schaltfläche
+
+01:21.390 --> 01:26.610
+klicken, um ein Testskript im aktuellen Ordner des Projektfensters zu erstellen, das eine
+
+01:26.610 --> 01:29.600
+neue Testklasse erstellt und uns zwei Testmethoden gibt.
+
+01:29.610 --> 01:32.430
+Beachten Sie, dass im Fenster für den Testlauf alles angezeigt wird.
+
+01:32.550 --> 01:33.930
+Ich führe alle diese Tests durch.
+
+01:33.930 --> 01:35.150
+Alle Tests sind erfolgreich.
+
+01:35.160 --> 01:37.230
+Werfen wir einen Blick auf den generierten Code.
+
+01:37.230 --> 01:42.090
+An dieser Stelle können Sie die Klasse und die Methoden nach Belieben umbenennen.
+
+01:42.090 --> 01:45.660
+Und dann können Sie natürlich durch Kopieren und Einfügen weitere Methoden hinzufügen.
+
+01:45.660 --> 01:50.940
+Es gibt keine Begrenzung für die Anzahl der Testmethoden, die man in einer Testklasse haben kann, aber im Allgemeinen verwendet man
+
+01:50.940 --> 01:57.990
+die Klasse, um bestimmte Themen zu organisieren, vielleicht eine Testklasse für jede Produktionsklasse und dann eine
+
+01:57.990 --> 02:01.170
+Testmethode für jede Methode in der Produktion.
+
+02:01.170 --> 02:03.420
+Sie wollen so etwas testen.
+
+02:03.420 --> 02:07.110
+Diese Kommentare werden automatisch von Unity generiert und sind sehr hilfreich.
+
+02:07.650 --> 02:09.120
+Ich werde hier die Highlights durchgehen.
+
+02:09.120 --> 02:10.380
+Verwendung des Tests.
+
+02:10.920 --> 02:19.290
+Die Verwendung des Test-Attributs ermöglicht einen normalen Test im Bearbeitungsmodus Die Verwendung des Unity-Test-Attributs ermöglicht
+
+02:19.290 --> 02:22.250
+einen Test über mehrere Frames auszuführen.
+
+02:22.260 --> 02:26.790
+Ich habe bereits erwähnt, dass die Verwendung von unity test am besten für den Spielmodus geeignet ist.
+
+02:26.790 --> 02:31.320
+Man hat viel mehr Möglichkeiten, welche Art von asynchroner Funktionalität man dort machen kann.
+
+02:31.320 --> 02:38.160
+Es ist in der Tat möglich, und wie der Kommentar andeutet, können Sie yield return null verwenden, um einen Frame zu überspringen.
+
+02:38.160 --> 02:43.020
+Zum Beispiel, indem man das Setup durchführt, dann einen Frame wartet und den Test durchführt.
+
+02:43.020 --> 02:44.010
+So etwas in der Art.
+
+02:44.010 --> 02:47.730
+Zum Beispiel, den Setup-Code ausführen, einen Frame warten.
+
+02:48.380 --> 02:51.080
+Und dann die Behauptung machen, so etwas in der Art.
+
+02:51.080 --> 02:54.620
+Hier, zurück in Unity, werde ich mit einem Tabulator auf die.
+
+02:55.350 --> 02:57.840
+Spielmodus und folge den gleichen Schritten.
+
+02:57.840 --> 03:04.020
+Zuerst erstellen wir einen Testordner für den Spielmodus und dann erstelle ich ein Testskript.
+
+03:04.020 --> 03:09.900
+In diesem Ordner können wir im Test Runner sehen, dass wir eine Testklasse haben, die zwei Testmethoden enthält.
+
+03:10.500 --> 03:13.370
+Ich führe alle aus und wir sehen, dass alles funktioniert.
+
+03:13.380 --> 03:15.350
+Werfen wir einen Blick auf den generierten Code.
+
+03:15.360 --> 03:21.960
+Der hier generierte Code ist sowohl im Spiel- als auch im Bearbeitungsmodus identisch.
+
+03:21.960 --> 03:24.240
+Sie bieten sehr ähnliche Ausgangspunkte.
+
+03:24.240 --> 03:25.110
+Das war's.
+
+03:26.480 --> 03:31.700
+Wir fangen an, das mit dem Testläufer-Fenster und einem kleinen zusätzlichen C-Schliff zu sehen.
+
+03:31.700 --> 03:35.250
+Wir können mehr Dinge mit unseren Unity-Projekten machen als bisher.
+
+03:35.270 --> 03:41.420
+Wenn Sie neu im Bereich Unit-Tests sind, sind Sie mit der Verwendung von Unity zur Erstellung von Laufzeitcode vertraut, aber das Testen
+
+03:41.420 --> 03:42.800
+Code ist etwas anderes.
+
+03:43.480 --> 03:46.750
+Er wird nie direkt von Ihren Endbenutzern erlebt.
+
+03:47.200 --> 03:49.770
+Dieser Code läuft nur im Testmodus.
+
+03:49.790 --> 03:52.320
+Er ist nicht einmal in Ihrem End-Build enthalten.
+
+03:52.330 --> 03:59.470
+Wir fangen jetzt an, Tests als ein kleines Fenster in Momente und Zeit in einer größeren Anwendung zu betrachten
+
+03:59.470 --> 04:03.030
+mit einem engen Fokus, um sicherzustellen, dass wir konsistente Ergebnisse erhalten.
+
+04:03.040 --> 04:08.320
+Bis jetzt haben wir hauptsächlich über das Hinzufügen neuer Tests zu bestehendem Code gesprochen.
+
+04:08.350 --> 04:13.420
+Als Nächstes werden wir uns ansehen, wie wir Tests hinzufügen können, während wir Code mit testgetriebener Entwicklung entwickeln.
+
+04:13.420 --> 04:14.200
+Danke!

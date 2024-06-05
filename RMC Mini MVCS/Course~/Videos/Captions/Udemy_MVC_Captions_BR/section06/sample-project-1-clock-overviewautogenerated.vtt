@@ -1,0 +1,142 @@
+WEBVTT
+
+00:00.120 --> 00:03.030
+O projeto de amostra de muitos relógios da NBC.
+
+00:03.030 --> 00:09.630
+Com cada projeto de exemplo, há uma oportunidade de se desvencilhar mais das camadas em MVCs e pensar
+
+00:09.630 --> 00:11.460
+criticamente sobre esses conceitos.
+
+00:11.460 --> 00:13.930
+Isso aumentará drasticamente o seu aprendizado.
+
+00:13.950 --> 00:18.750
+Para dar início às suas reflexões, considere os prós e os benefícios da estrutura em cada exemplo.
+
+00:18.750 --> 00:21.240
+Com quais aspectos você se sente mais confortável?
+
+00:21.240 --> 00:24.510
+Você está começando a ver os benefícios a longo prazo da escolha de uma estrutura?
+
+00:24.510 --> 00:28.740
+Com quais partes da estrutura você está entusiasmado e quer aprender mais ao longo do caminho?
+
+00:28.740 --> 00:31.650
+Você pode identificar alguns possíveis contras ou desvantagens.
+
+00:31.650 --> 00:35.040
+Quais aspectos da estrutura podem não funcionar para suas necessidades?
+
+00:35.040 --> 00:40.770
+Há algo que você possa fazer para obter os resultados de que precisa e quais padrões e práticas permanecem?
+
+00:40.770 --> 00:41.760
+não estão claros para você?
+
+00:41.760 --> 00:43.290
+Reflita sobre esses pontos.
+
+00:43.290 --> 00:48.930
+Envolva-se com a comunidade, faça anotações e reflita, pois estamos entrando nessa amostra em um projeto
+
+00:48.930 --> 00:52.380
+que tem o código-fonte da estrutura, bem como as amostras.
+
+00:52.500 --> 00:57.330
+Cada uma das amostras que abordamos tem uma versão com muitos MVCs e sem.
+
+00:57.330 --> 00:59.520
+Neste exemplo, estamos analisando um relógio simples.
+
+00:59.520 --> 01:05.300
+Ele não tem visualização e, em vez disso, usa instruções de log de depuração para ver algum tipo de saída na janela do console.
+
+01:05.310 --> 01:07.410
+Isso mantém o exemplo especialmente simples.
+
+01:07.410 --> 01:10.440
+Ele não tem comportamentos mono e também não tem entrada.
+
+01:10.440 --> 01:16.230
+Enquanto nos aprofundamos nesse exemplo, considere qual dessas tarefas de codificação você gostaria de assumir.
+
+01:16.230 --> 01:19.020
+Há uma variedade aqui e você pode até criar a sua própria.
+
+01:19.020 --> 01:23.190
+Começar com a dificuldade mais baixa é apenas para explicar esses conceitos.
+
+01:23.190 --> 01:27.450
+Depois de se aprofundar no exemplo, você se sente confortável o suficiente para explicá-lo a um amigo?
+
+01:27.450 --> 01:29.310
+Cada exemplo inclui teste de unidade.
+
+01:29.310 --> 01:33.390
+Você pode acrescentar mais um teste de unidade que faça sentido no contexto da amostra?
+
+01:33.390 --> 01:40.050
+Você pode adicionar um novo recurso de UI, talvez adicionando texto ou um botão à UI e, em seguida, conectando-o adequadamente
+
+01:40.050 --> 01:41.850
+de uma forma que faça sentido para a estrutura.
+
+01:41.850 --> 01:47.640
+Você poderia criar algum outro tipo de entrada nova, talvez uma entrada de teclado, fazer algo apropriado
+
+01:47.640 --> 01:48.420
+para a amostra.
+
+01:48.420 --> 01:49.920
+Você poderia copiar a amostra.
+
+01:49.920 --> 01:54.990
+Talvez a amostra tenha algumas coisas que sejam interessantes para um caso de uso diferente, copie e cole a amostra.
+
+01:54.990 --> 02:01.200
+pasta pai inteira, renomeie cada classe para que seja única ou dê a ela um novo espaço de nome e, em seguida, adicione
+
+02:01.200 --> 02:03.510
+e ajuste a funcionalidade para atender às suas necessidades.
+
+02:03.510 --> 02:09.210
+E talvez o mais desafiador dessa lista seja criar você mesmo uma nova amostra em vez de copiar
+
+02:09.210 --> 02:09.960
+e colar.
+
+02:09.960 --> 02:12.750
+Aqui, comece com a tela vazia de um novo projeto.
+
+02:12.750 --> 02:15.930
+Importe a própria estrutura e comece a codificar do zero.
+
+02:15.930 --> 02:19.740
+Isso certamente demonstra um domínio firme de todos os conceitos.
+
+02:19.740 --> 02:24.600
+Realizar tarefas como essas ajuda a aprofundar seu conhecimento com experiência prática.
+
+02:24.600 --> 02:27.930
+Vamos ver isso em ação Você pode criar um novo projeto Unity.
+
+02:27.930 --> 02:30.420
+Importe o Mini MVCs Framework.
+
+02:30.420 --> 02:36.810
+Importe as amostras, abra esta amostra em particular, explore a versão que não usa o Mini
+
+02:36.810 --> 02:39.780
+MVCs para obter o conhecimento básico de como ele funciona.
+
+02:39.780 --> 02:45.360
+Em seguida, veja a versão com muitos MVCs e, em cada amostra, farei uma codificação ao vivo com um deles
+
+02:45.360 --> 02:46.680
+das atribuições de amostra.
+
+02:46.680 --> 02:47.910
+Vamos começar.
