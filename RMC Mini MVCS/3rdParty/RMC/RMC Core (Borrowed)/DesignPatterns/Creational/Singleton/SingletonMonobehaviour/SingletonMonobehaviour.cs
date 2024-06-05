@@ -94,6 +94,7 @@ namespace RMC.Core.DesignPatterns.Creational.Singleton.CustomSingletonMonobehavi
             if (_MustResetInstance)
             {
                 _Instance = null;
+                _AwakeHasBeenCalled = false;
                 _MustResetInstance = false;
             }
 
@@ -128,17 +129,18 @@ namespace RMC.Core.DesignPatterns.Creational.Singleton.CustomSingletonMonobehavi
 
         //  Fields -------------------------------------------------
         private static T _Instance;
-       
+        private static bool _AwakeHasBeenCalled = false;
+        
         public delegate void OnInstantiateCompletedDelegate(T instance);
         public static OnInstantiateCompletedDelegate OnInstantiateCompleted;
         
 
 
         //  Instantiation ------------------------------------------
-
-        
         protected virtual void Awake()
         {
+            _AwakeHasBeenCalled = true;
+            
             //NOTSURE
             if (_Instance != null && _Instance != this)
             {
@@ -146,6 +148,7 @@ namespace RMC.Core.DesignPatterns.Creational.Singleton.CustomSingletonMonobehavi
             }
             else
             {
+                _Instance = this as T;
                 Instantiate();
             }
         }
@@ -153,11 +156,22 @@ namespace RMC.Core.DesignPatterns.Creational.Singleton.CustomSingletonMonobehavi
         public static T Instantiate()
         {
             
+            if (IsShuttingDown || !Application.isPlaying)
+            {
+                Debug.LogError("Must check IsShuttingDown before calling Instantiate/Instance.");
+            }
+
+            //Unsure: test if "this" awoke AFTER/BEFORE something else that called blah.Instance 
+            if (_AwakeHasBeenCalled)
+            {
+                //Debug.Log("_AwakeHasBeenCalled: " + _AwakeHasBeenCalled);
+            }
+            
             CheckResetInstance();
             
             var instances = GameObject.FindObjectsByType<T>(FindObjectsSortMode.InstanceID);
 
-            //NOTSURE
+            // Destroy any duplicates
             if (instances.Length > 1)
             {
                 //Where 0 is the newest and length is the oldest
@@ -165,21 +179,14 @@ namespace RMC.Core.DesignPatterns.Creational.Singleton.CustomSingletonMonobehavi
                 for (int i = 0; i < instances.Length-1; i++)
                 {
                     var next = instances[i];
-                    Debug.Log("Destroy : " + next.gameObject.GetInstanceID() + " and " + next.gameObject.name);
                     Destroy(next.gameObject);
                 }
-            }
- 
-            
-            if (IsShuttingDown || !Application.isPlaying)
-            {
-                Debug.LogError("Must check IsShuttingDown before calling Instantiate/Instance.");
             }
             
             if (!IsInstantiated)
             {
                 _Instance = GameObject.FindObjectOfType<T>();
-        
+
                 if (_Instance == null)
                 {
                     GameObject go = new GameObject();
@@ -187,7 +194,6 @@ namespace RMC.Core.DesignPatterns.Creational.Singleton.CustomSingletonMonobehavi
                     go.name = _Instance.GetType().FullName;
                     
                 }
-
                 // Notify child scope
                 (_Instance as SingletonMonobehaviour<T>).InstantiateCompleted();
 

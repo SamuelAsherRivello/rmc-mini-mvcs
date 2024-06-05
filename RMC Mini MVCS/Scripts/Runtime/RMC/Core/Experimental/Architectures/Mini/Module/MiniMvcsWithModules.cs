@@ -1,9 +1,10 @@
-using RMC.Core.Architectures.Mini.Context;
+using System;
+using RMC.Core.Architectures.Mini;
 using RMC.Core.Architectures.Mini.Controller;
+using RMC.Core.Architectures.Mini.Locators;
 using RMC.Core.Architectures.Mini.Model;
 using RMC.Core.Architectures.Mini.Service;
 using RMC.Core.Architectures.Mini.View;
-using RMC.Core.Experimental.Architectures.Mini.Complex;
 
 namespace RMC.Core.Experimental.Architectures.Mini.Module
 {
@@ -19,12 +20,12 @@ namespace RMC.Core.Experimental.Architectures.Mini.Module
     ///
     /// It is compatible with <see cref="IModule"/>
     /// </summary>
-    public class MiniMvcsWithModules: MiniMvcsComplex
+    public class MiniMvcsWithModules: MiniMvcs
             <Context, 
                 IModel, 
                 IView, 
                 IController,
-                IService>, IMiniMvcsWithModules
+                IService>, ISimpleMiniMvcsWithModules
     {
         //  Events ----------------------------------------
 
@@ -43,7 +44,8 @@ namespace RMC.Core.Experimental.Architectures.Mini.Module
             {
                 _isInitialized = true;
                 
-                _context = new Context();
+                string contextKey = Guid.NewGuid().ToString();
+                _context = new Context(contextKey);
 
                 // STANDARD
                 // ModelLocator is created in superclass

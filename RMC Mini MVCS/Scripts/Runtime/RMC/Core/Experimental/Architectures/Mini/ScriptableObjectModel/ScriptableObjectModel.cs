@@ -1,35 +1,28 @@
-using RMC.Core.Architectures.Mini;
 
-namespace RMC.Core.Experimental.Architectures.Mini.Module
+namespace RMC.Core.Experimental.Architectures.Mini.ScriptableObjectModels
 {
     //  Namespace Properties ------------------------------
 
     //  Class Attributes ----------------------------------
 
     /// <summary>
-    /// The MiniMvcsWithModules is the parent object containing
-    /// all <see cref="IConcern"/>s as children. It
-    /// defines one instance of the Mvcs architectural
-    /// framework within an application.
-    ///
-    /// It is compatible with <see cref="IModule"/>
+    /// The Model stores runtime data 
     /// </summary>
-    public class BaseModule: MiniMvcsWithModules
+    public abstract class ScriptableObjectModel: MonoBehaviorModel
     {
         //  Events ----------------------------------------
 
         //  Properties ------------------------------------
-
+        
         //  Fields ----------------------------------------
 
         //  Initialization  -------------------------------
-        public BaseModule(Context context)
-        {
-            _context = context;
-        }
+
+        //  Unity Methods ----------------------------------
         
         //  Methods ---------------------------------------
 
         //  Event Handlers --------------------------------
+
     }
 }

@@ -1,15 +1,15 @@
-using System;
 using NUnit.Framework;
+using RMC.Core.Architectures.Mini.Locators;
 using RMC.Core.Architectures.Mini.Model;
 using RMC.Core.Experimental;
 
 
-namespace RMC.Core.Architectures.Mini.Context
+namespace RMC.Core.Architectures.Mini
 {
     /// <summary>
     /// Testing after a bug was found with <see cref="ModelLocator"/>.
     ///
-    /// KEEP few tests here. Keep most in <see cref="RMC.Core.Architectures.Mini.Context.LocatorTest"/>
+    /// KEEP few tests here. Keep most in <see cref="LocatorTest"/>
     /// </summary>
     [Category ("RMC.Mini")]
     public class ModelLocatorTest
@@ -55,7 +55,7 @@ namespace RMC.Core.Architectures.Mini.Context
         public void GetItem_IsNotNull_WhenAddItem_SubclassOfIModel()
         {
             // Arrange
-            ModelLocator modelLocator = new ModelLocator();
+            Locator<IModel> modelLocator = new Locator<IModel>();
             SubclassOfIModel subclassOfIModel01 = new SubclassOfIModel();
             Context context = new Context();
             subclassOfIModel01.Initialize(context);
@@ -72,7 +72,7 @@ namespace RMC.Core.Architectures.Mini.Context
         public void GetItem_IsNotNull_WhenAddItemWithKey_SubclassOfIModel()
         {
             // Arrange
-            ModelLocator modelLocator = new ModelLocator();
+            Locator<IModel> modelLocator = new Locator<IModel>();
             SubclassOfIModel subclassOfIModel01 = new SubclassOfIModel();
             Context context = new Context();
             subclassOfIModel01.Initialize(context);
@@ -89,7 +89,7 @@ namespace RMC.Core.Architectures.Mini.Context
         public void GetItem_IsNotNull_WhenAddItem_SubclassOfBaseModel()
         {
             // Arrange
-            ModelLocator modelLocator = new ModelLocator();
+            Locator<IModel> modelLocator = new Locator<IModel>();
             SubclassOfBaseModel subclassOfBaseModel = new SubclassOfBaseModel();
             Context context = new Context();
             subclassOfBaseModel.Initialize(context);
@@ -106,7 +106,7 @@ namespace RMC.Core.Architectures.Mini.Context
         public void GetItem_IsNotNull_WhenAddItemWithKey_SubclassOfBaseModel()
         {
             // Arrange
-            ModelLocator modelLocator = new ModelLocator();
+            Locator<IModel> modelLocator = new Locator<IModel>();
             SubclassOfBaseModel subclassOfBaseModel = new SubclassOfBaseModel();
             Context context = new Context();
             subclassOfBaseModel.Initialize(context);
@@ -124,7 +124,7 @@ namespace RMC.Core.Architectures.Mini.Context
         public void GetItem_IsNotNull_WhenAddItem_SubclassOfBaseModel_TypedInterface()
         {
             // Arrange
-            ModelLocator modelLocator = new ModelLocator();
+            Locator<IModel> modelLocator = new Locator<IModel>();
             IModel subclassOfBaseModel = new SubclassOfBaseModel();
             Context context = new Context();
             subclassOfBaseModel.Initialize(context);
@@ -141,7 +141,7 @@ namespace RMC.Core.Architectures.Mini.Context
         public void GetItem_IsNotNull_WhenAddItemWithKey_SubclassOfBaseModel_TypedInterface()
         {
             // Arrange
-            ModelLocator modelLocator = new ModelLocator();
+            Locator<IModel> modelLocator = new Locator<IModel>();
             IModel subclassOfBaseModel = new SubclassOfBaseModel();
             Context context = new Context();
             subclassOfBaseModel.Initialize(context);

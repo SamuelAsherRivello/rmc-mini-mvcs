@@ -3,7 +3,7 @@ using NUnit.Framework;
 using RMC.Core.Experimental;
 using UnityEngine;
 
-namespace RMC.Core.Architectures.Mini.Context
+namespace RMC.Core.Architectures.Mini
 {
     [Category ("RMC.Mini")]
     public class ContextTest
@@ -40,6 +40,7 @@ namespace RMC.Core.Architectures.Mini.Context
                 // Act
                 Context context1 = new Context(); //has singleton inside
                 Context context2 = new Context();
+                Context context3 = new Context();
             });
         }
         

@@ -1,10 +1,9 @@
-
-namespace RMC.Core.Experimental.Architectures.Mini.Module
+namespace RMC.Core.Architectures.Mini.View
 {
     /// <summary>
     /// The View handles user interface and user input
     /// </summary>
-    public interface IModule : ISimpleMiniMvcsWithModules
+    public interface IView : IConcern
     {
         //  Properties ------------------------------------
 

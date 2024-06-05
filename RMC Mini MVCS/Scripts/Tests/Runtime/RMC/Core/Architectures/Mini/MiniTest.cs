@@ -7,22 +7,22 @@ namespace RMC.Core.Architectures.Mini
     [Category ("RMC.Mini")]
     public class MiniTest
     {
-        private TestMiniWithBase.TestMiniWithBase _testMiniWithBase;
-        private TestMini _testMini;
+        private TestMiniWithBase.TestSimpleMiniWithBase _testSimpleMiniWithBase;
+        private TestSimpleMini _testSimpleMini;
 
         [TearDown]
         public void TearDown()
         {
-            if (_testMiniWithBase != null)
+            if (_testSimpleMiniWithBase != null)
             {
-                _testMiniWithBase.Dispose();
-                _testMiniWithBase = null;
+                _testSimpleMiniWithBase.Dispose();
+                _testSimpleMiniWithBase = null;
             }
             
-            if (_testMini != null)
+            if (_testSimpleMini != null)
             {
-                _testMini.Dispose();
-                _testMini = null;
+                _testSimpleMini.Dispose();
+                _testSimpleMini = null;
             }
         }
         
@@ -33,16 +33,16 @@ namespace RMC.Core.Architectures.Mini
             // Arrange
             
             // Act
-            _testMini = new TestMini();
-            _testMini.Initialize();
+            _testSimpleMini = new TestSimpleMini();
+            _testSimpleMini.Initialize();
             
             // Assert
-            Assert.That(_testMini, Is.Not.Null);
-            Assert.That(_testMini.Context, Is.Not.Null);
-            Assert.That(_testMini.Model, Is.Not.Null);
-            Assert.That(_testMini.View, Is.Not.Null);
-            Assert.That(_testMini.Controller, Is.Not.Null);
-            Assert.That(_testMini.Service, Is.Not.Null);
+            Assert.That(_testSimpleMini, Is.Not.Null);
+            Assert.That(_testSimpleMini.Context, Is.Not.Null);
+            Assert.That(_testSimpleMini.Model, Is.Not.Null);
+            Assert.That(_testSimpleMini.View, Is.Not.Null);
+            Assert.That(_testSimpleMini.Controller, Is.Not.Null);
+            Assert.That(_testSimpleMini.Service, Is.Not.Null);
             
         }
         
@@ -52,17 +52,17 @@ namespace RMC.Core.Architectures.Mini
             // Arrange
             
             // Act
-            _testMiniWithBase = 
-                new TestMiniWithBase.TestMiniWithBase();
-            _testMiniWithBase.Initialize();
+            _testSimpleMiniWithBase = 
+                new TestMiniWithBase.TestSimpleMiniWithBase();
+            _testSimpleMiniWithBase.Initialize();
             
             // Assert
-            Assert.That(_testMiniWithBase, Is.Not.Null);
-            Assert.That(_testMiniWithBase.Context, Is.Not.Null);
-            Assert.That(_testMiniWithBase.Model, Is.Not.Null);
-            Assert.That(_testMiniWithBase.View, Is.Not.Null);
-            Assert.That(_testMiniWithBase.Controller, Is.Not.Null);
-            Assert.That(_testMiniWithBase.Service, Is.Not.Null);
+            Assert.That(_testSimpleMiniWithBase, Is.Not.Null);
+            Assert.That(_testSimpleMiniWithBase.Context, Is.Not.Null);
+            Assert.That(_testSimpleMiniWithBase.Model, Is.Not.Null);
+            Assert.That(_testSimpleMiniWithBase.View, Is.Not.Null);
+            Assert.That(_testSimpleMiniWithBase.Controller, Is.Not.Null);
+            Assert.That(_testSimpleMiniWithBase.Service, Is.Not.Null);
             
         }
     }

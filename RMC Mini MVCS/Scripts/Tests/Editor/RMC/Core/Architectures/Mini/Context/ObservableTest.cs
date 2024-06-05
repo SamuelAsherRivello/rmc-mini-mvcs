@@ -1,6 +1,7 @@
 using NUnit.Framework;
+using RMC.Core.Data.Types;
 
-namespace RMC.Core.Architectures.Mini.Context
+namespace RMC.Core.Architectures.Mini
 {
     [Category ("RMC.Mini")]
     public class ObservableTest

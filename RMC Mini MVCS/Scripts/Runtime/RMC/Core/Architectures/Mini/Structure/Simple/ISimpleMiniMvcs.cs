@@ -1,12 +1,12 @@
-
-namespace RMC.Core.Experimental.Architectures.Mini.Module
+namespace RMC.Core.Architectures.Mini.Structure.Simple
 {
     /// <summary>
-    /// The View handles user interface and user input
+    /// Enforces API for types which Initialize.
     /// </summary>
-    public interface IModule : ISimpleMiniMvcsWithModules
+    public interface ISimpleMiniMvcs : IInitializable
     {
         //  Properties ------------------------------------
+    
 
         //  Methods ---------------------------------------
     }

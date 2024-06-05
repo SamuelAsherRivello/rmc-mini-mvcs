@@ -1,9 +1,9 @@
 using System;
 using NUnit.Framework;
-using UnityEngine;
+using RMC.Core.Architectures.Mini.Locators;
 
 
-namespace RMC.Core.Architectures.Mini.Context
+namespace RMC.Core.Architectures.Mini
 {
     /// <summary>
     /// In RMC Mini, we typically use the <see cref="Locator"/>
