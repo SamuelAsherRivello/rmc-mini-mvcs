@@ -1,7 +1,6 @@
 using NUnit.Framework;
 using RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.Controller.Commands;
 using RMC.Core.Experimental;
-using UnityEngine;
 
 namespace RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.Controller
 {
@@ -14,9 +13,9 @@ namespace RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.Controller
         [TearDown]
         public void TearDown()
         {
-            if (ContextLocator.Instance.HasItem<Context.Context>())
+            if (ContextLocator.Instance.HasItem<Context>())
             {
-                ContextLocator.Instance.RemoveItem<Context.Context>();
+                ContextLocator.Instance.RemoveItem<Context>();
             }
         }
         
@@ -24,20 +23,20 @@ namespace RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.Controller
         public void Controller_InvokesTimeChangedCommand_WhenModelTimeChanges()
         {
             // Arrange
-            ClockMini clockMini = MockClockMini.CreateClockMini();
-            clockMini.Initialize();
+            ClockSimpleMini clockSimpleMini = MockClockMini.CreateClockMini();
+            clockSimpleMini.Initialize();
             float time = 0;
-            clockMini.Context.CommandManager.AddCommandListener<TimeChangedCommand>((timeChangedCommand) =>
+            clockSimpleMini.Context.CommandManager.AddCommandListener<TimeChangedCommand>((timeChangedCommand) =>
             {
                 time = timeChangedCommand.CurrentValue;
             });
             
             
             // Act
-            clockMini.Model.Time.Value = 10;
+            clockSimpleMini.Model.Time.Value = 10;
             
             // Assert
-            Assert.That(time, Is.EqualTo(clockMini.Model.Time.Value));
+            Assert.That(time, Is.EqualTo(clockSimpleMini.Model.Time.Value));
         }
         
         

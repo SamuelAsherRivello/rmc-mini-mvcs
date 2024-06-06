@@ -1,7 +1,6 @@
 ﻿#if UPM_PACKAGE_VALIDATOR_CHECK_IS_COMPLETE
 #if UNITY_EDITOR
 using UnityEngine;
-using UnityEditor;
 using Unity.Tutorials.Core.Editor;
 
 

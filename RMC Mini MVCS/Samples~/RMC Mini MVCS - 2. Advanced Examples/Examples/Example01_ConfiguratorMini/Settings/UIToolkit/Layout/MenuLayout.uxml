@@ -16,7 +16,6 @@
                         <ui:Button text="&lt;b&gt;Play&lt;/b&gt; Game" parse-escape-sequences="true" display-tooltip-when-elided="true" name="PlayGameButton" />
                         <ui:Button text="&lt;b&gt;Customize&lt;/b&gt; Character" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CustomizeCharacterButton" />
                         <ui:Button text="&lt;b&gt;Customize&lt;/b&gt; Environment" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CustomizeEnvironmentButton" />
-                        <ui:Button text="(Debug Console)" parse-escape-sequences="true" display-tooltip-when-elided="true" name="DebugConsoleButton" />
                     </ui:VisualElement>
                 </ui:VisualElement>
             </ui:VisualElement>

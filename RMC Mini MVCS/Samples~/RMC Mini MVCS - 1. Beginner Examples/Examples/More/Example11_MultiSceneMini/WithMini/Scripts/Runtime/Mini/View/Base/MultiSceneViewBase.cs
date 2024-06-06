@@ -1,11 +1,9 @@
 using System;
-using RMC.Core.Architectures.Mini.Context;
 using RMC.Core.Architectures.Mini.Samples.MultiScene.WithMini.Mini.Controller.Commands;
 using RMC.Core.Architectures.Mini.Samples.MultiScene.WithMini.Mini.Controller.Events;
 using RMC.Core.Architectures.Mini.Samples.MultiScene.WithMini.Mini.Model;
 using RMC.Core.Architectures.Mini.View;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 

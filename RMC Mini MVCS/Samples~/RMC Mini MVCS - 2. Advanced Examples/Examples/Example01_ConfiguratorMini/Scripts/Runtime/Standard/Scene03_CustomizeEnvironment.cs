@@ -1,10 +1,10 @@
-using RMC.Core.Architectures.Mini.Modules.SceneSystemModule;
-using RMC.MiniMvcs.Samples.Configurator.Mini;
-using RMC.MiniMvcs.Samples.Configurator.Mini.Feature;
-using RMC.MiniMvcs.Samples.Configurator.Mini.View;
+using RMC.Core.Architectures.Mini.Features.SceneSystem;
+using RMC.Core.Architectures.Mini.Samples.Configurator.Mini;
+using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Feature;
+using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.View;
 using UnityEngine;
 
-namespace RMC.MiniMvcs.Samples.Configurator.Standard
+namespace RMC.Core.Architectures.Mini.Samples.Configurator.Standard
 {
     /// <summary>
     /// This is the main entry point to one of the scenes

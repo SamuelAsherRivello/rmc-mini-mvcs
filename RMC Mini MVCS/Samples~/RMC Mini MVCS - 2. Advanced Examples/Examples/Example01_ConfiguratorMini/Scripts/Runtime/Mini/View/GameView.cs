@@ -1,17 +1,16 @@
 using System;
 using JetBrains.Annotations;
-using RMC.Core.Architectures.Mini.Context;
+using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Controller;
+using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Model;
+using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Model.Data;
+using RMC.Core.Architectures.Mini.Samples.Configurator.Standard.Gameplay;
 using RMC.Core.Architectures.Mini.View;
-using RMC.MiniMvcs.Samples.Configurator.Mini.Controller;
-using RMC.MiniMvcs.Samples.Configurator.Mini.Model;
-using RMC.MiniMvcs.Samples.Configurator.Mini.Model.Data;
-using RMC.MiniMvcs.Samples.Configurator.Standard.Gameplay;
 using UnityEngine;
 using UnityEngine.UIElements;
-using Environment = RMC.MiniMvcs.Samples.Configurator.Standard.Gameplay.Environment;
+using Standard_Gameplay_Environment = RMC.Core.Architectures.Mini.Samples.Configurator.Standard.Gameplay.Environment;
 
 // ReSharper disable Unity.NoNullPropagation
-namespace RMC.MiniMvcs.Samples.Configurator.Mini.View
+namespace RMC.Core.Architectures.Mini.Samples.Configurator.Mini.View
 {
     /// <summary>
     /// The View handles user interface and user input
@@ -39,7 +38,7 @@ namespace RMC.MiniMvcs.Samples.Configurator.Mini.View
         [Header("Gameplay")]
         [SerializeField]
         [CanBeNull]
-        private Environment _environment;
+        private Standard_Gameplay_Environment _environment;
 
         [SerializeField] 
         private Player _player;

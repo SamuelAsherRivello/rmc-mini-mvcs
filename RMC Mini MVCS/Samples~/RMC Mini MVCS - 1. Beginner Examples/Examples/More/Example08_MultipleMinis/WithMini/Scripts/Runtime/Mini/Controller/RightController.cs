@@ -1,5 +1,4 @@
 using System;
-using RMC.Core.Architectures.Mini.Context;
 using RMC.Core.Architectures.Mini.Controller;
 using RMC.Core.Architectures.Mini.Samples.MultipleMinis.WithMini.Mini.Controller.Commands;
 using RMC.Core.Architectures.Mini.Samples.MultipleMinis.WithMini.Mini.Model;
@@ -61,6 +60,13 @@ namespace RMC.Core.Architectures.Mini.Samples.MultipleMinis.WithMini.Mini.Contro
             }
         }
 
+        //  Dispose Methods --------------------------------
+        public virtual void Dispose()
+        {
+            // Optional: Handle any cleanup here...
+        }
+        
+        
         //  Methods ---------------------------------------
 
 

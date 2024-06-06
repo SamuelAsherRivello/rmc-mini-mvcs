@@ -1,9 +1,4 @@
-﻿using System.IO;
-using System.Collections.Generic;
-using UnityEditor;
-using UnityEngine;
-using UnityEditor.PackageManager;
-using UnityEditor.PackageManager.Requests;
+﻿using UnityEditor;
 
 namespace RMC.UPMPackageValidator
 {

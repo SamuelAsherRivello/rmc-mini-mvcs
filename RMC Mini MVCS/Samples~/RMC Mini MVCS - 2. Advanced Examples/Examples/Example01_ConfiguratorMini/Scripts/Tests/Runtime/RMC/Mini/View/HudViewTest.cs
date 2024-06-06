@@ -1,12 +1,11 @@
 using System;
 using NUnit.Framework;
-using RMC.Core.Architectures.Mini.Context;
-using RMC.MiniMvcs.Samples.Configurator.Mini.Model;
+using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Model;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
-namespace RMC.MiniMvcs.Samples.Configurator.Mini.View
+namespace RMC.Core.Architectures.Mini.Samples.Configurator.Mini.View
 {
     [TestFixture]
     [Category ("RMC.Mini.Configurator")]
@@ -19,6 +18,7 @@ namespace RMC.MiniMvcs.Samples.Configurator.Mini.View
         private VisualElement _rootVisualElement;
         private Label _statusLabel;
         private Button _backButton;
+        private Button _developerConsoleButton;
 
         [SetUp]
         public void SetUp()
@@ -27,13 +27,17 @@ namespace RMC.MiniMvcs.Samples.Configurator.Mini.View
 
             _model = new ConfiguratorModel();
             _context = new BaseContext();
+            
+            _context.ModelLocator.AddItem(_model);
 
             _rootVisualElement = new VisualElement();
             _statusLabel = new Label { name = "StatusLabel" };
             _backButton = new Button { name = "BackButton" };
+            _developerConsoleButton = new Button { name = "DeveloperConsoleButton" };
 
             _rootVisualElement.Add(_statusLabel);
             _rootVisualElement.Add(_backButton);
+            _rootVisualElement.Add(_developerConsoleButton);
 
             var uiDocument = new GameObject().AddComponent<UIDocument>();
             SetPrivateField(uiDocument, "m_RootVisualElement", _rootVisualElement);
@@ -58,7 +62,8 @@ namespace RMC.MiniMvcs.Samples.Configurator.Mini.View
             // Assert
             Assert.IsTrue(_hudView.IsInitialized);
             Assert.AreEqual(_context, _hudView.Context);
-            Assert.IsTrue(_backButton.enabledSelf);
+            Assert.IsFalse(_backButton.enabledSelf);
+            Assert.IsFalse(_developerConsoleButton.enabledSelf);
         }
 
         [Test]
@@ -103,7 +108,8 @@ namespace RMC.MiniMvcs.Samples.Configurator.Mini.View
 
             // Assert
             Assert.AreEqual(SceneManager.GetActiveScene().name, _statusLabel.text);
-            Assert.IsTrue(_backButton.enabledSelf);
+            Assert.IsFalse(_backButton.enabledSelf);
+            Assert.IsFalse(_developerConsoleButton.enabledSelf);
         }
 
         [TearDown]

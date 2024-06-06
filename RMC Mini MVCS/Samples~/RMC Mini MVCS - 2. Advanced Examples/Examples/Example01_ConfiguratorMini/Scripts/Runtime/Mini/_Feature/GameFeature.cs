@@ -1,17 +1,13 @@
-﻿using RMC.Core.Experimental.Architectures.Mini.Complex;
-using RMC.MiniMvcs.Samples.Configurator.Mini.Controller;
-using RMC.MiniMvcs.Samples.Configurator.Mini.Model;
-using RMC.MiniMvcs.Samples.Configurator.Mini.Service;
-using RMC.MiniMvcs.Samples.Configurator.Mini.View;
+﻿using RMC.Core.Architectures.Mini.Features;
+using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Controller;
+using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Model;
+using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Service;
+using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.View;
 
-namespace RMC.MiniMvcs.Samples.Configurator.Mini.Feature
+namespace RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Feature
 {
-    //  Namespace Properties ------------------------------
-
-    //  Class Attributes ----------------------------------
-
     /// <summary>
-    /// The Model stores runtime data 
+    /// Set up a collection of related <see cref="IConcern"/> instances
     /// </summary>
     public class GameFeature: BaseFeature // Extending 'base' is optional
     {
@@ -46,7 +42,8 @@ namespace RMC.MiniMvcs.Samples.Configurator.Mini.Feature
             controller.Initialize(MiniMvcs.Context);
             
             // Set Mode
-            model.HasBackNavigation.Value = true;
+            model.HasNavigationBack.Value = true;
+            model.HasNavigationDeveloperConsole.Value = true;
         }
 
         public override void Dispose()

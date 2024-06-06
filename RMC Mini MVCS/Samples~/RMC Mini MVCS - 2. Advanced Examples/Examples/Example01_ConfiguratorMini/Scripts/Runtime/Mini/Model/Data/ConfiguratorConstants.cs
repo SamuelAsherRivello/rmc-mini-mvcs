@@ -1,5 +1,5 @@
 
-namespace RMC.MiniMvcs.Samples.Configurator.Mini.Model.Data
+namespace RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Model.Data
 {
     /// <summary>
     /// Helpful values
@@ -14,6 +14,6 @@ namespace RMC.MiniMvcs.Samples.Configurator.Mini.Model.Data
         public const string Scene02_CustomizeCharacter = "Scene02_CustomizeCharacter";
         public const string Scene03_CustomizeEnvironment = "Scene03_CustomizeEnvironment";
         public const string Scene04_Game = "Scene04_Game";
-        public const string Scene05_DebugConsole = "Scene05_DebugConsole";
+        public const string Scene05_DeveloperConsole = "Scene05_DeveloperConsole";
     }
 }

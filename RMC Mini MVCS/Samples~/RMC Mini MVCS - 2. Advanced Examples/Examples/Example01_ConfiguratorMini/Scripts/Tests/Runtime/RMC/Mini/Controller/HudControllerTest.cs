@@ -1,14 +1,13 @@
 using System;
 using System.Reflection;
 using NUnit.Framework;
-using RMC.Core.Architectures.Mini.Context;
-using RMC.MiniMvcs.Samples.Configurator.Mini.Model;
-using RMC.MiniMvcs.Samples.Configurator.Mini.Service;
-using RMC.MiniMvcs.Samples.Configurator.Mini.View;
+using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Model;
+using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Service;
+using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.View;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace RMC.MiniMvcs.Samples.Configurator.Mini.Controller
+namespace RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Controller
 {
     
     [TestFixture]
@@ -24,12 +23,10 @@ namespace RMC.MiniMvcs.Samples.Configurator.Mini.Controller
         [SetUp]
         public void SetUp()
         {
+            _context = new BaseContext();
             _model = new ConfiguratorModel();
             _view = new GameObject().AddComponent<HudView>();
             _service = new ConfiguratorService();
-
-            _context = new BaseContext();
-
             _hudController = new HudController(_model, _view, _service);
         }
 
@@ -63,7 +60,7 @@ namespace RMC.MiniMvcs.Samples.Configurator.Mini.Controller
             Assert.IsFalse(_hudController.IsInitialized);
 
             // Act & Assert
-            Assert.Throws<Exception>(() => _view.OnBack.Invoke());
+            Assert.DoesNotThrow(() => _view.OnBack.Invoke());
         }
 
         [TearDown]

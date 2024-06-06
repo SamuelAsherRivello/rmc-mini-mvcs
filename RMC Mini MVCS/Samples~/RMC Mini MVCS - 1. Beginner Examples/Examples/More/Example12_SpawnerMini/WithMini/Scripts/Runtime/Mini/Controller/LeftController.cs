@@ -1,5 +1,4 @@
 using System;
-using RMC.Core.Architectures.Mini.Context;
 using RMC.Core.Architectures.Mini.Controller;
 using RMC.Core.Architectures.Mini.Samples.SpawnerMini.WithMini.Mini.Model;
 using RMC.Core.Architectures.Mini.Samples.SpawnerMini.WithMini.Mini.View;
@@ -80,6 +79,15 @@ namespace RMC.Core.Architectures.Mini.Samples.SpawnerMini.WithMini.Mini.Controll
                 _leftView.SpawnToggleButtonText.text = "Destroy View";
             }
         }
+        
+        //  Dispose Methods --------------------------------
+        public virtual void Dispose()
+        {
+            // Optional: Handle any cleanup here...
+        }
+        
+        
+        //  Methods ---------------------------------------
 
 
         //  Event Handlers --------------------------------

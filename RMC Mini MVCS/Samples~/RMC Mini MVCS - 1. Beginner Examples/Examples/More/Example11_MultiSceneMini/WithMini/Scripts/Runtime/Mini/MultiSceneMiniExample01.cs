@@ -30,25 +30,25 @@ namespace RMC.Core.Architectures.Mini.Samples.MultiScene.WithMini.Mini
         {
             Debug.Log("MultiSceneMiniExample01.Start()");
 
-            MultiSceneMini mini;
+            MultiSceneSimpleMini simpleMini;
             
-            if (MultiSceneMiniSingleton.Instance == null || MultiSceneMiniSingleton.Instance.MultiSceneMini == null)
+            if (MultiSceneMiniSingleton.Instance == null || MultiSceneMiniSingleton.Instance.MultiSceneSimpleMini == null)
             {
                 // COMMON: Create the mini as you typically do  
-                mini = new MultiSceneMini();
+                simpleMini = new MultiSceneSimpleMini();
                 
                 // UNIQUE: Store the mini on the Singleton so you
                 // can detect "has this scene been loaded before?"
-                MultiSceneMiniSingleton.Instance.MultiSceneMini = mini;
-                MultiSceneMiniSingleton.Instance.MultiSceneMini.Initialize();
+                MultiSceneMiniSingleton.Instance.MultiSceneSimpleMini = simpleMini;
+                MultiSceneMiniSingleton.Instance.MultiSceneSimpleMini.Initialize();
                 
                 Debug.Log("Create New Mini");
-                MultiSceneMiniSingleton.Instance.MultiSceneMini.AddFeaturesForScene01(_view);
+                MultiSceneMiniSingleton.Instance.MultiSceneSimpleMini.AddFeaturesForScene01(_view);
             }
             else
             {
                 Debug.Log("Found Existing Mini");
-                MultiSceneMiniSingleton.Instance.MultiSceneMini.AddFeaturesForScene01(_view);
+                MultiSceneMiniSingleton.Instance.MultiSceneSimpleMini.AddFeaturesForScene01(_view);
             }
         }
 

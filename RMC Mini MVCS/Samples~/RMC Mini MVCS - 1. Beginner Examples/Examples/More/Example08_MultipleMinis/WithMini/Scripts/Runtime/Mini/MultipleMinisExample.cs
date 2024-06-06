@@ -25,7 +25,7 @@ namespace RMC.Core.Architectures.Mini.Samples.MultipleMinis.WithMini.Mini
         [SerializeField] 
         private RightView _rightView;
 
-        private Context.Context _context;
+        private Context _context;
         
         //  Unity Methods  --------------------------------
         protected void Start()
@@ -33,15 +33,15 @@ namespace RMC.Core.Architectures.Mini.Samples.MultipleMinis.WithMini.Mini
             
             // KEY CONCEPT: Create the Context here, OUTSIDE
             // and pass the SAME value to EACH Mini
-            _context = new Context.Context();
+            _context = new Context();
             
             // LEFT
-            LeftMini leftMini = new LeftMini(_context, _leftView);
-            leftMini.Initialize();
+            LeftSimpleMini leftSimpleMini = new LeftSimpleMini(_context, _leftView);
+            leftSimpleMini.Initialize();
             
             // LEFT
-            RightMini rightMini = new RightMini(_context, _rightView);
-            rightMini.Initialize();
+            RightSimpleMini rightSimpleMini = new RightSimpleMini(_context, _rightView);
+            rightSimpleMini.Initialize();
         }
 
 

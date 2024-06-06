@@ -1,5 +1,4 @@
 using System;
-using RMC.Core.Architectures.Mini.Context;
 using RMC.Core.Architectures.Mini.Controller;
 using RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Components;
 using RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Controller.Commands;
@@ -94,6 +93,12 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Controller
             {
                 throw new Exception("MustBeInitialized");
             }
+        }
+        
+        //  Dispose Methods --------------------------------
+        public virtual void Dispose()
+        {
+            // Optional: Handle any cleanup here...
         }
         
         

@@ -1,5 +1,4 @@
 using System;
-using RMC.Core.Architectures.Mini.Context;
 using RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.Controller.Commands;
 using RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.Model;
 using RMC.Core.Architectures.Mini.View;

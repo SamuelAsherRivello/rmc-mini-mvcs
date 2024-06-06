@@ -1,5 +1,5 @@
 using System;
-using RMC.Core.Architectures.Mini.Context;
+using RMC.Core.Architectures.Mini;
 using RMC.Core.Architectures.Mini.Controller;
 using RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.Controller.Commands;
 using RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.Model;
@@ -69,8 +69,15 @@ namespace RMC.IntroToUnity.Samples.Tutorial.Mini.Controller
             }
         }
         
+        //  Dispose Methods --------------------------------
+        public virtual void Dispose()
+        {
+            // Optional: Handle any cleanup here...
+        }
+        
+        
         //  Methods ---------------------------------------
-
+  
 
         //  Event Handlers --------------------------------
          private void OnLogoutCommand(LogoutCommand logoutCommand)

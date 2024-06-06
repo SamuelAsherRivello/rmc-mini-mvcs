@@ -1,31 +1,16 @@
 
 namespace RMC.Core.Architectures.Mini.Features
 {
-    //  Namespace Properties ------------------------------
-
-    //  Class Attributes ----------------------------------
-
     /// <summary>
-    /// The Model stores runtime data 
+    /// Set up a collection of related <see cref="IConcern"/> instances
     /// </summary>
     public class FeatureBuilder : BaseFeatureBuilder<BaseFeature>
     {
-        //  Events ----------------------------------------
-
-
         //  Properties ------------------------------------
-        
         
         //  Fields ----------------------------------------
 
-        
-        //  Initialization  -------------------------------
-
-        
         //  Methods ---------------------------------------
-        
-        
-        //  Event Handlers --------------------------------
      
     }
 }

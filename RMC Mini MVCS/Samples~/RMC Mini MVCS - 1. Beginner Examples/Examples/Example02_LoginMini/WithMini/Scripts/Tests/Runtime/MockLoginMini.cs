@@ -8,12 +8,12 @@ namespace RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini
     /// </summary>
     public class MockLoginMini
     {
-        public static LoginMini CreateLoginMini(LoginView loginView)
+        public static LoginSimpleMini CreateLoginMini(LoginView loginView)
         {
             //View
-            LoginMini loginMini = new LoginMini(loginView);
+            LoginSimpleMini loginSimpleMini = new LoginSimpleMini(loginView);
 
-            return loginMini;
+            return loginSimpleMini;
         }
     }
 }

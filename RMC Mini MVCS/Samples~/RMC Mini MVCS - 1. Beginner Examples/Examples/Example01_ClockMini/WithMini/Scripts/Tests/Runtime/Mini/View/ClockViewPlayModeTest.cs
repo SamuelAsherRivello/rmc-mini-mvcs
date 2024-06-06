@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Text.RegularExpressions;
 using NUnit.Framework;
-using RMC.Core.Architectures.Mini.Context;
 using RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.Controller.Commands;
 using RMC.Core.Experimental;
 using UnityEngine;
@@ -18,9 +17,9 @@ namespace RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.View
         [TearDown]
         public void TearDown()
         {
-            if (ContextLocator.Instance.HasItem<Context.Context>())
+            if (ContextLocator.Instance.HasItem<Context>())
             {
-                ContextLocator.Instance.RemoveItem<Context.Context>();
+                ContextLocator.Instance.RemoveItem<Context>();
             }
         }
         
@@ -28,7 +27,7 @@ namespace RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.View
         public IEnumerator DebugLog_Nothing_WhenCreated()
         {
             // Arrange
-            IContext context = new Context.Context();
+            IContext context = new Context();
             ClockView clockView = new ClockView();
             
             // Act
@@ -45,7 +44,7 @@ namespace RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.View
         public IEnumerator DebugLog_Something_WhenTimeChangedCommand()
         {
             // Arrange
-            IContext context = new Context.Context();
+            IContext context = new Context();
             ClockView clockView = new ClockView();
             
             // Act

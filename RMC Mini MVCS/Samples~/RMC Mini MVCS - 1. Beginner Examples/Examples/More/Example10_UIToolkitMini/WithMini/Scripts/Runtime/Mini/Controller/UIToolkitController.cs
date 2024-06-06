@@ -1,10 +1,10 @@
 using System.Collections.Generic;
-using RMC.Core.Architectures.Mini.Context;
 using RMC.Core.Architectures.Mini.Controller;
 using RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.Controller.Commands;
 using RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.Model;
 using RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.Service;
 using RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.View;
+using RMC.Core.Data.Types;
 using UnityEngine;
 
 namespace RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.Controller
@@ -43,45 +43,45 @@ namespace RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.Controller
                 base.Initialize(context);
                 
                 // Model
-                _model.HairIndex.OnValueChanged.AddListener(delegate(int previousValue, int currentValue)
+                ScriptableObjectModel.HairIndex.OnValueChanged.AddListener(delegate(int previousValue, int currentValue)
                 {
                     _view.HairSprite = _view.HairSprites[currentValue];
                 });
                 
-                _model.FaceIndex.OnValueChanged.AddListener(delegate(int previousValue, int currentValue)
+                ScriptableObjectModel.FaceIndex.OnValueChanged.AddListener(delegate(int previousValue, int currentValue)
                 {
                     _view.FaceSprite = _view.FaceSprites[currentValue];
                 });
                 
-                _model.ShirtIndex.OnValueChanged.AddListener(delegate(int previousValue, int currentValue)
+                ScriptableObjectModel.ShirtIndex.OnValueChanged.AddListener(delegate(int previousValue, int currentValue)
                 {
                     _view.ShirtSprite = _view.ShirtSprites[currentValue];
                 });
                 
-                _model.BodyIndex.OnValueChanged.AddListener(delegate(int previousValue, int currentValue)
+                ScriptableObjectModel.BodyIndex.OnValueChanged.AddListener(delegate(int previousValue, int currentValue)
                 {
                     _view.BodySprite = _view.BodySprites[currentValue];
                 });
                 
                 // View
                 _view.HairButton.clickable.clicked += delegate {
-                    View_OnClickedHairButton(_view.HairSprites, _model.HairIndex); };
+                    View_OnClickedHairButton(_view.HairSprites, ScriptableObjectModel.HairIndex); };
                 
                 _view.FaceButton.clickable.clicked += delegate {
-                    View_OnClickedHairButton(_view.FaceSprites, _model.FaceIndex); };
+                    View_OnClickedHairButton(_view.FaceSprites, ScriptableObjectModel.FaceIndex); };
                 
                 _view.ShirtButton.clickable.clicked += delegate {
-                    View_OnClickedHairButton(_view.ShirtSprites, _model.ShirtIndex); };
+                    View_OnClickedHairButton(_view.ShirtSprites, ScriptableObjectModel.ShirtIndex); };
                 
                 _view.BodyButton.clickable.clicked += delegate {
-                    View_OnClickedHairButton(_view.BodySprites, _model.BodyIndex); };
+                    View_OnClickedHairButton(_view.BodySprites, ScriptableObjectModel.BodyIndex); };
                 
                 // Controller
                 _view.RandomizeButton.clickable.clicked += delegate {
-                    context.CommandManager.InvokeCommand(new RandomizeCommand(_model, _view)); };
+                    context.CommandManager.InvokeCommand(new RandomizeCommand(ScriptableObjectModel, _view)); };
                 
                 _view.ResetButton.clickable.clicked += delegate {
-                    context.CommandManager.InvokeCommand(new ResetCommand(_model)); };
+                    context.CommandManager.InvokeCommand(new ResetCommand(ScriptableObjectModel)); };
                 
                 _service.OnLoaded.AddListener(Service_OnLoaded);
                 _service.Load();
@@ -91,13 +91,13 @@ namespace RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.Controller
         private void Service_OnLoaded(CharacterData characterData)
         {
             // Store it, JUST in case of 'reset'
-            _model.InitialCharacterData = characterData;
+            ScriptableObjectModel.InitialCharacterData = characterData;
             
             // Use it
-            _model.HairIndex.Value = _model.InitialCharacterData.HairIndex;
-            _model.FaceIndex.Value = _model.InitialCharacterData.FaceIndex;
-            _model.ShirtIndex.Value = _model.InitialCharacterData.ShirtIndex;
-            _model.BodyIndex.Value = _model.InitialCharacterData.BodyIndex;
+            ScriptableObjectModel.HairIndex.Value = ScriptableObjectModel.InitialCharacterData.HairIndex;
+            ScriptableObjectModel.FaceIndex.Value = ScriptableObjectModel.InitialCharacterData.FaceIndex;
+            ScriptableObjectModel.ShirtIndex.Value = ScriptableObjectModel.InitialCharacterData.ShirtIndex;
+            ScriptableObjectModel.BodyIndex.Value = ScriptableObjectModel.InitialCharacterData.BodyIndex;
         }
 
         //  Methods ---------------------------------------

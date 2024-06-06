@@ -29,8 +29,8 @@ namespace RMC.Core.Architectures.Mini.Samples.Calculator
         protected void Start ()
         {
             
-            CalculatorMini calculatorMini = new CalculatorMini(_calculatorView);
-            calculatorMini.Initialize();
+            CalculatorSimpleMini calculatorSimpleMini = new CalculatorSimpleMini(_calculatorView);
+            calculatorSimpleMini.Initialize();
         }
         
         

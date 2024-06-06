@@ -6,18 +6,13 @@ using RMC.Core.Architectures.Mini.View;
 
 namespace RMC.Core.Architectures.Mini.Features
 {
-    //  Namespace Properties ------------------------------
-
-    //  Class Attributes ----------------------------------
-
     /// <summary>
-    /// The Model stores runtime data 
+    /// A <see cref="BaseFeature"/> is a collection of one or more <see cref="IConcern"/>
+    /// You can turn on and off something in the game (like an inventory system)
+    /// by adding or removing your custom inventory-related <see cref="IFeature"/>
     /// </summary>
     public abstract class BaseFeature: IFeature
     {
-        //  Events ----------------------------------------
-
-
         //  Properties ------------------------------------
         public bool IsInitialized { get; private set; }
         public IMiniMvcs<Mini.Context, IModel, IView, IController, IService> MiniMvcs { get; private set; }
@@ -61,9 +56,5 @@ namespace RMC.Core.Architectures.Mini.Features
             //MUST override and do NOT call base
             throw new Exception($"Must override {nameof(Dispose)} method.");
         }
-
-        //  Event Handlers --------------------------------
-
-  
     }
 }

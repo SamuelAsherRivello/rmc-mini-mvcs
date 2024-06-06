@@ -1,5 +1,4 @@
 using RMC.Core.Architectures.Mini.Controller.Commands;
-using RMC.Core.Architectures.Mini.Samples.MultiScene.WithMini.Mini.Model;
 
 namespace RMC.Core.Architectures.Mini.Samples.MultiScene.WithMini.Mini.Controller.Commands
 {

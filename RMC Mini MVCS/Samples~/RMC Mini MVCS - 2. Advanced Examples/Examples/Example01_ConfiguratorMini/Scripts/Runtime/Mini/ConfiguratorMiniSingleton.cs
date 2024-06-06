@@ -1,8 +1,6 @@
-using RMC.Core.Architectures.Mini.Context;
 using RMC.Core.DesignPatterns.Creational.Singleton.CustomSingletonMonobehaviour;
-using UnityEngine;
 
-namespace RMC.MiniMvcs.Samples.Configurator.Mini
+namespace RMC.Core.Architectures.Mini.Samples.Configurator.Mini
 {
     /// <summary>
     /// Here is a <see cref="ConfiguratorMiniSingleton"/> that can be used to access the <see cref="ConfiguratorMini"/>.

@@ -2,7 +2,6 @@ using NUnit.Framework;
 using RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Controller.Commands;
 using RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.View;
 using RMC.Core.Testing;
-using UnityEngine;
 
 namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Controller
 {
@@ -48,22 +47,22 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Controller
                 _prefabManagerForTesting.LoadAndInstantiate<UIView>("Prefabs_Advanced/UIView");
             Assert.NotNull(uiView);
             
-            RollABallMini rollABallMini = 
+            RollABallSimpleMini rollABallSimpleMini = 
                 MockRollABallMini.CreateRollABallMini(inputView, playerView, pickupsView, uiView);
          
-            rollABallMini.Initialize();
+            rollABallSimpleMini.Initialize();
             int score = 0;
-            rollABallMini.Context.CommandManager.AddCommandListener<ScoreChangedCommand>(
+            rollABallSimpleMini.Context.CommandManager.AddCommandListener<ScoreChangedCommand>(
                 (scoreChangedCommand) =>
                 {
                     score = scoreChangedCommand.Value;
                 });
             
             // Act
-            rollABallMini.RollABallModel.Score.Value = 99;
+            rollABallSimpleMini.RollABallModel.Score.Value = 99;
             
             // Assert
-            Assert.That(score, Is.EqualTo(rollABallMini.RollABallModel.Score.Value));
+            Assert.That(score, Is.EqualTo(rollABallSimpleMini.RollABallModel.Score.Value));
         }
     }
 }

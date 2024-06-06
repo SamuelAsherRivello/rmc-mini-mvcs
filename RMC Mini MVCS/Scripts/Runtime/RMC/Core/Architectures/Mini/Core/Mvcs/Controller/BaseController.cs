@@ -21,14 +21,14 @@ namespace RMC.Core.Architectures.Mini.Controller
         
         //  Fields ----------------------------------------
         private bool _isInitialized = false;
-        protected readonly TModel ScriptableObjectModel;
+        protected readonly TModel _model;
         protected readonly TView _view;
         protected readonly TService _service;
         private IContext _context;
 
-        public BaseController(TModel scriptableObjectModel, TView view, TService service)
+        public BaseController(TModel model, TView view, TService service)
         {
-            ScriptableObjectModel = scriptableObjectModel;
+            _model = model;
             _view = view;
             _service = service;
         }

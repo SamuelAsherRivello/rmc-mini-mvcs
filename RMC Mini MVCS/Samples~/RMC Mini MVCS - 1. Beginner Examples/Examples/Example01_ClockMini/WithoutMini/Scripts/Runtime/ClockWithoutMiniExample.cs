@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 using System.Threading.Tasks;
-using RMC.Core.Architectures.Mini.Context;
+using RMC.Core.Data.Types;
 using UnityEngine;
 
 #pragma warning disable CS4014

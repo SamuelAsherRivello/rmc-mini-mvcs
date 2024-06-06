@@ -4,25 +4,16 @@ using UnityEngine.Assertions;
 
 namespace RMC.Core.Architectures.Mini.Features.SceneSystem
 {
-    //  Namespace Properties ------------------------------
-
-    //  Class Attributes ----------------------------------
-
     /// <summary>
-    /// The Model stores runtime data 
+    /// Set up a collection of related <see cref="IConcern"/> instances
     /// </summary>
     public class SceneSystemFeature: BaseFeature // Extending 'base' is optional
     {
-        //  Events ----------------------------------------
-
         //  Properties ------------------------------------
         
         //  Fields ----------------------------------------
-        
-        //  Initialization  -------------------------------
 
         //  Methods ---------------------------------------
-        
         public override void Build()
         {
             RequireIsInitialized();
@@ -52,6 +43,7 @@ namespace RMC.Core.Architectures.Mini.Features.SceneSystem
             controller.Initialize(MiniMvcs.Context);
         }
 
+        
         public override void Dispose()
         {
             RequireIsInitialized();
@@ -67,8 +59,5 @@ namespace RMC.Core.Architectures.Mini.Features.SceneSystem
                 MiniMvcs.ModelLocator.RemoveItem<SceneSystemModel>();
             }
         }
-
-        //  Event Handlers --------------------------------
-
     }
 }

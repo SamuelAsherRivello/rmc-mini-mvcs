@@ -1,8 +1,8 @@
+using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Model.Data;
 using RMC.Core.Components.Attributes;
-using RMC.MiniMvcs.Samples.Configurator.Mini.Model.Data;
 using UnityEngine;
 
-namespace RMC.MiniMvcs.Samples.Configurator.Mini.Service.Storage
+namespace RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Service.Storage
 {
     /// <summary>
     /// Represents a file entry for local disk storage

@@ -1,12 +1,12 @@
-using RMC.Core.Architectures.Mini.Context;
 using RMC.Core.Architectures.Mini.Controller;
-using RMC.Core.Architectures.Mini.Modules.SceneSystemModule;
-using RMC.MiniMvcs.Samples.Configurator.Mini.Model;
-using RMC.MiniMvcs.Samples.Configurator.Mini.Model.Data;
-using RMC.MiniMvcs.Samples.Configurator.Mini.Service;
-using RMC.MiniMvcs.Samples.Configurator.Mini.View;
+using RMC.Core.Architectures.Mini.Features.SceneSystem;
+using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Model;
+using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Model.Data;
+using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Service;
+using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.View;
+using UnityEngine;
 
-namespace RMC.MiniMvcs.Samples.Configurator.Mini.Controller
+namespace RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Controller
 {
     /// <summary>
     /// The Controller coordinates everything between
@@ -31,6 +31,7 @@ namespace RMC.MiniMvcs.Samples.Configurator.Mini.Controller
                 base.Initialize(context);
                 
                 _view.OnBack.AddListener(View_OnBack);
+                _view.OnDeveloperConsole.AddListener(View_OnDeveloperConsole);
             }
         }
 
@@ -39,10 +40,18 @@ namespace RMC.MiniMvcs.Samples.Configurator.Mini.Controller
         
         
         //  Event Handlers --------------------------------
+
+        
         private void View_OnBack()
         {
             RequireIsInitialized();
-            Context.CommandManager.InvokeCommand(new SceneSystemLoadSceneCommand(ConfiguratorConstants.Scene01_Menu));
+            Context.CommandManager.InvokeCommand(new LoadSceneRequestCommand(ConfiguratorConstants.Scene01_Menu));
+        }
+        
+        private void View_OnDeveloperConsole()
+        {
+            RequireIsInitialized();
+            Context.CommandManager.InvokeCommand(new LoadSceneRequestCommand(ConfiguratorConstants.Scene05_DeveloperConsole));
         }
     }
 }

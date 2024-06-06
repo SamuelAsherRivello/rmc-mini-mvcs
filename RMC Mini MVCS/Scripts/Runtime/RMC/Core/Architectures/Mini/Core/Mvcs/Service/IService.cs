@@ -1,3 +1,5 @@
+using System;
+
 namespace RMC.Core.Architectures.Mini.Service
 {
     /// <summary>

@@ -27,8 +27,8 @@ namespace RMC.Core.Architectures.Mini.Samples.CountUp.WithMini.Mini
         //  Unity Methods  --------------------------------
         protected void Start()
         {
-            CountUpMini countUpMini = new CountUpMini(_view);
-            countUpMini.Initialize();
+            CountUpSimpleMini countUpSimpleMini = new CountUpSimpleMini(_view);
+            countUpSimpleMini.Initialize();
         }
 
 

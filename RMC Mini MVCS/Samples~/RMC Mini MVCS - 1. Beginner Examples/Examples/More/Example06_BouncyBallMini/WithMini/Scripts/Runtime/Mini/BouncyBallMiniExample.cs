@@ -28,8 +28,8 @@ namespace RMC.Core.Architectures.Mini.Samples.BouncyBall.WithMini.Mini
         //  Unity Methods  --------------------------------
         protected void Start()
         {
-            BouncyBallMini bouncyBallMini = new BouncyBallMini(_view);
-            bouncyBallMini.Initialize();
+            BouncyBallSimpleMini bouncyBallSimpleMini = new BouncyBallSimpleMini(_view);
+            bouncyBallSimpleMini.Initialize();
         }
 
 

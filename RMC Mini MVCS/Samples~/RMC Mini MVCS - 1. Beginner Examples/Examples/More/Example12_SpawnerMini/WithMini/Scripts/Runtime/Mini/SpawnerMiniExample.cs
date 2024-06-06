@@ -25,16 +25,16 @@ namespace RMC.Core.Architectures.Mini.Samples.SpawnerMini.WithMini.Mini
         [SerializeField] 
         private RightView _rightViewPrefab;
 
-        private Context.Context _context;
+        private Context _context;
         
         //  Unity Methods  --------------------------------
         protected void Start()
         {
-            _context = new Context.Context();
+            _context = new Context();
             
             // LEFT
-            SpawnerMini spawnerMini = new SpawnerMini(_context, _leftView, _rightViewPrefab);
-            spawnerMini.Initialize();
+            SpawnerSimpleMini spawnerSimpleMini = new SpawnerSimpleMini(_context, _leftView, _rightViewPrefab);
+            spawnerSimpleMini.Initialize();
             
         }
 

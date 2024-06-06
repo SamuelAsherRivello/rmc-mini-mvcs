@@ -1,5 +1,4 @@
 using System.Threading.Tasks;
-using RMC.Core.Architectures.Mini.Context;
 using RMC.Core.Architectures.Mini.Controller;
 using RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.Controller.Commands;
 using RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.Model;
@@ -41,7 +40,7 @@ namespace RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.Controller
             {
                 base.Initialize(context);
                 
-                _model.Time.OnValueChanged.AddListener(Model_OnTimerChanged);
+                ScriptableObjectModel.Time.OnValueChanged.AddListener(Model_OnTimerChanged);
                 _service.OnLoaded.AddListener(Service_OnLoaded);
                 _service.Load();
             }
@@ -59,11 +58,11 @@ namespace RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.Controller
                 if (time > 0)
                 {
                     // Update the time
-                    _model.Time.Value = time;
+                    ScriptableObjectModel.Time.Value = time;
                 }
                 
                 // Wait a short amount
-                await Task.Delay(_model.TimeDelay.Value);
+                await Task.Delay(ScriptableObjectModel.TimeDelay.Value);
             });
         }
 
@@ -72,7 +71,7 @@ namespace RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.Controller
         private void Service_OnLoaded()
         {
             RequireIsInitialized();
-            _model.TimeDelay.Value = _service.TimeDelay;
+            ScriptableObjectModel.TimeDelay.Value = _service.TimeDelay;
             
             StartTicking();
         }

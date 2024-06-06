@@ -6,12 +6,12 @@ namespace RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini
     /// </summary>
     public class MockClockMini
     {
-        public static ClockMini CreateClockMini()
+        public static ClockSimpleMini CreateClockMini()
         {
             //View
-            ClockMini clockMini = new ClockMini();
+            ClockSimpleMini clockSimpleMini = new ClockSimpleMini();
 
-            return clockMini;
+            return clockSimpleMini;
         }
     }
 }

@@ -1,5 +1,4 @@
 using System.Threading.Tasks;
-using RMC.Core.Architectures.Mini.Context;
 using RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.Model;
 using RMC.Core.Architectures.Mini.Service;
 using UnityEngine;

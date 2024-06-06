@@ -1,10 +1,7 @@
 using System;
-using RMC.Core.Architectures.Mini.Context;
 using RMC.Core.Architectures.Mini.Samples.DataBindingMini.WithMini.Mini.Model;
 using RMC.Core.Architectures.Mini.View;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 // ReSharper disable Unity.NoNullPropagation

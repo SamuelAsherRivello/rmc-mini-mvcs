@@ -1,5 +1,4 @@
 using System;
-using RMC.Core.Architectures.Mini.Context;
 using RMC.Core.Architectures.Mini.Controller;
 using RMC.Core.Architectures.Mini.Samples.DataBindingMini.WithMini.Mini.Model;
 using RMC.Core.Architectures.Mini.Samples.DataBindingMini.WithMini.Mini.View;
@@ -60,7 +59,13 @@ namespace RMC.Core.Architectures.Mini.Samples.DataBindingMini.WithMini.Mini.Cont
             }
         }
 
-
+        //  Dispose Methods --------------------------------
+        public virtual void Dispose()
+        {
+            // Optional: Handle any cleanup here...
+        }
+        
+        
         //  Methods ---------------------------------------
 
 
