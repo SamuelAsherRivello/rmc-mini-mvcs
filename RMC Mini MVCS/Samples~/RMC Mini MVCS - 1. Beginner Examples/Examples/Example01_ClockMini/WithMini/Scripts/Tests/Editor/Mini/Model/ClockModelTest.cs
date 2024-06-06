@@ -1,5 +1,4 @@
 using NUnit.Framework;
-using RMC.Core.Architectures.Mini.Context;
 using RMC.Core.Experimental;
 
 namespace RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.Model
@@ -13,9 +12,9 @@ namespace RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.Model
         [TearDown]
         public void TearDown()
         {
-            if (ContextLocator.Instance.HasItem<Context.Context>())
+            if (ContextLocator.Instance.HasItem<Context>())
             {
-                ContextLocator.Instance.RemoveItem<Context.Context>();
+                ContextLocator.Instance.RemoveItem<Context>();
             }
         }
         
@@ -23,7 +22,7 @@ namespace RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.Model
         public void ClockModelTest_DefaultValues_WhenCreated()
         {
             // Arrange
-            IContext context = new Context.Context();
+            IContext context = new Context();
             ClockModel clockModel = new ClockModel();
             
             // Act

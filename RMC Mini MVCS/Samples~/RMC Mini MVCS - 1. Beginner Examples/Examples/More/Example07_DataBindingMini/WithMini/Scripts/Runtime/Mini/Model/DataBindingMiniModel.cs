@@ -1,6 +1,5 @@
-using RMC.Core.Architectures.Mini.Context;
 using RMC.Core.Architectures.Mini.Model;
-using UnityEngine;
+using RMC.Core.Data.Types;
 
 namespace RMC.Core.Architectures.Mini.Samples.DataBindingMini.WithMini.Mini.Model
 {

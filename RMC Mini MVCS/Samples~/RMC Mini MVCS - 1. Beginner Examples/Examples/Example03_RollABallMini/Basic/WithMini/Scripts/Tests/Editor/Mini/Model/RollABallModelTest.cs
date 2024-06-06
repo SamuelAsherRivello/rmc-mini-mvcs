@@ -1,8 +1,6 @@
 
 using NUnit.Framework;
-using RMC.Core.Architectures.Mini.Context;
 using RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Components;
-using RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Controller;
 using RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.View;
 using RMC.Core.Experimental;
 using RMC.Core.Testing;
@@ -30,9 +28,9 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Model
         public void TearDown()
         {
             _prefabManagerForTesting.Clear();
-            if (ContextLocator.Instance.HasItem<Context.Context>())
+            if (ContextLocator.Instance.HasItem<Context>())
             {
-                ContextLocator.Instance.RemoveItem<Context.Context>();
+                ContextLocator.Instance.RemoveItem<Context>();
             }
         }
         
@@ -40,7 +38,7 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Model
         public void RollABallModel_DefaultValues_WhenCreated()
         {
             // Arrange
-            IContext context = new Context.Context();
+            IContext context = new Context();
             RollABallModel rollABallModel = new RollABallModel();
             
             // Act
@@ -66,14 +64,14 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Model
             UIView uiView = 
                 _prefabManagerForTesting.LoadAndInstantiate<UIView>("Prefabs_Basic/UIView");
             
-            RollABallMini rollABallMini = 
+            RollABallSimpleMini rollABallSimpleMini = 
                 MockRollABallMini.CreateRollABallMini(inputView, playerView, uiView);
          
             // Act
-            rollABallMini.Initialize();
+            rollABallSimpleMini.Initialize();
             
             // Assert
-            Assert.That(rollABallMini.RollABallModel.Score.Value, Is.EqualTo(0));
+            Assert.That(rollABallSimpleMini.RollABallModel.Score.Value, Is.EqualTo(0));
         }
         
         [Test]
@@ -87,17 +85,17 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Model
             UIView uiView = 
                 _prefabManagerForTesting.LoadAndInstantiate<UIView>("Prefabs_Basic/UIView");
             
-            RollABallMini rollABallMini = 
+            RollABallSimpleMini rollABallSimpleMini = 
                 MockRollABallMini.CreateRollABallMini(inputView, playerView, uiView);
          
             // Act
-            rollABallMini.Initialize();
+            rollABallSimpleMini.Initialize();
             GameObject go = new GameObject();
             PickupComponent pickupComponent = go.AddComponent<PickupComponent>();
-            rollABallMini.RollABallController.PlayerView_OnPickup(pickupComponent);
+            rollABallSimpleMini.RollABallController.PlayerView_OnPickup(pickupComponent);
             
             // Assert
-            Assert.That(rollABallMini.RollABallModel.Score.Value, Is.EqualTo(1));
+            Assert.That(rollABallSimpleMini.RollABallModel.Score.Value, Is.EqualTo(1));
             
         }
         
@@ -113,14 +111,14 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Model
             UIView uiView = 
                 _prefabManagerForTesting.LoadAndInstantiate<UIView>("Prefabs_Basic/UIView");
             
-            RollABallMini rollABallMini = 
+            RollABallSimpleMini rollABallSimpleMini = 
                 MockRollABallMini.CreateRollABallMini(inputView, playerView, uiView);
          
             // Act
-            rollABallMini.Initialize();
+            rollABallSimpleMini.Initialize();
             
             // Assert
-            Assert.That(rollABallMini.RollABallModel.IsGameOver.Value, Is.False);
+            Assert.That(rollABallSimpleMini.RollABallModel.IsGameOver.Value, Is.False);
         }
         
         [Test]
@@ -134,19 +132,19 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Model
             UIView uiView = 
                 _prefabManagerForTesting.LoadAndInstantiate<UIView>("Prefabs_Basic/UIView");
             
-            RollABallMini rollABallMini = 
+            RollABallSimpleMini rollABallSimpleMini = 
                 MockRollABallMini.CreateRollABallMini(inputView, playerView, uiView);
          
             // Act
-            rollABallMini.Initialize();
+            rollABallSimpleMini.Initialize();
             GameObject go = new GameObject();
             PickupComponent pickupComponent = go.AddComponent<PickupComponent>();
-            rollABallMini.RollABallController.PlayerView_OnPickup(pickupComponent);
-            rollABallMini.RollABallController.PlayerView_OnPickup(pickupComponent);
-            rollABallMini.RollABallController.PlayerView_OnPickup(pickupComponent);
+            rollABallSimpleMini.RollABallController.PlayerView_OnPickup(pickupComponent);
+            rollABallSimpleMini.RollABallController.PlayerView_OnPickup(pickupComponent);
+            rollABallSimpleMini.RollABallController.PlayerView_OnPickup(pickupComponent);
             
             // Assert
-            Assert.That(rollABallMini.RollABallModel.IsGameOver.Value, Is.True);
+            Assert.That(rollABallSimpleMini.RollABallModel.IsGameOver.Value, Is.True);
         }
     }
 }

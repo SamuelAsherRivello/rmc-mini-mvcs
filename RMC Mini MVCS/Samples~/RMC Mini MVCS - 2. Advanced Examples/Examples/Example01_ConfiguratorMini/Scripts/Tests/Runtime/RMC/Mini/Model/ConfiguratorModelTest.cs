@@ -1,9 +1,7 @@
 using NUnit.Framework;
-using RMC.Core.Architectures.Mini.Context;
-using RMC.MiniMvcs.Samples.Configurator.Mini.Model;
-using RMC.MiniMvcs.Samples.Configurator.Mini.Model.Data;
+using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Model.Data;
 
-namespace RMC.MiniMvcs.Samples.Configurator.Mini.Model
+namespace RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Model
 {
     [TestFixture]
     [Category ("RMC.Mini.Configurator")]
@@ -31,17 +29,24 @@ namespace RMC.MiniMvcs.Samples.Configurator.Mini.Model
             // Assert
             Assert.IsTrue(_model.IsInitialized);
             Assert.IsFalse(_model.HasLoadedService.Value);
-            Assert.IsNull(_model.CharacterData.Value);
-            Assert.IsNull(_model.EnvironmentData.Value);
+            Assert.AreEqual(_model.CharacterData.Value, CharacterData.FromDefaultValues());
+            Assert.AreEqual(_model.EnvironmentData.Value, EnvironmentData.FromDefaultValues());
         }
 
         [Test]
         public void GameMode_InitialValue_IsDefault()
         {
             // Assert
-            Assert.AreEqual(GameMode.Menu, _model.HasBackNavigation.Value);
+            Assert.AreEqual(false, _model.HasNavigationBack.Value);
         }
 
+        [Test]
+        public void GameMode_InitialValue2_IsDefault()
+        {
+            // Assert
+            Assert.AreEqual(false, _model.HasNavigationDeveloperConsole.Value);
+        }
+        
         [Test]
         public void HasLoadedService_InitialValue_IsFalse()
         {
@@ -67,10 +72,10 @@ namespace RMC.MiniMvcs.Samples.Configurator.Mini.Model
         public void SetHasBackNavigation_UpdatesValue()
         {
             // Act
-            _model.HasBackNavigation.Value = false;
+            _model.HasNavigationBack.Value = false;
             
             // Assert
-            Assert.AreEqual(false,_model.HasBackNavigation.Value);
+            Assert.AreEqual(false,_model.HasNavigationBack.Value);
         }
 
         [Test]

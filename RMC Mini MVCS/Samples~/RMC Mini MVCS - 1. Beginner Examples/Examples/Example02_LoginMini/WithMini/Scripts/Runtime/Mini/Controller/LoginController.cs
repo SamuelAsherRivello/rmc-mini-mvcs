@@ -1,4 +1,3 @@
-using RMC.Core.Architectures.Mini.Context;
 using RMC.Core.Architectures.Mini.Controller;
 using RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.Controller.Commands;
 using RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.Model;
@@ -40,14 +39,14 @@ namespace RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.Controller
                 base.Initialize(context);
                 
                 //
-                _model.LoggedInUserData.OnValueChanged.AddListener(Model_OnLoggedInUserDataChanged);
+                ScriptableObjectModel.LoggedInUserData.OnValueChanged.AddListener(Model_OnLoggedInUserDataChanged);
                 _view.OnLogin.AddListener(View_OnLogin);
                 _view.OnLogout.AddListener(View_OnLogout);
                 _view.OnCanLoginChanged.AddListener(View_OnCanLoginChanged);
                 _service.OnLoginCompleted.AddListener(Service_OnLoginCompleted);
 
                 // Demo - Controller may update model DIRECTLY...
-                _model.LoggedInUserData.Value = null;
+                ScriptableObjectModel.LoggedInUserData.Value = null;
                 
                 // Clear
                 View_OnLogout();
@@ -62,7 +61,7 @@ namespace RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.Controller
         //  Event Handlers --------------------------------
         private void View_OnCanLoginChanged(bool canLogin)
         {
-            _model.CanLogin.Value = canLogin;
+            ScriptableObjectModel.CanLogin.Value = canLogin;
         }
         
         
@@ -91,12 +90,12 @@ namespace RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.Controller
             if (wasSuccess)
             {
                 // Demo - Controller may update model DIRECTLY...
-                _model.LoggedInUserData.Value = userData;
+                ScriptableObjectModel.LoggedInUserData.Value = userData;
             }
             else
             {
                 // Demo - Controller may update model DIRECTLY...
-                _model.LoggedInUserData.Value = null;
+                ScriptableObjectModel.LoggedInUserData.Value = null;
             }
             
             Context.CommandManager.InvokeCommand(

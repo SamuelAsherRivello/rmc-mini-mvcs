@@ -26,7 +26,7 @@
     margin-bottom: 0;
     margin-left: 0;
     padding-top: 0;
-    padding-right: 0;
+    padding-right: 10px;
     padding-bottom: 0;
     padding-left: 30px;
     height: 10%;
@@ -39,10 +39,10 @@
 }
 
 .unity-text-element {
-    -unity-font-definition: url("project://database/Assets/Samples/RMC%20Mini%20MVCS/2.4.0/RMC%20Mini%20MVCS%20-%202.%20Advanced%20Examples/Examples/Example01_ConfiguratorMini/Art/Fonts/SOURCESANSPRO-REGULAR%20SDF.asset?fileID=11400000&guid=da399494ce2b4924c8903ea35b3e0869&type=2#SOURCESANSPRO-REGULAR SDF");
+    -unity-font-definition: url("project://database/Assets/_WIP%20Samples/RMC%20Mini%20MVCS%20-%202.%20Advanced%20Examples/Examples/Example01_ConfiguratorMini/Art/Fonts/SOURCESANSPRO-REGULAR%20SDF.asset?fileID=11400000&guid=da399494ce2b4924c8903ea35b3e0869&type=2#SOURCESANSPRO-REGULAR SDF");
     font-size: 40px;
     -unity-font-style: normal;
-    -unity-font: url("project://database/Assets/Samples/RMC%20Mini%20MVCS/2.4.0/RMC%20Mini%20MVCS%20-%202.%20Advanced%20Examples/Examples/Example01_ConfiguratorMini/Art/Fonts/SOURCESANSPRO-REGULAR.TTF?fileID=12800000&guid=1dae810738d38ae4b8af4be3b6c17c50&type=3#SOURCESANSPRO-REGULAR");
+    -unity-font: url("project://database/Assets/_WIP%20Samples/RMC%20Mini%20MVCS%20-%202.%20Advanced%20Examples/Examples/Example01_ConfiguratorMini/Art/Fonts/SOURCESANSPRO-REGULAR.TTF?fileID=12800000&guid=1dae810738d38ae4b8af4be3b6c17c50&type=3#SOURCESANSPRO-REGULAR");
     -unity-text-align: middle-center;
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
 }
@@ -71,6 +71,11 @@
 }
 
 .unity-button {
-    min-width: 500px;
-    max-width: 500px;
+    width: 500px;
+}
+
+.icon-button {
+    width: 67px;
+    -unity-background-scale-mode: scale-to-fit;
+    height: 67px;
 }

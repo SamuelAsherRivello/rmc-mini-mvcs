@@ -1,12 +1,13 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/Samples/RMC%20Mini%20MVCS/2.4.0/RMC%20Mini%20MVCS%20-%202.%20Advanced%20Examples/Examples/Example01_ConfiguratorMini/Settings/UIToolkit/Styles/ConfiguratorStyles.uss?fileID=7433441132597879392&amp;guid=0ecd92e44ebe29f44863b959e7a5114f&amp;type=3#ConfiguratorStyles" />
+    <Style src="project://database/Assets/_WIP%20Samples/RMC%20Mini%20MVCS%20-%202.%20Advanced%20Examples/Examples/Example01_ConfiguratorMini/Settings/UIToolkit/Styles/ConfiguratorStyles.uss?fileID=7433441132597879392&amp;guid=0ecd92e44ebe29f44863b959e7a5114f&amp;type=3#ConfiguratorStyles" />
     <ui:VisualElement name="Screen" picking-mode="Ignore" class="screen">
-        <ui:VisualElement name="Header" class="header">
-            <ui:VisualElement name="Labels" style="flex-grow: 1; flex-basis: 200%;">
+        <ui:VisualElement name="Header" class="header" style="justify-content: space-between;">
+            <ui:VisualElement name="Labels" style="flex-grow: 1; flex-basis: auto; flex-shrink: 0; flex-direction: row;">
                 <ui:Label tabindex="-1" text="[Status]" parse-escape-sequences="true" display-tooltip-when-elided="true" name="StatusLabel" style="-unity-text-align: middle-left;" />
             </ui:VisualElement>
-            <ui:VisualElement name="Buttons" style="flex-grow: 1; flex-basis: 100%; justify-content: space-around;">
-                <ui:Button text="Back" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BackButton" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;" />
+            <ui:VisualElement name="Buttons" style="flex-grow: 1; flex-basis: auto; justify-content: flex-end; flex-direction: row; align-items: center; flex-shrink: 1;">
+                <ui:Button text="Back" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BackButton" style="max-width: none; min-width: 460px;" />
+                <ui:Button name="DeveloperConsoleButton" class="icon-button" style="background-image: url(&quot;project://database/Assets/_WIP%20Samples/RMC%20Mini%20MVCS%20-%202.%20Advanced%20Examples/Examples/Example01_ConfiguratorMini/Art/Sprites/GearIcon.png?fileID=21300000&amp;guid=c3ac7cc323908f245bd2697042b641ff&amp;type=3#GearIcon&quot;); -unity-background-image-tint-color: rgba(255, 255, 255, 0.8); width: 72px; height: 72px;" />
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="Content" picking-mode="Ignore" class="content">

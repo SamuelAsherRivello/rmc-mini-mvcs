@@ -26,9 +26,9 @@ namespace RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.Controller
         public void TearDown()
         {
             _prefabManagerForTesting.Clear();
-            if (ContextLocator.Instance.HasItem<Context.Context>())
+            if (ContextLocator.Instance.HasItem<Context>())
             {
-                ContextLocator.Instance.RemoveItem<Context.Context>();
+                ContextLocator.Instance.RemoveItem<Context>();
             }
         }
         
@@ -38,20 +38,20 @@ namespace RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.Controller
         {
             // Arrange
             LoginView loginView = _prefabManagerForTesting.LoadAndInstantiate<LoginView>("Prefabs/LoginView");
-            LoginMini loginMini = MockLoginMini.CreateLoginMini(loginView);
-            loginMini.Initialize();
+            LoginSimpleMini loginSimpleMini = MockLoginMini.CreateLoginMini(loginView);
+            loginSimpleMini.Initialize();
             UserData loggedInUserData = null;
-            loginMini.Context.CommandManager.AddCommandListener<LoggedInUserDataChangedCommand>(
+            loginSimpleMini.Context.CommandManager.AddCommandListener<LoggedInUserDataChangedCommand>(
                 (loggedInUserDataChangedCommand) =>
                 {
                     loggedInUserData = loggedInUserDataChangedCommand.CurrentValue;
                 });
             
             // Act
-            loginMini.Model.LoggedInUserData.Value = new UserData("testusername", "testpassword");
+            loginSimpleMini.Model.LoggedInUserData.Value = new UserData("testusername", "testpassword");
             
             // Assert
-            Assert.That(loggedInUserData, Is.SameAs(loginMini.Model.LoggedInUserData.Value));
+            Assert.That(loggedInUserData, Is.SameAs(loginSimpleMini.Model.LoggedInUserData.Value));
         }
     }
 }

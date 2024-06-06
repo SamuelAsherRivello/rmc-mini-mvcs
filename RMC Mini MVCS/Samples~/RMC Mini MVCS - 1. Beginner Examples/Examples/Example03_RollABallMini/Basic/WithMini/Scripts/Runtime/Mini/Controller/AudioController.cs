@@ -1,5 +1,4 @@
 ﻿using System;
-using RMC.Core.Architectures.Mini.Context;
 using RMC.Core.Architectures.Mini.Controller;
 using RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Controller.Commands;
 using UnityEngine;
@@ -47,8 +46,15 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Controller
             }
         }
 
+        //  Dispose Methods --------------------------------
+        public virtual void Dispose()
+        {
+            // Optional: Handle any cleanup here...
+        }
+        
+        
         //  Methods ---------------------------------------
-
+        
 
         //  Event Handlers --------------------------------
         private void CommandManager_OnPlayAudioClip(PlayAudioClipCommand e)

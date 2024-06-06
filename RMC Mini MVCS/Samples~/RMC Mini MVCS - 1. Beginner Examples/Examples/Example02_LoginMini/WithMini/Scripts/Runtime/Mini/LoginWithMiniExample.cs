@@ -28,8 +28,8 @@ namespace RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini
         //  Unity Methods  --------------------------------
         protected void Start()
         {
-            LoginMini loginMini = new LoginMini(_view);
-            loginMini.Initialize();
+            LoginSimpleMini loginSimpleMini = new LoginSimpleMini(_view);
+            loginSimpleMini.Initialize();
         }
 
 

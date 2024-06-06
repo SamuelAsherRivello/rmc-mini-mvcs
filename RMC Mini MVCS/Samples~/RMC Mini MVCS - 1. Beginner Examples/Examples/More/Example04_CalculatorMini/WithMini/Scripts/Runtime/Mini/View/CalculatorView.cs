@@ -1,6 +1,5 @@
 
 using System;
-using RMC.Core.Architectures.Mini.Context;
 using RMC.Core.Architectures.Mini.Samples.Calculator.Mini.Model;
 using RMC.Core.Architectures.Mini.View;
 using UnityEngine;

@@ -1,6 +1,5 @@
 
 using RMC.Core.Architectures.Mini.Controller.Commands;
-using RMC.Core.Architectures.Mini.Samples.MultipleMinis.WithMini.Mini.Model;
 
 namespace RMC.Core.Architectures.Mini.Samples.MultipleMinis.WithMini.Mini.Controller.Commands
 {

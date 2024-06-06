@@ -1,4 +1,3 @@
-using RMC.Core.Architectures.Mini.Context;
 using RMC.Core.Architectures.Mini.Controller;
 using RMC.Core.Architectures.Mini.Samples.MultiScene.WithMini.Mini.Model;
 using RMC.Core.Architectures.Mini.Samples.MultiScene.WithMini.Mini.Service;
@@ -39,7 +38,7 @@ namespace RMC.Core.Architectures.Mini.Samples.MultiScene.WithMini.Mini.Controlle
                 base.Initialize(context);
                 
                 //
-                _model.SceneName.Value = SceneManager.GetActiveScene().name;
+                ScriptableObjectModel.SceneName.Value = SceneManager.GetActiveScene().name;
                 
                 //
                 _view.OnRequestSceneChange.AddListener(View_OnRequestSceneChange);
@@ -59,15 +58,15 @@ namespace RMC.Core.Architectures.Mini.Samples.MultiScene.WithMini.Mini.Controlle
         {
             RequireIsInitialized();
             
-            _model.ClickCount.Value++;
+            ScriptableObjectModel.ClickCount.Value++;
             
-            if (_model.SceneName.Value == MultiSceneModel.MultiSceneMiniExample01)
+            if (ScriptableObjectModel.SceneName.Value == MultiSceneModel.MultiSceneMiniExample01)
             {
-                _model.SceneName.Value = MultiSceneModel.MultiSceneMiniExample02;
+                ScriptableObjectModel.SceneName.Value = MultiSceneModel.MultiSceneMiniExample02;
             }
-            else if (_model.SceneName.Value == MultiSceneModel.MultiSceneMiniExample02)
+            else if (ScriptableObjectModel.SceneName.Value == MultiSceneModel.MultiSceneMiniExample02)
             {
-                _model.SceneName.Value = MultiSceneModel.MultiSceneMiniExample01;
+                ScriptableObjectModel.SceneName.Value = MultiSceneModel.MultiSceneMiniExample01;
             }
         }
         
@@ -76,10 +75,10 @@ namespace RMC.Core.Architectures.Mini.Samples.MultiScene.WithMini.Mini.Controlle
         {
             RequireIsInitialized();
             
-            _model.ServiceHasLoaded.Value = true;
+            ScriptableObjectModel.ServiceHasLoaded.Value = true;
 
             // Demo Only. We don't use this value. But you could.
-            _model.Message.Value = message;
+            ScriptableObjectModel.Message.Value = message;
         }
 
     }

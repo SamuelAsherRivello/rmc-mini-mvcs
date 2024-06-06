@@ -37,10 +37,10 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini
         //  Unity Methods  --------------------------------
         protected void Start()
         {
-            RollABallMini rollABallMini = 
-                new RollABallMini(_inputView, _playerView, _pickupsView, _uiView);
+            RollABallSimpleMini rollABallSimpleMini = 
+                new RollABallSimpleMini(_inputView, _playerView, _pickupsView, _uiView);
             
-            rollABallMini.Initialize();
+            rollABallSimpleMini.Initialize();
         }
 
 

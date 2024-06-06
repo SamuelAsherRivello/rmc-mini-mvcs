@@ -1,8 +1,8 @@
-using RMC.MiniMvcs.Samples.Configurator.Standard;
-using RMC.MiniMvcs.Samples.Configurator.Standard.Gameplay;
+using RMC.Core.Architectures.Mini.Samples.Configurator.Standard;
+using RMC.Core.Architectures.Mini.Samples.Configurator.Standard.Gameplay;
 using UnityEngine;
 
-namespace RMC.MiniMvcs.Samples.Configurator.Mini.Model.Data
+namespace RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Model.Data
 {
     /// <summary>
     /// Defines the customizable characteristics for the <see cref="Environment"/>
@@ -13,15 +13,17 @@ namespace RMC.MiniMvcs.Samples.Configurator.Mini.Model.Data
         //  Fields ------------------------------------
         public Color FloorColor = Color.white;
         public Color BackgroundColor = Color.white;
+        public Color DecorationColor = Color.white;
 
         //  Methods ------------------------------------
         public static EnvironmentData FromRandomValues()
         {
-            var colors = CustomColorUtility.GetRandomColorsWithoutRepeat(2);
+            var colors = CustomColorUtility.GetRandomColorsWithoutRepeat(3);
             return new EnvironmentData
             {
                 FloorColor = colors[0],
                 BackgroundColor = colors[1],
+                DecorationColor = colors[2]
             };
         }
 
@@ -32,6 +34,7 @@ namespace RMC.MiniMvcs.Samples.Configurator.Mini.Model.Data
             {
                 FloorColor = colors[0],
                 BackgroundColor = colors[1],
+                DecorationColor = colors[2]
             };
         }
 

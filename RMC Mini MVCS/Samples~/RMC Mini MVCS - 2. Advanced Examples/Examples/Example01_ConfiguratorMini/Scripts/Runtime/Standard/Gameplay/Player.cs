@@ -1,8 +1,8 @@
-using RMC.MiniMvcs.Samples.Configurator.Mini.Model.Data;
+using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Model.Data;
 using UnityEngine;
 
 #pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
-namespace RMC.MiniMvcs.Samples.Configurator.Standard.Gameplay
+namespace RMC.Core.Architectures.Mini.Samples.Configurator.Standard.Gameplay
 {
     /// <summary>
     /// Represents the 3D Graphics in front of the <see cref="Environment"/>
@@ -65,29 +65,11 @@ namespace RMC.MiniMvcs.Samples.Configurator.Standard.Gameplay
         //  Methods ---------------------------------
         private void HandleMovement()
         {
-            float rotation = 0f;
-            float movement = 0f;
-
-            if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
-            {
-                rotation = -_angularSpeed * Time.deltaTime;
-            }
-            else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
-            {
-                rotation = _angularSpeed * Time.deltaTime;
-            }
-
-            if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
-            {
-                movement = -_linearSpeed * Time.deltaTime;
-            }
-            else if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
-            {
-                movement = _linearSpeed * Time.deltaTime;
-            }
-
+            float rotation = Input.GetAxis("Horizontal") * _angularSpeed * Time.deltaTime;
+            float movement = Input.GetAxis("Vertical") * _linearSpeed *  Time.deltaTime;
+            
             transform.Rotate(0, rotation, 0);
-            transform.Translate(0, 0, movement);
+            transform.Translate(0, 0, -movement);
         }
     }
 }

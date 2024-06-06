@@ -1,6 +1,5 @@
 using System.Collections;
 using NUnit.Framework;
-using RMC.Core.Architectures.Mini.Context;
 using RMC.Core.Experimental;
 using UnityEngine;
 using UnityEngine.TestTools;
@@ -16,9 +15,9 @@ namespace RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.Model
         [TearDown]
         public void TearDown()
         {
-            if (ContextLocator.Instance.HasItem<Context.Context>())
+            if (ContextLocator.Instance.HasItem<Context>())
             {
-                ContextLocator.Instance.RemoveItem<Context.Context>();
+                ContextLocator.Instance.RemoveItem<Context>();
             }
         }
         
@@ -27,7 +26,7 @@ namespace RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.Model
         public void Values_AreDefault_WhenCreated()
         {
             // Arrange
-            IContext context = new Context.Context();
+            IContext context = new Context();
             ClockModel clockModel = new ClockModel();
             
             // Act
@@ -43,13 +42,13 @@ namespace RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.Model
         public void Time_Equals0_WhenWaitForSeconds0()
         {
             // Arrange
-            ClockMini clockMini = MockClockMini.CreateClockMini();
+            ClockSimpleMini clockSimpleMini = MockClockMini.CreateClockMini();
             
             // Act
-            clockMini.Initialize();
+            clockSimpleMini.Initialize();
             
             // Assert
-            Assert.That(clockMini.Model.Time.Value, Is.EqualTo(0));
+            Assert.That(clockSimpleMini.Model.Time.Value, Is.EqualTo(0));
         }
         
         
@@ -57,14 +56,14 @@ namespace RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.Model
         public IEnumerator Time_Equals1_WhenWaitForSeconds1()
         {
             // Arrange
-            ClockMini clockMini = MockClockMini.CreateClockMini();
+            ClockSimpleMini clockSimpleMini = MockClockMini.CreateClockMini();
             
             // Act
-            clockMini.Initialize();
+            clockSimpleMini.Initialize();
             yield return new WaitForSeconds(1);
             
             // Assert
-            Assert.That(clockMini.Model.Time.Value, Is.EqualTo(1));
+            Assert.That(clockSimpleMini.Model.Time.Value, Is.EqualTo(1));
         }
     }
 }

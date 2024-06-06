@@ -1,7 +1,6 @@
 
 using System.Collections;
 using NUnit.Framework;
-using RMC.Core.Architectures.Mini.Context;
 using RMC.Core.Experimental;
 using UnityEngine;
 using UnityEngine.TestTools;
@@ -17,9 +16,9 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Service
         [TearDown]
         public void TearDown()
         {
-            if (ContextLocator.Instance.HasItem<Context.Context>())
+            if (ContextLocator.Instance.HasItem<Context>())
             {
-                ContextLocator.Instance.RemoveItem<Context.Context>();
+                ContextLocator.Instance.RemoveItem<Context>();
             }
         }
         
@@ -27,7 +26,7 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Service
         public void Values_AreDefault_WhenCreated()
         {
             // Arrange
-            IContext context = new Context.Context();
+            IContext context = new Context();
             RollABallService rollABallService = new RollABallService();
             
             // Act
@@ -42,7 +41,7 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Service
         public IEnumerator ScoreMax_Is3_WhenLoaded()
         {
             // Arrange
-            IContext context = new Context.Context();
+            IContext context = new Context();
             RollABallService rollABallService = new RollABallService();
             
             int scoreMax = 0;

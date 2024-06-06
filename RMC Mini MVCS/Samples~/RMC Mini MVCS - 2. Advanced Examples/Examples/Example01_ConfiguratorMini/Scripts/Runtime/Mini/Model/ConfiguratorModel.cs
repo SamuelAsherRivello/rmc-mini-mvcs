@@ -1,35 +1,24 @@
-using RMC.Core.Architectures.Mini.Context;
 using RMC.Core.Architectures.Mini.Model;
-using RMC.MiniMvcs.Samples.Configurator.Mini.Model.Data;
-using UnityEngine;
-using UnityEngine.TextCore.Text;
+using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Model.Data;
+using RMC.Core.Data.Types;
 
-namespace RMC.MiniMvcs.Samples.Configurator.Mini.Model
+namespace RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Model
 {
-    //  Namespace Properties ------------------------------
-    public enum GameMode
-    {
-        Menu,
-        Game,
-        CustomizeCharacter,
-        CustomizeEnvironment
-    }
-    
-    //  Class Attributes ----------------------------------
-
     /// <summary>
     /// The Model stores runtime data 
     /// </summary>
     public class ConfiguratorModel: BaseModel // Extending 'base' is optional
     {
         //  Properties ------------------------------------
-        public Observable<bool> HasBackNavigation { get { return _hasBackNavigation;} }
+        public Observable<bool> HasNavigationBack { get { return _hasNavigationBack;} }
+        public Observable<bool> HasNavigationDeveloperConsole { get { return _hasNavigationDeveloperConsole;} }
         public Observable<bool> HasLoadedService { get { return _hasLoadedService;} }
         public Observable<CharacterData> CharacterData { get { return _characterData;} }
         public Observable<EnvironmentData> EnvironmentData { get { return _environmentData;} }
         
         //  Fields ----------------------------------------
-        private readonly Observable<bool> _hasBackNavigation = new Observable<bool>();
+        private readonly Observable<bool> _hasNavigationBack = new Observable<bool>();
+        private readonly Observable<bool> _hasNavigationDeveloperConsole = new Observable<bool>();
         private readonly Observable<bool> _hasLoadedService = new Observable<bool>();
         private readonly Observable<CharacterData> _characterData = new Observable<CharacterData>();
         private readonly Observable<EnvironmentData> _environmentData = new Observable<EnvironmentData>();
@@ -44,8 +33,11 @@ namespace RMC.MiniMvcs.Samples.Configurator.Mini.Model
 
                 // Set Defaults
                 _hasLoadedService.Value = false;
-                _characterData.Value = RMC.MiniMvcs.Samples.Configurator.Mini.Model.Data.CharacterData.FromDefaultValues();
-                _environmentData.Value = RMC.MiniMvcs.Samples.Configurator.Mini.Model.Data.EnvironmentData.FromDefaultValues();
+                _hasNavigationBack.Value = false;
+                _hasNavigationDeveloperConsole.Value = false;
+                
+                _characterData.Value = Data.CharacterData.FromDefaultValues();
+                _environmentData.Value = Data.EnvironmentData.FromDefaultValues();
             }
         }
 
@@ -54,16 +46,16 @@ namespace RMC.MiniMvcs.Samples.Configurator.Mini.Model
         public bool CharacterDataIsDefault()
         {
             var x = CharacterData.Value;
-            var y = RMC.MiniMvcs.Samples.Configurator.Mini.Model.Data.CharacterData
+            var y = Data.CharacterData
                 .FromDefaultValues();
             
-            return CharacterData.Value.Equals(RMC.MiniMvcs.Samples.Configurator.Mini.Model.Data.CharacterData
+            return CharacterData.Value.Equals(Data.CharacterData
                 .FromDefaultValues());
         }
         
         public bool EnvironmentDataIsDefault()
         {
-            return EnvironmentData.Value.Equals(RMC.MiniMvcs.Samples.Configurator.Mini.Model.Data.EnvironmentData
+            return EnvironmentData.Value.Equals(Data.EnvironmentData
                 .FromDefaultValues());
         }
 

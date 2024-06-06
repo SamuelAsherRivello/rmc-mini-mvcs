@@ -28,8 +28,8 @@ namespace RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini
         //  Unity Methods  --------------------------------
         protected void Start()
         {
-            UIToolkitMini uiToolkitMini = new UIToolkitMini(_view);
-            uiToolkitMini.Initialize();
+            UIToolkitSimpleMini uiToolkitSimpleMini = new UIToolkitSimpleMini(_view);
+            uiToolkitSimpleMini.Initialize();
         }
 
 

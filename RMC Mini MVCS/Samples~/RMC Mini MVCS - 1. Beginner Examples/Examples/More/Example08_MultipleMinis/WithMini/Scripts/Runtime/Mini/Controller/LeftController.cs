@@ -1,9 +1,7 @@
 using System;
-using RMC.Core.Architectures.Mini.Context;
 using RMC.Core.Architectures.Mini.Controller;
 using RMC.Core.Architectures.Mini.Samples.MultipleMinis.WithMini.Mini.Model;
 using RMC.Core.Architectures.Mini.Samples.MultipleMinis.WithMini.Mini.View;
-using UnityEngine;
 
 namespace RMC.Core.Architectures.Mini.Samples.MultipleMinis.WithMini.Mini.Controller
 {
@@ -61,6 +59,13 @@ namespace RMC.Core.Architectures.Mini.Samples.MultipleMinis.WithMini.Mini.Contro
         }
 
 
+        //  Dispose Methods --------------------------------
+        public virtual void Dispose()
+        {
+            // Optional: Handle any cleanup here...
+        }
+        
+        
         //  Methods ---------------------------------------
 
 

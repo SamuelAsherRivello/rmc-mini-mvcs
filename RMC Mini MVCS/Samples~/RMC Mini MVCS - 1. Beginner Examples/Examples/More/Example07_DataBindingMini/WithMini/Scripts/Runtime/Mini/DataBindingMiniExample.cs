@@ -25,7 +25,7 @@ namespace RMC.Core.Architectures.Mini.Samples.DataBindingMini.WithMini.Mini
         [SerializeField] 
         private RightView _rightView;
 
-        private Context.Context _context;
+        private Context _context;
         
         //  Unity Methods  --------------------------------
         protected void Start()
@@ -33,15 +33,15 @@ namespace RMC.Core.Architectures.Mini.Samples.DataBindingMini.WithMini.Mini
             
             // KEY CONCEPT: Create the Context here, OUTSIDE
             // and pass the SAME value to EACH Mini
-            _context = new Context.Context();
+            _context = new Context();
             
             // Mini
-            DataBindingMini dataBindingMini = new DataBindingMini(
+            DataBindingSimpleMini dataBindingSimpleMini = new DataBindingSimpleMini(
                 _context, 
                 _leftView,
                 _rightView);
             
-            dataBindingMini.Initialize();
+            dataBindingSimpleMini.Initialize();
             
         }
 

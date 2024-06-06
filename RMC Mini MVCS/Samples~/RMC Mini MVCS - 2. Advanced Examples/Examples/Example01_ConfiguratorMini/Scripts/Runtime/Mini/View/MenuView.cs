@@ -1,17 +1,16 @@
 using System;
-using RMC.Core.Architectures.Mini.Context;
+using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Controller;
+using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Model;
+using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Model.Data;
+using RMC.Core.Architectures.Mini.Samples.Configurator.Standard.Gameplay;
 using RMC.Core.Architectures.Mini.View;
-using RMC.MiniMvcs.Samples.Configurator.Mini.Controller;
-using RMC.MiniMvcs.Samples.Configurator.Mini.Model;
-using RMC.MiniMvcs.Samples.Configurator.Mini.Model.Data;
-using RMC.MiniMvcs.Samples.Configurator.Standard.Gameplay;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UIElements;
-using Environment = RMC.MiniMvcs.Samples.Configurator.Standard.Gameplay.Environment;
+using Standard_Gameplay_Environment = RMC.Core.Architectures.Mini.Samples.Configurator.Standard.Gameplay.Environment;
 
 // ReSharper disable Unity.NoNullPropagation
-namespace RMC.MiniMvcs.Samples.Configurator.Mini.View
+namespace RMC.Core.Architectures.Mini.Samples.Configurator.Mini.View
 {
     /// <summary>
     /// The View handles user interface and user input
@@ -30,17 +29,12 @@ namespace RMC.MiniMvcs.Samples.Configurator.Mini.View
         
         [HideInInspector] 
         public readonly UnityEvent OnCustomizeEnvironment = new UnityEvent();
-        
-        [HideInInspector] 
-        public readonly UnityEvent OnDebugConsole = new UnityEvent();
 
         
-        
-        public Label StatusLabel { get { return _uiDocument?.rootVisualElement.Q<Label>("StatusLabel"); }}
-        public Button PlayGameButton { get { return _uiDocument?.rootVisualElement.Q<Button>("PlayGameButton"); }}
-        public Button CustomizeCharacterButton { get { return _uiDocument?.rootVisualElement.Q<Button>("CustomizeCharacterButton"); }}
-        public Button CustomizeEnvironmentButton { get { return _uiDocument?.rootVisualElement.Q<Button>("CustomizeEnvironmentButton"); }}
-        public Button DebugConsoleButton { get { return _uiDocument?.rootVisualElement.Q<Button>("DebugConsoleButton"); }}
+        public Label StatusLabel { get { return _uiDocument?.rootVisualElement?.Q<Label>("StatusLabel"); }}
+        public Button PlayGameButton { get { return _uiDocument?.rootVisualElement?.Q<Button>("PlayGameButton"); }}
+        public Button CustomizeCharacterButton { get { return _uiDocument?.rootVisualElement?.Q<Button>("CustomizeCharacterButton"); }}
+        public Button CustomizeEnvironmentButton { get { return _uiDocument?.rootVisualElement?.Q<Button>("CustomizeEnvironmentButton"); }}
 
         
         //  Properties ------------------------------------
@@ -58,7 +52,7 @@ namespace RMC.MiniMvcs.Samples.Configurator.Mini.View
         
         [Header("Gameplay")]
         [SerializeField] 
-        private Environment _environment;
+        private Standard_Gameplay_Environment _environment;
 
         [SerializeField] 
         private Player _player;
@@ -79,7 +73,6 @@ namespace RMC.MiniMvcs.Samples.Configurator.Mini.View
                 PlayGameButton.clicked += PlayButton_OnClicked;
                 CustomizeCharacterButton.clicked += CustomizeButton_OnClicked;
                 CustomizeEnvironmentButton.clicked += CustomizeEnvironmentButton_OnClicked;
-                DebugConsoleButton.clicked += DebugConsoleButton_OnClicked;
                 RefreshUI();
             }
         }
@@ -122,11 +115,6 @@ namespace RMC.MiniMvcs.Samples.Configurator.Mini.View
         private void CustomizeEnvironmentButton_OnClicked()
         {
             OnCustomizeEnvironment.Invoke();
-        }
-        
-        private void DebugConsoleButton_OnClicked()
-        {
-            OnDebugConsole.Invoke();
         }
         
         

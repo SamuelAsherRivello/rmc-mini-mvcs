@@ -1,15 +1,13 @@
-using RMC.Core.Architectures.Mini.Context;
 using RMC.Core.Architectures.Mini.Controller;
-using RMC.Core.Architectures.Mini.Modules.SceneSystemModule;
-using RMC.MiniMvcs.Samples.Configurator.Mini.Model;
-using RMC.MiniMvcs.Samples.Configurator.Mini.Model.Data;
-using RMC.MiniMvcs.Samples.Configurator.Mini.Service;
-using RMC.MiniMvcs.Samples.Configurator.Mini.Service.Storage;
-using RMC.MiniMvcs.Samples.Configurator.Mini.View;
+using RMC.Core.Architectures.Mini.Features.SceneSystem;
+using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Model;
+using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Model.Data;
+using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Service;
+using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Service.Storage;
+using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.View;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-namespace RMC.MiniMvcs.Samples.Configurator.Mini.Controller
+namespace RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Controller
 {
     /// <summary>
     /// The Controller coordinates everything between
@@ -36,11 +34,12 @@ namespace RMC.MiniMvcs.Samples.Configurator.Mini.Controller
                 _view.OnPlay.AddListener(View_OnPlay);
                 _view.OnCustomizeCharacter.AddListener(View_OnCustomizeCharacter);
                 _view.OnCustomizeEnvironment.AddListener(View_OnCustomizeEnvironment);
-                _view.OnDebugConsole.AddListener(View_OnDebugConsole);
+                Context.CommandManager.AddCommandListener<LoadSceneRequestCommand>(OnLoadSceneRequestCommand);
+      
                 
                 // Load the data as needed
                 _service.OnLoadCompleted.AddListener(Service_OnLoadCompleted);
-                if (!_model.HasLoadedService.Value)
+                if (!ScriptableObjectModel.HasLoadedService.Value)
                 {
                     _service.Load();
                 }
@@ -53,54 +52,58 @@ namespace RMC.MiniMvcs.Samples.Configurator.Mini.Controller
 
 
         //  Methods ---------------------------------------
+        public override void Dispose()
+        {
+            base.Dispose();
+            Context.CommandManager.RemoveCommandListener<LoadSceneRequestCommand>(OnLoadSceneRequestCommand);
+        }
 
-        
+
         //  Event Handlers --------------------------------
-
-        
+        private void OnLoadSceneRequestCommand(LoadSceneRequestCommand loadSceneRequestCommand)
+        {
+            //Note: its optional to observe this command and toggle off the UI
+            //THis is just a demo of how to do it
+            _view.PlayGameButton.SetEnabled(false);
+            _view.CustomizeCharacterButton.SetEnabled(false);
+            _view.CustomizeEnvironmentButton.SetEnabled(false);
+        }
         
         private void View_OnCustomizeCharacter()
         {
             RequireIsInitialized();
-            Context.CommandManager.InvokeCommand(new SceneSystemLoadSceneCommand(ConfiguratorConstants.Scene02_CustomizeCharacter));
+            Context.CommandManager.InvokeCommand(new LoadSceneRequestCommand(ConfiguratorConstants.Scene02_CustomizeCharacter));
         }
         
 
         private void View_OnCustomizeEnvironment()
         {
             RequireIsInitialized();
-            Context.CommandManager.InvokeCommand(new SceneSystemLoadSceneCommand(ConfiguratorConstants.Scene03_CustomizeEnvironment));
+            Context.CommandManager.InvokeCommand(new LoadSceneRequestCommand(ConfiguratorConstants.Scene03_CustomizeEnvironment));
         }
         
         private void View_OnPlay()
         {
             RequireIsInitialized();
-            Context.CommandManager.InvokeCommand(new SceneSystemLoadSceneCommand(ConfiguratorConstants.Scene04_Game));
-        }
-        
-        
-        private void View_OnDebugConsole()
-        {
-            RequireIsInitialized();
-            Context.CommandManager.InvokeCommand(new SceneSystemLoadSceneCommand(ConfiguratorConstants.Scene05_DebugConsole));
+            Context.CommandManager.InvokeCommand(new LoadSceneRequestCommand(ConfiguratorConstants.Scene04_Game));
         }
 
         
         private void Service_OnLoadCompleted(ConfiguratorServiceData configuratorServiceData)
         {
             RequireIsInitialized();
-            _model.HasLoadedService.Value = true;
+            ScriptableObjectModel.HasLoadedService.Value = true;
             
             if (configuratorServiceData != null)
             {
                 // Set FROM the saved data. Don't save again here.
-                _model.CharacterData.Value = configuratorServiceData.CharacterData;
-                _model.EnvironmentData.Value = configuratorServiceData.EnvironmentData;
+                ScriptableObjectModel.CharacterData.Value = configuratorServiceData.CharacterData;
+                ScriptableObjectModel.EnvironmentData.Value = configuratorServiceData.EnvironmentData;
             }
             else
             {
-                _model.CharacterData.OnValueChangedRefresh();
-                _model.EnvironmentData.OnValueChangedRefresh();
+                ScriptableObjectModel.CharacterData.OnValueChangedRefresh();
+                ScriptableObjectModel.EnvironmentData.OnValueChangedRefresh();
             }
         }
     }

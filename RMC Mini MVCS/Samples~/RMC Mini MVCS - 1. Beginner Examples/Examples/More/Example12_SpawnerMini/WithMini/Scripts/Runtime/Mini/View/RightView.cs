@@ -1,5 +1,4 @@
 using System;
-using RMC.Core.Architectures.Mini.Context;
 using RMC.Core.Architectures.Mini.Samples.SpawnerMini.WithMini.Mini.Controller.Commands;
 using RMC.Core.Architectures.Mini.View;
 using UnityEngine;

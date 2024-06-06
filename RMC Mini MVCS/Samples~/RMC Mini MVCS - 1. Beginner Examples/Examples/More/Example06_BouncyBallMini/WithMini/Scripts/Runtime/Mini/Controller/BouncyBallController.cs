@@ -1,4 +1,3 @@
-using RMC.Core.Architectures.Mini.Context;
 using RMC.Core.Architectures.Mini.Controller;
 using RMC.Core.Architectures.Mini.Samples.BouncyBall.WithMini.Mini.Controller.Commands;
 using RMC.Core.Architectures.Mini.Samples.BouncyBall.WithMini.Mini.Model;
@@ -61,9 +60,9 @@ namespace RMC.Core.Architectures.Mini.Samples.BouncyBall.WithMini.Mini.Controlle
         {
             RequireIsInitialized();
             
-            _model.BounceCountMax.Value = _service.BounceCountMax;
+            ScriptableObjectModel.BounceCountMax.Value = _service.BounceCountMax;
             _view.OnBounced.AddListener(View_OnBounced);
-            _model.BounceCount.OnValueChanged.AddListener(Model_OnCounterChanged);
+            ScriptableObjectModel.BounceCount.OnValueChanged.AddListener(Model_OnCounterChanged);
             
             // Demo - Controller may update view DIRECTLY...
             _view.StatusText.text = "Waiting...";
@@ -78,15 +77,15 @@ namespace RMC.Core.Architectures.Mini.Samples.BouncyBall.WithMini.Mini.Controlle
                 new PlayAudioClipCommand("AudioClips/Bounce01"));
             
             // Demo - Controller may update model DIRECTLY...
-            if (_model.BounceCount.Value + 1 > _model.BounceCountMax.Value)
+            if (ScriptableObjectModel.BounceCount.Value + 1 > ScriptableObjectModel.BounceCountMax.Value)
             {
                 //Wrap the value
-                _model.BounceCount.Value = 1;
+                ScriptableObjectModel.BounceCount.Value = 1;
             }
             else
             {
                 //Increment the value
-                _model.BounceCount.Value++;
+                ScriptableObjectModel.BounceCount.Value++;
             }
         }
         

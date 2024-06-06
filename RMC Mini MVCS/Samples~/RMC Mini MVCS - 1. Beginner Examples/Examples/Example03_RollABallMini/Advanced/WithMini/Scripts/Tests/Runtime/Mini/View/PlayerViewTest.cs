@@ -1,6 +1,5 @@
 using System.Collections;
 using NUnit.Framework;
-using RMC.Core.Architectures.Mini.Context;
 using RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Components;
 using RMC.Core.Experimental;
 using RMC.Core.Testing;
@@ -28,9 +27,9 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.View
         {
             _prefabManagerForTesting.Clear();
      
-            if (ContextLocator.Instance.HasItem<Context.Context>())
+            if (ContextLocator.Instance.HasItem<Context>())
             {
-                ContextLocator.Instance.RemoveItem<Context.Context>();
+                ContextLocator.Instance.RemoveItem<Context>();
             }
         }
 
@@ -39,7 +38,7 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.View
         public IEnumerator OnPickup_IsNotInvoked_WhenNoCollision()
         {
             // Arrange
-            IContext context = new Context.Context();
+            IContext context = new Context();
             GameObject gameObject = new GameObject();
             PlayerView playerView = gameObject.AddComponent<PlayerView>();
             
@@ -64,7 +63,7 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.View
         public IEnumerator OnPickup_IsInvoked_WhenCollision()
         {
             // Arrange
-            IContext context = new Context.Context();
+            IContext context = new Context();
             PlayerView playerView = 
                 _prefabManagerForTesting.LoadAndInstantiate<PlayerView>("Prefabs_Advanced/PlayerView");
 

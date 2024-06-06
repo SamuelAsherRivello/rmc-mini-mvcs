@@ -1,12 +1,11 @@
-using RMC.Core.Architectures.Mini.Context;
+using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Model.Data;
+using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Service.Storage;
 using RMC.Core.Architectures.Mini.Service;
 using RMC.Core.Data.Types.Storage;
-using RMC.MiniMvcs.Samples.Configurator.Mini.Model.Data;
-using RMC.MiniMvcs.Samples.Configurator.Mini.Service.Storage;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace RMC.MiniMvcs.Samples.Configurator.Mini.Service
+namespace RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Service
 {
     //  Namespace Properties ------------------------------
     public class ConfiguratorServiceUnityEvent : UnityEvent<ConfiguratorServiceData> {}

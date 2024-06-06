@@ -1,6 +1,5 @@
 
 using System;
-using RMC.Core.Architectures.Mini.Context;
 using RMC.Core.Architectures.Mini.Controller;
 using RMC.Core.Architectures.Mini.Samples.Calculator.Mini.Model;
 using RMC.Core.Architectures.Mini.Samples.Calculator.Mini.View;
@@ -63,8 +62,15 @@ namespace RMC.Core.Architectures.Mini.Samples.Calculator.Mini.Controller
         }
         
         
-        //  Other Methods ---------------------------------
-
+        //  Dispose Methods --------------------------------
+        public virtual void Dispose()
+        {
+            // Optional: Handle any cleanup here...
+        }
+        
+        
+        //  Methods ---------------------------------------
+        
         
         //  Event Handlers --------------------------------
         private void View_OnReset()

@@ -1,13 +1,11 @@
-using RMC.Core.Architectures.Mini.Context;
 using RMC.Core.Architectures.Mini.Controller;
-using RMC.MiniMvcs.Samples.Configurator.Mini.Model;
-using RMC.MiniMvcs.Samples.Configurator.Mini.Model.Data;
-using RMC.MiniMvcs.Samples.Configurator.Mini.Service;
-using RMC.MiniMvcs.Samples.Configurator.Mini.Service.Storage;
-using RMC.MiniMvcs.Samples.Configurator.Mini.View;
-using UnityEngine.SceneManagement;
+using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Model;
+using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Model.Data;
+using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Service;
+using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Service.Storage;
+using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.View;
 
-namespace RMC.MiniMvcs.Samples.Configurator.Mini.Controller
+namespace RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Controller
 {
     /// <summary>
     /// The Controller coordinates everything between
@@ -35,7 +33,7 @@ namespace RMC.MiniMvcs.Samples.Configurator.Mini.Controller
 
                 // Load the data as needed
                 _service.OnLoadCompleted.AddListener(Service_OnLoadCompleted);
-                if (!_model.HasLoadedService.Value)
+                if (!ScriptableObjectModel.HasLoadedService.Value)
                 {
                     _service.Load();
                 }
@@ -56,25 +54,25 @@ namespace RMC.MiniMvcs.Samples.Configurator.Mini.Controller
             RequireIsInitialized();
 
             // Set from Random. Then save here.
-            _model.EnvironmentData.Value = EnvironmentData.FromRandomValues();
-            _service.SaveEnvironmentData(_model.EnvironmentData.Value);
+            ScriptableObjectModel.EnvironmentData.Value = EnvironmentData.FromRandomValues();
+            _service.SaveEnvironmentData(ScriptableObjectModel.EnvironmentData.Value);
         }
         
         private void Service_OnLoadCompleted(ConfiguratorServiceData configuratorServiceData)
         {
             RequireIsInitialized();
-            _model.HasLoadedService.Value = true;
+            ScriptableObjectModel.HasLoadedService.Value = true;
             
             if (configuratorServiceData != null)
             {
                 // Set FROM the saved data. Don't save again here.
-                _model.CharacterData.Value = configuratorServiceData.CharacterData;
-                _model.EnvironmentData.Value = configuratorServiceData.EnvironmentData;
+                ScriptableObjectModel.CharacterData.Value = configuratorServiceData.CharacterData;
+                ScriptableObjectModel.EnvironmentData.Value = configuratorServiceData.EnvironmentData;
             }
             else
             {
-                _model.CharacterData.OnValueChangedRefresh();
-                _model.EnvironmentData.OnValueChangedRefresh();
+                ScriptableObjectModel.CharacterData.OnValueChangedRefresh();
+                ScriptableObjectModel.EnvironmentData.OnValueChangedRefresh();
             }
         }
     }

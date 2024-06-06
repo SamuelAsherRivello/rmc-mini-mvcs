@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace RMC.MiniMvcs.Samples.Configurator.Standard
+namespace RMC.Core.Architectures.Mini.Samples.Configurator.Standard
 {
     public static class CustomColorUtility
     {

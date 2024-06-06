@@ -14,7 +14,7 @@ namespace RMC.Core.Architectures.Mini.Samples.MultiScene.WithMini.Mini
     {
         //  Fields ----------------------------------------
         public static MultiSceneMiniSingleton Instance { get; private set; }
-        public MultiSceneMini MultiSceneMini { get; set; }
+        public MultiSceneSimpleMini MultiSceneSimpleMini { get; set; }
         
         //  Initialization  -------------------------------
 

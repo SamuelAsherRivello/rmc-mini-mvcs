@@ -1,6 +1,5 @@
 using System.Collections;
 using NUnit.Framework;
-using RMC.Core.Architectures.Mini.Context;
 using RMC.Core.Experimental;
 using UnityEngine;
 using UnityEngine.TestTools;
@@ -17,9 +16,9 @@ namespace RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.Service
         [TearDown]
         public void TearDown()
         {
-            if (ContextLocator.Instance.HasItem<Context.Context>())
+            if (ContextLocator.Instance.HasItem<Context>())
             {
-                ContextLocator.Instance.RemoveItem<Context.Context>();
+                ContextLocator.Instance.RemoveItem<Context>();
             }
         }
         
@@ -27,7 +26,7 @@ namespace RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.Service
         public void TimeDelay_Is0_WhenNotLoaded()
         {
             // Arrange
-            IContext context = new Context.Context();
+            IContext context = new Context();
             ClockService clockService = new ClockService();
             
             // Act
@@ -42,7 +41,7 @@ namespace RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.Service
         public IEnumerator TimeDelay_Is3_WhenLoaded()
         {
             // Arrange
-            IContext context = new Context.Context();
+            IContext context = new Context();
             ClockService clockService = new ClockService();
             
             int timeDelay = 0;
