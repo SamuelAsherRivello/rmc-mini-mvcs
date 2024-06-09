@@ -56,9 +56,9 @@ namespace RMC.Core.Architectures.Mini.Samples.CountUp.WithMini.Mini.Controller
         {
             RequireIsInitialized();
 
-            ScriptableObjectModel.Counter.Value = _service.CounterInitialValue;
+            _model.Counter.Value = _service.CounterInitialValue;
             _view.OnScreenClicked.AddListener(View_OnScreenClicked);
-            ScriptableObjectModel.Counter.OnValueChanged.AddListener(Model_OnCounterChanged);
+            _model.Counter.OnValueChanged.AddListener(Model_OnCounterChanged);
             
             // Demo - Controller may update view DIRECTLY...
             _view.StatusText.text = "Click anywhere to continue.";
@@ -68,7 +68,7 @@ namespace RMC.Core.Architectures.Mini.Samples.CountUp.WithMini.Mini.Controller
         {
             RequireIsInitialized();
 
-            ScriptableObjectModel.Counter.Value ++;
+            _model.Counter.Value ++;
         }
         
         private void Model_OnCounterChanged(int previousValue, int currentValue)

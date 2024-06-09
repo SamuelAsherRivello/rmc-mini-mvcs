@@ -38,7 +38,7 @@ namespace RMC.Core.Architectures.Mini.Samples.MultiScene.WithMini.Mini.Controlle
                 base.Initialize(context);
                 
                 //
-                ScriptableObjectModel.SceneName.Value = SceneManager.GetActiveScene().name;
+                _model.SceneName.Value = SceneManager.GetActiveScene().name;
                 
                 //
                 _view.OnRequestSceneChange.AddListener(View_OnRequestSceneChange);
@@ -58,15 +58,15 @@ namespace RMC.Core.Architectures.Mini.Samples.MultiScene.WithMini.Mini.Controlle
         {
             RequireIsInitialized();
             
-            ScriptableObjectModel.ClickCount.Value++;
+            _model.ClickCount.Value++;
             
-            if (ScriptableObjectModel.SceneName.Value == MultiSceneModel.MultiSceneMiniExample01)
+            if (_model.SceneName.Value == MultiSceneModel.MultiSceneMiniExample01)
             {
-                ScriptableObjectModel.SceneName.Value = MultiSceneModel.MultiSceneMiniExample02;
+                _model.SceneName.Value = MultiSceneModel.MultiSceneMiniExample02;
             }
-            else if (ScriptableObjectModel.SceneName.Value == MultiSceneModel.MultiSceneMiniExample02)
+            else if (_model.SceneName.Value == MultiSceneModel.MultiSceneMiniExample02)
             {
-                ScriptableObjectModel.SceneName.Value = MultiSceneModel.MultiSceneMiniExample01;
+                _model.SceneName.Value = MultiSceneModel.MultiSceneMiniExample01;
             }
         }
         
@@ -75,10 +75,10 @@ namespace RMC.Core.Architectures.Mini.Samples.MultiScene.WithMini.Mini.Controlle
         {
             RequireIsInitialized();
             
-            ScriptableObjectModel.ServiceHasLoaded.Value = true;
+            _model.ServiceHasLoaded.Value = true;
 
             // Demo Only. We don't use this value. But you could.
-            ScriptableObjectModel.Message.Value = message;
+            _model.Message.Value = message;
         }
 
     }

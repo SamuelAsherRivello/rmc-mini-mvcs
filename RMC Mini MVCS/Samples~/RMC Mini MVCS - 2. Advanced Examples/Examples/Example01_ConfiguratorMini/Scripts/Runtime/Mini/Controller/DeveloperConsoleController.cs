@@ -33,7 +33,7 @@ namespace RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Controller
 
                 // Load the data as needed
                 _service.OnLoadCompleted.AddListener(Service_OnLoadCompleted);
-                if (!ScriptableObjectModel.HasLoadedService.Value)
+                if (!_model.HasLoadedService.Value)
                 {
                     _service.Load();
                 }
@@ -54,28 +54,28 @@ namespace RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Controller
             RequireIsInitialized();
 
             // Set from Random. Then save here.
-            ScriptableObjectModel.CharacterData.Value = CharacterData.FromDefaultValues();
-            _service.SaveCharacterData(ScriptableObjectModel.CharacterData.Value);
+            _model.CharacterData.Value = CharacterData.FromDefaultValues();
+            _service.SaveCharacterData(_model.CharacterData.Value);
             
-            ScriptableObjectModel.EnvironmentData.Value = EnvironmentData.FromDefaultValues();
-            _service.SaveEnvironmentData(ScriptableObjectModel.EnvironmentData.Value);
+            _model.EnvironmentData.Value = EnvironmentData.FromDefaultValues();
+            _service.SaveEnvironmentData(_model.EnvironmentData.Value);
         }
         
         private void Service_OnLoadCompleted(ConfiguratorServiceData configuratorServiceData)
         {
             RequireIsInitialized();
-            ScriptableObjectModel.HasLoadedService.Value = true;
+            _model.HasLoadedService.Value = true;
             
             if (configuratorServiceData != null)
             {
                 // Set FROM the saved data. Don't save again here.
-                ScriptableObjectModel.CharacterData.Value = configuratorServiceData.CharacterData;
-                ScriptableObjectModel.EnvironmentData.Value = configuratorServiceData.EnvironmentData;
+                _model.CharacterData.Value = configuratorServiceData.CharacterData;
+                _model.EnvironmentData.Value = configuratorServiceData.EnvironmentData;
             }
             else
             {
-                ScriptableObjectModel.CharacterData.OnValueChangedRefresh();
-                ScriptableObjectModel.EnvironmentData.OnValueChangedRefresh();
+                _model.CharacterData.OnValueChangedRefresh();
+                _model.EnvironmentData.OnValueChangedRefresh();
             }
         }
     }

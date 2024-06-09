@@ -43,45 +43,45 @@ namespace RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.Controller
                 base.Initialize(context);
                 
                 // Model
-                ScriptableObjectModel.HairIndex.OnValueChanged.AddListener(delegate(int previousValue, int currentValue)
+                _model.HairIndex.OnValueChanged.AddListener(delegate(int previousValue, int currentValue)
                 {
                     _view.HairSprite = _view.HairSprites[currentValue];
                 });
                 
-                ScriptableObjectModel.FaceIndex.OnValueChanged.AddListener(delegate(int previousValue, int currentValue)
+                _model.FaceIndex.OnValueChanged.AddListener(delegate(int previousValue, int currentValue)
                 {
                     _view.FaceSprite = _view.FaceSprites[currentValue];
                 });
                 
-                ScriptableObjectModel.ShirtIndex.OnValueChanged.AddListener(delegate(int previousValue, int currentValue)
+                _model.ShirtIndex.OnValueChanged.AddListener(delegate(int previousValue, int currentValue)
                 {
                     _view.ShirtSprite = _view.ShirtSprites[currentValue];
                 });
                 
-                ScriptableObjectModel.BodyIndex.OnValueChanged.AddListener(delegate(int previousValue, int currentValue)
+                _model.BodyIndex.OnValueChanged.AddListener(delegate(int previousValue, int currentValue)
                 {
                     _view.BodySprite = _view.BodySprites[currentValue];
                 });
                 
                 // View
                 _view.HairButton.clickable.clicked += delegate {
-                    View_OnClickedHairButton(_view.HairSprites, ScriptableObjectModel.HairIndex); };
+                    View_OnClickedHairButton(_view.HairSprites, _model.HairIndex); };
                 
                 _view.FaceButton.clickable.clicked += delegate {
-                    View_OnClickedHairButton(_view.FaceSprites, ScriptableObjectModel.FaceIndex); };
+                    View_OnClickedHairButton(_view.FaceSprites, _model.FaceIndex); };
                 
                 _view.ShirtButton.clickable.clicked += delegate {
-                    View_OnClickedHairButton(_view.ShirtSprites, ScriptableObjectModel.ShirtIndex); };
+                    View_OnClickedHairButton(_view.ShirtSprites, _model.ShirtIndex); };
                 
                 _view.BodyButton.clickable.clicked += delegate {
-                    View_OnClickedHairButton(_view.BodySprites, ScriptableObjectModel.BodyIndex); };
+                    View_OnClickedHairButton(_view.BodySprites, _model.BodyIndex); };
                 
                 // Controller
                 _view.RandomizeButton.clickable.clicked += delegate {
-                    context.CommandManager.InvokeCommand(new RandomizeCommand(ScriptableObjectModel, _view)); };
+                    context.CommandManager.InvokeCommand(new RandomizeCommand(_model, _view)); };
                 
                 _view.ResetButton.clickable.clicked += delegate {
-                    context.CommandManager.InvokeCommand(new ResetCommand(ScriptableObjectModel)); };
+                    context.CommandManager.InvokeCommand(new ResetCommand(_model)); };
                 
                 _service.OnLoaded.AddListener(Service_OnLoaded);
                 _service.Load();
@@ -91,13 +91,13 @@ namespace RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.Controller
         private void Service_OnLoaded(CharacterData characterData)
         {
             // Store it, JUST in case of 'reset'
-            ScriptableObjectModel.InitialCharacterData = characterData;
+            _model.InitialCharacterData = characterData;
             
             // Use it
-            ScriptableObjectModel.HairIndex.Value = ScriptableObjectModel.InitialCharacterData.HairIndex;
-            ScriptableObjectModel.FaceIndex.Value = ScriptableObjectModel.InitialCharacterData.FaceIndex;
-            ScriptableObjectModel.ShirtIndex.Value = ScriptableObjectModel.InitialCharacterData.ShirtIndex;
-            ScriptableObjectModel.BodyIndex.Value = ScriptableObjectModel.InitialCharacterData.BodyIndex;
+            _model.HairIndex.Value = _model.InitialCharacterData.HairIndex;
+            _model.FaceIndex.Value = _model.InitialCharacterData.FaceIndex;
+            _model.ShirtIndex.Value = _model.InitialCharacterData.ShirtIndex;
+            _model.BodyIndex.Value = _model.InitialCharacterData.BodyIndex;
         }
 
         //  Methods ---------------------------------------
