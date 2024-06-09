@@ -1,7 +1,7 @@
 [![npm package](https://img.shields.io/npm/v/com.rmc.rmc-mini-mvcs)](https://www.npmjs.com/package/com.rmc.rmc-mini-mvcs)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-# RMC Frameworks
+# RMC Architectures
 
 Rivello Multimedia Consulting has multiple frameworks for MVC in Unity.
 
@@ -13,7 +13,7 @@ Rivello Multimedia Consulting has multiple frameworks for MVC in Unity.
 
 
 
-# RMC Mini MVCS
+# RMC Mini Mvcs Architecture - For Unity
 
 Mini MVCS is a custom Unity library framework embracing the [MVCS architecture](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller).
 
@@ -187,21 +187,22 @@ Created By
 =============
 
 - Samuel Asher Rivello 
-- Over 23 years XP with game development (2023)
-- Over 10 years XP with Unity (2023)
+- Over 25 years XP with game development (2024)
+- Over 11 years XP with Unity (2024)
 
 Contact
 =============
 
 - Twitter - <a href="https://twitter.com/srivello/">@srivello</a>
+- Git - <a href="https://github.com/SamuelAsherRivello/">Github.com/SamuelAsherRivello</a>
 - Resume & Portfolio - <a href="http://www.SamuelAsherRivello.com">SamuelAsherRivello.com</a>
-- Source Code on Git - <a href="https://github.com/SamuelAsherRivello/">Github.com/SamuelAsherRivello</a>
 - LinkedIn - <a href="https://Linkedin.com/in/SamuelAsherRivello">Linkedin.com/in/SamuelAsherRivello</a> <--- Say Hello! :)
+
 
 License
 =============
 
-Provided as-is under MIT License | Copyright © 2023 Rivello Multimedia Consulting, LLC
+Provided as-is under MIT License | Copyright © 2024 Rivello Multimedia Consulting, LLC
 
 
 

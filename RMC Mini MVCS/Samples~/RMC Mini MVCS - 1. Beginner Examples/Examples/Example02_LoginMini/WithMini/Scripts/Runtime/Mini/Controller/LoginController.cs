@@ -39,14 +39,14 @@ namespace RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.Controller
                 base.Initialize(context);
                 
                 //
-                ScriptableObjectModel.LoggedInUserData.OnValueChanged.AddListener(Model_OnLoggedInUserDataChanged);
+                _model.LoggedInUserData.OnValueChanged.AddListener(Model_OnLoggedInUserDataChanged);
                 _view.OnLogin.AddListener(View_OnLogin);
                 _view.OnLogout.AddListener(View_OnLogout);
                 _view.OnCanLoginChanged.AddListener(View_OnCanLoginChanged);
                 _service.OnLoginCompleted.AddListener(Service_OnLoginCompleted);
 
                 // Demo - Controller may update model DIRECTLY...
-                ScriptableObjectModel.LoggedInUserData.Value = null;
+                _model.LoggedInUserData.Value = null;
                 
                 // Clear
                 View_OnLogout();
@@ -61,7 +61,7 @@ namespace RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.Controller
         //  Event Handlers --------------------------------
         private void View_OnCanLoginChanged(bool canLogin)
         {
-            ScriptableObjectModel.CanLogin.Value = canLogin;
+            _model.CanLogin.Value = canLogin;
         }
         
         
@@ -90,12 +90,12 @@ namespace RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.Controller
             if (wasSuccess)
             {
                 // Demo - Controller may update model DIRECTLY...
-                ScriptableObjectModel.LoggedInUserData.Value = userData;
+                _model.LoggedInUserData.Value = userData;
             }
             else
             {
                 // Demo - Controller may update model DIRECTLY...
-                ScriptableObjectModel.LoggedInUserData.Value = null;
+                _model.LoggedInUserData.Value = null;
             }
             
             Context.CommandManager.InvokeCommand(

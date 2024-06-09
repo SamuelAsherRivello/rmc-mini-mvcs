@@ -43,12 +43,12 @@ namespace RMC.Mini.Lessons.Scalability.Simple.Mini
         private void Service_OnLoadCompleted(int inventoryCount)
         {
             RequireIsInitialized();
-            ScriptableObjectModel.InventoryCount.Value = inventoryCount; 
+            _model.InventoryCount.Value = inventoryCount; 
         }
         
         private void View_OnAction()
         {
-            ScriptableObjectModel.InventoryCount.Value++;
+            _model.InventoryCount.Value++;
         }
     }
 }

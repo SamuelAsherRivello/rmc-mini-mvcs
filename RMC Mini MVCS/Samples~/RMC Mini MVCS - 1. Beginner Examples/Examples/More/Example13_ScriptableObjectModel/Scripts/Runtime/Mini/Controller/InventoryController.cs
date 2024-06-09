@@ -10,8 +10,8 @@ namespace RMC.Core.Architectures.Mini.Samples.SOM.Mini
         <InventoryScriptableObjectModel, InventoryView, InventoryService> 
     {
         public InventoryController(
-            InventoryScriptableObjectModel scriptableObjectModel, InventoryView view, InventoryService service) 
-            : base(scriptableObjectModel, view, service)
+            InventoryScriptableObjectModel model, InventoryView view, InventoryService service) 
+            : base(model, view, service)
         {
         }
 
@@ -44,7 +44,7 @@ namespace RMC.Core.Architectures.Mini.Samples.SOM.Mini
         
         private void View_OnAction()
         {
-            ScriptableObjectModel.InventoryCount.Value++;
+            _model.InventoryCount.Value++;
         }
     }
 }
