@@ -1,0 +1,87 @@
+.screen {
+    flex-grow: 1;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    background-color: rgba(143, 143, 143, 0.28);
+}
+
+.content {
+    flex-direction: column;
+    flex-grow: 1;
+    margin-top: 50px;
+    margin-right: 50px;
+    margin-bottom: 50px;
+    margin-left: 50px;
+}
+
+.header {
+    flex-grow: 0;
+    background-color: rgb(55, 55, 55);
+    justify-content: flex-end;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 10px;
+    padding-bottom: 0;
+    padding-left: 30px;
+    height: 10%;
+}
+
+.body {
+    flex-grow: 1;
+    height: 90%;
+    flex-direction: column;
+}
+
+.unity-text-element {
+    font-size: 40px;
+    -unity-font-style: normal;
+    -unity-text-align: middle-center;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
+}
+
+.att-visibility-false {
+    visibility: hidden;
+}
+
+.body-column {
+    flex-basis: 50%;
+    justify-content: space-between;
+}
+
+.unity-label {
+    color: rgb(255, 255, 255);
+}
+
+.title-label {
+    font-size: 100px;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.39);
+    -unity-text-align: upper-left;
+    width: 100%;
+    height: 25%;
+}
+
+.unity-button {
+    width: 500px;
+}
+
+.icon-button {
+    width: 67px;
+    height: 67px;
+    background-image: url("project://database/Assets/_WIP%20Samples/Example02_UnityGamingServices/Art/Sprites/GearIcon.png?fileID=21300000&guid=985afd3beac883d4089fd3f94e79bfa8&type=3#GearIcon");
+    -unity-background-image-tint-color: rgba(130, 130, 130, 0.8);
+}
+
+.unity-list-view {
+    background-color: rgb(55, 55, 55);
+    padding-top: 40px;
+    padding-right: 40px;
+    padding-bottom: 40px;
+    padding-left: 40px;
+}

@@ -1,0 +1,25 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/_WIP%20Samples/Example02_UnityGamingServices/Settings/UIToolkit/Styles/UGSStyles.uss?fileID=7433441132597879392&amp;guid=06ba500ac804cf948b6c466b996f16ca&amp;type=3#UGSStyles" />
+    <ui:VisualElement name="Screen" class="screen">
+        <ui:VisualElement name="Content" class="content">
+            <ui:VisualElement name="Header" class="header att-visibility-false" />
+            <ui:VisualElement name="Body" class="body" style="flex-direction: row;">
+                <ui:VisualElement name="BodyLeft" class="body-column" style="flex-grow: 1; flex-direction: column; align-items: flex-start;">
+                    <ui:Label name="LeftTitleLabel" text="[Title]" class="title-label" />
+                    <ui:ListView name="LeftListView" class="unity-list-view" style="width: 100%; height: 75%;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="BodyRight" class="body-column" style="flex-grow: 1; flex-direction: column; align-items: flex-end;">
+                    <ui:Label name="RightTitleLabel" text="[Title]" class="title-label" style="-unity-text-align: upper-right;" />
+                    <ui:VisualElement name="Buttons" style="flex-direction: column; justify-content: flex-end; flex-basis: 50%; flex-grow: 1; flex-shrink: 0; height: 75%;">
+                        <ui:Button text="[Button01]" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Button01" />
+                        <ui:Button text="[Button02]" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Button02" />
+                        <ui:Button text="[Button03]" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Button03" />
+                        <ui:VisualElement name="Divider" style="flex-grow: 0; background-color: rgb(255, 255, 255); flex-basis: 1px; width: 50px; flex-shrink: 0; margin-top: 10px; margin-right: 225px; margin-bottom: 10px; margin-left: 225px;" />
+                        <ui:Button text="[Button04]" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Button04" focusable="false" />
+                        <ui:Button text="[Button05]" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Button05" focusable="false" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

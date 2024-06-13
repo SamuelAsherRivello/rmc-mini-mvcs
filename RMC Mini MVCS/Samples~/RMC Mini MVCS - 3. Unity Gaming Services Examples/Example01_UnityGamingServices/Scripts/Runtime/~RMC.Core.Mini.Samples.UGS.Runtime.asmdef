@@ -1,0 +1,24 @@
+{
+    "name": "RMC.Core.Mini.Samples.UGS.Runtime",
+    "rootNamespace": "",
+    "references": [
+        "GUID:4245cf09d0036f34e8bb2477b3fed3c2",
+        "GUID:dcbcd44f4254a2540985a1744c5a2004",
+        "GUID:32dd0d0e483c152489abb95d3455fa53",
+        "GUID:5540e30183c82e84b954c033c388e06c",
+        "GUID:fe25561d224ed4743af4c60938a59d0b",
+        "GUID:5e0b455853cd340e0813387221dfd501",
+        "GUID:be0d2672886cc45b2bcea5a5053a5347",
+        "GUID:df1a35458a836e34a94fe6f17cba4845",
+        "GUID:38197839e9a5478d8cdafae61a8d34d2"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

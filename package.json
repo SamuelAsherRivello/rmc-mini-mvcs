@@ -1,7 +1,7 @@
 {
   "name": "com.rmc.rmc-mini-mvcs",
   "displayName": "RMC Mini MVCS",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "unity": "2022.3",
   "description": "Mini MVCS (Model View Controller Service) library for Unity Development by Rivello Multimedia Consulting",
   "keywords": [
@@ -37,6 +37,11 @@
       "displayName": "RMC Mini MVCS - 2. Advanced Examples",
       "description": "Advanced examples with more complexity.",
       "path": "RMC Mini MVCS/Samples~/RMC Mini MVCS - 2. Advanced Examples"
+    },
+    {
+      "displayName": "RMC Mini MVCS - 3. Unity Gaming Services Examples",
+      "description": "Examples which require upfront setup of Unity Gaming Services (https://unity.com/solutions/gaming-services).",
+      "path": "RMC Mini MVCS/Samples~/RMC Mini MVCS - 3. Unity Gaming Services Examples"
     }
   ]
 }
