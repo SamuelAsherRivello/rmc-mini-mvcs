@@ -6,17 +6,11 @@ using UnityEngine;
 
 namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.View
 {
-    //  Namespace Properties ------------------------------
-
-    //  Class Attributes ----------------------------------
-
     /// <summary>
     /// The View handles user interface and user input
     /// </summary>
     public class PickupsView: MonoBehaviour, IView
     {
-        //  Events ----------------------------------------
-        
         //  Properties ------------------------------------
         public bool IsInitialized { get { return _isInitialized;} }
         public IContext Context { get { return _context;} }
@@ -41,7 +35,6 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.View
             }
         }
         
-
             
         //  Fields ----------------------------------------
         private bool _isInitialized = false;
@@ -50,6 +43,7 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.View
 
         [SerializeField] 
         private List<Pickup> _pickups;
+        
         
         //  Initialization  -------------------------------
         public void Initialize(IContext context)
@@ -69,13 +63,8 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.View
             }
         }
         
-        
         //  Unity Methods ---------------------------------
 
-        
-        //  Methods ---------------------------------------
-        
-        
         //  Event Handlers --------------------------------
     }
 }

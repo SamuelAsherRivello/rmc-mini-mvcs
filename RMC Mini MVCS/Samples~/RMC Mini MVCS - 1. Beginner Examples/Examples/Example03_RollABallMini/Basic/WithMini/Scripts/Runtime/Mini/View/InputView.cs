@@ -8,8 +8,6 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.View
     //  Namespace Properties ------------------------------
     public class OnInputUnityEvent : UnityEvent<Vector3> {}
     
-    //  Class Attributes ----------------------------------
-
     /// <summary>
     /// The View handles user interface and user input
     /// </summary>
@@ -19,14 +17,17 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.View
         [HideInInspector] 
         public readonly OnInputUnityEvent OnInput = new OnInputUnityEvent();
 
+        
         //  Properties ------------------------------------
         public bool IsInitialized { get { return _isInitialized;} }
         public IContext Context { get { return _context;} }
+        
         
         //  Fields ----------------------------------------
         private bool _isInitialized = false;
         private IContext _context;
 
+        
         //  Initialization  -------------------------------
         public void Initialize(IContext context)
         {
@@ -61,10 +62,10 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.View
             OnInput.Invoke(movement);
         }
 
+        
         //  Methods ---------------------------------------
         
         
         //  Event Handlers --------------------------------
-
     }
 }

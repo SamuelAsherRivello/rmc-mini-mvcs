@@ -44,7 +44,7 @@ namespace RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.Service
         {
             RequireIsInitialized();
 
-            //For simplicity we check a local file to validate.
+            //For simplicity, we check a local file to validate.
             //In production, call a server to validate instead
             TextAsset textAsset = Resources.Load<TextAsset>("Texts/LoginWithMiniText"); //txt file
 

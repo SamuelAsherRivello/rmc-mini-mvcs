@@ -7,8 +7,6 @@ using UnityEngine.Events;
 
 namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.View
 {
-    //  Namespace Properties ------------------------------
-
     //  Class Attributes ----------------------------------
     public class PickupUnityEvent : UnityEvent<PickupComponent> {}
 
@@ -36,6 +34,7 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.View
         
         [SerializeField] 
         private float _speed = 500;
+        
         
         //  Initialization  -------------------------------
         public void Initialize(IContext context)

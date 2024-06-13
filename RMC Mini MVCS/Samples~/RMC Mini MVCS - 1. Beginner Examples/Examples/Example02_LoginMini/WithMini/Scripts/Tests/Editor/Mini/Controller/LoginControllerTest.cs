@@ -38,20 +38,20 @@ namespace RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.Controller
         {
             // Arrange
             LoginView loginView = _prefabManagerForTesting.LoadAndInstantiate<LoginView>("Prefabs/LoginView");
-            LoginSimpleMini loginSimpleMini = MockLoginMini.CreateLoginMini(loginView);
-            loginSimpleMini.Initialize();
+            LoginMini loginMini = MockLoginMini.CreateLoginMini(loginView);
+            loginMini.Initialize();
             UserData loggedInUserData = null;
-            loginSimpleMini.Context.CommandManager.AddCommandListener<LoggedInUserDataChangedCommand>(
+            loginMini.Context.CommandManager.AddCommandListener<LoggedInUserDataChangedCommand>(
                 (loggedInUserDataChangedCommand) =>
                 {
                     loggedInUserData = loggedInUserDataChangedCommand.CurrentValue;
                 });
             
             // Act
-            loginSimpleMini.Model.LoggedInUserData.Value = new UserData("testusername", "testpassword");
+            loginMini.Model.LoggedInUserData.Value = new UserData("testusername", "testpassword");
             
             // Assert
-            Assert.That(loggedInUserData, Is.SameAs(loginSimpleMini.Model.LoggedInUserData.Value));
+            Assert.That(loggedInUserData, Is.SameAs(loginMini.Model.LoggedInUserData.Value));
         }
     }
 }

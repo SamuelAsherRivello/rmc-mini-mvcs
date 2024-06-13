@@ -8,8 +8,6 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Service
     //  Namespace Properties ------------------------------
     public class LoadedUnityEvent : UnityEvent {}
 
-    //  Class Attributes ----------------------------------
-
     /// <summary>
     /// The Service handles external data 
     /// </summary>
@@ -18,12 +16,15 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Service
         //  Events ----------------------------------------
         public readonly LoadedUnityEvent OnLoaded = new LoadedUnityEvent();
 
+        
         //  Properties ------------------------------------
         public int ScoreMax { get { return _scoreMax;} }
+        
         
         //  Fields ----------------------------------------
         private int _scoreMax;
 
+        
         //  Initialization  -------------------------------
         public override void Initialize(IContext context)
         {
@@ -34,6 +35,7 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Service
             }
         }
 
+        
         //  Methods ---------------------------------------
         public void Load ()
         {

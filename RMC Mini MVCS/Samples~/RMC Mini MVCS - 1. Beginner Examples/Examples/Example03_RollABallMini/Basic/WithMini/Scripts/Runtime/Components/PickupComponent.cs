@@ -10,13 +10,6 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Components
 	/// </summary>
 	public class PickupComponent : MonoBehaviour
 	{
-
-		//  Events ----------------------------------------
-        
-                
-        //  Properties ------------------------------------
-        
-        
         //  Fields ----------------------------------------
         private bool _isGameOver = false;
         private bool _isGamePaused = false;
@@ -41,8 +34,6 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Components
         
         
         //  Methods ---------------------------------------
-        
-        
         /// <summary>
         /// EXPERIMENTAL: This and any use of <see cref="ContextLocator"/>
         /// is experimental. Its a leading solution for

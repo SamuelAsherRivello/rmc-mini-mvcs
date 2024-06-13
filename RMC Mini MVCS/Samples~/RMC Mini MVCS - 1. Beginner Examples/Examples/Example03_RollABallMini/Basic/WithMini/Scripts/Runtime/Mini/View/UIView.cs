@@ -7,8 +7,6 @@ using UnityEngine.UI;
 
 namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.View
 {
-    //  Namespace Properties ------------------------------
-
     //  Class Attributes ----------------------------------
     public class OnRestartUnityEvent : UnityEvent<DialogView> {}
 
@@ -21,14 +19,13 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.View
         [HideInInspector]
         public readonly OnRestartUnityEvent OnRestart = new OnRestartUnityEvent();
 
+        
         //  Properties ------------------------------------
         public bool IsInitialized { get { return _isInitialized;} }
         public IContext Context { get { return _context;} }
 
+        
         //  Fields ----------------------------------------
-        private bool _isInitialized = false;
-        private IContext _context;
-
         [SerializeField] 
         private Text _scoreText;
 
@@ -43,6 +40,8 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.View
 
         private int _score = 0;
         private int _scoreMax = 0;
+        private bool _isInitialized = false;
+        private IContext _context;
         
         //  Initialization  -------------------------------
         public void Initialize(IContext context)
@@ -72,7 +71,6 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.View
                 UpdateScoreText();
             }
         }
-
         
         public void RequireIsInitialized()
         {
@@ -81,7 +79,6 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.View
                 throw new Exception("MustBeInitialized");
             }
         }
-        
         
         //  Unity Methods ---------------------------------
         protected void OnDestroy()
@@ -136,6 +133,5 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.View
                 _statusText.text = $"{statusChangedCommand.Value}";
             }
         }
-
     }
 }

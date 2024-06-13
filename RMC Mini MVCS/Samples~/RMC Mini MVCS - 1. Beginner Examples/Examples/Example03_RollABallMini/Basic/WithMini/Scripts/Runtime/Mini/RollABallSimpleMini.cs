@@ -7,19 +7,12 @@ using RMC.Core.Architectures.Mini.Structure.Simple;
 
 namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini
 {
-    //  Namespace Properties ------------------------------
-
-    //  Class Attributes ----------------------------------
-
     /// <summary>
     /// This Command is a stand-alone object containing
     /// a value of data.
     /// </summary>
     public class RollABallSimpleMini : ISimpleMiniMvcs
     {
-        //  Events ----------------------------------------
-
-
         //  Properties ------------------------------------
         public bool IsInitialized { get { return _isInitialized;} }
         public Context Context { get { return _context;} }
@@ -32,7 +25,6 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini
         public RollABallService RollABallService { get { return _rollABallService;} }
         
         //  Fields ----------------------------------------
- 
         private bool _isInitialized = false;
         
         //Context

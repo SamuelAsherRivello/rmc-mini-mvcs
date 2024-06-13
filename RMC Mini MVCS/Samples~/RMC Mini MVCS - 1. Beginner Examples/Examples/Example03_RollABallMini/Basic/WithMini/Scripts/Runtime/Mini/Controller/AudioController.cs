@@ -5,26 +5,22 @@ using UnityEngine;
 
 namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Controller
 {
-    //  Namespace Properties ------------------------------
-
-    //  Class Attributes ----------------------------------
-
     /// <summary>
     /// The Controller coordinates everything between
     /// the <see cref="IConcern"/>s and contains the core app logic 
     /// </summary>
     public class AudioController : IController 
     {
-        //  Events ----------------------------------------
-
 
         //  Properties ------------------------------------
         public bool IsInitialized { get { return _isInitialized;} }
         public IContext Context { get { return _context;} }
         
+        
         //  Fields ----------------------------------------
         private bool _isInitialized = false;
         private IContext _context;
+        
         
         //  Initialization  -------------------------------
         public void Initialize(IContext context)
@@ -46,6 +42,7 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Controller
             }
         }
 
+        
         //  Dispose Methods --------------------------------
         public virtual void Dispose()
         {

@@ -6,10 +6,6 @@ using RMC.Core.Architectures.Mini.Structure.Simple;
 
 namespace RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini
 {
-    //  Namespace Properties ------------------------------
-
-    //  Class Attributes ----------------------------------
-
     /// <summary>
     /// See <see cref="SimpleMiniMvcs{TContext,TModel,TView,TController,TService}"/>"/>
     /// </summary>
@@ -20,15 +16,6 @@ namespace RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini
         ClockController,
         ClockService>
     {
-        //  Events ----------------------------------------
-
-
-        //  Properties ------------------------------------
-
-        
-        //  Fields ----------------------------------------
-
-
         //  Initialization  -------------------------------
         public override void Initialize()
         {
@@ -50,10 +37,5 @@ namespace RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini
                 _controller.Initialize(_context);
             }
         }
-
-        //  Methods ---------------------------------------
-
-
-        //  Event Handlers --------------------------------
     }
 }

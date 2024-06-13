@@ -8,8 +8,6 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Service
     //  Namespace Properties ------------------------------
     public class LoadedUnityEvent : UnityEvent {}
 
-    //  Class Attributes ----------------------------------
-
     /// <summary>
     /// The Service handles external data 
     /// </summary>
@@ -54,6 +52,5 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Service
         }
         
         //  Event Handlers --------------------------------
-
     }
 }

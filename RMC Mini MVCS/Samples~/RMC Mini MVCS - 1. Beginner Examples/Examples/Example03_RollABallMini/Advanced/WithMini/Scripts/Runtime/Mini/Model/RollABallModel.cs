@@ -3,18 +3,11 @@ using RMC.Core.Data.Types;
 
 namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Model
 {
-    //  Namespace Properties ------------------------------
-
-    //  Class Attributes ----------------------------------
-
     /// <summary>
     /// The Model stores runtime data 
     /// </summary>
     public class RollABallModel: BaseModel // Extending 'base' is optional
     {
-        //  Events ----------------------------------------
-
-
         //  Properties ------------------------------------
         public Observable<bool> IsGameOver { get { return _isGameOver;} }
         public Observable<bool> IsGamePaused { get { return _isGamePaused;} }
@@ -23,6 +16,7 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Model
         public Observable<string> StatusText { get { return _statusText;} }
         public Observable<float> PlayerMovementSpeed { get { return _playerMovementSpeed;} }
 
+        
         //  Fields ----------------------------------------
         private readonly Observable<bool> _isGameOver = new Observable<bool>();
         private readonly Observable<bool> _isGamePaused = new Observable<bool>();
@@ -52,6 +46,5 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Model
 
 
         //  Event Handlers --------------------------------
-
     }
 }

@@ -10,8 +10,6 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.View
     public class ConfirmUnityEvent : UnityEvent {}
     public class CancelUnityEvent : UnityEvent {}
     
-    //  Class Attributes ----------------------------------
-
     /// <summary>
     /// The View handles user interface and user input
     /// </summary>
@@ -24,9 +22,11 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.View
         [HideInInspector] 
         public readonly ConfirmUnityEvent OnConfirm = new ConfirmUnityEvent();
     
+        
         //  Properties ------------------------------------
         public bool IsInitialized { get { return _isInitialized;} }
         public IContext Context { get { return _context;} }
+        
         
         //  Fields ----------------------------------------
         private bool _isInitialized = false;
@@ -77,7 +77,5 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.View
         {
            OnConfirm.Invoke();
         }
-        
-
     }
 }

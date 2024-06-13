@@ -5,11 +5,8 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UIElements;
 
-// ReSharper disable once Unity.IncorrectMonoBehaviourInstantiation
 namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.View
 {
-    //  Namespace Properties ------------------------------
-
     //  Class Attributes ----------------------------------
     public class OnRestartUnityEvent : UnityEvent {}
 
@@ -25,22 +22,19 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.View
         //  Properties ------------------------------------
         public bool IsInitialized { get { return _isInitialized;} }
         public IContext Context { get { return _context;} }
-        
         public Label ScoreLabel { get { return _uiDocument.rootVisualElement.Q<Label>("ScoreLabel");} }
         public Label StatusLabel { get { return _uiDocument.rootVisualElement.Q<Label>("StatusLabel");} }
         public Button RestartButton { get { return _uiDocument.rootVisualElement.Q<Button>("RestartButton");} }
-        
         public DialogView DialogView { get { return _dialogView; }}
 
+        
         //  Fields ----------------------------------------
-        private bool _isInitialized = false;
-        private IContext _context;
-
         [SerializeField] 
         private UIDocument _uiDocument;
 
+        private bool _isInitialized = false;
+        private IContext _context;
         private DialogView _dialogView;
-
         private int _score = 0;
         private int _scoreMax = 0;
         
@@ -54,7 +48,6 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.View
 
                 RestartButton.clicked += RestartButton_OnClicked;
 
-     
                 // ///////////////////////////////////////////////////
                 // View 
                 // There are many options of how to handle this
@@ -67,11 +60,10 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.View
                 // * Create a wrapper class of type VisualElement
                 // * Create no wrapper and 'speak to the uxml' directly from UIView
                 // * Others options too
-
+                // ///////////////////////////////////////////////////
                 _dialogView = new DialogView();
                 _dialogView.SetDialogView(_uiDocument.rootVisualElement.Q<VisualElement>("DialogView"));
                 _dialogView.Initialize(Context);
-                // ///////////////////////////////////////////////////
                 
                 // Controller
                 Context.CommandManager.AddCommandListener<ScoreChangedCommand>(
@@ -155,6 +147,5 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.View
                 StatusLabel.text = $"{statusChangedCommand.Value}";
             }
         }
-
     }
 }

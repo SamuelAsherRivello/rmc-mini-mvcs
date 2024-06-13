@@ -10,19 +10,12 @@ using UnityEngine.SceneManagement;
 
 namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Controller
 {
-    //  Namespace Properties ------------------------------
-
-    //  Class Attributes ----------------------------------
-
     /// <summary>
     /// The Controller coordinates everything between
     /// the <see cref="IConcern"/>s and contains the core app logic 
     /// </summary>
     public class RollABallController : IController  
     {
-        //  Events ----------------------------------------
-
-
         //  Properties ------------------------------------
         public bool IsInitialized { get { return _isInitialized;} }
         public IContext Context { get { return _context;} }
@@ -30,21 +23,21 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Controller
         //  Fields ----------------------------------------
         private bool _isInitialized = false;
         
-        //Context
+        // Context
         private IContext _context;
         
-        //Model
+        // Model
         private RollABallModel _model;
         
-        //View
+        // View
         private PlayerView _playerView;
         private UIView _uiView;
         private InputView _inputView;
         
-        //Controller
+        // Controller
         private AudioController _audioController;
         
-        //Service
+        // Service
         private RollABallService _service;
         
         //  Initialization  -------------------------------
@@ -85,7 +78,6 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Controller
                 _service.Load();
             }
         }
-
 
         public void RequireIsInitialized()
         {
@@ -136,7 +128,6 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Controller
             });
         }
         
-        
         private void Service_OnLoaded()
         {
             RequireIsInitialized();
@@ -145,6 +136,7 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Controller
             _model.ScoreMax.Value = _service.ScoreMax;
             _model.StatusText.Value = "Use Arrow Keys";
         }
+        
         
         private void InputView_OnInput(Vector3 input)
         {
@@ -157,6 +149,7 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Controller
             
             Context.CommandManager.InvokeCommand(new InputCommand(input));
         }
+        
         
         public void PlayerView_OnPickup(PickupComponent pickupComponent)
         {
@@ -179,6 +172,7 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Controller
             }
         }
         
+        
         private void Model_Score_OnValueChanged(int previousValue, int currentValue)
         {
             RequireIsInitialized();
@@ -187,6 +181,7 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Controller
                 new ScoreChangedCommand(currentValue));
         }
         
+        
         private void Model_ScoreMax_OnValueChanged(int previousValue, int currentValue)
         {
             RequireIsInitialized();
@@ -194,6 +189,7 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Controller
             Context.CommandManager.InvokeCommand(
                 new ScoreMaxChangedCommand(currentValue));
         }
+        
         
         private void Model_StatusText_OnValueChanged(string previousValue, string currentValue)
         {

@@ -8,13 +8,14 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Components
 	/// </summary>
 	public class Pickup : MonoBehaviour
 	{
-        
                 
         //  Properties ------------------------------------
         public bool CanMove { get { return _canMove;} set { _canMove = value;} }
 
+        
         //  Fields ----------------------------------------
         private bool _canMove = true;
+        
         
         //  Unity Methods ---------------------------------
         protected void Update ()
@@ -24,9 +25,5 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Components
 		        transform.Rotate (new Vector3 (15, 30, 45) * Time.deltaTime);
 	        }
         }
-        
-        //  Methods ---------------------------------------
-        
-        //  Event Handlers --------------------------------
 	}	
 }

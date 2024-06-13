@@ -6,31 +6,19 @@ using RMC.Core.Architectures.Mini.Structure.Simple;
 
 namespace RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini
 {
-    //  Namespace Properties ------------------------------
-
-    //  Class Attributes ----------------------------------
-
     /// <summary>
     /// See <see cref="SimpleMiniMvcs{TContext,TModel,TView,TController,TService}"/>"/>
     /// </summary>
-    public class LoginSimpleMini: SimpleMiniMvcs
+    public class LoginMini: SimpleMiniMvcs
             <Context, 
             LoginModel, 
             LoginView, 
             LoginController,
             LoginService>
     {
-        //  Events ----------------------------------------
-
-
-        //  Properties ------------------------------------
-
-        
-        //  Fields ----------------------------------------
-
 
         //  Initialization  -------------------------------
-        public LoginSimpleMini(LoginView view)
+        public LoginMini(LoginView view)
         {
             _view = view;
         
@@ -55,10 +43,5 @@ namespace RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini
                 _controller.Initialize(_context);
             }
         }
-
-        //  Methods ---------------------------------------
-
-
-        //  Event Handlers --------------------------------
     }
 }

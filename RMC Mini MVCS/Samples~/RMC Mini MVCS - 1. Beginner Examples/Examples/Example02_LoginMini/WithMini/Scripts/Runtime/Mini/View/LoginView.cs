@@ -6,10 +6,8 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-// ReSharper disable Unity.NoNullPropagation
 namespace RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.View
 {
-    //  Namespace Properties ------------------------------
 
     //  Class Attributes ----------------------------------
     public class LoginUnityEvent : UnityEvent<UserData> {}
@@ -94,28 +92,6 @@ namespace RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.View
         
         
         //  Unity Methods ---------------------------------
-        private void AnyInputField_OnValueChanged(string _)
-        {
-            bool isValidInput = _usernameInputField.text.Length > 0 && 
-                                _passwordInputField.text.Length > 0;
-
-            _loginButton.interactable = isValidInput;
-            OnCanLoginChanged.Invoke(_loginButton.interactable);
-        }
-        
-        
-        private void LoginButton_OnClicked()
-        {
-            OnLogin.Invoke(new UserData(_usernameInputField.text, _passwordInputField.text));
-        }
-        
-        
-        private void LogoutButton_OnClicked()
-        {
-            OnLogout.Invoke();
-        }
-        
-        
         protected void OnDestroy()
         {
             Context?.CommandManager?.RemoveCommandListener<LogoutCommand>(
@@ -128,9 +104,29 @@ namespace RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.View
 
         
         //  Methods ---------------------------------------
+        private void AnyInputField_OnValueChanged(string _)
+        {
+            bool isValidInput = _usernameInputField.text.Length > 0 && 
+                                _passwordInputField.text.Length > 0;
+
+            _loginButton.interactable = isValidInput;
+            OnCanLoginChanged.Invoke(_loginButton.interactable);
+        }
         
         
         //  Event Handlers --------------------------------
+        
+        private void LoginButton_OnClicked()
+        {
+            OnLogin.Invoke(new UserData(_usernameInputField.text, _passwordInputField.text));
+        }
+        
+        
+        private void LogoutButton_OnClicked()
+        {
+            OnLogout.Invoke();
+        }
+
         private void OnLogoutCommand(LogoutCommand logoutCommand)
         {
             RequireIsInitialized();

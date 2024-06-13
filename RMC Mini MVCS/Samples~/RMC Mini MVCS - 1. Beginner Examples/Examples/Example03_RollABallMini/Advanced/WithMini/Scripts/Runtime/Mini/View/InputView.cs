@@ -4,9 +4,6 @@ using RMC.Core.Architectures.Mini.View;
 using UnityEngine;
 using UnityEngine.Events;
 
-#if ENABLE_INPUT_SYSTEM
-#endif //ENABLE_INPUT_SYSTEM
-
 namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.View
 {
     //  Namespace Properties ------------------------------

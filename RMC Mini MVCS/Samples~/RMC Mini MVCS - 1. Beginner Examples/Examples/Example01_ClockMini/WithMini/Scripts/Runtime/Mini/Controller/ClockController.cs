@@ -1,17 +1,13 @@
+using System.Diagnostics;
 using System.Threading.Tasks;
 using RMC.Core.Architectures.Mini.Controller;
 using RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.Controller.Commands;
 using RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.Model;
 using RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.Service;
 using RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.View;
-using UnityEngine;
 
 namespace RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.Controller
 {
-    //  Namespace Properties ------------------------------
-
-    //  Class Attributes ----------------------------------
-
     /// <summary>
     /// The Controller coordinates everything between
     /// the <see cref="IConcern"/>s and contains the core app logic 
@@ -19,21 +15,20 @@ namespace RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.Controller
     public class ClockController: BaseController // Extending 'base' is optional
         <ClockModel, ClockView, ClockService> 
     {
-        //  Events ----------------------------------------
 
-
-        //  Properties ------------------------------------
-        
-        
         //  Fields ----------------------------------------
+        // Initialize and start the stopwatch
+        private Stopwatch _stopwatch = new Stopwatch();
 
-        public ClockController(ClockModel model, ClockView view, ClockService service) 
+
+        //  Initialization  -------------------------------
+        public ClockController(ClockModel model, ClockView view, ClockService service)
             : base(model, view, service)
         {
             
         }
-
-        //  Initialization  -------------------------------
+        
+        
         public override void Initialize(IContext context)
         {
             if (!IsInitialized)
@@ -46,15 +41,18 @@ namespace RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.Controller
             }
         }
         
+        
         //  Methods ---------------------------------------
         private void StartTicking()
         {
             RequireIsInitialized();
 
+            _stopwatch.Start();
+            
             ClockHelper.StartTicking(async() => 
             {
                 // Round the number for readability
-                float time = Mathf.Round(Time.time);
+                float time = (float)System.Math.Round(_stopwatch.Elapsed.TotalSeconds, 0);
                 if (time > 0)
                 {
                     // Update the time
@@ -66,8 +64,8 @@ namespace RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.Controller
             });
         }
 
-        //  Event Handlers --------------------------------
         
+        //  Event Handlers --------------------------------
         private void Service_OnLoaded()
         {
             RequireIsInitialized();
@@ -75,6 +73,7 @@ namespace RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.Controller
             
             StartTicking();
         }
+        
         
         private void Model_OnTimerChanged(float previousValue, float currentValue)
         {

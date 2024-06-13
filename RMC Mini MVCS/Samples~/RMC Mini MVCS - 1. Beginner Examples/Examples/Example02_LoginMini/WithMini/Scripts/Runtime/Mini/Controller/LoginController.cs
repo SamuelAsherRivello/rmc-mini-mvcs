@@ -6,10 +6,6 @@ using RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.View;
 
 namespace RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.Controller
 {
-    //  Namespace Properties ------------------------------
-
-    //  Class Attributes ----------------------------------
-
     /// <summary>
     /// The Controller coordinates everything between
     /// the <see cref="IConcern"/>s and contains the core app logic 
@@ -17,14 +13,8 @@ namespace RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.Controller
     public class LoginController: BaseController // Extending 'base' is optional
         <LoginModel, LoginView, LoginService> 
     {
-        //  Events ----------------------------------------
-
-
-        //  Properties ------------------------------------
-        
         
         //  Fields ----------------------------------------
-
         public LoginController(LoginModel model, LoginView view, LoginService service) 
             : base(model, view, service)
         {
@@ -53,17 +43,15 @@ namespace RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.Controller
             }
         }
 
+        
+        //  Methods  --------------------------------------
 
-
-        //  Methods ---------------------------------------
-
-
+        
         //  Event Handlers --------------------------------
         private void View_OnCanLoginChanged(bool canLogin)
         {
             _model.CanLogin.Value = canLogin;
         }
-        
         
         private void View_OnLogin(UserData userData)
         {
@@ -76,6 +64,7 @@ namespace RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.Controller
             _service.Login(userData);
         }
         
+        
         private void View_OnLogout()
         {
             RequireIsInitialized();
@@ -83,6 +72,7 @@ namespace RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.Controller
             Context.CommandManager.InvokeCommand(new LogoutCommand());
         }
             
+        
         private void Service_OnLoginCompleted(UserData userData, bool wasSuccess)
         {
             RequireIsInitialized();

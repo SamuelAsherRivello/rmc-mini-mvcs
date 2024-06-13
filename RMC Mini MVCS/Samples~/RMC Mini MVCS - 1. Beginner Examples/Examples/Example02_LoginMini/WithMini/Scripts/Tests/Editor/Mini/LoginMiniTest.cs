@@ -8,7 +8,7 @@ namespace RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini
     /// This Unit Test validates that code executes as expected.
     /// </summary>
     [Category ("RMC.Mini.Samples.Login")]
-    public class LoginSimpleMiniTest
+    public class LoginMiniTest
     {
         private static PrefabManagerForTesting _prefabManagerForTesting;
         
@@ -35,7 +35,7 @@ namespace RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini
             Assert.DoesNotThrow(() =>
             {
                 // Assert
-                LoginSimpleMini loginSimpleMini = MockLoginMini.CreateLoginMini(loginView);
+                LoginMini loginMini = MockLoginMini.CreateLoginMini(loginView);
             });
         }
     }

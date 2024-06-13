@@ -7,8 +7,6 @@ using UnityEngine.Events;
 
 namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.View
 {
-    //  Namespace Properties ------------------------------
-
     //  Class Attributes ----------------------------------
     public class PickupUnityEvent : UnityEvent<Pickup> {}
 
@@ -25,6 +23,7 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.View
         //  Properties ------------------------------------
         public bool IsInitialized { get { return _isInitialized;} }
         public IContext Context { get { return _context;} }
+        
         
         //  Properties ------------------------------------
         public bool CanMove
@@ -112,6 +111,7 @@ namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.View
                 OnInputCommand);
         }
 
+        
         //  Methods ---------------------------------------
         
         
