@@ -9,7 +9,7 @@ namespace RMC.Core.Architectures.Mini.Samples.UGS.Standard
     /// <summary>
     /// This is the main entry point to one of the scenes
     /// </summary>
-    public class Scene01_Menu : MonoBehaviour
+    public class Scene01_Ugs_Menu : MonoBehaviour
     {
         //  Fields ----------------------------------------
         [SerializeField] 

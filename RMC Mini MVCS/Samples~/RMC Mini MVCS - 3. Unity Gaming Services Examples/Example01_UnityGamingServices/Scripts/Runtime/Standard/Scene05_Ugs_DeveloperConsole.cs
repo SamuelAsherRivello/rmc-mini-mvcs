@@ -9,14 +9,15 @@ namespace RMC.Core.Architectures.Mini.Samples.UGS.Standard
     /// <summary>
     /// This is the main entry point to one of the scenes
     /// </summary>
-    public class Scene03_CloudSave : MonoBehaviour
+    public class Scene05_Ugs_DeveloperConsole : MonoBehaviour
     {
         //  Fields ----------------------------------------
+        
         [SerializeField] 
         private HudView _hudView;
         
         [SerializeField] 
-        private CloudSaveView _cloudSaveView;
+        private DeveloperConsoleView _developerConsoleView;
 
         //  Unity Methods  --------------------------------
         protected void Start()
@@ -31,16 +32,15 @@ namespace RMC.Core.Architectures.Mini.Samples.UGS.Standard
             // Optional: Handle any cleanup here...
         }
 
-        
         //  Methods ---------------------------------------
         private void AddFeature()
         {
             UgsMini mini = UgsMiniSingleton.Instance.UgsMini;
             
             //  Scene-Specific ----------------------------
-            CloudSaveFeature cloudSaveFeature = new CloudSaveFeature();
-            cloudSaveFeature.AddView(_cloudSaveView);
-            mini.AddFeature<CloudSaveFeature>(cloudSaveFeature);
+            DeveloperConsoleFeature developerConsoleFeature = new DeveloperConsoleFeature();
+            developerConsoleFeature.AddView(_developerConsoleView);
+            mini.AddFeature<DeveloperConsoleFeature>(developerConsoleFeature);
             
             //  Scene-Agnostic ----------------------------
             if (!mini.HasFeature<SceneSystemFeature>())
@@ -63,10 +63,11 @@ namespace RMC.Core.Architectures.Mini.Samples.UGS.Standard
             UgsMini mini = UgsMiniSingleton.Instance.UgsMini;
             
             //  Scene-Specific ----------------------------
-            mini.RemoveFeature<CloudSaveFeature>();
+            mini.RemoveFeature<DeveloperConsoleFeature>();
             
             //  Scene-Agnostic ----------------------------
             mini.RemoveFeature<HudFeature>();
+            
         }
         
         //  Event Handlers --------------------------------

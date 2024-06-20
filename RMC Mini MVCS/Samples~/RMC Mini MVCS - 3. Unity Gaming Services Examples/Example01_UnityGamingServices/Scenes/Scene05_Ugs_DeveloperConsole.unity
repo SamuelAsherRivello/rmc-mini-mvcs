@@ -308,7 +308,7 @@ GameObject:
   - component: {fileID: 1587637505}
   - component: {fileID: 1587637506}
   m_Layer: 0
-  m_Name: Scene05_DeveloperConsole
+  m_Name: Scene05_Ugs_DeveloperConsole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

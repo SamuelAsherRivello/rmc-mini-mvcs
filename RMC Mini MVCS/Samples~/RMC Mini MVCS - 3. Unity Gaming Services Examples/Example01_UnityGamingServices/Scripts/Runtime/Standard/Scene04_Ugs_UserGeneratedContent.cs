@@ -9,15 +9,14 @@ namespace RMC.Core.Architectures.Mini.Samples.UGS.Standard
     /// <summary>
     /// This is the main entry point to one of the scenes
     /// </summary>
-    public class Scene05_DeveloperConsole : MonoBehaviour
+    public class Scene04_Ugs_UserGeneratedContent : MonoBehaviour
     {
         //  Fields ----------------------------------------
-        
         [SerializeField] 
         private HudView _hudView;
         
         [SerializeField] 
-        private DeveloperConsoleView _developerConsoleView;
+        private UserGeneratedContentView _userGeneratedContentView;
 
         //  Unity Methods  --------------------------------
         protected void Start()
@@ -32,15 +31,16 @@ namespace RMC.Core.Architectures.Mini.Samples.UGS.Standard
             // Optional: Handle any cleanup here...
         }
 
+        
         //  Methods ---------------------------------------
         private void AddFeature()
         {
             UgsMini mini = UgsMiniSingleton.Instance.UgsMini;
             
             //  Scene-Specific ----------------------------
-            DeveloperConsoleFeature developerConsoleFeature = new DeveloperConsoleFeature();
-            developerConsoleFeature.AddView(_developerConsoleView);
-            mini.AddFeature<DeveloperConsoleFeature>(developerConsoleFeature);
+            UserGeneratedContentFeature userGeneratedContentFeature = new UserGeneratedContentFeature();
+            userGeneratedContentFeature.AddView(_userGeneratedContentView);
+            mini.AddFeature<UserGeneratedContentFeature>(userGeneratedContentFeature);
             
             //  Scene-Agnostic ----------------------------
             if (!mini.HasFeature<SceneSystemFeature>())
@@ -63,11 +63,10 @@ namespace RMC.Core.Architectures.Mini.Samples.UGS.Standard
             UgsMini mini = UgsMiniSingleton.Instance.UgsMini;
             
             //  Scene-Specific ----------------------------
-            mini.RemoveFeature<DeveloperConsoleFeature>();
+            mini.RemoveFeature<UserGeneratedContentFeature>();
             
             //  Scene-Agnostic ----------------------------
             mini.RemoveFeature<HudFeature>();
-            
         }
         
         //  Event Handlers --------------------------------

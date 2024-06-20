@@ -13,8 +13,11 @@ namespace RMC.Core.Architectures.Mini.Samples.UGS.Standard
     {
         private static readonly List<string> SceneNames = new List<string>
         {
-            nameof(Scene01_Menu),
-            nameof(Scene02_PlayerAccounts),
+            UgsConstants.Scene01_Ugs_Menu,
+            UgsConstants.Scene02_Ugs_PlayerAccounts,
+            UgsConstants.Scene03_Ugs_CloudSave ,
+            UgsConstants.Scene04_Ugs_UserGeneratedContent,
+            UgsConstants.Scene05_Ugs_DeveloperConsole
         };
         
         [SetUp]

@@ -37,25 +37,8 @@ namespace RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.View
             yield return null;
             
             // Assert
-            LogAssert.NoUnexpectedReceived();
+            LogAssert.NoUnexpectedReceived();   
         }
         
-        [UnityTest]
-        public IEnumerator DebugLog_Something_WhenTimeChangedCommand()
-        {
-            // Arrange
-            IContext context = new Context();
-            ClockView clockView = new ClockView();
-            
-            // Act
-            clockView.Initialize(context);
-            context.CommandManager.InvokeCommand(new TimeChangedCommand (0, 1));
-            
-            // Await
-            yield return null;
-            
-            // Assert
-            LogAssert.Expect(LogType.Log, new Regex("Elapsed Time: 1 seconds"));
-        }
     }
 }

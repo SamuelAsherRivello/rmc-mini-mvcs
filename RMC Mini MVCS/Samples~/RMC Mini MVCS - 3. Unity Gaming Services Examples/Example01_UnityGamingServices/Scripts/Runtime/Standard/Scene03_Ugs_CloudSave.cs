@@ -9,14 +9,14 @@ namespace RMC.Core.Architectures.Mini.Samples.UGS.Standard
     /// <summary>
     /// This is the main entry point to one of the scenes
     /// </summary>
-    public class Scene04_UserGeneratedContent : MonoBehaviour
+    public class Scene03_Ugs_CloudSave : MonoBehaviour
     {
         //  Fields ----------------------------------------
         [SerializeField] 
         private HudView _hudView;
         
         [SerializeField] 
-        private UserGeneratedContentView _userGeneratedContentView;
+        private CloudSaveView _cloudSaveView;
 
         //  Unity Methods  --------------------------------
         protected void Start()
@@ -38,9 +38,9 @@ namespace RMC.Core.Architectures.Mini.Samples.UGS.Standard
             UgsMini mini = UgsMiniSingleton.Instance.UgsMini;
             
             //  Scene-Specific ----------------------------
-            UserGeneratedContentFeature userGeneratedContentFeature = new UserGeneratedContentFeature();
-            userGeneratedContentFeature.AddView(_userGeneratedContentView);
-            mini.AddFeature<UserGeneratedContentFeature>(userGeneratedContentFeature);
+            CloudSaveFeature cloudSaveFeature = new CloudSaveFeature();
+            cloudSaveFeature.AddView(_cloudSaveView);
+            mini.AddFeature<CloudSaveFeature>(cloudSaveFeature);
             
             //  Scene-Agnostic ----------------------------
             if (!mini.HasFeature<SceneSystemFeature>())
@@ -63,7 +63,7 @@ namespace RMC.Core.Architectures.Mini.Samples.UGS.Standard
             UgsMini mini = UgsMiniSingleton.Instance.UgsMini;
             
             //  Scene-Specific ----------------------------
-            mini.RemoveFeature<UserGeneratedContentFeature>();
+            mini.RemoveFeature<CloudSaveFeature>();
             
             //  Scene-Agnostic ----------------------------
             mini.RemoveFeature<HudFeature>();

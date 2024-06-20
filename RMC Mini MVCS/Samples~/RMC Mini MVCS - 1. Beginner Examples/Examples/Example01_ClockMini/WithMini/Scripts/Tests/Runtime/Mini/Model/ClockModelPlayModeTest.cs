@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using NUnit.Framework;
 using RMC.Core.Experimental;
@@ -26,7 +27,8 @@ namespace RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.Model
         public void Values_AreDefault_WhenCreated()
         {
             // Arrange
-            IContext context = new Context();
+            string contextKey = Guid.NewGuid().ToString();
+            IContext context = new Context(contextKey);
             ClockModel clockModel = new ClockModel();
             
             // Act
@@ -53,7 +55,7 @@ namespace RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.Model
         
         
         [UnityTest]
-        public IEnumerator Time_Equals1_WhenWaitForSeconds1()
+        public IEnumerator Time_Equals1_WhenWaitForSeconds0()
         {
             // Arrange
             ClockSimpleMini clockSimpleMini = MockClockMini.CreateClockMini();
@@ -61,6 +63,20 @@ namespace RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.Model
             // Act
             clockSimpleMini.Initialize();
             yield return new WaitForSeconds(1);
+            
+            // Assert
+            Assert.That(clockSimpleMini.Model.Time.Value, Is.EqualTo(0));
+        }
+        
+        [UnityTest]
+        public IEnumerator Time_Equals2_WhenWaitForSeconds1()
+        {
+            // Arrange
+            ClockSimpleMini clockSimpleMini = MockClockMini.CreateClockMini();
+            
+            // Act
+            clockSimpleMini.Initialize();
+            yield return new WaitForSeconds(2);
             
             // Assert
             Assert.That(clockSimpleMini.Model.Time.Value, Is.EqualTo(1));

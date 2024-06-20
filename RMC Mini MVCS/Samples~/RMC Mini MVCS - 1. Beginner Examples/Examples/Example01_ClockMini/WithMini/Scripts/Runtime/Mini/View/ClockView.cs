@@ -1,6 +1,7 @@
 using System;
 using RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.Controller.Commands;
 using RMC.Core.Architectures.Mini.View;
+using RMC.Core.Utilities;
 using UnityEngine;
 
 namespace RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.View
@@ -49,9 +50,14 @@ namespace RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.View
         {
             RequireIsInitialized();
             
+            if (TestRunnerUtilities.IsRunningUnitTests())
+            {
+                //Show no console logging when testing
+                return;
+            }
+            
             // For simplicity, the 'rendering' of our view is just a debug log.
             Debug.Log($"Elapsed Time: {timeChangedCommand.CurrentValue} seconds");
         }
-
     }
 }

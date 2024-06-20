@@ -9,7 +9,7 @@ namespace RMC.Core.Architectures.Mini.Samples.UGS.Standard
     /// <summary>
     /// This is the main entry point to one of the scenes
     /// </summary>
-    public class Scene02_PlayerAccounts : MonoBehaviour
+    public class Scene02_Ugs_PlayerAccounts : MonoBehaviour
     {
         //  Fields ----------------------------------------
         [SerializeField] 

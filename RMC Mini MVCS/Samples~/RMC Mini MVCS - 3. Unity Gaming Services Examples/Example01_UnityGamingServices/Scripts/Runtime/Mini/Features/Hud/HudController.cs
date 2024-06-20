@@ -127,13 +127,13 @@ namespace RMC.Core.Architectures.Mini.Samples.UGS.Mini.Controller
         private void View_OnBack()
         {
             RequireIsInitialized();
-            Context.CommandManager.InvokeCommand(new LoadSceneRequestCommand(UgsConstants.Scene01_Menu));
+            Context.CommandManager.InvokeCommand(new LoadSceneRequestCommand(UgsConstants.Scene01_Ugs_Menu));
         }
         
         private void View_OnDeveloperConsole()
         {
             RequireIsInitialized();
-            Context.CommandManager.InvokeCommand(new LoadSceneRequestCommand(UgsConstants.Scene05_DeveloperConsole));
+            Context.CommandManager.InvokeCommand(new LoadSceneRequestCommand(UgsConstants.Scene05_Ugs_DeveloperConsole));
         }
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using NUnit.Framework;
+using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Model.Data;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.TestTools;
@@ -13,10 +14,11 @@ namespace RMC.Core.Architectures.Mini.Samples.Configurator.Standard
     {
         private static readonly List<string> SceneNames = new List<string>
         {
-            nameof(Scene01_Menu),
-            nameof(Scene02_CustomizeCharacter),
-            nameof(Scene03_CustomizeEnvironment),
-            nameof(Scene04_Game),
+            ConfiguratorConstants.Scene01_Menu,
+            ConfiguratorConstants.Scene02_CustomizeCharacter,
+            ConfiguratorConstants.Scene03_CustomizeEnvironment ,
+            ConfiguratorConstants.Scene04_Game,
+            ConfiguratorConstants.Scene05_DeveloperConsole
         };
         
         [SetUp]

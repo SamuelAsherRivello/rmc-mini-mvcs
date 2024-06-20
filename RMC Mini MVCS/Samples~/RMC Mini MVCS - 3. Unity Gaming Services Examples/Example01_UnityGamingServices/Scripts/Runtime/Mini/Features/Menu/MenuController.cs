@@ -58,19 +58,19 @@ namespace RMC.Core.Architectures.Mini.Samples.UGS.Mini.Controller
         private void View_OnPlayerAccounts()
         {
             RequireIsInitialized();
-            Context.CommandManager.InvokeCommand(new LoadSceneRequestCommand(UgsConstants.Scene02_PlayerAccounts));
+            Context.CommandManager.InvokeCommand(new LoadSceneRequestCommand(UgsConstants.Scene02_Ugs_PlayerAccounts));
         }
         
         private void View_OnCloudSave()
         {
             RequireIsInitialized();
-            Context.CommandManager.InvokeCommand(new LoadSceneRequestCommand(UgsConstants.Scene03_CloudSave));
+            Context.CommandManager.InvokeCommand(new LoadSceneRequestCommand(UgsConstants.Scene03_Ugs_CloudSave));
         }
         
         private void View_OnUserGeneratedContent()
         {
             RequireIsInitialized();
-            Context.CommandManager.InvokeCommand(new LoadSceneRequestCommand(UgsConstants.Scene04_UserGeneratedContent));
+            Context.CommandManager.InvokeCommand(new LoadSceneRequestCommand(UgsConstants.Scene04_Ugs_UserGeneratedContent));
         }
 
         
