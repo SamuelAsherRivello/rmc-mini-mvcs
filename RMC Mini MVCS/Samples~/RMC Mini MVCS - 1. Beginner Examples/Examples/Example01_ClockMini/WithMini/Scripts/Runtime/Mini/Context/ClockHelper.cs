@@ -2,7 +2,7 @@ using System;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini
+namespace RMC.Mini.Samples.Clock.WithMini.Mini
 {
     /// <summary>
     /// This utility class hides the complexity of running

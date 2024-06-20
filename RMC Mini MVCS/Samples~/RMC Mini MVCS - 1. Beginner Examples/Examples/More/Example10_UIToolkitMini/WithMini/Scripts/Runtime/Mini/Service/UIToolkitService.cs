@@ -2,13 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.Model;
-using RMC.Core.Architectures.Mini.Service;
+using RMC.Mini.Service;
+using RMC.Mini.Samples.Login.WithMini.Mini.Model;
 using UnityEngine;
 using UnityEngine.Events;
 using TextAsset = UnityEngine.TextAsset;
 
-namespace RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.Service
+namespace RMC.Mini.Samples.Login.WithMini.Mini.Service
 {
     //  Namespace Properties ------------------------------
     public class OnLoadCompletedUnityEvent : UnityEvent<CharacterData> {}

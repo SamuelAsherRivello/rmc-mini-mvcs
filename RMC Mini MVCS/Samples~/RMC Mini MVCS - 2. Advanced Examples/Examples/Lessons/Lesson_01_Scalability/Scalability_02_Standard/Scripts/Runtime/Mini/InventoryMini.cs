@@ -1,11 +1,8 @@
-using RMC.Core.Architectures.Mini;
-using RMC.Core.Architectures.Mini.Controller;
-using RMC.Core.Architectures.Mini.Features;
-using RMC.Core.Architectures.Mini.Locators;
-using RMC.Core.Architectures.Mini.Model;
-using RMC.Core.Architectures.Mini.Service;
-using RMC.Core.Architectures.Mini.View;
-using UnityEngine;
+using RMC.Mini.Features;
+using RMC.Mini.Controller;
+using RMC.Mini.Model;
+using RMC.Mini.Service;
+using RMC.Mini.View;
 
 namespace RMC.Mini.Lessons.Scalability.Standard.Mini
 {
@@ -44,23 +41,21 @@ namespace RMC.Mini.Lessons.Scalability.Standard.Mini
             {
                 _isInitialized = true;
                 
+                // Context
                 _context = new Context();
+                
+                // Feature
                 FeatureBuilder = new FeatureBuilder();
                 FeatureBuilder.Initialize(this);
 
-                //
+                // Model
                 InventoryModel model = new InventoryModel();
-                InventoryService service = new InventoryService();
-                    
-                // ModelLocator is created in superclass
-                _viewLocator = new Locator<IView>();
-                _controllerLocator = new Locator<IController>();
-                _serviceLocator = new Locator<IService>();
                 
-                // Model item is already added in superclass
+                // Service
+                InventoryService service = new InventoryService();
                 ServiceLocator.AddItem(service);
                 
-                //
+                // Initialize
                 model.Initialize(_context);
                 service.Initialize(_context);
                 

@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
-using RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Components;
-using RMC.Core.Architectures.Mini.View;
+using RMC.Mini.View;
+using RMC.Mini.Samples.RollABall.WithMini.Components;
 using UnityEngine;
 
-namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.View
+namespace RMC.Mini.Samples.RollABall.WithMini.Mini.View
 {
     /// <summary>
     /// The View handles user interface and user input

@@ -1,9 +1,9 @@
-using RMC.Core.Architectures.Mini.Controller;
-using RMC.Core.Architectures.Mini.Samples.UGS.Mini.Model;
-using RMC.Core.Architectures.Mini.Samples.UGS.Mini.Service;
-using RMC.Core.Architectures.Mini.View;
+using RMC.Mini.Controller;
+using RMC.Mini.View;
+using RMC.Mini.Samples.UGS.Mini.Model;
+using RMC.Mini.Samples.UGS.Mini.Service;
 
-namespace RMC.Core.Architectures.Mini.Samples.UGS.Mini.Controller
+namespace RMC.Mini.Samples.UGS.Mini.Controller
 {
     /// <summary>
     /// The Controller coordinates everything between

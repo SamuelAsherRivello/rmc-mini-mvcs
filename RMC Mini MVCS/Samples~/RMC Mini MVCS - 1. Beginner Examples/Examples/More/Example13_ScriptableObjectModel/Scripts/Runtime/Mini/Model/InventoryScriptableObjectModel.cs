@@ -1,8 +1,8 @@
-using RMC.Core.Data.Types;
-using RMC.Core.Experimental.Architectures.Mini.ScriptableObjectModels;
+using RMC.Core.Observables;
+using RMC.Mini.Experimental.Model;
 using UnityEngine;
 
-namespace RMC.Core.Architectures.Mini.Samples.SOM.Mini
+namespace RMC.Mini.Samples.SOM.Mini
 {
     /// <summary>
     /// The <see cref="InventoryScriptableObjectModel"/> uses a MonoBehaviour

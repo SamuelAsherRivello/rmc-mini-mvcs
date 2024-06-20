@@ -1,9 +1,9 @@
 using System.Collections.Generic;
-using RMC.Core.Architectures.Mini.Model;
-using RMC.Core.Architectures.Mini.Samples.UGS.Mini.View;
-using RMC.Core.Data.Types;
+using RMC.Core.Observables;
+using RMC.Mini.Model;
+using RMC.Mini.Samples.UGS.Mini.View;
 
-namespace RMC.Core.Architectures.Mini.Samples.UGS.Mini.Model
+namespace RMC.Mini.Samples.UGS.Mini.Model
 {
     /// <summary>
     /// The Model stores runtime data 

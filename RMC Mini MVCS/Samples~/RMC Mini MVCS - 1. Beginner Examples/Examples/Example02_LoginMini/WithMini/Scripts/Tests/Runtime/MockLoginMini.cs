@@ -1,6 +1,6 @@
-using RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.View;
+using RMC.Mini.Samples.Login.WithMini.Mini.View;
 
-namespace RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini
+namespace RMC.Mini.Samples.Login.WithMini.Mini
 {
     /// <summary>
     /// This mock class creates a new object instance

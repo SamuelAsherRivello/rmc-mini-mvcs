@@ -1,14 +1,14 @@
-using RMC.Core.Architectures.Mini.Controller;
-using RMC.Core.Architectures.Mini.Features.SceneSystem;
-using RMC.Core.Architectures.Mini.Samples.UGS.Mini.Model;
-using RMC.Core.Architectures.Mini.Samples.UGS.Mini.Service;
-using RMC.Core.Architectures.Mini.Samples.UGS.Mini.View;
-using RMC.Core.Architectures.Mini.Samples.UGS.Standard;
+using RMC.Mini.Controller;
+using RMC.Mini.Features.SceneSystem;
+using RMC.Mini.Samples.UGS.Mini.Model;
+using RMC.Mini.Samples.UGS.Mini.Service;
+using RMC.Mini.Samples.UGS.Mini.View;
+using RMC.Mini.Samples.UGS.Standard;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using AnalyticsService = RMC.Core.Architectures.Mini.Samples.UGS.Mini.Service.AnalyticsService;
+using Service_AnalyticsService = RMC.Mini.Samples.UGS.Mini.Service.AnalyticsService;
 
-namespace RMC.Core.Architectures.Mini.Samples.UGS.Mini.Controller
+namespace RMC.Mini.Samples.UGS.Mini.Controller
 {
     /// <summary>
     /// The Controller coordinates everything between
@@ -18,11 +18,11 @@ namespace RMC.Core.Architectures.Mini.Samples.UGS.Mini.Controller
         <UgsModel, HudView, AuthenticationService>
     {
 
-        private AnalyticsService _analyticsService;
+        private Service_AnalyticsService _analyticsService;
         
         public HudController(
             UgsModel model, HudView view, AuthenticationService authenticationService, 
-            AnalyticsService analyticsService)
+            Service_AnalyticsService analyticsService)
             : base(model, view, authenticationService)
         {
             _analyticsService = analyticsService;

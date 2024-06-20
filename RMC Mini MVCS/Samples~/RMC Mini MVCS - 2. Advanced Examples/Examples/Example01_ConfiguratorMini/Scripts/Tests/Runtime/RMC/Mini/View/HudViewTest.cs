@@ -1,11 +1,11 @@
 using System;
 using NUnit.Framework;
-using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Model;
+using RMC.Mini.Samples.Configurator.Mini.Model;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
-namespace RMC.Core.Architectures.Mini.Samples.Configurator.Mini.View
+namespace RMC.Mini.Samples.Configurator.Mini.View
 {
     [TestFixture]
     [Category ("RMC.Mini.Configurator")]

@@ -1,8 +1,7 @@
 using NUnit.Framework;
-using RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.Controller.Commands;
-using RMC.Core.Experimental;
+using RMC.Mini.Samples.Clock.WithMini.Mini.Controller.Commands;
 
-namespace RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.Controller
+namespace RMC.Mini.Samples.Clock.WithMini.Mini.Controller
 {
     /// <summary>
     /// This Unit Test validates that code executes as expected.

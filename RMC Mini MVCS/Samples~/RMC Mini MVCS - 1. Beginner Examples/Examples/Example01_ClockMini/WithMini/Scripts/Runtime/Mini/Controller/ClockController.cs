@@ -1,12 +1,12 @@
 using System.Diagnostics;
 using System.Threading.Tasks;
-using RMC.Core.Architectures.Mini.Controller;
-using RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.Controller.Commands;
-using RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.Model;
-using RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.Service;
-using RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.View;
+using RMC.Mini.Controller;
+using RMC.Mini.Samples.Clock.WithMini.Mini.Controller.Commands;
+using RMC.Mini.Samples.Clock.WithMini.Mini.Model;
+using RMC.Mini.Samples.Clock.WithMini.Mini.Service;
+using RMC.Mini.Samples.Clock.WithMini.Mini.View;
 
-namespace RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.Controller
+namespace RMC.Mini.Samples.Clock.WithMini.Mini.Controller
 {
     /// <summary>
     /// The Controller coordinates everything between

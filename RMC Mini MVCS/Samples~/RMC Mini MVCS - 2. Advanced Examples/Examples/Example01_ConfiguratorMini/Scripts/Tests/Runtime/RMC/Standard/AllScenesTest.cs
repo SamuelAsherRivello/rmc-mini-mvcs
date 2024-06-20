@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using NUnit.Framework;
-using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Model.Data;
+using RMC.Mini.Samples.Configurator.Mini.Model.Data;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.TestTools;
 
-namespace RMC.Core.Architectures.Mini.Samples.Configurator.Standard
+namespace RMC.Mini.Samples.Configurator.Standard
 {
     [TestFixture]
     [Category ("RMC.Mini.Configurator")]

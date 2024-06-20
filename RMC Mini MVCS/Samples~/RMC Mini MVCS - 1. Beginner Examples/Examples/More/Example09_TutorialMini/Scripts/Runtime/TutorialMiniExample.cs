@@ -1,11 +1,10 @@
-using RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.Model;
-using RMC.Core.Experimental;
-using RMC.IntroToUnity.Samples.Tutorial.Mini.Controller;
-using RMC.IntroToUnity.Samples.Tutorial.Mini.View;
+using RMC.Mini.Samples.Login.WithMini.Mini.Model;
+using RMC.Mini.Samples.Tutorial.Mini.Controller;
+using RMC.Mini.Samples.Tutorial.Mini.View;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace RMC.IntroToUnity.Samples.Tutorial
+namespace RMC.Mini.Samples.Tutorial
 {
     /// <summary>
     /// The Example is the main entry point to the demo.

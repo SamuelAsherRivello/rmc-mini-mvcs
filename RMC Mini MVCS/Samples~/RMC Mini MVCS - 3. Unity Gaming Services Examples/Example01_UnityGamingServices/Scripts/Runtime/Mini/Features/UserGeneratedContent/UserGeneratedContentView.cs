@@ -1,14 +1,13 @@
 using System;
-using System.Collections.Generic;
-using RMC.Core.Architectures.Mini.Samples.UGS.Mini.Controller;
-using RMC.Core.Architectures.Mini.Samples.UGS.Mini.Model;
-using RMC.Core.Architectures.Mini.View;
+using RMC.Mini.View;
+using RMC.Mini.Samples.UGS.Mini.Controller;
+using RMC.Mini.Samples.UGS.Mini.Model;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UIElements;
 
 // ReSharper disable Unity.NoNullPropagation
-namespace RMC.Core.Architectures.Mini.Samples.UGS.Mini.View
+namespace RMC.Mini.Samples.UGS.Mini.View
 {
     //  Enums ----------------------------------------
     public enum UserGeneratedContentMessage

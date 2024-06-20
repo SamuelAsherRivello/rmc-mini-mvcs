@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.TestTools;
 
-namespace RMC.Core.Architectures.Mini.Samples.UGS.Standard
+namespace RMC.Mini.Samples.UGS.Standard
 {
     [TestFixture]
     [Category ("RMC.Mini.Configurator")]

@@ -1,10 +1,10 @@
-using RMC.Core.Architectures.Mini.Controller;
-using RMC.Core.Architectures.Mini.Samples.MultiScene.WithMini.Mini.Model;
-using RMC.Core.Architectures.Mini.Samples.MultiScene.WithMini.Mini.Service;
-using RMC.Core.Architectures.Mini.Samples.MultiScene.WithMini.Mini.View;
+using RMC.Mini.Controller;
+using RMC.Mini.Samples.MultiScene.WithMini.Mini.Model;
+using RMC.Mini.Samples.MultiScene.WithMini.Mini.Service;
+using RMC.Mini.Samples.MultiScene.WithMini.Mini.View;
 using UnityEngine.SceneManagement;
 
-namespace RMC.Core.Architectures.Mini.Samples.MultiScene.WithMini.Mini.Controller
+namespace RMC.Mini.Samples.MultiScene.WithMini.Mini.Controller
 {
     //  Namespace Properties ------------------------------
 

@@ -1,7 +1,7 @@
 using NUnit.Framework;
-using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Model.Data;
+using RMC.Mini.Samples.Configurator.Mini.Model.Data;
 
-namespace RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Model
+namespace RMC.Mini.Samples.Configurator.Mini.Model
 {
     [TestFixture]
     [Category ("RMC.Mini.Configurator")]

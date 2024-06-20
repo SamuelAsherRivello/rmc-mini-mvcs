@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithoutMini
+namespace RMC.Mini.Samples.RollABall.WithoutMini
 {
     //  Namespace Properties ------------------------------
 

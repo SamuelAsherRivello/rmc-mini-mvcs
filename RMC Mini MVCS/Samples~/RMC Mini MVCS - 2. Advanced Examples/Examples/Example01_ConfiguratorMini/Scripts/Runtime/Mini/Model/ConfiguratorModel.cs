@@ -1,8 +1,8 @@
-using RMC.Core.Architectures.Mini.Model;
-using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Model.Data;
-using RMC.Core.Data.Types;
+using RMC.Core.Observables;
+using RMC.Mini.Model;
+using RMC.Mini.Samples.Configurator.Mini.Model.Data;
 
-namespace RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Model
+namespace RMC.Mini.Samples.Configurator.Mini.Model
 {
     /// <summary>
     /// The Model stores runtime data 

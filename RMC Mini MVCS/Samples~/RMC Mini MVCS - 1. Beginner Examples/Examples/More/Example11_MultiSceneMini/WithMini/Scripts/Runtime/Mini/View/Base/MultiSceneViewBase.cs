@@ -1,14 +1,14 @@
 using System;
-using RMC.Core.Architectures.Mini.Samples.MultiScene.WithMini.Mini.Controller.Commands;
-using RMC.Core.Architectures.Mini.Samples.MultiScene.WithMini.Mini.Controller.Events;
-using RMC.Core.Architectures.Mini.Samples.MultiScene.WithMini.Mini.Model;
-using RMC.Core.Architectures.Mini.View;
+using RMC.Mini.View;
+using RMC.Mini.Samples.MultiScene.WithMini.Mini.Controller.Commands;
+using RMC.Mini.Samples.MultiScene.WithMini.Mini.Controller.Events;
+using RMC.Mini.Samples.MultiScene.WithMini.Mini.Model;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 // ReSharper disable Unity.NoNullPropagation
-namespace RMC.Core.Architectures.Mini.Samples.MultiScene.WithMini.Mini.View
+namespace RMC.Mini.Samples.MultiScene.WithMini.Mini.View
 {
     //  Namespace Properties ------------------------------
 

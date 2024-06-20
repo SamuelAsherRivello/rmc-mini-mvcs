@@ -1,11 +1,10 @@
 using NUnit.Framework;
-using RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.Controller.Commands;
-using RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.Model;
-using RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.View;
-using RMC.Core.Experimental;
-using RMC.Core.Testing;
+using RMC.Core.Utilities.Testing;
+using RMC.Mini.Samples.Login.WithMini.Mini.Controller.Commands;
+using RMC.Mini.Samples.Login.WithMini.Mini.Model;
+using RMC.Mini.Samples.Login.WithMini.Mini.View;
 
-namespace RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.Controller
+namespace RMC.Mini.Samples.Login.WithMini.Mini.Controller
 {
     /// <summary>
     /// This Unit Test validates that code executes as expected.

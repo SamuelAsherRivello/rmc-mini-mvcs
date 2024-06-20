@@ -1,5 +1,5 @@
 
-namespace RMC.IntroToUnity.Samples.MyMathSystem
+namespace RMC.Mini.Lessons.MyMathSystem
 {
     /// <summary>
     /// This performs common math operations on

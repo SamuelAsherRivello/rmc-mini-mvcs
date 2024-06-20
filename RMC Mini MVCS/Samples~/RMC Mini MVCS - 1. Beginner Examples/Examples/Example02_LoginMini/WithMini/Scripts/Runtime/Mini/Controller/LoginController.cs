@@ -1,10 +1,10 @@
-using RMC.Core.Architectures.Mini.Controller;
-using RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.Controller.Commands;
-using RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.Model;
-using RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.Service;
-using RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.View;
+using RMC.Mini.Controller;
+using RMC.Mini.Samples.Login.WithMini.Mini.Controller.Commands;
+using RMC.Mini.Samples.Login.WithMini.Mini.Model;
+using RMC.Mini.Samples.Login.WithMini.Mini.Service;
+using RMC.Mini.Samples.Login.WithMini.Mini.View;
 
-namespace RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.Controller
+namespace RMC.Mini.Samples.Login.WithMini.Mini.Controller
 {
     /// <summary>
     /// The Controller coordinates everything between

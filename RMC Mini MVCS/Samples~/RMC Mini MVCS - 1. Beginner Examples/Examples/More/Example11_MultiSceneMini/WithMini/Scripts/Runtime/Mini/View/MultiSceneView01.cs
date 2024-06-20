@@ -1,6 +1,6 @@
 
 // ReSharper disable Unity.NoNullPropagation
-namespace RMC.Core.Architectures.Mini.Samples.MultiScene.WithMini.Mini.View
+namespace RMC.Mini.Samples.MultiScene.WithMini.Mini.View
 {
     //  Namespace Properties ------------------------------
 

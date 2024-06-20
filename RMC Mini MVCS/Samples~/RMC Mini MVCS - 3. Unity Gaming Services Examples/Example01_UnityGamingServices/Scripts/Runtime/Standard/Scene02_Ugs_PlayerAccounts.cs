@@ -1,10 +1,10 @@
-    using RMC.Core.Architectures.Mini.Features.SceneSystem;
-using RMC.Core.Architectures.Mini.Samples.UGS.Mini;
-using RMC.Core.Architectures.Mini.Samples.UGS.Mini.Feature;
-using RMC.Core.Architectures.Mini.Samples.UGS.Mini.View;
+    using RMC.Mini.Features.SceneSystem;
+    using RMC.Mini.Samples.UGS.Mini;
+using RMC.Mini.Samples.UGS.Mini.Feature;
+using RMC.Mini.Samples.UGS.Mini.View;
 using UnityEngine;
 
-namespace RMC.Core.Architectures.Mini.Samples.UGS.Standard
+namespace RMC.Mini.Samples.UGS.Standard
 {
     /// <summary>
     /// This is the main entry point to one of the scenes

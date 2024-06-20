@@ -1,16 +1,16 @@
 using System;
 using JetBrains.Annotations;
-using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Controller;
-using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Model;
-using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Model.Data;
-using RMC.Core.Architectures.Mini.Samples.Configurator.Standard.Gameplay;
-using RMC.Core.Architectures.Mini.View;
+using RMC.Mini.View;
+using RMC.Mini.Samples.Configurator.Mini.Controller;
+using RMC.Mini.Samples.Configurator.Mini.Model;
+using RMC.Mini.Samples.Configurator.Mini.Model.Data;
+using RMC.Mini.Samples.Configurator.Standard.Gameplay;
 using UnityEngine;
 using UnityEngine.UIElements;
-using Standard_Gameplay_Environment = RMC.Core.Architectures.Mini.Samples.Configurator.Standard.Gameplay.Environment;
+using Environment = RMC.Mini.Samples.Configurator.Standard.Gameplay.Environment;
 
 // ReSharper disable Unity.NoNullPropagation
-namespace RMC.Core.Architectures.Mini.Samples.Configurator.Mini.View
+namespace RMC.Mini.Samples.Configurator.Mini.View
 {
     /// <summary>
     /// The View handles user interface and user input
@@ -24,7 +24,7 @@ namespace RMC.Core.Architectures.Mini.Samples.Configurator.Mini.View
         public bool IsInitialized { get { return _isInitialized;} }
         public IContext Context { get { return _context;} }
         
-        public Label StatusLabel { get { return _uiDocument?.rootVisualElement.Q<Label>("StatusLabel"); }}
+        public Label StatusLabel { get { return _uiDocument?.rootVisualElement?.Q<Label>("StatusLabel"); }}
         
         
         //  Fields ----------------------------------------
@@ -38,7 +38,7 @@ namespace RMC.Core.Architectures.Mini.Samples.Configurator.Mini.View
         [Header("Gameplay")]
         [SerializeField]
         [CanBeNull]
-        private Standard_Gameplay_Environment _environment;
+        private Environment _environment;
 
         [SerializeField] 
         private Player _player;
@@ -86,6 +86,11 @@ namespace RMC.Core.Architectures.Mini.Samples.Configurator.Mini.View
         private void RefreshUI()
         {
             RequireIsInitialized();
+            
+            if (StatusLabel == null)
+            {
+                return;
+            }
             ConfiguratorModel model = Context.ModelLocator.GetItem<ConfiguratorModel>();
             StatusLabel.text = "Use Arrow Key\nTo Move";
         }

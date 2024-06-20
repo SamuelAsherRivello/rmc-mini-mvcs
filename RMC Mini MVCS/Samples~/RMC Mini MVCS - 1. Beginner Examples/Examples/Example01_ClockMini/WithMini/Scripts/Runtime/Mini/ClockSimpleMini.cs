@@ -1,11 +1,10 @@
 using System;
-using RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.Controller;
-using RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.Model;
-using RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.Service;
-using RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.View;
-using RMC.Core.Architectures.Mini.Structure.Simple;
+using RMC.Mini.Samples.Clock.WithMini.Mini.Controller;
+using RMC.Mini.Samples.Clock.WithMini.Mini.Model;
+using RMC.Mini.Samples.Clock.WithMini.Mini.Service;
+using RMC.Mini.Samples.Clock.WithMini.Mini.View;
 
-namespace RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini
+namespace RMC.Mini.Samples.Clock.WithMini.Mini
 {
     /// <summary>
     /// See <see cref="SimpleMiniMvcs{TContext,TModel,TView,TController,TService}"/>"/>

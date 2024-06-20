@@ -1,13 +1,12 @@
 using System;
 using System.Collections.Generic;
-using RMC.Core.Architectures.Mini.Controller;
-using RMC.Core.Architectures.Mini.Samples.UGS.Mini.Model;
-using RMC.Core.Architectures.Mini.Samples.UGS.Mini.Service;
-using RMC.Core.Architectures.Mini.Samples.UGS.Mini.View;
+using RMC.Mini.Controller;
+using RMC.Mini.Samples.UGS.Mini.Model;
+using RMC.Mini.Samples.UGS.Mini.Service;
+using RMC.Mini.Samples.UGS.Mini.View;
 using Unity.Services.CloudSave.Models;
-using UnityEngine;
 
-namespace RMC.Core.Architectures.Mini.Samples.UGS.Mini.Controller
+namespace RMC.Mini.Samples.UGS.Mini.Controller
 {
     /// <summary>
     /// The Controller coordinates everything between

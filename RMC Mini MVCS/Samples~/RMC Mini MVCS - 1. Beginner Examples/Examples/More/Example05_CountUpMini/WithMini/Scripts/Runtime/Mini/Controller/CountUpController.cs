@@ -1,10 +1,10 @@
-using RMC.Core.Architectures.Mini.Controller;
-using RMC.Core.Architectures.Mini.Samples.CountUp.WithMini.Mini.Controller.Commands;
-using RMC.Core.Architectures.Mini.Samples.CountUp.WithMini.Mini.Model;
-using RMC.Core.Architectures.Mini.Samples.CountUp.WithMini.Mini.Service;
-using RMC.Core.Architectures.Mini.Samples.CountUp.WithMini.Mini.View;
+using RMC.Mini.Controller;
+using RMC.Mini.Samples.CountUp.WithMini.Mini.Controller.Commands;
+using RMC.Mini.Samples.CountUp.WithMini.Mini.Model;
+using RMC.Mini.Samples.CountUp.WithMini.Mini.Service;
+using RMC.Mini.Samples.CountUp.WithMini.Mini.View;
 
-namespace RMC.Core.Architectures.Mini.Samples.CountUp.WithMini.Mini.Controller
+namespace RMC.Mini.Samples.CountUp.WithMini.Mini.Controller
 {
     //  Namespace Properties ------------------------------
 

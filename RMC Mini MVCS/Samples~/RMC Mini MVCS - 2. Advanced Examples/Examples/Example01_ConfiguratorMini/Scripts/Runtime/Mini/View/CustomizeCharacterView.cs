@@ -1,15 +1,15 @@
 using System;
-using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Controller;
-using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Model;
-using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Model.Data;
-using RMC.Core.Architectures.Mini.Samples.Configurator.Standard.Gameplay;
-using RMC.Core.Architectures.Mini.View;
+using RMC.Mini.View;
+using RMC.Mini.Samples.Configurator.Mini.Controller;
+using RMC.Mini.Samples.Configurator.Mini.Model;
+using RMC.Mini.Samples.Configurator.Mini.Model.Data;
+using RMC.Mini.Samples.Configurator.Standard.Gameplay;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UIElements;
 
 // ReSharper disable Unity.NoNullPropagation
-namespace RMC.Core.Architectures.Mini.Samples.Configurator.Mini.View
+namespace RMC.Mini.Samples.Configurator.Mini.View
 {
     /// <summary>
     /// The View handles user interface and user input

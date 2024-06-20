@@ -1,10 +1,10 @@
 using System;
-using RMC.Core.Architectures.Mini.View;
+using RMC.Mini.View;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UIElements;
 
-namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.View
+namespace RMC.Mini.Samples.RollABall.WithMini.Mini.View
 {
     //  Namespace Properties ------------------------------
     

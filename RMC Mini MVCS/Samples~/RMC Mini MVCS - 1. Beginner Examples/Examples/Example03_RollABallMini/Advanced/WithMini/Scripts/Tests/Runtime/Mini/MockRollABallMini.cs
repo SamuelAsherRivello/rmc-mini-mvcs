@@ -1,6 +1,6 @@
-using RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.View;
+using RMC.Mini.Samples.RollABall.WithMini.Mini.View;
 
-namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini
+namespace RMC.Mini.Samples.RollABall.WithMini.Mini
 {
     /// <summary>
     /// This mock class creates a new object instance

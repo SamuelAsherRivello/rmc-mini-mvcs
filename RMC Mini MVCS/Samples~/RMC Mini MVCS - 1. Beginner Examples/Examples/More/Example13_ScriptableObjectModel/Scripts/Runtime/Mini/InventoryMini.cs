@@ -1,11 +1,10 @@
-using RMC.Core.Architectures.Mini.Controller;
-using RMC.Core.Architectures.Mini.Features;
-using RMC.Core.Architectures.Mini.Locators;
-using RMC.Core.Architectures.Mini.Model;
-using RMC.Core.Architectures.Mini.Service;
-using RMC.Core.Architectures.Mini.View;
+using RMC.Mini.Features;
+using RMC.Mini.Controller;
+using RMC.Mini.Model;
+using RMC.Mini.Service;
+using RMC.Mini.View;
 
-namespace RMC.Core.Architectures.Mini.Samples.SOM.Mini
+namespace RMC.Mini.Samples.SOM.Mini
 {
     /// <summary>
     /// See <see cref="MiniMvcs{TContext,TModel,TView,TController,TService}"/>
@@ -42,45 +41,24 @@ namespace RMC.Core.Architectures.Mini.Samples.SOM.Mini
             {
                 _isInitialized = true;
                 
+                // Context
                 _context = new Context();
+                
+                // Feature
                 FeatureBuilder = new FeatureBuilder();
                 FeatureBuilder.Initialize(this);
 
-                //
+                // Service
                 InventoryService service = new InventoryService();
-                    
-                // ModelLocator is created in superclass
-                _viewLocator = new Locator<IView>();
-                _controllerLocator = new Locator<IController>();
-                _serviceLocator = new Locator<IService>();
-                
-                // Model item is already added in superclass
                 ServiceLocator.AddItem(service);
                 
-                //
+                // Initialize
                 service.Initialize(_context);
                 
             }
         }
-
         
         //  Methods  -------------------------------
-        public bool HasFeature<TFeature>(string key = "") where TFeature : IFeature
-        {
-            return FeatureBuilder.HasFeature<TFeature>(key);
-        }
-        
-        
-        public void AddFeature<TFeature>(TFeature feature, string key = "") where TFeature : IFeature
-        {
-            FeatureBuilder.AddFeature<TFeature>(feature, key);
-        }
-        
-        
-        public void RemoveFeature<TFeature>(string key = "") where TFeature : IFeature
-        {
-            FeatureBuilder.RemoveFeature<TFeature>(key);
-        }
         
         
         //  Event Handlers --------------------------------

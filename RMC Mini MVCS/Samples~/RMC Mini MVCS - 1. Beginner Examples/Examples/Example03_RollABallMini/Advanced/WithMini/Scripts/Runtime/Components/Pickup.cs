@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Components
+namespace RMC.Mini.Samples.RollABall.WithMini.Components
 {
 	/// <summary>
 	/// The Pickup is a spinning yellow cube which the player

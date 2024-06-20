@@ -1,11 +1,10 @@
 using System;
-using RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Controller;
-using RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Model;
-using RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Service;
-using RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.View;
-using RMC.Core.Architectures.Mini.Structure.Simple;
+using RMC.Mini.Samples.RollABall.WithMini.Mini.Controller;
+using RMC.Mini.Samples.RollABall.WithMini.Mini.Model;
+using RMC.Mini.Samples.RollABall.WithMini.Mini.Service;
+using RMC.Mini.Samples.RollABall.WithMini.Mini.View;
 
-namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini
+namespace RMC.Mini.Samples.RollABall.WithMini.Mini
 {
     /// <summary>
     /// This Command is a stand-alone object containing

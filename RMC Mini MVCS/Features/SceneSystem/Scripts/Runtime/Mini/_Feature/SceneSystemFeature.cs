@@ -1,8 +1,8 @@
-﻿using RMC.Core.Architectures.Mini.Service;
+﻿using RMC.Mini.Service;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-namespace RMC.Core.Architectures.Mini.Features.SceneSystem
+namespace RMC.Mini.Features.SceneSystem
 {
     /// <summary>
     /// Set up a collection of related <see cref="IConcern"/> instances

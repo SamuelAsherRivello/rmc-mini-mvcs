@@ -1,12 +1,12 @@
 using System;
-using RMC.Core.Architectures.Mini.Samples.BouncyBall.WithMini.Mini.Controller.Commands;
-using RMC.Core.Architectures.Mini.Samples.BouncyBall.WithMini.Mini.Model;
-using RMC.Core.Architectures.Mini.View;
+using RMC.Mini.View;
+using RMC.Mini.Samples.BouncyBall.WithMini.Mini.Controller.Commands;
+using RMC.Mini.Samples.BouncyBall.WithMini.Mini.Model;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-namespace RMC.Core.Architectures.Mini.Samples.BouncyBall.WithMini.Mini.View
+namespace RMC.Mini.Samples.BouncyBall.WithMini.Mini.View
 {
     //  Namespace Properties ------------------------------
 

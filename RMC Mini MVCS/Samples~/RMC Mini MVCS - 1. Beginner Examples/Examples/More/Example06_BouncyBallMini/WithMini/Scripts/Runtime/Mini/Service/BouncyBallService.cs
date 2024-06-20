@@ -1,9 +1,9 @@
 using System;
-using RMC.Core.Architectures.Mini.Service;
+using RMC.Mini.Service;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace RMC.Core.Architectures.Mini.Samples.BouncyBall.WithMini.Mini.Service
+namespace RMC.Mini.Samples.BouncyBall.WithMini.Mini.Service
 {
     //  Namespace Properties ------------------------------
     public class LoadedUnityEvent : UnityEvent {}

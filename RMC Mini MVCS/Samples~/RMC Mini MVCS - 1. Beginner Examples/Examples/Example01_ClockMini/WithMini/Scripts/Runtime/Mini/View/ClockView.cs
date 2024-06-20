@@ -1,10 +1,10 @@
 using System;
-using RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.Controller.Commands;
-using RMC.Core.Architectures.Mini.View;
-using RMC.Core.Utilities;
+using RMC.Core.Utilities.Testing;
+using RMC.Mini.View;
+using RMC.Mini.Samples.Clock.WithMini.Mini.Controller.Commands;
 using UnityEngine;
 
-namespace RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.View
+namespace RMC.Mini.Samples.Clock.WithMini.Mini.View
 {
     /// <summary>
     /// The View handles user interface and user input
@@ -52,7 +52,8 @@ namespace RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.View
             
             if (TestRunnerUtilities.IsRunningUnitTests())
             {
-                //Show no console logging when testing
+                //Show no console logging when unit testing
+                //So there is less noise and distraction
                 return;
             }
             

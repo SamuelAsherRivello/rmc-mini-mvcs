@@ -1,12 +1,11 @@
 
 using System.Collections;
 using NUnit.Framework;
-using RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.Model;
-using RMC.Core.Experimental;
+using RMC.Mini.Samples.Login.WithMini.Mini.Model;
 using UnityEngine;
 using UnityEngine.TestTools;
 
-namespace RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.Service
+namespace RMC.Mini.Samples.Login.WithMini.Mini.Service
 {
     /// <summary>
     /// This Unit Test validates that code executes as expected.

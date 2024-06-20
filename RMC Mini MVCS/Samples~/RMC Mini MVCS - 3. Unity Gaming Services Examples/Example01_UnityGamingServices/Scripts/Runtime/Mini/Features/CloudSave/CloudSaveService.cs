@@ -1,13 +1,13 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using RMC.Core.Architectures.Mini.Service;
+using RMC.Mini.Service;
 using Unity.Services.Authentication;
 using Unity.Services.CloudSave.Models;
 using Unity.Services.Core;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace RMC.Core.Architectures.Mini.Samples.UGS.Mini.Service
+namespace RMC.Mini.Samples.UGS.Mini.Service
 {
     //  Namespace Properties ------------------------------
     public class LoadCloudSaveUnityEvent : UnityEvent<Dictionary<string, Item>> {}

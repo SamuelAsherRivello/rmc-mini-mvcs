@@ -1,9 +1,9 @@
 using System;
-using RMC.Core.Architectures.Mini.Controller;
-using RMC.Core.Architectures.Mini.Samples.MultipleMinis.WithMini.Mini.Model;
-using RMC.Core.Architectures.Mini.Samples.MultipleMinis.WithMini.Mini.View;
+using RMC.Mini.Controller;
+using RMC.Mini.Samples.MultipleMinis.WithMini.Mini.Model;
+using RMC.Mini.Samples.MultipleMinis.WithMini.Mini.View;
 
-namespace RMC.Core.Architectures.Mini.Samples.MultipleMinis.WithMini.Mini.Controller
+namespace RMC.Mini.Samples.MultipleMinis.WithMini.Mini.Controller
 {
     //  Namespace Properties ------------------------------
 

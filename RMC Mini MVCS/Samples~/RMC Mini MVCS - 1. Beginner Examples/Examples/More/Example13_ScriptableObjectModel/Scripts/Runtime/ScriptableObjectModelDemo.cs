@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace RMC.Core.Architectures.Mini.Samples.SOM.Mini
+namespace RMC.Mini.Samples.SOM.Mini
 {
     /// <summary>
     /// Demo of using a ScriptableObject as a Model

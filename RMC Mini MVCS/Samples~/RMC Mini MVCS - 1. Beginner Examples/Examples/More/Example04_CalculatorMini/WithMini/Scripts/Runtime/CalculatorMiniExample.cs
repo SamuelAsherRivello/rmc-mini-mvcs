@@ -1,8 +1,8 @@
-using RMC.Core.Architectures.Mini.Samples.Calculator.Mini;
-using RMC.Core.Architectures.Mini.Samples.Calculator.Mini.View;
+using RMC.Mini.Samples.Calculator.Mini;
+using RMC.Mini.Samples.Calculator.Mini.View;
 using UnityEngine;
 
-namespace RMC.Core.Architectures.Mini.Samples.Calculator
+namespace RMC.Mini.Samples.Calculator
 {
     //  Namespace Properties ------------------------------
 

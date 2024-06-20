@@ -1,8 +1,8 @@
-using RMC.Core.Architectures.Mini.Model;
-using RMC.Core.Architectures.Mini.Samples.MultiScene.WithMini.Mini.Controller.Commands;
-using RMC.Core.Data.Types;
+using RMC.Core.Observables;
+using RMC.Mini.Model;
+using RMC.Mini.Samples.MultiScene.WithMini.Mini.Controller.Commands;
 
-namespace RMC.Core.Architectures.Mini.Samples.MultiScene.WithMini.Mini.Model
+namespace RMC.Mini.Samples.MultiScene.WithMini.Mini.Model
 {
     //  Namespace Properties ------------------------------
 

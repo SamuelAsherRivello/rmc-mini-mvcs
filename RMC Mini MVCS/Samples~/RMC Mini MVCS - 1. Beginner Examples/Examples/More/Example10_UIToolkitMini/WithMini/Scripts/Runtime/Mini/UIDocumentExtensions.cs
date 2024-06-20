@@ -2,7 +2,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini
+namespace RMC.Mini.Samples.Login.WithMini.Mini
 {
     /// <summary>
     /// Helpful extensions for <see cref="UIDocument"/>.

@@ -1,11 +1,10 @@
 using System;
-using RMC.Core.Architectures.Mini;
-using RMC.Core.Architectures.Mini.Controller;
-using RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.Controller.Commands;
-using RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.Model;
-using RMC.IntroToUnity.Samples.Tutorial.Mini.View;
+using RMC.Mini.Controller;
+using RMC.Mini.Samples.Login.WithMini.Mini.Controller.Commands;
+using RMC.Mini.Samples.Login.WithMini.Mini.Model;
+using RMC.Mini.Samples.Tutorial.Mini.View;
 
-namespace RMC.IntroToUnity.Samples.Tutorial.Mini.Controller
+namespace RMC.Mini.Samples.Tutorial.Mini.Controller
 {
     //  Namespace Properties ------------------------------
 

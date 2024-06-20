@@ -1,10 +1,10 @@
 using System;
-using RMC.Core.Architectures.Mini.Samples.DataBindingMini.WithMini.Mini.Model;
-using RMC.Core.Architectures.Mini.View;
+using RMC.Mini.View;
+using RMC.Mini.Samples.DataBindingMini.WithMini.Mini.Model;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace RMC.Core.Architectures.Mini.Samples.DataBindingMini.WithMini.Mini.View
+namespace RMC.Mini.Samples.DataBindingMini.WithMini.Mini.View
 {
     //  Namespace Properties ------------------------------
 

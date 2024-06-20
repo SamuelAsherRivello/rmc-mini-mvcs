@@ -1,8 +1,8 @@
-using RMC.Core.Architectures.Mini.Controller;
-using RMC.Core.Architectures.Mini.Service;
+using RMC.Mini.Controller;
+using RMC.Mini.Service;
 using UnityEngine.SceneManagement;
 
-namespace RMC.Core.Architectures.Mini.Features.SceneSystem
+namespace RMC.Mini.Features.SceneSystem
 {
     /// <summary>
     /// The Controller coordinates everything between

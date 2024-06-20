@@ -1,6 +1,6 @@
-using RMC.Core.DesignPatterns.Creational.Singleton.CustomSingletonMonobehaviour;
+using RMC.Core.DesignPatterns.Creational.SingletonMonobehaviour;
 
-namespace RMC.Core.Architectures.Mini.Samples.UGS.Mini
+namespace RMC.Mini.Samples.UGS.Mini
 {
     /// <summary>
     /// Here is a <see cref="UgsMiniSingleton"/> that can be used to access the <see cref="UgsMini"/>.

@@ -1,6 +1,5 @@
 using System;
-using RMC.Core.Architectures.Mini;
-using RMC.Core.Architectures.Mini.View;
+using RMC.Mini.View;
 using UnityEngine;
 using UnityEngine.Events;
 

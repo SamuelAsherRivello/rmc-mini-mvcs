@@ -1,8 +1,8 @@
-using RMC.Core.Experimental.Systems.DependencyInjectionSystem;
-using RMC.Core.Experimental.Systems.DependencyInjectionSystem.Attributes;
+using RMC.Mini.Experimental.DependencyInjectionSystem;
+using RMC.Mini.Experimental.DependencyInjectionSystem.Attributes;
 using UnityEngine;
 
-namespace RMC.IntroToUnity.Examples
+namespace RMC.Mini.Lessons.Observables
 {
     /// <summary>
     /// The Example is the main entry point to the demo

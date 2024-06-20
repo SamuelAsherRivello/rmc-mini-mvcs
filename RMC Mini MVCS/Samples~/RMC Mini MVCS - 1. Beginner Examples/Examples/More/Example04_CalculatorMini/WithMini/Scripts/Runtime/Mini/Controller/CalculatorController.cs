@@ -1,10 +1,10 @@
 
 using System;
-using RMC.Core.Architectures.Mini.Controller;
-using RMC.Core.Architectures.Mini.Samples.Calculator.Mini.Model;
-using RMC.Core.Architectures.Mini.Samples.Calculator.Mini.View;
+using RMC.Mini.Controller;
+using RMC.Mini.Samples.Calculator.Mini.Model;
+using RMC.Mini.Samples.Calculator.Mini.View;
 
-namespace RMC.Core.Architectures.Mini.Samples.Calculator.Mini.Controller
+namespace RMC.Mini.Samples.Calculator.Mini.Controller
 {
     //  Namespace Properties ------------------------------
 

@@ -1,7 +1,7 @@
-using RMC.Core.Architectures.Mini.Model;
-using RMC.Core.Data.Types;
+using RMC.Core.Observables;
+using RMC.Mini.Model;
 
-namespace RMC.Core.Architectures.Mini.Samples.MultipleMinis.WithMini.Mini.Model
+namespace RMC.Mini.Samples.MultipleMinis.WithMini.Mini.Model
 {
     //  Namespace Properties ------------------------------
 

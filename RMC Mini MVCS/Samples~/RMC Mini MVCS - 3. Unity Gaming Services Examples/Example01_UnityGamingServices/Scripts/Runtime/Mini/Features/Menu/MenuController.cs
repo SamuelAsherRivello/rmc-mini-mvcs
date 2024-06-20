@@ -1,12 +1,11 @@
-using RMC.Core.Architectures.Mini.Controller;
-using RMC.Core.Architectures.Mini.Features.SceneSystem;
-using RMC.Core.Architectures.Mini.Samples.UGS.Mini.Model;
-using RMC.Core.Architectures.Mini.Samples.UGS.Mini.Service;
-using RMC.Core.Architectures.Mini.Samples.UGS.Mini.View;
-using RMC.Core.Architectures.Mini.Samples.UGS.Standard;
-using UnityEngine;
+using RMC.Mini.Controller;
+using RMC.Mini.Features.SceneSystem;
+using RMC.Mini.Samples.UGS.Mini.Model;
+using RMC.Mini.Samples.UGS.Mini.Service;
+using RMC.Mini.Samples.UGS.Mini.View;
+using RMC.Mini.Samples.UGS.Standard;
 
-namespace RMC.Core.Architectures.Mini.Samples.UGS.Mini.Controller
+namespace RMC.Mini.Samples.UGS.Mini.Controller
 {
     /// <summary>
     /// The Controller coordinates everything between

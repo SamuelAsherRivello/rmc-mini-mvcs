@@ -1,6 +1,6 @@
-using RMC.Core.Architectures.Mini.Model;
+using RMC.Mini.Model;
 
-namespace RMC.Core.Architectures.Mini.Features.SceneSystem
+namespace RMC.Mini.Features.SceneSystem
 {
     //  Class Attributes ----------------------------------
 

@@ -1,7 +1,6 @@
-using RMC.Core.DesignPatterns.Creational.Singleton.CustomSingletonMonobehaviour;
-using UnityEngine;
+using RMC.Core.DesignPatterns.Creational.SingletonMonobehaviour;
 
-namespace RMC.Core.Architectures.Mini.Samples.SOM.Mini
+namespace RMC.Mini.Samples.SOM.Mini
 {
     /// <summary>
     /// Here is a <see cref="InventoryMiniSingleton"/> that can be

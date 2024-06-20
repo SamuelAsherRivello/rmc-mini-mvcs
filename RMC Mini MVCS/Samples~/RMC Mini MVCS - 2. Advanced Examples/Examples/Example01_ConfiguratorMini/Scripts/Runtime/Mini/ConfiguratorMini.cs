@@ -1,13 +1,12 @@
-using RMC.Core.Architectures.Mini.Controller;
-using RMC.Core.Architectures.Mini.Features;
-using RMC.Core.Architectures.Mini.Locators;
-using RMC.Core.Architectures.Mini.Model;
-using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Model;
-using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Service;
-using RMC.Core.Architectures.Mini.Service;
-using RMC.Core.Architectures.Mini.View;
+using RMC.Mini.Features;
+using RMC.Mini.Controller;
+using RMC.Mini.Model;
+using RMC.Mini.Service;
+using RMC.Mini.View;
+using RMC.Mini.Samples.Configurator.Mini.Model;
+using RMC.Mini.Samples.Configurator.Mini.Service;
 
-namespace RMC.Core.Architectures.Mini.Samples.Configurator.Mini
+namespace RMC.Mini.Samples.Configurator.Mini
 {
     /// <summary>
     /// See <see cref="MiniMvcs{TContext,TModel,TView,TController,TService}"/>
@@ -38,14 +37,9 @@ namespace RMC.Core.Architectures.Mini.Samples.Configurator.Mini
             {
                 _isInitialized = true;
                 
+                // Context
                 _context = new Context();
                 
-                // Locators
-                // ...ModelLocator is created in superclass
-                _viewLocator = new Locator<IView>();
-                _controllerLocator = new Locator<IController>();
-                _serviceLocator = new Locator<IService>();
-       
                 // Model
                 ConfiguratorModel model = new ConfiguratorModel();
                 model.Initialize(_context); //Added to locator inside

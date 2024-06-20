@@ -1,9 +1,9 @@
-using RMC.Core.Architectures.Mini.Controller.Commands;
-using RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.Model;
-using RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.View;
+using RMC.Mini.Controller.Commands;
+using RMC.Mini.Samples.Login.WithMini.Mini.Model;
+using RMC.Mini.Samples.Login.WithMini.Mini.View;
 using UnityEngine;
 
-namespace RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.Controller.Commands
+namespace RMC.Mini.Samples.Login.WithMini.Mini.Controller.Commands
 {
     //  Namespace Properties ------------------------------
 

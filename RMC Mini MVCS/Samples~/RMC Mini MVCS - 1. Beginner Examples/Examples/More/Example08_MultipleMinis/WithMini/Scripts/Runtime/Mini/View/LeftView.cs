@@ -1,11 +1,11 @@
 using System;
-using RMC.Core.Architectures.Mini.View;
+using RMC.Mini.View;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
 // ReSharper disable Unity.NoNullPropagation
-namespace RMC.Core.Architectures.Mini.Samples.MultipleMinis.WithMini.Mini.View
+namespace RMC.Mini.Samples.MultipleMinis.WithMini.Mini.View
 {
     //  Namespace Properties ------------------------------
 

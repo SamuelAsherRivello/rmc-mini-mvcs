@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace RMC.Core.Architectures.Mini.Samples.Configurator.Standard
+namespace RMC.Mini.Samples.Configurator.Standard
 {
     public static class CustomGameObjectUtility
     {

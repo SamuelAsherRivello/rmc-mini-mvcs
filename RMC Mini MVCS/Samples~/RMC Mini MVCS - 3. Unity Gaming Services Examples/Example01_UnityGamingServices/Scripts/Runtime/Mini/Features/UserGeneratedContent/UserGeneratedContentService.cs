@@ -2,8 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
-using RMC.Core.Architectures.Mini.Samples.UGS.Mini.Feature;
-using RMC.Core.Architectures.Mini.Service;
+using RMC.Mini.Service;
+using RMC.Mini.Samples.UGS.Mini.Feature;
 using Unity.Services.Authentication;
 using Unity.Services.CloudSave.Models;
 using Unity.Services.Core;
@@ -11,7 +11,7 @@ using Unity.Services.Ugc;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace RMC.Core.Architectures.Mini.Samples.UGS.Mini.Service
+namespace RMC.Mini.Samples.UGS.Mini.Service
 {
     public class ContentsListUnityEvent : UnityEvent<PagedResults<Content>> {}
     public class ContentUnityEvent : UnityEvent<Content> {}

@@ -1,16 +1,16 @@
 using System;
-using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Controller;
-using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Model;
-using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Model.Data;
-using RMC.Core.Architectures.Mini.Samples.Configurator.Standard.Gameplay;
-using RMC.Core.Architectures.Mini.View;
+using RMC.Mini.View;
+using RMC.Mini.Samples.Configurator.Mini.Controller;
+using RMC.Mini.Samples.Configurator.Mini.Model;
+using RMC.Mini.Samples.Configurator.Mini.Model.Data;
+using RMC.Mini.Samples.Configurator.Standard.Gameplay;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UIElements;
-using Environment = RMC.Core.Architectures.Mini.Samples.Configurator.Standard.Gameplay.Environment;
+using Gameplay_Environment = RMC.Mini.Samples.Configurator.Standard.Gameplay.Environment;
 
 // ReSharper disable Unity.NoNullPropagation
-namespace RMC.Core.Architectures.Mini.Samples.Configurator.Mini.View
+namespace RMC.Mini.Samples.Configurator.Mini.View
 {
     /// <summary>
     /// The View handles user interface and user input
@@ -42,7 +42,7 @@ namespace RMC.Core.Architectures.Mini.Samples.Configurator.Mini.View
 
         [Header("Gameplay")]
         [SerializeField] 
-        private Environment _environment;
+        private Gameplay_Environment _environment;
 
         [SerializeField] 
         private Player _player;

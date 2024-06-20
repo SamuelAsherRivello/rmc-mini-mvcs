@@ -1,13 +1,12 @@
-using System;
 using System.Reflection;
 using NUnit.Framework;
-using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Model;
-using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Service;
-using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.View;
+using RMC.Mini.Samples.Configurator.Mini.Model;
+using RMC.Mini.Samples.Configurator.Mini.Service;
+using RMC.Mini.Samples.Configurator.Mini.View;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Controller
+namespace RMC.Mini.Samples.Configurator.Mini.Controller
 {
     
     [TestFixture]

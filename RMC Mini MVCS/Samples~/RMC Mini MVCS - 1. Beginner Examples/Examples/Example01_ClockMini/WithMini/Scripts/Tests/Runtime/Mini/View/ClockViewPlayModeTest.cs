@@ -1,12 +1,8 @@
 using System.Collections;
-using System.Text.RegularExpressions;
 using NUnit.Framework;
-using RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.Controller.Commands;
-using RMC.Core.Experimental;
-using UnityEngine;
 using UnityEngine.TestTools;
 
-namespace RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.View
+namespace RMC.Mini.Samples.Clock.WithMini.Mini.View
 {
     /// <summary>
     /// This Unit Test validates that code executes as expected.

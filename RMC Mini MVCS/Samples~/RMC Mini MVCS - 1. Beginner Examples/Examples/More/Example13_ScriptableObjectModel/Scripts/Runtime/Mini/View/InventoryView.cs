@@ -1,10 +1,9 @@
 using System;
-using RMC.Core.Architectures.Mini;
-using RMC.Core.Architectures.Mini.View;
+using RMC.Mini.View;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace RMC.Core.Architectures.Mini.Samples.SOM.Mini
+namespace RMC.Mini.Samples.SOM.Mini
 {
     /// <summary>
     /// The View handles user interface and user input

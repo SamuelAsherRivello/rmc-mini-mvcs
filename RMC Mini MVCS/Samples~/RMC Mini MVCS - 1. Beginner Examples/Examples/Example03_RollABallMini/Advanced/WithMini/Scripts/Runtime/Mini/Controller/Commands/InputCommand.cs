@@ -1,8 +1,7 @@
-
-using RMC.Core.Architectures.Mini.Controller.Commands;
+using RMC.Mini.Controller.Commands;
 using UnityEngine;
 
-namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Controller.Commands
+namespace RMC.Mini.Samples.RollABall.WithMini.Mini.Controller.Commands
 {
     //  Namespace Properties ------------------------------
 

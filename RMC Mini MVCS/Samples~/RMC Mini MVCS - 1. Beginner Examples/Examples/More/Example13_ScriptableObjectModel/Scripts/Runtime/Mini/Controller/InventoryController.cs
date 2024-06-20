@@ -1,6 +1,6 @@
-using RMC.Core.Architectures.Mini.Controller;
+using RMC.Mini.Controller;
 
-namespace RMC.Core.Architectures.Mini.Samples.SOM.Mini
+namespace RMC.Mini.Samples.SOM.Mini
 {
     /// <summary>
     /// The Controller coordinates everything between

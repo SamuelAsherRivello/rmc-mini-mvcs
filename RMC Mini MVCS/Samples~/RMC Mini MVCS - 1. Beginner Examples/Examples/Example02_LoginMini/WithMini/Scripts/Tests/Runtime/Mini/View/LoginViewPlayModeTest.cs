@@ -1,10 +1,9 @@
 using System.Collections;
 using NUnit.Framework;
-using RMC.Core.Experimental;
-using RMC.Core.Testing;
+using RMC.Core.Utilities.Testing;
 using UnityEngine.TestTools;
 
-namespace RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.View
+namespace RMC.Mini.Samples.Login.WithMini.Mini.View
 {
     /// <summary>
     /// This Unit Test validates that code executes as expected.

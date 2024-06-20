@@ -1,13 +1,12 @@
-using RMC.Core.Architectures.Mini.Controller;
-using RMC.Core.Architectures.Mini.Features;
-using RMC.Core.Architectures.Mini.Locators;
-using RMC.Core.Architectures.Mini.Model;
-using RMC.Core.Architectures.Mini.Samples.UGS.Mini.Model;
-using RMC.Core.Architectures.Mini.Samples.UGS.Mini.Service;
-using RMC.Core.Architectures.Mini.Service;
-using RMC.Core.Architectures.Mini.View;
+using RMC.Mini.Features;
+using RMC.Mini.Controller;
+using RMC.Mini.Model;
+using RMC.Mini.Service;
+using RMC.Mini.View;
+using RMC.Mini.Samples.UGS.Mini.Model;
+using RMC.Mini.Samples.UGS.Mini.Service;
 
-namespace RMC.Core.Architectures.Mini.Samples.UGS.Mini
+namespace RMC.Mini.Samples.UGS.Mini
 {
     /// <summary>
     /// See <see cref="MiniMvcs{TContext,TModel,TView,TController,TService}"/>
@@ -38,29 +37,26 @@ namespace RMC.Core.Architectures.Mini.Samples.UGS.Mini
             {
                 _isInitialized = true;
                 
+                // Context
                 _context = new Context();
                 
-                // Locators
-                // ...ModelLocator is created in superclass
-                _viewLocator = new Locator<IView>();
-                _controllerLocator = new Locator<IController>();
-                _serviceLocator = new Locator<IService>();
-       
                 // Model
                 UgsModel model = new UgsModel();
-                model.Initialize(_context); //Added to locator inside
                 
                 // Service
                 AuthenticationService authenticationService = new AuthenticationService();
                 ServiceLocator.AddItem(authenticationService);
-                authenticationService.Initialize(_context);
                 
                 AnalyticsService analyticsService = new AnalyticsService();
                 ServiceLocator.AddItem(analyticsService);
-                analyticsService.Initialize(_context);
-                
+
                 //Feature
                 FeatureBuilder = new FeatureBuilder();
+                
+                // Initialize
+                model.Initialize(_context); //Added to locator inside
+                authenticationService.Initialize(_context);
+                analyticsService.Initialize(_context);
                 FeatureBuilder.Initialize(this);
                 
             }

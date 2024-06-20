@@ -1,8 +1,7 @@
+using RMC.Mini.Controller.Commands;
+using RMC.Mini.Samples.Login.WithMini.Mini.Model;
 
-using RMC.Core.Architectures.Mini.Controller.Commands;
-using RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.Model;
-
-namespace RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.Controller.Commands
+namespace RMC.Mini.Samples.Login.WithMini.Mini.Controller.Commands
 {
     /// <summary>
     /// The Command is a stand-alone object containing

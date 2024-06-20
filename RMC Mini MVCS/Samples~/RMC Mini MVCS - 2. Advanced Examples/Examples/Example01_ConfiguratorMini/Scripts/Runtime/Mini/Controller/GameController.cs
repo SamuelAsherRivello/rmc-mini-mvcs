@@ -1,10 +1,10 @@
-using RMC.Core.Architectures.Mini.Controller;
-using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Model;
-using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Service;
-using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Service.Storage;
-using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.View;
+using RMC.Mini.Controller;
+using RMC.Mini.Samples.Configurator.Mini.Model;
+using RMC.Mini.Samples.Configurator.Mini.Service;
+using RMC.Mini.Samples.Configurator.Mini.Service.Storage;
+using RMC.Mini.Samples.Configurator.Mini.View;
 
-namespace RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Controller
+namespace RMC.Mini.Samples.Configurator.Mini.Controller
 {
     /// <summary>
     /// The Controller coordinates everything between

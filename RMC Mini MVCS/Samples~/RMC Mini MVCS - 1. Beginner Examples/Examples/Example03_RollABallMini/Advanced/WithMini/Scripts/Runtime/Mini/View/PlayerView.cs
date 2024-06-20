@@ -1,11 +1,11 @@
 using System;
-using RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Components;
-using RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Controller.Commands;
-using RMC.Core.Architectures.Mini.View;
+using RMC.Mini.View;
+using RMC.Mini.Samples.RollABall.WithMini.Components;
+using RMC.Mini.Samples.RollABall.WithMini.Mini.Controller.Commands;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.View
+namespace RMC.Mini.Samples.RollABall.WithMini.Mini.View
 {
     //  Class Attributes ----------------------------------
     public class PickupUnityEvent : UnityEvent<Pickup> {}

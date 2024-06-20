@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithoutMini
+namespace RMC.Mini.Samples.RollABall.WithoutMini
 {
     //  Namespace Properties ------------------------------
 

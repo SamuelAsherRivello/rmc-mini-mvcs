@@ -1,6 +1,5 @@
-using RMC.Core.Architectures.Mini;
-using RMC.Core.Architectures.Mini.Model;
-using RMC.Core.Data.Types;
+using RMC.Core.Observables;
+using RMC.Mini.Model;
 
 namespace RMC.Mini.Lessons.Scalability.Simple.Mini
 {

@@ -1,6 +1,6 @@
 using NUnit.Framework;
 
-namespace RMC.Core.Architectures.Mini.Samples.UGS.Mini.Model
+namespace RMC.Mini.Samples.UGS.Mini.Model
 {
     [TestFixture]
     [Category ("RMC.Mini.Configurator")]

@@ -1,10 +1,10 @@
-﻿using RMC.Core.Architectures.Mini.Features;
-using RMC.Core.Architectures.Mini.Samples.UGS.Mini.Controller;
-using RMC.Core.Architectures.Mini.Samples.UGS.Mini.Model;
-using RMC.Core.Architectures.Mini.Samples.UGS.Mini.Service;
-using RMC.Core.Architectures.Mini.Samples.UGS.Mini.View;
+﻿using RMC.Mini.Features;
+using RMC.Mini.Samples.UGS.Mini.Controller;
+using RMC.Mini.Samples.UGS.Mini.Model;
+using RMC.Mini.Samples.UGS.Mini.Service;
+using RMC.Mini.Samples.UGS.Mini.View;
 
-namespace RMC.Core.Architectures.Mini.Samples.UGS.Mini.Feature
+namespace RMC.Mini.Samples.UGS.Mini.Feature
 {
     /// <summary>
     /// Set up a collection of related <see cref="IConcern"/> instances

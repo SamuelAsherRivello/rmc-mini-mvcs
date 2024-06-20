@@ -1,11 +1,10 @@
 using System;
 using System.Collections;
 using NUnit.Framework;
-using RMC.Core.Experimental;
 using UnityEngine;
 using UnityEngine.TestTools;
 
-namespace RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini.Model
+namespace RMC.Mini.Samples.Clock.WithMini.Mini.Model
 {
     /// <summary>
     /// This Unit Test validates that code executes as expected.

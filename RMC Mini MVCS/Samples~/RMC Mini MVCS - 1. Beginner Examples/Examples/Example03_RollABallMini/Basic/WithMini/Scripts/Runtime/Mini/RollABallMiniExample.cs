@@ -1,7 +1,7 @@
-using RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.View;
+using RMC.Mini.Samples.RollABall.WithMini.Mini.View;
 using UnityEngine;
 
-namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini
+namespace RMC.Mini.Samples.RollABall.WithMini.Mini
 {
     /// <summary>
     /// The Example is the main entry point to the demo

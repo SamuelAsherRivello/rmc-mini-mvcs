@@ -1,5 +1,5 @@
 
-namespace RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.Model
+namespace RMC.Mini.Samples.Login.WithMini.Mini.Model
 {
     //  Namespace Properties ------------------------------
 

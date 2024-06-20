@@ -3,4 +3,6 @@ This is borrowed (copy/paste) from the RMC Core Library (https://github.com/Samu
 So now we have additional functionality here, without the dependency.
 
 NOTES: 
-* Do not update this copy. Leave it as is. The real version is the link above.
+* This local copy may have changed
+* The original source version may have changed
+* Not sure if/when to merge them. Perhaps never.

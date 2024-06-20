@@ -1,11 +1,10 @@
 
 using System.Collections;
 using NUnit.Framework;
-using RMC.Core.Experimental;
 using UnityEngine;
 using UnityEngine.TestTools;
 
-namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Service
+namespace RMC.Mini.Samples.RollABall.WithMini.Mini.Service
 {
     /// <summary>
     /// This Unit Test validates that code executes as expected.

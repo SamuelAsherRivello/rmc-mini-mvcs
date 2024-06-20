@@ -2,7 +2,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace RMC.Core.Architectures.Mini.Samples.Login.WithoutMini
+namespace RMC.Mini.Samples.Login.WithoutMini
 {
     /// <summary>
     /// Data transfer object (DTO) containing all

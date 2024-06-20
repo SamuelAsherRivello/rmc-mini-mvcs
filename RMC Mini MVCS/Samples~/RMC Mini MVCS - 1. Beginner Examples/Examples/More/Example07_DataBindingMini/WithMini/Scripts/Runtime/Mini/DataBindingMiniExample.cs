@@ -1,7 +1,7 @@
-using RMC.Core.Architectures.Mini.Samples.DataBindingMini.WithMini.Mini.View;
+using RMC.Mini.Samples.DataBindingMini.WithMini.Mini.View;
 using UnityEngine;
 
-namespace RMC.Core.Architectures.Mini.Samples.DataBindingMini.WithMini.Mini
+namespace RMC.Mini.Samples.DataBindingMini.WithMini.Mini
 {
     //  Namespace Properties ------------------------------
 

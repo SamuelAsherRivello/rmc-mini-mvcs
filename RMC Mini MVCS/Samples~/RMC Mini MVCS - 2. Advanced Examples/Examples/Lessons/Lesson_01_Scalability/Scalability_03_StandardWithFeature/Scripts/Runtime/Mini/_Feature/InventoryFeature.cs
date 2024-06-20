@@ -1,4 +1,4 @@
-﻿using RMC.Core.Architectures.Mini.Features;
+﻿using RMC.Mini.Features;
 
 namespace RMC.Mini.Lessons.Scalability.StandardWithFeature.Mini
 {

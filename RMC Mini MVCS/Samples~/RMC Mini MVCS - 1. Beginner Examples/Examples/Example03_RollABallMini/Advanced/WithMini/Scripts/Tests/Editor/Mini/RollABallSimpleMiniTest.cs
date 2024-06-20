@@ -1,9 +1,8 @@
 using NUnit.Framework;
-using RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.View;
-using RMC.Core.Experimental;
-using RMC.Core.Testing;
+using RMC.Core.Utilities.Testing;
+using RMC.Mini.Samples.RollABall.WithMini.Mini.View;
 
-namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini
+namespace RMC.Mini.Samples.RollABall.WithMini.Mini
 {
     /// <summary>
     /// This Unit Test validates that code executes as expected.

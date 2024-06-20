@@ -1,5 +1,4 @@
-using RMC.Core.Architectures.Mini;
-using RMC.Core.Architectures.Mini.Service;
+using RMC.Mini.Service;
 using UnityEngine.Events;
 
 namespace RMC.Mini.Lessons.Scalability.Simple.Mini

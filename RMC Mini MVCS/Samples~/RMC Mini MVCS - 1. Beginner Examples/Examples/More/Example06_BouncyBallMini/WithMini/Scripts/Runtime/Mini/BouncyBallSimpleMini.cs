@@ -1,10 +1,9 @@
-using RMC.Core.Architectures.Mini.Samples.BouncyBall.WithMini.Mini.Controller;
-using RMC.Core.Architectures.Mini.Samples.BouncyBall.WithMini.Mini.Model;
-using RMC.Core.Architectures.Mini.Samples.BouncyBall.WithMini.Mini.Service;
-using RMC.Core.Architectures.Mini.Samples.BouncyBall.WithMini.Mini.View;
-using RMC.Core.Architectures.Mini.Structure.Simple;
+using RMC.Mini.Samples.BouncyBall.WithMini.Mini.Controller;
+using RMC.Mini.Samples.BouncyBall.WithMini.Mini.Model;
+using RMC.Mini.Samples.BouncyBall.WithMini.Mini.Service;
+using RMC.Mini.Samples.BouncyBall.WithMini.Mini.View;
 
-namespace RMC.Core.Architectures.Mini.Samples.BouncyBall.WithMini.Mini
+namespace RMC.Mini.Samples.BouncyBall.WithMini.Mini
 {
     //  Namespace Properties ------------------------------
 

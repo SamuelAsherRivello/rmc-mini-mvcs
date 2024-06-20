@@ -1,7 +1,7 @@
-using RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.View;
+using RMC.Mini.Samples.Login.WithMini.Mini.View;
 using UnityEngine;
 
-namespace RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini
+namespace RMC.Mini.Samples.Login.WithMini.Mini
 {
     //  Namespace Properties ------------------------------
 

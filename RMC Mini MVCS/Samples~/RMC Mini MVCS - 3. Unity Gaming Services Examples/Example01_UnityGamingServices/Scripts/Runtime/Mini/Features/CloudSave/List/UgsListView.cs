@@ -1,6 +1,7 @@
+using RMC.Mini.Samples.Beamable.Mini.View;
 using UnityEngine.UIElements;
 
-namespace RMC.Core.Architectures.Mini.Samples.UGS.Mini.View
+namespace RMC.Mini.Samples.UGS.Mini.View
 {
     /// <summary>
     /// Each item in the list

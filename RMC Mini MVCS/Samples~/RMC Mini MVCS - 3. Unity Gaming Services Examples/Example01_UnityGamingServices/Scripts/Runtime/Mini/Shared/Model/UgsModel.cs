@@ -1,8 +1,8 @@
-using RMC.Core.Architectures.Mini.Model;
-using RMC.Core.Architectures.Mini.Samples.UGS.Mini.Service;
-using RMC.Core.Data.Types;
+using RMC.Core.Observables;
+using RMC.Mini.Model;
+using RMC.Mini.Samples.UGS.Mini.Service;
 
-namespace RMC.Core.Architectures.Mini.Samples.UGS.Mini.Model
+namespace RMC.Mini.Samples.UGS.Mini.Model
 {
     /// <summary>
     /// The Model stores runtime data 

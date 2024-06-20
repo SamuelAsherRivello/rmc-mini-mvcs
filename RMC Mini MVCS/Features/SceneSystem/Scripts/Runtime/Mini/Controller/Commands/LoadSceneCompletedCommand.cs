@@ -1,6 +1,6 @@
-using RMC.Core.Architectures.Mini.Controller.Commands;
+using RMC.Mini.Controller.Commands;
 
-namespace RMC.Core.Architectures.Mini.Features.SceneSystem
+namespace RMC.Mini.Features.SceneSystem
 {
     /// <summary>
     /// The Command is a stand-alone object containing

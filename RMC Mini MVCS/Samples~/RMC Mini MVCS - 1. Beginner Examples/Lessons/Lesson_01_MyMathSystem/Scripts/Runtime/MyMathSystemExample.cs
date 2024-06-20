@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace RMC.IntroToUnity.Samples.MyMathSystem
+namespace RMC.Mini.Lessons.MyMathSystem
 {
     /// <summary>
     /// The Example is the main entry point to the demo

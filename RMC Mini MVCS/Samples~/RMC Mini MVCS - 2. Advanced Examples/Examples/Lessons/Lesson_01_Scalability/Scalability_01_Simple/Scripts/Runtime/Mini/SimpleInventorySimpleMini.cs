@@ -1,6 +1,3 @@
-using RMC.Core.Architectures.Mini;
-using RMC.Core.Architectures.Mini.Structure.Simple;
-
 namespace RMC.Mini.Lessons.Scalability.Simple.Mini
 {
     /// <summary>

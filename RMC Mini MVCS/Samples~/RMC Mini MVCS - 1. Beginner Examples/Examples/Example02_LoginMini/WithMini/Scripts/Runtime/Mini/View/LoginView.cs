@@ -1,12 +1,12 @@
 using System;
-using RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.Controller.Commands;
-using RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.Model;
-using RMC.Core.Architectures.Mini.View;
+using RMC.Mini.View;
+using RMC.Mini.Samples.Login.WithMini.Mini.Controller.Commands;
+using RMC.Mini.Samples.Login.WithMini.Mini.Model;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-namespace RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.View
+namespace RMC.Mini.Samples.Login.WithMini.Mini.View
 {
 
     //  Class Attributes ----------------------------------

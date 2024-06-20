@@ -1,12 +1,12 @@
 using System;
 using System.Collections;
 using System.Threading.Tasks;
-using RMC.Core.Data.Types;
+using RMC.Core.Observables;
 using UnityEngine;
 
 #pragma warning disable CS4014
 // ReSharper disable PossibleLossOfFraction
-namespace RMC.Core.Architectures.Mini.Samples.Clock.WithoutMini.Mini
+namespace RMC.Mini.Samples.Clock.WithoutMini.Mini
 {
     //  Namespace Properties ------------------------------
 

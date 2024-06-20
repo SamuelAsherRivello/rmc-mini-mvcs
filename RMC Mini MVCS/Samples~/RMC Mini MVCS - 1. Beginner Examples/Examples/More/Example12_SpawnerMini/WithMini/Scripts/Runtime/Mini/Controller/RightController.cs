@@ -1,10 +1,10 @@
 using System;
-using RMC.Core.Architectures.Mini.Controller;
-using RMC.Core.Architectures.Mini.Samples.SpawnerMini.WithMini.Mini.Controller.Commands;
-using RMC.Core.Architectures.Mini.Samples.SpawnerMini.WithMini.Mini.Model;
-using RMC.Core.Architectures.Mini.Samples.SpawnerMini.WithMini.Mini.View;
+using RMC.Mini.Controller;
+using RMC.Mini.Samples.SpawnerMini.WithMini.Mini.Controller.Commands;
+using RMC.Mini.Samples.SpawnerMini.WithMini.Mini.Model;
+using RMC.Mini.Samples.SpawnerMini.WithMini.Mini.View;
 
-namespace RMC.Core.Architectures.Mini.Samples.SpawnerMini.WithMini.Mini.Controller
+namespace RMC.Mini.Samples.SpawnerMini.WithMini.Mini.Controller
 {
     //  Namespace Properties ------------------------------
 

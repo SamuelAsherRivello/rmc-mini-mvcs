@@ -1,9 +1,9 @@
 using System.Threading.Tasks;
-using RMC.Core.Architectures.Mini.Service;
+using RMC.Mini.Service;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace RMC.Core.Architectures.Mini.Samples.MultiScene.WithMini.Mini.Service
+namespace RMC.Mini.Samples.MultiScene.WithMini.Mini.Service
 {
     //  Namespace Properties ------------------------------
     public class MultiSceneServiceUnityEvent : UnityEvent<string> {}

@@ -1,5 +1,5 @@
 using UnityEngine;
-namespace RMC.Core.Architectures.Mini.Samples.Clock.WithMini.Mini
+namespace RMC.Mini.Samples.Clock.WithMini.Mini
 {
     /// <summary>
     /// The Example is the main entry point to the demo

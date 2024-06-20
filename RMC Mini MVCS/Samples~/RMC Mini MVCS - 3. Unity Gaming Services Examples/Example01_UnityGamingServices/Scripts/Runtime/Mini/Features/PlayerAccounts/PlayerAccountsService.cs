@@ -1,5 +1,5 @@
 
-namespace RMC.Core.Architectures.Mini.Samples.UGS.Mini.Service
+namespace RMC.Mini.Samples.UGS.Mini.Service
 {
     //  Namespace Properties ------------------------------
 

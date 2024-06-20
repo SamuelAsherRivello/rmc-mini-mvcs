@@ -1,5 +1,4 @@
-using RMC.Core.DesignPatterns.Creational.Singleton.CustomSingletonMonobehaviour;
-using UnityEngine;
+using RMC.Core.DesignPatterns.Creational.SingletonMonobehaviour;
 
 namespace RMC.Mini.Lessons.Scalability.Standard.Mini
 {

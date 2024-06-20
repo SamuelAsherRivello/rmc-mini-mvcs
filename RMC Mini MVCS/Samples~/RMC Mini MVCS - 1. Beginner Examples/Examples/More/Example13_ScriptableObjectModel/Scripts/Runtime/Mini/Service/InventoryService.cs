@@ -1,7 +1,7 @@
-using RMC.Core.Architectures.Mini.Service;
+using RMC.Mini.Service;
 using UnityEngine.Events;
 
-namespace RMC.Core.Architectures.Mini.Samples.SOM.Mini
+namespace RMC.Mini.Samples.SOM.Mini
 {
     //  Namespace Properties ------------------------------
     public class InventoryServiceUnityEvent : UnityEvent<string> {}

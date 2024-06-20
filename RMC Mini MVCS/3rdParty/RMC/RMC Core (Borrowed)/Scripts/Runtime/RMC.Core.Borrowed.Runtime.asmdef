@@ -1,0 +1,16 @@
+{
+    "name": "RMC.Core.Borrowed.Runtime",
+    "rootNamespace": "",
+    "references": [
+        "GUID:41427dde9aa4bb741b6db604b1b0b1f0"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,14 +1,14 @@
 using System;
-using RMC.Core.Architectures.Mini.Controller;
-using RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Components;
-using RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Controller.Commands;
-using RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Model;
-using RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Service;
-using RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.View;
+using RMC.Mini.Controller;
+using RMC.Mini.Samples.RollABall.WithMini.Components;
+using RMC.Mini.Samples.RollABall.WithMini.Mini.Controller.Commands;
+using RMC.Mini.Samples.RollABall.WithMini.Mini.Model;
+using RMC.Mini.Samples.RollABall.WithMini.Mini.Service;
+using RMC.Mini.Samples.RollABall.WithMini.Mini.View;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace RMC.Core.Architectures.Mini.Samples.RollABall.WithMini.Mini.Controller
+namespace RMC.Mini.Samples.RollABall.WithMini.Mini.Controller
 {
     /// <summary>
     /// The Controller coordinates everything between

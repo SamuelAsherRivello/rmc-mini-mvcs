@@ -1,6 +1,6 @@
-using RMC.Core.Architectures.Mini.Samples.CountUp.WithMini.Mini.View;
+using RMC.Mini.Samples.CountUp.WithMini.Mini.View;
 using UnityEngine;
-namespace RMC.Core.Architectures.Mini.Samples.CountUp.WithMini.Mini
+namespace RMC.Mini.Samples.CountUp.WithMini.Mini
 {
     //  Namespace Properties ------------------------------
 

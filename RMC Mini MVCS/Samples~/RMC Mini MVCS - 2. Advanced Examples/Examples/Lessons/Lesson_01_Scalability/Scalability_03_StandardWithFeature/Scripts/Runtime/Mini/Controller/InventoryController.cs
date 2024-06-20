@@ -1,5 +1,4 @@
-using RMC.Core.Architectures.Mini;
-using RMC.Core.Architectures.Mini.Controller;
+using RMC.Mini.Controller;
 
 namespace RMC.Mini.Lessons.Scalability.StandardWithFeature.Mini
 {

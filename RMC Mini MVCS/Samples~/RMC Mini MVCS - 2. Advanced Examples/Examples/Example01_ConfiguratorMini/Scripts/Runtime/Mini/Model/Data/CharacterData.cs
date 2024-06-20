@@ -1,8 +1,8 @@
-using RMC.Core.Architectures.Mini.Samples.Configurator.Standard;
-using RMC.Core.Architectures.Mini.Samples.Configurator.Standard.Gameplay;
+using RMC.Mini.Samples.Configurator.Standard;
+using RMC.Mini.Samples.Configurator.Standard.Gameplay;
 using UnityEngine;
 
-namespace RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Model.Data
+namespace RMC.Mini.Samples.Configurator.Mini.Model.Data
 {
     /// <summary>
     /// Defines the customizable characteristics for the <see cref="Player"/>

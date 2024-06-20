@@ -1,10 +1,10 @@
-﻿using RMC.Core.Architectures.Mini.Features;
-using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Controller;
-using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Model;
-using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Service;
-using RMC.Core.Architectures.Mini.Samples.Configurator.Mini.View;
+﻿using RMC.Mini.Features;
+using RMC.Mini.Samples.Configurator.Mini.Controller;
+using RMC.Mini.Samples.Configurator.Mini.Model;
+using RMC.Mini.Samples.Configurator.Mini.Service;
+using RMC.Mini.Samples.Configurator.Mini.View;
 
-namespace RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Feature
+namespace RMC.Mini.Samples.Configurator.Mini.Feature
 {
     /// <summary>
     /// Set up a collection of related <see cref="IConcern"/> instances

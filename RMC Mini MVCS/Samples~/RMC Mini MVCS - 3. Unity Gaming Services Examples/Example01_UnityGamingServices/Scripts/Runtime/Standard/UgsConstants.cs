@@ -1,5 +1,5 @@
 
-namespace RMC.Core.Architectures.Mini.Samples.UGS.Standard
+namespace RMC.Mini.Samples.UGS.Standard
 {
     /// <summary>
     /// Helpful values

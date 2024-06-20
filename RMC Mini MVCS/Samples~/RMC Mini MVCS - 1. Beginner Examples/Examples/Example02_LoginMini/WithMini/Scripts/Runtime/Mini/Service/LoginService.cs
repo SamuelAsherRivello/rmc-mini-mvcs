@@ -1,10 +1,10 @@
 using System.Threading.Tasks;
-using RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.Model;
-using RMC.Core.Architectures.Mini.Service;
+using RMC.Mini.Service;
+using RMC.Mini.Samples.Login.WithMini.Mini.Model;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace RMC.Core.Architectures.Mini.Samples.Login.WithMini.Mini.Service
+namespace RMC.Mini.Samples.Login.WithMini.Mini.Service
 {
     //  Namespace Properties ------------------------------
     public class OnLoginCompletedUnityEvent : UnityEvent<UserData, bool> {}

@@ -1,9 +1,9 @@
 ﻿using System;
-using RMC.Core.Architectures.Mini.Controller;
-using RMC.Core.Architectures.Mini.Samples.BouncyBall.WithMini.Mini.Controller.Commands;
+using RMC.Mini.Controller;
+using RMC.Mini.Samples.BouncyBall.WithMini.Mini.Controller.Commands;
 using UnityEngine;
 
-namespace RMC.Core.Architectures.Mini.Samples.BouncyBall.WithMini.Mini.Controller
+namespace RMC.Mini.Samples.BouncyBall.WithMini.Mini.Controller
 {
     //  Namespace Properties ------------------------------
 

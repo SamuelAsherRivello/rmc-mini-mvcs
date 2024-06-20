@@ -1,7 +1,7 @@
-using RMC.Core.Data.Types;
+using RMC.Core.Observables;
 using UnityEngine;
 
-namespace RMC.IntroToUnity.Examples
+namespace RMC.Mini.Lessons.Observables
 {
     /// <summary>
     /// The Example is the main entry point to the demo

@@ -1,13 +1,13 @@
 using System;
 using System.Threading.Tasks;
-using RMC.Core.Architectures.Mini.View;
-using RMC.Core.DesignPatterns.Creational.Singleton.CustomSingletonMonobehaviour;
+using RMC.Core.DesignPatterns.Creational.SingletonMonobehaviour;
+using RMC.Mini.View;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UIElements;
 
 // ReSharper disable Unity.NoNullPropagation
-namespace RMC.Core.Architectures.Mini.Features.SceneSystem
+namespace RMC.Mini.Features.SceneSystem
 {
     /// <summary>
     /// The View handles user interface and user input

@@ -1,5 +1,5 @@
 
-namespace RMC.Core.Architectures.Mini.Samples.Configurator.Mini.Model.Data
+namespace RMC.Mini.Samples.Configurator.Mini.Model.Data
 {
     /// <summary>
     /// Helpful values

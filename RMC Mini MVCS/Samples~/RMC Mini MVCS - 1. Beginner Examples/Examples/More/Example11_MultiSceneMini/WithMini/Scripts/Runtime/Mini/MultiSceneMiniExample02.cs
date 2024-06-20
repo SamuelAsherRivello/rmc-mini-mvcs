@@ -1,7 +1,7 @@
-using RMC.Core.Architectures.Mini.Samples.MultiScene.WithMini.Mini.View;
+using RMC.Mini.Samples.MultiScene.WithMini.Mini.View;
 using UnityEngine;
 
-namespace RMC.Core.Architectures.Mini.Samples.MultiScene.WithMini.Mini
+namespace RMC.Mini.Samples.MultiScene.WithMini.Mini
 {
     //  Namespace Properties ------------------------------
 

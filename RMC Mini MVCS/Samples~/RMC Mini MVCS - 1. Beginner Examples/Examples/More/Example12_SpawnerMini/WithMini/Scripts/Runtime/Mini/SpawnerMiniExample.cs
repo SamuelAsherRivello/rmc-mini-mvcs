@@ -1,7 +1,7 @@
-using RMC.Core.Architectures.Mini.Samples.SpawnerMini.WithMini.Mini.View;
+using RMC.Mini.Samples.SpawnerMini.WithMini.Mini.View;
 using UnityEngine;
 
-namespace RMC.Core.Architectures.Mini.Samples.SpawnerMini.WithMini.Mini
+namespace RMC.Mini.Samples.SpawnerMini.WithMini.Mini
 {
     //  Namespace Properties ------------------------------
 
