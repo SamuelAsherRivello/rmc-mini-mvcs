@@ -1,7 +1,7 @@
 {
   "name": "com.rmc.rmc-mini-mvcs",
   "displayName": "RMC Mini MVCS",
-  "version": "2.1.4",
+  "version": "2.1.5",
   "unity": "2022.3",
   "description": "Mini MVCS (Model View Controller Service) library for Unity Development by Rivello Multimedia Consulting",
   "keywords": [
