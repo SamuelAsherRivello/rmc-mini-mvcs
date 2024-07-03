@@ -26,10 +26,6 @@ namespace RMC.Mini.Samples.RollABall.WithMini.Mini.View
         {
             _prefabManagerForTesting.Clear();
      
-            if (ContextLocator.Instance.HasItem<Context>())
-            {
-                ContextLocator.Instance.RemoveItem<Context>();
-            }
         }
 
         

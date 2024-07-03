@@ -15,13 +15,13 @@ namespace RMC.Mini.Features
     {
         //  Properties ------------------------------------
         public bool IsInitialized { get; private set; }
-        public IMiniMvcs<global::RMC.Mini.Context, IModel, IView, IController, IService> MiniMvcs { get; private set; }
+        public IMiniMvcs<Context, IModel, IView, IController, IService> MiniMvcs { get; private set; }
 
         //  Fields ----------------------------------------
         public IView View { get; private set; }
         
         //  Initialization  -------------------------------
-        public virtual void Initialize(IMiniMvcs<global::RMC.Mini.Context, IModel, IView, IController, IService> miniMvcs)
+        public virtual void Initialize(IMiniMvcs<Context, IModel, IView, IController, IService> miniMvcs)
         {
             if (!IsInitialized)
             {

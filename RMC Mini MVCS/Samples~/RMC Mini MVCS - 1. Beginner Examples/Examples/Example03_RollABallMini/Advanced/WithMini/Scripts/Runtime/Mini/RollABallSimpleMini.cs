@@ -67,8 +67,7 @@ namespace RMC.Mini.Samples.RollABall.WithMini.Mini
                 _isInitialized = true;
                 
                 //Context
-                string contextKey = Guid.NewGuid().ToString();
-                _context = new Context(contextKey);
+                _context = new Context();
                 
                 //Model
                 _rollABallModel = new RollABallModel();

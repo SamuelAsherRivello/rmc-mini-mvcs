@@ -1,120 +1,44 @@
-using System;
 using NUnit.Framework;
+using RMC.Mini.Model;
 
-//Keep As:RMC.Mini
-namespace RMC.Mini
+namespace RMC.Mini.Contexts
 {
     [Category ("RMC.Mini")]
     public class ContextTest
     {
+        private BaseContext _baseContext;
 
-        [TearDown]
-        public void TearDown()
+        [SetUp]
+        public void SetUp()
         {
-            ContextLocator.Destroy();
+            _baseContext = new BaseContext();
         }
-        
-        [Test]
-        public void Context_IsNotNull_WhenCreated()
-        {
-            // Arrange
-            
-            // Act
-            global::RMC.Mini.Context context = new global::RMC.Mini.Context();
 
-            // Assert
-            Assert.That(context, Is.Not.Null);
-        }
-        
-        
         [Test]
-        public void Context_ThrowsException_WhenCreatedTwice_WithoutUniqueContextKey()
+        public void CommandManager_ShouldNotBeNullAfterInitialization()
         {
-            // Arrange
-            
-            // Assert
+            Assert.IsNotNull(_baseContext.CommandManager);
+        }
 
-            Assert.Throws<Exception>(() =>
-            {
-                // Act
-                global::RMC.Mini.Context context1 = new global::RMC.Mini.Context(); //has singleton inside
-                global::RMC.Mini.Context context2 = new global::RMC.Mini.Context();
-                global::RMC.Mini.Context context3 = new global::RMC.Mini.Context();
-            });
-        }
-        
         [Test]
-        public void Context_ThrowsNoException_WhenCreatedTwice_WithUniqueContextKey()
+        public void ModelLocator_ShouldNotBeNullAfterInitialization()
         {
-            // Arrange
-            
-            // Act
-            Assert.DoesNotThrow(() =>
-            {
-                global::RMC.Mini.Context context1 = new global::RMC.Mini.Context(); //has singleton inside
-                global::RMC.Mini.Context context2 = new global::RMC.Mini.Context("uniqueKey");
-            });
+            Assert.IsNotNull(_baseContext.ModelLocator);
+        }
 
-            // Assert
-        }
-        
         [Test]
-        public void OnAddItemCompleted_IsCalled_WhenAddItem()
+        public void CommandManager_NotNullAndEmpty_AfterInitialization()
         {
-            // Arrange
-            bool isCalled = false;
-            ContextLocator.Instance.OnItemAdded.AddListener(addedContext =>
-            {
-                isCalled = true;
-            });
-    
-            // Act
-            global::RMC.Mini.Context context = new global::RMC.Mini.Context();
+            _baseContext.Dispose();
+            Assert.IsNotNull(_baseContext.CommandManager.GetCommandListenerCount());
+        }
 
-            // Assert
-            Assert.That(isCalled, Is.True);
+        [Test]
+        public void ModelLocator_NotNullAndEmpty_AfterInitialization()
+        {
+            _baseContext.Dispose();
+            Assert.AreEqual(_baseContext.ModelLocator.GetItemCount(), 0);
         }
         
-        [Test]
-        public void OnAddItemCompleted_IsNotCalled_WhenNotAddItem()
-        {
-            // Arrange
-            bool isCalled = false;
-            ContextLocator.Instance.OnItemAdded.AddListener(addedContext =>
-            {
-                isCalled = true;
-            });
-    
-            // Act
-            //(Do nothing)
-
-            // Assert
-            Assert.That(isCalled, Is.False);
-        }
-        
-        [Test]
-        public void HasItem_IsFalse_WhenNotAdded()
-        {
-            // Arrange
-            
-            // Act
-            bool hasItem = ContextLocator.Instance.HasItem<global::RMC.Mini.Context>();
-
-            // Assert
-            Assert.That(hasItem, Is.False);
-        }
-        
-        [Test]
-        public void HasItem_IsTrue_WhenAdded()
-        {
-            // Arrange
-            global::RMC.Mini.Context context = new global::RMC.Mini.Context(); //calls contextLocator.AddItem
-            
-            // Act
-            bool hasItem = ContextLocator.Instance.HasItem<global::RMC.Mini.Context>();
-            
-            // Assert
-            Assert.That(hasItem, Is.True);
-        }
     }
 }

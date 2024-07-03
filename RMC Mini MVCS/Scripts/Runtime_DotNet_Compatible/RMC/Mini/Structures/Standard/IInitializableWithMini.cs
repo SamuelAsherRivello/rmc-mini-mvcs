@@ -13,14 +13,14 @@ namespace RMC.Mini
     {
         //  Properties  ------------------------------------
         public bool IsInitialized { get; }
-        public IMiniMvcs<global::RMC.Mini.Context,
+        public IMiniMvcs<Context,
             IModel,
             IView,
             IController,
             IService> MiniMvcs { get; }
 
         //  General Methods  ------------------------------
-        public void Initialize(IMiniMvcs<global::RMC.Mini.Context,
+        public void Initialize(IMiniMvcs<Context,
             IModel,
             IView,
             IController,

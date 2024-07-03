@@ -1,4 +1,5 @@
-﻿using RMC.Mini.Samples.RollABall.WithMini.Mini.Model;
+﻿using RMC.Mini.Experimental.ContextLocators;
+using RMC.Mini.Samples.RollABall.WithMini.Mini.Model;
 using UnityEngine;
 
 namespace RMC.Mini.Samples.RollABall.WithMini.Components
@@ -35,27 +36,28 @@ namespace RMC.Mini.Samples.RollABall.WithMini.Components
         //  Methods ---------------------------------------
         /// <summary>
         /// EXPERIMENTAL: This and any use of <see cref="ContextLocator"/>
-        /// is experimental. Its a leading solution for
+        /// is experimental. It's a leading solution for
         /// any scope 'outside' of MVCS to reference 'inside'
-        /// the MVCS.
+        /// the MVCS assuming it has NO direct reference to the MVCS.
         /// </summary>
         private void MakeBridgeToMini()
         {
+	        //TODO: Fix
 	        // When any context is added...
-	        ContextLocator.Instance.OnItemAdded.AddListener(context =>
-	        {
-		        // ... and any model is added...
-		        context.ModelLocator.OnItemAdded.AddListener(model =>
-		        {
-			        // ... listen to changes in the appropriate model
-			        RollABallModel rollABallModel = (RollABallModel)model;
-			        if (rollABallModel != null)
-			        {
-				        rollABallModel.IsGameOver.OnValueChanged.AddListener(IsGameOver_OnValueChanged);
-				        rollABallModel.IsGamePaused.OnValueChanged.AddListener(IsGamePaused_OnValueChanged);
-			        }
-		        });
-	        });
+	        // ContextLocator.Instance.OnItemAdded.AddListener(context =>
+	        // {
+		       //  // ... and any model is added...
+		       //  context.ModelLocator.OnItemAdded.AddListener(model =>
+		       //  {
+			      //   // ... listen to changes in the appropriate model
+			      //   RollABallModel rollABallModel = (RollABallModel)model;
+			      //   if (rollABallModel != null)
+			      //   {
+				     //    rollABallModel.IsGameOver.OnValueChanged.AddListener(IsGameOver_OnValueChanged);
+				     //    rollABallModel.IsGamePaused.OnValueChanged.AddListener(IsGamePaused_OnValueChanged);
+			      //   }
+		       //  });
+	        // });
         }
         
         //  Event Handlers --------------------------------

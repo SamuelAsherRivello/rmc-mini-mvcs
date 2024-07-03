@@ -12,10 +12,6 @@ namespace RMC.Mini.Samples.Login.WithMini.Mini.Model
         [TearDown]
         public void TearDown()
         {
-            if (ContextLocator.Instance.HasItem<Context>())
-            {
-                ContextLocator.Instance.RemoveItem<Context>();
-            }
         }
         
         [Test]

@@ -20,10 +20,10 @@ namespace RMC.Mini
         : ISimpleMiniMvcs
     
         where TContext : IContext 
-        where TModel : IModel 
-        where TView : IView 
-        where TController : IController 
-        where TService : IService
+        where TModel : class, IModel
+        where TView : class, IView 
+        where TController : class, IController 
+        where TService : class, IService
     {
         TContext Context { get; }
 

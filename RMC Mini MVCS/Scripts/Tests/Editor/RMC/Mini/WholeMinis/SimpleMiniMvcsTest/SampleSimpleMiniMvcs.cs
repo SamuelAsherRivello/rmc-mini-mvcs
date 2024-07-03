@@ -4,13 +4,9 @@ using RMC.Mini.Model;
 using RMC.Mini.Service;
 using RMC.Mini.View;
 
-namespace RMC.Mini
+namespace RMC.Mini.WholeMinis.SimpleMiniMvcsTests
 {
-    public class TestModel2 : BaseModel
-    {
-        
-    }
-    public class TestView2 : IView
+    public class TestActor1 : IConcern
     {
         public bool IsInitialized { get { return _isInitialized;} }
         public IContext Context { get { return _context;} }
@@ -32,30 +28,20 @@ namespace RMC.Mini
             }
         }
     }
-    public class TestController2 : BaseController
-        <BaseModel,
-            TestView2, 
-            BaseService>
+    public class TestModel1 : TestActor1, IModel {}
+    public class TestView1: TestActor1, IView {}
+
+    public class TestController1 : TestActor1, IController
     {
-        public TestController2(
-            BaseModel model, 
-            TestView2 view, 
-            BaseService service) : base(model, view, service)
-        {
-        }
+        public virtual void Dispose() {}
     }
-    
-    public class TestService2 : BaseService
-    {
-        
-    }
-    
-    public class TestSimpleMiniWithBase: SimpleMiniMvcs
-        <Context, 
-        TestModel2, 
-        TestView2, 
-        TestController2,
-        TestService2>
+    public class TestService1 : TestActor1, IService {}
+    public class SampleSimpleMiniMvcs: SimpleMiniMvcs
+    <Context, 
+        TestModel1, 
+        TestView1, 
+        TestController1,
+        TestService1>
     {
         public override void Initialize()
         {
@@ -64,11 +50,11 @@ namespace RMC.Mini
                 _isInitialized = true;
                 //
                 _context = new Context();
-                _model = new TestModel2();
-                _view = new TestView2();
-                _service = new TestService2();
-                _controller = new TestController2(_model, _view, _service);
-                
+                _model = new TestModel1();
+                _view = new TestView1();
+                _service = new TestService1();
+                _controller = new TestController1();
+                _context.ModelLocator.AddItem(_model);
                 //
                 _model.Initialize(_context);
                 _view.Initialize(_context);
@@ -77,4 +63,5 @@ namespace RMC.Mini
             }
         }
     }
+    
 }

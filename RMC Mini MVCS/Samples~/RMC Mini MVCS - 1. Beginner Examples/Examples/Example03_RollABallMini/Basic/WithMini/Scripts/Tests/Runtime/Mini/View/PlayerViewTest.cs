@@ -25,10 +25,6 @@ namespace RMC.Mini.Samples.RollABall.WithMini.Mini.View
         public void TearDown()
         {
             _prefabManagerForTesting.Clear();
-            if (ContextLocator.Instance.HasItem<Context>())
-            {
-                ContextLocator.Instance.RemoveItem<Context>();
-            }
         }
 
         

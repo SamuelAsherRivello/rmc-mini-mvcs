@@ -6,7 +6,7 @@ namespace RMC.Core.Utilities.Testing
     public static class TestRunnerEditorUtilities
     {
         // Set to false for normal operation
-        private static bool IsThisClassDisabled = false;
+        private static readonly bool IsThisClassDisabled = true;
 
         // Determines if unit tests are running
         public static bool IsRunningUnitTests()

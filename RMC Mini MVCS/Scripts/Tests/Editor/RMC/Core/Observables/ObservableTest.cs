@@ -1,10 +1,8 @@
 using NUnit.Framework;
-using RMC.Core.Observables;
 
-//Keep As:RMC.Mini
-namespace RMC.Mini
+namespace RMC.Core.Observables
 {
-    [Category ("RMC.Mini")]
+    [Category ("RMC.Core")]
     public class ObservableTest
     {
         

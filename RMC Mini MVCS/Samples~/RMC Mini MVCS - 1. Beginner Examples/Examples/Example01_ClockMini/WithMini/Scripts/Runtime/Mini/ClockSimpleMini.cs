@@ -1,4 +1,3 @@
-using System;
 using RMC.Mini.Samples.Clock.WithMini.Mini.Controller;
 using RMC.Mini.Samples.Clock.WithMini.Mini.Model;
 using RMC.Mini.Samples.Clock.WithMini.Mini.Service;
@@ -24,8 +23,7 @@ namespace RMC.Mini.Samples.Clock.WithMini.Mini
                 _isInitialized = true;
                 
                 //
-                string contextKey = Guid.NewGuid().ToString();
-                _context = new Context(contextKey);
+                _context = new Context();
                 _model = new ClockModel();
                 _view = new ClockView();
                 _service = new ClockService();

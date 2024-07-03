@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using NUnit.Framework;
 using UnityEngine;
@@ -15,10 +14,6 @@ namespace RMC.Mini.Samples.Clock.WithMini.Mini.Model
         [TearDown]
         public void TearDown()
         {
-            if (ContextLocator.Instance.HasItem<Context>())
-            {
-                ContextLocator.Instance.RemoveItem<Context>();
-            }
         }
         
         
@@ -26,8 +21,7 @@ namespace RMC.Mini.Samples.Clock.WithMini.Mini.Model
         public void Values_AreDefault_WhenCreated()
         {
             // Arrange
-            string contextKey = Guid.NewGuid().ToString();
-            IContext context = new Context(contextKey);
+            IContext context = new Context();
             ClockModel clockModel = new ClockModel();
             
             // Act

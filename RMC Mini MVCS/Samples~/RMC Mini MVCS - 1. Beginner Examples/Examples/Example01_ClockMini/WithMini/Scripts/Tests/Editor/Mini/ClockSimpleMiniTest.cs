@@ -11,10 +11,6 @@ namespace RMC.Mini.Samples.Clock.WithMini.Mini
         [TearDown]
         public void TearDown()
         {
-            if (ContextLocator.Instance.HasItem<Context>())
-            {
-                ContextLocator.Instance.RemoveItem<Context>();
-            }
         }
         
         [Test]

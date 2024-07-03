@@ -1,4 +1,5 @@
 using System;
+using RMC.Mini.Experimental.ContextLocators;
 using RMC.Mini.Samples.RollABall.WithMini.Mini.Controller;
 using RMC.Mini.Samples.RollABall.WithMini.Mini.Model;
 using RMC.Mini.Samples.RollABall.WithMini.Mini.Service;
@@ -10,11 +11,16 @@ namespace RMC.Mini.Samples.RollABall.WithMini.Mini
     /// This Command is a stand-alone object containing
     /// a value of data.
     /// </summary>
-    public class RollABallSimpleMini : ISimpleMiniMvcs
+    public class RollABallSimpleMini : ISimpleMiniMvcs, IDisposable
     {
         //  Properties ------------------------------------
+        
+        /// <summary>
+        /// Note: Special use of <see cref="ContextWithLocator"/> here.
+        /// See its class comment for more info.
+        /// </summary>
+        public ContextWithLocator Context { get { return _context;} }
         public bool IsInitialized { get { return _isInitialized;} }
-        public Context Context { get { return _context;} }
         public RollABallModel RollABallModel { get { return _rollABallModel;} }
         public InputView InputView { get { return _inputView;} }
         public PlayerView PlayerView { get { return _playerView;} }
@@ -27,7 +33,12 @@ namespace RMC.Mini.Samples.RollABall.WithMini.Mini
         private bool _isInitialized = false;
         
         //Context
-        private Context _context;
+        
+        /// <summary>
+        /// Note: Special use of <see cref="ContextWithLocator"/> here.
+        /// See its class comment for more info.
+        /// </summary>
+        private ContextWithLocator _context;
         
         //Model
         private RollABallModel _rollABallModel;
@@ -55,6 +66,11 @@ namespace RMC.Mini.Samples.RollABall.WithMini.Mini
         
         
         //  Initialization --------------------------------
+        
+        /// <summary>
+        /// Note: Special use of <see cref="ContextWithLocator"/> here.
+        /// See its class comment for more info.
+        /// </summary>
         public void Initialize()
         {
             if (!IsInitialized)
@@ -62,7 +78,7 @@ namespace RMC.Mini.Samples.RollABall.WithMini.Mini
                 _isInitialized = true;
                 
                 //Context
-                _context = new Context();
+                _context = new ContextWithLocator();
                 
                 //Model
                 _rollABallModel = new RollABallModel();
@@ -107,6 +123,10 @@ namespace RMC.Mini.Samples.RollABall.WithMini.Mini
         }
         
         //  Methods ---------------------------------------
+        public void Dispose()
+        {
+            _context.Dispose();
+        }
 
 
         //  Event Handlers --------------------------------

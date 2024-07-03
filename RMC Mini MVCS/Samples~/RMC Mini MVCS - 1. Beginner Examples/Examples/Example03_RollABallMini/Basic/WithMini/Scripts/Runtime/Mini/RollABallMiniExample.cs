@@ -19,15 +19,26 @@ namespace RMC.Mini.Samples.RollABall.WithMini.Mini
         [SerializeField] 
         private UIView _uiView;
 
+        private RollABallSimpleMini _rollABallSimpleMini;
         //  Unity Methods  --------------------------------
         protected void Start()
         {
-            RollABallSimpleMini rollABallSimpleMini = 
+            _rollABallSimpleMini = 
                 new RollABallSimpleMini(_inputView, _playerView, _uiView);
             
-            rollABallSimpleMini.Initialize();
+            _rollABallSimpleMini.Initialize();
         }
 
+        protected void OnDestroy()
+        {
+            if (_rollABallSimpleMini == null)
+            {
+                return;
+            }
+            Debug.Log("yes");
+            _rollABallSimpleMini.Dispose();
+        }
+        
         //  Methods ---------------------------------------
 
         //  Event Handlers --------------------------------

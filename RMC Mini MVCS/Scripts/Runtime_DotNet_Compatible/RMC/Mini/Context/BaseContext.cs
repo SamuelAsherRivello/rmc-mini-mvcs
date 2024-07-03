@@ -28,8 +28,8 @@ namespace RMC.Mini
 		   
 		public virtual void Dispose()
 		{
-			// Must override
-			throw new System.NotImplementedException();
+			_modelLocator.Reset();
+			_commandManager.Dispose();
 		}
 		
 		//  Methods ---------------------------------------

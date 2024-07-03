@@ -13,13 +13,8 @@ namespace RMC.Mini.Samples.Login.WithMini.Mini.Service
     [Category ("RMC.Mini.Samples.Login")]
     public class LoginServicePlayModeTest
     {
-        [TearDown]
         public void TearDown()
         {
-            if (ContextLocator.Instance.HasItem<Context>())
-            {
-                ContextLocator.Instance.RemoveItem<Context>();
-            }
         }
         
         [UnityTest]

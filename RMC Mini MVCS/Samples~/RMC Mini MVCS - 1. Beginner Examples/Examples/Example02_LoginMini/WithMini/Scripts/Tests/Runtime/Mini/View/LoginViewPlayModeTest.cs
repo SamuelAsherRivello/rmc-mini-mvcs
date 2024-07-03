@@ -25,10 +25,6 @@ namespace RMC.Mini.Samples.Login.WithMini.Mini.View
         {
             _prefabManagerForTesting.Clear();
             
-            if (ContextLocator.Instance.HasItem<Context>())
-            {
-                ContextLocator.Instance.RemoveItem<Context>();
-            }
         }
 
         

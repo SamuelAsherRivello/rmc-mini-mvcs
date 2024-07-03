@@ -28,8 +28,8 @@ namespace RMC.Mini.Lessons.Observables
             
             // Call at anytime (repeatedly is ok) before referencing vars
             DependencyInjectorSystem.Instance.InjectAll();
-            Debug.Log("_sampleService1: " + _sampleService1);
-            Debug.Log("_sampleService2: " + _sampleService2);
+            Debug.Log("_sampleService1 exists as : " + _sampleService1);
+            Debug.Log("_sampleService2 exists as : " + _sampleService2);
         }
 
     }

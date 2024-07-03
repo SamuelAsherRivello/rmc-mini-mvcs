@@ -1,4 +1,3 @@
-using System;
 using RMC.Mini.Controller;
 using RMC.Mini.Model;
 using RMC.Mini.Service;
@@ -43,8 +42,7 @@ namespace RMC.Mini.Experimental.Module
                 _isInitialized = true;
                 
                 // Context
-                string contextKey = Guid.NewGuid().ToString();
-                _context = new Context(contextKey);
+                _context = new Context();
 
                 // EXTRA
                 _moduleLocator = new Locator<IModule>();

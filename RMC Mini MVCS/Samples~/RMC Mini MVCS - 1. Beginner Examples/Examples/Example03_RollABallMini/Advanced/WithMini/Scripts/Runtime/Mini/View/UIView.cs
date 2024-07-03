@@ -61,7 +61,11 @@ namespace RMC.Mini.Samples.RollABall.WithMini.Mini.View
                 // * Create no wrapper and 'speak to the uxml' directly from UIView
                 // * Others options too
                 // ///////////////////////////////////////////////////
+                
+                
+                //FYI, creating a GameObject with New() is not recommended. Ok for a demo.
                 _dialogView = new DialogView();
+                //
                 _dialogView.SetDialogView(_uiDocument.rootVisualElement.Q<VisualElement>("DialogView"));
                 _dialogView.Initialize(Context);
                 

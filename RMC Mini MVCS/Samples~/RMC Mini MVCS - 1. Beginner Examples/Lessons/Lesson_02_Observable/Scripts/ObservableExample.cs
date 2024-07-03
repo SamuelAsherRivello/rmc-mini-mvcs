@@ -15,12 +15,15 @@ namespace RMC.Mini.Lessons.Observables
             Status.OnValueChanged.AddListener(Status_OnValueChanged);
 
             Debug.Log($"This Scene has no UI. It has only console logging.");
-            Status.Value = "Hello World!";
+
+            string message = "Hello World!";
+            Debug.Log("Status.Value = " + message); 
+            Status.Value = message;
         }
 
         private void Status_OnValueChanged(string previousValue, string currentValue)
         {
-            Debug.Log(currentValue); //Hello World!
+            Debug.Log("Status_OnValueChanged() currentValue = " + currentValue); //Hello World!
         }
         
     }

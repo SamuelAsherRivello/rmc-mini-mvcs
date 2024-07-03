@@ -1,9 +1,10 @@
 using NUnit.Framework;
 using RMC.Core.Observables;
 using RMC.Mini.Controller.Commands;
+using RMC.Mini.Experimental.ContextLocators;
 using RMC.Mini.Model;
 
-namespace RMC.Mini.Controller
+namespace RMC.Mini.Mvcs.Controller
 {
     [Category ("RMC.Mini")]
     public class CommandManagerTest
@@ -107,9 +108,9 @@ namespace RMC.Mini.Controller
         [TearDown]
         public void TearDown()
         {
-            if (ContextLocator.Instance.HasItem<global::RMC.Mini.Context>())
+            if (ContextLocator.Instance.HasItem<Context>())
             {
-                ContextLocator.Instance.RemoveItem<global::RMC.Mini.Context>();
+                ContextLocator.Instance.RemoveItem<Context>();
             }
         }
         
@@ -117,7 +118,7 @@ namespace RMC.Mini.Controller
         public void CommandWasCalled_IsTrue_WhenInvokeCommand()
         {
             // Arrange
-            global::RMC.Mini.Context context = new global::RMC.Mini.Context();
+            Context context = new Context();
             CommandManager commandManager = new CommandManager(context);
             bool commandWasCalled = false;
             commandManager.AddCommandListener<TestCommand1>(
@@ -137,7 +138,7 @@ namespace RMC.Mini.Controller
         public void CommandWasCalled_IsFalse_WhenNotInvokeCommand()
         {
             // Arrange
-            global::RMC.Mini.Context context = new global::RMC.Mini.Context();
+            Context context = new Context();
             CommandManager commandManager = new CommandManager(context);
             bool commandWasCalled = false;
             commandManager.AddCommandListener<TestCommand1>(
@@ -157,7 +158,7 @@ namespace RMC.Mini.Controller
         public void ExecutableCommandWasCalled_IsTrue_WhenInvokeExecutableCommand()
         {
             // Arrange
-            global::RMC.Mini.Context context = new global::RMC.Mini.Context();
+            Context context = new Context();
             CommandManager commandManager = new CommandManager(context);
             bool commandWasCalled = false;
             commandManager.AddCommandListener<TestExecutableCommand1>(
@@ -177,7 +178,7 @@ namespace RMC.Mini.Controller
         public void ExecutableCommandWasCalled_IsFalse_WhenNotInvokeExecutableCommand()
         {
             // Arrange
-            global::RMC.Mini.Context context = new global::RMC.Mini.Context();
+            Context context = new Context();
             CommandManager commandManager = new CommandManager(context);
             bool commandWasCalled = false;
             commandManager.AddCommandListener<TestExecutableCommand1>(
@@ -197,7 +198,7 @@ namespace RMC.Mini.Controller
         public void ExecutableCommandWasCalled_IsTrue_WhenExecuteExecutableCommand()
         {
             // Arrange
-            global::RMC.Mini.Context context = new global::RMC.Mini.Context();
+            Context context = new Context();
             CommandManager commandManager = new CommandManager(context);
             bool commandWasCalled = false;
             commandManager.AddCommandListener<TestExecutableCommand1>(
@@ -217,7 +218,7 @@ namespace RMC.Mini.Controller
         public void ExecutableCommandWasCalled_IsFalse_WhenNotExecuteExecutableCommand()
         {
             // Arrange
-            global::RMC.Mini.Context context = new global::RMC.Mini.Context();
+            Context context = new Context();
             CommandManager commandManager = new CommandManager(context);
             bool commandWasCalled = false;
             commandManager.AddCommandListener<TestExecutableCommand1>(
@@ -237,7 +238,7 @@ namespace RMC.Mini.Controller
         public void Execute_IsCalled_WhenExecuteExecutableCommand()
         {
             // Arrange
-            global::RMC.Mini.Context context = new global::RMC.Mini.Context();
+            Context context = new Context();
             
             TestModel testModel = new TestModel();
             testModel.Counter.Value = 0;
@@ -257,7 +258,7 @@ namespace RMC.Mini.Controller
         public void Execute_IsNotCalled_WhenInvokeExecutableCommand()
         {
             // Arrange
-            global::RMC.Mini.Context context = new global::RMC.Mini.Context();
+            Context context = new Context();
             
             TestModel testModel = new TestModel();
             testModel.Counter.Value = 0;
@@ -277,7 +278,7 @@ namespace RMC.Mini.Controller
         public void Undo_IsCalled_WhenExecuteUndoExecutableCommand()
         {
             // Arrange
-            global::RMC.Mini.Context context = new global::RMC.Mini.Context();
+            Context context = new Context();
             
             TestModel testModel = new TestModel();
             testModel.Counter.Value = 0;
@@ -297,7 +298,7 @@ namespace RMC.Mini.Controller
         public void Execute_IsCalled_WhenExecuteCompoundExecutableCommand()
         {
             // Arrange
-            global::RMC.Mini.Context context = new global::RMC.Mini.Context();
+            Context context = new Context();
             
             TestModel testModel = new TestModel();
             testModel.Counter.Value = 0;
@@ -316,7 +317,7 @@ namespace RMC.Mini.Controller
         public void Undo_IsCalled_WhenExecuteUndoCompoundExecutableCommand()
         {
             // Arrange
-            global::RMC.Mini.Context context = new global::RMC.Mini.Context();
+            Context context = new Context();
             
             TestModel testModel = new TestModel();
             testModel.Counter.Value = 0;
@@ -336,7 +337,7 @@ namespace RMC.Mini.Controller
         public void AddCommandListenerBothAreCalled_IsTrue_WhenExecuteUndoExecutableCommand()
         {
             // Arrange
-            global::RMC.Mini.Context context = new global::RMC.Mini.Context();
+            Context context = new Context();
             CommandManager commandManager = new CommandManager(context);
             bool executeWasCalled = false;
             bool undoWasCalled = false;
@@ -365,7 +366,7 @@ namespace RMC.Mini.Controller
         public void AddCommandListenerUndoWasCalled_IsFalse_WhenExecutableCommandNotCanUndo()
         {
             // Arrange
-            global::RMC.Mini.Context context = new global::RMC.Mini.Context();
+            Context context = new Context();
             CommandManager commandManager = new CommandManager(context);
             bool executeWasCalled = false;
             bool undoWasCalled = false;

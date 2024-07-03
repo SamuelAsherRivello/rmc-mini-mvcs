@@ -15,10 +15,6 @@ namespace RMC.Mini.Samples.RollABall.WithMini.Mini.Service
         [TearDown]
         public void TearDown()
         {
-            if (ContextLocator.Instance.HasItem<Context>())
-            {
-                ContextLocator.Instance.RemoveItem<Context>();
-            }
         }
         
         [Test]
