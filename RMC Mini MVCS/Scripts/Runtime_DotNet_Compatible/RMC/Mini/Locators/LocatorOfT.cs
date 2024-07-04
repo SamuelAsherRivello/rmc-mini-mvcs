@@ -1,25 +1,19 @@
-﻿//Keep As:RMC.Mini
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using RMC.Core.Events;
 using UnityEngine;
 
 namespace RMC.Mini
 {
-
     public class Locator<TBase> : Locator
     {
-
-        public class LocatorItemUnityEvent : RmcEvent<TBase>{}
+        public class LocatorItemUnityEvent : RmcEvent<TBase> { }
         public readonly LocatorItemUnityEvent OnItemAdded = new LocatorItemUnityEvent();
         public readonly LocatorItemUnityEvent OnItemRemoved = new LocatorItemUnityEvent();
         private readonly Dictionary<Type, Dictionary<string, TBase>> _items = new Dictionary<Type, Dictionary<string, TBase>>();
 
         public void AddItem(TBase item, string key = "")
         {
-            Debug.Log($"Attempting to add item of type {typeof(TBase).FullName} with key '{key}'");
-
             Type type = Locator.GetLowestType(item.GetType());
             if (!_items.ContainsKey(type))
             {
@@ -30,7 +24,7 @@ namespace RMC.Mini
             {
                 _items[type][key] = item;
                 OnItemAdded.Invoke(item);
-                Debug.Log("Item successfully added.");
+                Debug.Log($"{this.GetType().Name}.AddItem() Success for {type.Name} with optional key '{key}'.");
             }
             else
             {
@@ -55,7 +49,6 @@ namespace RMC.Mini
                 return (TItem)_items[type][key];
             }
 
-            Debug.LogWarning($"Item of type {type.Name} with key '{key}' not found");
             return default(TItem);
         }
 
@@ -68,12 +61,13 @@ namespace RMC.Mini
         {
             Type type = Locator.GetLowestType(typeof(TItem));
 
+            Debug.Log($"Item1 of type '{type.Name}' with key '{key}' removed.");
             if (_items.ContainsKey(type) && _items[type].ContainsKey(key))
             {
                 var item = _items[type][key];
                 _items[type].Remove(key);
                 OnItemRemoved.Invoke(item);
-                Debug.Log($"Item of type '{type.Name}' with key '{key}' removed.");
+                Debug.Log($"Item2 of type '{type.Name}' with key '{key}' removed.");
             }
             else
             {
@@ -81,7 +75,7 @@ namespace RMC.Mini
             }
         }
 
-        private Type GetsLowestType(Type type)
+        private Type GetLowestType(Type type)
         {
             if (type == null) throw new ArgumentNullException(nameof(type));
 
@@ -106,6 +100,41 @@ namespace RMC.Mini
         public int GetItemCount()
         {
             return _items.Count;
+        }
+
+        // This method is used for testing only
+        public List<TBase> GetAllItems()
+        {
+            List<TBase> items = new List<TBase>();
+            foreach (var type in _items.Keys)
+            {
+                foreach (var key in _items[type].Keys)
+                {
+                    items.Add(_items[type][key]);
+                }
+            }
+            return items;
+        }
+
+        // New method to handle type checking and item retrieval logic
+        public Locator<T> GetOrCreateLocator<T>() where T : class, TBase
+        {
+            var newLocator = new Locator<T>();
+
+            foreach (var item in GetAllItems())
+            {
+                if (item is T castedItem)
+                {
+                    newLocator.AddItem(castedItem);
+                }
+                else
+                {
+                    Debug.LogWarning($"Type mismatch detected: {item.GetType()} cannot be cast to {typeof(T)}");
+                    return null;
+                }
+            }
+
+            return newLocator;
         }
     }
 }

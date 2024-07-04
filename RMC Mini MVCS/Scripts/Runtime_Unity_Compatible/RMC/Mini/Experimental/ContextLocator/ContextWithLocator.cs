@@ -29,40 +29,49 @@ namespace RMC.Mini.Experimental.ContextLocators
 
 		
 		//  Initialization  -------------------------------
-		public ContextWithLocator(string contextKey = "") : base()
+		public ContextWithLocator(string contextKey = "", bool allowDeletions = true) : base()
 		{
 			// ContextLocator is Experimental: This allows any scope, including
 			// non-mini classes, to access any Context via ContextLocator.Instance.GetItem<T>();
 			_contextKey = contextKey;
-			ContextLocatorAddItem();
+			ContextLocatorAddItem(allowDeletions);
 		}
 
 		public override void Dispose()
 		{
+			Debug.Log("Dispo 333333333333333333");
 			ContextLocatorRemoveItem();
 		}
 		
 		
 		//  Methods ---------------------------------------
-		private void ContextLocatorAddItem()
+		private void ContextLocatorAddItem(bool allowDeletions)
 		{
 			
 			
 #if UNITY_5_3_OR_NEWER
 			
-			
-			
-			if (ContextLocator.Instance.HasItem<Context>(_contextKey))
+			if (ContextLocator.Instance.HasItem<ContextWithLocator>(_contextKey))
 			{
-				throw new Exception($"Context with key '{_contextKey}' already exists. " +
-				                    $"Must pass in unique contextKey. Optional: You can use `Guid.NewGuid().ToString()` to generate a unique key.");
-			}
-			else
-			{
-				ContextLocator.Instance.AddItem(this, _contextKey);
+				string message = $"Context with key '{_contextKey}' already exists. So, DELETING existing Context with that key. " +
+				                 $"Must pass in unique contextKey. Optional: You can use `Guid.NewGuid().ToString()` to generate a unique key.";
+
+				if (allowDeletions)
+				{
+					ContextLocator.Instance.RemoveItem<ContextWithLocator>( _contextKey);
+					
+					//KEEP LOG
+					Debug.LogWarning(message);
+				}
+				else
+				{
+					throw new Exception(message);
+				}
 			}
 			
-			
+			ContextLocator.Instance.AddItem(this, _contextKey);
+
+
 #endif //if i'm in any version of unity (and thus NOT in Godot)
 			
 			
@@ -75,10 +84,8 @@ namespace RMC.Mini.Experimental.ContextLocators
 			
 #if UNITY_5_3_OR_NEWER
 			
-			Debug.Log("removew1 for " + _contextKey);
 			if (ContextLocator.Instance.HasItem<Context>(_contextKey))
 			{
-				Debug.Log("removew2");
 				ContextLocator.Instance.RemoveItem<Context>(_contextKey);
 			}
 			

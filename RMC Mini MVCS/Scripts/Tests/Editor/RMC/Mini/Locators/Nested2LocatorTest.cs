@@ -20,45 +20,31 @@ namespace RMC.Mini.Locators
     {
     }
 
-    public interface IContext
+    public interface ILocatorHolder
     {
-        Locator<IA> ModelLocator { get; }
+        Locator<IA> MyLocator { get; }
     }
 
-    public class SampleContext : IContext
+    public class SampleInnerClass : ILocatorHolder
     {
-        public Locator<IA> ModelLocator { get; private set; }
+        public Locator<IA> MyLocator { get; private set; }
 
-        public SampleContext()
+        public SampleInnerClass()
         {
-            ModelLocator = new Locator<IA>();
-            Debug.Log($"SampleContext created with ModelLocator of type {ModelLocator.GetType().FullName}");
+            MyLocator = new Locator<IA>();
+            Debug.Log($"SampleInnerClass created with MyLocator of type {MyLocator.GetType().FullName}");
         }
     }
 
-    public class GenericClass<T> where T : class, IA
+    public class SampleOuterClassGeneric<T> where T : class, IA
     {
-        private IContext _context;
+        private readonly ILocatorHolder _locatorHolder;
 
-        public Locator<T> ModelLocator => GetOrCreateLocator();
+        public Locator<T> MyLocator => _locatorHolder.MyLocator.GetOrCreateLocator<T>();
 
-        public GenericClass(IContext context)
+        public SampleOuterClassGeneric(ILocatorHolder locatorHolder)
         {
-            _context = context;
-        }
-
-        private Locator<T> GetOrCreateLocator()
-        {
-            var baseLocator = _context.ModelLocator;
-
-            // Log the type check for debugging
-            if (_context.ModelLocator is Locator<IA> locatorIA && locatorIA is Locator<T> locatorT)
-            {
-                return locatorT;
-            }
-
-            Debug.LogWarning($"Cannot cast ModelLocator to Locator<{typeof(T).FullName}>");
-            return null;
+            _locatorHolder = locatorHolder;
         }
     }
 
@@ -66,114 +52,114 @@ namespace RMC.Mini.Locators
     public class Nested2LocatorTest
     {
         [Test]
-        public void ModelLocator_ShouldReturnCorrectLocator()
+        public void MyLocator_ShouldReturnCorrectLocator_WhenInitialized()
         {
-            var context = new SampleContext();
-            var genericClass = new GenericClass<SampleA>(context);
+            var inner = new SampleInnerClass();
+            var outer = new SampleOuterClassGeneric<SampleA>(inner);
 
-            var modelLocator = genericClass.ModelLocator;
-            Assert.IsNotNull(modelLocator, "ModelLocator should not be null");
+            var myLocator = outer.MyLocator;
+            Assert.IsNotNull(myLocator, "MyLocator should not be null");
         }
 
         [Test]
-        public void AddItem_ShouldAddItemToModelLocator()
+        public void AddItem_ShouldAddItemToMyLocator_WhenItemIsAdded()
         {
-            var context = new SampleContext();
-            var genericClass = new GenericClass<SampleA>(context);
+            var inner = new SampleInnerClass();
+            var outer = new SampleOuterClassGeneric<SampleA>(inner);
 
             var item = new SampleA();
-            var modelLocator = genericClass.ModelLocator;
-            Assert.IsNotNull(modelLocator, "ModelLocator should not be null");
+            var myLocator = outer.MyLocator;
+            Assert.IsNotNull(myLocator, "MyLocator should not be null");
 
-            modelLocator.AddItem(item);
+            myLocator.AddItem(item);
 
-            Assert.IsTrue(modelLocator.HasItem<SampleA>(), "ModelLocator should have the item");
+            Assert.IsTrue(myLocator.HasItem<SampleA>(), "MyLocator should have the item");
         }
 
         [Test]
-        public void GetItem_ShouldReturnItemFromModelLocator()
+        public void GetItem_ShouldReturnItemFromMyLocator_WhenItemIsAdded()
         {
-            var context = new SampleContext();
-            var genericClass = new GenericClass<SampleA>(context);
+            var inner = new SampleInnerClass();
+            var outer = new SampleOuterClassGeneric<SampleA>(inner);
 
             var item = new SampleA();
-            var modelLocator = genericClass.ModelLocator;
-            Assert.IsNotNull(modelLocator, "ModelLocator should not be null");
+            var myLocator = outer.MyLocator;
+            Assert.IsNotNull(myLocator, "MyLocator should not be null");
 
-            modelLocator.AddItem(item);
+            myLocator.AddItem(item);
 
-            var retrievedItem = modelLocator.GetItem<SampleA>();
+            var retrievedItem = myLocator.GetItem<SampleA>();
             Assert.AreSame(item, retrievedItem, "Retrieved item should be the same as the added item");
         }
 
         [Test]
-        public void ModelLocator_ShouldReturnNullForInvalidCast()
+        public void MyLocator_ShouldReturnNullForInvalidCast_WhenTypeMismatchOccurs()
         {
-            var context = new SampleContext();
-            var genericClass = new GenericClass<SampleSubA>(context);
+            var inner = new SampleInnerClass();
+            var outer = new SampleOuterClassGeneric<SampleSubA>(inner);
+            var item = new SampleA();
+            inner.MyLocator.AddItem(item);
+            var myLocator = outer.MyLocator;
 
-            var modelLocator = genericClass.ModelLocator;
-
-            if (modelLocator == null)
+            if (myLocator == null)
             {
-                Debug.Log("ModelLocator is null as expected for invalid cast.");
+                Debug.Log("MyLocator is null as expected for invalid cast.");
             }
             else
             {
-                Debug.LogError("ModelLocator should be null for invalid cast, but it is not.");
+                Debug.LogError("MyLocator should be null for invalid cast, but it is not.");
             }
 
-            Assert.IsNull(modelLocator, "ModelLocator should be null for invalid cast");
+            Assert.IsNull(myLocator, "MyLocator should be null for invalid cast");
         }
 
         [Test]
-        public void AddItem_ShouldThrowExceptionForDuplicateWithoutKey()
+        public void AddItem_ShouldThrowExceptionForDuplicateWithoutKey_WhenDuplicateItemIsAdded()
         {
-            var context = new SampleContext();
-            var genericClass = new GenericClass<SampleA>(context);
+            var inner = new SampleInnerClass();
+            var outer = new SampleOuterClassGeneric<SampleA>(inner);
 
             var item1 = new SampleA();
             var item2 = new SampleA();
-            var modelLocator = genericClass.ModelLocator;
-            Assert.IsNotNull(modelLocator, "ModelLocator should not be null");
+            var myLocator = outer.MyLocator;
+            Assert.IsNotNull(myLocator, "MyLocator should not be null");
 
-            modelLocator.AddItem(item1);
-            Assert.Throws<Exception>(() => modelLocator.AddItem(item2), "Adding a duplicate item without a key should throw an exception");
+            myLocator.AddItem(item1);
+            Assert.Throws<Exception>(() => myLocator.AddItem(item2), "Adding a duplicate item without a key should throw an exception");
         }
 
         [Test]
-        public void AddItem_WithDifferentKeys_ShouldAddItems()
+        public void AddItem_WithDifferentKeys_ShouldAddItems_WhenItemsWithDifferentKeysAreAdded()
         {
-            var context = new SampleContext();
-            var genericClass = new GenericClass<SampleA>(context);
+            var inner = new SampleInnerClass();
+            var outer = new SampleOuterClassGeneric<SampleA>(inner);
 
             var item1 = new SampleA();
             var item2 = new SampleA();
-            var modelLocator = genericClass.ModelLocator;
-            Assert.IsNotNull(modelLocator, "ModelLocator should not be null");
+            var myLocator = outer.MyLocator;
+            Assert.IsNotNull(myLocator, "MyLocator should not be null");
 
-            modelLocator.AddItem(item1, "key1");
-            modelLocator.AddItem(item2, "key2");
+            myLocator.AddItem(item1, "key1");
+            myLocator.AddItem(item2, "key2");
 
-            Assert.IsTrue(modelLocator.HasItem<SampleA>("key1"), "ModelLocator should have the item with key 'key1'");
-            Assert.IsTrue(modelLocator.HasItem<SampleA>("key2"), "ModelLocator should have the item with key 'key2'");
+            Assert.IsTrue(myLocator.HasItem<SampleA>("key1"), "MyLocator should have the item with key 'key1'");
+            Assert.IsTrue(myLocator.HasItem<SampleA>("key2"), "MyLocator should have the item with key 'key2'");
         }
 
         [Test]
-        public void RemoveItem_ShouldRemoveItemFromModelLocator()
+        public void RemoveItem_ShouldRemoveItemFromMyLocator_WhenItemIsRemoved()
         {
-            var context = new SampleContext();
-            var genericClass = new GenericClass<SampleA>(context);
+            var inner = new SampleInnerClass();
+            var outer = new SampleOuterClassGeneric<SampleA>(inner);
 
             var item = new SampleA();
-            var modelLocator = genericClass.ModelLocator;
-            Assert.IsNotNull(modelLocator, "ModelLocator should not be null");
+            var myLocator = outer.MyLocator;
+            Assert.IsNotNull(myLocator, "MyLocator should not be null");
 
-            modelLocator.AddItem(item);
-            modelLocator.RemoveItem<SampleA>();
+            myLocator.AddItem(item);
+            myLocator.RemoveItem<SampleA>();
 
-            Assert.IsFalse(modelLocator.HasItem<SampleA>(), "ModelLocator should not have the item after removal");
+            Assert.IsFalse(myLocator.HasItem<SampleA>(), "MyLocator should not have the item after removal");
         }
-
     }
 }
