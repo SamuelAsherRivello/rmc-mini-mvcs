@@ -23,8 +23,9 @@ namespace RMC.Mini.Samples.RollABall.WithMini.Mini.View
         //  Properties ------------------------------------
         public bool IsInitialized { get { return _isInitialized;} }
         public IContext Context { get { return _context;} }
-        
-        
+        public bool IsPaused { get; set; }
+
+
         //  Fields ----------------------------------------
         private bool _isInitialized = false;
         private IContext _context;
@@ -65,6 +66,11 @@ namespace RMC.Mini.Samples.RollABall.WithMini.Mini.View
         {
             RequireIsInitialized();
 
+            if (IsPaused)
+            {
+                return;
+            }
+
             // Did I collide with the correct object?
             PickupComponent pickupComponent = myCollider.gameObject.GetComponent<PickupComponent>();
             if (pickupComponent != null)
@@ -86,6 +92,11 @@ namespace RMC.Mini.Samples.RollABall.WithMini.Mini.View
         private void OnInputCommand(InputCommand inputCommand)
         {
             RequireIsInitialized();
+            
+            if (IsPaused)
+            {
+                return;
+            }
             
             _rigidBody.AddForce (inputCommand.Value * _speed);
         }

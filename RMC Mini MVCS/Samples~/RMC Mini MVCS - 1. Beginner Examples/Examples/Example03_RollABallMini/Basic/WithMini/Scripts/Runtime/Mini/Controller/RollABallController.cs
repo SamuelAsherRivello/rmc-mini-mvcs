@@ -64,6 +64,7 @@ namespace RMC.Mini.Samples.RollABall.WithMini.Mini.Controller
                 
                 //Model
                 _model.Score.OnValueChanged.AddListener(Model_Score_OnValueChanged);
+                _model.IsGamePaused.OnValueChanged.AddListener(Model_IsGamePaused_OnValueChanged);
                 _model.ScoreMax.OnValueChanged.AddListener(Model_ScoreMax_OnValueChanged);
                 _model.StatusText.OnValueChanged.AddListener(Model_StatusText_OnValueChanged);
                 _model.StatusText.Value = "Loading...";
@@ -173,6 +174,16 @@ namespace RMC.Mini.Samples.RollABall.WithMini.Mini.Controller
         }
         
         
+        
+        private void Model_IsGamePaused_OnValueChanged(bool previousValue, bool currentValue)
+        {
+            RequireIsInitialized();
+
+            _playerView.IsPaused = currentValue;
+        }
+            
+            
+            
         private void Model_Score_OnValueChanged(int previousValue, int currentValue)
         {
             RequireIsInitialized();

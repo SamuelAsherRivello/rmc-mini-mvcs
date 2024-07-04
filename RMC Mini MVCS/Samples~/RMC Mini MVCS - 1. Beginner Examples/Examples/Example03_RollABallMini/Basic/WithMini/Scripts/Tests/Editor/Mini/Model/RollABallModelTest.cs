@@ -26,7 +26,7 @@ namespace RMC.Mini.Samples.RollABall.WithMini.Mini.Model
             TearDown();
             
             //Do setup
-            _context = new ContextWithLocator();
+            _context = ContextWithLocator.CreateNew();
             _prefabManagerForTesting = new PrefabManagerForTesting();
         }
 

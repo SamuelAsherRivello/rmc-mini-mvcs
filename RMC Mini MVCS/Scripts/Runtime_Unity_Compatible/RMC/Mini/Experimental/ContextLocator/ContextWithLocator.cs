@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 namespace RMC.Mini.Experimental.ContextLocators
 {
@@ -28,13 +29,44 @@ namespace RMC.Mini.Experimental.ContextLocators
 		//  Fields ----------------------------------------
 
 		
+		/// <summary>
+		/// Some demos require this type. Centralize the warning logging here
+		/// for consistency.
+		/// </summary>
+		/// <param name="context"></param>
+		public static void AssertIsContextWithLocator(IContext context)
+		{
+			// NOTE: This demo is rare. It needs a special type of context,
+			// so that the context can be found by the experimental ContextLocator
+			// within. This is not a typical use case and is not generally recommended
+			Assert.IsNotNull(context as ContextWithLocator, 
+				$"This situation requires a context of type {nameof(ContextWithLocator)}.");
+		}
+		
 		//  Initialization  -------------------------------
-		public ContextWithLocator(string contextKey = "", bool allowDeletions = true) : base()
+		
+		/// <summary>
+		/// Helper method to call with unique key
+		/// </summary>
+		/// <returns></returns>
+		public static ContextWithLocator CreateNew()
+		{
+			var contextKey = Guid.NewGuid().ToString();
+			return new ContextWithLocator(contextKey, false);
+		}
+		
+		
+		/// <summary>
+		/// Create a new Context with a built-in <see cref="ContextLocator"/>
+		/// </summary>
+		/// <param name="contextKey">Use this key for registry to the <see cref="ContextLocator"/></param>
+		/// <param name="willOverwriteByContextKey">Will delete any entry with conflicting contextKey (if exists)</param>
+		public ContextWithLocator(string contextKey, bool willOverwriteByContextKey) : base()
 		{
 			// ContextLocator is Experimental: This allows any scope, including
 			// non-mini classes, to access any Context via ContextLocator.Instance.GetItem<T>();
 			_contextKey = contextKey;
-			ContextLocatorAddItem(allowDeletions);
+			ContextLocatorAddItem(willOverwriteByContextKey);
 		}
 
 		public override void Dispose()
@@ -44,7 +76,7 @@ namespace RMC.Mini.Experimental.ContextLocators
 		
 		
 		//  Methods ---------------------------------------
-		private void ContextLocatorAddItem(bool allowDeletions)
+		private void ContextLocatorAddItem(bool willOverwriteByContextKey)
 		{
 			
 			
@@ -55,7 +87,7 @@ namespace RMC.Mini.Experimental.ContextLocators
 				string message = $"Context with key '{_contextKey}' already exists. So, DELETING existing Context with that key. " +
 				                 $"Must pass in unique contextKey. Optional: You can use `Guid.NewGuid().ToString()` to generate a unique key.";
 
-				if (allowDeletions)
+				if (willOverwriteByContextKey)
 				{
 					ContextLocator.Instance.RemoveItem<ContextWithLocator>( _contextKey);
 					
@@ -93,5 +125,7 @@ namespace RMC.Mini.Experimental.ContextLocators
 			
 			
 		}
+
+
 	}
 }

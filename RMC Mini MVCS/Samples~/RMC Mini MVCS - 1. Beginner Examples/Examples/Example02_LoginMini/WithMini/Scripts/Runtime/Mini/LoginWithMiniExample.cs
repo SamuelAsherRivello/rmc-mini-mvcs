@@ -31,14 +31,10 @@ namespace RMC.Mini.Samples.Login.WithMini.Mini
         protected void Start()
         {
             LoginMini loginMini = new LoginMini(_view);
-
-            ContextWithLocator t;
-            
-            // This demo is rare. It needs a special type of context.
-            Assert.IsNotNull(loginMini.Context as ContextWithLocator, 
-                "This demo requires a ContextWithLocator.");
-            
             loginMini.Initialize();
+
+            // NOTE: Special type check> See method comments.
+            ContextWithLocator.AssertIsContextWithLocator(loginMini.Context);
         }
 
 

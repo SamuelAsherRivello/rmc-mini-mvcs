@@ -28,11 +28,10 @@ namespace RMC.Mini.Samples.RollABall.WithMini.Mini
             _rollABallSimpleMini = 
                 new RollABallSimpleMini(_inputView, _playerView, _uiView);
             
-            // This demo is rare. It needs a special type of context.
-            Assert.IsNotNull(_rollABallSimpleMini.Context as ContextWithLocator, 
-                "This demo requires a ContextWithLocator.");
-
             _rollABallSimpleMini.Initialize();
+            
+            // NOTE: Special type check> See method comments.
+            ContextWithLocator.AssertIsContextWithLocator(_rollABallSimpleMini.Context);
         }
 
         protected void OnDestroy()

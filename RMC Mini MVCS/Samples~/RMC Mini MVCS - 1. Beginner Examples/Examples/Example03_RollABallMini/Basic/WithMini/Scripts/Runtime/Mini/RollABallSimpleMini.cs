@@ -79,7 +79,7 @@ namespace RMC.Mini.Samples.RollABall.WithMini.Mini
                 _isInitialized = true;
                 
                 //Context
-                _context = new ContextWithLocator();
+                _context = ContextWithLocator.CreateNew();
                 
                 //Model
                 _rollABallModel = new RollABallModel();

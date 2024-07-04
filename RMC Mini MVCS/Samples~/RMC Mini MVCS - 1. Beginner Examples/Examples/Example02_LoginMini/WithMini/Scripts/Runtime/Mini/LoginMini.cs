@@ -31,7 +31,7 @@ namespace RMC.Mini.Samples.Login.WithMini.Mini
                 _isInitialized = true;
                 
                 //
-                _context = new ContextWithLocator();
+                _context = ContextWithLocator.CreateNew();
                 _model = new LoginModel();
                 _service = new LoginService();
                 _controller = new LoginController(_model, _view, _service);

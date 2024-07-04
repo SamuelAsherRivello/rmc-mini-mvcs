@@ -62,9 +62,8 @@ namespace RMC.Mini.Samples.Tutorial
         private void OnLoginModelLocated(LoginModel loginModel)
         {
             
-            // This demo is rare. It needs a special type of context.
-            Assert.IsNotNull(loginModel.Context as ContextWithLocator, 
-                "This demo requires a ContextWithLocator.");
+            // NOTE: Special type check> See method comments.
+            ContextWithLocator.AssertIsContextWithLocator(loginModel.Context);
 
             //View
             _view.Initialize(loginModel.Context);
@@ -72,6 +71,8 @@ namespace RMC.Mini.Samples.Tutorial
             //Controller
             TutorialController tutorialController = new TutorialController(loginModel, _view);
             tutorialController.Initialize(loginModel.Context);
+            
+
         }
 
     }
