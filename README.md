@@ -1,6 +1,12 @@
 [![npm package](https://img.shields.io/npm/v/com.rmc.rmc-mini-mvcs)](https://www.npmjs.com/package/com.rmc.rmc-mini-mvcs)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
+
+<img src="./RMC Mini MVCS/Documentation~/Images/Banner.png" width="600">
+
+<BR>
+<BR>
+
 # RMC Architectures
 
 Rivello Multimedia Consulting has multiple frameworks for MVC in Unity.
@@ -9,11 +15,22 @@ Rivello Multimedia Consulting has multiple frameworks for MVC in Unity.
 | --              | Requires MonoBehaviour?  | Lightweight?       | More Info    | Created    | Updated    |
 |-----------------|--------------------------|--------------------|--------------|------------|------------|
 | uMVCS           | ✔️                      | ✔️ (Light)         | [rmc-umvcs](https://github.com/SamuelAsherRivello/rmc-umvcs/)   | 2018       | 2023       |
-| Mini MVCS       | ❌                       | ✔️ (Even Lighter!)  | See Below    | 2023   | 2023   |
+| Mini MVCS       | ❌                       | ✔️ (Even Lighter!)  | See Below    | 2023   | 2024   |
 
+<BR>
+<BR>
 
 
 # RMC Mini Mvcs Architecture - For Unity
+
+<BR>
+
+<div align="center" width="100%">
+  <img width = "400" src="./RMC Mini MVCS/Documentation~/Images/mvcs_diagram.png"  />
+</div>
+
+<BR>
+
 
 Mini MVCS is a custom Unity library framework embracing the [MVCS architecture](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller).
 
@@ -23,7 +40,8 @@ Mini MVCS is a custom Unity library framework embracing the [MVCS architecture](
 
 Enjoy!
 
-
+<BR>
+<BR>
 
 
 ## MVC Architecture For Unity - Udemy Course
@@ -72,7 +90,10 @@ WHY WAIT?
 - You can't afford NOT to use Unit Testing and Test-Driven development on your projects
 - Let's do this!
 
-<img width = "400" src="https://raw.githubusercontent.com/SamuelAsherRivello/rmc-core/main/RMC%20Core/Documentation~/com.rmc_namespace_logo.png" />
+
+<BR>
+<BR>
+
 
 # Table Of Contents
 
@@ -83,6 +104,7 @@ WHY WAIT?
   - [Tests](#tests)
   - [Samples](#samples)
 - [Configuration](#configuration)
+- [Credits](#credits)
 
 <!-- toc -->
 
@@ -95,6 +117,10 @@ Mini MVCS is a custom Unity library framework embracing the [MVCS architecture](
 - The ibrary has no requirement on **MonoBehaviour**. Using MonoBehaviours is optional.
 
 Enjoy!
+
+
+<BR>
+<BR>
 
 
 ## Install
@@ -130,6 +156,10 @@ Or to edit the `Packages/manifest.json` directly with your favorite text editor,
 Package should now appear in package manager.
 
 
+<BR>
+<BR>
+
+
 ### Via Git URL
 
 You can either use the Unity Package Manager (UPM) Window or directly edit the manifest file. The result will be the same.
@@ -149,6 +179,9 @@ Or to edit the `Packages/manifest.json` directly with your favorite text editor,
 }
 ```
 
+<BR>
+<BR>
+
 ### Tests
 
 The package can optionally be set as *testable*.
@@ -163,6 +196,11 @@ Open `Packages/manifest.json` with your favorite text editor. Add following line
 }
 ```
 
+
+<BR>
+<BR>
+
+
 ### Samples
 
 Some packages include optional samples with clear use cases. To import and run the samples:
@@ -175,6 +213,9 @@ Some packages include optional samples with clear use cases. To import and run t
 1. Select samples
 1. Import
 
+<BR>
+<BR>
+
 ## Configuration
 
 * `Unity Target` - [Standalone MAC/PC](https://support.unity.com/hc/en-us/articles/206336795-What-platforms-are-supported-by-Unity-)
@@ -183,27 +224,25 @@ Some packages include optional samples with clear use cases. To import and run t
 * `Unity Aspect Ratio` - Any [Unity Game View](https://docs.unity3d.com/Manual/GameView.html)
 
 
-Created By
-=============
+
+<BR>
+<BR>
+
+## Credits
+
+**Created By**
 
 - Samuel Asher Rivello 
 - Over 25 years XP with game development (2024)
 - Over 11 years XP with Unity (2024)
 
-Contact
-=============
+**Contact**
 
 - Twitter - <a href="https://twitter.com/srivello/">@srivello</a>
 - Git - <a href="https://github.com/SamuelAsherRivello/">Github.com/SamuelAsherRivello</a>
 - Resume & Portfolio - <a href="http://www.SamuelAsherRivello.com">SamuelAsherRivello.com</a>
 - LinkedIn - <a href="https://Linkedin.com/in/SamuelAsherRivello">Linkedin.com/in/SamuelAsherRivello</a> <--- Say Hello! :)
 
-
-License
-=============
+**License**
 
 Provided as-is under MIT License | Copyright © 2024 Rivello Multimedia Consulting, LLC
-
-
-
-
