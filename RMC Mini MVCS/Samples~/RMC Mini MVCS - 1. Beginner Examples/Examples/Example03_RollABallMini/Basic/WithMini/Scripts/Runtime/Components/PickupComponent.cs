@@ -42,22 +42,20 @@ namespace RMC.Mini.Samples.RollABall.WithMini.Components
         /// </summary>
         private void MakeBridgeToMini()
         {
-	        //TODO: Fix
-	        // When any context is added...
-	        // ContextLocator.Instance.OnItemAdded.AddListener(context =>
-	        // {
-		       //  // ... and any model is added...
-		       //  context.ModelLocator.OnItemAdded.AddListener(model =>
-		       //  {
-			      //   // ... listen to changes in the appropriate model
-			      //   RollABallModel rollABallModel = (RollABallModel)model;
-			      //   if (rollABallModel != null)
-			      //   {
-				     //    rollABallModel.IsGameOver.OnValueChanged.AddListener(IsGameOver_OnValueChanged);
-				     //    rollABallModel.IsGamePaused.OnValueChanged.AddListener(IsGamePaused_OnValueChanged);
-			      //   }
-		       //  });
-	        // });
+	         ContextLocator.Instance.OnItemAdded.AddListener(context =>
+	         {
+		         // ... and any model is added...
+		         context.ModelLocator.OnItemAdded.AddListener(model =>
+		         {
+			         // ... listen to changes in the appropriate model
+			         RollABallModel rollABallModel = (RollABallModel)model;
+			         if (rollABallModel != null)
+			         {
+				         rollABallModel.IsGameOver.OnValueChanged.AddListener(IsGameOver_OnValueChanged);
+				         rollABallModel.IsGamePaused.OnValueChanged.AddListener(IsGamePaused_OnValueChanged);
+			         }
+		         });
+	         });
         }
         
         //  Event Handlers --------------------------------

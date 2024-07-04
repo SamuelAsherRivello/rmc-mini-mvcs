@@ -55,11 +55,18 @@ namespace RMC.Mini.Samples.UGS.Standard
         
         private void RemoveFeature()
         {
+     
             if (UgsMiniSingleton.IsShuttingDown)
             {
                 return;
             }
+            
             UgsMini mini = UgsMiniSingleton.Instance.UgsMini;
+            
+            if (mini == null)
+            {
+                return;
+            }
             
             //  Scene-Specific ----------------------------
             mini.RemoveFeature<MenuFeature>();

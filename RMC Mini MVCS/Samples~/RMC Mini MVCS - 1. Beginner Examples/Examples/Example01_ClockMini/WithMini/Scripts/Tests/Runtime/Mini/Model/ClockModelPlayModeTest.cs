@@ -11,10 +11,22 @@ namespace RMC.Mini.Samples.Clock.WithMini.Mini.Model
     [Category ("RMC.Mini.Samples.Clock")]
     public class ClockModelPlayModeTest
     {
-        [TearDown]
-        public void TearDown()
+        private bool _ignoreFailingMessagesBefore;
+        
+        [OneTimeSetUp]
+        public void OneTimeSetUp()
         {
+            _ignoreFailingMessagesBefore = LogAssert.ignoreFailingMessages;
+            
+            // NOW, INSIDE every test set LogAssert.ignoreFailingMessages = true;
         }
+        
+        [OneTimeTearDown]
+        public void OneTimeTearDown()
+        {
+            LogAssert.ignoreFailingMessages = _ignoreFailingMessagesBefore;
+        }
+
         
         
         [Test]
@@ -37,6 +49,7 @@ namespace RMC.Mini.Samples.Clock.WithMini.Mini.Model
         public void Time_Equals0_WhenWaitForSeconds0()
         {
             // Arrange
+            LogAssert.ignoreFailingMessages = true;
             ClockSimpleMini clockSimpleMini = MockClockMini.CreateClockMini();
             
             // Act
@@ -51,6 +64,7 @@ namespace RMC.Mini.Samples.Clock.WithMini.Mini.Model
         public IEnumerator Time_Equals1_WhenWaitForSeconds0()
         {
             // Arrange
+            LogAssert.ignoreFailingMessages = true;
             ClockSimpleMini clockSimpleMini = MockClockMini.CreateClockMini();
             
             // Act
@@ -65,6 +79,7 @@ namespace RMC.Mini.Samples.Clock.WithMini.Mini.Model
         public IEnumerator Time_Equals2_WhenWaitForSeconds1()
         {
             // Arrange
+            LogAssert.ignoreFailingMessages = true;
             ClockSimpleMini clockSimpleMini = MockClockMini.CreateClockMini();
             
             // Act

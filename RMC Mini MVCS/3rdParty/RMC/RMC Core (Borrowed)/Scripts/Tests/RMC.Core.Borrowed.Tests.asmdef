@@ -1,14 +1,11 @@
 {
-    "name": "RMC.Mini.Samples.Ugs.Runtime.Tests",
+    "name": "RMC.Core.Borrowed.Tests",
     "rootNamespace": "",
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
-        "RMC.Mini.Runtime",
-        "RMC.Mini.Samples.UGS.Runtime",
-        "Unity.Services.Authentication",
-        "Unity.Services.Core",
-        "RMC.Core.Borrowed.Tests"
+        "RMC.Core.Borrowed.Editor",
+        "RMC.Core.Borrowed.Runtime"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

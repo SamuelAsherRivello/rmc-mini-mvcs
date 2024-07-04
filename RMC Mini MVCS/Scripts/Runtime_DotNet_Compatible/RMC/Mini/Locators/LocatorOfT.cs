@@ -5,13 +5,41 @@ using UnityEngine;
 
 namespace RMC.Mini
 {
+    //  Namespace Properties ------------------------------
+
+    //  Class Attributes ----------------------------------
+
+    /// <summary>
+    /// Locator class for managing items of type TBase.
+    /// This class provides methods to add, retrieve, check for, and remove items in a type-safe manner.
+    /// It ensures that items are stored and retrieved based on their most specific type.
+    /// 
+    /// Generally, you can use the public API methods directly (e.g., AddItem, GetItem, HasItem, RemoveItem).
+    /// However, in cases where you need to work with a specific derived type, you will need to call RecastLocatorAs
+    /// inline with the method you want. For example:
+    /// 
+    /// <code>
+    /// var specificLocator = locator.RecastLocatorAs<DerivedType>();
+    /// specificLocator.AddItem(derivedItem);
+    /// </code>
+    /// </summary>
     public class Locator<TBase> : Locator
     {
+        //  Events ----------------------------------------
         public class LocatorItemUnityEvent : RmcEvent<TBase> { }
         public readonly LocatorItemUnityEvent OnItemAdded = new LocatorItemUnityEvent();
         public readonly LocatorItemUnityEvent OnItemRemoved = new LocatorItemUnityEvent();
+
+        //  Properties ------------------------------------
+
+        //  Fields ----------------------------------------
         private readonly Dictionary<Type, Dictionary<string, TBase>> _items = new Dictionary<Type, Dictionary<string, TBase>>();
 
+        //  Initialization  -------------------------------
+
+        /// <summary>
+        /// Adds an item to the locator.
+        /// </summary>
         public void AddItem(TBase item, string key = "")
         {
             Type type = Locator.GetLowestType(item.GetType());
@@ -24,7 +52,6 @@ namespace RMC.Mini
             {
                 _items[type][key] = item;
                 OnItemAdded.Invoke(item);
-                Debug.Log($"{this.GetType().Name}.AddItem() Success for {type.Name} with optional key '{key}'.");
             }
             else
             {
@@ -40,6 +67,13 @@ namespace RMC.Mini
             }
         }
 
+        //  Unity Methods   -------------------------------
+
+        //  Other Methods ---------------------------------
+
+        /// <summary>
+        /// Retrieves an item from the locator by its type and optional key.
+        /// </summary>
         public TItem GetItem<TItem>(string key = "") where TItem : TBase
         {
             Type type = Locator.GetLowestType(typeof(TItem));
@@ -52,22 +86,26 @@ namespace RMC.Mini
             return default(TItem);
         }
 
+        /// <summary>
+        /// Checks if an item of a specific type and key exists in the locator.
+        /// </summary>
         public bool HasItem<TItem>(string key = "") where TItem : TBase
         {
             return GetItem<TItem>(key) != null;
         }
 
+        /// <summary>
+        /// Removes an item of a specific type and key from the locator.
+        /// </summary>
         public void RemoveItem<TItem>(string key = "") where TItem : TBase
         {
             Type type = Locator.GetLowestType(typeof(TItem));
 
-            Debug.Log($"Item1 of type '{type.Name}' with key '{key}' removed.");
             if (_items.ContainsKey(type) && _items[type].ContainsKey(key))
             {
                 var item = _items[type][key];
                 _items[type].Remove(key);
                 OnItemRemoved.Invoke(item);
-                Debug.Log($"Item2 of type '{type.Name}' with key '{key}' removed.");
             }
             else
             {
@@ -75,34 +113,70 @@ namespace RMC.Mini
             }
         }
 
-        private Type GetLowestType(Type type)
+        /// <summary>
+        /// Creates a type-safe locator for items of type T.
+        /// 
+        /// Generally, you call the API methods directly. For example:
+        /// <code>
+        /// locator.AddItem(item);
+        /// var retrievedItem = locator.GetItem&lt;TItem&gt;(key);
+        /// </code>
+        /// 
+        /// However, in cases where you need to work with a specific derived type, you will need to call RecastLocatorAs
+        /// inline with the method you want. For example:
+        /// <code>
+        /// var specificLocator = locator.RecastLocatorAs&lt;DerivedType&gt;();
+        /// specificLocator.AddItem(derivedItem);
+        /// </code>
+        /// </summary>
+        public Locator<T> RecastLocatorAs<T>() where T : class, TBase
         {
-            if (type == null) throw new ArgumentNullException(nameof(type));
+            var newLocator = new Locator<T>();
 
-            while (type.BaseType != null && type.BaseType != typeof(TBase) && type.BaseType != typeof(object))
+            foreach (var item in GetAllItems())
             {
-                type = type.BaseType;
+                if (item is T castedItem)
+                {
+                    newLocator.AddItem(castedItem);
+                }
+                else
+                {
+                    //Keep logging
+                    Debug.LogWarning($"Type mismatch detected: {item.GetType()} cannot be cast to {typeof(T)}");
+                    return null;
+                }
             }
 
-            return type;
+            return newLocator;
         }
 
+        /// <summary>
+        /// Disposes of the locator, clearing all items.
+        /// </summary>
         public override void Dispose()
         {
             Reset();
         }
 
+        /// <summary>
+        /// Resets the locator, removing all items.
+        /// </summary>
         public void Reset()
         {
             _items.Clear();
         }
 
+        /// <summary>
+        /// Gets the count of items in the locator.
+        /// </summary>
         public int GetItemCount()
         {
             return _items.Count;
         }
 
-        // This method is used for testing only
+        /// <summary>
+        /// Gets all items in the locator.
+        /// </summary>
         public List<TBase> GetAllItems()
         {
             List<TBase> items = new List<TBase>();
@@ -116,25 +190,7 @@ namespace RMC.Mini
             return items;
         }
 
-        // New method to handle type checking and item retrieval logic
-        public Locator<T> GetOrCreateLocator<T>() where T : class, TBase
-        {
-            var newLocator = new Locator<T>();
+        //  Event Handlers --------------------------------
 
-            foreach (var item in GetAllItems())
-            {
-                if (item is T castedItem)
-                {
-                    newLocator.AddItem(castedItem);
-                }
-                else
-                {
-                    Debug.LogWarning($"Type mismatch detected: {item.GetType()} cannot be cast to {typeof(T)}");
-                    return null;
-                }
-            }
-
-            return newLocator;
-        }
     }
 }

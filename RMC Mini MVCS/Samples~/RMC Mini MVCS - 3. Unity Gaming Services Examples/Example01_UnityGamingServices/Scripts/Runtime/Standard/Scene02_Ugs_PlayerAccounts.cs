@@ -60,7 +60,13 @@ namespace RMC.Mini.Samples.UGS.Standard
             {
                 return;
             }
+            
             UgsMini mini = UgsMiniSingleton.Instance.UgsMini;
+            
+            if (mini == null)
+            {
+                return;
+            }
             
             //  Scene-Specific ----------------------------
             mini.RemoveFeature<PlayerAccountsFeature>();

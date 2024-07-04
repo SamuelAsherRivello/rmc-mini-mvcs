@@ -3,6 +3,7 @@ using RMC.Mini.Samples.Login.WithMini.Mini.Model;
 using RMC.Mini.Samples.Tutorial.Mini.Controller;
 using RMC.Mini.Samples.Tutorial.Mini.View;
 using UnityEngine;
+using UnityEngine.Assertions;
 using UnityEngine.SceneManagement;
 
 namespace RMC.Mini.Samples.Tutorial
@@ -35,7 +36,7 @@ namespace RMC.Mini.Samples.Tutorial
         
         /// <summary>
         /// EXPERIMENTAL: This and any use of <see cref="ContextLocator"/>
-        /// is experimental. Its a leading solution for
+        /// is experimental. It's a leading solution for
         /// any scope 'outside' of MVCS to reference 'inside'
         /// the MVCS.
         /// </summary>
@@ -60,9 +61,14 @@ namespace RMC.Mini.Samples.Tutorial
 
         private void OnLoginModelLocated(LoginModel loginModel)
         {
+            
+            // This demo is rare. It needs a special type of context.
+            Assert.IsNotNull(loginModel.Context as ContextWithLocator, 
+                "This demo requires a ContextWithLocator.");
+
             //View
             _view.Initialize(loginModel.Context);
-            
+
             //Controller
             TutorialController tutorialController = new TutorialController(loginModel, _view);
             tutorialController.Initialize(loginModel.Context);

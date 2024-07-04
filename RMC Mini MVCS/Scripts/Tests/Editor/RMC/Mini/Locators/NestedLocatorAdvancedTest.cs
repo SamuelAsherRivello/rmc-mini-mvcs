@@ -4,52 +4,20 @@ using System;
 
 namespace RMC.Mini.Locators
 {
-    public interface IA
-    {
-    }
-
-    public class SampleA : IA
-    {
-    }
-
-    public class SampleSubA : SampleA
-    {
-    }
-
-    public class SampleSubASubB : SampleSubA
-    {
-    }
-
-    public interface ILocatorHolder
-    {
-        Locator<IA> MyLocator { get; }
-    }
-
-    public class SampleInnerClass : ILocatorHolder
-    {
-        public Locator<IA> MyLocator { get; private set; }
-
-        public SampleInnerClass()
-        {
-            MyLocator = new Locator<IA>();
-            Debug.Log($"SampleInnerClass created with MyLocator of type {MyLocator.GetType().FullName}");
-        }
-    }
-
-    public class SampleOuterClassGeneric<T> where T : class, IA
-    {
-        private readonly ILocatorHolder _locatorHolder;
-
-        public Locator<T> MyLocator => _locatorHolder.MyLocator.GetOrCreateLocator<T>();
-
-        public SampleOuterClassGeneric(ILocatorHolder locatorHolder)
-        {
-            _locatorHolder = locatorHolder;
-        }
-    }
-
+    /// <summary>
+    /// Unit tests for Nested2Locator.
+    /// These tests demonstrate how to use the public API methods directly
+    /// and how to use the RecastLocatorAs method when working with specific derived types.
+    /// Generally, you can use the public API methods directly (e.g., AddItem, GetItem, HasItem, RemoveItem).
+    /// However, in cases where you need to work with a specific derived type, you will need to call RecastLocatorAs
+    /// inline with the method you want. For example:
+    /// <code>
+    /// var specificLocator = locator.RecastLocatorAs<DerivedType>();
+    /// specificLocator.AddItem(derivedItem);
+    /// </code>
+    /// </summary>
     [Category("RMC.Mini.Locators")]
-    public class Nested2LocatorTest
+    public class NestedLocatorAdvancedTest
     {
         [Test]
         public void MyLocator_ShouldReturnCorrectLocator_WhenInitialized()
@@ -160,6 +128,68 @@ namespace RMC.Mini.Locators
             myLocator.RemoveItem<SampleA>();
 
             Assert.IsFalse(myLocator.HasItem<SampleA>(), "MyLocator should not have the item after removal");
+        }
+
+        [Test]
+        public void RecastLocatorAs_ShouldReturnTypeSafeLocator_WhenCalled()
+        {
+            var inner = new SampleInnerClass();
+            var outer = new SampleOuterClassGeneric<SampleA>(inner);
+            var item = new SampleA();
+            inner.MyLocator.AddItem(item);
+
+            // Test without RecastLocatorAs
+            Locator<SampleA> myLocatorWithoutRecast = outer.MyLocator;
+            Assert.IsNotNull(myLocatorWithoutRecast, "MyLocator should be null without RecastLocatorAs due to type mismatch");
+
+            // Test with RecastLocatorAs
+            Locator<SampleA> myLocatorWithRecast = inner.MyLocator.RecastLocatorAs<SampleA>();
+            Assert.IsNotNull(myLocatorWithRecast, "MyLocator should not be null with RecastLocatorAs");
+            Assert.IsTrue(myLocatorWithRecast.HasItem<SampleA>(), "MyLocator with RecastLocatorAs should have the item");
+        }
+    }
+
+    public interface IA
+    {
+    }
+
+    public class SampleA : IA
+    {
+    }
+
+    public class SampleSubA : SampleA
+    {
+    }
+
+    public class SampleSubASubB : SampleSubA
+    {
+    }
+
+    public interface ILocatorHolder
+    {
+        Locator<IA> MyLocator { get; }
+    }
+
+    public class SampleInnerClass : ILocatorHolder
+    {
+        public Locator<IA> MyLocator { get; private set; }
+
+        public SampleInnerClass()
+        {
+            MyLocator = new Locator<IA>();
+            Debug.Log($"SampleInnerClass created with MyLocator of type {MyLocator.GetType().FullName}");
+        }
+    }
+
+    public class SampleOuterClassGeneric<T> where T : class, IA
+    {
+        private readonly ILocatorHolder _locatorHolder;
+
+        public Locator<T> MyLocator => _locatorHolder.MyLocator.RecastLocatorAs<T>();
+
+        public SampleOuterClassGeneric(ILocatorHolder locatorHolder)
+        {
+            _locatorHolder = locatorHolder;
         }
     }
 }

@@ -39,7 +39,6 @@ namespace RMC.Mini.Experimental.ContextLocators
 
 		public override void Dispose()
 		{
-			Debug.Log("Dispo 333333333333333333");
 			ContextLocatorRemoveItem();
 		}
 		

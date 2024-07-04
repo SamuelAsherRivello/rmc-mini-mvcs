@@ -40,7 +40,10 @@ namespace RMC.Core.Utilities.Testing
             if (!_hasShownWarning)
             {
                 _hasShownWarning = true;
-                UnityEngine.Debug.LogWarning("Warning: TestRunnerEditorUtilities is suppressing some log messages during test run to reduce Console Window clutter.\n\nTo disable this behavior, please modify TestRunnerEditorUtilities.cs.\n\n");
+                
+                UnityEngine.Debug.LogWarning($"Warning: {typeof(TestRunnerEditorUtilities).Name} is suppressing some log messages during test run to reduce " +
+                                             $"Console Window clutter.\n\nTo disable this behavior, " +
+                                             $"please modify {(typeof(TestRunnerEditorUtilities).Name)}.cs.\n\n");
             }
         }
 

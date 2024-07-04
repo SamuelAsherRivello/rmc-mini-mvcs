@@ -1,3 +1,4 @@
+using RMC.Mini.Experimental.ContextLocators;
 using RMC.Mini.Samples.Login.WithMini.Mini.Controller;
 using RMC.Mini.Samples.Login.WithMini.Mini.Model;
 using RMC.Mini.Samples.Login.WithMini.Mini.Service;
@@ -9,7 +10,7 @@ namespace RMC.Mini.Samples.Login.WithMini.Mini
     /// See <see cref="SimpleMiniMvcs{TContext,TModel,TView,TController,TService}"/>"/>
     /// </summary>
     public class LoginMini: SimpleMiniMvcs
-            <Context, 
+            <ContextWithLocator, 
             LoginModel, 
             LoginView, 
             LoginController,
@@ -30,7 +31,7 @@ namespace RMC.Mini.Samples.Login.WithMini.Mini
                 _isInitialized = true;
                 
                 //
-                _context = new Context();
+                _context = new ContextWithLocator();
                 _model = new LoginModel();
                 _service = new LoginService();
                 _controller = new LoginController(_model, _view, _service);

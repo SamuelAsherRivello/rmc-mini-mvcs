@@ -60,7 +60,13 @@ namespace RMC.Mini.Samples.Configurator.Standard
             {
                 return;
             }
+            
             ConfiguratorMini mini = ConfiguratorMiniSingleton.Instance.ConfiguratorMini;
+            
+            if (mini == null)
+            {
+                return;
+            }
             
             //  Scene-Specific ----------------------------
             mini.RemoveFeature<DeveloperConsoleFeature>();

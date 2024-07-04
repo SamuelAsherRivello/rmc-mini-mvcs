@@ -1,4 +1,5 @@
-﻿using UnityEditor;
+﻿using System;
+using UnityEditor;
 using UnityEngine;
 
 namespace RMC.Core.DesignPatterns.Creational.SingletonMonobehaviour
@@ -111,6 +112,13 @@ namespace RMC.Core.DesignPatterns.Creational.SingletonMonobehaviour
         {
             get
             {
+                if (IsShuttingDown)
+                {
+                    throw new Exception(
+                        $"{typeof(SingletonMonobehaviour).Name}.Instance failed. " +
+                        $"IsShuttingDown = {IsShuttingDown}.\n Check if (IsShuttingDown() ) first.");
+                }
+                
                 if (!IsInstantiated)
                 {
                     Instantiate();

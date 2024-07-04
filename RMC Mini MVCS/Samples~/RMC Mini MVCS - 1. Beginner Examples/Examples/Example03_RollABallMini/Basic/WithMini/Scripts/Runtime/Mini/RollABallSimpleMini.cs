@@ -4,6 +4,7 @@ using RMC.Mini.Samples.RollABall.WithMini.Mini.Controller;
 using RMC.Mini.Samples.RollABall.WithMini.Mini.Model;
 using RMC.Mini.Samples.RollABall.WithMini.Mini.Service;
 using RMC.Mini.Samples.RollABall.WithMini.Mini.View;
+using UnityEngine;
 
 namespace RMC.Mini.Samples.RollABall.WithMini.Mini
 {

@@ -1,5 +1,7 @@
+using RMC.Mini.Experimental.ContextLocators;
 using RMC.Mini.Samples.RollABall.WithMini.Mini.View;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 namespace RMC.Mini.Samples.RollABall.WithMini.Mini
 {
@@ -26,6 +28,10 @@ namespace RMC.Mini.Samples.RollABall.WithMini.Mini
             _rollABallSimpleMini = 
                 new RollABallSimpleMini(_inputView, _playerView, _uiView);
             
+            // This demo is rare. It needs a special type of context.
+            Assert.IsNotNull(_rollABallSimpleMini.Context as ContextWithLocator, 
+                "This demo requires a ContextWithLocator.");
+
             _rollABallSimpleMini.Initialize();
         }
 
@@ -35,7 +41,6 @@ namespace RMC.Mini.Samples.RollABall.WithMini.Mini
             {
                 return;
             }
-            Debug.Log("yes");
             _rollABallSimpleMini.Dispose();
         }
         

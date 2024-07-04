@@ -74,7 +74,6 @@ namespace RMC.Mini.Samples.Configurator.Mini.View
 
         protected void OnDestroy()
         {
-            RequireIsInitialized();
             ConfiguratorModel model = Context?.ModelLocator.GetItem<ConfiguratorModel>();
             model?.CharacterData.OnValueChanged.RemoveListener(CharacterData_OnValueChanged);
 
