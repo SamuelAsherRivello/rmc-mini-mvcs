@@ -2,7 +2,6 @@
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
-using UnityEngine;
 
 namespace RMC.Mini.Experimental.ContextLocators
 {

@@ -1,5 +1,4 @@
 using NUnit.Framework;
-using RMC.Mini.Model;
 
 namespace RMC.Mini.Contexts
 {

@@ -3,7 +3,6 @@ using RMC.Mini.Controller;
 using RMC.Mini.Model;
 using RMC.Mini.Service;
 using RMC.Mini.View;
-using UnityEngine;
 
 //Keep As:RMC.Mini
 namespace RMC.Mini
