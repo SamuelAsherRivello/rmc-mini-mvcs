@@ -1,3 +1,5 @@
+using RMC.Mini.Lessons.Scalability.Standard.Mini;
+using RMC.Mini.Lessons.Scalability.StandardWithFeature.Mini;
 using UnityEngine;
 
 namespace RMC.Mini.Lessons.Scalability.Simple.Mini
@@ -27,24 +29,21 @@ namespace RMC.Mini.Lessons.Scalability.Simple.Mini
         //  Fields ----------------------------------------
         [SerializeField] 
         private InventoryView _inventoryView;
-       
+
+        private SimpleInventorySimpleMini _mini;
+        
         //  Unity Methods  --------------------------------
         protected void Start()
         {
             Debug.Log($"Scalability_01_Simple.Start() Click mouse to see action!");
 
             /////////////////////////////////
-            // Note: In this demo the mini is of type...
-            // SimpleInventorySimpleMini and extends SimpleMiniMvcs
-            
-            /////////////////////////////////
             // Create the mini
-            SimpleInventorySimpleMini simpleInventorySimpleMini = 
-                new SimpleInventorySimpleMini(_inventoryView);
+            _mini = new SimpleInventorySimpleMini(_inventoryView);
             
             /////////////////////////////////
             // Initialize
-            simpleInventorySimpleMini.Initialize();
+            _mini.Initialize();
         }
 
         protected void OnDestroy()

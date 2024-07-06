@@ -93,5 +93,9 @@ namespace RMC.Mini.Samples.CountUp.WithMini.Mini.View
             _statusText.text = $"Counter: {counterChangedCommand.CurrentValue}";
         }
 
+        public void Dispose()
+        {
+            // Do any cleanup
+        }
     }
 }

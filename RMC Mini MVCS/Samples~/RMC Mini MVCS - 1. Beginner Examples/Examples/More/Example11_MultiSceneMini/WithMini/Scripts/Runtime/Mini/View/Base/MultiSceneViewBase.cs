@@ -105,6 +105,13 @@ namespace RMC.Mini.Samples.MultiScene.WithMini.Mini.View
         }
         
         
+        //  Dispose Methods --------------------------------
+        public void Dispose()
+        {
+            // Optional: Handle any cleanup here...
+        }
+        
+        
         //  Event Handlers --------------------------------
         private void ServiceHasLoaded_OnValueChanged(bool previousValue, bool currentValue)
         {

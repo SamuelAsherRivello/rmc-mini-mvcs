@@ -104,8 +104,16 @@ namespace RMC.Mini.Samples.RollABall.WithMini.Mini.View
             OnInput.Invoke(movement);
 
         }
+        
 
         //  Methods ---------------------------------------
+        
+        
+        //  Dispose Methods --------------------------------
+        public void Dispose()
+        {
+            // Optional: Handle any cleanup here...
+        }
         
         
         //  Event Handlers --------------------------------

@@ -107,6 +107,13 @@ namespace RMC.Mini.Samples.UGS.Mini.View
         }
         
         
+        //  Dispose Methods --------------------------------
+        public void Dispose()
+        {
+            // Optional: Handle any cleanup here...
+        }
+        
+        
         //  Event Handlers --------------------------------
         private void PlayerAccountsButtonOnClicked()
         {

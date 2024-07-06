@@ -50,10 +50,14 @@ namespace RMC.Mini.Samples.Configurator.Mini.Feature
         {
             RequireIsInitialized();
             
+            if (MiniMvcs.ViewLocator.HasItem<GameView>())
+            {
+                MiniMvcs.ViewLocator.RemoveAndDisposeItem<GameView>();
+            }
+            
             if (MiniMvcs.ControllerLocator.HasItem<GameController>())
             {
-                MiniMvcs.ControllerLocator.RemoveItem<GameController>();
-                MiniMvcs.ViewLocator.RemoveItem<GameView>();
+                MiniMvcs.ControllerLocator.RemoveAndDisposeItem<GameController>();
             }
         }
 

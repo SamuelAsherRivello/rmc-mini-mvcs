@@ -47,8 +47,12 @@ namespace RMC.Mini.Samples.Configurator.Mini.Feature
             
             if (MiniMvcs.ControllerLocator.HasItem<DeveloperConsoleController>())
             {
-                MiniMvcs.ControllerLocator.RemoveItem<DeveloperConsoleController>();
-                MiniMvcs.ViewLocator.RemoveItem<DeveloperConsoleView>();
+                MiniMvcs.ControllerLocator.RemoveAndDisposeItem<DeveloperConsoleController>();
+            }
+            
+            if (MiniMvcs.ViewLocator.HasItem<DeveloperConsoleView>())
+            {
+                MiniMvcs.ViewLocator.RemoveAndDisposeItem<DeveloperConsoleView>();
             }
         }
     }

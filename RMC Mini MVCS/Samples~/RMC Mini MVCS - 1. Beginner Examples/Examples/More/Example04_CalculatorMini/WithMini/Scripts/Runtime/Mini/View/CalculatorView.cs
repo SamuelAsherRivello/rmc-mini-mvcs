@@ -124,5 +124,10 @@ namespace RMC.Mini.Samples.Calculator.Mini.View
 
             OnReset.Invoke();
         }
+
+        public void Dispose()
+        {
+            // Do any cleanup
+        }
     }
 }

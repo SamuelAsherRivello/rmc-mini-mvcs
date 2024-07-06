@@ -114,6 +114,14 @@ namespace RMC.Mini.Samples.Login.WithMini.Mini.View
         }
         
         
+        
+        //  Dispose Methods --------------------------------
+        public void Dispose()
+        {
+            // Optional: Handle any cleanup here...
+        }
+        
+        
         //  Event Handlers --------------------------------
         
         private void LoginButton_OnClicked()

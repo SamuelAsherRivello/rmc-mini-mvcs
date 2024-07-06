@@ -58,6 +58,13 @@ namespace RMC.Mini.Samples.MultipleMinis.WithMini.Mini.View
         //  Unity Methods ---------------------------------
 
         
+        //  Dispose Methods --------------------------------
+        public void Dispose()
+        {
+            // Optional: Handle any cleanup here...
+        }
+        
+        
         //  Methods ---------------------------------------
         
         

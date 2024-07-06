@@ -47,12 +47,14 @@ namespace RMC.Mini.Samples.UGS.Mini.Feature
         {
             RequireIsInitialized();
             
+            if (MiniMvcs.ViewLocator.HasItem<MenuView>())
+            {
+                MiniMvcs.ViewLocator.RemoveAndDisposeItem<MenuView>();
+            }
+            
             if (MiniMvcs.ControllerLocator.HasItem<MenuController>())
             {
-                //TODO: Maybe make RemoveItem(willDispose==true) for all locators?
-                MiniMvcs.ControllerLocator.GetItem<MenuController>().Dispose();
-                MiniMvcs.ControllerLocator.RemoveItem<MenuController>();
-                MiniMvcs.ViewLocator.RemoveItem<MenuView>();
+                MiniMvcs.ControllerLocator.RemoveAndDisposeItem<MenuController>();
             }
         }
         

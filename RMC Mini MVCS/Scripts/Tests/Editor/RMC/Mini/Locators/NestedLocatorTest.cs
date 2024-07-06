@@ -39,7 +39,7 @@ namespace RMC.Mini.Locators
 
             public void Dispose()
             {
-                Locator?.Dispose();
+                // Do any cleanup
             }
         }
 

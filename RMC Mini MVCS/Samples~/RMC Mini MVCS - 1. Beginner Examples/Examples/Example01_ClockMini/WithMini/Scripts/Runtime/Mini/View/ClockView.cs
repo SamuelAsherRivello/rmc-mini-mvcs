@@ -45,6 +45,13 @@ namespace RMC.Mini.Samples.Clock.WithMini.Mini.View
         //  Methods ---------------------------------------
         
         
+        //  Dispose Methods --------------------------------
+        public void Dispose()
+        {
+            // Optional: Handle any cleanup here...
+        }
+        
+        
         //  Event Handlers --------------------------------
         private void OnTimeChangedCommand(TimeChangedCommand timeChangedCommand)
         {

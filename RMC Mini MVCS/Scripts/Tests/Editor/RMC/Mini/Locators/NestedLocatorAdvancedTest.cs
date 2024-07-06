@@ -181,7 +181,6 @@ namespace RMC.Mini.Locators
         public SampleInnerClass()
         {
             MyLocator = new Locator<IA>();
-            Debug.Log($"SampleInnerClass created with MyLocator of type {MyLocator.GetType().FullName}");
         }
     }
 

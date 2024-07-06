@@ -128,9 +128,19 @@ namespace RMC.Mini.Samples.Login.WithMini.Mini.View
             }
         }
         
+        
         //  Unity Methods ---------------------------------
         
+        
         //  Methods ---------------------------------------
+        
+        
+        //  Dispose Methods --------------------------------
+        public void Dispose()
+        {
+            // Optional: Handle any cleanup here...
+        }
+        
         
         //  Event Handlers --------------------------------
     }

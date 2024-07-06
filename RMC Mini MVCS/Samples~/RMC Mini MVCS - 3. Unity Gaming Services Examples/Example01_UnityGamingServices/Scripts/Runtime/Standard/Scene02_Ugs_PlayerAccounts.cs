@@ -37,6 +37,11 @@ namespace RMC.Mini.Samples.UGS.Standard
         {
             UgsMini mini = UgsMiniSingleton.Instance.UgsMini;
             
+            if (mini == null)
+            {
+                return;
+            }
+            
             //  Scene-Specific ----------------------------
             PlayerAccountsFeature playerAccountsFeature = new PlayerAccountsFeature();
             playerAccountsFeature.AddView(_playerAccountsView);
@@ -69,10 +74,10 @@ namespace RMC.Mini.Samples.UGS.Standard
             }
             
             //  Scene-Specific ----------------------------
-            mini.RemoveFeature<PlayerAccountsFeature>();
+            mini.RemoveAndDisposeFeature<PlayerAccountsFeature>();
             
             //  Scene-Agnostic ----------------------------
-            mini.RemoveFeature<HudFeature>();
+            mini.RemoveAndDisposeFeature<HudFeature>();
         }
         
         //  Event Handlers --------------------------------

@@ -100,6 +100,13 @@ namespace RMC.Mini.Samples.RollABall.WithMini.Mini.View
         }
         
         
+        //  Dispose Methods --------------------------------
+        public void Dispose()
+        {
+            // Optional: Handle any cleanup here...
+        }
+        
+        
         //  Event Handlers --------------------------------
         private void OnScoreChangedCommand(ScoreChangedCommand scoreChangedCommand)
         {

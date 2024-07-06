@@ -67,6 +67,13 @@ namespace RMC.Mini.Lessons.Scalability.StandardWithFeature.Mini
         {
             // Optional: Handle any cleanup here...
         }
+        
+        
+        //  Dispose Methods --------------------------------
+        public void Dispose()
+        {
+            // Optional: Handle any cleanup here...
+        }
 
 
         //  Methods ---------------------------------------

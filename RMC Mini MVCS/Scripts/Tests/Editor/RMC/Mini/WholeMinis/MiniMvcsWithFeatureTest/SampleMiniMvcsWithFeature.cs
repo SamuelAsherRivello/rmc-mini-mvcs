@@ -176,7 +176,6 @@ namespace RMC.Mini.WholeMinis.MiniMvcsWithFeatureTests
                 
                 // Context
                 _context = new Context();
-                Debug.Log("_context created: "+ _context);
                 
                 // Model
                 
@@ -211,7 +210,7 @@ namespace RMC.Mini.WholeMinis.MiniMvcsWithFeatureTests
         
         public void RemoveFeature<TFeature>(bool willDispose, string key = "") where TFeature : IFeature
         {
-            FeatureBuilder.RemoveFeature<TFeature>(willDispose, key);
+            FeatureBuilder.RemoveFeature<TFeature>(key, willDispose);
         }
         
     }

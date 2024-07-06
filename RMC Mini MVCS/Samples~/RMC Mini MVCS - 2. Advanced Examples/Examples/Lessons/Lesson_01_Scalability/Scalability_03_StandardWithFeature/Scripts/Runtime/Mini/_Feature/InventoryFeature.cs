@@ -41,8 +41,8 @@ namespace RMC.Mini.Lessons.Scalability.StandardWithFeature.Mini
             
             if (MiniMvcs.ControllerLocator.HasItem<InventoryController>())
             {
-                MiniMvcs.ControllerLocator.RemoveItem<InventoryController>();
-                MiniMvcs.ViewLocator.RemoveItem<InventoryView>();
+                MiniMvcs.ControllerLocator.RemoveAndDisposeItem<InventoryController>();
+                MiniMvcs.ViewLocator.RemoveAndDisposeItem<InventoryView>();
             }
         }
     }

@@ -48,8 +48,12 @@ namespace RMC.Mini.Samples.Configurator.Mini.Feature
             
             if (MiniMvcs.ControllerLocator.HasItem<CustomizeCharacterController>())
             {
-                MiniMvcs.ControllerLocator.RemoveItem<CustomizeCharacterController>();
-                MiniMvcs.ViewLocator.RemoveItem<CustomizeCharacterView>();
+                MiniMvcs.ControllerLocator.RemoveAndDisposeItem<CustomizeCharacterController>();
+            }
+            
+            if (MiniMvcs.ViewLocator.HasItem<CustomizeCharacterView>())
+            {
+                MiniMvcs.ViewLocator.RemoveAndDisposeItem<CustomizeCharacterView>();
             }
         }
     }

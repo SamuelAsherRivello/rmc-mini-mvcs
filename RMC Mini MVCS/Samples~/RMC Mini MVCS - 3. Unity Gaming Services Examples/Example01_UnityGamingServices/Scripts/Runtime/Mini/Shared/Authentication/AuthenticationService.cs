@@ -124,9 +124,15 @@ namespace RMC.Mini.Samples.UGS.Mini.Service
                 await UnityServicesInitializeAsync();
             }
             
+            if (IsSignedIn)
+            {
+                Debug.Log($"SignInAsync() Already signed in.");
+                return;
+            }
+            
             try
             {
-                Debug.Log("SignInAnonymouslyAsync");
+                Debug.Log($"SignInAsync() Signing In...");
                 await UnityAuthenticationService.SignInAnonymouslyAsync();
             }
             catch (AuthenticationException ex)

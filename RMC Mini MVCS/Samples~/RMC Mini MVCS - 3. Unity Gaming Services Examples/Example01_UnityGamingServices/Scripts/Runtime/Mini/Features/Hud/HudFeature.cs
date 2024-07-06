@@ -46,15 +46,15 @@ namespace RMC.Mini.Samples.UGS.Mini.Feature
         {
             RequireIsInitialized();
             
+            if (MiniMvcs.ViewLocator.HasItem<HudView>())
+            {
+                MiniMvcs.ViewLocator.RemoveAndDisposeItem<HudView>();
+            }
+            
             if (MiniMvcs.ControllerLocator.HasItem<HudController>())
             {
-                //TODO: Autodispose on removeitem?
-                MiniMvcs.ControllerLocator.GetItem<HudController>().Dispose();
-                MiniMvcs.ControllerLocator.RemoveItem<HudController>();
-                MiniMvcs.ViewLocator.RemoveItem<HudView>();
+                MiniMvcs.ControllerLocator.RemoveAndDisposeItem<HudController>();
             }
         }
-
-
     }
 }

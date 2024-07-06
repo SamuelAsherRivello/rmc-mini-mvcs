@@ -74,10 +74,15 @@ namespace RMC.Mini.Samples.UGS.Mini
             FeatureBuilder.AddFeature<TFeature>(feature, key);
         }
         
-        public void RemoveFeature<TFeature>(string key = "") where TFeature : IFeature
+        public void RemoveFeature<TFeature>(string key = "", bool willDispose = false) where TFeature : IFeature
         {
-            FeatureBuilder.RemoveFeature<TFeature>(key);
+            FeatureBuilder.RemoveFeature<TFeature>(key, willDispose);
         }
         
+        // Overload for automatically disposing
+        public void RemoveAndDisposeFeature<TFeature>() where TFeature : IFeature
+        {
+            FeatureBuilder.RemoveFeature<TFeature>("", true);
+        }
     }
 }

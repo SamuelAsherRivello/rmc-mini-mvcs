@@ -111,6 +111,13 @@ namespace RMC.Mini.Samples.RollABall.WithMini.Mini.View
                 OnInputCommand);
         }
 
+            
+        //  Dispose Methods --------------------------------
+        public void Dispose()
+        {
+            // Optional: Handle any cleanup here...
+        }
+        
         
         //  Methods ---------------------------------------
         

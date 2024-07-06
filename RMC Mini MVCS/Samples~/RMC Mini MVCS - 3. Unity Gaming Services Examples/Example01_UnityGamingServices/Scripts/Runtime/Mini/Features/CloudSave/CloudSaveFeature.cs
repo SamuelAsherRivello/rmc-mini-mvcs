@@ -54,14 +54,21 @@ namespace RMC.Mini.Samples.UGS.Mini.Feature
         {
             RequireIsInitialized();
             
+            if (MiniMvcs.ModelLocator.HasItem<CloudSaveModel>())
+            {
+                MiniMvcs.ModelLocator.RemoveAndDisposeItem<CloudSaveModel>();
+            }
+            
+            if (MiniMvcs.ViewLocator.HasItem<CloudSaveView>())
+            {
+                MiniMvcs.ViewLocator.RemoveAndDisposeItem<CloudSaveView>();
+            }
+            
             if (MiniMvcs.ControllerLocator.HasItem<CloudSaveController>())
             {
-                //TODO: Autodispose on removeitem?
-                MiniMvcs.ControllerLocator.GetItem<CloudSaveController>().Dispose();
-                MiniMvcs.ControllerLocator.RemoveItem<CloudSaveController>();
-                MiniMvcs.ModelLocator.RemoveItem<CloudSaveModel>();
-                MiniMvcs.ViewLocator.RemoveItem<CloudSaveView>();
+                MiniMvcs.ControllerLocator.RemoveAndDisposeItem<CloudSaveController>();
             }
+            
         }
     }
 }

@@ -1,4 +1,4 @@
-using RMC.Mini.Samples.Beamable.Mini.View;
+using RMC.Core.UI.UIToolkit;
 
 namespace RMC.Mini.Samples.UGS.Mini.View
 {

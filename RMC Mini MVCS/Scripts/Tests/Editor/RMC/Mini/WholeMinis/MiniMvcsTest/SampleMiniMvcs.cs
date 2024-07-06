@@ -102,15 +102,12 @@ namespace RMC.Mini.WholeMinis.MiniMvcsTests
         public override void Initialize()
         {
             
-            Debug.Log($"{this.GetType().Name}.Initialize()) ");
-            
             if (!IsInitialized)
             {
                 _isInitialized = true;
                 
                 // Context
                 _context = new Context();
-                Debug.Log("_context created: "+ _context);
                 
                 // Model
                 SampleModel model = new SampleModel();

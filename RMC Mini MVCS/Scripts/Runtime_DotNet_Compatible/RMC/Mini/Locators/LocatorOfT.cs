@@ -94,7 +94,7 @@ namespace RMC.Mini
             return GetItem<TItem>(key) != null;
         }
 
-        public void RemoveItem<TItem>(bool willDispose, string key = "") where TItem : TBase
+        public void RemoveItem<TItem>(string key = "", bool willDispose = false) where TItem : TBase
         {
             Type type = Locator.GetLowestType(typeof(TItem));
 
@@ -118,7 +118,7 @@ namespace RMC.Mini
         // Overload for automatically disposing
         public void RemoveAndDisposeItem<TItem>(string key = "") where TItem : TBase, IDisposable
         {
-            RemoveItem<TItem>(true, key);
+            RemoveItem<TItem>(key, true);
         }
         
         

@@ -37,6 +37,11 @@ namespace RMC.Mini.Samples.Configurator.Standard
         {
             ConfiguratorMini mini = ConfiguratorMiniSingleton.Instance.ConfiguratorMini;
             
+            if (mini == null)
+            {
+                return;
+            }
+            
             //  Scene-Specific ----------------------------
             DeveloperConsoleFeature developerConsoleFeature = new DeveloperConsoleFeature();
             developerConsoleFeature.AddView(developerConsoleView);
@@ -69,10 +74,10 @@ namespace RMC.Mini.Samples.Configurator.Standard
             }
             
             //  Scene-Specific ----------------------------
-            mini.RemoveFeature<DeveloperConsoleFeature>();
+            mini.RemoveAndDisposeFeature<DeveloperConsoleFeature>();
             
             //  Scene-Agnostic ----------------------------
-            mini.RemoveFeature<HudFeature>();
+            mini.RemoveAndDisposeFeature<HudFeature>();
             
         }
         

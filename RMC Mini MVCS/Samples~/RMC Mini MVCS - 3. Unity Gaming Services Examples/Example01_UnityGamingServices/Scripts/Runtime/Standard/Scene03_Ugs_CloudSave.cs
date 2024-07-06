@@ -37,6 +37,11 @@ namespace RMC.Mini.Samples.UGS.Standard
         {
             UgsMini mini = UgsMiniSingleton.Instance.UgsMini;
             
+            if (mini == null)
+            {
+                return;
+            }
+            
             //  Scene-Specific ----------------------------
             CloudSaveFeature cloudSaveFeature = new CloudSaveFeature();
             cloudSaveFeature.AddView(_cloudSaveView);
@@ -69,10 +74,10 @@ namespace RMC.Mini.Samples.UGS.Standard
             }
             
             //  Scene-Specific ----------------------------
-            mini.RemoveFeature<CloudSaveFeature>();
+            mini.RemoveAndDisposeFeature<CloudSaveFeature>();
             
             //  Scene-Agnostic ----------------------------
-            mini.RemoveFeature<HudFeature>();
+            mini.RemoveAndDisposeFeature<HudFeature>();
         }
         
         //  Event Handlers --------------------------------

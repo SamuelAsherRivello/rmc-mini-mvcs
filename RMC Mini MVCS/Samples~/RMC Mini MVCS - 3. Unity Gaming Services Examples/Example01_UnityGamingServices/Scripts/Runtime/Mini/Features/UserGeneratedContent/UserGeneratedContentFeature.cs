@@ -55,13 +55,19 @@ namespace RMC.Mini.Samples.UGS.Mini.Feature
         {
             RequireIsInitialized();
             
+            if (MiniMvcs.ModelLocator.HasItem<UserGeneratedContentModel>())
+            {
+                MiniMvcs.ModelLocator.RemoveAndDisposeItem<UserGeneratedContentModel>();
+            }
+            
+            if (MiniMvcs.ViewLocator.HasItem<UserGeneratedContentView>())
+            {
+                MiniMvcs.ViewLocator.RemoveAndDisposeItem<UserGeneratedContentView>();
+            }
+            
             if (MiniMvcs.ControllerLocator.HasItem<UserGeneratedContentController>())
             {
-                //TODO: Autodispose on removeitem?
-                MiniMvcs.ControllerLocator.GetItem<UserGeneratedContentController>().Dispose();
-                MiniMvcs.ControllerLocator.RemoveItem<UserGeneratedContentController>();
-                MiniMvcs.ModelLocator.RemoveItem<UserGeneratedContentModel>();
-                MiniMvcs.ViewLocator.RemoveItem<UserGeneratedContentView>();
+                MiniMvcs.ControllerLocator.RemoveAndDisposeItem<UserGeneratedContentController>();
             }
         }
     }

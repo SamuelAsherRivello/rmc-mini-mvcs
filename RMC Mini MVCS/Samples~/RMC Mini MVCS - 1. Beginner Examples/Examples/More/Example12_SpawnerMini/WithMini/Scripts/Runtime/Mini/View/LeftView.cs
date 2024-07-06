@@ -74,9 +74,16 @@ namespace RMC.Mini.Samples.SpawnerMini.WithMini.Mini.View
         //  Unity Methods ---------------------------------
 
         
+        //  Dispose Methods --------------------------------
+        public void Dispose()
+        {
+            // Optional: Handle any cleanup here...
+        }
+        
+        
         //  Methods ---------------------------------------
         
-        
+
         //  Event Handlers --------------------------------
         private void IncrementCounterButton_OnClicked()
         {

@@ -64,6 +64,13 @@ namespace RMC.Mini.Samples.SpawnerMini.WithMini.Mini.View
         //  Methods ---------------------------------------
         
         
+        //  Dispose Methods --------------------------------
+        public void Dispose()
+        {
+            // Optional: Handle any cleanup here...
+        }
+        
+        
         //  Event Handlers --------------------------------
         private void OnCounterChangedCommand(CounterChangedCommand counterChangedCommand)
         {

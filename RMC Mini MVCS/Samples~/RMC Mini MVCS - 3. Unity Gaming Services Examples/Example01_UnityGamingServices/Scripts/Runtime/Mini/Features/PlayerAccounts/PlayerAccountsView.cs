@@ -123,6 +123,14 @@ namespace RMC.Mini.Samples.UGS.Mini.View
             ListView.visible = false;
         }
         
+        
+        //  Dispose Methods --------------------------------
+        public void Dispose()
+        {
+            // Optional: Handle any cleanup here...
+        }
+        
+        
         //  Event Handlers --------------------------------
         private void SignInButton_OnClicked()
         {

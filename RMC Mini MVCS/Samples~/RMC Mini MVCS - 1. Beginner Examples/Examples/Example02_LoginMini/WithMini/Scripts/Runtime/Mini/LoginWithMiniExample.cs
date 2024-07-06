@@ -1,7 +1,6 @@
 using RMC.Mini.Experimental.ContextLocators;
 using RMC.Mini.Samples.Login.WithMini.Mini.View;
 using UnityEngine;
-using UnityEngine.Assertions;
 
 namespace RMC.Mini.Samples.Login.WithMini.Mini
 {

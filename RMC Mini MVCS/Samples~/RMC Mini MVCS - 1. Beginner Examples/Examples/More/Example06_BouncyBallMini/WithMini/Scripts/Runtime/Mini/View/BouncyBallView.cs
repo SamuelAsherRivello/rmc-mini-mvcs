@@ -90,5 +90,9 @@ namespace RMC.Mini.Samples.BouncyBall.WithMini.Mini.View
             _statusText.text = $"Bounce Count: {bounceCountChangedCommand.CurrentValue}/{bounceCountMax}";
         }
 
+        public void Dispose()
+        {
+            // Do any cleanup
+        }
     }
 }

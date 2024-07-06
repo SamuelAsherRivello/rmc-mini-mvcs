@@ -36,6 +36,11 @@ namespace RMC.Mini.Samples.Configurator.Standard
         private void AddFeature()
         {
             ConfiguratorMini mini = ConfiguratorMiniSingleton.Instance.ConfiguratorMini;
+
+            if (mini == null)
+            {
+                return;
+            }
             
             //  Scene-Specific ----------------------------
             MenuFeature menuFeature = new MenuFeature();
@@ -69,10 +74,10 @@ namespace RMC.Mini.Samples.Configurator.Standard
             }
             
             //  Scene-Specific ----------------------------
-            mini.RemoveFeature<MenuFeature>();
+            mini.RemoveAndDisposeFeature<MenuFeature>();
             
             //  Scene-Agnostic ----------------------------
-            mini.RemoveFeature<HudFeature>();
+            mini.RemoveAndDisposeFeature<HudFeature>();
         }
         
         //  Event Handlers --------------------------------

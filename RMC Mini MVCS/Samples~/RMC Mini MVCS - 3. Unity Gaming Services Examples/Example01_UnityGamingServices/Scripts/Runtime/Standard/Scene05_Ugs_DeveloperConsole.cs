@@ -37,6 +37,12 @@ namespace RMC.Mini.Samples.UGS.Standard
         {
             UgsMini mini = UgsMiniSingleton.Instance.UgsMini;
             
+            if (mini == null)
+            {
+                return;
+                
+            }
+            
             //  Scene-Specific ----------------------------
             DeveloperConsoleFeature developerConsoleFeature = new DeveloperConsoleFeature();
             developerConsoleFeature.AddView(_developerConsoleView);
@@ -69,10 +75,10 @@ namespace RMC.Mini.Samples.UGS.Standard
             }
             
             //  Scene-Specific ----------------------------
-            mini.RemoveFeature<DeveloperConsoleFeature>();
+            mini.RemoveAndDisposeFeature<DeveloperConsoleFeature>();
             
             //  Scene-Agnostic ----------------------------
-            mini.RemoveFeature<HudFeature>();
+            mini.RemoveAndDisposeFeature<HudFeature>();
             
         }
         

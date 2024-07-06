@@ -90,6 +90,12 @@ namespace RMC.Mini.Samples.Configurator.Mini.View
             StatusLabel.text = $"Set The\nEnvironment\nColors";
         }
         
+        //  Dispose Methods --------------------------------
+        public void Dispose()
+        {
+            // Optional: Handle any cleanup here...
+        }
+        
         
         //  Event Handlers --------------------------------
         private void RandomizeButton_OnClicked()

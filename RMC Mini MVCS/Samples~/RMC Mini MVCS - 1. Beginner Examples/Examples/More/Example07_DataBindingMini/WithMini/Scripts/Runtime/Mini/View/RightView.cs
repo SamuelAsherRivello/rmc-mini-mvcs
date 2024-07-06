@@ -64,6 +64,13 @@ namespace RMC.Mini.Samples.DataBindingMini.WithMini.Mini.View
         //  Methods ---------------------------------------
         
         
+        //  Dispose Methods --------------------------------
+        public void Dispose()
+        {
+            // Optional: Handle any cleanup here...
+        }
+        
+        
         //  Event Handlers --------------------------------
         private void Message_OnValueChanged(string previousValue, 
             string currentValue)

@@ -1,5 +1,6 @@
 using System.Collections;
 using NUnit.Framework;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.TestTools;
 
@@ -64,8 +65,11 @@ namespace RMC.Core.Testing
             {
                 yield return null;
             }
+            
+            // 4. Wait 0.5 seconds
+            yield return new WaitForSeconds(0.5f);
 
-            // 4. Unload the temporary scene by setting it active and then unloading it
+            // 5. Unload the temporary scene by setting it active and then unloading it
             SceneManager.SetActiveScene(temporaryScene);
             var tempUnloadAsyncOperation = SceneManager.UnloadSceneAsync(temporaryScene);
             while (tempUnloadAsyncOperation != null && !tempUnloadAsyncOperation.isDone)
@@ -75,7 +79,7 @@ namespace RMC.Core.Testing
 
             Assert.DoesNotThrow(() => { });
 
-            // Change back to old value
+            // .6 Change back to old value
             LogAssert.ignoreFailingMessages = _ignoreFailingMessagesBefore;
             yield return null;
         }

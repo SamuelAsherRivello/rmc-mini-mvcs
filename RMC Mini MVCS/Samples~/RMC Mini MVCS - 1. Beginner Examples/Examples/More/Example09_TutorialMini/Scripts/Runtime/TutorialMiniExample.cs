@@ -3,7 +3,6 @@ using RMC.Mini.Samples.Login.WithMini.Mini.Model;
 using RMC.Mini.Samples.Tutorial.Mini.Controller;
 using RMC.Mini.Samples.Tutorial.Mini.View;
 using UnityEngine;
-using UnityEngine.Assertions;
 using UnityEngine.SceneManagement;
 
 namespace RMC.Mini.Samples.Tutorial

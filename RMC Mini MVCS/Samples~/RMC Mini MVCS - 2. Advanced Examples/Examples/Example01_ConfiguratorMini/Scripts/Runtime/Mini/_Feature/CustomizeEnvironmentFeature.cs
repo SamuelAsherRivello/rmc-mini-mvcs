@@ -48,8 +48,12 @@ namespace RMC.Mini.Samples.Configurator.Mini.Feature
             
             if (MiniMvcs.ControllerLocator.HasItem<CustomizeEnvironmentController>())
             {
-                MiniMvcs.ControllerLocator.RemoveItem<CustomizeEnvironmentController>();
-                MiniMvcs.ViewLocator.RemoveItem<CustomizeEnvironmentView>();
+                MiniMvcs.ControllerLocator.RemoveAndDisposeItem<CustomizeEnvironmentController>();
+            }
+            
+            if (MiniMvcs.ViewLocator.HasItem<CustomizeEnvironmentView>())
+            {
+                MiniMvcs.ViewLocator.RemoveAndDisposeItem<CustomizeEnvironmentView>();
             }
         }
     }

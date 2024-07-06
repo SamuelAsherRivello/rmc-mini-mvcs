@@ -51,10 +51,12 @@ namespace RMC.Mini.Samples.UGS.Mini.Feature
             
             if (MiniMvcs.ControllerLocator.HasItem<PlayerAccountsController>())
             {
-                //TODO: Maybe make RemoveItem(willDispose==true) for all locators?
-                MiniMvcs.ControllerLocator.GetItem<PlayerAccountsController>().Dispose();
-                MiniMvcs.ControllerLocator.RemoveItem<PlayerAccountsController>();
-                MiniMvcs.ViewLocator.RemoveItem<PlayerAccountsView>();
+                MiniMvcs.ControllerLocator.RemoveAndDisposeItem<PlayerAccountsController>();
+            }
+            
+            if (MiniMvcs.ViewLocator.HasItem<PlayerAccountsView>())
+            {
+                MiniMvcs.ViewLocator.RemoveAndDisposeItem<PlayerAccountsView>();
             }
         }
 

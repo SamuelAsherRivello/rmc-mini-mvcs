@@ -76,6 +76,13 @@ namespace RMC.Mini.Lessons.Scalability.Simple.Mini
         }
         
         
+        //  Dispose Methods --------------------------------
+        public void Dispose()
+        {
+            // Optional: Handle any cleanup here...
+        }
+        
+        
         //  Event Handlers --------------------------------
         private void InventoryCount_OnValueChanged(int previousValue, int currentValue)
         {

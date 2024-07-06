@@ -60,6 +60,13 @@ namespace RMC.Mini.Samples.MultipleMinis.WithMini.Mini.View
         }
 
         
+        //  Dispose Methods --------------------------------
+        public void Dispose()
+        {
+            // Optional: Handle any cleanup here...
+        }
+        
+        
         //  Methods ---------------------------------------
         
         

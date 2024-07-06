@@ -37,6 +37,11 @@ namespace RMC.Mini.Samples.UGS.Standard
         {
             UgsMini mini = UgsMiniSingleton.Instance.UgsMini;
             
+            if (mini == null)
+            {
+                return;
+            }
+            
             //  Scene-Specific ----------------------------
             UserGeneratedContentFeature userGeneratedContentFeature = new UserGeneratedContentFeature();
             userGeneratedContentFeature.AddView(_userGeneratedContentView);
@@ -69,10 +74,10 @@ namespace RMC.Mini.Samples.UGS.Standard
             }
             
             //  Scene-Specific ----------------------------
-            mini.RemoveFeature<UserGeneratedContentFeature>();
+            mini.RemoveAndDisposeFeature<UserGeneratedContentFeature>();
             
             //  Scene-Agnostic ----------------------------
-            mini.RemoveFeature<HudFeature>();
+            mini.RemoveAndDisposeFeature<HudFeature>();
         }
         
         //  Event Handlers --------------------------------

@@ -37,6 +37,11 @@ namespace RMC.Mini.Samples.Configurator.Standard
         {
             ConfiguratorMini mini = ConfiguratorMiniSingleton.Instance.ConfiguratorMini;
             
+            if (mini == null)
+            {
+                return;
+            }
+            
             //  Scene-Specific ----------------------------
             CustomizeCharacterFeature customizeCharacterFeature = new CustomizeCharacterFeature();
             customizeCharacterFeature.AddView(_customizeCharacterView);
@@ -69,10 +74,10 @@ namespace RMC.Mini.Samples.Configurator.Standard
             }
             
             //  Scene-Specific ----------------------------
-            mini.RemoveFeature<CustomizeCharacterFeature>();
+            mini.RemoveAndDisposeFeature<CustomizeCharacterFeature>();
             
             //  Scene-Agnostic ----------------------------
-            mini.RemoveFeature<HudFeature>();
+            mini.RemoveAndDisposeFeature<HudFeature>();
         }
         
         //  Event Handlers --------------------------------

@@ -174,6 +174,14 @@ namespace RMC.Mini.Samples.UGS.Mini.View
             LeftTitleLabel.text = "Items";
         }
         
+        
+        //  Dispose Methods --------------------------------
+        public void Dispose()
+        {
+            // Optional: Handle any cleanup here...
+        }
+        
+        
         //  Event Handlers --------------------------------
         private void LoadButton_OnClicked()
         {

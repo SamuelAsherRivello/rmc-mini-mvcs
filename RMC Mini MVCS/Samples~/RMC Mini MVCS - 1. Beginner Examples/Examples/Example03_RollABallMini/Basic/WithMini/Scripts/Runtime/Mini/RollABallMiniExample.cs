@@ -1,7 +1,6 @@
 using RMC.Mini.Experimental.ContextLocators;
 using RMC.Mini.Samples.RollABall.WithMini.Mini.View;
 using UnityEngine;
-using UnityEngine.Assertions;
 
 namespace RMC.Mini.Samples.RollABall.WithMini.Mini
 {

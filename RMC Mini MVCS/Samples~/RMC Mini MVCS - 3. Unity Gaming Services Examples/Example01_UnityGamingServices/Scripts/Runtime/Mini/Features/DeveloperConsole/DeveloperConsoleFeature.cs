@@ -69,15 +69,12 @@ namespace RMC.Mini.Samples.UGS.Mini.Feature
             
             if (MiniMvcs.ControllerLocator.HasItem<DeveloperConsoleController>())
             {
-                MiniMvcs.ControllerLocator.GetItem<DeveloperConsoleController>().Dispose();
-                MiniMvcs.ControllerLocator.RemoveItem<DeveloperConsoleController>();
-                //
-                MiniMvcs.ServiceLocator.RemoveItem<CloudSaveService>();
-                MiniMvcs.ServiceLocator.RemoveItem<UserGeneratedContentService>();
-                MiniMvcs.ViewLocator.RemoveItem<DeveloperConsoleView>();
+                MiniMvcs.ControllerLocator.RemoveAndDisposeItem<DeveloperConsoleController>();
+                MiniMvcs.ServiceLocator.RemoveAndDisposeItem<CloudSaveService>();
+                MiniMvcs.ServiceLocator.RemoveAndDisposeItem<UserGeneratedContentService>();
+                MiniMvcs.ViewLocator.RemoveAndDisposeItem<DeveloperConsoleView>();
             }
+            
         }
-
-
     }
 }

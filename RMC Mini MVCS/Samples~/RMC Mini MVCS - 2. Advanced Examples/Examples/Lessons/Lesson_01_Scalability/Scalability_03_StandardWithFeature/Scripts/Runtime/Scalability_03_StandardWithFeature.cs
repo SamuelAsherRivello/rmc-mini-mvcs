@@ -28,7 +28,7 @@ namespace RMC.Mini.Lessons.Scalability.StandardWithFeature.Mini
         [SerializeField] 
         private InventoryView _inventoryView;
 
-        private InventoryMini mini;
+        private InventoryMini _mini;
         
         //  Unity Methods  --------------------------------
         protected void Start()
@@ -41,7 +41,7 @@ namespace RMC.Mini.Lessons.Scalability.StandardWithFeature.Mini
             
             /////////////////////////////////
             // Create the mini
-            mini = InventoryMiniSingleton.Instance.InventoryMini;
+            _mini = InventoryMiniSingleton.Instance.InventoryMini;
             
             /////////////////////////////////
             // Add functionality on top
@@ -63,7 +63,7 @@ namespace RMC.Mini.Lessons.Scalability.StandardWithFeature.Mini
         {
             InventoryFeature inventoryFeature = new InventoryFeature();
             inventoryFeature.AddView(_inventoryView);
-            mini.AddFeature<InventoryFeature>(inventoryFeature);
+            _mini.AddFeature<InventoryFeature>(inventoryFeature);
         }
         
         private void RemoveFeature()
@@ -72,10 +72,14 @@ namespace RMC.Mini.Lessons.Scalability.StandardWithFeature.Mini
             {
                 return;
             }
-            InventoryMini mini = InventoryMiniSingleton.Instance.InventoryMini;
+
+            if (_mini == null)
+            {
+                return;
+            }
             
             //You can easily, optionally remove the feature too (e.g. when scene changes)
-            //mini.RemoveFeature<InventoryFeature>();
+            _mini.RemoveAndDisposeFeature<InventoryFeature>();
         }
         
         //  Event Handlers --------------------------------

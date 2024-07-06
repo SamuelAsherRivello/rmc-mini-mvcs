@@ -76,11 +76,15 @@ namespace RMC.Mini.Lessons.Scalability.StandardWithFeature.Mini
         }
         
         
-        public void RemoveFeature<TFeature>(string key = "") where TFeature : IFeature
+        public void RemoveFeature<TFeature>(string key = "", bool willDispose = false) where TFeature : IFeature
         {
-            FeatureBuilder.RemoveFeature<TFeature>(key);
+            FeatureBuilder.RemoveFeature<TFeature>(key, willDispose);
         }
         
+        public void RemoveAndDisposeFeature<TFeature>() where TFeature : IFeature
+        {
+            FeatureBuilder.RemoveFeature<TFeature>("", true);
+        }
         
         //  Event Handlers --------------------------------
     }

@@ -36,6 +36,11 @@ namespace RMC.Mini.Samples.Configurator.Standard
         private void AddFeature()
         {
             ConfiguratorMini mini = ConfiguratorMiniSingleton.Instance.ConfiguratorMini;
+
+            if (mini == null)
+            {
+                return;
+            }
             
             //  Scene-Specific ----------------------------
             CustomizeEnvironmentFeature customizeEnvironmentFeature = new CustomizeEnvironmentFeature();
@@ -69,10 +74,10 @@ namespace RMC.Mini.Samples.Configurator.Standard
             }
             
             //  Scene-Specific ----------------------------
-            mini.RemoveFeature<CustomizeEnvironmentFeature>();
+            mini.RemoveAndDisposeFeature<CustomizeEnvironmentFeature>();
             
             //  Scene-Agnostic ----------------------------
-            mini.RemoveFeature<HudFeature>();
+            mini.RemoveAndDisposeFeature<HudFeature>();
             
         }
         

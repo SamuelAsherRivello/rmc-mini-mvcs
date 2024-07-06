@@ -27,38 +27,35 @@ namespace RMC.Mini.Lessons.Scalability.Standard.Mini
         //  Fields ----------------------------------------
         [SerializeField] 
         private InventoryView _inventoryView;
-       
+
+        private InventoryMini _mini;
+        
         //  Unity Methods  --------------------------------
         protected void Start()
         {
             Debug.Log($"Scalability_02_Standard.Start() Click mouse to see action!");
         
             /////////////////////////////////
-            // Note: In this demo the mini is of type...
-            // SimpleInventorySimpleMini and extends SimpleMiniMvcs
-            
-            /////////////////////////////////
             // Create Mini
-            // It's pretty empty
-            InventoryMini inventoryMini = 
-                InventoryMiniSingleton.Instance.InventoryMini;
+            // It's fairly empty
+            _mini = InventoryMiniSingleton.Instance.InventoryMini;
             
             /////////////////////////////////
             // Then add functionality on top.
-            InventoryModel model = inventoryMini.ModelLocator.GetItem<InventoryModel>();
-            InventoryService service = inventoryMini.ServiceLocator.GetItem<InventoryService>();
+            InventoryModel model = _mini.ModelLocator.GetItem<InventoryModel>();
+            InventoryService service = _mini.ServiceLocator.GetItem<InventoryService>();
             
             // Create new controller
             InventoryController controller = 
                 new InventoryController(model, _inventoryView, service);
             
             // Add to mini
-            inventoryMini.ControllerLocator.AddItem(controller);
-            inventoryMini.ViewLocator.AddItem(_inventoryView);
+            _mini.ControllerLocator.AddItem(controller);
+            _mini.ViewLocator.AddItem(_inventoryView);
             
             // Initialize
-            _inventoryView.Initialize(inventoryMini.Context);
-            controller.Initialize(inventoryMini.Context);
+            _inventoryView.Initialize(_mini.Context);
+            controller.Initialize(_mini.Context);
         }
 
         protected void OnDestroy()

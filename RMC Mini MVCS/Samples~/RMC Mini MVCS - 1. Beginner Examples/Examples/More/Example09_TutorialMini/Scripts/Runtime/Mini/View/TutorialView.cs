@@ -58,6 +58,13 @@ namespace RMC.Mini.Samples.Tutorial.Mini.View
 
         
         //  Methods ---------------------------------------
+        
+        
+        //  Dispose Methods --------------------------------
+        public void Dispose()
+        {
+            // Optional: Handle any cleanup here...
+        }
 
         
         //  Event Handlers --------------------------------

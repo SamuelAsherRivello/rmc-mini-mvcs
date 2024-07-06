@@ -36,6 +36,12 @@ namespace RMC.Mini.Samples.UGS.Standard
         {
             UgsMini mini = UgsMiniSingleton.Instance.UgsMini;
             
+            if (mini == null)
+            {
+                return;
+            }
+            
+            
             //  Scene-Specific ----------------------------
             MenuFeature menuFeature = new MenuFeature();
             menuFeature.AddView(_menuView);
@@ -69,10 +75,10 @@ namespace RMC.Mini.Samples.UGS.Standard
             }
             
             //  Scene-Specific ----------------------------
-            mini.RemoveFeature<MenuFeature>();
+            mini.RemoveAndDisposeFeature<MenuFeature>();
             
             //  Scene-Agnostic ----------------------------
-            mini.RemoveFeature<HudFeature>();
+            mini.RemoveAndDisposeFeature<HudFeature>();
         }
         
         //  Event Handlers --------------------------------

@@ -22,7 +22,7 @@ namespace RMC.Mini.Samples.SOM.Mini
             
             /////////////////////////////////
             // Create Mini
-            // It's pretty empty
+            // It's fairly empty
             InventoryMini inventoryMini = 
                 InventoryMiniSingleton.Instance.InventoryMini;
             
