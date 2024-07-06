@@ -39,8 +39,17 @@ namespace RMC.Mini.Service
             }
         }
         
+        
+        //  Dispose Methods --------------------------------
+        public virtual void Dispose()
+        {
+            // Optional: Handle any cleanup here...
+        }
+        
+        
         //  Methods ---------------------------------------
         
+
         //  Event Handlers --------------------------------
 
     }

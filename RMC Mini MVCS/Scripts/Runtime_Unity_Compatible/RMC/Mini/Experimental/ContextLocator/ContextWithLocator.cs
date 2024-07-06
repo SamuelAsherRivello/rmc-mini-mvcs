@@ -89,7 +89,7 @@ namespace RMC.Mini.Experimental.ContextLocators
 
 				if (willOverwriteByContextKey)
 				{
-					ContextLocator.Instance.RemoveItem<ContextWithLocator>( _contextKey);
+					ContextLocator.Instance.RemoveAndDisposeItem<ContextWithLocator>( _contextKey);
 					
 					//KEEP LOG
 					Debug.LogWarning(message);
@@ -117,7 +117,7 @@ namespace RMC.Mini.Experimental.ContextLocators
 			
 			if (ContextLocator.Instance.HasItem<Context>(_contextKey))
 			{
-				ContextLocator.Instance.RemoveItem<Context>(_contextKey);
+				ContextLocator.Instance.RemoveAndDisposeItem<Context>(_contextKey);
 			}
 			
 #endif //if i'm in any version of unity (and thus NOT in Godot)

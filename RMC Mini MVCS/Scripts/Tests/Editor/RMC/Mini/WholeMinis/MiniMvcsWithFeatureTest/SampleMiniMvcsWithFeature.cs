@@ -124,22 +124,22 @@ namespace RMC.Mini.WholeMinis.MiniMvcsWithFeatureTests
             
             if (MiniMvcs.ModelLocator.HasItem<SampleModel>())
             {
-                MiniMvcs.ModelLocator.RemoveItem<SampleModel>();
+                MiniMvcs.ModelLocator.RemoveAndDisposeItem<SampleModel>();
             }
             
             if (MiniMvcs.ViewLocator.HasItem<SampleView>())
             {
-                MiniMvcs.ViewLocator.RemoveItem<SampleView>();
+                MiniMvcs.ViewLocator.RemoveAndDisposeItem<SampleView>();
             }
             
             if (MiniMvcs.ControllerLocator.HasItem<SampleController>())
             {
-                MiniMvcs.ControllerLocator.RemoveItem<SampleController>();
+                MiniMvcs.ControllerLocator.RemoveAndDisposeItem<SampleController>();
             }
             
             if (MiniMvcs.ServiceLocator.HasItem<SampleService>())
             {
-                MiniMvcs.ServiceLocator.RemoveItem<SampleService>();
+                MiniMvcs.ServiceLocator.RemoveAndDisposeItem<SampleService>();
             }
         }
     }
@@ -209,9 +209,9 @@ namespace RMC.Mini.WholeMinis.MiniMvcsWithFeatureTests
             FeatureBuilder.AddFeature<TFeature>(feature, key);
         }
         
-        public void RemoveFeature<TFeature>(string key = "") where TFeature : IFeature
+        public void RemoveFeature<TFeature>(bool willDispose, string key = "") where TFeature : IFeature
         {
-            FeatureBuilder.RemoveFeature<TFeature>(key);
+            FeatureBuilder.RemoveFeature<TFeature>(willDispose, key);
         }
         
     }

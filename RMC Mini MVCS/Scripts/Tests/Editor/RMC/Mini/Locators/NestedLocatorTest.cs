@@ -8,12 +8,16 @@ namespace RMC.Mini.Locators
     public class NestedLocatorTest
     {
         
-        public interface IA
+        public interface IA : IDisposable
         {
         }
 
         public class SampleA : IA
         {
+            public void Dispose()
+            {
+                // TODO release managed resources here
+            }
         }
 
         public class SampleSubA : SampleA
@@ -31,6 +35,11 @@ namespace RMC.Mini.Locators
             public GenericClass()
             {
                 Locator = new Locator<T>();
+            }
+
+            public void Dispose()
+            {
+                Locator?.Dispose();
             }
         }
 
@@ -111,7 +120,7 @@ namespace RMC.Mini.Locators
             var genericClass = new GenericClass<SampleA>();
             var item = new SampleA();
             genericClass.Locator.AddItem(item);
-            genericClass.Locator.RemoveItem<SampleA>();
+            genericClass.Locator.RemoveAndDisposeItem<SampleA>();
             Assert.IsFalse(genericClass.Locator.HasItem<SampleA>());
         }
     }

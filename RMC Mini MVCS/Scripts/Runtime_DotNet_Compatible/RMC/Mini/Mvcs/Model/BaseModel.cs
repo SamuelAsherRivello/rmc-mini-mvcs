@@ -43,8 +43,15 @@ namespace RMC.Mini.Model
             }
         }
         
+        //  Dispose Methods --------------------------------
+        public virtual void Dispose()
+        {
+            // Optional: Handle any cleanup here...
+        }
+        
+        
         //  Methods ---------------------------------------
-
+        
 
         //  Event Handlers --------------------------------
 

@@ -94,10 +94,7 @@ namespace RMC.Mini
             return GetItem<TItem>(key) != null;
         }
 
-        /// <summary>
-        /// Removes an item of a specific type and key from the locator.
-        /// </summary>
-        public void RemoveItem<TItem>(string key = "") where TItem : TBase
+        public void RemoveItem<TItem>(bool willDispose, string key = "") where TItem : TBase
         {
             Type type = Locator.GetLowestType(typeof(TItem));
 
@@ -106,6 +103,11 @@ namespace RMC.Mini
                 var item = _items[type][key];
                 _items[type].Remove(key);
                 OnItemRemoved.Invoke(item);
+
+                if (willDispose && item is IDisposable disposableItem)
+                {
+                    disposableItem.Dispose();
+                }
             }
             else
             {
@@ -113,6 +115,13 @@ namespace RMC.Mini
             }
         }
 
+        // Overload for automatically disposing
+        public void RemoveAndDisposeItem<TItem>(string key = "") where TItem : TBase, IDisposable
+        {
+            RemoveItem<TItem>(true, key);
+        }
+        
+        
         /// <summary>
         /// Creates a type-safe locator for items of type T.
         /// 
@@ -150,21 +159,7 @@ namespace RMC.Mini
             return newLocator;
         }
 
-        /// <summary>
-        /// Disposes of the locator, clearing all items.
-        /// </summary>
-        public override void Dispose()
-        {
-            Reset();
-        }
 
-        /// <summary>
-        /// Resets the locator, removing all items.
-        /// </summary>
-        public void Reset()
-        {
-            _items.Clear();
-        }
 
         /// <summary>
         /// Gets the count of items in the locator.
@@ -189,8 +184,26 @@ namespace RMC.Mini
             }
             return items;
         }
+        
+        
+        /// <summary>
+        /// Resets the locator, removing all items.
+        /// </summary>
+        public void Reset()
+        {
+            _items.Clear();
+        }
+        
+        
+        /// <summary>
+        /// Disposes of the locator, clearing all items.
+        /// </summary>
+        public override void Dispose()
+        {
+            Reset();
+        }
+
 
         //  Event Handlers --------------------------------
-
     }
 }

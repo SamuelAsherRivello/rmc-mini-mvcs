@@ -19,6 +19,7 @@ namespace RMC.Mini.WholeMinis.SimpleMiniMvcsTests
                 _isInitialized = true;
             }
         }
+        
 
         public void RequireIsInitialized()
         {
@@ -27,6 +28,13 @@ namespace RMC.Mini.WholeMinis.SimpleMiniMvcsTests
                 throw new Exception("MustBeInitialized");
             }
         }
+        
+        //  Dispose Methods --------------------------------
+        public void Dispose()
+        {
+            // Optional: Handle any cleanup here...
+        }
+        
     }
     public class TestModel1 : TestActor1, IModel {}
     public class TestView1: TestActor1, IView {}

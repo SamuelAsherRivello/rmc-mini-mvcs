@@ -31,6 +31,13 @@ namespace RMC.Mini.WholeMinis.SimpleMiniMvcsTests
                 throw new Exception("MustBeInitialized");
             }
         }
+        
+        //  Dispose Methods --------------------------------
+        public void Dispose()
+        {
+            // Optional: Handle any cleanup here...
+        }
+        
     }
     public class TestController2 : BaseController
         <BaseModel,
@@ -47,7 +54,11 @@ namespace RMC.Mini.WholeMinis.SimpleMiniMvcsTests
     
     public class TestService2 : BaseService
     {
-        
+        //  Dispose Methods --------------------------------
+        public void Dispose()
+        {
+            // Optional: Handle any cleanup here...
+        }
     }
     
     public class SampleSimpleMiniWithBase: SimpleMiniMvcs

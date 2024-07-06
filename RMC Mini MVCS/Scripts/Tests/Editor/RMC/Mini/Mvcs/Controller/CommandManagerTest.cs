@@ -110,7 +110,7 @@ namespace RMC.Mini.Mvcs.Controller
         {
             if (ContextLocator.Instance.HasItem<Context>())
             {
-                ContextLocator.Instance.RemoveItem<Context>();
+                ContextLocator.Instance.RemoveAndDisposeItem<Context>();
             }
         }
         

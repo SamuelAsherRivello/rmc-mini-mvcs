@@ -126,6 +126,15 @@ namespace RMC.Mini.Features.SceneSystem
             ScreenBackgroundColor = new StyleColor(toColor);
         }
         
+        
+        //  Dispose Methods --------------------------------
+        public void Dispose()
+        {
+            // Optional: Handle any cleanup here...
+        }
+
+        
+        
         //  Event Handlers --------------------------------
         
 

@@ -54,14 +54,20 @@ namespace RMC.Mini.Features
             feature.Build();
         }
         
-        public void RemoveFeature<TFeatureMethod>(string key = "") where TFeatureMethod : IFeature
+        public void RemoveFeature<TFeatureMethod>(bool willDispose, string key = "") where TFeatureMethod : IFeature
         {
             if (FeatureLocator.HasItem<TFeatureMethod>(key))
             {
                 TFeatureMethod feature = FeatureLocator.GetItem<TFeatureMethod>(key);
                 feature?.Dispose();
-                FeatureLocator.RemoveItem<TFeatureMethod>(key);
+                FeatureLocator.RemoveItem<TFeatureMethod>(willDispose, key);
             }
+        }
+        
+        // Overload for automatically disposing
+        public void RemoveAndDisposeFeature<TFeatureMethod>(string key = "") where TFeatureMethod : IFeature
+        {
+            RemoveFeature<TFeatureMethod>(true, key);
         }
         
         //  Event Handlers --------------------------------

@@ -56,10 +56,20 @@ namespace RMC.Mini.Experimental.Module
             module.Initialize();
         }
 
-        public void UnloadModule<TModule>() where TModule : IModule
+        public void UnloadModule<TModule>(bool willDispose) where TModule : IModule
         {
-            _moduleLocator.RemoveItem<TModule>();
+            throw new System.NotImplementedException();
         }
+
+
+        //  Dispose Methods --------------------------------
+        public void Dispose()
+        {
+            // Optional: Handle any cleanup here...
+        }
+        
+
+
         
         //  Event Handlers --------------------------------
 

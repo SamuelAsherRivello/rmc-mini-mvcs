@@ -52,6 +52,7 @@ namespace RMC.Mini.Controller
             }
         }
         
+        
         //  Dispose Methods --------------------------------
         public virtual void Dispose()
         {
@@ -63,6 +64,5 @@ namespace RMC.Mini.Controller
         
 
         //  Event Handlers --------------------------------
-   
     }
 }

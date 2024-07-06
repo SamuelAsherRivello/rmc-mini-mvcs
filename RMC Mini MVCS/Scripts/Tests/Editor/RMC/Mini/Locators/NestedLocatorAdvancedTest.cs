@@ -125,7 +125,7 @@ namespace RMC.Mini.Locators
             Assert.IsNotNull(myLocator, "MyLocator should not be null");
 
             myLocator.AddItem(item);
-            myLocator.RemoveItem<SampleA>();
+            myLocator.RemoveAndDisposeItem<SampleA>();
 
             Assert.IsFalse(myLocator.HasItem<SampleA>(), "MyLocator should not have the item after removal");
         }
@@ -149,12 +149,16 @@ namespace RMC.Mini.Locators
         }
     }
 
-    public interface IA
+    public interface IA : IDisposable
     {
     }
 
     public class SampleA : IA
     {
+        public void Dispose()
+        {
+            // TODO release managed resources here
+        }
     }
 
     public class SampleSubA : SampleA

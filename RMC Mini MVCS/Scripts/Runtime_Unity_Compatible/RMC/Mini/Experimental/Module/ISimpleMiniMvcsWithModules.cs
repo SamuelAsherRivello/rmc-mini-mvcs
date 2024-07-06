@@ -10,6 +10,7 @@ namespace RMC.Mini.Experimental.Module
 
         //  Methods ---------------------------------------
         public void LoadModule(IModule module);
-        public void UnloadModule<TModule>() where TModule : IModule;
+        public void UnloadModule<TModule>(bool willDispose) where TModule : IModule;
+        
     }
 }

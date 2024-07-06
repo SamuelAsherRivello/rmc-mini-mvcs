@@ -9,16 +9,24 @@ namespace RMC.Mini.Locators
     public class LocatorTests
     {
         
-        public interface ISampleBase
+        public interface ISampleBase : IDisposable
         {
         }
 
         public class SampleItemA : ISampleBase
         {
+            public void Dispose()
+            {
+                // TODO release managed resources here
+            }
         }
 
         public class SampleItemB : ISampleBase
         {
+            public void Dispose()
+            {
+                // TODO release managed resources here
+            }
         }
         
         
@@ -55,7 +63,7 @@ namespace RMC.Mini.Locators
         {
             var item = new SampleItemA();
             _locator.AddItem(item);
-            _locator.RemoveItem<SampleItemA>();
+            _locator.RemoveAndDisposeItem<SampleItemA>();
 
             Assert.IsFalse(_locator.HasItem<SampleItemA>());
         }

@@ -48,16 +48,21 @@ namespace RMC.Mini.Features.SceneSystem
         {
             RequireIsInitialized();
             
-            if (MiniMvcs.ControllerLocator.HasItem<SceneSystemController>())
-            {
-                MiniMvcs.ControllerLocator.RemoveItem<SceneSystemController>();
-                MiniMvcs.ViewLocator.RemoveItem<SceneSystemView>();
-            }
-            
             if (MiniMvcs.ModelLocator.HasItem<SceneSystemModel>())
             {
-                MiniMvcs.ModelLocator.RemoveItem<SceneSystemModel>();
+                MiniMvcs.ModelLocator.RemoveAndDisposeItem<SceneSystemModel>();
             }
+            
+            if (MiniMvcs.ViewLocator.HasItem<SceneSystemView>())
+            {
+                MiniMvcs.ViewLocator.RemoveAndDisposeItem<SceneSystemView>();
+            }
+            
+            if (MiniMvcs.ControllerLocator.HasItem<SceneSystemController>())
+            {
+                MiniMvcs.ControllerLocator.RemoveAndDisposeItem<SceneSystemController>();
+            }
+            
         }
     }
 }
