@@ -62,7 +62,7 @@ namespace RMC.Mini
         /// The ModelLocator is the only ModelLocator that already exists in the
         /// Context. So we fetch it from there.
         /// </summary>
-        public Locator<TModel> ModelLocator { get { return _context.ModelLocator as Locator<TModel>;} }
+        public Locator<TModel> ModelLocator { get { return _context?.ModelLocator as Locator<TModel>;} }
         public Locator<TView> ViewLocator { get { return _viewLocator;} }
         public Locator<TController> ControllerLocator { get { return _controllerLocator;} }
         public Locator<TService> ServiceLocator { get { return _serviceLocator;} }
