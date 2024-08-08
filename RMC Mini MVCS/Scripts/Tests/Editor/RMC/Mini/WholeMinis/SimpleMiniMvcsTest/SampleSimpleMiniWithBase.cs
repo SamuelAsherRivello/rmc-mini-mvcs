@@ -55,9 +55,10 @@ namespace RMC.Mini.WholeMinis.SimpleMiniMvcsTests
     public class TestService2 : BaseService
     {
         //  Dispose Methods --------------------------------
-        public void Dispose()
+        public override void Dispose()
         {
             // Optional: Handle any cleanup here...
+            base.Dispose();
         }
     }
     

@@ -245,4 +245,4 @@ Some packages include optional samples with clear use cases. To import and run t
 
 **License**
 
-Provided as-is under MIT License | Copyright © 2024 Rivello Multimedia Consulting, LLC
+Provided as-is under <a href="./LICENSE">MIT License</a> | Copyright ™ & © 2006 - 2024 Rivello Multimedia Consulting, LLC

@@ -30,7 +30,7 @@ namespace RMC.Mini.WholeMinis.SimpleMiniMvcsTests
         }
         
         //  Dispose Methods --------------------------------
-        public void Dispose()
+        public virtual void Dispose()
         {
             // Optional: Handle any cleanup here...
         }
@@ -41,7 +41,10 @@ namespace RMC.Mini.WholeMinis.SimpleMiniMvcsTests
 
     public class TestController1 : TestActor1, IController
     {
-        public virtual void Dispose() {}
+        public override void Dispose()
+        {
+            base.Dispose();
+        }
     }
     public class TestService1 : TestActor1, IService {}
     public class SampleSimpleMiniMvcs: SimpleMiniMvcs
