@@ -39,14 +39,14 @@ namespace RMC.Mini.Samples.RollABall.WithMini.Mini.View
                     _canMove = value;
                     if (!_canMove)
                     {
-                        _lastVelocityBeforePause = _rigidBody.velocity;
+                        _lastVelocityBeforePause = _rigidBody.linearVelocity;
                         _lastAngularVelocityBeforePause = _rigidBody.angularVelocity;
-                        _rigidBody.velocity = Vector3.zero;
+                        _rigidBody.linearVelocity = Vector3.zero;
                         _rigidBody.angularVelocity = Vector3.zero;
                     }
                     else
                     {
-                        _rigidBody.velocity = _lastVelocityBeforePause;
+                        _rigidBody.linearVelocity = _lastVelocityBeforePause;
                         _rigidBody.angularVelocity = _lastAngularVelocityBeforePause;
                   
                     }
