@@ -223,8 +223,6 @@ Some packages include optional samples with clear use cases. To import and run t
 * `Unity Rendering` - Any [Unity Render Pipeline](https://docs.unity3d.com/Manual/universal-render-pipeline.html)
 * `Unity Aspect Ratio` - Any [Unity Game View](https://docs.unity3d.com/Manual/GameView.html)
 
-
-
 <BR>
 <BR>
 
