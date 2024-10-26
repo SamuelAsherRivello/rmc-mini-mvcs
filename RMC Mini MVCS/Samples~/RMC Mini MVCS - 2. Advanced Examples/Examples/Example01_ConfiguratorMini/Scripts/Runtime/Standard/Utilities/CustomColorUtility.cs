@@ -1,7 +1,10 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using RMC.Mini.Samples.Configurator.Standard.Gameplay;
 using UnityEngine;
 
+#pragma warning disable CS1998 // Async method lacks 'await' operators and will run synchronously
+#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
 namespace RMC.Mini.Samples.Configurator.Standard
 {
     public static class CustomColorUtility
@@ -126,6 +129,17 @@ namespace RMC.Mini.Samples.Configurator.Standard
             
             // Ensure the final color is set to the target color
             SetColor(material, toColor);
+        }
+        
+
+        public static async Task SetColorAsync(RendererSet rendererSet, Color toColor, float durationInSeconds)
+        {
+            foreach (Renderer renderer in rendererSet.Renderers)
+            {
+                //Allow color change simultaneously
+                //So, don't await
+                SetColorAsync(renderer.material, toColor, durationInSeconds);
+            }
         }
     }
 }

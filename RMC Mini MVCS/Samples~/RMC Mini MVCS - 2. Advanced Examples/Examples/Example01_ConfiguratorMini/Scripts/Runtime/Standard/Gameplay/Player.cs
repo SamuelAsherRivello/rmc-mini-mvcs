@@ -22,9 +22,9 @@ namespace RMC.Mini.Samples.Configurator.Standard.Gameplay
                 {
                     return;
                 }
-                CustomColorUtility.SetColorAsync(_head.material, _characterData.HeadColor, CustomColorUtility.DefaultDuration);
-                CustomColorUtility.SetColorAsync(_chest.material, _characterData.ChestColor, CustomColorUtility.DefaultDuration);
-                CustomColorUtility.SetColorAsync(_legs.material, _characterData.LegsColor, CustomColorUtility.DefaultDuration);
+                CustomColorUtility.SetColorAsync(_head, _characterData.HeadColor, CustomColorUtility.DefaultDuration);
+                CustomColorUtility.SetColorAsync(_chest, _characterData.ChestColor, CustomColorUtility.DefaultDuration);
+                CustomColorUtility.SetColorAsync(_legs, _characterData.LegsColor, CustomColorUtility.DefaultDuration);
             }
         }
 
@@ -34,13 +34,13 @@ namespace RMC.Mini.Samples.Configurator.Standard.Gameplay
         public bool IsPlayerEnabled { get; set; } = false;
 
         [SerializeField]
-        private Renderer _head;
+        private RendererSet _head;
 
         [SerializeField]
-        private Renderer _chest;
+        private RendererSet _chest;
 
         [SerializeField]
-        private Renderer _legs;
+        private RendererSet _legs;
 
         [SerializeField]
         private float _angularSpeed = 100f;
