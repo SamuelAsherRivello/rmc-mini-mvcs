@@ -1,4 +1,4 @@
-using RMC.Core.DesignPatterns.Creational.SingletonMonobehaviour;
+using RMC.Core.Borrowed.DesignPatterns.Creational.Singletons;
 
 namespace RMC.Mini.Samples.Configurator.Mini
 {
@@ -6,15 +6,15 @@ namespace RMC.Mini.Samples.Configurator.Mini
     /// Here is a <see cref="ConfiguratorMiniSingleton"/> that can be used to access the <see cref="ConfiguratorMini"/>.
     /// Replace this with your own custom implementation.
     /// </summary>
-    public class ConfiguratorMiniSingleton: SingletonMonobehaviour<ConfiguratorMiniSingleton>
+    public class ConfiguratorMiniSingleton: SingletonMonoBehaviour<ConfiguratorMiniSingleton>
     {
         //  Fields ----------------------------------------
         public ConfiguratorMini ConfiguratorMini { get; set; }
         
         //  Unity Methods ---------------------------------
-        public override void InstantiateCompleted()
+        public override void OnInitialized()
         {
-            base.InstantiateCompleted();
+            base.OnInitialized();
             
             // Create the mini as you typically do  
             // Store the mini on this singleton for easy access

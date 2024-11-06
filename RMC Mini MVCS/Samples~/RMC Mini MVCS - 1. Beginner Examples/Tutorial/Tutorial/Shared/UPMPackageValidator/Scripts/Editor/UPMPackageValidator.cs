@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEditor.PackageManager;
 using UnityEditor.PackageManager.Requests;
 
+#pragma warning disable CS0618 // Type or member is obsolete
 namespace RMC.UPMPackageValidator
 {
     public static class UPMPackageValidator
@@ -102,7 +103,9 @@ namespace RMC.UPMPackageValidator
         
         private static bool HasScriptingDefineSymbols(string symbol)
         {
+
             return PlayerSettings.GetScriptingDefineSymbolsForGroup(EditorUserBuildSettings.selectedBuildTargetGroup)
+
                 .Contains(symbol);
         }
 

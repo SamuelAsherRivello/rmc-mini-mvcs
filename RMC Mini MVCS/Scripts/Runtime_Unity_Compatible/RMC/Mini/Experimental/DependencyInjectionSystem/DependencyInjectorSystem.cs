@@ -58,7 +58,7 @@ namespace RMC.Mini.Experimental.DependencyInjectionSystem
         /// </summary>
         public void InjectAll()
         {
-            foreach (var monoBehaviour in GameObject.FindObjectsOfType<MonoBehaviour>())
+            foreach (var monoBehaviour in UnityEngine.Object.FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None))
             {
                 InjectAllInto(monoBehaviour);
             }

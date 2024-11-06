@@ -3,6 +3,9 @@ using NUnit.Framework;
 using RMC.Core.Testing;
 using UnityEngine.TestTools;
 
+
+//NOTE: You may need to enable testables for the "com.rmc.rmc-mini-mvcs" package in the Unity Editor
+//to import the proper dependencies. See https://docs.unity3d.com/Manual/cus-tests.html
 namespace RMC.Mini.Samples.UGS.Standard
 {
     [TestFixture]

@@ -18,7 +18,10 @@ namespace RMC.Mini.Samples.Calculator.Mini.View
     public class CalculatorView : MonoBehaviour, IView
     {
         //  Events ----------------------------------------
+        [HideInInspector]
         public UnityEvent OnAdd = new UnityEvent();
+        
+        [HideInInspector]
         public UnityEvent OnReset = new UnityEvent();
     
         //  Properties ------------------------------------

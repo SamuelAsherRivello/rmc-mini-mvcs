@@ -1,4 +1,4 @@
-using RMC.Core.DesignPatterns.Creational.SingletonMonobehaviour;
+using RMC.Core.Borrowed.DesignPatterns.Creational.Singletons;
 
 namespace RMC.Mini.Samples.UGS.Mini
 {
@@ -6,15 +6,15 @@ namespace RMC.Mini.Samples.UGS.Mini
     /// Here is a <see cref="UgsMiniSingleton"/> that can be used to access the <see cref="UgsMini"/>.
     /// Replace this with your own custom implementation.
     /// </summary>
-    public class UgsMiniSingleton: SingletonMonobehaviour<UgsMiniSingleton>
+    public class UgsMiniSingleton: SingletonMonoBehaviour<UgsMiniSingleton>
     {
         //  Fields ----------------------------------------
         public UgsMini UgsMini { get; set; }
         
         //  Unity Methods ---------------------------------
-        public override void InstantiateCompleted()
+        public override void OnInitialized()
         {
-            base.InstantiateCompleted();
+            base.OnInitialized();
             
             // Create the mini as you typically do  
             // Store the mini on this singleton for easy access

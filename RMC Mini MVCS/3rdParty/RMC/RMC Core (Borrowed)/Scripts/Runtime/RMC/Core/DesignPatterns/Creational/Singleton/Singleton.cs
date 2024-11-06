@@ -1,7 +1,9 @@
 using UnityEditor;
+using UnityEngine;
 using UnityEngine.Events;
 
-namespace RMC.Core.DesignPatterns.Creational.Singleton
+//Keep as "Borrowed" so it doesn't conflict with "RMC Core" (if user imports that, its optional)
+namespace RMC.Core.Borrowed.DesignPatterns.Creational.Singletons
 {
     public interface ISingletonParent
     {
@@ -15,7 +17,8 @@ namespace RMC.Core.DesignPatterns.Creational.Singleton
     public abstract class SingletonParent : System.Object, ISingletonParent
     {
         //  Properties ------------------------------------
-        public UnityEvent OnInstantiated = new UnityEvent();
+        [HideInInspector]
+        public readonly UnityEvent OnInstantiated = new UnityEvent();
 
         //  General Methods -------------------------------
         void ISingletonParent.OnInstantiatedBase()
@@ -120,7 +123,7 @@ namespace RMC.Core.DesignPatterns.Creational.Singleton
             }
         }
         
-        protected static void Uninstantiate()
+        public static void Dispose()
         {
             _instance = null;
         }

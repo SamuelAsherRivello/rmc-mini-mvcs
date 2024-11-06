@@ -23,7 +23,7 @@ namespace RMC.Mini.Features.SceneSystem
             sceneSystemModel.Initialize(MiniMvcs.Context);
 
             // Get from scene
-            SceneSystemView sceneSystemView = GameObject.FindObjectOfType<SceneSystemView>();
+            SceneSystemView sceneSystemView = Object.FindFirstObjectByType<SceneSystemView>();
             Assert.IsNotNull(sceneSystemView, $"Add the '{nameof(SceneSystemView)}' Prefab to the scene first.");
    
             // Create new controller

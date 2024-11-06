@@ -1,6 +1,6 @@
 using System;
 using System.Threading.Tasks;
-using RMC.Core.DesignPatterns.Creational.SingletonMonobehaviour;
+using RMC.Core.Borrowed.DesignPatterns.Creational.Singletons;
 using RMC.Mini.View;
 using UnityEngine;
 using UnityEngine.Events;
@@ -15,7 +15,7 @@ namespace RMC.Mini.Features.SceneSystem
     /// Relates to the <see cref="SceneSystemController"/>
     /// 
     /// </summary>
-    public class SceneSystemView: SingletonMonobehaviour<SceneSystemView>, IView
+    public class SceneSystemView: SingletonMonoBehaviour<SceneSystemView>, IView
     {
         //  Events ----------------------------------------
         [HideInInspector] 
@@ -127,16 +127,12 @@ namespace RMC.Mini.Features.SceneSystem
         }
         
         
-        //  Dispose Methods --------------------------------
-        public void Dispose()
-        {
-            // Optional: Handle any cleanup here...
-        }
-
-        
         
         //  Event Handlers --------------------------------
-        
 
+        public new void Dispose()
+        {
+            //dispose as needed
+        }
     }
 }

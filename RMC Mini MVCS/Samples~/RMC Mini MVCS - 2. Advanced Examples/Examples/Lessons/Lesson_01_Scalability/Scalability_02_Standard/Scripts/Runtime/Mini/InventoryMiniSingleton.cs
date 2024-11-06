@@ -1,4 +1,4 @@
-using RMC.Core.DesignPatterns.Creational.SingletonMonobehaviour;
+using RMC.Core.Borrowed.DesignPatterns.Creational.Singletons;
 
 namespace RMC.Mini.Lessons.Scalability.Standard.Mini
 {
@@ -11,15 +11,15 @@ namespace RMC.Mini.Lessons.Scalability.Standard.Mini
     /// Replace this with your own custom implementation.
     /// 
     /// </summary>
-    public class InventoryMiniSingleton: SingletonMonobehaviour<InventoryMiniSingleton>
+    public class InventoryMiniSingleton: SingletonMonoBehaviour<InventoryMiniSingleton>
     {
         //  Fields ----------------------------------------
         public InventoryMini InventoryMini { get; set; }
         
         //  Unity Methods ---------------------------------
-        public override void InstantiateCompleted()
+        public override void OnInitialized()
         {
-            base.InstantiateCompleted();
+            base.OnInitialized();
 
             // Create the mini as you typically do  
             // Store the mini on this singleton for easy access

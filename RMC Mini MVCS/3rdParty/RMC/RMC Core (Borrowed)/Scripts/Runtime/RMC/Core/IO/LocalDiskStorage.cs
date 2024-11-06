@@ -1,7 +1,7 @@
 using System;
 using System.IO;
 using RMC.Core.Attributes;
-using RMC.Core.DesignPatterns.Creational.Singleton;
+using RMC.Core.Borrowed.DesignPatterns.Creational.Singletons;
 using UnityEditor;
 using UnityEngine;
 
